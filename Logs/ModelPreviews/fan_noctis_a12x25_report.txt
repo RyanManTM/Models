@@ -1,0 +1,17 @@
+fan_noctis_a12x25: 10552 triangles, 8 meshes
+  mesh fan_0@A_FAN_0#tex_cat_cases_palette  tris=3708
+  mesh fan_0@A_FAN_0#tex_fan_noctis_a12x25_hub  tris=144
+  mesh fan_noctis_a12x25_connector_beige#connector_beige  tris=4512
+  mesh fan_noctis_a12x25_rubber#rubber  tris=300
+  mesh fan_noctis_a12x25_tex_cat_cases_palette#tex_cat_cases_palette  tris=1152
+  mesh plug_fan_0@A_PLUG_FAN_0#connector_black  tris=440
+  mesh plug_fan_0@A_PLUG_FAN_0#tex_parts_c_palette  tris=176
+  mesh s_tex_fan_noctis_a12x25_motor#tex_fan_noctis_a12x25_motor  tris=120
+  A_FAN_0 pos=(-0.0, 0.0, -0.0) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=2000
+  A_HIT_0 pos=(-0.0, 0.0, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.12000,0.12000,0.02500 meta=
+  A_HOLE_0 pos=(-0.0525, 0.0525, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1050,through=1,screw=fan
+  A_HOLE_1 pos=(0.0525, 0.0525, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1050,through=1,screw=fan
+  A_HOLE_2 pos=(-0.0525, -0.0525, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1050,through=1,screw=fan
+  A_HOLE_3 pos=(0.0525, -0.0525, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1050,through=1,screw=fan
+  A_PLUG_FAN_0 pos=(-0.02, -0.0655, 0.0085) fwd=(1.0, -0.0, 0.0) up=(0.0, 1.0, 0.0) size=0.02500,0.01200,0.03000 meta=kind=fan4,pinout=GND|12V|TACH|PWM,fan=0
+frame: case_fan contract - origin at the frame centre, +Z = airflow (the intake face at z=-0.0125), 120 mm frame, 25 mm deep, holes 105.0 mm apart

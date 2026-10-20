@@ -63,6 +63,28 @@ def write_palette():
     P.save_png(arr, PAL_FILE)
 
 
+def fix_normals(root, only=None):
+    """Recalculates outward normals on every closed (manifold) mesh under root, in Blender space. parts_c.slab on
+    some planes (e.g. plane(o, Z, Y), the front face) returns inside-out solids, which Unity's back-face culling
+    would show as holes; open meshes (quads, decals) are left as they are. only: the object names to look at."""
+    import bmesh
+    n = 0
+    for o in c.descendants(root):
+        if o.type != "MESH" or (only is not None and o.name not in only):
+            continue
+        bm = bmesh.new()
+        bm.from_mesh(o.data)
+        if bm.edges and all(len(e.link_faces) == 2 for e in bm.edges):
+            before = [f.normal.copy() for f in bm.faces]
+            bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+            bm.normal_update()
+            if any(f.normal.dot(v) < 0 for f, v in zip(bm.faces, before)):
+                bm.to_mesh(o.data)
+                n += 1
+        bm.free()
+    print(f"fix_normals: {n} meshes turned outward")
+
+
 def set_uv_solid(ob, uv):
     me = ob.data
     if not me.uv_layers:
@@ -285,12 +307,11 @@ def face_beige(ns):
     front_plate("cd_face", "connector_beige", ns, -0.073, 0.073, yb - 0.0205, yb + 0.0205, d=0.0012, out=0.0012, r=0.0008)
     front_plate("cd_tray", PAL_TAG, ns, -0.064, 0.050, yb - 0.0035, yb + 0.0110, d=0.0006, out=0.0018, r=0.0006,
                 uv_solid=pal("beige_dark"))
-    front_plate("cd_line", "black_plastic", ns, -0.064, 0.050, yb - 0.0040, yb - 0.0035, d=0.0002, out=0.0019)
+    front_plate("cd_line", "black_plastic", ns, -0.064, 0.050, yb - 0.0040, yb - 0.0035, d=0.0002, out=0.0019, r=0.0001)
     P.cube("cd_eject", (xf - 0.0022, yb - 0.0115, -0.058), (0.0016, 0.0042, 0.012), "connector_beige", parent=root, bevel=0.0005)
     P.cylinder("cd_led", P.Frame((xf - 0.0012, yb - 0.0115, -0.040), NX, Y), 0.0011, 0.0010, "led_green", 12, root, z0=0)
     P.cylinder("cd_jack", P.Frame((xf - 0.0012, yb - 0.0115, 0.060), NX, Y), 0.0022, 0.0010, "black_plastic", 16, root, z0=0)
-    P.cylinder("cd_volume", P.Frame((xf - 0.0012, yb - 0.0115, 0.047), NX, Y), 0.0030, 0.0018, PAL_TAG, 20, root, z0=0,
-               uv_solid=pal("beige_dark"))
+    P.cylinder("cd_volume", P.Frame((xf - 0.0012, yb - 0.0115, 0.047), NX, Y), 0.0030, 0.0018, "grey_plastic", 20, root, z0=0)
     P.text3d("cd_print", "CD-ROM  52X", 0.0030, 0.00008, "dark_plastic", P.Frame((xf - 0.00245, yb + 0.0040, 0.012), NX, Y),
              "arialbd.ttf", parent=root, width=0.03)
     P.text3d("cd_print", "COMPACT DISC", 0.0020, 0.00008, "dark_plastic", P.Frame((xf - 0.0013, yb - 0.0120, 0.010), NX, Y),
@@ -446,9 +467,18 @@ CASE_NOTES = {
 }
 
 
+def own_geometry(fn):
+    """Wraps a build_case hook: the meshes it adds get outward normals (fix_normals), build_case's are untouched."""
+    def hook(ns):
+        before = {o.name for o in c.descendants(ns.root)}
+        fn(ns)
+        fix_normals(ns.root, {o.name for o in c.descendants(ns.root)} - before)
+    return hook
+
+
 def build_case_id(cid):
     st = CASES[cid]
-    BC.STYLES[cid] = st
+    BC.STYLES[cid] = dict(st, **{k: own_geometry(st[k]) for k in ("face", "feet", "extra") if st.get(k)})
     CUR.clear()
     CUR["mesh"] = st.get("mesh")
     write_palette()
@@ -530,6 +560,7 @@ def build_fan(fid):
                       cov=sp.get("cov"), sweep=sp.get("sweep"), hub_ratio=sp.get("hub_ratio"), return_all=True)
     if sp.get("blade_pal"):
         set_uv_solid(res["rotor"], pal(sp["blade_pal"]))
+    made = {o.name for o in c.descendants(root)}     # parts_fan's meshes (left as they are)
     hs = PF.HOLE_SPACING[D]
     corners = [(-1, 1), (1, 1), (-1, -1), (1, -1)]
     # ---- per-product details
@@ -547,8 +578,10 @@ def build_fan(fid):
             tri = [(cx, cy), (cx - sx * 0.016, cy), (cx, cy - sy * 0.016)]
             if sx * sy < 0:
                 tri.reverse()
-            P.slab("corner", tri, 0.0008, PAL_TAG, P.Frame((0, 0, -h - 0.0004), Z, Y), parent=root, uv_solid=pal(sp["corners"]))
-            P.slab("corner", tri, 0.0008, PAL_TAG, P.Frame((0, 0, h + 0.0004), Z, Y), parent=root, uv_solid=pal(sp["corners"]))
+            hole = [P.circle(0.0026, sx * hs / 2, sy * hs / 2, 16)]      # the screw goes through the insert
+            for zf in (-1, 1):
+                P.slab("corner", tri, 0.0008, PAL_TAG, P.Frame((0, 0, zf * (h + 0.0004)), Z, Y), holes=hole, parent=root,
+                       uv_solid=pal(sp["corners"]))
     if sp.get("side_bars"):      # light bars along both sides of the frame, on the intake face and the side walls
         for sx in (-1, 1):
             P.cube("side_bar", (sx * (D / 2 - 0.0028), 0, -h - 0.0003), (0.0030, D - 0.030, 0.0008), "rgb", parent=root)
@@ -603,6 +636,7 @@ def build_fan(fid):
         P.tube("cable_" + kind, P.smooth_path(route, 6), 0.0013 if kind == "argb" else 0.0017,
                "white_plastic" if sp["frame_tag"] == "white_plastic" else "rubber", root, 8)
     P.anchor("A_HIT_0", (0, 0, 0), (D, D, TH), root)
+    fix_normals(root, {o.name for o in c.descendants(root)} - made)
     P.finalize(root, fid)
     c.export(root, fid)
     extra = (f"frame: case_fan contract - origin at the frame centre, +Z = airflow (the intake face at z={-h:.4f}), "
