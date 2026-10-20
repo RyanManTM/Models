@@ -637,7 +637,7 @@ def previews(rig, ctx):
     bid = rig.bid
     root = rig.root
     views = getattr(rig, "views", ((28, 24), (-150, 26)))
-    P.beauty(root, bid, views=views, size=(1100, 850), samples=48, start_index=0)
+    P.beauty(root, bid, views=views, size=(1100, 850), samples=48, start_index=0, fill=getattr(rig, "closed_fill", 1.0))
     add_contents(rig, ctx)
     seals = [o for o in c.descendants(root) if o.type == "MESH" and ("@A_SEAL_" in o.name or "@A_TAPE_" in o.name)]
     hidden = []
@@ -796,8 +796,8 @@ def build_flatpack(ctx):
     for k, nm in enumerate(posts):
         R.explode[nm] = (0, 0.36 + 0.03 * k, 0)
     RP.explode_docs(R, names, (0.15, 0.68, 0.0), (0.03, 0.02, 0.06))
-    R.open_view = (20, 40)
-    R.open_fill = 0.95
+    R.open_view = (22, 50)
+    R.open_hide = ["A_ITEM_PART_0"]
     R.explode_view = (24, 26)
     NOTES[pid] = seq.text("12U open frame, flat-packed: ")
     return R
@@ -975,11 +975,6 @@ def build_pallet(ctx):
                  peel="+y", label="stretch film", order=1, under=und)
         R.cube("film", cen, siz, "film_clear", anc=nm)
         wraps.append(nm)
-    for k, yy in enumerate((0.45, 0.95, 1.45, 1.90)):   # the wrap bands where the film is thicker (overlaps)
-        R.cube("film", (0, yy, Ez + tf + 0.0002), (2 * Ex, 0.12, 0.0003), "film_clear", anc="A_INSERT_WRAP_0")
-        R.cube("film", (0, yy, -Ez - tf - 0.0002), (2 * Ex, 0.12, 0.0003), "film_clear", anc="A_INSERT_WRAP_2")
-        for sg, nm in ((1, "A_INSERT_WRAP_1"), (-1, "A_INSERT_WRAP_3")):
-            R.cube("film", (sg * (Ex + tf + 0.0002), yy, 0), (0.0003, 0.12, 2 * Ez), "film_clear", anc=nm)
     seq.add(1, "stretch film in five sheets A_INSERT_WRAP_0..4 (front, +x, back, -x, top)")
     # strapping bands: two over the top and through the pallet (along z), two round the posts
     ts, ws = 0.0008, 0.012
@@ -1013,6 +1008,8 @@ def build_pallet(ctx):
     R.open_hide = wraps + ["A_STRAP_0", "A_STRAP_1", "A_STRAP_2", "A_STRAP_3", "A_INSERT_CARD_0", "A_INSERT_CARD_1",
                            "A_INSERT_CARD_2", "A_INSERT_CARD_3", "A_INSERT_CARD_4", "A_TAPE_0"]
     R.views = ((30, 18), (-150, 20))
+    R.closed_fill = 0.72
+    R.open_fill = 0.75
     R.open_view = (28, 22)
     R.explode_view = (32, 22)
     R.explode_fill = 0.75
