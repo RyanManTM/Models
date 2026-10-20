@@ -106,6 +106,42 @@ class Atlas:
         return "tex_" + self.file
 
 
+class Labels:
+    """Small printed legends ("IPMI", "PSU 1", "24") as cells of one atlas region: each gets its own quad, so a
+    legend never covers a port the way one big decal over a face would."""
+
+    def __init__(self, atlas, region, cw, ch, texts, fg=(0.86, 0.87, 0.89), bg=(0.035, 0.035, 0.04), font="arialbd.ttf",
+                 size=0.62):
+        self.atlas, self.region, self.cw, self.ch = atlas, region, cw, ch
+        self.texts = list(dict.fromkeys(texts))
+        self.fg, self.bg, self.font, self.size = fg, bg, font, size
+        x, y, w, h = atlas.reg[region]
+        self.cols = int(w // cw)
+        if len(self.texts) > self.cols * int(h // ch):
+            raise ValueError("too many labels for region " + region)
+
+    def cell(self, text):
+        i = self.texts.index(text)
+        x, y, w, h = self.atlas.reg[self.region]
+        return x + (i % self.cols) * self.cw, y + h - (i // self.cols + 1) * self.ch
+
+    def draw(self, art):
+        x, y, w, h = self.atlas.reg[self.region]
+        art.rect(x, y, w, h, self.bg)
+        for t in self.texts:
+            cx, cy = self.cell(t)
+            art.text(t, cx + self.cw / 2, cy + self.ch / 2, self.ch * self.size, self.fg, self.font, align="CENTER",
+                     valign="CENTER", maxw=self.cw * 0.94)
+
+    def uv(self, text):
+        cx, cy = self.cell(text)
+        return (cx / self.atlas.w, cy / self.atlas.h, (cx + self.cw) / self.atlas.w, (cy + self.ch) / self.atlas.h)
+
+    def quad(self, name, text, fr, h, parent=None):
+        """The legend as a quad h tall (width from the cell's aspect), facing the frame's +Z."""
+        return P.quad(name, fr, h * self.cw / self.ch, h, self.atlas.tag, parent or ROOT[0], uv=self.uv(text))
+
+
 def decal(name, atlas, region, fr, w, h, parent=None):
     """A printed quad (label, legend, logo) facing the frame's +Z, mapped to an atlas region."""
     return P.quad(name, fr, w, h, atlas.tag, parent or ROOT[0], uv=atlas.uv(region))
@@ -375,7 +411,7 @@ def server_fan(anchor, size, depth, blades=5, frame_tag="black_plastic", blade_t
     fr = P.anchor_frame(anchor)
     s = size
     rb = s / 2 - max(0.0012, s * 0.03)
-    holes = [P.circle(rb, 0, 0, segs)] + [P.circle(0.0018 if s < 0.05 else 0.0022, sx * s * 0.41, sy * s * 0.41, 8)
+    holes = [P.circle(rb, 0, 0, segs)] + [P.circle(0.0018 if s < 0.05 else 0.0022, sx * s * 0.41, sy * s * 0.41, 6)
                                            for sx in (-1, 1) for sy in (-1, 1)]
     P.slab("fan_frame", P.rrect(s, s, s * 0.06), depth, frame_tag, fr, holes=holes, parent=root)
     # stator: motor cup and struts at the back face
