@@ -4,7 +4,7 @@ Brief: `docs/tasks/catalog/19-boxes.md`. Every catalogue part (`docs/catalog/*.j
 plus the data-centre gear from task 01 and a rebuilt `box_ac_12k`.
 
 ## Status
-**119 of 132 catalogue boxes built.** Not built yet: psu_corvex_ax1600i, cooler_arctiq_34_black, cooler_arctiq_34_white, cooler_glacier_ak400_white, cooler_glacier_ak620_black, cooler_noctis_d15_black, cooler_frostpeak_120_rgb, case_phanta_g360a, case_nexa_h5, case_facet_fjord, case_hush_500dx, case_facet_fizzair, case_brickhouse_beige98.
+**120 of 132 catalogue boxes built.** Not built yet: cooler_arctiq_34_black, cooler_arctiq_34_white, cooler_glacier_ak400_white, cooler_glacier_ak620_black, cooler_noctis_d15_black, cooler_frostpeak_120_rgb, case_phanta_g360a, case_nexa_h5, case_facet_fjord, case_hush_500dx, case_facet_fizzair, case_brickhouse_beige98.
 
 The work was split by rig module, each built and checked box by box (all four previews looked at):
 - the consumer parts of the existing box kinds (`rig_products.py`): CPUs, GPUs, motherboards, memory, NVMe and SATA
@@ -191,7 +191,7 @@ Opening sequence: the step `order` of each piece, from the rig's notes. Previews
 | box_psu_hush_dp13_1200 | 0.245 x 0.12 x 0.18 | 652 | 17 | PSU (fully modular): tape strip 0 (0) -> long flaps (1) -> short flaps (2) -> 3 papers in a pile, booklet at the bottom (3..5) with the power cord + screw bag standing in the +x compartment (3) -> cable pouch (6) -> PSU in its fabric bag, lifted out WITH its EPS caps (7) -> caps pulled off along -x/+x (8). |
 | box_psu_mako_a850g | 0.21 x 0.12 x 0.18 | 652 | 17 | PSU (fully modular): tape strip 0 (0) -> long flaps (1) -> short flaps (2) -> 3 papers in a pile, booklet at the bottom (3..5) with the power cord + screw bag standing in the +x compartment (3) -> cable pouch (6) -> PSU in its fabric bag, lifted out WITH its EPS caps (7) -> caps pulled off along -x/+x (8). |
 | box_psu_aegis_1200p | 0.26 x 0.12 x 0.18 | 652 | 17 | PSU (fully modular): tape strip 0 (0) -> long flaps (1) -> short flaps (2) -> 3 papers in a pile, booklet at the bottom (3..5) with the power cord + screw bag standing in the +x compartment (3) -> cable pouch (6) -> PSU in its fabric bag, lifted out WITH its EPS caps (7) -> caps pulled off along -x/+x (8). |
-| box_psu_corvex_ax1600i | | | | **not built yet** |
+| box_psu_corvex_ax1600i | 0.27 x 0.12 x 0.18 | 732 | 17 | PSU (fully modular): tape strip 0 (0) -> long flaps (1) -> short flaps (2) -> 3 papers in a pile, booklet at the bottom (3..5) with the power cord + screw bag standing in the +x compartment (3) -> cable pouch (6) -> PSU in its fabric bag, lifted out WITH its EPS caps (7) -> caps pulled off along -x/+x (8). |
 
 ### Coolers
 | Box | Size (m) | Tris | Anchors | Opening sequence (order) |
