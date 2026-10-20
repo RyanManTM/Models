@@ -1,0 +1,11 @@
+coil_sata_pair: 6328 triangles, 5 meshes
+  mesh coil_sata_pair_connector_black#connector_black  tris=1316
+  mesh coil_sata_pair_gold#gold  tris=336
+  mesh coil_sata_pair_rubber#rubber  tris=3792
+  mesh coil_sata_pair_steel#steel  tris=144
+  mesh tie_0@A_TIE_0#white_plastic  tris=740
+  A_HIT_0 pos=(-0.0, 0.00595, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.11780,0.01190,0.04290 meta=
+  A_TIE_0 pos=(-0.0034, 0.00897, -0.00145) fwd=(-0.0, 1.0, 0.0) up=(1.0, 0.0, -0.0) size=0.02480,0.01620,0.01417 meta=tie=twist,colour=white
+  size: 0.1178 (x) x 0.0119 (y) x 0.0429 (z) m; bounds y 0.0000..0.0119
+  note: two 0.5 m flat SATA data cables folded in 5 layers; cable 2 ends in a right-angle plug
+  space box_mb_ridge_b5/z4 A_ITEM_CORD_0 (w 0.12, h 0.075, t 0.012): margins w +0.0022, h +0.0321, t +0.0001

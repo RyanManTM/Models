@@ -58,6 +58,21 @@ the bundle.
   - `box_psu_450` `A_ITEM_CORD_0` (0.090 × 0.075 × 0.014): margins **w −0.0200, h −0.0128, t −0.0048**.
   - See the deviations below.
 
+### coil_sata_pair
+- Two black flat SATA data cables, about 0.5 m each (7.6 × 1.4 mm flat cable), each folded in five layers. They lie
+  side by side, held by a white twist tie round the middle.
+  - Each cable's first plug (the `plug_sata_data` look, with the steel latch clip) lies past the −x end.
+  - Its last plug lies beside the bundle, the cable curling back from the top layer. The cable rolls up on its edge
+    for that U-turn, as a real flat cable does.
+  - Cable 2 ends in a new right-angle plug: the same face and latch, the cable leaving a ribbed boot on its side.
+- Size 0.1178 (x) × 0.0119 (y) × 0.0429 (z) m; **6328 triangles**, 5 meshes.
+- Anchors:
+  - `A_HIT_0` pos (0, 0.0060, 0), size 0.1178 × 0.0119 × 0.0429.
+  - `A_TIE_0` pos (−0.0034, 0.0090, −0.0015), fwd +y, up +x, size 0.0248 × 0.0162 × 0.0142, meta
+    `tie=twist,colour=white`; piece `tie_0@A_TIE_0#white_plastic`.
+- Fits `box_mb_ridge_b5` and `box_mb_ridge_z4` `A_ITEM_CORD_0` (0.120 × 0.075 × 0.012): margins w +0.0022,
+  h +0.0321, t +0.0001.
+
 ## Deviations
 
 - **coil_c13 is bigger than the PSU boxes' cord spaces.** The plug heads set the thickness:

@@ -83,6 +83,54 @@ def sweep(parent, pts, profile, tag, name="cable", up=(0, 1, 0), smooth=70.0, ca
     return geo_obj(parent, geo, name, tag, smooth)
 
 
+def ribbon_sweep(path, profile, sides, caps=True):
+    """Sweeps a flat cross-section (x across, y thick) along path with its 'across' axis steered by sides[i]: a vector
+    the section's x should follow (projected square to the path), or None to keep the ribbon flat (x horizontal).
+    Unlike a parallel-transport sweep this never rolls a flat cable over on its edge."""
+    Pp = [V(p) for p in path]
+    m = len(Pp)
+    up = V((0, 1, 0))
+    rings = []
+    prevN = None
+    for i in range(m):
+        T = (Pp[min(i + 1, m - 1)] - Pp[max(i - 1, 0)]).normalized()
+        g = sides[i]
+        sd = (up.cross(T) if g is None else V(g))
+        sd = sd - T * sd.dot(T)
+        if sd.length < 1e-6:
+            sd = rings[-1][1] if rings else V((0, 0, 1))
+        sd.normalize()
+        N = sd.cross(T).normalized()
+        if (prevN is not None and N.dot(prevN) < 0) or (prevN is None and N.dot(up) < 0):
+            N, sd = -N, -sd
+        prevN = N
+        rings.append((N, sd))
+    n = len(profile)
+    verts, faces = [], []
+    for i in range(m):
+        N, B = rings[i]
+        for (x, y) in profile:
+            verts.append(Pp[i] + B * x + N * y)
+    for i in range(m - 1):
+        for j in range(n):
+            j1 = (j + 1) % n
+            faces.append([i * n + j, i * n + j1, (i + 1) * n + j1, (i + 1) * n + j])
+    flags = [True] * len(faces)
+    if caps:
+        faces.append(list(reversed(range(n))))
+        faces.append([(m - 1) * n + j for j in range(n)])
+        flags += [False, False]
+    nrm = B_newell([verts[k] for k in faces[0]])
+    ctr = sum((verts[k] for k in faces[0]), V()) / len(faces[0])
+    if nrm.dot(ctr - Pp[0]) < 0:
+        faces = [f[::-1] for f in faces]
+    return verts, faces, None, flags
+
+
+def B_newell(pts):
+    return B._newell(pts)
+
+
 def bezier(p0, t0, p1, t1, n=10, k0=None, k1=None):
     """Points of a cubic from p0 (leaving along t0) to p1 (arriving along t1); handle lengths k0, k1."""
     p0, p1 = V(p0), V(p1)
@@ -109,15 +157,6 @@ def lead(p0, t0, p1, t1, n=10, k0=None, k1=None, lift=0.0018):
 def smoothstep(x):
     x = max(0.0, min(1.0, x))
     return x * x * (3 - 2 * x)
-
-
-def objects_since(before):
-    return [o for o in bpy_objects() if o.name not in before]
-
-
-def bpy_objects():
-    import bpy
-    return list(bpy.data.objects)
 
 
 def drop_stub(build, *args):
@@ -300,12 +339,14 @@ def twist_tie(anchor_parent, cen, axis, up, half_w, half_h, tag="white_plastic",
     return base
 
 
-def place_plug(build, origin, cable_dir, up=(0, 1, 0), parent=None):
-    """Builds a build_plugs plug head with its contact face at origin and its cable leaving along cable_dir.
-    Returns (relief end point, cable direction, info)."""
-    fr = P.Frame(origin, cable_dir, up)
-    info = drop_stub(build, fr, parent)
-    return info
+def add_tie(root, cen, axis, hw, hh, index=0, colour="white", pig_dir=None):
+    """A removable twist tie round a bundle section: the anchor A_TIE_<index> on top of the bundle (+Z up, +Y along
+    the bundle) and the tie as its moving piece."""
+    axis = V(axis).normalized()
+    a = P.anchor(f"A_TIE_{index}", P.Frame(V(cen) + V((0, hh, 0)), (0, 1, 0), tuple(axis)),
+                 (hw * 2 + 0.006, TIE_W + 0.012, hh * 2 + 0.006), root, meta=f"tie=twist,colour={colour}")
+    twist_tie(a, cen, axis, (0, 1, 0), hw, hh, tag=colour + "_plastic", pig_dir=pig_dir if pig_dir is not None else axis)
+    return a
 
 
 # ====================================================================== coil_dp
@@ -339,13 +380,8 @@ def build_coil_dp(root):
     for p in pts:
         p.y = max(p.y, r)
     sweep(root, pts, circle_profile(r, 8, math.pi / 8), "rubber", "dp_cable")
-    # the white twist tie (a moving piece: the code takes it off)
-    tth = coil.tie
-    cen, out, hw, hh = coil.bundle_section(tth)
-    tan = coil.tangent(tth)
-    tie_a = P.anchor("A_TIE_0", P.Frame(cen + V((0, hh, 0)), (0, 1, 0), tuple(tan)), (hw * 2 + 0.006, TIE_W + 0.012, hh * 2 + 0.006),
-                     root, meta="tie=twist,colour=white")
-    twist_tie(tie_a, cen, tan, (0, 1, 0), hw, hh, pig_dir=tan)
+    cen, out, hw, hh = coil.bundle_section(coil.tie)
+    add_tie(root, cen, coil.tangent(coil.tie), hw, hh)
     return dict(note="1.8 m DisplayPort cable (d 5.8 mm), 6 turns, both DP heads inside the coil")
 
 
@@ -427,13 +463,131 @@ def build_coil_c13(root):
     for p in pts:
         p.y = max(p.y, r)
     sweep(root, pts, circle_profile(r, 8, math.pi / 8), "rubber", "c13_cord")
-    tth = coil.tie
-    cen, out, hw, hh = coil.bundle_section(tth)
-    tan = coil.tangent(tth)
-    tie_a = P.anchor("A_TIE_0", P.Frame(cen + V((0, hh, 0)), (0, 1, 0), tuple(tan)), (hw * 2 + 0.006, TIE_W + 0.012, hh * 2 + 0.006),
-                     root, meta="tie=twist,colour=white")
-    twist_tie(tie_a, cen, tan, (0, 1, 0), hw, hh, pig_dir=tan)
+    cen, out, hw, hh = coil.bundle_section(coil.tie)
+    add_tie(root, cen, coil.tangent(coil.tie), hw, hh)
     return dict(note="1.5 m power cord (d 6.0 mm), 5 turns; C13 end and NEMA 5-15P wall plug inside the coil")
+
+
+# ====================================================================== coil_sata_pair
+
+SATA_W, SATA_T = 0.0076, 0.0014     # the flat 7-wire cable (as plug_sata_data's stub)
+
+
+def sata_right_angle(fr, parent, side=1):
+    """A right-angle SATA data plug: the plug_sata_data face and latch clip, a shorter body, and the flat cable leaving
+    from a boot on one side (local +x if side > 0). Frame like build_plugs (origin at the face centre, +Z into the
+    body, +Y the latch side). Returns (exit point, exit direction)."""
+    W, H, Lb = 0.0108, 0.0058, 0.0105
+    tag = "connector_black"
+    face_t = 0.0016
+    hole = PL.sata_l_hole(W - 0.0024, H - 0.0024, 0.0016)
+    P.slab("ra_face", P.rrect(W, H, 0.0005), face_t, tag, fr.sub(0, 0, face_t / 2), holes=[hole], parent=parent)
+    P.cube("ra_body", (0, 0, face_t + (Lb - face_t) / 2), (W, H, Lb - face_t), tag, fr, parent, bevel=0.0005)
+    for i in range(7):
+        P.cube("ra_pin", (-W / 2 + 0.0024 + 0.0004 + i * 0.00105 + 0.0006, -H / 2 + 0.0016, 0.0012), (0.0006, 0.0003, 0.0015),
+               "gold", fr, parent)
+    # the boot the cable leaves from, on the side at the back, and its grip ribs
+    bx = side * (W / 2 + 0.0019)
+    P.cube("ra_boot", (bx, 0, Lb - 0.0047), (0.0040, 0.0030, 0.0088), tag, fr, parent, bevel=0.0007)
+    for k in range(3):
+        P.cube("ra_rib", (side * (W / 2 + 0.0006 + k * 0.0011), 0.0016, Lb - 0.0047), (0.0005, 0.0004, 0.0080), tag, fr, parent)
+    # the metal latch clip over the top, its press tab towards the back
+    P.cube("ra_clip", (0, H / 2 + 0.0003, 0.0058), (0.0042, 0.0005, 0.0088), "steel", fr, parent)
+    P.cube("ra_clip", (0, H / 2 + 0.0002, 0.0012), (0.0042, 0.0008, 0.0009), "steel", fr, parent)
+    P.cube("ra_clip_tab", (0, H / 2 + 0.0009, 0.0098), (0.0046, 0.0009, 0.0022), "steel", fr, parent)
+    return fr.p(side * (W / 2 + 0.0039), 0, Lb - 0.0047), fr.u * side
+
+
+def accordion(L, n, p_mid, p_end, y0, z, seed, samples=8, lift_at=None):
+    """Centre line of a flat cable folded back and forth (an accordion) lying flat: n layers between x = -L/2 and +L/2,
+    layer 0 on the floor running towards +x, each fold a loose half turn. The layers spread apart towards the folds
+    (p_mid at the middle, where the tie squeezes them, p_end at the folds); lift_at lifts the stack by the tie's
+    thickness where the tie passes under it."""
+    rng = random.Random(seed)
+    zs = [z + rng.uniform(-0.0007, 0.0007) for _ in range(n)]
+    ends = [(-L / 2 + rng.uniform(-0.002, 0.002), L / 2 + rng.uniform(-0.002, 0.002)) for _ in range(n)]
+
+    def pitch(x):
+        return p_mid + (p_end - p_mid) * min(1.0, (2 * abs(x) / L)) ** 2
+
+    def layer_y(i, x):
+        y = y0 + i * pitch(x)
+        if lift_at is not None:
+            y += (TIE_T + 0.0002) * math.exp(-((x - lift_at) / 0.007) ** 2)
+        return y
+    pts = []
+    for i in range(n):
+        xa, xb = ends[i]
+        if i % 2:
+            xa, xb = xb, xa
+        for k in range(samples + 1):
+            t = k / samples
+            x = xa + (xb - xa) * t
+            # a slight sideways drift along each layer
+            zz = zs[i] + 0.0005 * math.sin(math.pi * t + i)
+            pts.append(V((x, layer_y(i, x), zz)))
+        if i < n - 1:
+            # the fold up to the next layer: a half turn bulging past the end
+            xe = xb
+            y1, y2 = layer_y(i, xe), layer_y(i + 1, xe)
+            R = (y2 - y1) / 2
+            yc = (y1 + y2) / 2
+            out = 1 if xb > xa else -1
+            for k in range(1, 8):
+                ph = -math.pi / 2 + math.pi * k / 8
+                pts.append(V((xe + out * R * math.cos(ph) * 1.25, yc + R * math.sin(ph), zs[i] + (zs[i + 1] - zs[i]) * k / 8)))
+    return pts, pitch
+
+
+def build_coil_sata_pair(root):
+    """Two flat 0.5 m SATA data cables (black, latching plugs; one with a right-angle end), each folded in five layers,
+    lying side by side and held by a white twist tie round the middle. Each cable's first plug lies past the -x end,
+    its last plug (the right-angle one on cable 2) beside the bundle, its lead curling back from the top layer."""
+    L = 0.083
+    n = 5
+    y0 = SATA_T / 2 + 0.0001
+    H = 0.0058
+    xt = -0.008
+    p_mid, p_end = SATA_T + 0.00012, 0.0021
+    zc = (0.0047, -0.0047)
+    for ci, z in enumerate(zc):
+        pts, pitch = accordion(L, n, p_mid, p_end, y0, z, seed=11 + ci, lift_at=xt)
+        # plug A past the -x end, on the floor, face towards -x
+        fa = V((-L / 2 - 0.0035 - 0.0185, H / 2, 0.0056 if ci == 0 else -0.0056))
+        drop_stub(PL.plug_sata_data, P.Frame(fa, (1, 0, 0), (0, 1, 0)), root)
+        ea = fa + V((0.0185, 0, 0))
+        start = lead(ea, (1, 0, 0), pts[0], (1, 0, 0), 6, 0.002, 0.002, lift=0.0)
+        top = pts[-1]
+        if ci == 0:
+            # plug B beside the bundle (+z side), face towards -x, its cable curling back from the top layer
+            fb = V((0.0225, H / 2, 0.0175))
+            drop_stub(PL.plug_sata_data, P.Frame(fb, (1, 0, 0), (0, 1, 0)), root)
+            eb, tb = fb + V((0.0185, 0, 0)), V((1, 0, 0))
+        else:
+            # the right-angle plug beside the bundle (-z side), face towards -z, the cable entering its +x side
+            fb = V((0.0300, H / 2, -0.0200))
+            eb, tb = sata_right_angle(P.Frame(fb, (0, 0, 1), (0, 1, 0)), root, side=1)
+        end = lead(top, (1, 0, 0), eb, -tb, 16, 0.018, 0.012, lift=0.0)
+        for k, p in enumerate(end):
+            p.y = max(p.y, SATA_W / 2 * math.sin(math.pi * k / 16) ** 0.7 + 0.0002)
+        path = start[:-1] + pts + end[1:]
+        # flat on the first lead, across = z through the folds; on the last lead the cable rolls up on its edge to
+        # make the U-turn (a flat cable only bends the easy way) and lies flat again at the plug
+        ne = len(end) - 1
+        roll = []
+        for k in range(1, len(end)):
+            T = (end[min(k + 1, ne)] - end[k - 1]).normalized()
+            flat_side = V((0, 1, 0)).cross(T)
+            a = (math.pi / 2) * math.sin(math.pi * k / ne) ** 0.7
+            roll.append(flat_side.normalized() * math.cos(a) + V((0, 1, 0)) * math.sin(a))
+        sides = [None] * (len(start) - 1) + [V((0, 0, 1))] * len(pts) + roll
+        geo_obj(root, ribbon_sweep(path, oval_profile(SATA_W, SATA_T, 10), sides), "sata_cable", "rubber", 60.0)
+    # the tie round both stacks, a little off centre
+    pm = pitch(xt)
+    hh = (n - 1) * pm / 2 + SATA_T / 2 + 0.0003
+    cen = V((xt, y0 + (n - 1) * pm / 2 + TIE_T + 0.0003, 0.0))
+    add_tie(root, cen, (1, 0, 0), 0.0047 + SATA_W / 2 + 0.0009, hh)
+    return dict(note="two 0.5 m flat SATA data cables folded in 5 layers; cable 2 ends in a right-angle plug")
 
 
 # ====================================================================== registry and driver
@@ -442,6 +596,7 @@ MODELS = {
     "coil_dp": (build_coil_dp, dict(fit=("box_cable_dp A_ITEM_PART_0", (0.115, 0.115, 0.020)))),
     "coil_c13": (build_coil_c13, dict(fit=("box_psu_750 A_ITEM_CORD_0", (0.120, 0.090, 0.016)),
                                       fit2=("box_psu_450 A_ITEM_CORD_0", (0.090, 0.075, 0.014)))),
+    "coil_sata_pair": (build_coil_sata_pair, dict(fit=("box_mb_ridge_b5/z4 A_ITEM_CORD_0", (0.120, 0.075, 0.012)))),
 }
 
 
