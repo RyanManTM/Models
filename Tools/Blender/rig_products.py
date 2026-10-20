@@ -842,12 +842,18 @@ def build_ram(ctx):
     R.anchor("A_HIT_0", F((0, sy / 2, 0)), (sx, sy, sz))
     R.explode = {"A_INSERT_BLISTER_0": (0.22, 0.03, 0), "A_ITEM_DOC_0": (0, 0.05, 0), "A_SEAL_0": (0, 0.02, 0.02),
                  "A_ITEM_PART_0": (0, 0.03, 0.02), "A_ITEM_PART_1": (0, 0.03, -0.02)}
+    if plist:
+        explode_docs(R, [f"A_ITEM_DOC_{i}" for i in range(len(plist))], (0.0, 0.07, 0.0), (0.0, -0.025, 0.06))
     R.open_view = (40, 48)
     R.explode_view = (35, 35)
     R.open_extra = {"A_INSERT_BLISTER_0": (0.12, 0, 0)}
     NOTES[pid] = ("RAM: end tuck flap A_FLAP_0 (1) -> dust flaps A_FLAP_1/2 (2) -> blister tray A_INSERT_BLISTER_0 slides out +x (3), "
                   "then on it: installation card A_ITEM_DOC_0 and the blister seal A_SEAL_0 (4) -> blister lid A_CLAMLID_0 (5) "
                   "-> sticks A_ITEM_PART_0/1 (6, guard=1).")
+    if plist:
+        NOTES[pid] = (f"RAM: end tuck flap A_FLAP_0 (1) -> dust flaps A_FLAP_1/2 (2) -> blister tray A_INSERT_BLISTER_0 slides out +x "
+                      f"(3) -> on it the blister seal A_SEAL_0 and {len(plist)} papers in a pile on the lid (4..{3 + len(plist)}) "
+                      f"-> blister lid A_CLAMLID_0 ({lid_order}) -> sticks A_ITEM_PART_0/1 ({lid_order + 1}, guard=1).")
     return R
 
 
@@ -1173,9 +1179,10 @@ def build_psu(ctx):
                  caps[0]: (-0.07, 0.16, 0), caps[1]: (0.07, 0.16, 0),
                  "A_TAPE_0": (-0.03, 0.02, 0), "A_TAPE_1": (0, 0.03, 0), "A_TAPE_2": (0.03, 0.02, 0)}
     if cat:
-        explode_docs(R, names, (0.0, 0.40, 0.12), (0.0, 0.02, 0.10))
+        explode_docs(R, names, (0.04, 0.44, 0.20), (0.0, 0.03, 0.10))
         if semi:
-            R.explode["A_ITEM_POUCH_0"] = (-0.14, 0.30, -0.02)
+            R.explode["A_ITEM_POUCH_0"] = (-0.17, 0.30, 0.0)
+            R.explode["A_ITEM_CORD_0"] = (0.0, 0.32, -0.20)
     R.open_view = (22, 55)
     R.explode_fill = 0.75
     if gold:
@@ -1285,6 +1292,8 @@ def build_cooler_stock(ctx):
              under=[lid])
     R.anchor("A_HIT_0", F((0, sy / 2, 0)), (sx, sy, sz))
     R.explode = {"A_INSERT_CLAM_0": (0, 0.12, 0), "A_ITEM_PART_0": (0, 0.07, 0), "A_ITEM_DOC_0": (0.14, 0.0, 0.05)}
+    if is_catalog(ctx):
+        explode_docs(R, names, (0.14, 0.0, 0.05), (0.03, 0.0, 0.08))
     R.open_view = (20, 55)
     NOTES[pid] = ("Stock cooler: tuck lid A_FLAP_0 (1) -> dust flaps (2) -> clear clamshell A_INSERT_CLAM_0 lifted out (3) -> "
                   "clamshell lid A_CLAMLID_0 and the leaflet under the clamshell (4) -> cooler (5). Box depth 0.15 (was 0.12): "
@@ -1475,9 +1484,9 @@ def build_cooler_low(ctx):
     R.cylinder("syringe", sf.sub(0, 0, -0.026), 0.0030, 0.006, "grey_plastic", 16, anc="A_ITEM_HW_1", z0=0.0)
     R.cylinder("syringe", sf.sub(0, 0, -0.0275), 0.0065, 0.0015, "grey_plastic", 20, anc="A_ITEM_HW_1", z0=0.0)
     R.anchor("A_HIT_0", F((0, sy / 2, 0)), (sx, sy, sz))
-    R.explode = {"A_ITEM_PART_0": (0, 0.10, 0), "A_INSERT_FOAM_0": (-0.04, 0.03, 0), "A_INSERT_ACCBOX_0": (0.12, 0.05, 0.06),
-                 "A_ITEM_HW_0": (0.14, 0.10, 0.03), "A_ITEM_HW_1": (0.16, 0.10, 0.08)}
-    explode_docs(R, names, (0.0, 0.18, 0.14), (0.03, 0.02, 0.06))
+    R.explode = {"A_ITEM_PART_0": (0, 0.14, -0.02), "A_INSERT_FOAM_0": (-0.03, 0.05, 0), "A_INSERT_ACCBOX_0": (0.14, 0.03, 0.08),
+                 "A_ITEM_HW_0": (0.03, 0.06, 0.03), "A_ITEM_HW_1": (0.03, 0.06, 0.08)}
+    explode_docs(R, names, (-0.02, 0.02, sz + 0.06), (0.05, 0.015, 0.05))
     R.open_view = (22, 58)
     NOTES[pid] = (f"Low-profile cooler: tuck lid A_FLAP_0 (1) -> dust flaps (2) -> {n} papers in a pile on top (3..{2 + n}) -> "
                   f"cooler A_ITEM_PART_0 and the accessory box A_INSERT_ACCBOX_0 ({3 + n}) -> EPS tray A_INSERT_FOAM_0 and the "

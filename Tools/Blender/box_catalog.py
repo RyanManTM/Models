@@ -154,8 +154,8 @@ BRANDS = {
     "Hush": dict(bg0=(0.03, 0.03, 0.03), bg1=(0.12, 0.12, 0.12), accent=(0.96, 0.52, 0.08), text=DARK_TEXT,
                  font="seguibl.ttf", lower=True, ribbon=(0.96, 0.52, 0.08), ink=(0.08, 0.08, 0.08)),
     # cooling
-    "Noctis": dict(bg0=(0.20, 0.13, 0.09), bg1=(0.84, 0.76, 0.62), accent=(0.47, 0.25, 0.16), text=(0.98, 0.96, 0.92),
-                   font="GILSANUB.TTF", field=(0.84, 0.76, 0.62), field_ink=(0.36, 0.20, 0.13)),
+    "Noctis": dict(bg0=(0.06, 0.04, 0.03), bg1=(0.30, 0.19, 0.13), accent=(0.86, 0.76, 0.60), text=(0.98, 0.96, 0.92),
+                   font="GILSANUB.TTF", field=(0.84, 0.76, 0.62), field_ink=(0.36, 0.20, 0.13), ribbon=(0.58, 0.32, 0.22)),
     "Arctiq": dict(bg0=(0.96, 0.97, 0.98), bg1=(0.78, 0.86, 0.93), accent=(0.0, 0.40, 0.74), text=(0.05, 0.10, 0.20),
                    font="seguibl.ttf"),
     "Glacier": dict(bg0=(0.03, 0.03, 0.035), bg1=(0.10, 0.16, 0.17), accent=(0.10, 0.80, 0.72), text=DARK_TEXT,
