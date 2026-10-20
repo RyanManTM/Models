@@ -90,6 +90,12 @@ case_lumin_216: 99168 triangles, 84 meshes
   A_FAN_0 pos=(0.1827, 0.355, 0.03) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=1200,rgb=1
   A_FAN_1 pos=(-0.1869, 0.318, -0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.16000,0.16000,0.02500 meta=axis=z,spin=-1,rpm=1200,rgb=1
   A_FAN_2 pos=(-0.1869, 0.155, -0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.16000,0.16000,0.02500 meta=axis=z,spin=-1,rpm=1200,rgb=1
+  A_FILM_FRONT_0 pos=(-0.21855, 0.225, -0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.21100,0.45100,0.00010 meta=peel=-y,tab=+y+z,on=front_panel
+  A_FILM_GLASS_0@A_PANEL_SIDE_0 pos=(-0.0021, 0.225, 0.10455) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.39640,0.44700,0.00010 meta=peel=-x,tab=+x+y,side=outer,glass=A_PANEL_SIDE_0
+  A_FILM_GLASS_1@A_PANEL_SIDE_0 pos=(-0.0021, 0.225, 0.10045) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.39640,0.44700,0.00010 meta=peel=-x,tab=+x+y,side=inner,glass=A_PANEL_SIDE_0
+  A_FILM_HUB_0@A_FAN_0 pos=(0.1714, 0.355, 0.03) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.03385,0.03385,0.00010 meta=peel=+x,tab=+x,shape=disc
+  A_FILM_HUB_1@A_FAN_1 pos=(-0.1982, 0.318, 0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.04513,0.04513,0.00010 meta=peel=+x,tab=+x,shape=disc
+  A_FILM_HUB_2@A_FAN_2 pos=(-0.1982, 0.155, 0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.04513,0.04513,0.00010 meta=peel=+x,tab=+x,shape=disc
   A_GROMMET_0 pos=(-0.077, 0.335, -0.09525) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02000,0.06000,0.00400 meta=on=tray
   A_GROMMET_1 pos=(-0.077, 0.25, -0.09525) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02000,0.06000,0.00400 meta=on=tray
   A_GROMMET_2 pos=(-0.077, 0.165, -0.09525) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02000,0.06000,0.00400 meta=on=tray
@@ -261,6 +267,13 @@ case_phanta_g360a: 110284 triangles, 89 meshes
   A_FAN_1 pos=(-0.1869, 0.352, -0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=1200,rgb=1
   A_FAN_2 pos=(-0.1869, 0.23, -0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=1200,rgb=1
   A_FAN_3 pos=(-0.1869, 0.108, -0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=1200,rgb=1
+  A_FILM_FRONT_0 pos=(-0.21855, 0.225, -0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.21100,0.45100,0.00010 meta=peel=-y,tab=+y+z,on=front_panel
+  A_FILM_GLASS_0@A_PANEL_SIDE_0 pos=(-0.0021, 0.225, 0.10455) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.39640,0.44700,0.00010 meta=peel=-x,tab=+x+y,side=outer,glass=A_PANEL_SIDE_0
+  A_FILM_GLASS_1@A_PANEL_SIDE_0 pos=(-0.0021, 0.225, 0.10045) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.39640,0.44700,0.00010 meta=peel=-x,tab=+x+y,side=inner,glass=A_PANEL_SIDE_0
+  A_FILM_HUB_0@A_FAN_0 pos=(0.1714, 0.355, 0.03) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.03385,0.03385,0.00010 meta=peel=+x,tab=+x,shape=disc
+  A_FILM_HUB_1@A_FAN_1 pos=(-0.1982, 0.352, 0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.03385,0.03385,0.00010 meta=peel=+x,tab=+x,shape=disc
+  A_FILM_HUB_2@A_FAN_2 pos=(-0.1982, 0.23, 0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.03385,0.03385,0.00010 meta=peel=+x,tab=+x,shape=disc
+  A_FILM_HUB_3@A_FAN_3 pos=(-0.1982, 0.108, 0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.03385,0.03385,0.00010 meta=peel=+x,tab=+x,shape=disc
   A_GROMMET_0 pos=(-0.077, 0.335, -0.09525) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02000,0.06000,0.00400 meta=on=tray
   A_GROMMET_1 pos=(-0.077, 0.25, -0.09525) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02000,0.06000,0.00400 meta=on=tray
   A_GROMMET_2 pos=(-0.077, 0.165, -0.09525) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02000,0.06000,0.00400 meta=on=tray
@@ -426,6 +439,12 @@ case_nexa_h5: 93334 triangles, 83 meshes
   A_FAN_0 pos=(0.1827, 0.355, 0.03) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=1200
   A_FAN_1 pos=(-0.1869, 0.3, -0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=1200
   A_FAN_2 pos=(-0.1869, 0.17, -0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=1200
+  A_FILM_FRONT_0 pos=(-0.21855, 0.225, -0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.21100,0.45100,0.00010 meta=peel=-y,tab=+y+z,on=front_panel
+  A_FILM_GLASS_0@A_PANEL_SIDE_0 pos=(-0.0021, 0.225, 0.10455) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.39640,0.44700,0.00010 meta=peel=-x,tab=+x+y,side=outer,glass=A_PANEL_SIDE_0
+  A_FILM_GLASS_1@A_PANEL_SIDE_0 pos=(-0.0021, 0.225, 0.10045) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.39640,0.44700,0.00010 meta=peel=-x,tab=+x+y,side=inner,glass=A_PANEL_SIDE_0
+  A_FILM_HUB_0@A_FAN_0 pos=(0.1714, 0.355, 0.03) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.03385,0.03385,0.00010 meta=peel=+x,tab=+x,shape=disc
+  A_FILM_HUB_1@A_FAN_1 pos=(-0.1982, 0.3, 0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.03385,0.03385,0.00010 meta=peel=+x,tab=+x,shape=disc
+  A_FILM_HUB_2@A_FAN_2 pos=(-0.1982, 0.17, 0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.03385,0.03385,0.00010 meta=peel=+x,tab=+x,shape=disc
   A_GROMMET_0 pos=(-0.077, 0.335, -0.09525) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02000,0.06000,0.00400 meta=on=tray
   A_GROMMET_1 pos=(-0.077, 0.25, -0.09525) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02000,0.06000,0.00400 meta=on=tray
   A_GROMMET_2 pos=(-0.077, 0.165, -0.09525) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02000,0.06000,0.00400 meta=on=tray
@@ -593,6 +612,12 @@ case_facet_fjord: 95292 triangles, 86 meshes
   A_FAN_0 pos=(0.1827, 0.355, 0.03) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=1200
   A_FAN_1 pos=(-0.1869, 0.3, -0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.14000,0.14000,0.02500 meta=axis=z,spin=-1,rpm=1200
   A_FAN_2 pos=(-0.1869, 0.155, -0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.14000,0.14000,0.02500 meta=axis=z,spin=-1,rpm=1200
+  A_FILM_FRONT_0 pos=(-0.21855, 0.225, -0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.21100,0.45100,0.00010 meta=peel=-y,tab=+y+z,on=front_panel
+  A_FILM_GLASS_0@A_PANEL_SIDE_0 pos=(-0.0021, 0.225, 0.10455) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.39640,0.44700,0.00010 meta=peel=-x,tab=+x+y,side=outer,glass=A_PANEL_SIDE_0
+  A_FILM_GLASS_1@A_PANEL_SIDE_0 pos=(-0.0021, 0.225, 0.10045) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.39640,0.44700,0.00010 meta=peel=-x,tab=+x+y,side=inner,glass=A_PANEL_SIDE_0
+  A_FILM_HUB_0@A_FAN_0 pos=(0.1714, 0.355, 0.03) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.03385,0.03385,0.00010 meta=peel=+x,tab=+x,shape=disc
+  A_FILM_HUB_1@A_FAN_1 pos=(-0.1982, 0.3, 0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.03949,0.03949,0.00010 meta=peel=+x,tab=+x,shape=disc
+  A_FILM_HUB_2@A_FAN_2 pos=(-0.1982, 0.155, 0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.03949,0.03949,0.00010 meta=peel=+x,tab=+x,shape=disc
   A_GROMMET_0 pos=(-0.077, 0.335, -0.09525) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02000,0.06000,0.00400 meta=on=tray
   A_GROMMET_1 pos=(-0.077, 0.25, -0.09525) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02000,0.06000,0.00400 meta=on=tray
   A_GROMMET_2 pos=(-0.077, 0.165, -0.09525) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02000,0.06000,0.00400 meta=on=tray
@@ -759,6 +784,12 @@ case_hush_500dx: 94844 triangles, 85 meshes
   A_FAN_0 pos=(0.1827, 0.355, 0.03) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=1200
   A_FAN_1 pos=(-0.1869, 0.3, -0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.14000,0.14000,0.02500 meta=axis=z,spin=-1,rpm=1200
   A_FAN_2 pos=(-0.1869, 0.155, -0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.14000,0.14000,0.02500 meta=axis=z,spin=-1,rpm=1200
+  A_FILM_FRONT_0 pos=(-0.21855, 0.225, -0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.21100,0.45100,0.00010 meta=peel=-y,tab=+y+z,on=front_panel
+  A_FILM_GLASS_0@A_PANEL_SIDE_0 pos=(-0.0021, 0.225, 0.10455) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.39640,0.44700,0.00010 meta=peel=-x,tab=+x+y,side=outer,glass=A_PANEL_SIDE_0
+  A_FILM_GLASS_1@A_PANEL_SIDE_0 pos=(-0.0021, 0.225, 0.10045) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.39640,0.44700,0.00010 meta=peel=-x,tab=+x+y,side=inner,glass=A_PANEL_SIDE_0
+  A_FILM_HUB_0@A_FAN_0 pos=(0.1714, 0.355, 0.03) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.03385,0.03385,0.00010 meta=peel=+x,tab=+x,shape=disc
+  A_FILM_HUB_1@A_FAN_1 pos=(-0.1982, 0.3, 0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.03949,0.03949,0.00010 meta=peel=+x,tab=+x,shape=disc
+  A_FILM_HUB_2@A_FAN_2 pos=(-0.1982, 0.155, 0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.03949,0.03949,0.00010 meta=peel=+x,tab=+x,shape=disc
   A_GROMMET_0 pos=(-0.077, 0.335, -0.09525) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02000,0.06000,0.00400 meta=on=tray
   A_GROMMET_1 pos=(-0.077, 0.25, -0.09525) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02000,0.06000,0.00400 meta=on=tray
   A_GROMMET_2 pos=(-0.077, 0.165, -0.09525) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02000,0.06000,0.00400 meta=on=tray
@@ -929,6 +960,13 @@ case_facet_fizzair: 102728 triangles, 88 meshes
   A_FAN_1 pos=(-0.1869, 0.352, -0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=1200
   A_FAN_2 pos=(-0.1869, 0.23, -0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=1200
   A_FAN_3 pos=(-0.1869, 0.108, -0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=1200
+  A_FILM_FRONT_0 pos=(-0.21855, 0.225, -0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.21100,0.45100,0.00010 meta=peel=-y,tab=+y+z,on=front_panel
+  A_FILM_GLASS_0@A_PANEL_SIDE_0 pos=(-0.0021, 0.225, 0.10455) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.39640,0.44700,0.00010 meta=peel=-x,tab=+x+y,side=outer,glass=A_PANEL_SIDE_0
+  A_FILM_GLASS_1@A_PANEL_SIDE_0 pos=(-0.0021, 0.225, 0.10045) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.39640,0.44700,0.00010 meta=peel=-x,tab=+x+y,side=inner,glass=A_PANEL_SIDE_0
+  A_FILM_HUB_0@A_FAN_0 pos=(0.1714, 0.355, 0.03) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.03385,0.03385,0.00010 meta=peel=+x,tab=+x,shape=disc
+  A_FILM_HUB_1@A_FAN_1 pos=(-0.1982, 0.352, 0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.03385,0.03385,0.00010 meta=peel=+x,tab=+x,shape=disc
+  A_FILM_HUB_2@A_FAN_2 pos=(-0.1982, 0.23, 0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.03385,0.03385,0.00010 meta=peel=+x,tab=+x,shape=disc
+  A_FILM_HUB_3@A_FAN_3 pos=(-0.1982, 0.108, 0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.03385,0.03385,0.00010 meta=peel=+x,tab=+x,shape=disc
   A_GROMMET_0 pos=(-0.077, 0.335, -0.09525) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02000,0.06000,0.00400 meta=on=tray
   A_GROMMET_1 pos=(-0.077, 0.25, -0.09525) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02000,0.06000,0.00400 meta=on=tray
   A_GROMMET_2 pos=(-0.077, 0.165, -0.09525) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02000,0.06000,0.00400 meta=on=tray
@@ -1092,6 +1130,11 @@ case_brickhouse_beige98: 103588 triangles, 82 meshes
   A_BUTTON_RESET_0 pos=(-0.2185, 0.4268, -0.031) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.00600,0.00600,0.00600 meta=press=+z_local,travel=0.001
   A_BUTTON_TURBO_0 pos=(-0.2188, 0.287, 0.012) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.01600,0.01000,0.00800 meta=press=+z_local,travel=0.0015,toggle=1,fun=1
   A_FAN_0 pos=(0.1827, 0.355, 0.03) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=1200
+  A_FILM_BADGE_0 pos=(-0.22015, 0.0195, -0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.10400,0.01800,0.00010 meta=peel=-z,tab=+z,on=badge
+  A_FILM_FRONT_0 pos=(-0.21855, 0.225, -0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.21100,0.45100,0.00010 meta=peel=-y,tab=+y+z,on=front_panel
+  A_FILM_GLASS_0@A_PANEL_SIDE_0 pos=(-0.0021, 0.225, 0.10455) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.39640,0.44700,0.00010 meta=peel=-x,tab=+x+y,side=outer,glass=A_PANEL_SIDE_0
+  A_FILM_GLASS_1@A_PANEL_SIDE_0 pos=(-0.0021, 0.225, 0.10045) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.39640,0.44700,0.00010 meta=peel=-x,tab=+x+y,side=inner,glass=A_PANEL_SIDE_0
+  A_FILM_HUB_0@A_FAN_0 pos=(0.1714, 0.355, 0.03) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.03385,0.03385,0.00010 meta=peel=+x,tab=+x,shape=disc
   A_GROMMET_0 pos=(-0.077, 0.335, -0.09525) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02000,0.06000,0.00400 meta=on=tray
   A_GROMMET_1 pos=(-0.077, 0.25, -0.09525) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02000,0.06000,0.00400 meta=on=tray
   A_GROMMET_2 pos=(-0.077, 0.165, -0.09525) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02000,0.06000,0.00400 meta=on=tray
@@ -1175,6 +1218,7 @@ fan_arctiq_p12: 8136 triangles, 7 meshes
   mesh plug_fan_0@A_PLUG_FAN_0#tex_parts_c_palette  tris=176
   mesh s_tex_fan_arctiq_p12_motor#tex_fan_arctiq_p12_motor  tris=120
   A_FAN_0 pos=(-0.0, 0.0, -0.0) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=1800
+  A_FILM_HUB_0@A_FAN_0 pos=(0.0, 0.0, -0.0113) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.03936,0.03936,0.00010 meta=peel=+x,tab=+x,shape=disc
   A_HIT_0 pos=(-0.0, 0.0, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.12000,0.12000,0.02500 meta=
   A_HOLE_0 pos=(-0.0525, 0.0525, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1050,through=1,screw=fan
   A_HOLE_1 pos=(0.0525, 0.0525, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1050,through=1,screw=fan
@@ -1193,6 +1237,7 @@ fan_noctis_a12x25: 10552 triangles, 8 meshes
   mesh plug_fan_0@A_PLUG_FAN_0#tex_parts_c_palette  tris=176
   mesh s_tex_fan_noctis_a12x25_motor#tex_fan_noctis_a12x25_motor  tris=120
   A_FAN_0 pos=(-0.0, 0.0, -0.0) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=2000
+  A_FILM_HUB_0@A_FAN_0 pos=(0.0, 0.0, -0.0113) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.03739,0.03739,0.00010 meta=peel=+x,tab=+x,shape=disc
   A_HIT_0 pos=(-0.0, 0.0, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.12000,0.12000,0.02500 meta=
   A_HOLE_0 pos=(-0.0525, 0.0525, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1050,through=1,screw=fan
   A_HOLE_1 pos=(0.0525, 0.0525, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1050,through=1,screw=fan
@@ -1210,6 +1255,7 @@ fan_noctis_a12x25_black: 10552 triangles, 7 meshes
   mesh plug_fan_0@A_PLUG_FAN_0#tex_parts_c_palette  tris=176
   mesh s_tex_fan_noctis_a12x25_black_motor#tex_fan_noctis_a12x25_black_motor  tris=120
   A_FAN_0 pos=(-0.0, 0.0, -0.0) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=2000
+  A_FILM_HUB_0@A_FAN_0 pos=(0.0, 0.0, -0.0113) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.03739,0.03739,0.00010 meta=peel=+x,tab=+x,shape=disc
   A_HIT_0 pos=(-0.0, 0.0, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.12000,0.12000,0.02500 meta=
   A_HOLE_0 pos=(-0.0525, 0.0525, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1050,through=1,screw=fan
   A_HOLE_1 pos=(0.0525, 0.0525, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1050,through=1,screw=fan
@@ -1232,6 +1278,8 @@ fan_lumin_sl120_white: 12572 triangles, 12 meshes
   mesh plug_fan_0@A_PLUG_FAN_0#tex_parts_c_palette  tris=176
   mesh s_tex_fan_lumin_sl120_white_motor#tex_fan_lumin_sl120_white_motor  tris=120
   A_FAN_0 pos=(-0.0, 0.0, -0.0) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=1900,rgb=1
+  A_FILM_HUB_0@A_FAN_0 pos=(0.0, 0.0, -0.0113) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.03936,0.03936,0.00010 meta=peel=+x,tab=+x,shape=disc
+  A_FILM_RING_0 pos=(-0.0, 0.0, -0.01255) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.12000,0.12000,0.00010 meta=peel=+x,tab=+x+y,shape=ring,r_in=0.0540
   A_HIT_0 pos=(-0.0, 0.0, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.12000,0.12000,0.02500 meta=
   A_HOLE_0 pos=(-0.0525, 0.0525, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1050,through=1,screw=fan
   A_HOLE_1 pos=(0.0525, 0.0525, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1050,through=1,screw=fan
@@ -1257,6 +1305,8 @@ fan_corvex_af120_rgb: 11700 triangles, 12 meshes
   mesh plug_fan_0@A_PLUG_FAN_0#tex_parts_c_palette  tris=176
   mesh s_tex_fan_corvex_af120_rgb_motor#tex_fan_corvex_af120_rgb_motor  tris=120
   A_FAN_0 pos=(-0.0, 0.0, -0.0) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=1500,rgb=1
+  A_FILM_HUB_0@A_FAN_0 pos=(0.0, 0.0, -0.0113) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.04723,0.04723,0.00010 meta=peel=+x,tab=+x,shape=disc
+  A_FILM_RING_0 pos=(-0.0, 0.0, -0.01255) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.12000,0.12000,0.00010 meta=peel=+x,tab=+x+y,shape=ring,r_in=0.0540
   A_HIT_0 pos=(-0.0, 0.0, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.12000,0.12000,0.02500 meta=
   A_HOLE_0 pos=(-0.0525, 0.0525, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1050,through=1,screw=fan
   A_HOLE_1 pos=(0.0525, 0.0525, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1050,through=1,screw=fan
@@ -1275,6 +1325,7 @@ fan_arctiq_p14: 8136 triangles, 7 meshes
   mesh plug_fan_0@A_PLUG_FAN_0#tex_parts_c_palette  tris=176
   mesh s_tex_fan_arctiq_p14_motor#tex_fan_arctiq_p14_motor  tris=120
   A_FAN_0 pos=(-0.0, 0.0, -0.0) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.14000,0.14000,0.02500 meta=axis=z,spin=-1,rpm=1700
+  A_FILM_HUB_0@A_FAN_0 pos=(0.0, 0.0, -0.0113) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.04362,0.04362,0.00010 meta=peel=+x,tab=+x,shape=disc
   A_HIT_0 pos=(-0.0, 0.0, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.14000,0.14000,0.02500 meta=
   A_HOLE_0 pos=(-0.06225, 0.06225, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1245,through=1,screw=fan
   A_HOLE_1 pos=(0.06225, 0.06225, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1245,through=1,screw=fan
@@ -1293,6 +1344,7 @@ fan_hush_wing4_140: 9376 triangles, 8 meshes
   mesh plug_fan_0@A_PLUG_FAN_0#tex_parts_c_palette  tris=176
   mesh s_tex_fan_hush_wing4_140_motor#tex_fan_hush_wing4_140_motor  tris=120
   A_FAN_0 pos=(-0.0, 0.0, -0.0) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.14000,0.14000,0.02500 meta=axis=z,spin=-1,rpm=1100
+  A_FILM_HUB_0@A_FAN_0 pos=(0.0, 0.0, -0.0113) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.04133,0.04133,0.00010 meta=peel=+x,tab=+x,shape=disc
   A_HIT_0 pos=(-0.0, 0.0, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.14000,0.14000,0.02500 meta=
   A_HOLE_0 pos=(-0.06225, 0.06225, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1245,through=1,screw=fan
   A_HOLE_1 pos=(0.06225, 0.06225, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1245,through=1,screw=fan

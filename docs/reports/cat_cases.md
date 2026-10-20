@@ -85,6 +85,7 @@ Optional style keys, absent on case_brickhouse, case_breeze and case_aero:
 
 - `front_fans = [(y, d), ...]` the front intake fans (heights and sizes) instead of the three 120 mm fans at
   `FRONT_FANS_Y`; their plugs rest where breeze's do.
+- `films=True` the glass film anchors (`glass_films()`), used by every catalogue case and by case_aero.
 - `front_wall(ns, holes) -> holes` the front wall's cut-outs; `face(ns)` the front face decoration (instead of the
   breeze mesh insert / brickhouse inlay); `feet(ns)` instead of the four feet; `extra(ns)` more looks before the
   hitboxes. `ns` is a namespace of `build()`'s locals.
@@ -121,10 +122,39 @@ case_brickhouse, case_breeze and case_aero on Linux into scratch folders, and `e
 
 **Packs:** one fan model per product; `game.per_box` in the catalogue is the count in the box.
 
+## Unboxing: films (anchors only; the game builds the peel meshes)
+
+Every film's XY plane is the surface, +Z faces out, `size` = (w, h, 0.0001). Listed per id in `cases.json` → `unbox`,
+with `docs` (manual, warranty, plus the case badge sticker for cases) and `doc_notes`.
+
+| Where | Anchors | Meta |
+|---|---|---|
+| Every case: side glass, both faces, in the panel frame | `A_FILM_GLASS_0@A_PANEL_SIDE_0` (outer, +z), `A_FILM_GLASS_1@A_PANEL_SIDE_0` (inner, −z) | `peel=-x,tab=+x+y,side=outer/inner` |
+| Every case: the front panel | `A_FILM_FRONT_0` (0.211 × 0.451, on the bezel face, facing −x) | `peel=-y,tab=+y+z` |
+| case_brickhouse_beige98: the aluminium badge | `A_FILM_BADGE_0` | `peel=-z,tab=+z` |
+| Every pre-installed case fan | `A_FILM_HUB_<n>@A_FAN_<n>` (a disc on the hub sticker, spins with the rotor) | `peel=+x,tab=+x,shape=disc` |
+| Every fan product | `A_FILM_HUB_0@A_FAN_0` | as above |
+| RGB fans (sl120_white, af120_rgb) | `A_FILM_RING_0` on the intake face (the glossy light ring), r_in 0.054 | `peel=+x,tab=+x+y,shape=ring` |
+| case_aero (retrofit, `build_parts_d.py` style key `films=True`) | `A_FILM_GLASS_0/1@A_PANEL_SIDE_0` (side glass), `A_FILM_GLASS_2/3` (front glass outer/inner, facing −x/+x) | `glass=front`, `peel=-y,tab=+y+z` |
+
+No caps or stickers: cases and fans ship with none on the real products.
+
+**Proof** (`extras_compare.py`, Linux exports): case_brickhouse and case_breeze SAME; case_aero ONLY ADDED (the four
+glass films), also against the committed Windows FBX; the six cases lumin_216, phanta_g360a, nexa_h5, facet_fjord,
+hush_500dx, facet_fizzair and all seven fans ONLY ADDED against their previous commits. case_brickhouse_beige98 was
+re-exported with a look fix at the same time (the CD tray stands 0.3 mm proud of the bay face instead of flush, so it no
+longer z-fights; its print moved with it) plus the films, so its previews were re-rendered too.
+
 ## Deviations
 - New material colours that no plain tag has (walnut, Noctis brown, the teal accent, orange corners) come from an
   own palette texture `cat_cases_palette.png` (tag `tex_cat_cases_palette`, solid-swatch UVs) and, for the walnut
   slats, a grain texture `tex_case_facet_fjord_wood`.
+- Outward normals: `parts_c.slab` on some planes (e.g. `plane(o, Z, Y)`, the front face) returned inside-out solids
+  on this Linux build, which Unity's back-face culling would show as holes. `build_cat_cases.fix_normals` recalculates
+  outward normals on the closed meshes the style hooks and the fan extras add (build_case's and parts_fan's own meshes
+  are left alone).
+- `case_brickhouse_beige98` adds two anchors to the case contract for fun: `A_BUTTON_TURBO_0` (toggle) and
+  `A_LED_TURBO_0`.
 - `build_cat_cases.py` lowers the Cycles samples of build_case's beauty previews to 40 (runtime only).
 
 ## Rebuild
