@@ -7,6 +7,10 @@ build_parts_d.py - parts batch D: four new catalog parts that drop into the game
                 its own heat-spreader markings (cpu_arc9_ihs.png; the substrate art cpu_v5_pcb.png is shared).
   gpu_rx77      VOLTRA RX 7700, 270 mm, 2.5 slots, 3 fans, 2 x PCIe 8-pin. build_gpu.py with a new spec and style
                 hooks (the shroud overlay, skirts, logo plate, backplate); the frame and anchor kinds of gpu_rx66/rx88.
+  case_aero     AERO View 360 mid-tower. build_case.py with a new style: black, a panoramic glass front, three
+                92 mm ARGB bottom fans; case_breeze's anchors except the fans A_FAN_1..3.
+  mb_ridge_x5   RIDGE X5 Elite + its I/O shield io_ridge_x5. build_board.Board subclassed for looks only (silver PCB,
+                bigger white VRM heatsinks, armoured slots, white I/O cover); mb_ridge_b5's layout and anchors.
 
 With no ids it builds all of them. Each model writes Assets/Resources/Models/<id>.fbx, its textures, previews
 Logs/ModelPreviews/<id>_<n>.png and Logs/ModelPreviews/<id>_report.txt (meshes, triangles, every anchor).

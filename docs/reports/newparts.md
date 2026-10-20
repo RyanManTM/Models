@@ -8,7 +8,7 @@ game exactly like their siblings. Status: **in progress** (this report is update
 | `cpu_arc9` | `cpu_arc5`, `cpu_arc7` | done |
 | `gpu_rx77` | `gpu_rx66`, `gpu_rx88` | done |
 | `case_aero` | `case_breeze` | done |
-| `mb_ridge_x5` + `io_ridge_x5` | `mb_ridge_b5` + `io_ridge_b5` | to do |
+| `mb_ridge_x5` + `io_ridge_x5` | `mb_ridge_b5` + `io_ridge_b5` | done |
 | `box_cpu_arc9`, `box_gpu_rx77`, `box_case_aero`, `box_mb_ridge_x5` | the sibling boxes | to do |
 
 ## Rebuild
@@ -197,6 +197,64 @@ breeze's front-fan plugs rest (`kind=fan4,fan=<n>`); the cables run along the sh
 | Power draw | about 6 W (four ARGB fans) |
 | Price | $129 |
 | Retail box | `box_case_aero`, 0.52 × 0.56 × 0.30 (as the other cases) |
+
+---
+
+## 4. `mb_ridge_x5` + `io_ridge_x5`: RIDGE X5 Elite (premium ATX, Socket V5, DDR5)
+
+- **Script:** `build_parts_d.py` adds a config to `build_board.BOARDS` and builds it with `PremiumBoard`, a subclass of
+  `build_board.Board` that only overrides look methods: `vrm`, `io_shroud`, `m2` (calls the B5's, then adds a second
+  heatsink), `dimm_slot` and `pcie_slot` (call the B5's with other options). No method that creates an anchor is
+  overridden, so the layout is the B5's by construction. `build_board.py` is unchanged.
+- **Size:** ATX 0.244 × 0.305, PCB z 0..0.0016; bounds (−0.123, −0.1525, 0) to (0.1337, 0.1525, 0.0373).
+- **Triangles:** 46,430 in 39 meshes (`mb_ridge_b5` 44,426 in 39; under the 50k board budget). `io_ridge_x5`: 1,244 in 1.
+- **Frame:** as `mb_ridge_b5`: origin at the PCB centre, +z the component side, +x the rear I/O edge, +y the top edge.
+- **Look:** a silver PCB (light grey solder mask, dark silkscreen "RIDGE X5 ELITE", DIMM/PCIe/SATA/F_PANEL labels as
+  on the B5); white VRM heatsinks, taller and wider than the B5's (top: x −15..49, up to z 34 mm, B5 −12..46.5 and
+  29 mm; rear: y 26..131, up to z 37 mm, B5 33..127 and 33 mm) with silver fin edges, a stepped cover and a silver
+  inlay, the rear one level with the white I/O cover so the two read as one block; the white I/O cover with its RGB bar,
+  logo plate and a silver strip; steel armour on both full-length PCIe slots; white DIMM slots and latches; the white
+  M.2 heatsink plus a second one over the M2_2 slot (fixed, looks only); a white chipset heatsink. The cooler keep-out
+  is respected: the heatsinks stay outside `A_SOCKET_COOLER_0`'s footprint as the B5's do (the rear one starts at the
+  same x 0.0774), and the top one stays below the tower cooler's fin stack.
+- **Textures:** `mb_ridge_x5_pcb.png` (PCB art), `mb_ridge_x5_marks.png` (chip marks, plates, pin field, PnP cap),
+  `io_ridge_x5.png` (the shield's labels on bare brushed steel).
+- **I/O shield `io_ridge_x5`:** `build_board.build_shield` on the X5's cut-outs (the B5's), unpainted steel with dark
+  labels to go with the silver theme (the B5's is painted black). Frame as `io_ridge_b5`; `A_HIT_0` meta
+  `board_pose=0.1279,0.07546,0.01999`.
+
+**Anchor comparison** (`anchor_compare.py`)
+
+| Model | vs | Result |
+|---|---|---|
+| `mb_ridge_x5` | `mb_ridge_b5` (committed FBX) | **80 / 80 SAME** (position, axes, size, meta), plus `A_FILM_IO_0` and `A_FILM_CHIPSET_0` |
+| `mb_ridge_x5` | `mb_ridge_z4` | 60 SAME, 20 DIFF (the socket, DIMM notch and rear I/O differences between V5/DDR5 and L17/DDR4) |
+| `io_ridge_x5` | `io_ridge_b5` | 1 / 1 SAME |
+
+The 80 identical anchors include every ATX hole `A_HOLE_0..8` and screw `A_SCREW_PH2_0..8`, `A_SOCKET_CPU_0`,
+`A_MARK_SOCKET_0`, `A_SOCKET_COOLER_0`, `A_LEVER_CPU_0`, `A_PLATE_CPU_0`, `A_COVER_CPU_0`, `A_SOCKET_RAM_0..3` with their
+latches, `A_SOCKET_M2_0`, `A_STANDOFF_M2_0`, `A_COVER_M2_0` with its screws and film, `A_SOCKET_PCIE16_0`,
+`A_LATCH_PCIE_0`, `A_SOCKET_PCIE1_0..1`, every internal port and header (ATX24, EPS8, CPU and SYS fans, F_PANEL,
+USB3, HD audio, SATA 0..3, ARGB), every rear I/O anchor, the debug LEDs and `A_HIT_0..4`. The two film anchors are
+the ones `build_board.Board.films()` defines for every board (PACKAGING.md §3: "the I/O cover and chipset films");
+the committed `mb_ridge_b5.fbx`/`mb_ridge_z4.fbx` predate that method, so a re-export of those boards would gain the
+same two anchors.
+
+**Suggested catalog data**
+
+| Field | Value |
+|---|---|
+| Brand | RIDGE |
+| Name | RIDGE X5 Elite |
+| Socket / chipset | V5 / RX670 |
+| Memory | 4 × DDR5, up to 192 GB, 8000+ MT/s (OC) |
+| Expansion | PCIe 5.0 x16 (armoured), PCIe 4.0 x16 (x4, armoured), 2 × PCIe x1 |
+| Storage | 2 × M.2 NVMe with heatsinks, 4 × SATA 6 Gb/s |
+| Networking | Wi-Fi 6E, 2.5G LAN |
+| Rear I/O | as the B5 (BIOS flashback, 2 × USB 2.0, DP, HDMI, 4 × USB-A 5/10 Gb/s, 2 × USB-C, audio) |
+| Power draw | about 15 W (board only) |
+| Price | $289 |
+| In the box | `io_ridge_x5`, 2 SATA cables, M.2 screws, papers; retail box `box_mb_ridge_x5`, 0.32 × 0.07 × 0.27 |
 
 ---
 
