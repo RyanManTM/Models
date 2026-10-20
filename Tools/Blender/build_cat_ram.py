@@ -877,10 +877,49 @@ def build(rid):
     else:
         wx = (SP_X[1] + 0.4) * 2
     c.anchor("A_HIT_0", (0, 0, top * MM * 0.5), (wx * MM, LEN * MM, top * MM), root)
+    if S["style"] in STYLES:
+        film_anchors(S, root)
     c.join_by_tag(root, "ram")
     c.export(root, rid)
     pp.report(root)
     return root
+
+
+def film_anchors(S, root):
+    """The clear protective films on both spreader faces (anchors only; the game builds the peel meshes): over the
+    whole plate, the raised panels, the face diffuser and the sticker. +Z faces out, the film's X runs along the
+    stick; the pull tab is the top corner at the +y end and the film peels towards -y."""
+    st = STYLES[S["style"]]
+    plate_top = st["plate"](S)
+    span_z = plate_top - ZB
+    raised = [h for _, h in st.get("reliefs", _none)(SPAN_Y, span_z) + st.get("face_rgb", _none)(SPAN_Y, span_z)]
+    fx = (SP_X[1] + max(raised + [0.0]) + 0.1) * MM
+    zc = (ZB + plate_top) * 0.5 * MM
+    size = ((SPAN_Y - 1.0) * MM, (span_z - 0.6) * MM, 0.0005)
+    for i, s in enumerate((1, -1)):
+        c.anchor(f"A_FILM_SPREADER_{i}", (s * fx, 0.0, zc), size, root, forward=(s, 0, 0), up=(0, 0, 1),
+                 meta=f"film=clear,on=spreader_{'+x' if s > 0 else '-x'},peel=-y,tab=+y+z")
+
+
+# ---------------------------------------------------------------------------------------------- RDIMM guards
+# Clear clips over an RDIMM's gold fingers (extras_caps.build_guard_ram with the RDIMM notch): they sit at the
+# stick's origin with forward (0, 0, -1), up (0, 1, 0) in the stick frame, like guard_ram_ddr5 / guard_ram_ddr4.
+GUARDS = {"guard_rdimm_ddr5": NOTCH["DDR5_RDIMM"] * MM, "guard_rdimm_ddr4": NOTCH["DDR4_RDIMM"] * MM}
+
+
+def guard_for(S):
+    if S["style"] == "rdimm":
+        return "guard_rdimm_" + S["mem"].lower()
+    return "guard_ram_" + S["mem"].lower()
+
+
+def build_guard(gid):
+    import extras_caps as xk
+    m = xk.build_guard_ram(gid, GUARDS[gid])
+    m.finish()
+    m.export()
+    pp.report(m.root)
+    return m.root
 
 
 def previews(rid, root):
@@ -911,8 +950,8 @@ def write_report(blocks):
                 old.setdefault(parts[1], []).append(line.rstrip("\n"))
     old.update(blocks)
     with open(REPORT_TXT, "w", encoding="utf-8", newline="\n") as f:
-        for S in CAT:
-            for line in old.get(S["id"], []):
+        for rid in [S["id"] for S in CAT] + list(GUARDS):
+            for line in old.get(rid, []):
                 f.write(line + "\n")
 
 
@@ -952,7 +991,47 @@ def catalog_entry(S):
                 price=S["price"], power_w=power, color=S["color"], rgb=S["rgb"],
                 analog=S["analog"] + " (docs only, never shown in game)", desc=desc, specs=specs,
                 game=dict(mem=S["mem"], ram_gb=S["gb"], per_box=kit, perf=0),
-                contract="rdimm" if rd else "ram", new_contract=rd)
+                contract="rdimm" if rd else "ram", new_contract=rd,
+                unbox=dict(films=[] if S["style"] in ("bare", "rdimm") else ["A_FILM_SPREADER_0", "A_FILM_SPREADER_1"],
+                           caps=[dict(model=guard_for(S), at="origin", forward=[0, 0, -1], up=[0, 1, 0], blocks="install")],
+                           stickers=[]),
+                docs=["guide", "warranty"] + (["safety"] if rd else []),
+                doc_notes=doc_notes(S))
+
+
+def doc_notes(S):
+    cl = S["cl"].split("-")[0]
+    d5 = S["mem"] == "DDR5"
+    if S["style"] == "rdimm":
+        notes = [
+            f"Registered ECC {S['mem']} RDIMM ({S['ranks']}): server and workstation boards only. It does not fit "
+            f"desktop {S['mem']} slots" + (" (the key notch differs)." if d5 else " and must not be mixed with unbuffered DIMMs."),
+            "Fill slot 1 of every channel first (DIMMA1, DIMMB1, ...), following the board's population table; "
+            "one DIMM per channel gives the highest speed.",
+            "Use identical modules in a channel: do not mix ranks, capacities or 3DS and non-3DS RDIMMs.",
+            f"Rated {S['mts']} MT/s CL{cl} at {S['v']}" + (" with an on-module PMIC." if d5 else "."),
+            "Align the notch, press both ends straight down until the latches close.",
+            "ESD-sensitive: hold by the edges and wear a grounded wrist strap.",
+            "Memory training on first boot can take several minutes on large configurations.",
+        ]
+        return notes
+    base = 4800 if d5 else 2133
+    notes = [
+        "Two sticks: install them in slots A2 and B2 first (the second and fourth slots from the CPU) for dual channel.",
+        f"Enable {'EXPO (AMD) or XMP 3.0 (Intel)' if d5 else 'XMP (Intel) or DOCP/A-XMP (AMD)'} in the BIOS to run "
+        f"{S['mts']} MT/s; without it the kit runs at the JEDEC {base} MT/s.",
+        f"Rated {S['mts']} MT/s, timings {S['cl']}, at {S['v']}.",
+        f"{S['mem']} only: the key notch does not fit {'DDR4' if d5 else 'DDR5'} slots.",
+        "Open the slot latches, align the notch and press both ends down until the latches click.",
+        "Touch a grounded metal part of the case before handling; hold the stick by its edges.",
+    ]
+    if d5:
+        notes.append("The first boot with new DDR5 can take a few minutes while the board trains the memory.")
+    if S["rgb"]:
+        notes.append("The RGB light bar runs from the slot's 5 V supply; set colours in the motherboard's RGB software.")
+    if S["style"] in STYLES:
+        notes.append("Peel the clear film off both sides of the heat spreader before installing.")
+    return notes
 
 
 def write_catalog():
@@ -967,9 +1046,17 @@ def write_catalog():
 def main():
     argv = c.args()
     nopreview = "--nopreview" in argv
-    ids = [a for a in argv if not a.startswith("--")] or [s["id"] for s in CAT]
+    ids = [a for a in argv if not a.startswith("--")] or [s["id"] for s in CAT] + list(GUARDS)
     blocks = {}
     for rid in ids:
+        if rid in GUARDS:
+            root = build_guard(rid)
+            blocks[rid] = report_lines(root)
+            if not nopreview:
+                pp.preview(root, rid, views=((70, -30), (-60, -45)), size=(960, 720), dist=0.2, zup=True)
+                pp.preview(root, rid, views=((70, -35),), size=(960, 720), dist=0.03,
+                           target=(0, GUARDS[rid], -0.0015), start=2, zup=True)
+            continue
         root = build(rid)
         blocks[rid] = report_lines(root)
         if not nopreview:

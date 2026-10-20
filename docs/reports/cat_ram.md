@@ -36,7 +36,7 @@ re-export proof. Catalogue data: `docs/catalog/ram.json` (written by the script 
 blender -b --factory-startup -P Tools/Blender/build_cat_ram.py -- [ids...] [--nopreview]
 ```
 
-No ids = all 20 (about 25 minutes with previews on 4 cores). Each id writes `Assets/Resources/Models/<id>.fbx`, one
+Ids may also be `guard_rdimm_ddr5` / `guard_rdimm_ddr4` (the RDIMM finger guards). No ids = all 20 sticks and both guards (about 25 minutes with previews on 4 cores). Each id writes `Assets/Resources/Models/<id>.fbx`, one
 texture atlas `Assets/Resources/Models/Textures/cr_<short id>.png` (the texture name is shortened, e.g.
 `cr_kl_ddr5_32_wrgb`, so `ram_tex_<file>#tex_<file>` stays under Blender's 63-character name limit) and the previews
 `Logs/ModelPreviews/<id>_0..3.png` (EEVEE: three views and a close-up of the label). Every run merges the rebuilt ids
@@ -147,6 +147,62 @@ sits across the packages on the −x face.
 | `ram_sorin_rdimm5_64` | Sorin DDR5-4800 RDIMM 64 GB (2Rx4) | 31.25 | 2 × 10 | 6494 | 5 | `y=-0.0019,mem=DDR5,type=RDIMM,ecc=1` | 0.01562; 0.00407 × 0.13335 × 0.03125 |
 | `ram_crux_rdimm5_128` | Crux DDR5-5600 RDIMM 128 GB (2S2Rx4 3DS) | 38.0 | 2 × 10 (1.45 mm stacked) | 6494 | 5 | `y=-0.0019,mem=DDR5,type=RDIMM,ecc=1` | 0.0190; 0.00497 × 0.13335 × 0.0380 |
 | `ram_kingsland_rdimm4_32` | Kingsland Server Premier DDR4-3200 RDIMM 32 GB (2Rx4) | 31.25 | 2 × 9 | 5990 | 5 | `y=0.0043,mem=DDR4,type=RDIMM,ecc=1` | 0.01562; 0.00407 × 0.13335 × 0.03125 |
+
+## Unboxing: films and guards
+
+Retrofitted after the catalogue README gained "The unboxing on every part (required)". Only anchors were added:
+the 14 spreader sticks were re-exported and `extras_compare.py` (old FBX vs new, both built on Linux) prints
+**ONLY ADDED: A_FILM_SPREADER_0, A_FILM_SPREADER_1** for every one of them; the bare Crux stick and the four
+RDIMMs have no films and were not re-exported (SAME).
+
+**Films** (anchors only; the game builds the peel meshes), on every stick with a heat spreader:
+- `A_FILM_SPREADER_0` on the +x face, `A_FILM_SPREADER_1` on the −x face, at the plate centre
+  (0.1 mm above the highest raised panel, face diffuser or sticker), forward ±x (out), up +z.
+- `size` = 0.1282 × (plate height − 0.6 mm) × 0.0005: the whole plate face including the sticker. RGB light bars
+  on top are not covered.
+- Meta `film=clear,on=spreader_+x|spreader_-x,peel=-y,tab=+y+z`: the tab is the top corner at the +y end and the
+  film peels towards −y.
+
+| id | film size (m) |
+|---|---|
+| `ram_corvex_ddr5_32_black`, `ram_kingsland_ddr5_64` | 0.1282 × 0.0273 |
+| `ram_corvex_ddr5_32_white_rgb` | 0.1282 × 0.0299 |
+| `ram_gstride_ddr5_48_rgb` | 0.1282 × 0.0294 |
+| `ram_gstride_ddr5_32_lp` | 0.1282 × 0.0254 |
+| `ram_kingsland_ddr5_32_white_rgb` | 0.1282 × 0.0292 |
+| `ram_crux_ddr5_96` | 0.1282 × 0.0274 |
+| `ram_teamforge_ddr5_32_white_rgb` | 0.1282 × 0.0369 |
+| `ram_volt_ddr5_64_rgb` | 0.1282 × 0.0304 |
+| `ram_corvex_ddr4_16_lp` | 0.1282 × 0.0264 |
+| `ram_corvex_ddr4_32_rgb`, `ram_crux_ddr4_64` | 0.1282 × 0.0314 |
+| `ram_gstride_ddr4_16_red` | 0.1282 × 0.0344 |
+| `ram_kingsland_ddr4_32` | 0.1282 × 0.0265 |
+| `ram_teamforge_ddr4_32_red` | 0.1282 × 0.0244 |
+
+**Guards** (`caps` in `ram.json`, `blocks=install`), all placed at the stick's root: position (0, 0, 0),
+forward (0, 0, −1), up (0, 1, 0) in the stick frame (`localRotation = LookRotation(forward, up)`), like the existing
+guards in `extras_caps.PLACEMENTS`:
+- Desktop DDR5 sticks: the existing `guard_ram_ddr5`. Desktop DDR4 sticks: the existing `guard_ram_ddr4`.
+- DDR5 RDIMMs: **new `guard_rdimm_ddr5`**. DDR4 RDIMM: **new `guard_rdimm_ddr4`**.
+
+The new guards are built by `build_cat_ram.py` (ids `guard_rdimm_ddr5`, `guard_rdimm_ddr4`) with
+`extras_caps.build_guard_ram` (not changed): the same clear clip over the gold fingers as the desktop guards, with
+the 2 mm gap at the RDIMM notch. They have 728 triangles in one `clear_plastic` mesh (the tag the existing guards
+use), and local +Z is the pull-off direction.
+- `A_HIT_0` pos (0, 0.0020, −0.0014), size 0.00237 × 0.1386 × 0.0040, meta
+  `remove=+z,travel=0.0015,part=ram,blocks=install,notch=-0.0019` (DDR5) / `notch=0.0043` (DDR4).
+- `A_GRIP_0` pos (0, 0.0692, −0.0010), the pull tab at the +y end, meta `pull=+z`.
+
+`guard_rdimm_ddr4` has the same shape as `guard_ram_ddr4`, because the DDR4 RDIMM shares the UDIMM key. It is a
+separate id so the game can keep server and desktop packaging apart. Previews: `Logs/ModelPreviews/guard_rdimm_*_0..2.png`.
+
+**Papers.** Every entry in `ram.json` now has:
+- `unbox` (films, caps, stickers: none);
+- `docs`: `guide` (the installation card) and `warranty`, plus `safety` (ESD) for the RDIMMs;
+- `doc_notes`, 6–9 facts. Desktop: slots A2/B2 first; enable EXPO/XMP (DDR5) or XMP/DOCP (DDR4), otherwise
+  JEDEC 4800 / 2133 MT/s; the rated speed, timings and voltage; DDR4/DDR5 keying; the latches; ESD; DDR5
+  first-boot training; the RGB software; peel the films. RDIMMs: server boards only and the keying; slot 1 of every
+  channel first; don't mix ranks or 3DS; speed and voltage; ESD; training time.
 
 ## Catalogue data
 
