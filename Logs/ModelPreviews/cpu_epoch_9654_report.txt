@@ -1,0 +1,14 @@
+cpu_epoch_9654: 33390 triangles, 6 meshes
+  mesh carrier@A_CARRIER_0#tex_cpu_spv_carrier  tris=946
+  mesh cpu_epoch_9654_ceramic#ceramic  tris=1728
+  mesh cpu_epoch_9654_gold#gold  tris=26568
+  mesh cpu_epoch_9654_solder#solder  tris=3456
+  mesh cpu_epoch_9654_tex_cpu_ihs_9654#tex_cpu_ihs_9654  tris=632
+  mesh cpu_epoch_9654_tex_cpu_spv_pcb#tex_cpu_spv_pcb  tris=60
+  A_CAP_PADS_0 pos=(-0.0, 0.0, -4e-05) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.07400,0.07740,0.00160 meta=model=cap_cpu_spv,remove=-z,blocks=install
+  A_CARRIER_0 pos=(-0.0, 0.0, 0.0016) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.08160,0.09660,0.00305 meta=socket=SP-V,pose=installed,clip=+z,rail=+y,color=#f26b1d
+  A_HIT_0 pos=(-0.0, 0.0, 0.0032) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.07200,0.07540,0.00680 meta=
+  A_MARK_CARRIER_0@A_CARRIER_0 pos=(0.03579, -0.03749, 0.0026) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00500,0.00500,0.00200 meta=corner=+x-y
+  A_MARK_PIN1_0 pos=(0.034, -0.0357, 0.0016) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00600,0.00600,0.00200 meta=corner=+x-y
+  A_PASTE_0 pos=(-0.0, 0.0, 0.0064) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.04640,0.05088,0.00200 meta=ihs=0.0580x0.0636
+frame: Socket SP-V (new contract): origin at the contact face centre, +z up, pin 1 at (+x, -y); the carrier is a moving piece on A_CARRIER_0

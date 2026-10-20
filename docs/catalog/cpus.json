@@ -1,0 +1,760 @@
+[
+  {
+    "id": "cpu_arc3_8300g",
+    "model": "cpu_arc3_8300g",
+    "brand": "Arc",
+    "name": "Arc 3 8300G",
+    "category": "CPU",
+    "price": 119,
+    "power_w": 65,
+    "color": "#C4C6C9",
+    "rgb": false,
+    "analog": "AMD Ryzen 3 8300G (docs only, never shown in game)",
+    "desc": "A 4-core Socket V5 APU with built-in graphics, for a cheap first build without a graphics card.",
+    "specs": {
+      "cores": 4,
+      "threads": 8,
+      "base_ghz": 3.4,
+      "boost_ghz": 4.9,
+      "l3_mb": 8,
+      "tdp_w": 65,
+      "peak_w": 88,
+      "igpu": "Voltra 740M"
+    },
+    "game": {
+      "socket": "V5",
+      "perf": 0
+    },
+    "contract": "cpu_arc5",
+    "new_contract": false,
+    "unbox": {
+      "films": [],
+      "caps": [],
+      "stickers": [],
+      "packaging": "ships in a clear plastic clamshell inside the retail box; nothing to peel on the part"
+    },
+    "docs": [
+      "guide",
+      "warranty",
+      "sticker"
+    ],
+    "doc_notes": [
+      "Socket V5 only. Lift the socket lever fully before you place the Arc 3 8300G.",
+      "Line up the gold triangle on the corner of the CPU with the triangle on the socket. Never press the CPU in; it drops into place.",
+      "Lower the load plate and close the lever until it clicks under its hook. The socket cap pops off by itself: keep it in case the board goes back.",
+      "Thermal paste: one pea-sized dot (about 4 mm) in the centre of the heat spreader. The cooler's pressure spreads it.",
+      "TDP 65 W, package power up to 88 W. Pick a cooler rated for at least 88 W.",
+      "Built-in graphics: plug the monitor into the motherboard's video outputs when no graphics card is fitted.",
+      "4 cores / 8 threads, 3.4 GHz base, up to 4.9 GHz boost, 8 MB L3 cache.",
+      "Memory: DDR5 only. Install sticks in A2 and B2 first for two-stick kits.",
+      "Never touch the gold pads under the CPU or the pins in the socket.",
+      "Update the motherboard BIOS before first boot if the board is older than the CPU."
+    ]
+  },
+  {
+    "id": "cpu_arc5_9600x",
+    "model": "cpu_arc5_9600x",
+    "brand": "Arc",
+    "name": "Arc 5 9600X",
+    "category": "CPU",
+    "price": 189,
+    "power_w": 65,
+    "color": "#C4C6C9",
+    "rgb": false,
+    "analog": "AMD Ryzen 5 9600X (docs only, never shown in game)",
+    "desc": "6 fast cores on Socket V5: the sensible gaming chip.",
+    "specs": {
+      "cores": 6,
+      "threads": 12,
+      "base_ghz": 3.9,
+      "boost_ghz": 5.4,
+      "l3_mb": 32,
+      "tdp_w": 65,
+      "peak_w": 88,
+      "igpu": "Voltra (2 CU)"
+    },
+    "game": {
+      "socket": "V5",
+      "perf": 0
+    },
+    "contract": "cpu_arc5",
+    "new_contract": false,
+    "unbox": {
+      "films": [],
+      "caps": [],
+      "stickers": [],
+      "packaging": "ships in a clear plastic clamshell inside the retail box; nothing to peel on the part"
+    },
+    "docs": [
+      "guide",
+      "warranty",
+      "sticker"
+    ],
+    "doc_notes": [
+      "Socket V5 only. Lift the socket lever fully before you place the Arc 5 9600X.",
+      "Line up the gold triangle on the corner of the CPU with the triangle on the socket. Never press the CPU in; it drops into place.",
+      "Lower the load plate and close the lever until it clicks under its hook. The socket cap pops off by itself: keep it in case the board goes back.",
+      "Thermal paste: one pea-sized dot (about 4 mm) in the centre of the heat spreader. The cooler's pressure spreads it.",
+      "TDP 65 W, package power up to 88 W. Pick a cooler rated for at least 88 W.",
+      "6 cores / 12 threads, 3.9 GHz base, up to 5.4 GHz boost, 32 MB L3 cache.",
+      "Memory: DDR5 only. Install sticks in A2 and B2 first for two-stick kits.",
+      "Never touch the gold pads under the CPU or the pins in the socket.",
+      "Update the motherboard BIOS before first boot if the board is older than the CPU."
+    ]
+  },
+  {
+    "id": "cpu_arc7_9700x",
+    "model": "cpu_arc7_9700x",
+    "brand": "Arc",
+    "name": "Arc 7 9700X",
+    "category": "CPU",
+    "price": 279,
+    "power_w": 65,
+    "color": "#C4C6C9",
+    "rgb": false,
+    "analog": "AMD Ryzen 7 9700X (docs only, never shown in game)",
+    "desc": "8 cores at 65 W on Socket V5, cool and quick.",
+    "specs": {
+      "cores": 8,
+      "threads": 16,
+      "base_ghz": 3.8,
+      "boost_ghz": 5.5,
+      "l3_mb": 32,
+      "tdp_w": 65,
+      "peak_w": 88,
+      "igpu": "Voltra (2 CU)"
+    },
+    "game": {
+      "socket": "V5",
+      "perf": 0
+    },
+    "contract": "cpu_arc5",
+    "new_contract": false,
+    "unbox": {
+      "films": [],
+      "caps": [],
+      "stickers": [],
+      "packaging": "ships in a clear plastic clamshell inside the retail box; nothing to peel on the part"
+    },
+    "docs": [
+      "guide",
+      "warranty",
+      "sticker"
+    ],
+    "doc_notes": [
+      "Socket V5 only. Lift the socket lever fully before you place the Arc 7 9700X.",
+      "Line up the gold triangle on the corner of the CPU with the triangle on the socket. Never press the CPU in; it drops into place.",
+      "Lower the load plate and close the lever until it clicks under its hook. The socket cap pops off by itself: keep it in case the board goes back.",
+      "Thermal paste: one pea-sized dot (about 4 mm) in the centre of the heat spreader. The cooler's pressure spreads it.",
+      "TDP 65 W, package power up to 88 W. Pick a cooler rated for at least 88 W.",
+      "8 cores / 16 threads, 3.8 GHz base, up to 5.5 GHz boost, 32 MB L3 cache.",
+      "Memory: DDR5 only. Install sticks in A2 and B2 first for two-stick kits.",
+      "Never touch the gold pads under the CPU or the pins in the socket.",
+      "Update the motherboard BIOS before first boot if the board is older than the CPU."
+    ]
+  },
+  {
+    "id": "cpu_arc7_9800x3d",
+    "model": "cpu_arc7_9800x3d",
+    "brand": "Arc",
+    "name": "Arc 7 9800X3D",
+    "category": "CPU",
+    "price": 469,
+    "power_w": 120,
+    "color": "#C4C6C9",
+    "rgb": false,
+    "analog": "AMD Ryzen 7 9800X3D (docs only, never shown in game)",
+    "desc": "8 cores with stacked 3D cache: the fastest gaming CPU you can buy.",
+    "specs": {
+      "cores": 8,
+      "threads": 16,
+      "base_ghz": 4.7,
+      "boost_ghz": 5.2,
+      "l3_mb": 96,
+      "tdp_w": 120,
+      "peak_w": 162,
+      "igpu": "Voltra (2 CU)",
+      "cache_3d": true
+    },
+    "game": {
+      "socket": "V5",
+      "perf": 0
+    },
+    "contract": "cpu_arc5",
+    "new_contract": false,
+    "unbox": {
+      "films": [],
+      "caps": [],
+      "stickers": [],
+      "packaging": "ships in a clear plastic clamshell inside the retail box; nothing to peel on the part"
+    },
+    "docs": [
+      "guide",
+      "warranty",
+      "sticker"
+    ],
+    "doc_notes": [
+      "Socket V5 only. Lift the socket lever fully before you place the Arc 7 9800X3D.",
+      "Line up the gold triangle on the corner of the CPU with the triangle on the socket. Never press the CPU in; it drops into place.",
+      "Lower the load plate and close the lever until it clicks under its hook. The socket cap pops off by itself: keep it in case the board goes back.",
+      "Thermal paste: one pea-sized dot (about 4 mm) in the centre of the heat spreader. The cooler's pressure spreads it.",
+      "TDP 120 W, package power up to 162 W. Pick a cooler rated for at least 162 W.",
+      "3D cache: the stacked cache gives the most benefit in games. Leave the clocks at stock.",
+      "8 cores / 16 threads, 4.7 GHz base, up to 5.2 GHz boost, 96 MB L3 cache.",
+      "Memory: DDR5 only. Install sticks in A2 and B2 first for two-stick kits.",
+      "Never touch the gold pads under the CPU or the pins in the socket.",
+      "Update the motherboard BIOS before first boot if the board is older than the CPU."
+    ]
+  },
+  {
+    "id": "cpu_arc9_9950x3d",
+    "model": "cpu_arc9_9950x3d",
+    "brand": "Arc",
+    "name": "Arc 9 9950X3D",
+    "category": "CPU",
+    "price": 649,
+    "power_w": 170,
+    "color": "#C4C6C9",
+    "rgb": false,
+    "analog": "AMD Ryzen 9 9950X3D (docs only, never shown in game)",
+    "desc": "16 cores and 3D cache on Socket V5, for gaming and heavy work alike.",
+    "specs": {
+      "cores": 16,
+      "threads": 32,
+      "base_ghz": 4.3,
+      "boost_ghz": 5.7,
+      "l3_mb": 128,
+      "tdp_w": 170,
+      "peak_w": 230,
+      "igpu": "Voltra (2 CU)",
+      "cache_3d": true
+    },
+    "game": {
+      "socket": "V5",
+      "perf": 0
+    },
+    "contract": "cpu_arc5",
+    "new_contract": false,
+    "unbox": {
+      "films": [],
+      "caps": [],
+      "stickers": [],
+      "packaging": "ships in a clear plastic clamshell inside the retail box; nothing to peel on the part"
+    },
+    "docs": [
+      "guide",
+      "warranty",
+      "sticker"
+    ],
+    "doc_notes": [
+      "Socket V5 only. Lift the socket lever fully before you place the Arc 9 9950X3D.",
+      "Line up the gold triangle on the corner of the CPU with the triangle on the socket. Never press the CPU in; it drops into place.",
+      "Lower the load plate and close the lever until it clicks under its hook. The socket cap pops off by itself: keep it in case the board goes back.",
+      "Thermal paste: one pea-sized dot (about 4 mm) in the centre of the heat spreader. The cooler's pressure spreads it.",
+      "TDP 170 W, package power up to 230 W. Pick a cooler rated for at least 230 W.",
+      "3D cache: the stacked cache gives the most benefit in games. Leave the clocks at stock.",
+      "16 cores / 32 threads, 4.3 GHz base, up to 5.7 GHz boost, 128 MB L3 cache.",
+      "Memory: DDR5 only. Install sticks in A2 and B2 first for two-stick kits.",
+      "Never touch the gold pads under the CPU or the pins in the socket.",
+      "Update the motherboard BIOS before first boot if the board is older than the CPU."
+    ]
+  },
+  {
+    "id": "cpu_tiron_i3_14100",
+    "model": "cpu_tiron_i3_14100",
+    "brand": "Tiron",
+    "name": "Tiron i3-14100",
+    "category": "CPU",
+    "price": 109,
+    "power_w": 60,
+    "color": "#C4C6C9",
+    "rgb": false,
+    "analog": "Intel Core i3-14100 (docs only, never shown in game)",
+    "desc": "4 cores on Socket L17 with integrated graphics: a budget office or starter chip.",
+    "specs": {
+      "cores": 4,
+      "threads": 8,
+      "base_ghz": 3.5,
+      "boost_ghz": 4.7,
+      "l3_mb": 12,
+      "tdp_w": 60,
+      "peak_w": 110,
+      "igpu": "Tiron UHD 730",
+      "p_cores": 4,
+      "e_cores": 0
+    },
+    "game": {
+      "socket": "L17",
+      "perf": 0
+    },
+    "contract": "cpu_tiron5",
+    "new_contract": false,
+    "unbox": {
+      "films": [],
+      "caps": [],
+      "stickers": [],
+      "packaging": "ships in a clear plastic clamshell inside the retail box; nothing to peel on the part"
+    },
+    "docs": [
+      "guide",
+      "warranty",
+      "sticker"
+    ],
+    "doc_notes": [
+      "Socket L17 only. Open the load lever and lift the load plate before you place the Tiron i3-14100.",
+      "Hold the CPU by its edges. Line up the two notches with the socket keys and the gold triangle with the socket's pin-1 mark.",
+      "Close the load plate and lock the lever under its hook. The plastic socket cap pops off: keep it for returns.",
+      "Thermal paste: one pea-sized dot, or a short line along the long side of the heat spreader.",
+      "Base power 60 W, maximum turbo power 110 W. The cooler and the motherboard VRM must handle 110 W.",
+      "4 cores (4 P + 0 E), 8 threads, up to 4.7 GHz, 12 MB cache.",
+      "Built-in graphics: plug the monitor into the motherboard's outputs when no graphics card is fitted.",
+      "Never touch the gold pads under the CPU. The socket pins bend easily."
+    ]
+  },
+  {
+    "id": "cpu_tiron_i5_14600k",
+    "model": "cpu_tiron_i5_14600k",
+    "brand": "Tiron",
+    "name": "Tiron i5-14600K",
+    "category": "CPU",
+    "price": 229,
+    "power_w": 125,
+    "color": "#C4C6C9",
+    "rgb": false,
+    "analog": "Intel Core i5-14600K (docs only, never shown in game)",
+    "desc": "14 cores, unlocked: the overclocker's favourite on Socket L17.",
+    "specs": {
+      "cores": 14,
+      "threads": 20,
+      "base_ghz": 3.5,
+      "boost_ghz": 5.3,
+      "l3_mb": 24,
+      "tdp_w": 125,
+      "peak_w": 181,
+      "igpu": "Tiron UHD 770",
+      "p_cores": 6,
+      "e_cores": 8,
+      "unlocked": true
+    },
+    "game": {
+      "socket": "L17",
+      "perf": 0
+    },
+    "contract": "cpu_tiron5",
+    "new_contract": false,
+    "unbox": {
+      "films": [],
+      "caps": [],
+      "stickers": [],
+      "packaging": "ships in a clear plastic clamshell inside the retail box; nothing to peel on the part"
+    },
+    "docs": [
+      "guide",
+      "warranty",
+      "sticker"
+    ],
+    "doc_notes": [
+      "Socket L17 only. Open the load lever and lift the load plate before you place the Tiron i5-14600K.",
+      "Hold the CPU by its edges. Line up the two notches with the socket keys and the gold triangle with the socket's pin-1 mark.",
+      "Close the load plate and lock the lever under its hook. The plastic socket cap pops off: keep it for returns.",
+      "Thermal paste: one pea-sized dot, or a short line along the long side of the heat spreader.",
+      "Base power 125 W, maximum turbo power 181 W. The cooler and the motherboard VRM must handle 181 W.",
+      "Unlocked K processor: overclocking needs a Z-series board and a strong cooler. Overclocking can void the warranty.",
+      "14 cores (6 P + 8 E), 20 threads, up to 5.3 GHz, 24 MB cache.",
+      "Built-in graphics: plug the monitor into the motherboard's outputs when no graphics card is fitted.",
+      "Never touch the gold pads under the CPU. The socket pins bend easily."
+    ]
+  },
+  {
+    "id": "cpu_tiron_i7_14700",
+    "model": "cpu_tiron_i7_14700",
+    "brand": "Tiron",
+    "name": "Tiron i7-14700",
+    "category": "CPU",
+    "price": 309,
+    "power_w": 65,
+    "color": "#C4C6C9",
+    "rgb": false,
+    "analog": "Intel Core i7-14700 (docs only, never shown in game)",
+    "desc": "20 cores at a 65 W base: lots of threads for a quiet workstation.",
+    "specs": {
+      "cores": 20,
+      "threads": 28,
+      "base_ghz": 2.1,
+      "boost_ghz": 5.4,
+      "l3_mb": 33,
+      "tdp_w": 65,
+      "peak_w": 219,
+      "igpu": "Tiron UHD 770",
+      "p_cores": 8,
+      "e_cores": 12
+    },
+    "game": {
+      "socket": "L17",
+      "perf": 0
+    },
+    "contract": "cpu_tiron5",
+    "new_contract": false,
+    "unbox": {
+      "films": [],
+      "caps": [],
+      "stickers": [],
+      "packaging": "ships in a clear plastic clamshell inside the retail box; nothing to peel on the part"
+    },
+    "docs": [
+      "guide",
+      "warranty",
+      "sticker"
+    ],
+    "doc_notes": [
+      "Socket L17 only. Open the load lever and lift the load plate before you place the Tiron i7-14700.",
+      "Hold the CPU by its edges. Line up the two notches with the socket keys and the gold triangle with the socket's pin-1 mark.",
+      "Close the load plate and lock the lever under its hook. The plastic socket cap pops off: keep it for returns.",
+      "Thermal paste: one pea-sized dot, or a short line along the long side of the heat spreader.",
+      "Base power 65 W, maximum turbo power 219 W. The cooler and the motherboard VRM must handle 219 W.",
+      "20 cores (8 P + 12 E), 28 threads, up to 5.4 GHz, 33 MB cache.",
+      "Built-in graphics: plug the monitor into the motherboard's outputs when no graphics card is fitted.",
+      "Never touch the gold pads under the CPU. The socket pins bend easily."
+    ]
+  },
+  {
+    "id": "cpu_tiron_i7_14700k",
+    "model": "cpu_tiron_i7_14700k",
+    "brand": "Tiron",
+    "name": "Tiron i7-14700K",
+    "category": "CPU",
+    "price": 329,
+    "power_w": 125,
+    "color": "#C4C6C9",
+    "rgb": false,
+    "analog": "Intel Core i7-14700K (docs only, never shown in game)",
+    "desc": "20 cores, unlocked, up to 5.6 GHz. Bring a big cooler.",
+    "specs": {
+      "cores": 20,
+      "threads": 28,
+      "base_ghz": 3.4,
+      "boost_ghz": 5.6,
+      "l3_mb": 33,
+      "tdp_w": 125,
+      "peak_w": 253,
+      "igpu": "Tiron UHD 770",
+      "p_cores": 8,
+      "e_cores": 12,
+      "unlocked": true
+    },
+    "game": {
+      "socket": "L17",
+      "perf": 0
+    },
+    "contract": "cpu_tiron5",
+    "new_contract": false,
+    "unbox": {
+      "films": [],
+      "caps": [],
+      "stickers": [],
+      "packaging": "ships in a clear plastic clamshell inside the retail box; nothing to peel on the part"
+    },
+    "docs": [
+      "guide",
+      "warranty",
+      "sticker"
+    ],
+    "doc_notes": [
+      "Socket L17 only. Open the load lever and lift the load plate before you place the Tiron i7-14700K.",
+      "Hold the CPU by its edges. Line up the two notches with the socket keys and the gold triangle with the socket's pin-1 mark.",
+      "Close the load plate and lock the lever under its hook. The plastic socket cap pops off: keep it for returns.",
+      "Thermal paste: one pea-sized dot, or a short line along the long side of the heat spreader.",
+      "Base power 125 W, maximum turbo power 253 W. The cooler and the motherboard VRM must handle 253 W.",
+      "Unlocked K processor: overclocking needs a Z-series board and a strong cooler. Overclocking can void the warranty.",
+      "20 cores (8 P + 12 E), 28 threads, up to 5.6 GHz, 33 MB cache.",
+      "Built-in graphics: plug the monitor into the motherboard's outputs when no graphics card is fitted.",
+      "Never touch the gold pads under the CPU. The socket pins bend easily."
+    ]
+  },
+  {
+    "id": "cpu_tiron_i9_14900k",
+    "model": "cpu_tiron_i9_14900k",
+    "brand": "Tiron",
+    "name": "Tiron i9-14900K",
+    "category": "CPU",
+    "price": 429,
+    "power_w": 125,
+    "color": "#C4C6C9",
+    "rgb": false,
+    "analog": "Intel Core i9-14900K (docs only, never shown in game)",
+    "desc": "24 cores and 6.0 GHz: the hottest chip on Socket L17, in every sense.",
+    "specs": {
+      "cores": 24,
+      "threads": 32,
+      "base_ghz": 3.2,
+      "boost_ghz": 6.0,
+      "l3_mb": 36,
+      "tdp_w": 125,
+      "peak_w": 253,
+      "igpu": "Tiron UHD 770",
+      "p_cores": 8,
+      "e_cores": 16,
+      "unlocked": true
+    },
+    "game": {
+      "socket": "L17",
+      "perf": 0
+    },
+    "contract": "cpu_tiron5",
+    "new_contract": false,
+    "unbox": {
+      "films": [],
+      "caps": [],
+      "stickers": [],
+      "packaging": "ships in a clear plastic clamshell inside the retail box; nothing to peel on the part"
+    },
+    "docs": [
+      "guide",
+      "warranty",
+      "sticker"
+    ],
+    "doc_notes": [
+      "Socket L17 only. Open the load lever and lift the load plate before you place the Tiron i9-14900K.",
+      "Hold the CPU by its edges. Line up the two notches with the socket keys and the gold triangle with the socket's pin-1 mark.",
+      "Close the load plate and lock the lever under its hook. The plastic socket cap pops off: keep it for returns.",
+      "Thermal paste: one pea-sized dot, or a short line along the long side of the heat spreader.",
+      "Base power 125 W, maximum turbo power 253 W. The cooler and the motherboard VRM must handle 253 W.",
+      "Unlocked K processor: overclocking needs a Z-series board and a strong cooler. Overclocking can void the warranty.",
+      "24 cores (8 P + 16 E), 32 threads, up to 6.0 GHz, 36 MB cache.",
+      "Built-in graphics: plug the monitor into the motherboard's outputs when no graphics card is fitted.",
+      "Never touch the gold pads under the CPU. The socket pins bend easily."
+    ]
+  },
+  {
+    "id": "cpu_epoch_9124",
+    "model": "cpu_epoch_9124",
+    "brand": "Arc Epoch",
+    "name": "Arc Epoch 9124",
+    "category": "CPU",
+    "price": 1149,
+    "power_w": 200,
+    "color": "#C4C6C9",
+    "rgb": false,
+    "analog": "AMD EPYC 9124 (docs only, never shown in game)",
+    "desc": "An entry 16-core server CPU for Socket SP-V, with 12 memory channels. Ships in its orange carrier.",
+    "specs": {
+      "cores": 16,
+      "threads": 32,
+      "base_ghz": 3.0,
+      "boost_ghz": 3.7,
+      "l3_mb": 64,
+      "tdp_w": 200,
+      "peak_w": 200,
+      "mem_channels": 12,
+      "pcie_lanes": 128
+    },
+    "game": {
+      "socket": "SP-V",
+      "perf": 0
+    },
+    "contract": "cpu_spv",
+    "new_contract": true,
+    "unbox": {
+      "films": [],
+      "caps": [
+        {
+          "model": "cap_cpu_spv",
+          "at": "A_CAP_PADS_0",
+          "blocks": "install"
+        }
+      ],
+      "stickers": [],
+      "carrier": "A_CARRIER_0 stays on: the CPU is installed in its carrier",
+      "packaging": "ships in a clamshell tray with the carrier already fitted"
+    },
+    "docs": [
+      "guide",
+      "warranty"
+    ],
+    "doc_notes": [
+      "Pull the clear contact cover off the underside by its tab just before you install. Never touch the gold pads.",
+      "Keep the CPU in its orange carrier. Lift the socket's force frame and the rail frame, then slide the carrier into the rails until it stops.",
+      "Match the triangle on the carrier and the CPU corner with the triangle on the socket.",
+      "Lower the rail frame, close the force frame, then tighten its Torx T20 screws in the order 1-2-3 printed on the frame.",
+      "Thermal paste: most SP-V heatsinks come with a pre-applied pad. Otherwise spread a thin even layer over the whole heat spreader.",
+      "TDP 200 W. Use a heatsink rated for Socket SP-V and at least 200 W in a server with front-to-back airflow.",
+      "16 cores / 32 threads, 3.0 GHz base, up to 3.7 GHz, 64 MB L3 cache.",
+      "12 DDR5 RDIMM channels: fit one RDIMM per channel for full bandwidth. 128 PCIe 5.0 lanes.",
+      "Socket SP-V only; not compatible with desktop V5 boards."
+    ]
+  },
+  {
+    "id": "cpu_epoch_9354",
+    "model": "cpu_epoch_9354",
+    "brand": "Arc Epoch",
+    "name": "Arc Epoch 9354",
+    "category": "CPU",
+    "price": 3099,
+    "power_w": 280,
+    "color": "#C4C6C9",
+    "rgb": false,
+    "analog": "AMD EPYC 9354 (docs only, never shown in game)",
+    "desc": "32 cores and 256 MB of cache for Socket SP-V: a strong virtualisation host.",
+    "specs": {
+      "cores": 32,
+      "threads": 64,
+      "base_ghz": 3.25,
+      "boost_ghz": 3.8,
+      "l3_mb": 256,
+      "tdp_w": 280,
+      "peak_w": 280,
+      "mem_channels": 12,
+      "pcie_lanes": 128
+    },
+    "game": {
+      "socket": "SP-V",
+      "perf": 0
+    },
+    "contract": "cpu_spv",
+    "new_contract": true,
+    "unbox": {
+      "films": [],
+      "caps": [
+        {
+          "model": "cap_cpu_spv",
+          "at": "A_CAP_PADS_0",
+          "blocks": "install"
+        }
+      ],
+      "stickers": [],
+      "carrier": "A_CARRIER_0 stays on: the CPU is installed in its carrier",
+      "packaging": "ships in a clamshell tray with the carrier already fitted"
+    },
+    "docs": [
+      "guide",
+      "warranty"
+    ],
+    "doc_notes": [
+      "Pull the clear contact cover off the underside by its tab just before you install. Never touch the gold pads.",
+      "Keep the CPU in its orange carrier. Lift the socket's force frame and the rail frame, then slide the carrier into the rails until it stops.",
+      "Match the triangle on the carrier and the CPU corner with the triangle on the socket.",
+      "Lower the rail frame, close the force frame, then tighten its Torx T20 screws in the order 1-2-3 printed on the frame.",
+      "Thermal paste: most SP-V heatsinks come with a pre-applied pad. Otherwise spread a thin even layer over the whole heat spreader.",
+      "TDP 280 W. Use a heatsink rated for Socket SP-V and at least 280 W in a server with front-to-back airflow.",
+      "32 cores / 64 threads, 3.25 GHz base, up to 3.8 GHz, 256 MB L3 cache.",
+      "12 DDR5 RDIMM channels: fit one RDIMM per channel for full bandwidth. 128 PCIe 5.0 lanes.",
+      "Socket SP-V only; not compatible with desktop V5 boards."
+    ]
+  },
+  {
+    "id": "cpu_epoch_9654",
+    "model": "cpu_epoch_9654",
+    "brand": "Arc Epoch",
+    "name": "Arc Epoch 9654",
+    "category": "CPU",
+    "price": 5199,
+    "power_w": 360,
+    "color": "#C4C6C9",
+    "rgb": false,
+    "analog": "AMD EPYC 9654 (docs only, never shown in game)",
+    "desc": "96 cores in one socket: the flagship of Socket SP-V.",
+    "specs": {
+      "cores": 96,
+      "threads": 192,
+      "base_ghz": 2.4,
+      "boost_ghz": 3.7,
+      "l3_mb": 384,
+      "tdp_w": 360,
+      "peak_w": 360,
+      "mem_channels": 12,
+      "pcie_lanes": 128
+    },
+    "game": {
+      "socket": "SP-V",
+      "perf": 0
+    },
+    "contract": "cpu_spv",
+    "new_contract": true,
+    "unbox": {
+      "films": [],
+      "caps": [
+        {
+          "model": "cap_cpu_spv",
+          "at": "A_CAP_PADS_0",
+          "blocks": "install"
+        }
+      ],
+      "stickers": [],
+      "carrier": "A_CARRIER_0 stays on: the CPU is installed in its carrier",
+      "packaging": "ships in a clamshell tray with the carrier already fitted"
+    },
+    "docs": [
+      "guide",
+      "warranty"
+    ],
+    "doc_notes": [
+      "Pull the clear contact cover off the underside by its tab just before you install. Never touch the gold pads.",
+      "Keep the CPU in its orange carrier. Lift the socket's force frame and the rail frame, then slide the carrier into the rails until it stops.",
+      "Match the triangle on the carrier and the CPU corner with the triangle on the socket.",
+      "Lower the rail frame, close the force frame, then tighten its Torx T20 screws in the order 1-2-3 printed on the frame.",
+      "Thermal paste: most SP-V heatsinks come with a pre-applied pad. Otherwise spread a thin even layer over the whole heat spreader.",
+      "TDP 360 W. Use a heatsink rated for Socket SP-V and at least 360 W in a server with front-to-back airflow.",
+      "96 cores / 192 threads, 2.4 GHz base, up to 3.7 GHz, 384 MB L3 cache.",
+      "12 DDR5 RDIMM channels: fit one RDIMM per channel for full bandwidth. 128 PCIe 5.0 lanes.",
+      "Socket SP-V only; not compatible with desktop V5 boards."
+    ]
+  },
+  {
+    "id": "cpu_tiron_plat_8480",
+    "model": "cpu_tiron_plat_8480",
+    "brand": "Tiron",
+    "name": "Tiron Platinum 8480",
+    "category": "CPU",
+    "price": 4199,
+    "power_w": 350,
+    "color": "#C4C6C9",
+    "rgb": false,
+    "analog": "Intel Xeon Platinum 8480+ (docs only, never shown in game)",
+    "desc": "56 cores on Socket L46, with 8 memory channels and built-in accelerators. Ships in its carrier clip.",
+    "specs": {
+      "cores": 56,
+      "threads": 112,
+      "base_ghz": 2.0,
+      "boost_ghz": 3.8,
+      "l3_mb": 105,
+      "tdp_w": 350,
+      "peak_w": 350,
+      "mem_channels": 8,
+      "pcie_lanes": 80
+    },
+    "game": {
+      "socket": "L46",
+      "perf": 0
+    },
+    "contract": "cpu_l46",
+    "new_contract": true,
+    "unbox": {
+      "films": [],
+      "caps": [
+        {
+          "model": "cap_cpu_l46",
+          "at": "A_CAP_PADS_0",
+          "blocks": "install"
+        }
+      ],
+      "stickers": [],
+      "carrier": "A_CARRIER_0 stays on: the CPU is installed in its carrier",
+      "packaging": "ships in a clamshell tray with the carrier already fitted"
+    },
+    "docs": [
+      "guide",
+      "warranty"
+    ],
+    "doc_notes": [
+      "Pull the clear contact cover off the underside by its tab just before you install. Never touch the gold pads.",
+      "Snap the CPU into its black carrier clip with the triangles lined up, then clip the carrier onto the heatsink.",
+      "Lower the heatsink, CPU and clip onto the socket's four studs. It only fits one way round.",
+      "Tighten the four Torx T30 nuts in a cross pattern, 1-2-3-4, as printed on the heatsink label.",
+      "Thermal paste: heatsinks come with a pre-applied pad. Otherwise spread a thin even layer over the whole heat spreader.",
+      "TDP 350 W. Use a heatsink rated for Socket L46 and at least 350 W.",
+      "56 cores / 112 threads, 2.0 GHz base, up to 3.8 GHz, 105 MB cache.",
+      "8 DDR5 RDIMM channels: fit one RDIMM per channel for full bandwidth. 80 PCIe 5.0 lanes.",
+      "Socket L46 only; not compatible with desktop L17 boards."
+    ]
+  }
+]

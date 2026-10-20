@@ -291,7 +291,7 @@ def substrate_texture(cid, sock, P):
 
 def ihs_texture(cid, S, sock, size_mm, text_up_x):
     """Laser-etched markings on the nickel heat spreader. size_mm = (w, h) in the text's frame."""
-    name = f"{cid}_ihs"
+    name = S.get("ihs_tex", f"{cid}_ihs")  # optional hook: a shorter texture name for long catalogue ids
     w, h = size_mm
     at = pp.Atlas(1024, 1024, bg=NICKEL)
     ppm = 1000.0 / max(w, h)
@@ -325,7 +325,7 @@ def ihs_texture(cid, S, sock, size_mm, text_up_x):
             a.text(S["made"], cxm, cym - 11.8, 1.25, ETCH, font="arialbd")
             # pin-1 triangle etched at the IHS corner (+x,-y -> left/bottom in the image)
             a.poly([(1.2, 1.2), (4.0, 1.2), (1.2, 4.0)], ETCH, z=0.5)
-            a.text("© 2023", w - 4.0, 1.6, 1.0, ETCH, font="arialbd")
+            a.text(S.get("copy", "© 2023"), w - 4.0, 1.6, 1.0, ETCH, font="arialbd")
         else:
             datamatrix(a, 2.4, cym - 3.4, 6.8, 16, S["seed"] * 3, ETCH)
             tx = 12.0
@@ -338,6 +338,9 @@ def ihs_texture(cid, S, sock, size_mm, text_up_x):
             # bottom-left... the image's left is -y, its bottom is -x? (right = +y, up = +x) -> corner
             # (+x,-y) is at the image's top-left.
             a.poly([(1.2, h - 1.2), (4.0, h - 1.2), (1.2, h - 4.0)], ETCH, z=0.5)
+        if S.get("ihs_extra"):
+            # optional hook (catalogue CPUs): more markings drawn in the same panel, ihs_extra(art, S, w, h)
+            S["ihs_extra"](a, S, w, h)
     regions = {"top": uv, "side": at.swatch(pp.shade(NICKEL, 0.92))}
     at.render(pp.tex_path(name))
     pp.PREVIEW_TEX[name] = (0.85, 0.3)

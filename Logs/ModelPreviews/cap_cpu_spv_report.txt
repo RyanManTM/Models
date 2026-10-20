@@ -1,0 +1,4 @@
+cap_cpu_spv: 532 triangles, 1 meshes
+  mesh cap_cpu_spv_glass#glass  tris=532
+  A_HIT_0 pos=(-0.0, 0.0, 0.0008) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.07400,0.07740,0.00160 meta=remove=+z,travel=0.030,blocks=install
+frame: origin at the contact face centre (on the SP-V package's A_CAP_PADS_0), +z = pull-off direction; local +x = the package's -x
