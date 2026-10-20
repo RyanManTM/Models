@@ -1,0 +1,125 @@
+mb_kestrel_z790_talon: 45922 triangles, 39 meshes
+  mesh cap@A_COVER_CPU_0#tex_kestrel_z790_talon_mk  tris=132
+  mesh film@A_FILM_M2_0@A_COVER_M2_0#film_blue  tris=36
+  mesh handle@A_LEVER_CPU_0#black_plastic  tris=44
+  mesh heatsink@A_COVER_M2_0#steel_dark  tris=672
+  mesh latch@A_LATCH_PCIE_0#connector_black  tris=100
+  mesh latch@A_LATCH_RAM_0_0#connector_black  tris=144
+  mesh latch@A_LATCH_RAM_0_1#connector_black  tris=144
+  mesh latch@A_LATCH_RAM_1_0#connector_black  tris=144
+  mesh latch@A_LATCH_RAM_1_1#connector_black  tris=144
+  mesh latch@A_LATCH_RAM_2_0#connector_black  tris=144
+  mesh latch@A_LATCH_RAM_2_1#connector_black  tris=144
+  mesh latch@A_LATCH_RAM_3_0#connector_black  tris=144
+  mesh latch@A_LATCH_RAM_3_1#connector_black  tris=144
+  mesh led@A_LED_DEBUG_BOOT_0#led_green  tris=44
+  mesh led@A_LED_DEBUG_CPU_0#led_red  tris=44
+  mesh led@A_LED_DEBUG_DRAM_0#led_yellow  tris=44
+  mesh led@A_LED_DEBUG_VGA_0#led_white  tris=44
+  mesh lever@A_LEVER_CPU_0#steel  tris=116
+  mesh logo@A_COVER_M2_0#tex_kestrel_z790_talon_mk  tris=44
+  mesh mb_alu#alu  tris=2760
+  mesh mb_alu_dark#alu_dark  tris=308
+  mesh mb_black_plastic#black_plastic  tris=1016
+  mesh mb_ceramic#ceramic  tris=3792
+  mesh mb_chip_black#chip_black  tris=1776
+  mesh mb_connector_black#connector_black  tris=4864
+  mesh mb_dark_plastic#dark_plastic  tris=144
+  mesh mb_gold#gold  tris=5624
+  mesh mb_led_green#led_green  tris=12
+  mesh mb_led_yellow#led_yellow  tris=12
+  mesh mb_rgb#rgb  tris=44
+  mesh mb_solder#solder  tris=14056
+  mesh mb_steel#steel  tris=2112
+  mesh mb_steel_dark#steel_dark  tris=564
+  mesh mb_tex_kestrel_z790_talon_mk#tex_kestrel_z790_talon_mk  tris=5294
+  mesh mb_tex_kestrel_z790_talon_pcb#tex_kestrel_z790_talon_pcb  tris=816
+  mesh mb_white_plastic#white_plastic  tris=8
+  mesh pad@A_COVER_M2_0#thermal_pad  tris=12
+  mesh plate@A_PLATE_CPU_0#steel  tris=188
+  mesh trim@A_COVER_M2_0#tex_kestrel_z790_talon_mk  tris=48
+  A_BUTTON_FLASHBACK_0 pos=(0.126, 0.145, 0.0196) fwd=(1.0, 0.0, 0.0) up=(-0.0, -0.0, 1.0) size=0.00840,0.00840,0.00500 meta=depth=0.0015,button=flashback,usb=A_PORT_USBA_0,press=-x
+  A_COVER_CPU_0 pos=(0.03, 0.075, 0.0082) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.04000,0.04000,0.00300 meta=pnp_cap=1,remove=+z
+  A_COVER_M2_0 pos=(0.029, -0.015, 0.0107) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.10600,0.02500,0.00500 meta=remove=+z,screws=2
+  A_FILM_CHIPSET_0 pos=(-0.08, -0.088, 0.01112) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.03100,0.02700,0.00100 meta=film=clear,on=chipset_logo,peel_from=+x
+  A_FILM_IO_0 pos=(0.11265, 0.09675, 0.03712) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01800,0.07700,0.00100 meta=film=clear,on=io_cover_logo,peel_from=-y
+  A_FILM_M2_0@A_COVER_M2_0 pos=(0.0325, -0.015, 0.0062) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.08000,0.02300,0.00100 meta=peel=+x
+  A_FILM_M2_1 pos=(0.062, -0.0653, 0.01012) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.03100,0.01300,0.00100 meta=film=clear,on=m2_2_logo,peel=-x,tab=+x+y
+  A_FILM_VRM_0 pos=(0.008, 0.1446, 0.03252) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.03500,0.00700,0.00100 meta=film=clear,on=vrm_logo,peel=+x,tab=-x+y
+  A_HIT_0 pos=(-0.0, 0.0, 0.0008) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.24400,0.30500,0.00160 meta=
+  A_HIT_1 pos=(0.045, 0.085, 0.008) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.12000,0.14000,0.01400 meta=
+  A_HIT_2 pos=(0.1105, 0.075, 0.019) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.03300,0.16000,0.03800 meta=
+  A_HIT_3 pos=(-0.042, 0.0673, 0.005) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.03000,0.15000,0.00900 meta=
+  A_HIT_4 pos=(0.01, -0.085, 0.006) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.18000,0.13000,0.01000 meta=
+  A_HOLE_0 pos=(0.11176, -0.13589, -0.0) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.00300 meta=atx=A,d=0.00396
+  A_HOLE_1 pos=(0.11176, -0.01143, -0.0) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.00300 meta=atx=C,d=0.00396
+  A_HOLE_2 pos=(0.0889, 0.14605, -0.0) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.00300 meta=atx=F,d=0.00396
+  A_HOLE_3 pos=(-0.04318, -0.13589, -0.0) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.00300 meta=atx=G,d=0.00396
+  A_HOLE_4 pos=(-0.04318, -0.01143, -0.0) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.00300 meta=atx=H,d=0.00396
+  A_HOLE_5 pos=(-0.04318, 0.14605, -0.0) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.00300 meta=atx=J,d=0.00396
+  A_HOLE_6 pos=(-0.11557, -0.13589, -0.0) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.00300 meta=atx=K,d=0.00396
+  A_HOLE_7 pos=(-0.11557, -0.01143, -0.0) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.00300 meta=atx=L,d=0.00396
+  A_HOLE_8 pos=(-0.11557, 0.14605, -0.0) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.00300 meta=atx=M,d=0.00396
+  A_LATCH_PCIE_0 pos=(-0.0195, -0.045, 0.0024) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00600,0.00750,0.01200 meta=hinge=y,open=-25
+  A_LATCH_RAM_0_0 pos=(-0.0304, -0.0034, 0.0028) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00640,0.00600,0.01800 meta=hinge=x,open=35
+  A_LATCH_RAM_0_1 pos=(-0.0304, 0.138, 0.0028) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00640,0.00600,0.01800 meta=hinge=x,open=-35
+  A_LATCH_RAM_1_0 pos=(-0.038, -0.0034, 0.0028) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00640,0.00600,0.01800 meta=hinge=x,open=35
+  A_LATCH_RAM_1_1 pos=(-0.038, 0.138, 0.0028) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00640,0.00600,0.01800 meta=hinge=x,open=-35
+  A_LATCH_RAM_2_0 pos=(-0.0456, -0.0034, 0.0028) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00640,0.00600,0.01800 meta=hinge=x,open=35
+  A_LATCH_RAM_2_1 pos=(-0.0456, 0.138, 0.0028) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00640,0.00600,0.01800 meta=hinge=x,open=-35
+  A_LATCH_RAM_3_0 pos=(-0.0532, -0.0034, 0.0028) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00640,0.00600,0.01800 meta=hinge=x,open=35
+  A_LATCH_RAM_3_1 pos=(-0.0532, 0.138, 0.0028) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00640,0.00600,0.01800 meta=hinge=x,open=-35
+  A_LED_DEBUG_BOOT_0 pos=(-0.104, 0.103, 0.0024) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00400,0.00300,0.00200 meta=colour=green
+  A_LED_DEBUG_CPU_0 pos=(-0.104, 0.121, 0.0024) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00400,0.00300,0.00200 meta=colour=red
+  A_LED_DEBUG_DRAM_0 pos=(-0.104, 0.115, 0.0024) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00400,0.00300,0.00200 meta=colour=yellow
+  A_LED_DEBUG_VGA_0 pos=(-0.104, 0.109, 0.0024) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00400,0.00300,0.00200 meta=colour=white
+  A_LEVER_CPU_0 pos=(0.0568, 0.109, 0.003) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00500,0.06000,0.00800 meta=hinge=x,open=-115,plate=A_PLATE_CPU_0
+  A_MARK_SOCKET_0 pos=(0.0509, 0.05025, 0.0056) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00300,0.00300,0.00200 meta=pin1=+x-y
+  A_PLATE_CPU_0 pos=(0.03, 0.109, 0.003) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.04240,0.05500,0.00400 meta=hinge=x,open=-125
+  A_PORT_ATX24_0 pos=(-0.1156, 0.062, 0.014) fwd=(0.0, -0.0, 1.0) up=(-1.0, 0.0, 0.0) size=0.01200,0.05420,0.00800 meta=depth=0.0075,pins=24,latch=+up,atx=24
+  A_PORT_AUDIOHDR_0 pos=(0.104, -0.1466, 0.0101) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01470,0.00708,0.00800 meta=depth=0.0060,pins=9;pin1=-0.00508,-0.00127;colstep=0.00254,0.00000;rowstep=0.00000,0.00254;hd_audio=1
+  A_PORT_AUDIOJACK_0 pos=(0.126, 0.0118, 0.0185) fwd=(1.0, 0.0, 0.0) up=(-0.0, -0.0, 1.0) size=0.00560,0.00560,0.03000 meta=depth=0.0140,jack=line_out,colour=green
+  A_PORT_DP_0 pos=(0.126, 0.1095, 0.0119) fwd=(1.0, 0.0, 0.0) up=(-0.0, -0.0, 1.0) size=0.01800,0.00670,0.01800 meta=depth=0.0080,dp=1,latch=1
+  A_PORT_EPS8_0 pos=(0.0595, 0.1455, 0.014) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02060,0.01200,0.00800 meta=depth=0.0075,pins=8,latch=+up,split=4+4
+  A_PORT_ETH_0 pos=(0.126, 0.0715, 0.0244) fwd=(1.0, 0.0, 0.0) up=(-0.0, -0.0, 1.0) size=0.01370,0.01050,0.02600 meta=depth=0.0120,rj45=1,latch=-z
+  A_PORT_FANCPU_0 pos=(-0.026, 0.1465, 0.0101) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01216,0.00654,0.00800 meta=depth=0.0060,pins=4;pin1=-0.00381,0.00000;colstep=0.00254,0.00000;rowstep=0.00000,0.00254;fan=cpu,pinout=GND|12V|SENSE|PWM
+  A_PORT_FANSYS_0 pos=(0.008, -0.1466, 0.0101) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01216,0.00654,0.00800 meta=depth=0.0060,pins=4;pin1=0.00381,-0.00000;colstep=-0.00254,0.00000;rowstep=-0.00000,-0.00254;fan=sys1
+  A_PORT_FANSYS_1 pos=(-0.117, -0.03, 0.0101) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00654,0.01216,0.00800 meta=depth=0.0060,pins=4;pin1=0.00000,0.00381;colstep=-0.00000,-0.00254;rowstep=0.00254,-0.00000;fan=sys2
+  A_PORT_FANSYS_2 pos=(-0.08, 0.1465, 0.0101) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01216,0.00654,0.00800 meta=depth=0.0060,pins=4;pin1=-0.00381,0.00000;colstep=0.00254,0.00000;rowstep=0.00000,0.00254;fan=sys3
+  A_PORT_FPANEL_0 pos=(-0.1, -0.1466, 0.0101) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01470,0.00708,0.00800 meta=depth=0.0060,pins=9;pin1=-0.00508,-0.00127;colstep=0.00254,0.00000;rowstep=0.00000,0.00254;pinout=1:HDD_LED+,2:PLED+,3:HDD_LED-,4:PLED-,5:RESET_GND,6:PWR_SW,7:RESET,8:PWR_GND,9:NC,10:KEY;pwr=6,8;reset=5,7;pled=2,4;hdd=1,3
+  A_PORT_HDMI_0 pos=(0.126, 0.1095, 0.0052) fwd=(1.0, 0.0, 0.0) up=(-0.0, -0.0, 1.0) size=0.01600,0.00650,0.01800 meta=depth=0.0080,hdmi=1
+  A_PORT_RGB_0 pos=(0.086, -0.1466, 0.0101) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01216,0.00454,0.00800 meta=depth=0.0060,pins=3;pin1=-0.00381,0.00000;colstep=0.00254,0.00000;rowstep=0.00000,0.00254;argb=5v,pinout=5V|D|KEY|GND
+  A_PORT_SATA_0 pos=(-0.123, -0.062, 0.0051) fwd=(-1.0, 0.0, 0.0) up=(0.0, -0.0, 1.0) size=0.01100,0.00600,0.01200 meta=depth=0.0050,sata=SATA6G_1
+  A_PORT_SATA_1 pos=(-0.123, -0.062, 0.0115) fwd=(-1.0, 0.0, 0.0) up=(0.0, -0.0, 1.0) size=0.01100,0.00600,0.01200 meta=depth=0.0050,sata=SATA6G_2
+  A_PORT_SATA_2 pos=(-0.123, -0.079, 0.0051) fwd=(-1.0, 0.0, 0.0) up=(0.0, -0.0, 1.0) size=0.01100,0.00600,0.01200 meta=depth=0.0050,sata=SATA6G_3
+  A_PORT_SATA_3 pos=(-0.123, -0.079, 0.0115) fwd=(-1.0, 0.0, 0.0) up=(0.0, -0.0, 1.0) size=0.01100,0.00600,0.01200 meta=depth=0.0050,sata=SATA6G_4
+  A_PORT_USB3HDR_0 pos=(0.036, -0.1472, 0.0105) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02440,0.00860,0.00800 meta=depth=0.0060,pins=19;pin1=-0.00900,-0.00100;colstep=0.00200,0.00000;rowstep=0.00000,0.00200;usb3=19pin,key=+y
+  A_PORT_USBA_0 pos=(0.126, 0.128, 0.0055) fwd=(1.0, 0.0, 0.0) up=(-0.0, -0.0, 1.0) size=0.01450,0.00720,0.02000 meta=depth=0.0090,usb=2.0
+  A_PORT_USBA_1 pos=(0.126, 0.128, 0.0133) fwd=(1.0, 0.0, 0.0) up=(-0.0, -0.0, 1.0) size=0.01450,0.00720,0.02000 meta=depth=0.0090,usb=2.0
+  A_PORT_USBA_2 pos=(0.126, 0.091, 0.0055) fwd=(1.0, 0.0, 0.0) up=(-0.0, -0.0, 1.0) size=0.01450,0.00720,0.02000 meta=depth=0.0090,usb=5g
+  A_PORT_USBA_3 pos=(0.126, 0.091, 0.0133) fwd=(1.0, 0.0, 0.0) up=(-0.0, -0.0, 1.0) size=0.01450,0.00720,0.02000 meta=depth=0.0090,usb=5g
+  A_PORT_USBA_4 pos=(0.126, 0.0715, 0.0055) fwd=(1.0, 0.0, 0.0) up=(-0.0, -0.0, 1.0) size=0.01450,0.00720,0.02000 meta=depth=0.0090,usb=5g
+  A_PORT_USBA_5 pos=(0.126, 0.0715, 0.0133) fwd=(1.0, 0.0, 0.0) up=(-0.0, -0.0, 1.0) size=0.01450,0.00720,0.02000 meta=depth=0.0090,usb=5g
+  A_SCREW_PH0_0@A_COVER_M2_0 pos=(-0.02, -0.015, 0.0098) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00500,0.00500,0.00400 meta=
+  A_SCREW_PH0_1@A_COVER_M2_0 pos=(0.078, -0.015, 0.0098) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00500,0.00500,0.00400 meta=
+  A_SCREW_PH2_0 pos=(0.11176, -0.13589, 0.0016) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00700,0.00700,0.00600 meta=hole=A_HOLE_0,m3=1
+  A_SCREW_PH2_1 pos=(0.11176, -0.01143, 0.0016) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00700,0.00700,0.00600 meta=hole=A_HOLE_1,m3=1
+  A_SCREW_PH2_2 pos=(0.0889, 0.14605, 0.0016) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00700,0.00700,0.00600 meta=hole=A_HOLE_2,m3=1
+  A_SCREW_PH2_3 pos=(-0.04318, -0.13589, 0.0016) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00700,0.00700,0.00600 meta=hole=A_HOLE_3,m3=1
+  A_SCREW_PH2_4 pos=(-0.04318, -0.01143, 0.0016) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00700,0.00700,0.00600 meta=hole=A_HOLE_4,m3=1
+  A_SCREW_PH2_5 pos=(-0.04318, 0.14605, 0.0016) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00700,0.00700,0.00600 meta=hole=A_HOLE_5,m3=1
+  A_SCREW_PH2_6 pos=(-0.11557, -0.13589, 0.0016) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00700,0.00700,0.00600 meta=hole=A_HOLE_6,m3=1
+  A_SCREW_PH2_7 pos=(-0.11557, -0.01143, 0.0016) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00700,0.00700,0.00600 meta=hole=A_HOLE_7,m3=1
+  A_SCREW_PH2_8 pos=(-0.11557, 0.14605, 0.0016) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00700,0.00700,0.00600 meta=hole=A_HOLE_8,m3=1
+  A_SOCKET_COOLER_0 pos=(0.03, 0.075, 0.0106) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.09500,0.09500,0.04000 meta=holes=0.078x0.078,backplate=1
+  A_SOCKET_CPU_0 pos=(0.03, 0.075, 0.0046) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.03750,0.04500,0.00600 meta=socket=L17,pin1=+x-y
+  A_SOCKET_M2_0 pos=(0.03, -0.015, 0.0041) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.08000,0.02200,0.00400 meta=type=2280,key=M,keyy=0.0060,insert_angle=20
+  A_SOCKET_PCIE16_0 pos=(0.03, -0.0427, 0.0121) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.08900,0.00900,0.01400 meta=lanes=16,card_origin=1
+  A_SOCKET_PCIE1_0 pos=(0.062, -0.08334, 0.0121) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02500,0.00900,0.01400 meta=lanes=1,looks_only=1
+  A_SOCKET_PCIE1_1 pos=(0.062, -0.12398, 0.0121) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02500,0.00900,0.01400 meta=lanes=1,looks_only=1
+  A_SOCKET_RAM_0 pos=(-0.0304, 0.0673, 0.003) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00760,0.13960,0.01400 meta=notch=-0.0039,slot=A1,mem=DDR5,latch=both,pref=0
+  A_SOCKET_RAM_1 pos=(-0.038, 0.0673, 0.003) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00760,0.13960,0.01400 meta=notch=-0.0039,slot=A2,mem=DDR5,latch=both,pref=1
+  A_SOCKET_RAM_2 pos=(-0.0456, 0.0673, 0.003) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00760,0.13960,0.01400 meta=notch=-0.0039,slot=B1,mem=DDR5,latch=both,pref=0
+  A_SOCKET_RAM_3 pos=(-0.0532, 0.0673, 0.003) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00760,0.13960,0.01400 meta=notch=-0.0039,slot=B2,mem=DDR5,latch=both,pref=1
+  A_STANDOFF_M2_0 pos=(0.07, -0.015, 0.0041) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00500,0.00500,0.00300 meta=screw=ph0
+frame and layout: as mb_ridge_z4 (origin at the PCB centre, +z component side, +x rear I/O); DIMM slots with the DDR5 notch of mb_ridge_b5
