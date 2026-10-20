@@ -19,5 +19,5 @@ box_ram_teamforge_ddr5_32_white_rgb: 4350 triangles, 9 meshes
   A_ITEM_PART_0@A_INSERT_BLISTER_0 pos=(-0.0045, 0.00585, 0.0522) fwd=(0.0, -0.0, -1.0) up=(1.0, -0.0, 0.0) size=0.01010,0.13574,0.04850 meta=bag=none,guard=1,label=memory stick,order=7,parent=A_INSERT_BLISTER_0,under=A_CLAMLID_0
   A_ITEM_PART_1@A_INSERT_BLISTER_0 pos=(-0.0045, 0.00585, -0.0061) fwd=(0.0, -0.0, -1.0) up=(1.0, -0.0, 0.0) size=0.01010,0.13574,0.04850 meta=bag=none,guard=1,label=memory stick,order=7,parent=A_INSERT_BLISTER_0,under=A_CLAMLID_0
   A_SEAL_0@A_INSERT_BLISTER_0 pos=(-0.0045, 0.0112, 0.0513) fwd=(0.0, 1.0, -0.0) up=(-0.0, 0.0, 1.0) size=0.01400,0.01200,0.00010 meta=shape=rect,peel=+y,print=SEALED,label=seal sticker,order=4,parent=A_INSERT_BLISTER_0,under=A_INSERT_BLISTER_0
-shot from: ram_teamforge_ddr5_32_white_rgb
+shot from: cached
 RAM: end tuck flap A_FLAP_0 (1) -> dust flaps A_FLAP_1/2 (2) -> blister tray A_INSERT_BLISTER_0 slides out +x (3) -> on it the blister seal A_SEAL_0 and 2 papers in a pile on the lid (4..5) -> blister lid A_CLAMLID_0 (6) -> sticks A_ITEM_PART_0/1 (7, guard=1).
