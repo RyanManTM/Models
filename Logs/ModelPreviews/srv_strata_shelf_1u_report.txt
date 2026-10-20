@@ -1,0 +1,13 @@
+srv_strata_shelf_1u: 2724 triangles, 3 meshes
+  mesh srv_strata_shelf_1u_paint_black#paint_black  tris=2696
+  mesh srv_strata_shelf_1u_rubber#rubber  tris=24
+  mesh srv_strata_shelf_1u_tex_cat_server_rack#tex_cat_server_rack  tris=4
+  A_HIT_0 pos=(-0.0, 0.0104, -0.2) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.44400,0.02000,0.40000 meta=
+  A_HIT_1 pos=(-0.0, 0.02222, 0.001) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04365,0.00400 meta=
+  A_SCREW_RACK_0 pos=(-0.23255, 0.00635, 0.002) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01200,0.01000,0.00600 meta=thread=M6,cage=1,side=l
+  A_SCREW_RACK_1 pos=(-0.23255, 0.0381, 0.002) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01200,0.01000,0.00600 meta=thread=M6,cage=1,side=l
+  A_SCREW_RACK_2 pos=(0.23255, 0.00635, 0.002) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01200,0.01000,0.00600 meta=thread=M6,cage=1,side=r
+  A_SCREW_RACK_3 pos=(0.23255, 0.0381, 0.002) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01200,0.01000,0.00600 meta=thread=M6,cage=1,side=r
+  A_SHELF_0 pos=(-0.0, 0.0027, -0.2) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.44000,0.39600,0.00400 meta=surface=1,w=0.440,d=0.396,load_kg=25,front_mount=1
+bounds min=(-0.2413, 0.0004, -0.4000) max=(0.2413, 0.0441, 0.0021) size=(0.4826, 0.0437, 0.4021)
+frame: rack device, 1U front-mount shelf, panel face z=0.002, tray top y=0.0019, depth 0.4

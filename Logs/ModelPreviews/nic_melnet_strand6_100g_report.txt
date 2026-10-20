@@ -1,0 +1,36 @@
+nic_melnet_strand6_100g: 5446 triangles, 20 meshes
+  mesh bracket_0@A_BRACKET_0#dark_plastic  tris=24
+  mesh bracket_0@A_BRACKET_0#nickel  tris=144
+  mesh bracket_0@A_BRACKET_0#steel  tris=1448
+  mesh bracket_0@A_BRACKET_0#tex_cat_server_cards  tris=4
+  mesh led_act_0@A_LED_ACT_0#led_yellow  tris=12
+  mesh led_act_1@A_LED_ACT_1#led_yellow  tris=12
+  mesh led_link_0@A_LED_LINK_0#led_green  tris=12
+  mesh led_link_1@A_LED_LINK_1#led_green  tris=12
+  mesh nic_melnet_strand6_100g_alu_dark#alu_dark  tris=284
+  mesh nic_melnet_strand6_100g_black_plastic#black_plastic  tris=24
+  mesh nic_melnet_strand6_100g_ceramic#ceramic  tris=288
+  mesh nic_melnet_strand6_100g_chip_black#chip_black  tris=96
+  mesh nic_melnet_strand6_100g_dark_plastic#dark_plastic  tris=48
+  mesh nic_melnet_strand6_100g_gold#gold  tris=1968
+  mesh nic_melnet_strand6_100g_nickel#nickel  tris=360
+  mesh nic_melnet_strand6_100g_pcb_green#pcb_green  tris=80
+  mesh nic_melnet_strand6_100g_solder#solder  tris=144
+  mesh nic_melnet_strand6_100g_steel#steel  tris=320
+  mesh nic_melnet_strand6_100g_white_plastic#white_plastic  tris=160
+  mesh s_tex_cat_server_cards#tex_cat_server_cards  tris=6
+  A_BRACKET_0 pos=(0.0965, -0.0069, 0.0465) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01100,0.01840,0.12000 meta=remove=-z,swap=nic_melnet_strand6_100g_lpbracket,screws=A_SCREW_PH1_0;A_SCREW_PH1_1,height=full
+  A_HIT_0 pos=(0.01105, -0.0106, 0.0317) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.16730,0.02240,0.06340 meta=
+  A_HIT_1 pos=(0.101, -0.0062, 0.0465) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01100,0.01840,0.12000 meta=
+  A_HIT_2 pos=(-0.0, -0.001, -0.0028) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.08900,0.00300,0.00600 meta=
+  A_LED_ACT_0 pos=(0.0968, -0.0051, 0.0063) fwd=(1.0, 0.0, -0.0) up=(0.0, -1.0, -0.0) size=0.00200,0.00220,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_1 pos=(0.0968, -0.0051, 0.0567) fwd=(1.0, 0.0, -0.0) up=(0.0, -1.0, -0.0) size=0.00200,0.00220,0.00300 meta=colour=amber,fn=activity
+  A_LED_LINK_0 pos=(0.0968, -0.0101, 0.0063) fwd=(1.0, 0.0, -0.0) up=(0.0, -1.0, -0.0) size=0.00200,0.00220,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_1 pos=(0.0968, -0.0101, 0.0567) fwd=(1.0, 0.0, -0.0) up=(0.0, -1.0, -0.0) size=0.00200,0.00220,0.00300 meta=colour=green,fn=link
+  A_PORT_QSFP_0 pos=(0.0965, -0.0076, 0.019) fwd=(1.0, 0.0, -0.0) up=(0.0, -1.0, -0.0) size=0.01900,0.00950,0.05600 meta=depth=0.048,qsfp=qsfp28,speed=100g,port=1
+  A_PORT_QSFP_1 pos=(0.0965, -0.0076, 0.044) fwd=(1.0, 0.0, -0.0) up=(0.0, -1.0, -0.0) size=0.01900,0.00950,0.05600 meta=depth=0.048,qsfp=qsfp28,speed=100g,port=2
+  A_SCREW_PH1_0 pos=(0.0976, -0.0076, 0.0023) fwd=(1.0, -0.0, 0.0) up=(0.0, 1.0, 0.0) size=0.00500,0.00500,0.00400 meta=thread=4-40,holds=bracket
+  A_SCREW_PH1_1 pos=(0.0976, -0.0076, 0.0607) fwd=(1.0, -0.0, 0.0) up=(0.0, 1.0, 0.0) size=0.00500,0.00500,0.00400 meta=thread=4-40,holds=bracket
+  A_SCREW_PH2_0 pos=(0.1015, -0.0069, 0.1065) fwd=(0.0, -0.0, 1.0) up=(1.0, 0.0, 0.0) size=0.00800,0.00800,0.00800 meta=slot=0
+bounds min=(-0.0726, -0.0159, -0.0135) max=(0.1065, 0.0030, 0.1065) size=(0.1791, 0.0189, 0.1200)
+frame: card (GPU frame), PCIe x16 edge 0.0890 m (x -0.0445..0.0445), board 0.1676 x 0.0689, low-profile board with a full-height bracket

@@ -1,0 +1,22 @@
+srv_strata_cma: 2750 triangles, 13 meshes
+  mesh arm_0@A_ARM_0#black_plastic  tris=24
+  mesh arm_0@A_ARM_0#nickel  tris=144
+  mesh arm_0@A_ARM_0#paint_black  tris=60
+  mesh arm_0@A_ARM_0#steel  tris=1128
+  mesh arm_0@A_ARM_0#tex_cat_server_rack  tris=2
+  mesh arm_1@A_ARM_1@A_ARM_0#black_plastic  tris=24
+  mesh arm_1@A_ARM_1@A_ARM_0#nickel  tris=48
+  mesh arm_1@A_ARM_1@A_ARM_0#paint_black  tris=60
+  mesh arm_1@A_ARM_1@A_ARM_0#steel  tris=1152
+  mesh arm_1@A_ARM_1@A_ARM_0#steel_dark  tris=12
+  mesh arm_1@A_ARM_1@A_ARM_0#tex_parts_c_palette  tris=12
+  mesh srv_strata_cma_steel#steel  tris=60
+  mesh srv_strata_cma_tex_parts_c_palette#tex_parts_c_palette  tris=24
+  A_ARM_0 pos=(0.214, 0.0194, -0.7565) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.42000,0.03200,0.02000 meta=hinge=y,closed=0,open=80,follows=A_RAIL_R_0,travel=0.62
+  A_ARM_1@A_ARM_0 pos=(-0.206, 0.0194, -0.72975) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.42000,0.03200,0.02000 meta=hinge=y,closed=0,open=-160,follows=A_ARM_0
+  A_HIT_0 pos=(-0.0, 0.0194, -0.72975) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.44800,0.03600,0.07150 meta=
+  A_MOUNT_INNER_0@A_ARM_1@A_ARM_0 pos=(0.2195, 0.0194, -0.66) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00400,0.01600,0.02000 meta=clip=inner_rail,side=r,insert=+z,release=green_tab
+  A_MOUNT_OUTER_0 pos=(0.2215, 0.0194, -0.72) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00600,0.02600,0.02000 meta=clip=outer_rail,side=r,insert=+z,release=green_tab
+  A_MOUNT_SUPPORT_0 pos=(-0.2215, 0.0194, -0.72) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00600,0.02600,0.02000 meta=clip=outer_rail,side=l,insert=+z,release=green_tab
+bounds min=(-0.2234, 0.0005, -0.7985) max=(0.2234, 0.0383, -0.6520) size=(0.4468, 0.0379, 0.1465)
+frame: rack device (the frame of the server it serves, installed at the same A_RACKU_n); outer rail rear end z=-0.7385, inner rail rear end z=-0.66, rail centre y=0.0194

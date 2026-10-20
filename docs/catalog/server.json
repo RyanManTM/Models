@@ -1,0 +1,411 @@
+[
+  {
+    "id": "nic_linkwave_350t2",
+    "model": "nic_linkwave_350t2",
+    "brand": "Linkwave",
+    "name": "Linkwave LW350-T2 Dual-Port 1GbE",
+    "category": "Network",
+    "price": 129,
+    "power_w": 5,
+    "color": "#1F6E43",
+    "rgb": false,
+    "analog": "Intel Ethernet Server Adapter I350-T2 (docs only, never shown in game)",
+    "desc": "Two gigabit RJ45 ports for any server with a spare x4 slot.",
+    "specs": {
+      "ports": 2,
+      "port_kind": "RJ45",
+      "speed_gbps": 1,
+      "pcie_gen": 2.1,
+      "pcie_lanes": 4,
+      "edge_mm": 39,
+      "length_mm": 128,
+      "low_profile": true,
+      "lp_bracket": "nic_linkwave_350t2_lpbracket"
+    },
+    "game": {
+      "perf": 0
+    },
+    "contract": "pcie_card",
+    "new_contract": true
+  },
+  {
+    "id": "nic_linkwave_710da2",
+    "model": "nic_linkwave_710da2",
+    "brand": "Linkwave",
+    "name": "Linkwave LW710-DA2 Dual-Port 10GbE SFP+",
+    "category": "Network",
+    "price": 279,
+    "power_w": 7,
+    "color": "#1F6E43",
+    "rgb": false,
+    "analog": "Intel Ethernet Converged Network Adapter X710-DA2 (docs only, never shown in game)",
+    "desc": "Two SFP+ cages for 10 Gb fibre or DAC links.",
+    "specs": {
+      "ports": 2,
+      "port_kind": "SFP+",
+      "speed_gbps": 10,
+      "pcie_gen": 3,
+      "pcie_lanes": 8,
+      "edge_mm": 56,
+      "length_mm": 168,
+      "low_profile": true,
+      "lp_bracket": "nic_linkwave_710da2_lpbracket"
+    },
+    "game": {
+      "perf": 0
+    },
+    "contract": "pcie_card",
+    "new_contract": true
+  },
+  {
+    "id": "nic_melnet_strand6_25g",
+    "model": "nic_melnet_strand6_25g",
+    "brand": "Melnet",
+    "name": "Melnet Strand-6 Lx Dual-Port 25GbE SFP28",
+    "category": "Network",
+    "price": 399,
+    "power_w": 13,
+    "color": "#1F6E43",
+    "rgb": false,
+    "analog": "NVIDIA Mellanox ConnectX-6 Lx MCX631102AN-ADAT (docs only, never shown in game)",
+    "desc": "Two 25 Gb SFP28 ports with RDMA offloads.",
+    "specs": {
+      "ports": 2,
+      "port_kind": "SFP28",
+      "speed_gbps": 25,
+      "pcie_gen": 4,
+      "pcie_lanes": 8,
+      "edge_mm": 56,
+      "length_mm": 168,
+      "low_profile": true,
+      "lp_bracket": "nic_melnet_strand6_25g_lpbracket"
+    },
+    "game": {
+      "perf": 0
+    },
+    "contract": "pcie_card",
+    "new_contract": true
+  },
+  {
+    "id": "nic_melnet_strand6_100g",
+    "model": "nic_melnet_strand6_100g",
+    "brand": "Melnet",
+    "name": "Melnet Strand-6 Dx Dual-Port 100GbE QSFP28",
+    "category": "Network",
+    "price": 1099,
+    "power_w": 24,
+    "color": "#1F6E43",
+    "rgb": false,
+    "analog": "NVIDIA Mellanox ConnectX-6 Dx MCX623106AN-CDAT (docs only, never shown in game)",
+    "desc": "Two 100 Gb QSFP28 ports for the spine and the GPU servers.",
+    "specs": {
+      "ports": 2,
+      "port_kind": "QSFP28",
+      "speed_gbps": 100,
+      "pcie_gen": 4,
+      "pcie_lanes": 16,
+      "edge_mm": 89,
+      "length_mm": 168,
+      "low_profile": true,
+      "lp_bracket": "nic_melnet_strand6_100g_lpbracket"
+    },
+    "game": {
+      "perf": 0
+    },
+    "contract": "pcie_card",
+    "new_contract": true
+  },
+  {
+    "id": "hba_broadline_9500_16i",
+    "model": "hba_broadline_9500_16i",
+    "brand": "Broadline",
+    "name": "Broadline 9500-16i Tri-Mode HBA",
+    "category": "Server",
+    "price": 599,
+    "power_w": 11,
+    "color": "#1F6E43",
+    "rgb": false,
+    "analog": "Broadcom HBA 9500-16i (docs only, never shown in game)",
+    "desc": "Connects 16 SAS, SATA or NVMe drives to a server's backplane.",
+    "specs": {
+      "internal_ports": 16,
+      "connectors": "2 x SFF-8654 x8",
+      "sas_gbps": 12,
+      "pcie_gen": 4,
+      "pcie_lanes": 8,
+      "edge_mm": 56,
+      "length_mm": 156,
+      "low_profile": true,
+      "lp_bracket": "hba_broadline_9500_16i_lpbracket"
+    },
+    "game": {
+      "perf": 0
+    },
+    "contract": "pcie_card",
+    "new_contract": true
+  },
+  {
+    "id": "hba_broadline_9560_16i",
+    "model": "hba_broadline_9560_16i",
+    "brand": "Broadline",
+    "name": "Broadline 9560-16i RAID Controller 8 GB",
+    "category": "Server",
+    "price": 999,
+    "power_w": 17,
+    "color": "#1F6E43",
+    "rgb": false,
+    "analog": "Broadcom MegaRAID 9560-16i with a CacheVault CVPM05 module (docs only, never shown in game)",
+    "desc": "Hardware RAID for 16 drives, 8 GB cache kept safe by a supercap.",
+    "specs": {
+      "internal_ports": 16,
+      "connectors": "2 x SFF-8654 x8",
+      "sas_gbps": 12,
+      "cache_gb": 8,
+      "raid_levels": "0,1,5,6,10,50,60",
+      "supercap": true,
+      "pcie_gen": 4,
+      "pcie_lanes": 8,
+      "edge_mm": 56,
+      "length_mm": 156,
+      "low_profile": true,
+      "lp_bracket": "hba_broadline_9560_16i_lpbracket"
+    },
+    "game": {
+      "perf": 0
+    },
+    "contract": "pcie_card",
+    "new_contract": true
+  },
+  {
+    "id": "srv_strata_sg840_4u",
+    "model": "srv_strata_sg840_4u",
+    "brand": "Strata",
+    "name": "Strata SG840 4U 8-GPU Server",
+    "category": "Server",
+    "price": 11999,
+    "power_w": 1600,
+    "color": "#1A1B1E",
+    "rgb": false,
+    "analog": "Supermicro SYS-421GE / Gigabyte G493 class 8-GPU 4U barebone (docs only, never shown in game)",
+    "desc": "Eight double-width GPU sleds, four 3 kW PSUs, ten hot-swap fans.",
+    "specs": {
+      "units": 4,
+      "gpu_bays": 8,
+      "gpu_width_slots": 2,
+      "psus": 4,
+      "psu_w": 3000,
+      "fans": 10,
+      "drive_bays": 4,
+      "depth_mm": 700,
+      "sockets": 2,
+      "dimms": 16
+    },
+    "game": {
+      "perf": 0
+    },
+    "contract": "rack_device",
+    "new_contract": false
+  },
+  {
+    "id": "srv_strata_sr224_2u",
+    "model": "srv_strata_sr224_2u",
+    "brand": "Strata",
+    "name": "Strata SR224 2U 24-Bay Storage Server",
+    "category": "Server",
+    "price": 3499,
+    "power_w": 450,
+    "color": "#1A1B1E",
+    "rgb": false,
+    "analog": "Dell PowerEdge R740xd 24 x 2.5\" class storage server (docs only, never shown in game)",
+    "desc": "Twenty-four hot-swap 2.5\" bays in two rack units.",
+    "specs": {
+      "units": 2,
+      "drive_bays": 24,
+      "bay_kind": "2.5in",
+      "psus": 2,
+      "psu_w": 800,
+      "fans": 6,
+      "depth_mm": 700,
+      "sockets": 2,
+      "dimms": 16
+    },
+    "game": {
+      "perf": 0
+    },
+    "contract": "rack_device",
+    "new_contract": false
+  },
+  {
+    "id": "srv_linkwave_ls4804x",
+    "model": "srv_linkwave_ls4804x",
+    "brand": "Linkwave",
+    "name": "Linkwave LS-4804X 48-Port Gigabit Switch",
+    "category": "Network",
+    "price": 899,
+    "power_w": 45,
+    "color": "#1A1B1E",
+    "rgb": false,
+    "analog": "Cisco CBS350-48T-4X (docs only, never shown in game)",
+    "desc": "48 gigabit ports and four 10 Gb SFP+ uplinks, managed.",
+    "specs": {
+      "units": 1,
+      "rj45_ports": 48,
+      "sfp_ports": 4,
+      "speed_gbps": 1,
+      "uplink_gbps": 10,
+      "depth_mm": 280,
+      "managed": true
+    },
+    "game": {
+      "perf": 0
+    },
+    "contract": "rack_device",
+    "new_contract": false
+  },
+  {
+    "id": "srv_linkwave_ls1600x",
+    "model": "srv_linkwave_ls1600x",
+    "brand": "Linkwave",
+    "name": "Linkwave LS-1600X 16-Port 10G SFP+ Aggregation Switch",
+    "category": "Network",
+    "price": 549,
+    "power_w": 35,
+    "color": "#1A1B1E",
+    "rgb": false,
+    "analog": "MikroTik CRS317-1G-16S+RM / Ubiquiti aggregation class (docs only, never shown in game)",
+    "desc": "Sixteen 10 Gb SFP+ ports to tie the access switches together.",
+    "specs": {
+      "units": 1,
+      "sfp_ports": 16,
+      "speed_gbps": 10,
+      "mgmt_ports": 1,
+      "psus": 2,
+      "depth_mm": 300,
+      "managed": true
+    },
+    "game": {
+      "perf": 0
+    },
+    "contract": "rack_device",
+    "new_contract": false
+  },
+  {
+    "id": "srv_strata_shelf_1u",
+    "model": "srv_strata_shelf_1u",
+    "brand": "Strata",
+    "name": "Strata 1U Cantilever Shelf",
+    "category": "Server",
+    "price": 45,
+    "power_w": 0,
+    "color": "#1A1B1E",
+    "rgb": false,
+    "analog": "StarTech CABSHELF 1U vented cantilever shelf (docs only, never shown in game)",
+    "desc": "A front-mounted vented shelf for gear without rack ears.",
+    "specs": {
+      "units": 1,
+      "depth_mm": 400,
+      "load_kg": 25,
+      "vented": true
+    },
+    "game": {
+      "perf": 0
+    },
+    "contract": "rack_device",
+    "new_contract": false
+  },
+  {
+    "id": "srv_strata_blank_1u",
+    "model": "srv_strata_blank_1u",
+    "brand": "Strata",
+    "name": "Strata 1U Blanking Panel",
+    "category": "Server",
+    "price": 9,
+    "power_w": 0,
+    "color": "#1A1B1E",
+    "rgb": false,
+    "analog": "APC AR8136BLK 1U blanking panel (docs only, never shown in game)",
+    "desc": "Closes an empty U so the hot air stays behind the rack.",
+    "specs": {
+      "units": 1,
+      "material": "steel",
+      "screws": 4
+    },
+    "game": {
+      "perf": 0
+    },
+    "contract": "rack_device",
+    "new_contract": false
+  },
+  {
+    "id": "srv_strata_blank_2u",
+    "model": "srv_strata_blank_2u",
+    "brand": "Strata",
+    "name": "Strata 2U Blanking Panel",
+    "category": "Server",
+    "price": 12,
+    "power_w": 0,
+    "color": "#1A1B1E",
+    "rgb": false,
+    "analog": "APC AR8126A 2U blanking panel (docs only, never shown in game)",
+    "desc": "Closes two empty U so the hot air stays behind the rack.",
+    "specs": {
+      "units": 2,
+      "material": "steel",
+      "screws": 4
+    },
+    "game": {
+      "perf": 0
+    },
+    "contract": "rack_device",
+    "new_contract": false
+  },
+  {
+    "id": "srv_strata_cma",
+    "model": "srv_strata_cma",
+    "brand": "Strata",
+    "name": "Strata Cable Management Arm 1U",
+    "category": "Server",
+    "price": 89,
+    "power_w": 0,
+    "color": "#2A2B2E",
+    "rgb": false,
+    "analog": "Dell PowerEdge cable management arm (docs only, never shown in game)",
+    "desc": "Keeps a 1U server's cables tidy when it slides out on its rails.",
+    "specs": {
+      "fits": "1U servers on the STRATA slide rails (server_1u)",
+      "side": "right",
+      "travel_mm": 620
+    },
+    "game": {
+      "perf": 0
+    },
+    "contract": "rack_device",
+    "new_contract": true
+  },
+  {
+    "id": "srv_strata_kvm_1u",
+    "model": "srv_strata_kvm_1u",
+    "brand": "Strata",
+    "name": "Strata KMM 18.5\" 1U Console Drawer",
+    "category": "Server",
+    "price": 899,
+    "power_w": 25,
+    "color": "#1A1B1E",
+    "rgb": false,
+    "analog": "Dell DKMMLED185 / Tripp Lite B021 class 1U LCD KVM drawer (docs only, never shown in game)",
+    "desc": "A fold-out screen, keyboard and touchpad in one rack unit.",
+    "specs": {
+      "units": 1,
+      "screen_in": 18.5,
+      "resolution": "1366x768",
+      "keyboard": "US",
+      "touchpad": true,
+      "depth_mm": 620
+    },
+    "game": {
+      "perf": 0
+    },
+    "contract": "rack_device",
+    "new_contract": false
+  }
+]

@@ -1,0 +1,284 @@
+srv_linkwave_ls4804x: 18958 triangles, 113 meshes
+  mesh fan_0@A_FAN_0#fan_black  tris=236
+  mesh fan_1@A_FAN_1#fan_black  tris=236
+  mesh fan_2@A_FAN_2#fan_black  tris=236
+  mesh led_act_0@A_LED_ACT_0#led_yellow  tris=12
+  mesh led_act_10@A_LED_ACT_10#led_yellow  tris=12
+  mesh led_act_11@A_LED_ACT_11#led_yellow  tris=12
+  mesh led_act_12@A_LED_ACT_12#led_yellow  tris=12
+  mesh led_act_13@A_LED_ACT_13#led_yellow  tris=12
+  mesh led_act_14@A_LED_ACT_14#led_yellow  tris=12
+  mesh led_act_15@A_LED_ACT_15#led_yellow  tris=12
+  mesh led_act_16@A_LED_ACT_16#led_yellow  tris=12
+  mesh led_act_17@A_LED_ACT_17#led_yellow  tris=12
+  mesh led_act_18@A_LED_ACT_18#led_yellow  tris=12
+  mesh led_act_19@A_LED_ACT_19#led_yellow  tris=12
+  mesh led_act_1@A_LED_ACT_1#led_yellow  tris=12
+  mesh led_act_20@A_LED_ACT_20#led_yellow  tris=12
+  mesh led_act_21@A_LED_ACT_21#led_yellow  tris=12
+  mesh led_act_22@A_LED_ACT_22#led_yellow  tris=12
+  mesh led_act_23@A_LED_ACT_23#led_yellow  tris=12
+  mesh led_act_24@A_LED_ACT_24#led_yellow  tris=12
+  mesh led_act_25@A_LED_ACT_25#led_yellow  tris=12
+  mesh led_act_26@A_LED_ACT_26#led_yellow  tris=12
+  mesh led_act_27@A_LED_ACT_27#led_yellow  tris=12
+  mesh led_act_28@A_LED_ACT_28#led_yellow  tris=12
+  mesh led_act_29@A_LED_ACT_29#led_yellow  tris=12
+  mesh led_act_2@A_LED_ACT_2#led_yellow  tris=12
+  mesh led_act_30@A_LED_ACT_30#led_yellow  tris=12
+  mesh led_act_31@A_LED_ACT_31#led_yellow  tris=12
+  mesh led_act_32@A_LED_ACT_32#led_yellow  tris=12
+  mesh led_act_33@A_LED_ACT_33#led_yellow  tris=12
+  mesh led_act_34@A_LED_ACT_34#led_yellow  tris=12
+  mesh led_act_35@A_LED_ACT_35#led_yellow  tris=12
+  mesh led_act_36@A_LED_ACT_36#led_yellow  tris=12
+  mesh led_act_37@A_LED_ACT_37#led_yellow  tris=12
+  mesh led_act_38@A_LED_ACT_38#led_yellow  tris=12
+  mesh led_act_39@A_LED_ACT_39#led_yellow  tris=12
+  mesh led_act_3@A_LED_ACT_3#led_yellow  tris=12
+  mesh led_act_40@A_LED_ACT_40#led_yellow  tris=12
+  mesh led_act_41@A_LED_ACT_41#led_yellow  tris=12
+  mesh led_act_42@A_LED_ACT_42#led_yellow  tris=12
+  mesh led_act_43@A_LED_ACT_43#led_yellow  tris=12
+  mesh led_act_44@A_LED_ACT_44#led_yellow  tris=12
+  mesh led_act_45@A_LED_ACT_45#led_yellow  tris=12
+  mesh led_act_46@A_LED_ACT_46#led_yellow  tris=12
+  mesh led_act_47@A_LED_ACT_47#led_yellow  tris=12
+  mesh led_act_4@A_LED_ACT_4#led_yellow  tris=12
+  mesh led_act_5@A_LED_ACT_5#led_yellow  tris=12
+  mesh led_act_6@A_LED_ACT_6#led_yellow  tris=12
+  mesh led_act_7@A_LED_ACT_7#led_yellow  tris=12
+  mesh led_act_8@A_LED_ACT_8#led_yellow  tris=12
+  mesh led_act_9@A_LED_ACT_9#led_yellow  tris=12
+  mesh led_fan_0@A_LED_FAN_0#led_yellow  tris=64
+  mesh led_link_0@A_LED_LINK_0#led_green  tris=12
+  mesh led_link_10@A_LED_LINK_10#led_green  tris=12
+  mesh led_link_11@A_LED_LINK_11#led_green  tris=12
+  mesh led_link_12@A_LED_LINK_12#led_green  tris=12
+  mesh led_link_13@A_LED_LINK_13#led_green  tris=12
+  mesh led_link_14@A_LED_LINK_14#led_green  tris=12
+  mesh led_link_15@A_LED_LINK_15#led_green  tris=12
+  mesh led_link_16@A_LED_LINK_16#led_green  tris=12
+  mesh led_link_17@A_LED_LINK_17#led_green  tris=12
+  mesh led_link_18@A_LED_LINK_18#led_green  tris=12
+  mesh led_link_19@A_LED_LINK_19#led_green  tris=12
+  mesh led_link_1@A_LED_LINK_1#led_green  tris=12
+  mesh led_link_20@A_LED_LINK_20#led_green  tris=12
+  mesh led_link_21@A_LED_LINK_21#led_green  tris=12
+  mesh led_link_22@A_LED_LINK_22#led_green  tris=12
+  mesh led_link_23@A_LED_LINK_23#led_green  tris=12
+  mesh led_link_24@A_LED_LINK_24#led_green  tris=12
+  mesh led_link_25@A_LED_LINK_25#led_green  tris=12
+  mesh led_link_26@A_LED_LINK_26#led_green  tris=12
+  mesh led_link_27@A_LED_LINK_27#led_green  tris=12
+  mesh led_link_28@A_LED_LINK_28#led_green  tris=12
+  mesh led_link_29@A_LED_LINK_29#led_green  tris=12
+  mesh led_link_2@A_LED_LINK_2#led_green  tris=12
+  mesh led_link_30@A_LED_LINK_30#led_green  tris=12
+  mesh led_link_31@A_LED_LINK_31#led_green  tris=12
+  mesh led_link_32@A_LED_LINK_32#led_green  tris=12
+  mesh led_link_33@A_LED_LINK_33#led_green  tris=12
+  mesh led_link_34@A_LED_LINK_34#led_green  tris=12
+  mesh led_link_35@A_LED_LINK_35#led_green  tris=12
+  mesh led_link_36@A_LED_LINK_36#led_green  tris=12
+  mesh led_link_37@A_LED_LINK_37#led_green  tris=12
+  mesh led_link_38@A_LED_LINK_38#led_green  tris=12
+  mesh led_link_39@A_LED_LINK_39#led_green  tris=12
+  mesh led_link_3@A_LED_LINK_3#led_green  tris=12
+  mesh led_link_40@A_LED_LINK_40#led_green  tris=12
+  mesh led_link_41@A_LED_LINK_41#led_green  tris=12
+  mesh led_link_42@A_LED_LINK_42#led_green  tris=12
+  mesh led_link_43@A_LED_LINK_43#led_green  tris=12
+  mesh led_link_44@A_LED_LINK_44#led_green  tris=12
+  mesh led_link_45@A_LED_LINK_45#led_green  tris=12
+  mesh led_link_46@A_LED_LINK_46#led_green  tris=12
+  mesh led_link_47@A_LED_LINK_47#led_green  tris=12
+  mesh led_link_4@A_LED_LINK_4#led_green  tris=12
+  mesh led_link_5@A_LED_LINK_5#led_green  tris=12
+  mesh led_link_6@A_LED_LINK_6#led_green  tris=12
+  mesh led_link_7@A_LED_LINK_7#led_green  tris=12
+  mesh led_link_8@A_LED_LINK_8#led_green  tris=12
+  mesh led_link_9@A_LED_LINK_9#led_green  tris=12
+  mesh led_power_0@A_LED_POWER_0#led_green  tris=64
+  mesh led_sfp_0@A_LED_SFP_0#led_green  tris=12
+  mesh led_sfp_1@A_LED_SFP_1#led_green  tris=12
+  mesh led_sfp_2@A_LED_SFP_2#led_green  tris=12
+  mesh led_sfp_3@A_LED_SFP_3#led_green  tris=12
+  mesh led_sys_0@A_LED_SYS_0#led_green  tris=64
+  mesh srv_linkwave_ls4804x_black_plastic#black_plastic  tris=3464
+  mesh srv_linkwave_ls4804x_dark_plastic#dark_plastic  tris=648
+  mesh srv_linkwave_ls4804x_gold#gold  tris=6600
+  mesh srv_linkwave_ls4804x_nickel#nickel  tris=1540
+  mesh srv_linkwave_ls4804x_paint_black#paint_black  tris=752
+  mesh srv_linkwave_ls4804x_steel#steel  tris=3736
+  mesh srv_linkwave_ls4804x_tex_cat_server_rack#tex_cat_server_rack  tris=118
+  A_FAN_0 pos=(0.03, 0.02222, -0.2595) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.04000,0.04000,0.02000 meta=axis=z,spin=1,rpm=7000
+  A_FAN_1 pos=(0.09, 0.02222, -0.2595) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.04000,0.04000,0.02000 meta=axis=z,spin=1,rpm=7000
+  A_FAN_2 pos=(0.15, 0.02222, -0.2595) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.04000,0.04000,0.02000 meta=axis=z,spin=1,rpm=7000
+  A_HIT_0 pos=(-0.0, 0.02222, -0.1355) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.44000,0.04360,0.28000 meta=
+  A_HIT_1 pos=(-0.0, 0.02222, 0.001) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04360,0.00400 meta=
+  A_LED_ACT_0 pos=(0.1721, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_1 pos=(0.1721, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_10 pos=(0.1011, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_11 pos=(0.1011, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_12 pos=(0.0823, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_13 pos=(0.0823, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_14 pos=(0.0681, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_15 pos=(0.0681, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_16 pos=(0.0539, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_17 pos=(0.0539, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_18 pos=(0.0397, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_19 pos=(0.0397, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_2 pos=(0.1579, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_20 pos=(0.0255, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_21 pos=(0.0255, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_22 pos=(0.0113, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_23 pos=(0.0113, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_24 pos=(-0.0075, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_25 pos=(-0.0075, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_26 pos=(-0.0217, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_27 pos=(-0.0217, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_28 pos=(-0.0359, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_29 pos=(-0.0359, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_3 pos=(0.1579, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_30 pos=(-0.0501, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_31 pos=(-0.0501, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_32 pos=(-0.0643, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_33 pos=(-0.0643, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_34 pos=(-0.0785, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_35 pos=(-0.0785, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_36 pos=(-0.0973, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_37 pos=(-0.0973, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_38 pos=(-0.1115, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_39 pos=(-0.1115, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_4 pos=(0.1437, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_40 pos=(-0.1257, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_41 pos=(-0.1257, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_42 pos=(-0.1399, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_43 pos=(-0.1399, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_44 pos=(-0.1541, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_45 pos=(-0.1541, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_46 pos=(-0.1683, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_47 pos=(-0.1683, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_5 pos=(0.1437, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_6 pos=(0.1295, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_7 pos=(0.1295, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_8 pos=(0.1153, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_9 pos=(0.1153, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_FAN_0 pos=(0.191, 0.01343, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00260,0.00260,0.00300 meta=colour=amber,fn=fan
+  A_LED_LINK_0 pos=(0.1811, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_1 pos=(0.1811, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_10 pos=(0.1101, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_11 pos=(0.1101, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_12 pos=(0.0913, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_13 pos=(0.0913, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_14 pos=(0.0771, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_15 pos=(0.0771, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_16 pos=(0.0629, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_17 pos=(0.0629, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_18 pos=(0.0487, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_19 pos=(0.0487, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_2 pos=(0.1669, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_20 pos=(0.0345, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_21 pos=(0.0345, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_22 pos=(0.0203, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_23 pos=(0.0203, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_24 pos=(0.0015, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_25 pos=(0.0015, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_26 pos=(-0.0127, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_27 pos=(-0.0127, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_28 pos=(-0.0269, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_29 pos=(-0.0269, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_3 pos=(0.1669, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_30 pos=(-0.0411, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_31 pos=(-0.0411, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_32 pos=(-0.0553, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_33 pos=(-0.0553, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_34 pos=(-0.0695, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_35 pos=(-0.0695, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_36 pos=(-0.0883, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_37 pos=(-0.0883, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_38 pos=(-0.1025, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_39 pos=(-0.1025, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_4 pos=(0.1527, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_40 pos=(-0.1167, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_41 pos=(-0.1167, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_42 pos=(-0.1309, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_43 pos=(-0.1309, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_44 pos=(-0.1451, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_45 pos=(-0.1451, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_46 pos=(-0.1593, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_47 pos=(-0.1593, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_5 pos=(0.1527, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_6 pos=(0.1385, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_7 pos=(0.1385, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_8 pos=(0.1243, 0.03652, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_9 pos=(0.1243, 0.00872, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_POWER_0 pos=(0.211, 0.01343, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00260,0.00260,0.00300 meta=colour=green,fn=power
+  A_LED_SFP_0 pos=(-0.1843, 0.03762, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00300,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_SFP_1 pos=(-0.1843, 0.00763, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00300,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_SFP_2 pos=(-0.2008, 0.03762, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00300,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_SFP_3 pos=(-0.2008, 0.00763, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00300,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_SYS_0 pos=(0.201, 0.01343, 0.0048) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00260,0.00260,0.00300 meta=colour=green,fn=sys
+  A_PORT_C14_0 pos=(-0.17, 0.02242, -0.2755) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.02800,0.02000,0.01200 meta=depth=0.008,plug=c13,inlet=c14,psu=1
+  A_PORT_CONSOLE_0 pos=(-0.12, 0.02242, -0.2755) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.01450,0.01200,0.02000 meta=depth=0.012,rj45=1,latch=+up,serial=rs232,baud=115200
+  A_PORT_ETH_0 pos=(0.1766, 0.03112, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=1,speed=1g,poe=0
+  A_PORT_ETH_1 pos=(0.1766, 0.01412, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=2,speed=1g,poe=0
+  A_PORT_ETH_10 pos=(0.1056, 0.03112, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=11,speed=1g,poe=0
+  A_PORT_ETH_11 pos=(0.1056, 0.01412, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=12,speed=1g,poe=0
+  A_PORT_ETH_12 pos=(0.0868, 0.03112, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=13,speed=1g,poe=0
+  A_PORT_ETH_13 pos=(0.0868, 0.01412, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=14,speed=1g,poe=0
+  A_PORT_ETH_14 pos=(0.0726, 0.03112, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=15,speed=1g,poe=0
+  A_PORT_ETH_15 pos=(0.0726, 0.01412, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=16,speed=1g,poe=0
+  A_PORT_ETH_16 pos=(0.0584, 0.03112, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=17,speed=1g,poe=0
+  A_PORT_ETH_17 pos=(0.0584, 0.01412, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=18,speed=1g,poe=0
+  A_PORT_ETH_18 pos=(0.0442, 0.03112, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=19,speed=1g,poe=0
+  A_PORT_ETH_19 pos=(0.0442, 0.01412, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=20,speed=1g,poe=0
+  A_PORT_ETH_2 pos=(0.1624, 0.03112, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=3,speed=1g,poe=0
+  A_PORT_ETH_20 pos=(0.03, 0.03112, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=21,speed=1g,poe=0
+  A_PORT_ETH_21 pos=(0.03, 0.01412, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=22,speed=1g,poe=0
+  A_PORT_ETH_22 pos=(0.0158, 0.03112, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=23,speed=1g,poe=0
+  A_PORT_ETH_23 pos=(0.0158, 0.01412, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=24,speed=1g,poe=0
+  A_PORT_ETH_24 pos=(-0.003, 0.03112, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=25,speed=1g,poe=0
+  A_PORT_ETH_25 pos=(-0.003, 0.01412, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=26,speed=1g,poe=0
+  A_PORT_ETH_26 pos=(-0.0172, 0.03112, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=27,speed=1g,poe=0
+  A_PORT_ETH_27 pos=(-0.0172, 0.01412, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=28,speed=1g,poe=0
+  A_PORT_ETH_28 pos=(-0.0314, 0.03112, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=29,speed=1g,poe=0
+  A_PORT_ETH_29 pos=(-0.0314, 0.01412, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=30,speed=1g,poe=0
+  A_PORT_ETH_3 pos=(0.1624, 0.01412, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=4,speed=1g,poe=0
+  A_PORT_ETH_30 pos=(-0.0456, 0.03112, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=31,speed=1g,poe=0
+  A_PORT_ETH_31 pos=(-0.0456, 0.01412, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=32,speed=1g,poe=0
+  A_PORT_ETH_32 pos=(-0.0598, 0.03112, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=33,speed=1g,poe=0
+  A_PORT_ETH_33 pos=(-0.0598, 0.01412, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=34,speed=1g,poe=0
+  A_PORT_ETH_34 pos=(-0.074, 0.03112, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=35,speed=1g,poe=0
+  A_PORT_ETH_35 pos=(-0.074, 0.01412, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=36,speed=1g,poe=0
+  A_PORT_ETH_36 pos=(-0.0928, 0.03112, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=37,speed=1g,poe=0
+  A_PORT_ETH_37 pos=(-0.0928, 0.01412, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=38,speed=1g,poe=0
+  A_PORT_ETH_38 pos=(-0.107, 0.03112, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=39,speed=1g,poe=0
+  A_PORT_ETH_39 pos=(-0.107, 0.01412, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=40,speed=1g,poe=0
+  A_PORT_ETH_4 pos=(0.1482, 0.03112, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=5,speed=1g,poe=0
+  A_PORT_ETH_40 pos=(-0.1212, 0.03112, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=41,speed=1g,poe=0
+  A_PORT_ETH_41 pos=(-0.1212, 0.01412, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=42,speed=1g,poe=0
+  A_PORT_ETH_42 pos=(-0.1354, 0.03112, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=43,speed=1g,poe=0
+  A_PORT_ETH_43 pos=(-0.1354, 0.01412, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=44,speed=1g,poe=0
+  A_PORT_ETH_44 pos=(-0.1496, 0.03112, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=45,speed=1g,poe=0
+  A_PORT_ETH_45 pos=(-0.1496, 0.01412, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=46,speed=1g,poe=0
+  A_PORT_ETH_46 pos=(-0.1638, 0.03112, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=47,speed=1g,poe=0
+  A_PORT_ETH_47 pos=(-0.1638, 0.01412, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=48,speed=1g,poe=0
+  A_PORT_ETH_5 pos=(0.1482, 0.01412, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=6,speed=1g,poe=0
+  A_PORT_ETH_6 pos=(0.134, 0.03112, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=7,speed=1g,poe=0
+  A_PORT_ETH_7 pos=(0.134, 0.01412, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=8,speed=1g,poe=0
+  A_PORT_ETH_8 pos=(0.1198, 0.03112, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=9,speed=1g,poe=0
+  A_PORT_ETH_9 pos=(0.1198, 0.01412, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=10,speed=1g,poe=0
+  A_PORT_MGMT_0 pos=(-0.1, 0.02242, -0.2755) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.01450,0.01200,0.02000 meta=depth=0.012,rj45=1,latch=+up,speed=1g,net=oob
+  A_PORT_SFP_0 pos=(-0.1843, 0.03112, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01450,0.01050,0.05000 meta=depth=0.042,sfp=sfp+,speed=10g,port=49
+  A_PORT_SFP_1 pos=(-0.1843, 0.01412, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01450,0.01050,0.05000 meta=depth=0.042,sfp=sfp+,speed=10g,port=50
+  A_PORT_SFP_2 pos=(-0.2008, 0.03112, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01450,0.01050,0.05000 meta=depth=0.042,sfp=sfp+,speed=10g,port=51
+  A_PORT_SFP_3 pos=(-0.2008, 0.01412, 0.0045) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01450,0.01050,0.05000 meta=depth=0.042,sfp=sfp+,speed=10g,port=52
+  A_PORT_USBA_0 pos=(-0.08, 0.02242, -0.2755) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.01450,0.00720,0.02000 meta=depth=0.009,usb=2.0,fn=config
+  A_SCREW_RACK_0 pos=(-0.23255, 0.00635, 0.002) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01200,0.01000,0.00600 meta=thread=M6,cage=1,side=l
+  A_SCREW_RACK_1 pos=(-0.23255, 0.0381, 0.002) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01200,0.01000,0.00600 meta=thread=M6,cage=1,side=l
+  A_SCREW_RACK_2 pos=(0.23255, 0.00635, 0.002) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01200,0.01000,0.00600 meta=thread=M6,cage=1,side=r
+  A_SCREW_RACK_3 pos=(0.23255, 0.0381, 0.002) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01200,0.01000,0.00600 meta=thread=M6,cage=1,side=r
+bounds min=(-0.2413, 0.0004, -0.2790) max=(0.2413, 0.0441, 0.0051) size=(0.4826, 0.0437, 0.2841)
+frame: rack device, 1U, body 0.440 x 0.0436 x 0.280, front z=0.0045, rear z=-0.2755
