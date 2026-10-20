@@ -9,7 +9,8 @@ Script: `Tools/Blender/build_smallparts.py` (no helpers; it reuses `build_plugs.
 blender -b --factory-startup -P Tools/Blender/build_smallparts.py -- [ids...] [--nopreview]
 ```
 
-No ids = all of them. Each model writes `Assets/Resources/Models/<id>.fbx`, its textures, previews
+No ids = all of them (about 6 minutes with previews on 4 CPU cores). A full rebuild reproduces every committed FBX
+exactly: `extras_compare.py` prints SAME for all nine. Each model writes `Assets/Resources/Models/<id>.fbx`, its textures, previews
 `Logs/ModelPreviews/<id>_0..1.png` (Workbench) and `<id>_2..3.png` (Cycles), and `Logs/ModelPreviews/<id>_report.txt`.
 
 README line for the script table:

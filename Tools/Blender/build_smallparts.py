@@ -366,12 +366,12 @@ def build_coil_dp(root):
     ya = 0.0049
     fa = V((-0.012, ya, 0.010))
     da = V((1, 0, 0.25)).normalized()
-    ia = place_plug(PL.plug_dp, fa, da, parent=root)
+    ia = drop_stub(PL.plug_dp, P.Frame(fa, da, (0, 1, 0)), root)
     ea = V(ia["end"]) - da * 0.03          # the strain relief's end (stub removed)
     # plug B: beside plug A, face towards +x
     fb = V((0.016, ya, -0.013))
     db = V((-1, 0, -0.2)).normalized()
-    ib = place_plug(PL.plug_dp, fb, db, parent=root)
+    ib = drop_stub(PL.plug_dp, P.Frame(fb, db, (0, 1, 0)), root)
     eb = V(ib["end"]) - db * 0.03
     p_start, t_start = loops[0], coil.tangent(th0)
     p_end, t_end = loops[-1], coil.tangent(th_end)
