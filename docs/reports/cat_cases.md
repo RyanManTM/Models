@@ -12,8 +12,8 @@ Catalogue data: `docs/catalog/cases.json` (14 entries). Anchor report: `Logs/Mod
 | case_nexa_h5 | yes | 93,334 | 83 | case (case_breeze) | 62 SAME, front fans differ |
 | case_facet_fjord | yes | 95,292 | 86 | case (case_breeze) | 62 SAME, front fans differ |
 | case_hush_500dx | yes | 94,844 | 85 | case (case_breeze) | 62 SAME, front fans differ |
-| case_facet_fizzair | yes | 102,728 | 88 | case (case_breeze) | 61 SAME, fan meta differs |
-| case_brickhouse_beige98 | yes | 103,588 | 82 | case (case_breeze; fans as case_brickhouse) | front fans absent, +2 fun anchors |
+| case_facet_fizzair | yes | 102,728 | 88 | case (case_breeze) | 59 SAME, 8 meta-only DIFF (plain 3-pin fans) |
+| case_brickhouse_beige98 | yes | 103,588 | 82 | case (case_breeze; fans as case_brickhouse) | 58 SAME, 3 meta-only DIFF, front fans absent, +2 fun anchors |
 | fan_arctiq_p12 | yes | 8,136 | 7 | case_fan (new) | – |
 | fan_noctis_a12x25 | yes | 10,552 | 8 | case_fan (new) | – |
 | fan_noctis_a12x25_black | yes | 10,552 | 7 | case_fan (new) | – |
@@ -37,8 +37,8 @@ standoff, panel, front I/O, front-panel plug and hitbox anchors are case_breeze'
 | case_nexa_h5 | 62 | A_FAN_1, A_FAN_2 (120 mm at y 0.300 / 0.170); A_FAN_0..2 meta without `rgb=1` (plain fans) | – | A_FAN_3, A_PLUG_FAN_3 |
 | case_facet_fjord | 62 | A_FAN_1, A_FAN_2 (140 mm at y 0.300 / 0.155); A_FAN_0..2 meta without `rgb=1` | – | A_FAN_3, A_PLUG_FAN_3 |
 | case_hush_500dx | 62 | A_FAN_1, A_FAN_2 (140 mm at y 0.300 / 0.155); A_FAN_0..2 meta without `rgb=1` | – | A_FAN_3, A_PLUG_FAN_3 |
-| case_facet_fizzair | 61 | A_FAN_0..3 meta without `rgb=1`; A_PLUG_FAN_0..3 meta `kind=fan3` (3-pin fans) | – | – |
-| case_brickhouse_beige98 | 59 | A_FAN_0 meta (no `rgb=1`), A_PLUG_FAN_0 `kind=fan3` | A_BUTTON_TURBO_0, A_LED_TURBO_0 | A_FAN_1..3, A_PLUG_FAN_1..3 |
+| case_facet_fizzair | 59 | A_FAN_0..3 meta without `rgb=1`; A_PLUG_FAN_0..3 meta `kind=fan3` (3-pin fans) | – | – |
+| case_brickhouse_beige98 | 58 | A_FAN_0 meta (no `rgb=1`), A_PLUG_FAN_0 `kind=fan3`, A_LED_POWER_0 `colour=green` | A_BUTTON_TURBO_0, A_LED_TURBO_0 | A_FAN_1..3, A_PLUG_FAN_1..3 |
 
 Fan differences (allowed: front, top and bottom only; the rear A_FAN_0 / A_PLUG_FAN_0 are always SAME):
 
