@@ -467,7 +467,39 @@ def build_u2(sid):
     return root
 
 
+def build_cap_u2():
+    """cap_u2: the black plastic dust cover pushed into a U.2 drive's SFF-8639 connector pocket. Frame = the drive's
+    A_PORT_U2_0: origin at the pocket mouth, +z = out of the drive (the pull direction), +y = the drive's top,
+    x = along the connector (the drive's +z). The insert fills the pocket round the tongue and its key (to z
+    -0.0036, the back wall is at -0.0038), a flange sits on the end face, a ribbed pull tab stands out of it."""
+    sid = "cap_u2"
+    c.reset()
+    root = c.root(sid)
+    k = pp.Kit("m")
+    g = k["dark_plastic"]
+    # the pocket round the anchor (mm): x +-21.5, y -1.9..3.4; the tongue and key x +-19.7, y -0.55..2.85
+    outer = [(-21.2 * MM, -1.6 * MM), (21.2 * MM, -1.6 * MM), (21.2 * MM, 3.2 * MM), (-21.2 * MM, 3.2 * MM)]
+    hole = [(-19.9 * MM, -0.8 * MM), (-19.9 * MM, 2.95 * MM), (19.9 * MM, 2.95 * MM), (19.9 * MM, -0.8 * MM)]
+    pp.prism(g, [outer, hole], -3.6 * MM, 0.0)
+    pp.box(g, (0, 1.0 * MM, 0.6 * MM), (45.0 * MM, 6.8 * MM, 1.2 * MM), bevel=0.0003)
+    # the pull tab: a fin in the x-z plane with grip ridges, and "U.2" moulded as a raised bar pattern
+    pp.box(g, (0, 1.0 * MM, 4.2 * MM), (12.0 * MM, 1.0 * MM, 6.0 * MM), bevel=0.0003)
+    for zr in (3.0, 4.4, 5.8):
+        for sgn in (-1, 1):
+            pp.box(g, (0, (1.0 + sgn * 0.55) * MM, zr * MM), (10.0 * MM, 0.25 * MM, 0.35 * MM))
+    k.finish(root)
+    c.anchor("A_HIT_0", (0, 1.0 * MM, (-3.6 + 7.2) / 2 * MM), (45.0 * MM, 6.8 * MM, 10.8 * MM), root,
+             meta="remove=+z,travel=0.004,port=u2,blocks=plug")
+    c.anchor("A_GRIP_0", (0, 1.0 * MM, 4.2 * MM), (12.0 * MM, 2.0 * MM, 6.0 * MM), root, meta="pull=+z")
+    c.join_by_tag(root, "m")
+    c.export(root, sid)
+    pp.report(root)
+    return root
+
+
 def build(sid):
+    if sid == "cap_u2":
+        return build_cap_u2()
     return build_hdd(sid) if sid in HDD else build_u2(sid)
 
 
@@ -475,6 +507,8 @@ def previews(sid, root):
     if sid in HDD:
         pp.preview(root, sid, views=((30, 35), (-130, 25), (160, -50)), size=(960, 720), dist=0.42)
         pp.preview(root, sid, views=((-90, 12),), size=(960, 720), dist=0.13, target=(-0.07, -0.005, 0.02), start=3)
+    elif sid == "cap_u2":
+        pp.preview(root, sid, views=((30, 25), (-150, 20)), size=(960, 720), dist=0.11)
     else:
         pp.preview(root, sid, views=((30, 35), (-120, 25), (160, -45)), size=(960, 720), dist=0.28)
         pp.preview(root, sid, views=((-90, 10),), size=(960, 720), dist=0.10, target=(-0.05, -0.004, 0.008), start=3)

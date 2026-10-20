@@ -28,7 +28,26 @@
       "perf": 0
     },
     "contract": "ssd_1tb",
-    "new_contract": false
+    "new_contract": false,
+    "unbox": {
+      "films": [],
+      "caps": [],
+      "stickers": []
+    },
+    "docs": [
+      "guide",
+      "warranty"
+    ],
+    "doc_notes": [
+      "1 TB M.2 2280 NVMe SSD, PCIe 4.0 x4 NVMe.",
+      "Install in an M.2 slot with an M key; 2280 = 22 mm wide, 80 mm long.",
+      "Insert the gold fingers at about 20 degrees, press the drive flat, and fix it with the board's M.2 (PH0) screw at the notch.",
+      "Up to 7450 MB/s read and 6900 MB/s write in a PCIe 4.0 x4 slot; slower slots work at their own speed.",
+      "Endurance: 600 TBW. Limited 5-year warranty.",
+      "Do not remove the label: it spreads heat and voids the warranty if removed.",
+      "Use the motherboard's M.2 heatsink if it has one; peel its pad film first.",
+      "Newly installed drives must be initialised (GPT) and formatted before they show up."
+    ]
   },
   {
     "id": "ssd_sorin_990pro_2tb_hs",
@@ -60,7 +79,28 @@
       "perf": 0
     },
     "contract": "ssd_1tb",
-    "new_contract": false
+    "new_contract": false,
+    "unbox": {
+      "films": [
+        "A_FILM_HEATSINK_0"
+      ],
+      "caps": [],
+      "stickers": []
+    },
+    "docs": [
+      "guide",
+      "warranty"
+    ],
+    "doc_notes": [
+      "2 TB M.2 2280 NVMe SSD, PCIe 4.0 x4 NVMe.",
+      "Install in an M.2 slot with an M key; 2280 = 22 mm wide, 80 mm long.",
+      "Insert the gold fingers at about 20 degrees, press the drive flat, and fix it with the board's M.2 (PH0) screw at the notch.",
+      "Up to 7450 MB/s read and 6900 MB/s write in a PCIe 4.0 x4 slot; slower slots work at their own speed.",
+      "Endurance: 1200 TBW. Limited 5-year warranty.",
+      "Pre-installed heatsink (8.2 mm tall): remove the motherboard's M.2 heatsink and its pad first.",
+      "Peel the clear film off the heatsink before use.",
+      "Newly installed drives must be initialised (GPT) and formatted before they show up."
+    ]
   },
   {
     "id": "ssd_sorin_980_500",
@@ -91,7 +131,26 @@
       "perf": 0
     },
     "contract": "ssd_1tb",
-    "new_contract": false
+    "new_contract": false,
+    "unbox": {
+      "films": [],
+      "caps": [],
+      "stickers": []
+    },
+    "docs": [
+      "guide",
+      "warranty"
+    ],
+    "doc_notes": [
+      "500 GB M.2 2280 NVMe SSD, PCIe 3.0 x4 NVMe.",
+      "Install in an M.2 slot with an M key; 2280 = 22 mm wide, 80 mm long.",
+      "Insert the gold fingers at about 20 degrees, press the drive flat, and fix it with the board's M.2 (PH0) screw at the notch.",
+      "Up to 3100 MB/s read and 2600 MB/s write in a PCIe 3.0 x4 slot; slower slots work at their own speed.",
+      "Endurance: 300 TBW. Limited 5-year warranty.",
+      "Do not remove the label: it spreads heat and voids the warranty if removed.",
+      "Use the motherboard's M.2 heatsink if it has one; peel its pad film first.",
+      "Newly installed drives must be initialised (GPT) and formatted before they show up."
+    ]
   },
   {
     "id": "ssd_westline_sn850x_2tb",
@@ -122,7 +181,27 @@
       "perf": 0
     },
     "contract": "ssd_1tb",
-    "new_contract": false
+    "new_contract": false,
+    "unbox": {
+      "films": [],
+      "caps": [],
+      "stickers": []
+    },
+    "docs": [
+      "guide",
+      "warranty"
+    ],
+    "doc_notes": [
+      "2 TB M.2 2280 NVMe SSD, PCIe 4.0 x4 NVMe.",
+      "Install in an M.2 slot with an M key; 2280 = 22 mm wide, 80 mm long.",
+      "Insert the gold fingers at about 20 degrees, press the drive flat, and fix it with the board's M.2 (PH0) screw at the notch.",
+      "Up to 7300 MB/s read and 6600 MB/s write in a PCIe 4.0 x4 slot; slower slots work at their own speed.",
+      "Endurance: 1200 TBW. Limited 5-year warranty.",
+      "Do not remove the label: it spreads heat and voids the warranty if removed.",
+      "Use the motherboard's M.2 heatsink if it has one; peel its pad film first.",
+      "Chips on both sides: check the space under the drive on slim notebooks.",
+      "Newly installed drives must be initialised (GPT) and formatted before they show up."
+    ]
   },
   {
     "id": "ssd_westline_sn850x_1tb_hs",
@@ -154,7 +233,28 @@
       "perf": 0
     },
     "contract": "ssd_1tb",
-    "new_contract": false
+    "new_contract": false,
+    "unbox": {
+      "films": [
+        "A_FILM_HEATSINK_0"
+      ],
+      "caps": [],
+      "stickers": []
+    },
+    "docs": [
+      "guide",
+      "warranty"
+    ],
+    "doc_notes": [
+      "1 TB M.2 2280 NVMe SSD, PCIe 4.0 x4 NVMe.",
+      "Install in an M.2 slot with an M key; 2280 = 22 mm wide, 80 mm long.",
+      "Insert the gold fingers at about 20 degrees, press the drive flat, and fix it with the board's M.2 (PH0) screw at the notch.",
+      "Up to 7300 MB/s read and 6300 MB/s write in a PCIe 4.0 x4 slot; slower slots work at their own speed.",
+      "Endurance: 600 TBW. Limited 5-year warranty.",
+      "Pre-installed heatsink (8.8 mm tall): remove the motherboard's M.2 heatsink and its pad first.",
+      "Peel the clear film off the heatsink before use.",
+      "Newly installed drives must be initialised (GPT) and formatted before they show up."
+    ]
   },
   {
     "id": "ssd_westline_sn580_1tb",
@@ -185,7 +285,26 @@
       "perf": 0
     },
     "contract": "ssd_1tb",
-    "new_contract": false
+    "new_contract": false,
+    "unbox": {
+      "films": [],
+      "caps": [],
+      "stickers": []
+    },
+    "docs": [
+      "guide",
+      "warranty"
+    ],
+    "doc_notes": [
+      "1 TB M.2 2280 NVMe SSD, PCIe 4.0 x4 NVMe.",
+      "Install in an M.2 slot with an M key; 2280 = 22 mm wide, 80 mm long.",
+      "Insert the gold fingers at about 20 degrees, press the drive flat, and fix it with the board's M.2 (PH0) screw at the notch.",
+      "Up to 4150 MB/s read and 4150 MB/s write in a PCIe 4.0 x4 slot; slower slots work at their own speed.",
+      "Endurance: 600 TBW. Limited 5-year warranty.",
+      "Do not remove the label: it spreads heat and voids the warranty if removed.",
+      "Use the motherboard's M.2 heatsink if it has one; peel its pad film first.",
+      "Newly installed drives must be initialised (GPT) and formatted before they show up."
+    ]
   },
   {
     "id": "ssd_crux_p3plus_2tb",
@@ -216,7 +335,26 @@
       "perf": 0
     },
     "contract": "ssd_1tb",
-    "new_contract": false
+    "new_contract": false,
+    "unbox": {
+      "films": [],
+      "caps": [],
+      "stickers": []
+    },
+    "docs": [
+      "guide",
+      "warranty"
+    ],
+    "doc_notes": [
+      "2 TB M.2 2280 NVMe SSD, PCIe 4.0 x4 NVMe.",
+      "Install in an M.2 slot with an M key; 2280 = 22 mm wide, 80 mm long.",
+      "Insert the gold fingers at about 20 degrees, press the drive flat, and fix it with the board's M.2 (PH0) screw at the notch.",
+      "Up to 5000 MB/s read and 4200 MB/s write in a PCIe 4.0 x4 slot; slower slots work at their own speed.",
+      "Endurance: 440 TBW. Limited 5-year warranty.",
+      "Do not remove the label: it spreads heat and voids the warranty if removed.",
+      "Use the motherboard's M.2 heatsink if it has one; peel its pad film first.",
+      "Newly installed drives must be initialised (GPT) and formatted before they show up."
+    ]
   },
   {
     "id": "ssd_crux_t705_2tb_hs",
@@ -248,7 +386,29 @@
       "perf": 0
     },
     "contract": "ssd_1tb",
-    "new_contract": false
+    "new_contract": false,
+    "unbox": {
+      "films": [
+        "A_FILM_HEATSINK_0"
+      ],
+      "caps": [],
+      "stickers": []
+    },
+    "docs": [
+      "guide",
+      "warranty"
+    ],
+    "doc_notes": [
+      "2 TB M.2 2280 NVMe SSD, PCIe 5.0 x4 NVMe.",
+      "Install in an M.2 slot with an M key; 2280 = 22 mm wide, 80 mm long.",
+      "Insert the gold fingers at about 20 degrees, press the drive flat, and fix it with the board's M.2 (PH0) screw at the notch.",
+      "Up to 14500 MB/s read and 12700 MB/s write in a PCIe 5.0 x4 slot; slower slots work at their own speed.",
+      "Endurance: 1200 TBW. Limited 5-year warranty.",
+      "Pre-installed heatsink (22.6 mm tall): remove the motherboard's M.2 heatsink and its pad first.",
+      "Peel the clear film off the heatsink before use.",
+      "Chips on both sides: check the space under the drive on slim notebooks.",
+      "Newly installed drives must be initialised (GPT) and formatted before they show up."
+    ]
   },
   {
     "id": "ssd_sorin_870_1tb",
@@ -277,7 +437,28 @@
       "perf": 0
     },
     "contract": "ssd_sata_500",
-    "new_contract": false
+    "new_contract": false,
+    "unbox": {
+      "films": [
+        "A_FILM_LABEL_0"
+      ],
+      "caps": [],
+      "stickers": []
+    },
+    "docs": [
+      "guide",
+      "warranty"
+    ],
+    "doc_notes": [
+      "1 TB 2.5\" 7 mm SATA SSD, SATA 6 Gb/s.",
+      "Mount in a 2.5\" bay or on a 2.5\" tray with four M3 screws (side holes) or into the bottom holes.",
+      "Connect a SATA data cable from the motherboard and a SATA power plug from the power supply.",
+      "Use a SATA 6 Gb/s port for full speed; ports shared with M.2 slots may be disabled.",
+      "Up to 560 MB/s read and 530 MB/s write. Endurance: 600 TBW.",
+      "Peel the clear film off the top label before installing.",
+      "Initialise (GPT) and format the drive before use.",
+      "Limited 3-year warranty; keep the serial-number label."
+    ]
   },
   {
     "id": "ssd_crux_mx500_2tb",
@@ -306,7 +487,28 @@
       "perf": 0
     },
     "contract": "ssd_sata_500",
-    "new_contract": false
+    "new_contract": false,
+    "unbox": {
+      "films": [
+        "A_FILM_LABEL_0"
+      ],
+      "caps": [],
+      "stickers": []
+    },
+    "docs": [
+      "guide",
+      "warranty"
+    ],
+    "doc_notes": [
+      "2 TB 2.5\" 7 mm SATA SSD, SATA 6 Gb/s.",
+      "Mount in a 2.5\" bay or on a 2.5\" tray with four M3 screws (side holes) or into the bottom holes.",
+      "Connect a SATA data cable from the motherboard and a SATA power plug from the power supply.",
+      "Use a SATA 6 Gb/s port for full speed; ports shared with M.2 slots may be disabled.",
+      "Up to 560 MB/s read and 510 MB/s write. Endurance: 700 TBW.",
+      "Peel the clear film off the top label before installing.",
+      "Initialise (GPT) and format the drive before use.",
+      "Limited 3-year warranty; keep the serial-number label."
+    ]
   },
   {
     "id": "ssd_kingsland_a400_480",
@@ -335,7 +537,28 @@
       "perf": 0
     },
     "contract": "ssd_sata_500",
-    "new_contract": false
+    "new_contract": false,
+    "unbox": {
+      "films": [
+        "A_FILM_LABEL_0"
+      ],
+      "caps": [],
+      "stickers": []
+    },
+    "docs": [
+      "guide",
+      "warranty"
+    ],
+    "doc_notes": [
+      "480 GB 2.5\" 7 mm SATA SSD, SATA 6 Gb/s.",
+      "Mount in a 2.5\" bay or on a 2.5\" tray with four M3 screws (side holes) or into the bottom holes.",
+      "Connect a SATA data cable from the motherboard and a SATA power plug from the power supply.",
+      "Use a SATA 6 Gb/s port for full speed; ports shared with M.2 slots may be disabled.",
+      "Up to 500 MB/s read and 450 MB/s write. Endurance: 160 TBW.",
+      "Peel the clear film off the top label before installing.",
+      "Initialise (GPT) and format the drive before use.",
+      "Limited 3-year warranty; keep the serial-number label."
+    ]
   },
   {
     "id": "hdd_seacrest_2tb",
@@ -364,7 +587,26 @@
       "perf": 0
     },
     "contract": "hdd35",
-    "new_contract": true
+    "new_contract": true,
+    "unbox": {
+      "films": [],
+      "caps": [],
+      "stickers": []
+    },
+    "docs": [
+      "guide",
+      "warranty"
+    ],
+    "doc_notes": [
+      "2 TB 3.5\" hard drive, SATA 6 Gb/s, 7200 rpm, 256 MB cache, SMR.",
+      "Mount in a 3.5\" bay with four 6-32 UNC screws (side or bottom holes); do not use M3 screws.",
+      "Connect a SATA data cable and a SATA power plug (+5 V and +12 V).",
+      "Handle by the sides, never drop it or bump it while it spins; store it in its anti-static bag.",
+      "Sustained transfer up to 220 MB/s.",
+      "Do not cover the breather hole on the top cover.",
+      "Drives over 2 TB need a GPT partition table to use their full capacity.",
+      "Limited warranty: 2 years desktop, 3 years NAS, 5 years enterprise."
+    ]
   },
   {
     "id": "hdd_westline_4tb",
@@ -393,7 +635,26 @@
       "perf": 0
     },
     "contract": "hdd35",
-    "new_contract": true
+    "new_contract": true,
+    "unbox": {
+      "films": [],
+      "caps": [],
+      "stickers": []
+    },
+    "docs": [
+      "guide",
+      "warranty"
+    ],
+    "doc_notes": [
+      "4 TB 3.5\" hard drive, SATA 6 Gb/s, 5400 rpm, 256 MB cache, SMR.",
+      "Mount in a 3.5\" bay with four 6-32 UNC screws (side or bottom holes); do not use M3 screws.",
+      "Connect a SATA data cable and a SATA power plug (+5 V and +12 V).",
+      "Handle by the sides, never drop it or bump it while it spins; store it in its anti-static bag.",
+      "Sustained transfer up to 180 MB/s.",
+      "Do not cover the breather hole on the top cover.",
+      "Drives over 2 TB need a GPT partition table to use their full capacity.",
+      "Limited warranty: 2 years desktop, 3 years NAS, 5 years enterprise."
+    ]
   },
   {
     "id": "hdd_seacrest_8tb",
@@ -423,7 +684,27 @@
       "perf": 0
     },
     "contract": "hdd35",
-    "new_contract": true
+    "new_contract": true,
+    "unbox": {
+      "films": [],
+      "caps": [],
+      "stickers": []
+    },
+    "docs": [
+      "guide",
+      "warranty"
+    ],
+    "doc_notes": [
+      "8 TB 3.5\" hard drive, SATA 6 Gb/s, 7200 rpm, 256 MB cache, CMR.",
+      "Mount in a 3.5\" bay with four 6-32 UNC screws (side or bottom holes); do not use M3 screws.",
+      "Connect a SATA data cable and a SATA power plug (+5 V and +12 V).",
+      "Handle by the sides, never drop it or bump it while it spins; store it in its anti-static bag.",
+      "Sustained transfer up to 210 MB/s.",
+      "Do not cover the breather hole on the top cover.",
+      "Rated for 24/7 use, 180 TB/year workload.",
+      "Drives over 2 TB need a GPT partition table to use their full capacity.",
+      "Limited warranty: 2 years desktop, 3 years NAS, 5 years enterprise."
+    ]
   },
   {
     "id": "hdd_seacrest_exos_20tb",
@@ -453,7 +734,27 @@
       "perf": 0
     },
     "contract": "hdd35",
-    "new_contract": true
+    "new_contract": true,
+    "unbox": {
+      "films": [],
+      "caps": [],
+      "stickers": []
+    },
+    "docs": [
+      "guide",
+      "warranty"
+    ],
+    "doc_notes": [
+      "20 TB 3.5\" hard drive, SATA 6 Gb/s, 7200 rpm, 256 MB cache, CMR.",
+      "Mount in a 3.5\" bay with four 6-32 UNC screws (side or bottom holes); do not use M3 screws.",
+      "Connect a SATA data cable and a SATA power plug (+5 V and +12 V).",
+      "Handle by the sides, never drop it or bump it while it spins; store it in its anti-static bag.",
+      "Sustained transfer up to 272 MB/s.",
+      "Helium sealed: do not open, puncture or remove the top label.",
+      "Rated for 24/7 use, 550 TB/year workload.",
+      "Drives over 2 TB need a GPT partition table to use their full capacity.",
+      "Limited warranty: 2 years desktop, 3 years NAS, 5 years enterprise."
+    ]
   },
   {
     "id": "ssd_sorin_pm9a3_3840",
@@ -481,7 +782,32 @@
       "perf": 0
     },
     "contract": "u2",
-    "new_contract": true
+    "new_contract": true,
+    "unbox": {
+      "films": [],
+      "caps": [
+        {
+          "model": "cap_u2",
+          "at": "A_PORT_U2_0",
+          "blocks": "plug"
+        }
+      ],
+      "stickers": []
+    },
+    "docs": [
+      "guide",
+      "warranty"
+    ],
+    "doc_notes": [
+      "3.84 TB 2.5\" 15 mm U.2 enterprise NVMe SSD, PCIe 4.0 x4 NVMe (SFF-8639).",
+      "Install in a U.2 (SFF-8639) hot-swap bay or sled; desktop boards need a U.2 adapter or cable.",
+      "Remove the black connector cover before inserting; keep it for storage.",
+      "Fix in a 2.5\" 15 mm sled with four M3 screws (side or bottom holes).",
+      "Up to 6900 MB/s read, 4100 MB/s write, 1 drive write per day for 5 years.",
+      "Power-loss protection capacitors keep in-flight data safe on power failure.",
+      "Needs airflow: keep the fins in the server's front-to-back air path.",
+      "Limited 5-year warranty for data-centre use."
+    ]
   },
   {
     "id": "ssd_sorin_pm9a3_7680",
@@ -509,6 +835,31 @@
       "perf": 0
     },
     "contract": "u2",
-    "new_contract": true
+    "new_contract": true,
+    "unbox": {
+      "films": [],
+      "caps": [
+        {
+          "model": "cap_u2",
+          "at": "A_PORT_U2_0",
+          "blocks": "plug"
+        }
+      ],
+      "stickers": []
+    },
+    "docs": [
+      "guide",
+      "warranty"
+    ],
+    "doc_notes": [
+      "7.68 TB 2.5\" 15 mm U.2 enterprise NVMe SSD, PCIe 4.0 x4 NVMe (SFF-8639).",
+      "Install in a U.2 (SFF-8639) hot-swap bay or sled; desktop boards need a U.2 adapter or cable.",
+      "Remove the black connector cover before inserting; keep it for storage.",
+      "Fix in a 2.5\" 15 mm sled with four M3 screws (side or bottom holes).",
+      "Up to 6900 MB/s read, 4100 MB/s write, 1 drive write per day for 5 years.",
+      "Power-loss protection capacitors keep in-flight data safe on power failure.",
+      "Needs airflow: keep the fins in the server's front-to-back air path.",
+      "Limited 5-year warranty for data-centre use."
+    ]
   }
 ]

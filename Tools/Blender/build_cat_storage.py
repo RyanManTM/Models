@@ -338,13 +338,86 @@ CATALOG = [
 ]
 
 
+# models that are not shop entries: the cap that ships on the U.2 drives
+EXTRA = ["cap_u2"]
+ALL_IDS = [e["id"] for e in CATALOG] + EXTRA
+
+
+def unbox(e):
+    """The protective bits on the part (docs/tasks/catalog/README.md, 'The unboxing on every part')."""
+    films, caps = [], []
+    if e["contract"] == "ssd_sata_500":
+        films = ["A_FILM_LABEL_0"]
+    elif e["contract"] == "ssd_1tb" and e["specs"].get("has_heatsink"):
+        films = ["A_FILM_HEATSINK_0"]
+    elif e["contract"] == "u2":
+        caps = [{"model": "cap_u2", "at": "A_PORT_U2_0", "blocks": "plug"}]
+    return {"films": films, "caps": caps, "stickers": []}
+
+
+def doc_notes(e):
+    """4-10 short facts for the installation card and the warranty leaflet."""
+    sp, cap = e["specs"], e["game"]["storage_gb"]
+    size = f"{cap / 1000:g} TB" if cap >= 1000 else f"{cap} GB"
+    if e["contract"] == "ssd_1tb":
+        gen = sp["interface"].split(" x4")[0]
+        n = [f"{size} {sp['form']} NVMe SSD, {sp['interface']}.",
+             "Install in an M.2 slot with an M key; 2280 = 22 mm wide, 80 mm long.",
+             "Insert the gold fingers at about 20 degrees, press the drive flat, and fix it with the board's M.2 (PH0) screw at the notch.",
+             f"Up to {sp['read_mbs']} MB/s read and {sp['write_mbs']} MB/s write in a {gen} x4 slot; slower slots work at their own speed.",
+             f"Endurance: {sp['tbw']} TBW. Limited 5-year warranty."]
+        if sp.get("has_heatsink"):
+            n += [f"Pre-installed heatsink ({sp['height_mm']} mm tall): remove the motherboard's M.2 heatsink and its pad first.",
+                  "Peel the clear film off the heatsink before use."]
+        else:
+            n += ["Do not remove the label: it spreads heat and voids the warranty if removed.",
+                  "Use the motherboard's M.2 heatsink if it has one; peel its pad film first."]
+        if sp.get("sides") == 2:
+            n.append("Chips on both sides: check the space under the drive on slim notebooks.")
+        n.append("Newly installed drives must be initialised (GPT) and formatted before they show up.")
+        return n
+    if e["contract"] == "ssd_sata_500":
+        return [f"{size} {sp['form']} SATA SSD, {sp['interface']}.",
+                "Mount in a 2.5\" bay or on a 2.5\" tray with four M3 screws (side holes) or into the bottom holes.",
+                "Connect a SATA data cable from the motherboard and a SATA power plug from the power supply.",
+                "Use a SATA 6 Gb/s port for full speed; ports shared with M.2 slots may be disabled.",
+                f"Up to {sp['read_mbs']} MB/s read and {sp['write_mbs']} MB/s write. Endurance: {sp['tbw']} TBW.",
+                "Peel the clear film off the top label before installing.",
+                "Initialise (GPT) and format the drive before use.",
+                "Limited 3-year warranty; keep the serial-number label."]
+    if e["contract"] == "hdd35":
+        n = [f"{size} 3.5\" hard drive, {sp['interface']}, {sp['rpm']} rpm, {sp['cache_mb']} MB cache, {sp['recording']}.",
+             "Mount in a 3.5\" bay with four 6-32 UNC screws (side or bottom holes); do not use M3 screws.",
+             "Connect a SATA data cable and a SATA power plug (+5 V and +12 V).",
+             "Handle by the sides, never drop it or bump it while it spins; store it in its anti-static bag.",
+             f"Sustained transfer up to {sp['read_mbs']} MB/s."]
+        if sp.get("helium"):
+            n.append("Helium sealed: do not open, puncture or remove the top label.")
+        else:
+            n.append("Do not cover the breather hole on the top cover.")
+        if sp.get("workload_tby"):
+            n.append(f"Rated for 24/7 use, {sp['workload_tby']} TB/year workload.")
+        n += ["Drives over 2 TB need a GPT partition table to use their full capacity.",
+              "Limited warranty: 2 years desktop, 3 years NAS, 5 years enterprise."]
+        return n
+    return [f"{size} {sp['form']} enterprise NVMe SSD, {sp['interface']}.",
+            "Install in a U.2 (SFF-8639) hot-swap bay or sled; desktop boards need a U.2 adapter or cable.",
+            "Remove the black connector cover before inserting; keep it for storage.",
+            "Fix in a 2.5\" 15 mm sled with four M3 screws (side or bottom holes).",
+            f"Up to {sp['read_mbs']} MB/s read, {sp['write_mbs']} MB/s write, {sp['dwpd']} drive write per day for 5 years.",
+            "Power-loss protection capacitors keep in-flight data safe on power failure.",
+            "Needs airflow: keep the fins in the server's front-to-back air path.",
+            "Limited 5-year warranty for data-centre use."]
+
+
 def write_json():
     out = []
     for e in CATALOG:
         out.append(dict(id=e["id"], model=e["id"], brand=e["brand"], name=e["name"], category="Storage", price=e["price"],
                         power_w=e["power_w"], color=e["color"], rgb=e["rgb"], analog=e["analog"] + " (docs only, never shown in game)",
                         desc=e["desc"], specs=e["specs"], game=dict(e["game"], perf=0), contract=e["contract"],
-                        new_contract=e.get("new_contract", False)))
+                        new_contract=e.get("new_contract", False), unbox=unbox(e), docs=["guide", "warranty"],
+                        doc_notes=doc_notes(e)))
     path = os.path.join(ROOT, "docs", "catalog", "storage.json")
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w", encoding="utf-8") as fh:
@@ -381,9 +454,9 @@ def write_report(blocks):
     with open(REPORT, "w", encoding="utf-8") as fh:
         fh.write("CATALOGUE 14 STORAGE - anchor report (Unity metres; fwd = local +Z, up = local +Y)\n")
         fh.write("Run: blender -b --factory-startup -P Tools/Blender/build_cat_storage.py -- [ids] [--nopreview]\n\n")
-        for e in CATALOG:
-            if e["id"] in old:
-                fh.write("\n".join(old[e["id"]]) + "\n\n")
+        for sid in ALL_IDS:
+            if sid in old:
+                fh.write("\n".join(old[sid]) + "\n\n")
     print("REPORT FILE", REPORT)
 
 
@@ -417,7 +490,7 @@ def main():
     if "--json" in a:
         return
     blocks = {}
-    for sid in ids or [e["id"] for e in CATALOG]:
+    for sid in ids or ALL_IDS:
         blocks[sid] = build(sid, preview)
         write_report(blocks)
 

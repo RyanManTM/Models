@@ -35,7 +35,7 @@ needed for `ssd_1tb` and `ssd_sata_500`.
 blender -b --factory-startup -P Tools/Blender/build_cat_storage.py -- [ids...] [--nopreview] [--json]
 ```
 
-No ids = all 17. Each id writes `Assets/Resources/Models/<id>.fbx`, its texture
+No ids = all 17 plus `cap_u2`. Each id writes `Assets/Resources/Models/<id>.fbx`, its texture
 `Assets/Resources/Models/Textures/<file>.png`, the EEVEE previews `Logs/ModelPreviews/<id>_0..3.png`, and its block
 in `Logs/ModelPreviews/cat_storage_report.txt` (the other blocks are kept). `--json` only rewrites
 `docs/catalog/storage.json`. About 1 minute per model with previews (Linux, bpy 5.0.1, 4 cores).
@@ -186,6 +186,48 @@ y = thickness 0.015 (+y = the finned top), z = width 0.06985.
 Looks: an aluminium shell with 15 longitudinal fins over the top, a flat band with the engraved-style SORIN logo at
 the connector end, a seam to the bottom cover, four cover screws and a large spec label underneath. The two
 capacities differ only in their labels, like the real drives.
+
+## Unboxing: films, caps, papers
+
+Following "The unboxing on every part" in `docs/tasks/catalog/README.md`. The films are anchors only (the game builds
+the peel mesh), and the U.2 cap is a separate model. `meta` gives `peel` and `tab` in the film anchor's own axes.
+
+| part | bit | anchor / model | pose (Unity, the part's frame) | size | meta |
+|---|---|---|---|---|---|
+| `ssd_sorin_870_1tb`, `ssd_crux_mx500_2tb`, `ssd_kingsland_a400_480` | clear film on the top label | `A_FILM_LABEL_0` | (0, 0.00352, 0), fwd +y, up +z (local x = drive −x) | 0.098 × 0.06785 × 0.0001 | `film=clear,on=top_label,peel=-x,tab=+x+y` (tab at the connector end, peels towards the far end) |
+| `ssd_sorin_990pro_2tb_hs` | clear film on the heatsink top | `A_FILM_HEATSINK_0` | (0.0008, 0, 0.00702), fwd +z, up +y | 0.0692 × 0.0216 × 0.0001 | `film=clear,on=heatsink_top,peel=-x,tab=+x+y` |
+| `ssd_westline_sn850x_1tb_hs` | film on the flat, printed part of the top (the fins are bare) | `A_FILM_HEATSINK_0` | (−0.01385, 0, 0.00662), fwd +z, up +y | 0.0399 × 0.0216 × 0.0001 | same |
+| `ssd_crux_t705_2tb_hs` | film on the printed brand bar over the fins | `A_FILM_HEATSINK_0` | (0.0008, 0, 0.02062), fwd +z, up +y | 0.0700 × 0.0058 × 0.0001 | same |
+| `ssd_sorin_pm9a3_3840`, `ssd_sorin_pm9a3_7680` | black plastic connector cover | model `cap_u2` | at `A_PORT_U2_0`, identity (local +Z = pull = drive −x) | | `A_HIT_0` `remove=+z,travel=0.004,port=u2,blocks=plug`; `A_GRIP_0` `pull=+z` |
+| the other 5 M.2 drives | none: the printed label is the cover | | | | |
+| the 4 HDDs | none: they ship in an anti-static bag (the box's job) | | | | |
+
+**`cap_u2`** (192 triangles, 1 mesh, `dark_plastic`; built by `cat_storage_hdd.build_cap_u2`, id `cap_u2`, previews
+`cap_u2_0..1.png`). Its frame is the drive's `A_PORT_U2_0`: origin at the pocket mouth, +z out of the drive.
+- An insert fills the connector pocket round the tongue and key (z −0.0036..0; the pocket's back wall is at −0.0038).
+- A 45 × 6.8 mm flange sits on the end face, with a ribbed 12 mm pull tab standing out to z 0.0072.
+- `A_HIT_0` (0, 0.001, 0.0018), size 0.045 × 0.0068 × 0.0108. `A_GRIP_0` (0, 0.001, 0.0042).
+
+**Re-export proof.** The six changed FBX files were re-exported with the new script (`--nopreview`, same Linux
+machine as their committed export) and compared with `extras_compare.py` against the committed ones:
+
+```
+COMPARE ssd_sorin_990pro_2tb_hs: ONLY ADDED: A_FILM_HEATSINK_0 (12 objects unchanged)
+COMPARE ssd_westline_sn850x_1tb_hs: ONLY ADDED: A_FILM_HEATSINK_0 (12 objects unchanged)
+COMPARE ssd_crux_t705_2tb_hs: ONLY ADDED: A_FILM_HEATSINK_0 (11 objects unchanged)
+COMPARE ssd_sorin_870_1tb: ONLY ADDED: A_FILM_LABEL_0 (14 objects unchanged)
+COMPARE ssd_crux_mx500_2tb: ONLY ADDED: A_FILM_LABEL_0 (14 objects unchanged)
+COMPARE ssd_kingsland_a400_480: ONLY ADDED: A_FILM_LABEL_0 (14 objects unchanged)
+```
+
+Their textures re-rendered byte-different but unchanged in content, so they were not committed. The other 11 FBX
+files are untouched.
+
+**Papers.** Every JSON entry has `"unbox"` (films, caps, stickers as above), `"docs": ["guide", "warranty"]` (an
+installation card and the warranty leaflet) and 8–9 `"doc_notes"`: the interface and capacity, the slot and screw
+(M.2 PH0 at the notch, 2.5" M3, 3.5" 6-32 UNC, U.2 sled), the cables, speeds and endurance, film and label warnings
+(heatsink drives: remove the board's M.2 heatsink first; HDDs: breather hole or helium seal), GPT and formatting,
+and the warranty term.
 
 ## Catalogue data
 

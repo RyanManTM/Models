@@ -227,9 +227,9 @@ def build_m2(cfg):
         sw, sh = cfg.get("sticker_size", (40.0, 16.0))
         bz = -0.00003 - (1.2 * MM if cfg.get("chips_bottom") else 0.0)
         pp.quad(k[TX], (cfg["sticker_x"] * MM, 0, bz), (sw * MM, sh * MM), normal=(0, 0, -1), up=(0, 1, 0), region=reg["sticker"])
-    hs_top = 0.0
+    hs_top, film = 0.0, None
     if cfg.get("heatsink"):
-        hs_top = build_m2_heatsink(k, TX, reg, cfg["heatsink"], t)
+        hs_top, film = build_m2_heatsink(k, TX, reg, cfg["heatsink"], t)
     k.finish(root)
 
     c.anchor("A_SCREW_PH0_0", (L / 2 * MM, 0, t), (0.006, 0.006, 0.004), root, meta="notch=+x")
@@ -238,6 +238,11 @@ def build_m2(cfg):
         c.anchor("A_HIT_0", (0, 0, (z0 + hs_top) / 2), (L * MM, cfg["heatsink"]["w"] * MM, hs_top - z0), root)
     else:
         c.anchor("A_HIT_0", (0, 0, 0.0012), (L * MM, W * MM, 0.0026), root)
+    if film:
+        # the clear protective film on the glossy heatsink top (anchor only; the game builds the peel mesh)
+        (fx, fz, fw, fh) = film
+        c.anchor("A_FILM_HEATSINK_0", (fx * MM, 0, fz * MM + 0.00002), (fw * MM, fh * MM, 0.0001), root, forward=(0, 0, 1), up=(0, 1, 0),
+                 meta="film=clear,on=heatsink_top,peel=-x,tab=+x+y")
     c.anchor("A_KEY_M2_0", (-L / 2 * MM, bs.MKEY_Y * MM, t * 0.5), (0.002, 0.0015, 0.002), root, meta=f"key=M,y={bs.MKEY_Y * MM:.4f}")
     c.join_by_tag(root, "m")
     c.export(root, sid)
@@ -247,7 +252,7 @@ def build_m2(cfg):
 
 def build_m2_heatsink(k, TX, reg, hs, t):
     """A clip-on heatsink shell around the drive (it leaves the M.2 fingers and the screw notch free).
-    Returns the top height (m)."""
+    Returns the top height (m) and the film rectangle on the glossy top (centre x, z, width x, height y; mm)."""
     x0, x1 = hs["x"]
     w = hs["w"]
     zb = hs.get("bottom", -1.2)
@@ -264,18 +269,21 @@ def build_m2_heatsink(k, TX, reg, hs, t):
                uv=top_map)
         # the seam where the top meets the bottom half
         pp.box(k["black_plastic"], (cx * MM, 0, 2.5 * MM), ((x1 - x0 - 0.4) * MM, (w + 0.02) * MM, 0.25 * MM))
+        film = (cx, zt, x1 - x0 - 2.4, w - 2.6)
         if kind == "westline":
             # angular raised fins over the cooler's rear two thirds, cut at an angle like the real thing
             for i in range(5):
                 xf = x1 - 28.6 + i * 5.6
                 pp.box(k[TX], (xf * MM, 0, (zt + 0.55) * MM), (2.2 * MM, (w - 4.0) * MM, 1.1 * MM), pp.rot("z", 0), bevel=0.0003,
                        uv=reg["hs_body"])
+            fx1 = x1 - 28.6 - 1.1 - 0.8
+            film = ((x0 + 1.2 + fx1) / 2, zt, fx1 - x0 - 1.2, w - 2.6)
             zt += 1.1
         # RGB light bar on the +x end face (and a strip on top at that end)
         rx = x1 - 2.2
         pp.box(k["rgb"], (rx * MM, 0, (zt + 0.06) * MM), (2.6 * MM, (w - 4.0) * MM, 0.25 * MM), bevel=0.0001)
         pp.box(k["rgb"], ((x1 + 0.06) * MM, 0, (zb + zt) / 2 * MM + 0.0006), (0.25 * MM, (w - 3.0) * MM, (zt - zb - 3.2) * MM))
-        return zt * MM + 0.0002
+        return zt * MM + 0.0002, film
     # "fins": a tall fin stack (Gen5): a base shell and longitudinal fins with a brand bar along the top centre
     fin_top = hs["fin_top"]
     pp.box(k[TX], (cx * MM, 0, (zb + zt) / 2 * MM), ((x1 - x0) * MM, w * MM, (zt - zb) * MM), bevel=0.0004, uv=reg["hs_body"])
@@ -297,7 +305,7 @@ def build_m2_heatsink(k, TX, reg, hs, t):
     # silver end accents
     for xe in (x0 + 0.7, x1 - 0.7):
         pp.box(k["alu"], (xe * MM, 0, (zt + 1.0) * MM), (1.0 * MM, (w + 0.1) * MM, 1.6 * MM), bevel=0.0002)
-    return fin_top * MM
+    return fin_top * MM, (cx, fin_top, x1 - x0 - 1.6, bw - 1.2)
 
 
 # ================================================================== 2.5" SATA
@@ -397,6 +405,9 @@ def build_sata(cfg):
             c.anchor(f"A_SCREW_PH2_{n}", (x * MM, bs.HOLE_Y * MM, s * BW / 2 * MM), (0.006, 0.006, 0.006), root, forward=(0, 0, s), up=(0, 1, 0),
                      meta="m3,side")
             n += 1
+    # the clear protective film over the printed top (anchor only; the game builds the peel mesh)
+    c.anchor("A_FILM_LABEL_0", (0, hy * MM + 0.00002, 0), ((BL - 2.0) * MM, (BW - 2.0) * MM, 0.0001), root, forward=(0, 1, 0), up=(0, 0, 1),
+             meta="film=clear,on=top_label,peel=-x,tab=+x+y")
     c.anchor("A_HIT_0", (0, 0, 0), (BL * MM, BT * MM, BW * MM), root)
     c.join_by_tag(root, "m")
     c.export(root, sid)

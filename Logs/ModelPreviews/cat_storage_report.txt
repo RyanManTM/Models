@@ -7,6 +7,7 @@ Run: blender -b --factory-startup -P Tools/Blender/build_cat_storage.py -- [ids]
   A_SCREW_PH0_0 pos=(0.04, 0.0, 0.0008) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00600,0.00600,0.00400 meta=notch=+x
 
 == ssd_sorin_990pro_2tb_hs: 1462 triangles, 8 meshes
+  A_FILM_HEATSINK_0 pos=(0.0008, 0.0, 0.00702) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.06920,0.02160,0.00010 meta=film=clear,on=heatsink_top,peel=-x,tab=+x+y
   A_HIT_0 pos=(-0.0, 0.0, 0.003) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.08000,0.02420,0.00840 meta=
   A_KEY_M2_0 pos=(-0.04, 0.006, 0.0004) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00150,0.00200 meta=key=M,y=0.0060
   A_SCREW_PH0_0 pos=(0.04, 0.0, 0.0008) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00600,0.00600,0.00400 meta=notch=+x
@@ -22,6 +23,7 @@ Run: blender -b --factory-startup -P Tools/Blender/build_cat_storage.py -- [ids]
   A_SCREW_PH0_0 pos=(0.04, 0.0, 0.0008) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00600,0.00600,0.00400 meta=notch=+x
 
 == ssd_westline_sn850x_1tb_hs: 1630 triangles, 8 meshes
+  A_FILM_HEATSINK_0 pos=(-0.01385, 0.0, 0.00662) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.03990,0.02160,0.00010 meta=film=clear,on=heatsink_top,peel=-x,tab=+x+y
   A_HIT_0 pos=(-0.0, 0.0, 0.00335) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.08000,0.02420,0.00910 meta=
   A_KEY_M2_0 pos=(-0.04, 0.006, 0.0004) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00150,0.00200 meta=key=M,y=0.0060
   A_SCREW_PH0_0 pos=(0.04, 0.0, 0.0008) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00600,0.00600,0.00400 meta=notch=+x
@@ -37,11 +39,13 @@ Run: blender -b --factory-startup -P Tools/Blender/build_cat_storage.py -- [ids]
   A_SCREW_PH0_0 pos=(0.04, 0.0, 0.0008) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00600,0.00600,0.00400 meta=notch=+x
 
 == ssd_crux_t705_2tb_hs: 1722 triangles, 7 meshes
+  A_FILM_HEATSINK_0 pos=(0.0008, 0.0, 0.02062) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.07000,0.00580,0.00010 meta=film=clear,on=heatsink_top,peel=-x,tab=+x+y
   A_HIT_0 pos=(-0.0, 0.0, 0.0093) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.08000,0.02460,0.02260 meta=
   A_KEY_M2_0 pos=(-0.04, 0.006, 0.0004) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00150,0.00200 meta=key=M,y=0.0060
   A_SCREW_PH0_0 pos=(0.04, 0.0, 0.0008) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00600,0.00600,0.00400 meta=notch=+x
 
 == ssd_sorin_870_1tb: 1470 triangles, 6 meshes
+  A_FILM_LABEL_0 pos=(-0.0, 0.00352, -0.0) fwd=(0.0, 1.0, -0.0) up=(-0.0, 0.0, 1.0) size=0.09800,0.06785,0.00010 meta=film=clear,on=top_label,peel=-x,tab=+x+y
   A_HIT_0 pos=(-0.0, 0.0, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.10000,0.00700,0.06985 meta=
   A_PORT_SATADATA_0 pos=(-0.05, -0.001, 0.02) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.01200,0.00600,0.00800 meta=depth=0.0045,pins=7
   A_PORT_SATAPWR_0 pos=(-0.05, -0.001, -0.0034) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.02400,0.00600,0.00800 meta=depth=0.0045,pins=15
@@ -51,6 +55,7 @@ Run: blender -b --factory-startup -P Tools/Blender/build_cat_storage.py -- [ids]
   A_SCREW_PH2_3 pos=(0.0406, -0.0005, 0.03492) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00600,0.00600,0.00600 meta=m3,side
 
 == ssd_crux_mx500_2tb: 1598 triangles, 6 meshes
+  A_FILM_LABEL_0 pos=(-0.0, 0.00352, -0.0) fwd=(0.0, 1.0, -0.0) up=(-0.0, 0.0, 1.0) size=0.09800,0.06785,0.00010 meta=film=clear,on=top_label,peel=-x,tab=+x+y
   A_HIT_0 pos=(-0.0, 0.0, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.10000,0.00700,0.06985 meta=
   A_PORT_SATADATA_0 pos=(-0.05, -0.001, 0.02) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.01200,0.00600,0.00800 meta=depth=0.0045,pins=7
   A_PORT_SATAPWR_0 pos=(-0.05, -0.001, -0.0034) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.02400,0.00600,0.00800 meta=depth=0.0045,pins=15
@@ -60,6 +65,7 @@ Run: blender -b --factory-startup -P Tools/Blender/build_cat_storage.py -- [ids]
   A_SCREW_PH2_3 pos=(0.0406, -0.0005, 0.03492) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00600,0.00600,0.00600 meta=m3,side
 
 == ssd_kingsland_a400_480: 1470 triangles, 6 meshes
+  A_FILM_LABEL_0 pos=(-0.0, 0.00352, -0.0) fwd=(0.0, 1.0, -0.0) up=(-0.0, 0.0, 1.0) size=0.09800,0.06785,0.00010 meta=film=clear,on=top_label,peel=-x,tab=+x+y
   A_HIT_0 pos=(-0.0, 0.0, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.10000,0.00700,0.06985 meta=
   A_PORT_SATADATA_0 pos=(-0.05, -0.001, 0.02) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.01200,0.00600,0.00800 meta=depth=0.0045,pins=7
   A_PORT_SATAPWR_0 pos=(-0.05, -0.001, -0.0034) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.02400,0.00600,0.00800 meta=depth=0.0045,pins=15
@@ -151,4 +157,8 @@ Run: blender -b --factory-startup -P Tools/Blender/build_cat_storage.py -- [ids]
   A_SCREW_PH2_1 pos=(-0.036, -0.0045, 0.03492) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00600,0.00600,0.00600 meta=m3,side
   A_SCREW_PH2_2 pos=(0.0406, -0.0045, -0.03492) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00600,0.00600,0.00600 meta=m3,side
   A_SCREW_PH2_3 pos=(0.0406, -0.0045, 0.03492) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00600,0.00600,0.00600 meta=m3,side
+
+== cap_u2: 192 triangles, 1 meshes
+  A_GRIP_0 pos=(-0.0, 0.001, 0.0042) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01200,0.00200,0.00600 meta=pull=+z
+  A_HIT_0 pos=(-0.0, 0.001, 0.0018) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.04500,0.00680,0.01080 meta=remove=+z,travel=0.004,port=u2,blocks=plug
 
