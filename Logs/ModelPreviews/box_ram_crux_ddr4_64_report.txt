@@ -1,0 +1,23 @@
+box_ram_crux_ddr4_64: 4350 triangles, 9 meshes
+  mesh blister@A_INSERT_BLISTER_0#clear_plastic  tris=2444
+  mesh blister_lid@A_CLAMLID_0#clear_plastic  tris=1676
+  mesh box_ram_crux_ddr4_64_paper_white#paper_white  tris=60
+  mesh dust@A_FLAP_1#paper_white  tris=12
+  mesh dust@A_FLAP_2#paper_white  tris=12
+  mesh flap@A_FLAP_0#paper_white  tris=132
+  mesh flap_print@A_FLAP_0#tex_box_ram_crux_ddr4_64  tris=2
+  mesh s_tex_box_ram_crux_ddr4_64#tex_box_ram_crux_ddr4_64  tris=10
+  mesh seallook@A_SEAL_0#seal_clear  tris=2
+  A_CLAMLID_0@A_INSERT_BLISTER_0 pos=(-0.0045, 0.0106, -0.0513) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.14800,0.00800,0.10860 meta=hinge=x,open=-165,label=blister lid,order=6,parent=A_INSERT_BLISTER_0,under=A_SEAL_0,A_ITEM_DOC_1
+  A_FLAP_0 pos=(0.07965, 0.0007, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00070,0.03000,0.12000 meta=hinge=z,open=-92,tuck=1,label=end flap,order=1
+  A_FLAP_1 pos=(0.07865, 0.015, 0.0593) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00070,0.02860,0.01600 meta=hinge=y,open=-95,label=dust flap,order=2,under=A_FLAP_0
+  A_FLAP_2 pos=(0.07865, 0.015, -0.0593) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00070,0.02860,0.01600 meta=hinge=y,open=95,label=dust flap,order=2,under=A_FLAP_0
+  A_HIT_0 pos=(-0.0, 0.015, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.16000,0.03000,0.12000 meta=
+  A_INSERT_BLISTER_0 pos=(-0.0045, 0.0007, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.14800,0.01700,0.11460 meta=lift=+x,dist=0.17,label=blister tray,order=3,under=A_FLAP_0,A_FLAP_1,A_FLAP_2
+  A_ITEM_DOC_0@A_INSERT_BLISTER_0 pos=(-0.0005, 0.0163, -0.0) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.12000,0.08500,0.00040 meta=doc=guide,form=card,label=quick install guide,order=4,parent=A_INSERT_BLISTER_0,under=A_INSERT_BLISTER_0
+  A_ITEM_DOC_1@A_INSERT_BLISTER_0 pos=(0.0025, 0.0157, -0.002) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.10000,0.06500,0.00040 meta=doc=warranty,form=card,label=warranty card,order=5,parent=A_INSERT_BLISTER_0,under=A_ITEM_DOC_0
+  A_ITEM_PART_0@A_INSERT_BLISTER_0 pos=(-0.0045, 0.00575, 0.04865) fwd=(0.0, -0.0, -1.0) up=(1.0, -0.0, 0.0) size=0.00990,0.13574,0.04140 meta=bag=none,guard=1,label=memory stick,order=7,parent=A_INSERT_BLISTER_0,under=A_CLAMLID_0
+  A_ITEM_PART_1@A_INSERT_BLISTER_0 pos=(-0.0045, 0.00575, -0.00965) fwd=(0.0, -0.0, -1.0) up=(1.0, -0.0, 0.0) size=0.00990,0.13574,0.04140 meta=bag=none,guard=1,label=memory stick,order=7,parent=A_INSERT_BLISTER_0,under=A_CLAMLID_0
+  A_SEAL_0@A_INSERT_BLISTER_0 pos=(-0.0045, 0.0112, 0.0513) fwd=(0.0, 1.0, -0.0) up=(-0.0, 0.0, 1.0) size=0.01400,0.01200,0.00010 meta=shape=rect,peel=+y,print=SEALED,label=seal sticker,order=4,parent=A_INSERT_BLISTER_0,under=A_INSERT_BLISTER_0
+shot from: ram_crux_ddr4_64
+RAM: end tuck flap A_FLAP_0 (1) -> dust flaps A_FLAP_1/2 (2) -> blister tray A_INSERT_BLISTER_0 slides out +x (3) -> on it the blister seal A_SEAL_0 and 2 papers in a pile on the lid (4..5) -> blister lid A_CLAMLID_0 (6) -> sticks A_ITEM_PART_0/1 (7, guard=1).
