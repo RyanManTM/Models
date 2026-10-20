@@ -165,6 +165,72 @@
     "new_contract": false
   },
   {
+    "id": "mb_mako_z790_riptide",
+    "model": "mb_mako_z790_riptide",
+    "brand": "Mako",
+    "name": "Mako Riptide Z790 WiFi",
+    "category": "Motherboard",
+    "price": 279,
+    "power_w": 30,
+    "color": "#D3D6D9",
+    "rgb": true,
+    "analog": "MSI MPG Z790 EDGE WIFI (docs only, never shown in game)",
+    "desc": "A white Z790 with silver accents, armour on both x16 slots and an RGB emblem on the I/O cover.",
+    "specs": {
+      "form": "ATX",
+      "chipset": "Z790",
+      "dimm_slots": 4,
+      "max_ram_gb": 192,
+      "m2_slots": 2,
+      "sata": 4,
+      "pcie_x16": 2,
+      "wifi": true,
+      "lan_gbe": 2.5,
+      "io_shield": "io_mako_z790_riptide",
+      "io_preattached": true
+    },
+    "game": {
+      "socket": "L17",
+      "mem": "DDR5",
+      "perf": 0
+    },
+    "contract": "mb_ridge_z4 (DDR5 notch of mb_ridge_b5)",
+    "new_contract": false
+  },
+  {
+    "id": "mb_kestrel_z790_talon",
+    "model": "mb_kestrel_z790_talon",
+    "brand": "Kestrel",
+    "name": "Kestrel Z790 Talon Elite AX",
+    "category": "Motherboard",
+    "price": 229,
+    "power_w": 30,
+    "color": "#2A2B2E",
+    "rgb": true,
+    "analog": "Gigabyte Z790 AORUS ELITE AX (docs only, never shown in game)",
+    "desc": "Black Z790 with orange accents: fin-stack VRM heatsinks, an armour I/O cover with RGB, Wi-Fi 6E.",
+    "specs": {
+      "form": "ATX",
+      "chipset": "Z790",
+      "dimm_slots": 4,
+      "max_ram_gb": 192,
+      "m2_slots": 2,
+      "sata": 4,
+      "pcie_x16": 2,
+      "wifi": true,
+      "lan_gbe": 2.5,
+      "io_shield": "io_kestrel_z790_talon",
+      "io_preattached": true
+    },
+    "game": {
+      "socket": "L17",
+      "mem": "DDR5",
+      "perf": 0
+    },
+    "contract": "mb_ridge_z4 (DDR5 notch of mb_ridge_b5)",
+    "new_contract": false
+  },
+  {
     "id": "mb_strata_spv",
     "model": "mb_strata_spv",
     "brand": "Strata",

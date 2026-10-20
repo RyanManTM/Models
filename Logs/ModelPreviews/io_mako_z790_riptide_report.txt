@@ -1,0 +1,4 @@
+io_mako_z790_riptide: 1420 triangles, 1 meshes
+  mesh io_tex_io_mako_z790_riptide#tex_io_mako_z790_riptide  tris=1420
+  A_HIT_0 pos=(-0.0, 0.0, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00400,0.15875,0.04445 meta=board_pose=0.1279,0.07546,0.01999
+frame: as io_ridge_z4 (origin at the plate centre, board axes, outer face +x)

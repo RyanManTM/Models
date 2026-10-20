@@ -12,8 +12,8 @@ Branch `claude/cat-12-motherboards`. Script `Tools/Blender/build_cat_boards.py` 
 | 3 | `mb_mako_b650_harpoon` | `io_mako_b650_harpoon` | mb_ridge_b5 (V5, DDR5) | done |
 | 4 | `mb_kestrel_b650_glide` | `io_kestrel_b650_glide` | mb_ridge_b5 (V5, DDR5) | done |
 | 5 | `mb_aegis_z790_keystone` | `io_aegis_z790_keystone` | mb_ridge_z4 + DDR5 notch (L17, DDR5) | done |
-| 6 | `mb_mako_z790_riptide` | `io_mako_z790_riptide` | mb_ridge_z4 + DDR5 notch (L17, DDR5) | not yet |
-| 7 | `mb_kestrel_z790_talon` | `io_kestrel_z790_talon` | mb_ridge_z4 + DDR5 notch (L17, DDR5) | not yet |
+| 6 | `mb_mako_z790_riptide` | `io_mako_z790_riptide` | mb_ridge_z4 + DDR5 notch (L17, DDR5) | done |
+| 7 | `mb_kestrel_z790_talon` | `io_kestrel_z790_talon` | mb_ridge_z4 + DDR5 notch (L17, DDR5) | done |
 | 8 | `mb_ridge_b760_d4` | `io_ridge_b760_d4` | mb_ridge_z4 (L17, DDR4) | not yet |
 | 9 | `mb_strata_spv` | `io_strata_spv` | new: server board SP-V | done |
 | 10 | `mb_strata_l46` | `io_strata_l46` | new: server board L46 dual | done |
@@ -145,6 +145,31 @@ x positions, length and latches are the same on both siblings, so the DIMM slots
   and grey DIMM slots, white latches; silver x16 armour; two silver M.2 heatsinks with white trim. Shield: bare steel.
 - **Anchors:** see "The new combination" above (vs `mb_ridge_z4`: 76 SAME, 4 DIFF = the DDR5 notch, 2 ONLY_B films).
 - **I/O shield:** pre-attached on the analog (shipped here as the separate `io_aegis_z790_keystone` all the same).
+
+## 6. `mb_mako_z790_riptide` + `io_mako_z790_riptide`: Mako Riptide Z790 WiFi
+
+- **Analog:** MSI MPG Z790 EDGE WIFI (white). Socket L17, DDR5, ATX; `mb_ridge_z4` layout with the DDR5 slots.
+- **Size:** ATX 0.244 × 0.305, PCB z 0..0.0016; tallest part the I/O cover (z 0.0371).
+- **Triangles:** 45,308 in 40 meshes. Shield: 1,244 in 1.
+- **Look:** silver-white PCB with grey line graphics; white `slab` VRM heatsinks with silver bands and inlays; a
+  white **RGB I/O cover** (the lit emblem panel on the top and the light bar); white DIMM and PCIe slots, silver
+  armour on both full-length slots; a white `slab` chipset heatsink; two white M.2 heatsinks. Shield: bare steel.
+- **Anchors:** vs `mb_ridge_z4`: 76 SAME, 4 DIFF (the DDR5 notch), 2 ONLY_B (films). vs `mb_aegis_z790_keystone`:
+  82 SAME.
+- **I/O shield:** pre-attached on the analog (shipped here as the separate `io_mako_z790_riptide` all the same).
+
+## 7. `mb_kestrel_z790_talon` + `io_kestrel_z790_talon`: Kestrel Z790 Talon Elite AX
+
+- **Analog:** Gigabyte Z790 AORUS ELITE AX. Socket L17, DDR5, ATX; `mb_ridge_z4` layout with the DDR5 slots.
+- **Size:** ATX 0.244 × 0.305, PCB z 0..0.0016; tallest part the I/O cover (z 0.0371).
+- **Triangles:** 45,922 in 39 meshes. Shield: 1,244 in 1.
+- **Look:** black PCB with angular dark-orange graphics and orange print; `fins` VRM heatsinks (dark covers over
+  fin stacks, an orange lip line and slashes); an `armour` I/O cover with stepped plates, an orange line and the RGB
+  light bar; an `armour` chipset heatsink with an orange slash; steel x16 armour; black DIMM slots; two M.2
+  heatsinks with orange marks. Shield: painted black.
+- **Anchors:** vs `mb_ridge_z4`: 76 SAME, 4 DIFF (the DDR5 notch), 2 ONLY_B (films). vs `mb_aegis_z790_keystone`:
+  82 SAME.
+- **I/O shield:** pre-attached on the analog (shipped here as the separate `io_kestrel_z790_talon` all the same).
 
 ## 9. `mb_strata_spv` + `io_strata_spv`: Strata SP-V 1S Server Board
 
