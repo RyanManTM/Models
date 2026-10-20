@@ -1,0 +1,36 @@
+box_srv_linkwave_ls4804x: 908 triangles, 15 meshes
+  mesh box_srv_linkwave_ls4804x_cardboard#cardboard  tris=60
+  mesh cap@A_INSERT_FOAM_0#pe_foam  tris=388
+  mesh cap@A_INSERT_FOAM_1#pe_foam  tris=388
+  mesh flap@A_FLAP_0#cardboard  tris=12
+  mesh flap@A_FLAP_1#cardboard  tris=12
+  mesh flap@A_FLAP_2#cardboard  tris=12
+  mesh flap@A_FLAP_3#cardboard  tris=12
+  mesh flap_print@A_FLAP_0#tex_box_srv_linkwave_ls4804x  tris=2
+  mesh flap_print@A_FLAP_1#tex_box_srv_linkwave_ls4804x  tris=2
+  mesh flap_print@A_FLAP_2#tex_box_srv_linkwave_ls4804x  tris=2
+  mesh flap_print@A_FLAP_3#tex_box_srv_linkwave_ls4804x  tris=2
+  mesh s_tex_box_srv_linkwave_ls4804x#tex_box_srv_linkwave_ls4804x  tris=10
+  mesh tapelook@A_TAPE_0#tape_brown  tris=2
+  mesh tapelook@A_TAPE_1#tape_brown  tris=2
+  mesh tapelook@A_TAPE_2#tape_brown  tris=2
+  A_FLAP_0 pos=(-0.0, 0.096, -0.16) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.55500,0.00400,0.16000 meta=hinge=x,open=-215,label=top flap,order=1,under=A_TAPE_0,A_TAPE_1,A_TAPE_2
+  A_FLAP_1 pos=(-0.0, 0.096, 0.16) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.55500,0.00400,0.16000 meta=hinge=x,open=215,label=top flap,order=1,under=A_TAPE_0,A_TAPE_1,A_TAPE_2
+  A_FLAP_2 pos=(-0.2775, 0.092, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.14400,0.00400,0.32000 meta=hinge=z,open=200,label=top flap,order=2,under=A_FLAP_0,A_FLAP_1
+  A_FLAP_3 pos=(0.2775, 0.092, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.14400,0.00400,0.32000 meta=hinge=z,open=-200,label=top flap,order=2,under=A_FLAP_0,A_FLAP_1
+  A_HIT_0 pos=(-0.0, 0.05, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.55500,0.10000,0.32000 meta=
+  A_INSERT_FOAM_0 pos=(-0.273, 0.004, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.07170,0.08800,0.31100 meta=lift=-x,dist=0.1,label=PE end cap,order=8,with=A_ITEM_PART_0,under=A_ITEM_PART_0
+  A_INSERT_FOAM_1 pos=(0.273, 0.004, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.07170,0.08800,0.31100 meta=lift=+x,dist=0.1,label=PE end cap,order=8,with=A_ITEM_PART_0,under=A_ITEM_PART_0
+  A_ITEM_CORD_0 pos=(-0.1358, 0.06168, -0.105) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.12500,0.09500,0.02200 meta=kind=c13,tie=twist,label=C13 power cord,order=6,n=1,under=A_ITEM_DOC_2
+  A_ITEM_CORD_1 pos=(-0.0173, 0.06168, -0.115) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.10000,0.07500,0.01400 meta=kind=console,tie=twist,label=console cable,order=6,n=1,under=A_ITEM_DOC_2
+  A_ITEM_DOC_0 pos=(-0.1318, 0.08548, -0.105) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.14800,0.10500,0.00140 meta=doc=quick-start,form=leaflet,label=quick start guide,order=3,under=A_FLAP_2,A_FLAP_3
+  A_ITEM_DOC_1 pos=(-0.1278, 0.08488, -0.108) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.08800,0.05600,0.00040 meta=doc=warranty,form=card,label=warranty card,order=4,under=A_ITEM_DOC_0
+  A_ITEM_DOC_2 pos=(-0.1238, 0.08408, -0.111) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.10500,0.14800,0.00060 meta=doc=safety,form=sheet,label=safety sheet,order=5,under=A_ITEM_DOC_1
+  A_ITEM_HW_0 pos=(0.0762, 0.06168, -0.1025) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.07500,0.10000,0.01000 meta=label=RACK SCREWS M6 + CAGE NUTS,order=6,under=A_ITEM_DOC_2
+  A_ITEM_HW_1 pos=(0.1572, 0.06168, -0.1025) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.07500,0.10000,0.01000 meta=label=RUBBER FEET,order=6,under=A_ITEM_DOC_2
+  A_ITEM_PART_0 pos=(-0.0, 0.0136, 0.13695) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48860,0.04968,0.29010 meta=bag=antistatic_pink,label=LS-4804X 48-Port Gigabit Switch,order=7,under=A_ITEM_CORD_0,A_ITEM_CORD_1,A_ITEM_HW_0,A_ITEM_HW_1
+  A_TAPE_0 pos=(-0.2777, 0.0775, -0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.04800,0.04500,0.00010 meta=strip=0,seg=0,peel=+y,label=tape,order=0
+  A_TAPE_1 pos=(-0.0, 0.1002, -0.0) fwd=(-0.0, 1.0, 0.0) up=(1.0, 0.0, -0.0) size=0.04800,0.55500,0.00010 meta=strip=0,seg=1,peel=+y,label=tape,order=0
+  A_TAPE_2 pos=(0.2777, 0.0775, -0.0) fwd=(1.0, 0.0, -0.0) up=(0.0, -1.0, -0.0) size=0.04800,0.04500,0.00010 meta=strip=0,seg=2,peel=+y,label=tape,order=0
+shot from: srv_linkwave_ls4804x
+1U carton (pe foam end caps, z-facing): tape A_TAPE_0..2 (0) -> long flaps A_FLAP_0/1 (1) -> short flaps A_FLAP_2/3 (2) -> 3 papers in a pile, the first on top (3..5) -> C13 power cord A_ITEM_CORD_0, console cable A_ITEM_CORD_1, hardware bags A_ITEM_HW_0/A_ITEM_HW_1 (6) -> the device in its antistatic pink bag, lifted out WITH its end caps (7) -> end caps A_INSERT_FOAM_0/1 pulled off along -x/+x (8).
