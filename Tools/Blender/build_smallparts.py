@@ -590,6 +590,71 @@ def build_coil_sata_pair(root):
     return dict(note="two 0.5 m flat SATA data cables folded in 5 layers; cable 2 ends in a right-angle plug")
 
 
+# ====================================================================== fan connector housings (female)
+
+FAN_PITCH = 0.00254
+FAN_PIN_LEN = 0.0058      # the pins stand this far in front of the contact face (as a board header's)
+
+
+def fan_female(fr, parent, pins, tag, colours, anchors_root=None):
+    """The receiving end of a fan splitter output or extension cable: a housing with the pins standing in front of its
+    contact face and the polarising wall with its friction ramp along the +Y side (over pins 1-3), the shape a fan's own
+    plug slides onto. Frame: origin at the contact face centre, +Z back along the wires, +Y the ramp side. Pin 1 (GND)
+    is at +x, the 4-pin's PWM pin at -x (outside the wall, so a 3-pin plug fits too)."""
+    p = FAN_PITCH
+    W = pins * p + 0.0004 if pins == 4 else pins * p + 0.0003
+    L = 0.0075
+    yb0, yb1 = -0.0025, 0.0021           # body
+    py = -0.0002                         # pin row
+    xs = [(1.5 - k) * p if pins == 4 else (1.0 - k) * p for k in range(pins)]   # pin k+1 at xs[k]
+    # the housing, its crimp windows (two shallow pockets per terminal on the -Y side) and a pin-1 nick
+    P.cube("ff_body", (0, (yb0 + yb1) / 2, L / 2), (W, yb1 - yb0, L), tag, fr, parent, bevel=0.00025)
+    for x in xs:
+        P.cube("ff_window", (x, yb0 - 0.00005, L * 0.55), (0.0011, 0.0002, 0.0022), "connector_black", fr, parent)
+    P.cube("ff_pin1", (xs[0], yb1 + 0.00005, 0.0006), (0.0008, 0.0002, 0.0008), "connector_black", fr, parent)
+    # the polarising wall over pins 1-3, flush with the top and standing as tall as the pins, with its ramp
+    x0, x1 = xs[2] - p * 0.5 - 0.0002, xs[0] + p * 0.5 + 0.0002
+    wy0, wy1 = py + 0.0023, py + 0.0032
+    P.cube("ff_wall", ((x0 + x1) / 2, (wy0 + wy1) / 2, (-FAN_PIN_LEN + L * 0.5) / 2), (x1 - x0, wy1 - wy0, FAN_PIN_LEN + L * 0.5),
+           tag, fr, parent, bevel=0.0002)
+    xm = (x0 + x1) / 2
+    ramp = [(0.0, 0.0), (0.0, -0.0028), (0.00045, -0.0018), (0.00045, -0.0004)]   # (into the gap, along -z)
+    rf = fr.sub(xm, wy0, -0.0008, fwd=(1, 0, 0), up=(0, -1, 0))     # local x = -z, local y = -Y (into the gap)
+    P.slab("ff_ramp", [(-a, b) for (b, a) in ramp], 0.0026, tag, rf, parent=parent)
+    # side ribs that guide the plug
+    for sx in (-1, 1):
+        P.cube("ff_guide", (sx * (W / 2 - 0.0002), py, -0.0012), (0.0004, 0.0012, 0.0024), tag, fr, parent)
+    # the pins: square posts with chamfered tips, gold plated, running into the housing
+    for x in xs:
+        P.cube("ff_pin", (x, py, (-FAN_PIN_LEN + 0.0035) / 2), (0.00064, 0.00064, FAN_PIN_LEN + 0.0035), "gold", fr, parent)
+        P.cube("ff_pin_tip", (x, py, -FAN_PIN_LEN - 0.00012), (0.0004, 0.0004, 0.00024), "gold", fr, parent)
+    # wire stubs out of the back (like the plug models)
+    end = PL.wire_stubs(fr, parent, [(x, py) for x in xs], 0.0007, L, 0.026, "rubber", colours, "ff_wire", converge=0.25)
+    if anchors_root is not None:
+        H = wy1 - yb0
+        P.anchor("A_HIT_0", fr.sub(0, (yb0 + wy1) / 2, (L - FAN_PIN_LEN) / 2), (W + 0.002, H + 0.002, L + FAN_PIN_LEN + 0.001),
+                 anchors_root)
+        P.anchor("A_CABLE_0", P.Frame(end, fr.w, fr.v), (0.005, 0.005, 0.01), anchors_root, meta=f"r=0.0025,n={pins}")
+        pin1 = -xs[0]    # in the port anchor's axes (its x = -x here: it faces -Z)
+        pinout = "GND|12V|SENSE|PWM" if pins == 4 else "GND|12V|SENSE"
+        P.anchor("A_PORT_FAN_0", fr.sub(0, py, -FAN_PIN_LEN, fwd=(0, 0, -1), up=(0, 1, 0)), (W + 0.002, 0.0065, 0.008),
+                 anchors_root, meta=f"depth={FAN_PIN_LEN:.4f},pins={pins};pin1={pin1:.5f},0.00000;colstep=0.00254,0.00000;"
+                                    f"pinout={pinout}")
+    return dict(W=W, H=wy1 - yb0, L=L, end=end, xs=xs, py=py)
+
+
+def build_fan4_female(root):
+    r = fan_female(P.F((0, 0, 0)), root, 4, "connector_black", ["cable_black"] * 4, anchors_root=root)
+    return dict(hit=1, note=f"4-pin PWM receiving housing W {r['W']:.4f} H {r['H']:.4f} L {r['L']:.4f}, pins "
+                            f"{FAN_PIN_LEN:.4f} in front of the face")
+
+
+def build_fan3_female(root):
+    r = fan_female(P.F((0, 0, 0)), root, 3, "connector_white", ["black", "red", "yellow"], anchors_root=root)
+    return dict(hit=1, note=f"3-pin receiving housing W {r['W']:.4f} H {r['H']:.4f} L {r['L']:.4f}, pins "
+                            f"{FAN_PIN_LEN:.4f} in front of the face")
+
+
 # ====================================================================== registry and driver
 
 MODELS = {
@@ -597,6 +662,8 @@ MODELS = {
     "coil_c13": (build_coil_c13, dict(fit=("box_psu_750 A_ITEM_CORD_0", (0.120, 0.090, 0.016)),
                                       fit2=("box_psu_450 A_ITEM_CORD_0", (0.090, 0.075, 0.014)))),
     "coil_sata_pair": (build_coil_sata_pair, dict(fit=("box_mb_ridge_b5/z4 A_ITEM_CORD_0", (0.120, 0.075, 0.012)))),
+    "fan4_female": (build_fan4_female, dict(frame_fixed=True, wb=((35, 25), (-145, 30)), views=[(40, 25), (-150, 30)])),
+    "fan3_female": (build_fan3_female, dict(frame_fixed=True, wb=((35, 25), (-145, 30)), views=[(40, 25), (-150, 30)])),
 }
 
 
@@ -612,7 +679,8 @@ def build(mid, prev):
         P.anchor("A_HIT_0", P.Frame(((lo.x + hi.x) / 2, (lo.y + hi.y) / 2, (lo.z + hi.z) / 2)), tuple(size), root)
     P.finalize(root, mid)
     c.export(root, mid)
-    notes = [f"  size: {size.x:.4f} (x) x {size.y:.4f} (y) x {size.z:.4f} (z) m; bounds y {lo.y:.4f}..{hi.y:.4f}"]
+    notes = [f"  size: {size.x:.4f} (x) x {size.y:.4f} (y) x {size.z:.4f} (z) m; bounds x {lo.x:.4f}..{hi.x:.4f}, "
+             f"y {lo.y:.4f}..{hi.y:.4f}, z {lo.z:.4f}..{hi.z:.4f}"]
     if info.get("note"):
         notes.append("  note: " + info["note"])
     for key in ("fit", "fit2", "fit3"):

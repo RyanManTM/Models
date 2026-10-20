@@ -1,0 +1,9 @@
+fan4_female: 536 triangles, 3 meshes
+  mesh fan4_female_connector_black#connector_black  tris=312
+  mesh fan4_female_gold#gold  tris=96
+  mesh fan4_female_tex_parts_c_palette#tex_parts_c_palette  tris=128
+  A_CABLE_0 pos=(-0.0, -0.0002, 0.0335) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00500,0.00500,0.01000 meta=r=0.0025,n=4
+  A_HIT_0 pos=(-0.0, 0.00025, 0.00085) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01256,0.00750,0.01430 meta=
+  A_PORT_FAN_0 pos=(-0.0, -0.0002, -0.0058) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.01256,0.00650,0.00800 meta=depth=0.0058,pins=4;pin1=-0.00381,0.00000;colstep=0.00254,0.00000;pinout=GND|12V|SENSE|PWM
+  size: 0.0106 (x) x 0.0057 (y) x 0.0396 (z) m; bounds x -0.0053..0.0053, y -0.0027..0.0030, z -0.0060..0.0335
+  note: 4-pin PWM receiving housing W 0.0106 H 0.0055 L 0.0075, pins 0.0058 in front of the face
