@@ -662,10 +662,10 @@ def build_board(ctx):
             doc(R, i, flat_frame((xR - 0.050, yc, zB + 0.045 + j * 0.07)), (0.090, 0.060, size[2]), k, form, o_comp,
                 under=under_t, label=lab)
     R.anchor("A_HIT_0", F((0, sy / 2, 0)), (sx, sy, sz))
-    R.explode = {"A_ITEM_PART_0": (0, 0.16, 0), "A_INSERT_FOAM_0": (0, 0.09, 0), "A_INSERT_CARD_0": (0, 0.05, 0),
-                 "A_ITEM_ACC_0": (0.06, 0.0, sz * 0.75), "A_ITEM_HW_0": (0.16, 0.0, sz * 0.70),
+    R.explode = {"A_ITEM_PART_0": (0, 0.07, 0), "A_INSERT_FOAM_0": (0, 0.04, 0), "A_INSERT_CARD_0": (0, sy + 0.04, 0),
+                 "A_ITEM_ACC_0": (0.04, sy + 0.01, sz * 0.9), "A_ITEM_HW_0": (0.12, sy + 0.01, sz * 0.85),
                  "A_TAPE_0": (-0.03, 0.02, 0), "A_TAPE_1": (0, 0.03, 0), "A_TAPE_2": (0.03, 0.02, 0)}
-    explode_docs(R, [f"A_ITEM_DOC_{i}" for i in range(len(plist))], (-0.12, 0.0, sz * 0.8), (0.07, 0.003, 0.03))
+    explode_docs(R, [f"A_ITEM_DOC_{i}" for i in range(len(plist))], (-0.10, sy + 0.01, sz * 0.9), (0.08, 0.004, 0.02))
     R.explode_fill = 0.72
     R.open_view = (18, 55)
     R.explode_view = (24, 32)

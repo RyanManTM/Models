@@ -4,7 +4,7 @@ Brief: `docs/tasks/catalog/19-boxes.md` ("server parts"). The coordinator folds 
 and writes `box` / `box_size` into the catalogue JSON (not done here).
 
 ## Status
-**22 of 24 boxes built.** Done: cpu_epoch_9124, cpu_epoch_9354, cpu_epoch_9654, cpu_tiron_plat_8480, ram_kingsland_rdimm5_32, ram_sorin_rdimm5_64, ram_crux_rdimm5_128, ram_kingsland_rdimm4_32, ssd_sorin_pm9a3_3840, ssd_sorin_pm9a3_7680, cooler_srv_epoch_1u, cooler_srv_platinum_2u, psu_strata_crps_800, psu_strata_crps_1600, nic_linkwave_350t2, nic_linkwave_710da2, nic_melnet_strand6_25g, nic_melnet_strand6_100g, hba_broadline_9500_16i, hba_broadline_9560_16i, gpu_verdia_t100, gpu_voltra_mi210. Not built yet: mb_strata_spv, mb_strata_l46.
+**24 of 24 boxes built.** Done: cpu_epoch_9124, cpu_epoch_9354, cpu_epoch_9654, cpu_tiron_plat_8480, ram_kingsland_rdimm5_32, ram_sorin_rdimm5_64, ram_crux_rdimm5_128, ram_kingsland_rdimm4_32, ssd_sorin_pm9a3_3840, ssd_sorin_pm9a3_7680, cooler_srv_epoch_1u, cooler_srv_platinum_2u, psu_strata_crps_800, psu_strata_crps_1600, nic_linkwave_350t2, nic_linkwave_710da2, nic_melnet_strand6_25g, nic_melnet_strand6_100g, hba_broadline_9500_16i, hba_broadline_9560_16i, gpu_verdia_t100, gpu_voltra_mi210, mb_strata_spv, mb_strata_l46. Not built yet: none.
 
 ## What was made
 - **`Tools/Blender/rig_oem.py`** (new rig module, listed in `build_boxes.RIG_MODULES`): the builders of the kinds
@@ -99,8 +99,8 @@ folded on the manual, and the warranty card.
 | `box_hba_broadline_9560_16i` | `oem_card` | 0.28 × 0.06 × 0.25 | 872 | OEM foam carton (oem_card): tape strip 0 A_TAPE_0..2 (0) -> long flaps A_FLAP_0/1 (1) -> short flaps A_FLAP_2/3 (2) -> 4 papers on the top foam, top first (3..6) -> top foam A_INSERT_FOAM_1 (7) -> storage controller in its bag (bag=antistatic_silver) and A_ITEM_ACC_0 (bracket), A_ITEM_CORD_0 (cord) in their pockets (8) -> bottom foam A_INSERT_FOAM_0 (9). |
 | `box_gpu_verdia_t100` | `oem_card` | 0.32 × 0.085 × 0.245 | 720 | OEM foam carton (oem_card): tape strip 0 A_TAPE_0..2 (0) -> long flaps A_FLAP_0/1 (1) -> short flaps A_FLAP_2/3 (2) -> 3 papers on the top foam, top first (3..5) -> top foam A_INSERT_FOAM_1 (6) -> accelerator card in its bag (bag=antistatic_silver) and A_ITEM_CORD_0 (cord) in their pockets (7) -> bottom foam A_INSERT_FOAM_0 (8). |
 | `box_gpu_voltra_mi210` | `oem_card` | 0.32 × 0.085 × 0.165 | 600 | OEM foam carton (oem_card): tape strip 0 A_TAPE_0..2 (0) -> long flaps A_FLAP_0/1 (1) -> short flaps A_FLAP_2/3 (2) -> 3 papers on the top foam, top first (3..5) -> top foam A_INSERT_FOAM_1 (6) -> accelerator card in its bag (bag=antistatic_silver) in their pockets (7) -> bottom foam A_INSERT_FOAM_0 (8). |
-| `box_mb_strata_spv` | `oem_board` | not built | | |
-| `box_mb_strata_l46` | `oem_board` | not built | | |
+| `box_mb_strata_spv` | `oem_board` | 0.36 × 0.065 × 0.325 | 468 | Server board: tape strip 0 A_TAPE_0..2 (0) -> long flaps (1) -> short flaps (2) -> board in its silver bag (3, on the pad) -> PE foam pad A_INSERT_FOAM_0 (4) -> cardboard tray A_INSERT_CARD_0 (5) -> compartment: I/O shield A_ITEM_ACC_0, screw bag A_ITEM_HW_0, quick-start poster and warranty card (6) -> manual under the poster (7). |
+| `box_mb_strata_l46` | `oem_board` | 0.36 × 0.065 × 0.325 | 468 | Server board: tape strip 0 A_TAPE_0..2 (0) -> long flaps (1) -> short flaps (2) -> board in its silver bag (3, on the pad) -> PE foam pad A_INSERT_FOAM_0 (4) -> cardboard tray A_INSERT_CARD_0 (5) -> compartment: I/O shield A_ITEM_ACC_0, screw bag A_ITEM_HW_0, quick-start poster and warranty card (6) -> manual under the poster (7). |
 
 ## Deviations
 - The CPU's papers lie on the clamshell lid under the tuck lid (the consumer CPU box stands them behind its tray):
