@@ -64,5 +64,38 @@
     },
     "contract": "mb_ridge_b5",
     "new_contract": false
+  },
+  {
+    "id": "mb_kestrel_b650_glide",
+    "model": "mb_kestrel_b650_glide",
+    "brand": "Kestrel",
+    "name": "Kestrel B650 Glide G",
+    "category": "Motherboard",
+    "price": 229,
+    "power_w": 25,
+    "color": "#E6E7E8",
+    "rgb": true,
+    "analog": "Gigabyte B650 AERO G (docs only, never shown in game)",
+    "desc": "An all-white B650 for clean builds: white PCB, white fin-stack heatsinks and slots, a soft RGB line on the I/O cover.",
+    "specs": {
+      "form": "ATX",
+      "chipset": "B650",
+      "dimm_slots": 4,
+      "max_ram_gb": 192,
+      "m2_slots": 2,
+      "sata": 4,
+      "pcie_x16": 2,
+      "wifi": true,
+      "lan_gbe": 2.5,
+      "io_shield": "io_kestrel_b650_glide",
+      "io_preattached": true
+    },
+    "game": {
+      "socket": "V5",
+      "mem": "DDR5",
+      "perf": 0
+    },
+    "contract": "mb_ridge_b5",
+    "new_contract": false
   }
 ]

@@ -10,7 +10,7 @@ Branch `claude/cat-12-motherboards`. Script `Tools/Blender/build_cat_boards.py` 
 | 1 | `mb_aegis_b650_bulwark` | `io_aegis_b650_bulwark` | mb_ridge_b5 (V5, DDR5) | done |
 | 2 | `mb_aegis_x870e_vanguard` | `io_aegis_x870e_vanguard` | mb_ridge_b5 (V5, DDR5) | not yet |
 | 3 | `mb_mako_b650_harpoon` | `io_mako_b650_harpoon` | mb_ridge_b5 (V5, DDR5) | done |
-| 4 | `mb_kestrel_b650_glide` | `io_kestrel_b650_glide` | mb_ridge_b5 (V5, DDR5) | not yet |
+| 4 | `mb_kestrel_b650_glide` | `io_kestrel_b650_glide` | mb_ridge_b5 (V5, DDR5) | done |
 | 5 | `mb_aegis_z790_keystone` | `io_aegis_z790_keystone` | mb_ridge_z4 + DDR5 notch (L17, DDR5) | not yet |
 | 6 | `mb_mako_z790_riptide` | `io_mako_z790_riptide` | mb_ridge_z4 + DDR5 notch (L17, DDR5) | not yet |
 | 7 | `mb_kestrel_z790_talon` | `io_kestrel_z790_talon` | mb_ridge_z4 + DDR5 notch (L17, DDR5) | not yet |
@@ -98,6 +98,17 @@ SAME and the two film anchors are ONLY_B.
   slots. No RGB. Shield: painted black.
 - **Anchors:** vs `mb_ridge_x5`: 82 SAME, 0 DIFF. vs `mb_ridge_b5`: 80 SAME, ONLY_B `A_FILM_CHIPSET_0`, `A_FILM_IO_0`.
 - **I/O shield:** pre-attached on the analog (shipped here as the separate `io_mako_b650_harpoon` all the same).
+
+## 4. `mb_kestrel_b650_glide` + `io_kestrel_b650_glide`: Kestrel B650 Glide G
+
+- **Analog:** Gigabyte B650 AERO G (the white/silver creator board). Socket V5, DDR5, ATX; `mb_ridge_b5` layout.
+- **Size:** ATX 0.244 × 0.305, PCB z 0..0.0016; tallest part the I/O cover (z 0.0371).
+- **Triangles:** 45,616 in 41 meshes. Shield: 1,244 in 1.
+- **Look:** white PCB with a grey dot-matrix graphic and dark silkscreen; `fins` VRM heatsinks (white covers over
+  exposed silver fin stacks, a silver lip line); a white `slab` I/O cover with a soft RGB line; a white chipset
+  plate; white DIMM and PCIe slots, the x16 one with silver armour; two white M.2 heatsinks. Shield: bare steel.
+- **Anchors:** vs `mb_ridge_x5`: 82 SAME, 0 DIFF.
+- **I/O shield:** pre-attached on the analog (shipped here as the separate `io_kestrel_b650_glide` all the same).
 
 ## Deviations
 
