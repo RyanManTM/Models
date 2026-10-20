@@ -4,7 +4,7 @@ Brief: `docs/tasks/catalog/19-boxes.md`. Every catalogue part (`docs/catalog/*.j
 plus the data-centre gear from task 01 and a rebuilt `box_ac_12k`.
 
 ## Status
-**125 of 132 catalogue boxes built.** Not built yet: cooler_frostpeak_120_rgb, case_phanta_g360a, case_nexa_h5, case_facet_fjord, case_hush_500dx, case_facet_fizzair, case_brickhouse_beige98.
+**126 of 132 catalogue boxes built.** Not built yet: case_phanta_g360a, case_nexa_h5, case_facet_fjord, case_hush_500dx, case_facet_fizzair, case_brickhouse_beige98.
 
 The work was split by rig module, each built and checked box by box (all four previews looked at):
 - the consumer parts of the existing box kinds (`rig_products.py`): CPUs, GPUs, motherboards, memory, NVMe and SATA
@@ -202,7 +202,7 @@ Opening sequence: the step `order` of each piece, from the rig's notes. Previews
 | box_cooler_glacier_ak620_black | 0.175 x 0.21 x 0.19 | 1122 | 17 | Tower cooler: tape (0) -> long flaps (1) -> short flaps (2) -> top EPS A_INSERT_FOAM_0 (3) -> cooler A_ITEM_PART_0 and the accessory box A_INSERT_ACCBOX_0 standing in front of it (4) -> bottom EPS A_INSERT_FOAM_1 and the accessory box's tuck flap A_FLAP_4 (5) -> mounting kit A_ITEM_HW_0, paste syringe A_ITEM_HW_1 (kind=syringe, a look mesh on its anchor), manual A_ITEM_DOC_0 (6). |
 | box_cooler_noctis_d15 | 0.185 x 0.215 x 0.21 | 1126 | 17 | Tower cooler: tape (0) -> long flaps (1) -> short flaps (2) -> top EPS A_INSERT_FOAM_0 (3) -> cooler A_ITEM_PART_0 and the accessory box A_INSERT_ACCBOX_0 standing in front of it (4) -> bottom EPS A_INSERT_FOAM_1 and the accessory box's tuck flap A_FLAP_4 (5) -> mounting kit A_ITEM_HW_0, paste syringe A_ITEM_HW_1 (kind=syringe, a look mesh on its anchor), manual A_ITEM_DOC_0 (6). |
 | box_cooler_noctis_d15_black | 0.185 x 0.215 x 0.21 | 1126 | 17 | Tower cooler: tape (0) -> long flaps (1) -> short flaps (2) -> top EPS A_INSERT_FOAM_0 (3) -> cooler A_ITEM_PART_0 and the accessory box A_INSERT_ACCBOX_0 standing in front of it (4) -> bottom EPS A_INSERT_FOAM_1 and the accessory box's tuck flap A_FLAP_4 (5) -> mounting kit A_ITEM_HW_0, paste syringe A_ITEM_HW_1 (kind=syringe, a look mesh on its anchor), manual A_ITEM_DOC_0 (6). |
-| box_cooler_frostpeak_120_rgb | | | | **not built yet** |
+| box_cooler_frostpeak_120_rgb | 0.17 x 0.205 x 0.145 | 1126 | 17 | Tower cooler: tape (0) -> long flaps (1) -> short flaps (2) -> top EPS A_INSERT_FOAM_0 (3) -> cooler A_ITEM_PART_0 and the accessory box A_INSERT_ACCBOX_0 standing in front of it (4) -> bottom EPS A_INSERT_FOAM_1 and the accessory box's tuck flap A_FLAP_4 (5) -> mounting kit A_ITEM_HW_0, paste syringe A_ITEM_HW_1 (kind=syringe, a look mesh on its anchor), manual A_ITEM_DOC_0 (6). |
 | box_cooler_noctis_l9 | 0.195 x 0.08 x 0.125 | 988 | 12 | Low-profile cooler: tuck lid A_FLAP_0 (1) -> dust flaps (2) -> 2 papers in a pile on top (3..4) -> cooler A_ITEM_PART_0 and the accessory box A_INSERT_ACCBOX_0 (5) -> EPS tray A_INSERT_FOAM_0 and the accessory box flap A_FLAP_3 (6) -> mounting kit A_ITEM_HW_0, paste A_ITEM_HW_1 (7). |
 | box_cooler_tiron_stock | 0.12 x 0.09 x 0.15 | 4978 | 9 | Stock cooler: tuck lid A_FLAP_0 (1) -> dust flaps (2) -> clear clamshell A_INSERT_CLAM_0 lifted out (3) -> clamshell lid A_CLAMLID_0 and the leaflet under the clamshell (4) -> cooler (5). Box depth 0.15 (was 0.12): the model's fan plug sits 30 mm past the shroud, so the clamshell has a pocket for it behind the cooler. |
 
