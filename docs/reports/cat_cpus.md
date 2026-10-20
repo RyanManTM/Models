@@ -5,6 +5,8 @@
 
 ## Status
 
+All 14 are done, each committed with its model, textures, previews and report.
+
 | Id | Name | Socket | Contract | Status |
 |---|---|---|---|---|
 | `cpu_arc7_9800x3d` | Arc 7 9800X3D | V5 | `cpu_arc5` | done |
@@ -12,15 +14,15 @@
 | `cpu_arc7_9700x` | Arc 7 9700X | V5 | `cpu_arc5` | done |
 | `cpu_tiron_i5_14600k` | Tiron i5-14600K | L17 | `cpu_tiron5` | done |
 | `cpu_tiron_i7_14700k` | Tiron i7-14700K | L17 | `cpu_tiron5` | done |
-| `cpu_tiron_i9_14900k` | Tiron i9-14900K | L17 | `cpu_tiron5` | building |
-| `cpu_arc9_9950x3d` | Arc 9 9950X3D | V5 | `cpu_arc5` | building |
-| `cpu_arc3_8300g` | Arc 3 8300G | V5 | `cpu_arc5` | building |
-| `cpu_tiron_i3_14100` | Tiron i3-14100 | L17 | `cpu_tiron5` | building |
-| `cpu_tiron_i7_14700` | Tiron i7-14700 | L17 | `cpu_tiron5` | building |
-| `cpu_epoch_9654` | Arc Epoch 9654 | SP-V | new `cpu_spv` | not done |
-| `cpu_epoch_9354` | Arc Epoch 9354 | SP-V | new `cpu_spv` | not done |
-| `cpu_epoch_9124` | Arc Epoch 9124 | SP-V | new `cpu_spv` | not done |
-| `cpu_tiron_plat_8480` | Tiron Platinum 8480 | L46 | new `cpu_l46` | not done |
+| `cpu_tiron_i9_14900k` | Tiron i9-14900K | L17 | `cpu_tiron5` | done |
+| `cpu_arc9_9950x3d` | Arc 9 9950X3D | V5 | `cpu_arc5` | done |
+| `cpu_arc3_8300g` | Arc 3 8300G | V5 | `cpu_arc5` | done |
+| `cpu_tiron_i3_14100` | Tiron i3-14100 | L17 | `cpu_tiron5` | done |
+| `cpu_tiron_i7_14700` | Tiron i7-14700 | L17 | `cpu_tiron5` | done |
+| `cpu_epoch_9654` | Arc Epoch 9654 | SP-V | new `cpu_spv` | done |
+| `cpu_epoch_9354` | Arc Epoch 9354 | SP-V | new `cpu_spv` | done |
+| `cpu_epoch_9124` | Arc Epoch 9124 | SP-V | new `cpu_spv` | done |
+| `cpu_tiron_plat_8480` | Tiron Platinum 8480 | L46 | new `cpu_l46` | done |
 
 ## Rebuild
 
@@ -114,6 +116,39 @@ twice (old, old2) and once with the new one, each into its own scratch project.
 ```bash
 blender -b --factory-startup -P Tools/Blender/cat_shape_compare.py -- <old>/Assets/Resources/Models <new>/Assets/Resources/Models cpu_arc5 cpu_arc7 cpu_tiron5 cpu_arc9 --png <old.png> <new.png> ...
 ```
+
+## Server models
+
+| Id | Triangles | Meshes | IHS texture | Markings |
+|---|---|---|---|---|
+| `cpu_epoch_9124` | 33,390 | 6 | `cpu_ihs_9124.png` | ARC EPOCH / 9124 / 16-CORE / 100-000000802 / 2CK8149D10023 / MADE IN MALAYSIA |
+| `cpu_epoch_9354` | 33,390 | 6 | `cpu_ihs_9354.png` | ARC EPOCH / 9354 / 32-CORE / 100-000000798 / 2CN4417F20061 / MADE IN MALAYSIA |
+| `cpu_epoch_9654` | 33,390 | 6 | `cpu_ihs_9654.png` | ARC EPOCH / 9654 / 96-CORE / 100-000000789 / 2CQ7350G40188 / MADE IN CHINA |
+| `cpu_tiron_plat_8480` | 43,510 | 6 | `cpu_ihs_8480.png` | tiron / TIRON® PLATINUM 8480 / SRM7H 2.00GHZ / X2360A51 / ©'22 56C (e4) / MALAY |
+
+- **Meshes:** the substrate (`tex_cpu_spv_pcb` / `tex_cpu_l46_pcb`, shared per socket), the IHS (its own texture),
+  gold (the lands and the pin-1 triangle), ceramic and solder (the capacitors), and the carrier moving piece.
+- **IHS markings:** each IHS has its own Data Matrix code and an etched pin-1 triangle.
+- **Triangles:** most of them are the LGA lands, which are real hexagons so they show when the part is held (V5 has
+  octagons for about 1,700 lands). The land side also carries the pads in its texture, so a LOD could drop the land
+  geometry.
+- **Anchors:** `anchor_compare.py` of `cpu_epoch_9124` and `cpu_epoch_9354` against `cpu_epoch_9654` gives 5 / 5
+  SAME for both.
+
+## Deviations
+
+- **Real numbers:**
+  - `power_w` is the TDP: AMD's TDP, Intel's base power. `specs.peak_w` holds AMD's PPT or Intel's maximum turbo power,
+    for PSU sizing.
+  - Prices are rounded street prices (October 2026).
+  - The S-spec, OPN and lot codes look real but are invented.
+- **Fonts:** the art asks for Windows fonts (OCR-A, Agency). On Linux they fall back to Liberation/DejaVu, so the
+  serial lines aren't in OCR-A. A Windows rebuild gives the intended fonts with the same layout.
+- **L46 package size:** it follows the brief (about 61 × 105 mm), not the real LGA4677 (77.5 × 56.5 mm).
+- **Tags:** no new material tags. The carriers use their own `tex_` atlas (flat orange or black swatches plus the
+  moulded legend), because no plain orange tag exists.
+- **Texture names:** the IHS textures are named `cpu_ihs_<model>`, not `<id>_ihs`, to keep mesh names under 63
+  characters (see the hooks section).
 
 ## New contracts: server CPU sockets
 

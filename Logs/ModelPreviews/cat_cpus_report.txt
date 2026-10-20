@@ -1,0 +1,168 @@
+catalogue 10 (CPUs): models, triangles and anchors (Unity metres)
+
+cpu_arc3_8300g: 13696 triangles, 5 meshes
+  mesh cpu_arc3_8300g_ceramic#ceramic  tris=720
+  mesh cpu_arc3_8300g_gold#gold  tris=10652
+  mesh cpu_arc3_8300g_solder#solder  tris=1440
+  mesh cpu_arc3_8300g_tex_cpu_ihs_8300g#tex_cpu_ihs_8300g  tris=752
+  mesh cpu_arc3_8300g_tex_cpu_v5_pcb#tex_cpu_v5_pcb  tris=132
+  A_HIT_0 pos=(-0.0, 0.0, 0.003) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.04000,0.04000,0.00640 meta=
+  A_MARK_PIN1_0 pos=(0.0193, -0.0193, 0.0012) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00600,0.00600,0.00200 meta=corner=+x-y
+  A_PASTE_0 pos=(-0.0, 0.0, 0.006) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.03000,0.03000,0.00200 meta=ihs=0.0350x0.0380
+frame: as cpu_arc5 (Socket V5 package, origin at the contact face centre, +z up)
+
+cpu_arc5_9600x: 13696 triangles, 5 meshes
+  mesh cpu_arc5_9600x_ceramic#ceramic  tris=720
+  mesh cpu_arc5_9600x_gold#gold  tris=10652
+  mesh cpu_arc5_9600x_solder#solder  tris=1440
+  mesh cpu_arc5_9600x_tex_cpu_ihs_9600x#tex_cpu_ihs_9600x  tris=752
+  mesh cpu_arc5_9600x_tex_cpu_v5_pcb#tex_cpu_v5_pcb  tris=132
+  A_HIT_0 pos=(-0.0, 0.0, 0.003) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.04000,0.04000,0.00640 meta=
+  A_MARK_PIN1_0 pos=(0.0193, -0.0193, 0.0012) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00600,0.00600,0.00200 meta=corner=+x-y
+  A_PASTE_0 pos=(-0.0, 0.0, 0.006) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.03000,0.03000,0.00200 meta=ihs=0.0350x0.0380
+frame: as cpu_arc5 (Socket V5 package, origin at the contact face centre, +z up)
+
+cpu_arc7_9700x: 13696 triangles, 5 meshes
+  mesh cpu_arc7_9700x_ceramic#ceramic  tris=720
+  mesh cpu_arc7_9700x_gold#gold  tris=10652
+  mesh cpu_arc7_9700x_solder#solder  tris=1440
+  mesh cpu_arc7_9700x_tex_cpu_ihs_9700x#tex_cpu_ihs_9700x  tris=752
+  mesh cpu_arc7_9700x_tex_cpu_v5_pcb#tex_cpu_v5_pcb  tris=132
+  A_HIT_0 pos=(-0.0, 0.0, 0.003) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.04000,0.04000,0.00640 meta=
+  A_MARK_PIN1_0 pos=(0.0193, -0.0193, 0.0012) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00600,0.00600,0.00200 meta=corner=+x-y
+  A_PASTE_0 pos=(-0.0, 0.0, 0.006) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.03000,0.03000,0.00200 meta=ihs=0.0350x0.0380
+frame: as cpu_arc5 (Socket V5 package, origin at the contact face centre, +z up)
+
+cpu_arc7_9800x3d: 13696 triangles, 5 meshes
+  mesh cpu_arc7_9800x3d_ceramic#ceramic  tris=720
+  mesh cpu_arc7_9800x3d_gold#gold  tris=10652
+  mesh cpu_arc7_9800x3d_solder#solder  tris=1440
+  mesh cpu_arc7_9800x3d_tex_cpu_ihs_9800x3d#tex_cpu_ihs_9800x3d  tris=752
+  mesh cpu_arc7_9800x3d_tex_cpu_v5_pcb#tex_cpu_v5_pcb  tris=132
+  A_HIT_0 pos=(-0.0, 0.0, 0.003) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.04000,0.04000,0.00640 meta=
+  A_MARK_PIN1_0 pos=(0.0193, -0.0193, 0.0012) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00600,0.00600,0.00200 meta=corner=+x-y
+  A_PASTE_0 pos=(-0.0, 0.0, 0.006) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.03000,0.03000,0.00200 meta=ihs=0.0350x0.0380
+frame: as cpu_arc5 (Socket V5 package, origin at the contact face centre, +z up)
+
+cpu_arc9_9950x3d: 13696 triangles, 5 meshes
+  mesh cpu_arc9_9950x3d_ceramic#ceramic  tris=720
+  mesh cpu_arc9_9950x3d_gold#gold  tris=10652
+  mesh cpu_arc9_9950x3d_solder#solder  tris=1440
+  mesh cpu_arc9_9950x3d_tex_cpu_ihs_9950x3d#tex_cpu_ihs_9950x3d  tris=752
+  mesh cpu_arc9_9950x3d_tex_cpu_v5_pcb#tex_cpu_v5_pcb  tris=132
+  A_HIT_0 pos=(-0.0, 0.0, 0.003) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.04000,0.04000,0.00640 meta=
+  A_MARK_PIN1_0 pos=(0.0193, -0.0193, 0.0012) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00600,0.00600,0.00200 meta=corner=+x-y
+  A_PASTE_0 pos=(-0.0, 0.0, 0.006) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.03000,0.03000,0.00200 meta=ihs=0.0350x0.0380
+frame: as cpu_arc5 (Socket V5 package, origin at the contact face centre, +z up)
+
+cpu_tiron_i3_14100: 14410 triangles, 5 meshes
+  mesh cpu_tiron_i3_14100_ceramic#ceramic  tris=768
+  mesh cpu_tiron_i3_14100_gold#gold  tris=11498
+  mesh cpu_tiron_i3_14100_solder#solder  tris=1536
+  mesh cpu_tiron_i3_14100_tex_cpu_ihs_14100#tex_cpu_ihs_14100  tris=476
+  mesh cpu_tiron_i3_14100_tex_cpu_l17_pcb#tex_cpu_l17_pcb  tris=132
+  A_HIT_0 pos=(-0.0, 0.0, 0.003) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.03750,0.04500,0.00640 meta=
+  A_MARK_PIN1_0 pos=(0.01805, -0.0218, 0.0011) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00600,0.00600,0.00200 meta=corner=+x-y
+  A_PASTE_0 pos=(-0.0, 0.0, 0.006) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.03000,0.03000,0.00200 meta=ihs=0.0366x0.0292
+frame: as cpu_tiron5 (Socket L17 package, origin at the contact face centre, +z up)
+
+cpu_tiron_i5_14600k: 14410 triangles, 5 meshes
+  mesh cpu_tiron_i5_14600k_ceramic#ceramic  tris=768
+  mesh cpu_tiron_i5_14600k_gold#gold  tris=11498
+  mesh cpu_tiron_i5_14600k_solder#solder  tris=1536
+  mesh cpu_tiron_i5_14600k_tex_cpu_ihs_14600k#tex_cpu_ihs_14600k  tris=476
+  mesh cpu_tiron_i5_14600k_tex_cpu_l17_pcb#tex_cpu_l17_pcb  tris=132
+  A_HIT_0 pos=(-0.0, 0.0, 0.003) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.03750,0.04500,0.00640 meta=
+  A_MARK_PIN1_0 pos=(0.01805, -0.0218, 0.0011) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00600,0.00600,0.00200 meta=corner=+x-y
+  A_PASTE_0 pos=(-0.0, 0.0, 0.006) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.03000,0.03000,0.00200 meta=ihs=0.0366x0.0292
+frame: as cpu_tiron5 (Socket L17 package, origin at the contact face centre, +z up)
+
+cpu_tiron_i7_14700: 14410 triangles, 5 meshes
+  mesh cpu_tiron_i7_14700_ceramic#ceramic  tris=768
+  mesh cpu_tiron_i7_14700_gold#gold  tris=11498
+  mesh cpu_tiron_i7_14700_solder#solder  tris=1536
+  mesh cpu_tiron_i7_14700_tex_cpu_ihs_14700#tex_cpu_ihs_14700  tris=476
+  mesh cpu_tiron_i7_14700_tex_cpu_l17_pcb#tex_cpu_l17_pcb  tris=132
+  A_HIT_0 pos=(-0.0, 0.0, 0.003) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.03750,0.04500,0.00640 meta=
+  A_MARK_PIN1_0 pos=(0.01805, -0.0218, 0.0011) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00600,0.00600,0.00200 meta=corner=+x-y
+  A_PASTE_0 pos=(-0.0, 0.0, 0.006) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.03000,0.03000,0.00200 meta=ihs=0.0366x0.0292
+frame: as cpu_tiron5 (Socket L17 package, origin at the contact face centre, +z up)
+
+cpu_tiron_i7_14700k: 14410 triangles, 5 meshes
+  mesh cpu_tiron_i7_14700k_ceramic#ceramic  tris=768
+  mesh cpu_tiron_i7_14700k_gold#gold  tris=11498
+  mesh cpu_tiron_i7_14700k_solder#solder  tris=1536
+  mesh cpu_tiron_i7_14700k_tex_cpu_ihs_14700k#tex_cpu_ihs_14700k  tris=476
+  mesh cpu_tiron_i7_14700k_tex_cpu_l17_pcb#tex_cpu_l17_pcb  tris=132
+  A_HIT_0 pos=(-0.0, 0.0, 0.003) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.03750,0.04500,0.00640 meta=
+  A_MARK_PIN1_0 pos=(0.01805, -0.0218, 0.0011) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00600,0.00600,0.00200 meta=corner=+x-y
+  A_PASTE_0 pos=(-0.0, 0.0, 0.006) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.03000,0.03000,0.00200 meta=ihs=0.0366x0.0292
+frame: as cpu_tiron5 (Socket L17 package, origin at the contact face centre, +z up)
+
+cpu_tiron_i9_14900k: 14410 triangles, 5 meshes
+  mesh cpu_tiron_i9_14900k_ceramic#ceramic  tris=768
+  mesh cpu_tiron_i9_14900k_gold#gold  tris=11498
+  mesh cpu_tiron_i9_14900k_solder#solder  tris=1536
+  mesh cpu_tiron_i9_14900k_tex_cpu_ihs_14900k#tex_cpu_ihs_14900k  tris=476
+  mesh cpu_tiron_i9_14900k_tex_cpu_l17_pcb#tex_cpu_l17_pcb  tris=132
+  A_HIT_0 pos=(-0.0, 0.0, 0.003) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.03750,0.04500,0.00640 meta=
+  A_MARK_PIN1_0 pos=(0.01805, -0.0218, 0.0011) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00600,0.00600,0.00200 meta=corner=+x-y
+  A_PASTE_0 pos=(-0.0, 0.0, 0.006) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.03000,0.03000,0.00200 meta=ihs=0.0366x0.0292
+frame: as cpu_tiron5 (Socket L17 package, origin at the contact face centre, +z up)
+
+cpu_epoch_9124: 33390 triangles, 6 meshes
+  mesh carrier@A_CARRIER_0#tex_cpu_spv_carrier  tris=946
+  mesh cpu_epoch_9124_ceramic#ceramic  tris=1728
+  mesh cpu_epoch_9124_gold#gold  tris=26568
+  mesh cpu_epoch_9124_solder#solder  tris=3456
+  mesh cpu_epoch_9124_tex_cpu_ihs_9124#tex_cpu_ihs_9124  tris=632
+  mesh cpu_epoch_9124_tex_cpu_spv_pcb#tex_cpu_spv_pcb  tris=60
+  A_CARRIER_0 pos=(-0.0, 0.0, 0.0016) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.08160,0.09660,0.00305 meta=socket=SP-V,pose=installed,clip=+z,rail=+y,color=#f26b1d
+  A_HIT_0 pos=(-0.0, 0.0, 0.0032) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.07200,0.07540,0.00680 meta=
+  A_MARK_CARRIER_0@A_CARRIER_0 pos=(0.03579, -0.03749, 0.0026) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00500,0.00500,0.00200 meta=corner=+x-y
+  A_MARK_PIN1_0 pos=(0.034, -0.0357, 0.0016) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00600,0.00600,0.00200 meta=corner=+x-y
+  A_PASTE_0 pos=(-0.0, 0.0, 0.0064) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.04640,0.05088,0.00200 meta=ihs=0.0580x0.0636
+frame: Socket SP-V (new contract): origin at the contact face centre, +z up, pin 1 at (+x, -y); the carrier is a moving piece on A_CARRIER_0
+
+cpu_epoch_9354: 33390 triangles, 6 meshes
+  mesh carrier@A_CARRIER_0#tex_cpu_spv_carrier  tris=946
+  mesh cpu_epoch_9354_ceramic#ceramic  tris=1728
+  mesh cpu_epoch_9354_gold#gold  tris=26568
+  mesh cpu_epoch_9354_solder#solder  tris=3456
+  mesh cpu_epoch_9354_tex_cpu_ihs_9354#tex_cpu_ihs_9354  tris=632
+  mesh cpu_epoch_9354_tex_cpu_spv_pcb#tex_cpu_spv_pcb  tris=60
+  A_CARRIER_0 pos=(-0.0, 0.0, 0.0016) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.08160,0.09660,0.00305 meta=socket=SP-V,pose=installed,clip=+z,rail=+y,color=#f26b1d
+  A_HIT_0 pos=(-0.0, 0.0, 0.0032) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.07200,0.07540,0.00680 meta=
+  A_MARK_CARRIER_0@A_CARRIER_0 pos=(0.03579, -0.03749, 0.0026) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00500,0.00500,0.00200 meta=corner=+x-y
+  A_MARK_PIN1_0 pos=(0.034, -0.0357, 0.0016) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00600,0.00600,0.00200 meta=corner=+x-y
+  A_PASTE_0 pos=(-0.0, 0.0, 0.0064) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.04640,0.05088,0.00200 meta=ihs=0.0580x0.0636
+frame: Socket SP-V (new contract): origin at the contact face centre, +z up, pin 1 at (+x, -y); the carrier is a moving piece on A_CARRIER_0
+
+cpu_epoch_9654: 33390 triangles, 6 meshes
+  mesh carrier@A_CARRIER_0#tex_cpu_spv_carrier  tris=946
+  mesh cpu_epoch_9654_ceramic#ceramic  tris=1728
+  mesh cpu_epoch_9654_gold#gold  tris=26568
+  mesh cpu_epoch_9654_solder#solder  tris=3456
+  mesh cpu_epoch_9654_tex_cpu_ihs_9654#tex_cpu_ihs_9654  tris=632
+  mesh cpu_epoch_9654_tex_cpu_spv_pcb#tex_cpu_spv_pcb  tris=60
+  A_CARRIER_0 pos=(-0.0, 0.0, 0.0016) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.08160,0.09660,0.00305 meta=socket=SP-V,pose=installed,clip=+z,rail=+y,color=#f26b1d
+  A_HIT_0 pos=(-0.0, 0.0, 0.0032) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.07200,0.07540,0.00680 meta=
+  A_MARK_CARRIER_0@A_CARRIER_0 pos=(0.03579, -0.03749, 0.0026) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00500,0.00500,0.00200 meta=corner=+x-y
+  A_MARK_PIN1_0 pos=(0.034, -0.0357, 0.0016) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00600,0.00600,0.00200 meta=corner=+x-y
+  A_PASTE_0 pos=(-0.0, 0.0, 0.0064) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.04640,0.05088,0.00200 meta=ihs=0.0580x0.0636
+frame: Socket SP-V (new contract): origin at the contact face centre, +z up, pin 1 at (+x, -y); the carrier is a moving piece on A_CARRIER_0
+
+cpu_tiron_plat_8480: 43510 triangles, 6 meshes
+  mesh carrier@A_CARRIER_0#tex_cpu_l46_carrier  tris=946
+  mesh cpu_tiron_plat_8480_ceramic#ceramic  tris=4416
+  mesh cpu_tiron_plat_8480_gold#gold  tris=28624
+  mesh cpu_tiron_plat_8480_solder#solder  tris=8832
+  mesh cpu_tiron_plat_8480_tex_cpu_ihs_8480#tex_cpu_ihs_8480  tris=632
+  mesh cpu_tiron_plat_8480_tex_cpu_l46_pcb#tex_cpu_l46_pcb  tris=60
+  A_CARRIER_0 pos=(-0.0, 0.0, 0.0016) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.07060,0.12420,0.00305 meta=socket=L46,pose=installed,clip=+z,mount=heatsink,color=#26282b
+  A_HIT_0 pos=(-0.0, 0.0, 0.0033) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.06100,0.10500,0.00700 meta=
+  A_MARK_CARRIER_0@A_CARRIER_0 pos=(0.03029, -0.05229, 0.0026) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00500,0.00500,0.00200 meta=corner=+x-y
+  A_MARK_PIN1_0 pos=(0.0285, -0.0505, 0.0016) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00600,0.00600,0.00200 meta=corner=+x-y
+  A_PASTE_0 pos=(-0.0, 0.0, 0.0066) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.03840,0.06320,0.00200 meta=ihs=0.0480x0.0790
+frame: Socket L46 (new contract): origin at the contact face centre, +z up, pin 1 at (+x, -y); the carrier is a moving piece on A_CARRIER_0
+
