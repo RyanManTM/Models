@@ -1,0 +1,14 @@
+bundle_modular: 14056 triangles, 6 meshes
+  mesh bundle_modular_black_plastic#black_plastic  tris=392
+  mesh bundle_modular_connector_black#connector_black  tris=5808
+  mesh bundle_modular_fabric_black#fabric_black  tris=5136
+  mesh bundle_modular_rubber#rubber  tris=1752
+  mesh tie_0@A_TIE_0#velcro_black  tris=484
+  mesh tie_1@A_TIE_1#velcro_black  tris=484
+  A_HIT_0 pos=(-0.0, 0.01538, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.15160,0.03075,0.10066 meta=
+  A_TIE_0 pos=(-0.02, 0.0233, -0.00081) fwd=(-0.0, 1.0, 0.0) up=(1.0, 0.0, -0.0) size=0.10390,0.01800,0.02780 meta=tie=velcro,colour=black
+  A_TIE_1 pos=(0.02, 0.0233, -0.00081) fwd=(-0.0, 1.0, 0.0) up=(1.0, 0.0, -0.0) size=0.10390,0.01800,0.02780 meta=tie=velcro,colour=black
+  size: 0.1516 (x) x 0.0308 (y) x 0.1007 (z) m; bounds x -0.0758..0.0758, y 0.0000..0.0308, z -0.0503..0.0503
+  note: 750 W modular cable set: ATX 24-pin, 2 x EPS 4+4, 2 x PCIe 6+2, 12V-2x6, 2 x SATA power chains (3 plugs each); sleeved, folded, two velcro straps
+  space cable_pouch inside (0.18 x 0.045 x 0.12 outer) (w 0.16, h 0.1, t 0.038): margins w +0.0084, h -0.0007, t +0.0072
+  space box_psu_750 A_ITEM_POUCH_0 (w 0.15, h 0.13, t 0.017): margins w -0.0016, h +0.0293, t -0.0138

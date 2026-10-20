@@ -882,11 +882,11 @@ def build_fan3_female(root):
 SLEEVE_R = 0.0018          # the braided sleeve over the four wires
 
 
-def shrink_tube(parent, a, b, w, h, y=None, name="shrink"):
+def shrink_tube(parent, a, b, w, h, name="shrink", n=12):
     """A flattened heat-shrink sleeve from point a to point b (w across, h high)."""
     a, b = V(a), V(b)
-    pts = [a + (b - a) * (k / 3) for k in range(4)]
-    geo = ribbon_sweep(pts, oval_profile(w, h, 12), [None] * 4)
+    pts = [a, b] if n <= 8 else [a + (b - a) * (k / 3) for k in range(4)]
+    geo = ribbon_sweep(pts, oval_profile(w, h, n), [None] * len(pts))
     return geo_obj(parent, geo, name, "black_plastic", 45.0)
 
 
@@ -941,6 +941,291 @@ def build_coil_fan_splitter(root):
     return dict(note="4-pin PWM 1-to-2 splitter, braided black sleeves, folded; output 2 without the tach pin")
 
 
+# ====================================================================== bundle_modular
+
+MF = 0.0042            # Mini-Fit Jr pitch
+
+
+def latch_lite(fr, parent, x, y_top, z_hook, length, width=0.0034, tag="connector_black", name="latch"):
+    """build_plugs.latch with plain boxes: the arm, the hook at the front, the pivot, the ridged press pad."""
+    lift = 0.0011
+    P.cube(name, (x, y_top + lift, z_hook + length / 2), (width, 0.0007, length), tag, fr, parent)
+    P.cube(name, (x, y_top + 0.0005, z_hook + 0.0004), (width, 0.0013, 0.0012), tag, fr, parent)
+    P.cube(name, (x, y_top + 0.0005, z_hook + length * 0.55), (width * 0.8, 0.001, 0.0016), tag, fr, parent)
+    P.cube(name, (x, y_top + lift + 0.0006, z_hook + length - 0.0014), (width + 0.0012, 0.0009, 0.0028), tag, fr, parent)
+
+
+def mf_lite(fr, parent, cols, rows=2, latch_on=True, x0=0.0, name="mf", tag="connector_black"):
+    """A Mini-Fit Jr housing as build_plugs.minifit draws it (the cavity face, side ribs, the latch), lighter for a
+    bundle of many: square cavities, plain boxes, no terminals and no wire stubs (the sleeve covers the wires)."""
+    W = cols * MF + 0.0012
+    H = rows * MF + 0.0010
+    L = 0.0128
+    face_t = 0.0032
+    holes = []
+    for j in range(rows):
+        for i in range(cols):
+            x = (i - (cols - 1) / 2) * MF
+            y = (j - (rows - 1) / 2) * MF
+            holes.append([(x - 0.0015, y - 0.0015), (x + 0.0015, y - 0.0015), (x + 0.0015, y + 0.0015), (x - 0.0015, y + 0.0015)])
+    P.slab(name + "_face", P.rrect(W, H, 0.0004, 0, 0, 1), face_t, tag, fr.sub(x0, 0, face_t / 2), holes=holes, parent=parent)
+    P.cube(name + "_floor", (x0, 0, face_t + 0.0002), (W - 0.0006, H - 0.0006, 0.0004), tag, fr, parent)
+    P.cube(name + "_body", (x0, 0, face_t + (L - face_t) / 2), (W, H, L - face_t), tag, fr, parent)
+    for sx in (-1, 1):
+        P.cube(name + "_rib", (x0 + sx * (W / 2 + 0.0002), 0, L * 0.55), (0.0004, H * 0.6, L * 0.7), tag, fr, parent)
+    if latch_on:
+        latch_lite(fr, parent, x0, H / 2, 0.0012, 0.0105, tag=tag, name=name + "_latch")
+    return dict(W=W, H=H, L=L)
+
+
+def head_atx24(fr, parent):
+    return mf_lite(fr, parent, 12, 2, name="atx")
+
+
+def head_mod_atx(fr, parent):
+    return mf_lite(fr, parent, 10, 2, name="matx")
+
+
+def head_mod8(fr, parent):
+    return mf_lite(fr, parent, 4, 2, name="mod8")
+
+
+def head_mod_sata(fr, parent):
+    return mf_lite(fr, parent, 3, 2, name="msata")
+
+
+def head_eps8(fr, parent):
+    """CPU 4+4: two 2x2 halves side by side, each with its latch, on a dovetail rail."""
+    w4 = 2 * MF + 0.0012
+    gap = 0.0003
+    a = mf_lite(fr, parent, 2, 2, x0=-(w4 + gap) / 2, name="eps_a")
+    mf_lite(fr, parent, 2, 2, x0=(w4 + gap) / 2, name="eps_b")
+    P.cube("eps_rail", (0, -a["H"] / 2 - 0.0003, 0.007), (0.0016, 0.0006, 0.009), "connector_black", fr, parent)
+    return dict(W=2 * w4 + gap, H=a["H"], L=a["L"])
+
+
+def head_pcie8(fr, parent):
+    """PCIe 6+2: a 2x3 with the latch and the loose 2x1 clipped to its side."""
+    gap = 0.0003
+    w6, w2 = 3 * MF + 0.0012, MF + 0.0012
+    tot = w6 + gap + w2
+    a = mf_lite(fr, parent, 3, 2, x0=-tot / 2 + w6 / 2, name="pcie_6")
+    mf_lite(fr, parent, 1, 2, latch_on=False, x0=tot / 2 - w2 / 2, name="pcie_2")
+    P.cube("pcie_hook", (tot / 2 - w2 / 2, a["H"] / 2 + 0.0005, 0.006), (0.0024, 0.001, 0.008), "connector_black", fr, parent)
+    return dict(W=tot, H=a["H"], L=a["L"])
+
+
+def head_12v2x6(fr, parent, name="hp"):
+    """The 16-pin 12V-2x6 (as build_plugs.plug_p12v2x6), lighter: square cavities, plain boxes, no terminals or wires."""
+    p = 0.003
+    W = 6 * p + 0.0016
+    Hp = 2 * p + 0.0012
+    Hs = 0.0030
+    L = 0.0150
+    face_t = 0.0030
+    tag = "connector_black"
+    yc = -Hs / 2
+    outline = [(-W / 2, -Hp / 2 - Hs / 2), (W / 2, -Hp / 2 - Hs / 2), (W / 2, Hp / 2 - Hs / 2 + 0.0002),
+               (W / 2 - 0.0018, Hp / 2 - Hs / 2 + 0.0002), (W / 2 - 0.0018, Hp / 2 + Hs / 2),
+               (-W / 2 + 0.0018, Hp / 2 + Hs / 2), (-W / 2 + 0.0018, Hp / 2 - Hs / 2 + 0.0002), (-W / 2, Hp / 2 - Hs / 2 + 0.0002)]
+    holes = []
+    for j in range(2):
+        for i in range(6):
+            x, y = (i - 2.5) * p, yc + (j - 0.5) * p
+            holes.append([(x - 0.00105, y - 0.00105), (x + 0.00105, y - 0.00105), (x + 0.00105, y + 0.00105), (x - 0.00105, y + 0.00105)])
+    for i in range(4):
+        x, y = -0.0045 + i * 0.003, yc + Hp / 2 + Hs / 2 - 0.0002
+        holes.append([(x - 0.0006, y - 0.0006), (x + 0.0006, y - 0.0006), (x + 0.0006, y + 0.0006), (x - 0.0006, y + 0.0006)])
+    P.slab(name + "_face", outline, face_t, tag, fr.sub(0, 0, face_t / 2), holes=holes, parent=parent)
+    P.slab(name + "_body", outline, L - face_t, tag, fr.sub(0, 0, face_t + (L - face_t) / 2), parent=parent)
+    P.cube(name + "_floor", (0, yc, face_t + 0.0002), (W - 0.0006, Hp - 0.0006, 0.0004), tag, fr, parent)
+    latch_lite(fr, parent, 0, Hp / 2, 0.0010, 0.012, width=0.0032, tag=tag, name=name + "_latch")
+    for sx in (-1, 1):
+        P.cube(name + "_grip", (sx * (W / 2 + 0.0002), yc, 0.0105), (0.0004, Hp * 0.8, 0.0045), tag, fr, parent)
+    return dict(W=W, H=Hp + Hs, L=L, yc=yc)
+
+
+def head_sata_power(fr, parent):
+    """An in-line SATA power plug as build_plugs.plug_sata_power draws it (the L-shaped mouth), without its 15
+    contacts and wire stubs: the chain's ribbon taps it at the back."""
+    W, H, L = 0.0228, 0.0062, 0.0125
+    tag = "connector_black"
+    face_t = 0.0016
+    hole = PL.sata_l_hole(W - 0.003, H - 0.0026, 0.0018)
+    P.slab("sp_face", P.rrect(W, H, 0.0006, 0, 0, 1), face_t, tag, fr.sub(0, 0, face_t / 2), holes=[hole], parent=parent)
+    P.cube("sp_floor", (0, 0, face_t + 0.0002), (W - 0.001, H - 0.001, 0.0004), tag, fr, parent)
+    P.cube("sp_body", (0, 0, face_t + (L - face_t) / 2), (W, H, L - face_t), tag, fr, parent)
+    P.cube("sp_ridge", (0, H / 2 + 0.0002, L * 0.6), (W * 0.82, 0.0004, L * 0.5), tag, fr, parent)
+    return dict(W=W, H=H, L=L)
+
+
+# the modular cable set across the bundle: (name, (sleeve w, t, PSU-side head, device-side head)) or "sata" (a chain)
+BUNDLE_CABLES = [
+    ("sata_a", "sata"),
+    ("eps_1", (0.0092, 0.0050, head_mod8, head_eps8)),
+    ("pcie_1", (0.0092, 0.0050, head_mod8, head_pcie8)),
+    ("atx", (0.0160, 0.0070, head_mod_atx, head_atx24)),
+    ("hp", (0.0115, 0.0056, head_12v2x6, head_12v2x6)),
+    ("pcie_2", (0.0092, 0.0050, head_mod8, head_pcie8)),
+    ("eps_2", (0.0092, 0.0050, head_mod8, head_eps8)),
+    ("sata_b", "sata"),
+]
+SATA_RIB = (0.0115, 0.0023)        # the flat 5-wire SATA power ribbon
+HEAD_Y = (0.0047, 0.0143, 0.0239)  # the head layers past the bundle's ends: on the floor, on those, on top
+ZF_SAMPLES = 6
+
+
+def zfold(xa, z, t, s, layers=3, samples=ZF_SAMPLES, bulge=1.25, gap=0.0004, seed=0, drift=0.0010):
+    """A cable folded in a flat Z of 'layers' runs between x = -xa and +xa in lane z, layer 0 on the floor; s = +1
+    starts at -x. Each run drifts a little across its lane and sags between the folds. Returns the runs (lists of
+    centre-line points) and the folds between them."""
+    rng = random.Random(seed)
+    pitch = t + gap
+    runs, folds = [], []
+    zs = [z + rng.uniform(-drift, drift) for _ in range(layers)]
+    for i in range(layers):
+        y = t / 2 + 0.0001 + i * pitch
+        xs, xe = -s * xa, s * xa
+        if i % 2:
+            xs, xe = xe, xs
+        ph = rng.uniform(0, TAU)
+        run = []
+        for k in range(samples + 1):
+            u = k / samples
+            zz = zs[i] + 0.0007 * math.sin(math.pi * u * 1.6 + ph)
+            run.append(V((xs + (xe - xs) * u, y + (0.00025 if i else 0.0) * math.sin(math.pi * u), zz)))
+        runs.append(run)
+        if i < layers - 1:
+            out = 1 if xe > xs else -1
+            R = pitch / 2
+            fold = []
+            for k in range(1, 7):
+                a = -math.pi / 2 + math.pi * k / 7
+                fold.append(V((xe + out * R * math.cos(a) * bulge, y + R + R * math.sin(a), zs[i] + (zs[i + 1] - zs[i]) * k / 7)))
+            folds.append(fold)
+    return runs, folds
+
+
+def build_bundle_modular(root):
+    """The 750 W PSU's modular cable set folded flat and held by two black velcro straps: a 24-pin ATX cable, two EPS
+    8-pin, two PCIe 8-pin, a 12V-2x6 and two SATA power chains. Each sleeved cable is folded in a flat Z of three
+    runs, side by side across the bundle; the heads lie past the ends in two layers (each lane alternates which end
+    its PSU-side head is at, so neighbouring heads rest on each other instead of colliding)."""
+    xa = 0.036
+    gap_z = 0.0010
+    widths = [SATA_RIB[0] if spec == "sata" else spec[0] for _, spec in BUNDLE_CABLES]
+    total = sum(widths) + gap_z * (len(widths) - 1)
+    z = -total / 2
+    tops = []
+    for k, ((nm, spec), w) in enumerate(zip(BUNDLE_CABLES, widths)):
+        zc = z + w / 2
+        z += w + gap_z
+        s = 1 if k % 2 == 0 else -1
+        if spec == "sata":
+            build_sata_chain(root, zc, s, xa, k)
+            tops.append(3 * SATA_RIB[1])
+            continue
+        cw, ct, psu_head, dev_head = spec
+        runs, folds = zfold(xa, zc, ct, s, seed=k)
+        pts = runs[0] + folds[0] + runs[1] + folds[1] + runs[2]
+        tops.append(3 * ct)
+        # the PSU-side head on the floor past the start, the device-side head past the end on the second layer; the
+        # wide ATX heads ride on a third layer at both ends
+        hl = 0.0128
+        xA = -s * (xa + 0.0125 + hl)
+        yA = HEAD_Y[2] if nm == "atx" else HEAD_Y[0]
+        xB = s * (xa + 0.0125 + hl)
+        yB = HEAD_Y[2] if nm == "atx" else HEAD_Y[1]
+        if nm == "hp":          # the 12V-2x6 is 10.2 mm tall with its sense row
+            yA, yB = yA + 0.0005, yB + 0.0005
+        ra = psu_head(P.Frame((xA, yA, zc), (s, 0, 0), (0, 1, 0)), root)
+        rb = dev_head(P.Frame((xB, yB, zc), (-s, 0, 0), (0, 1, 0)), root)
+        # heat shrink where the sleeve meets each head, and the leads into the Z
+        backA = V((xA + s * ra["L"], yA, zc))
+        backB = V((xB - s * rb["L"], yB, zc))
+        shrink_tube(root, backA - V((s * 0.001, 0, 0)), backA + V((s * 0.007, 0, 0)), cw * 0.95, ct * 1.1, n=8)
+        shrink_tube(root, backB + V((s * 0.001, 0, 0)), backB - V((s * 0.007, 0, 0)), cw * 0.95, ct * 1.1, n=8)
+        la = lead(backA + V((s * 0.006, 0, 0)), (s, 0, 0), pts[0], (s, 0, 0), 5, 0.004, 0.004, lift=0.0)
+        lb = lead(pts[-1], (s, 0, 0), backB - V((s * 0.006, 0, 0)), (s, 0, 0), 5, 0.006, 0.004, lift=0.0)
+        path = la[:-1] + pts + lb[1:]
+        geo_obj(root, ribbon_sweep(path, oval_profile(cw, ct, 10), [V((0, 0, 1))] * len(path)), "sleeve", "fabric_black", 50.0)
+    # two black velcro straps round the bundle
+    hh = max(tops) / 2 + 0.0004
+    for i, xs in enumerate((-0.020, 0.020)):
+        velcro_strap(root, V((xs, hh, 0)), total / 2 + 0.0008, hh, i)
+    return dict(note="750 W modular cable set: ATX 24-pin, 2 x EPS 4+4, 2 x PCIe 6+2, 12V-2x6, 2 x SATA power chains "
+                     "(3 plugs each); sleeved, folded, two velcro straps")
+
+
+def build_sata_chain(root, zc, s, xa, seed):
+    """A flat SATA power chain: the PSU-side 6-pin head, a Z of three runs, an in-line plug at each fold and one at
+    the end. The plugs sit past the ends, faces out: at the start end the second plug rides on the PSU head, at the
+    far end the last plug rides on the first."""
+    w, t = SATA_RIB
+    runs, folds = zfold(xa, zc, t, s, seed=seed, drift=0.0006)
+    r0, r1, r2 = runs
+    # the PSU-side head on the floor past the start
+    hl = 0.0128
+    xA = -s * (xa + 0.0125 + hl)
+    head_mod_sata(P.Frame((xA, 0.0047, zc), (s, 0, 0), (0, 1, 0)), root)
+    backA = V((xA + s * hl, 0.0047, zc))
+    shrink_tube(root, backA - V((s * 0.001, 0, 0)), backA + V((s * 0.006, 0, 0)), w * 0.9, 0.0040, n=8)
+    # the in-line plugs, past the Mini-Fit heads and pulled in from the bundle's edge: #1 at the far fold, #2 at the
+    # near fold (both on the floor), #3 at the end, riding on #1
+    xP = s * (xa + 0.0125 + hl + 0.0020 + 0.0125)
+    zp = zc - math.copysign(0.0057, zc)
+    plugs = [(xP, 0.0031), (-xP, 0.0031), (xP, 0.0062 + 0.0031)]
+    backs = []
+    for i, (xp, yp) in enumerate(plugs):
+        out = 1 if xp > 0 else -1
+        head_sata_power(P.Frame((xp, yp, zp), (-out, 0, 0), (0, 1, 0)), root)
+        backs.append(V((xp - out * 0.0125, yp, zp)))
+    # the ribbon: head -> run 0 -> plug 1 -> run 1 -> plug 2 -> run 2 -> plug 3 (each plug taps it at its back)
+    path = lead(backA + V((s * 0.006, 0, 0)), (s, 0, 0), r0[0], (s, 0, 0), 4, 0.004, 0.004, lift=0.0)[:-1] + r0
+    for (ra, rb, bk, lift) in ((r0, r1, backs[0], 0.0), (r1, r2, backs[1], 0.0085)):
+        out = 1 if bk.x > 0 else -1
+        # the near fold's ribbon arches over the PSU-side head on its way to plug 2
+        go = lead(ra[-1], (out, 0, 0), bk - V((out * 0.0005, 0.0006, 0)), (out, 0, 0), 7, 0.006, 0.004, lift=lift)
+        back = lead(bk - V((out * 0.0005, -0.0006, 0)), (-out, 0, 0), rb[0], (-out, 0, 0), 7, 0.004, 0.006, lift=lift)
+        path += go[1:] + back[1:] + rb[1:]
+    out = 1 if backs[2].x > 0 else -1
+    path += lead(r2[-1], (out, 0, 0), backs[2] - V((out * 0.0005, 0, 0)), (out, 0, 0), 4, 0.004, 0.003, lift=0.0)[1:]
+    geo_obj(root, ribbon_sweep(path, oval_profile(w, t, 8), [V((0, 0, 1))] * len(path)), "sata_ribbon", "rubber", 50.0)
+
+
+def velcro_strap(root, cen, hw, hh, index, w=0.012, t=0.0015):
+    """A black hook-and-loop strap wrapped 1.3 turns round the bundle section (centre cen, half width hw along z,
+    half height hh), its free tab lifting off on top; a moving piece on A_TIE_<index> (tie=velcro)."""
+    cen = V(cen)
+    a = P.anchor(f"A_TIE_{index}", P.Frame(cen + V((0, hh + t, 0)), (0, 1, 0), (1, 0, 0)), (2 * hw + 0.008, w + 0.006, 2 * hh + 0.006),
+                 root, meta="tie=velcro,colour=black")
+    e = 2.0 / 6.0
+
+    def ring(phi, grow):
+        cs, sn = math.cos(phi), math.sin(phi)
+        zz = (hw + grow) * math.copysign(abs(cs) ** e, cs)
+        yy = (hh + grow) * math.copysign(abs(sn) ** e, sn)
+        return cen + V((0, yy, zz))
+    pts = []
+    n = 56
+    for i in range(n + 1):
+        f = i / n
+        phi = math.pi / 2 - 1.3 * TAU * f + 0.25
+        grow = t * 0.55 + t * 1.05 * max(0.0, 1.3 * f - 0.98) / 0.32
+        pts.append(ring(phi, grow))
+    # the free tab lifts away a little
+    last, prev = pts[-1], pts[-2]
+    tan = (last - prev).normalized()
+    for k in range(1, 5):
+        pts.append(last + tan * 0.003 * k + V((0, 0.0006 * k * k / 4, 0)))
+    for p in pts:
+        p.y = max(p.y, t / 2)
+    prof = [(-y, x) for (x, y) in SB.ribbon_profile(w, t, 1)]
+    geo = S.sweep_profile(pts, prof, up=(1, 0, 0), smooth=True)
+    geo_obj(a, geo, "strap", "velcro_black", 45.0)
+    return a
+
+
 # ====================================================================== registry and driver
 
 MODELS = {
@@ -955,6 +1240,9 @@ MODELS = {
                                                 views=[(60, 40), (-130, 25)], samples=48)),
     "standoff_bag": (build_standoff_bag, dict(frame_fixed=True, wb=((0, 70), (-150, 30)), views=[(20, 50), (-130, 30)],
                                               spawn={"A_ITEM_": "standoff_brass", "A_SCREW_": "screw_ph2"})),
+    "bundle_modular": (build_bundle_modular, dict(fit=("cable_pouch inside (0.18 x 0.045 x 0.12 outer)", (0.160, 0.100, 0.038)),
+                                                  fit2=("box_psu_750 A_ITEM_POUCH_0", (0.150, 0.130, 0.017)),
+                                                  wb=((0, 70), (-150, 30)), views=[(30, 45), (-140, 30)], samples=40)),
     "fan4_female": (build_fan4_female, dict(frame_fixed=True, wb=((35, 25), (-145, 30)), views=[(40, 25), (-150, 30)])),
     "fan3_female": (build_fan3_female, dict(frame_fixed=True, wb=((35, 25), (-145, 30)), views=[(40, 25), (-150, 30)])),
 }

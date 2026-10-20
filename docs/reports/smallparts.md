@@ -73,6 +73,39 @@ the bundle.
 - Fits `box_mb_ridge_b5` and `box_mb_ridge_z4` `A_ITEM_CORD_0` (0.120 × 0.075 × 0.012): margins w +0.0022,
   h +0.0321, t +0.0001.
 
+### bundle_modular
+- The 750 W PSU's modular cable set, folded flat and held by two black velcro straps. Eight cables lie side by side
+  across the bundle:
+  - SATA power chain;
+  - EPS 4+4;
+  - PCIe 6+2;
+  - 24-pin ATX;
+  - 12V-2x6;
+  - PCIe 6+2;
+  - EPS 4+4;
+  - SATA power chain.
+- Each sleeved cable (`fabric_black`, a flat oval) is folded in a flat Z of three runs, with black heat shrink at each
+  head. Each cable has its PSU-side head (the `plug_mod_*` layouts) at one end and its device-side head at the other.
+  - Each lane alternates which end its PSU-side head is at, so the heads past each end lie in two layers and rest on
+    each other instead of colliding: on the floor, on top of those.
+  - The two wide ATX heads (10×2 PSU side, 24-pin board side) ride on a third layer.
+  - The SATA chains are flat black ribbons with three in-line plugs each: one at each fold and one at the end, past
+    the Mini-Fit heads.
+- The heads are lighter versions of the `build_plugs` ones, so 21 heads fit the budget: square cavities, plain boxes,
+  no terminals or wire stubs (the sleeve covers the wires). The rest is the same: cavity faces, keyed 4+4 and 6+2
+  splits, the 12V-2x6 sense row, side ribs, latches.
+- Size 0.1516 (x) × 0.0308 (y) × 0.1007 (z) m; **14056 triangles**, 6 meshes.
+- Anchors:
+  - `A_HIT_0` pos (0, 0.0154, 0), size 0.1516 × 0.0308 × 0.1007.
+  - `A_TIE_0` / `A_TIE_1` pos (∓0.020, 0.0233, −0.0008), fwd +y, up +x, size 0.1039 × 0.0180 × 0.0278, meta
+    `tie=velcro,colour=black`: the straps, pieces `tie_0@A_TIE_0#velcro_black` and `tie_1@A_TIE_1#velcro_black`.
+- Space:
+  - Inside the existing `cable_pouch` (0.18 × 0.045 × 0.12 outside, about 0.16 × 0.10 × 0.038 usable in its flat
+    middle): margins w +0.0084, h −0.0007, t +0.0072. The pouch is pillow-shaped, so the bundle's corner heads reach
+    into its rounded edges.
+  - `box_psu_750` `A_ITEM_POUCH_0` (0.150 × 0.130 × 0.017): margins w −0.0016, h +0.0293, **t −0.0138**. That
+    anchor is thinner than the pouch model itself (0.045); see the deviations.
+
 ### coil_fan_splitter
 - A 4-pin PWM 1-to-2 fan splitter in black braided sleeving (3.6 mm), about 0.1 m from the input to each output,
   folded for its bag.
@@ -175,3 +208,16 @@ the bundle.
     safety sheet, so the papers would need to move up about 5 mm. The 750's cord stands in the +x compartment; t
     there is the compartment width.
   - Or let the code scale the coil to the anchor: × 0.74 in y for the 450's t.
+
+- **bundle_modular is thicker than `A_ITEM_POUCH_0`** (0.031 against 0.017). Eight sleeved cables folded in three,
+  with their heads, can't be 17 mm thick. The anchor is also thinner than the existing `cable_pouch` model it holds
+  (0.045). The bundle fits inside that pouch model's footprint and height.
+  - Suggested: give `A_ITEM_POUCH_0` the pouch model's thickness, **t ≈ 0.045**. Or let the code scale the bundle
+    when it shows it in the pouch.
+- **bundle_modular's cables are short.** Folded in three inside a 0.15 m bundle, each sleeved cable is about 0.3 m
+  of cable (real modular cables are 0.5–0.65 m). Longer cables would need four or more layers (too thick) or a
+  longer pouch. The bundle is a look item; the game draws the working cables itself.
+- **No new material tags.** The sleeving uses `fabric_black`. A braided normal map on `fabric_black` (or a
+  `sleeve_black` tag) would make the sleeves read better in the game; that is optional.
+- **The syringe is 0.086 m long** as the brief asks, longer than the tower cooler box's look-only syringe space
+  (0.075).
