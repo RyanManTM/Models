@@ -36,8 +36,8 @@ Branch `claude/cat-coolers`. Script `Tools/Blender/build_cat_coolers.py` (new; i
 | `cooler_noctis_l9` | 24 346 | 37 mm | cooler_tower (low profile) | SAME 6, DIFF 5 (fan faces +z on top; top film on the fan hub) |
 | `cooler_frostpeak_120_rgb` | 38 396 | 158 mm | cooler_tower | SAME 7, DIFF 4, ONLY_B 1 (A_PLUG_ARGB_0) |
 | `cooler_arctiq_lc240` | 33 570 | pump 53 mm, rad 288 x 121 x 38 | aio (new) | pump base: screws and A_FILM_0 SAME as cooler_tower |
-| `cooler_corvex_h150i_white` | 49 678 | pump 56 mm, rad 408 x 121 x 27 | aio (new) | as above, plus A_SCREEN_0 |
-| `cooler_glacier_ls720` | 49 014 | pump 55 mm, rad 408 x 121 x 27 | aio (new) | as above |
+| `cooler_corvex_h150i_white` | 49 678 | pump 54 mm, rad 408 x 121 x 27 | aio (new) | as above, plus A_SCREEN_0 |
+| `cooler_glacier_ls720` | 49 014 | pump 52 mm, rad 408 x 121 x 27 | aio (new) | as above |
 | `cooler_srv_epoch_1u` | 9 286 | 27 mm (1U) | heatsink_spv (new) | new socket, no sibling |
 | `cooler_srv_platinum_2u` | 25 910 | 67 mm (2U) | heatsink_l46 (new) | new socket, no sibling |
 | `cooler_tiron_stock` | 21 550 | 53 mm | cooler_stock | vs `cooler_stock`: SAME 9 of 9 (every anchor) |

@@ -290,7 +290,7 @@
       "fans": 3,
       "fan_mm": 120,
       "tube_mm": 400,
-      "pump_height_mm": 56,
+      "pump_height_mm": 54,
       "rpm_max": 2100,
       "lcd": "2.1in round 480x480"
     },
@@ -319,7 +319,7 @@
       "fans": 3,
       "fan_mm": 120,
       "tube_mm": 410,
-      "pump_height_mm": 55,
+      "pump_height_mm": 52,
       "rpm_max": 2250
     },
     "game": {
