@@ -207,7 +207,6 @@ LINES = [
     ("verdia_5090_ref", dict(bg1=(0.06, 0.07, 0.06), accent=(0.46, 0.73, 0.0))),
     ("tiron_b580", dict(bg0=(0.01, 0.06, 0.20), bg1=(0.04, 0.30, 0.66), accent=(0.45, 0.80, 1.0), ribbon=(0.45, 0.80, 1.0))),
     ("frostpeak_120_rgb", dict(bg0=(0.03, 0.03, 0.05), bg1=(0.14, 0.18, 0.36), accent=(0.45, 0.70, 1.0), text=DARK_TEXT)),
-    ("seastar_px1000", dict(bg1=(0.24, 0.22, 0.20), accent=(0.86, 0.86, 0.86))),
 ]
 WHITE = dict(bg0=(0.96, 0.96, 0.95), bg1=(0.82, 0.83, 0.85), text=(0.07, 0.07, 0.09), field=(0.96, 0.96, 0.95),
              field_ink=(0.20, 0.20, 0.22))
@@ -222,6 +221,9 @@ def look(p):
     for key, ov in LINES:
         if key in p["id"]:
             st.update(ov)
+    a = st["accent"]
+    if sum(st["bg0"]) > 2.4 and 0.2126 * a[0] + 0.7152 * a[1] + 0.0722 * a[2] > 0.5:
+        st["accent"] = tuple(round(x * 0.62, 3) for x in a)   # a light brand colour on a white box: print it darker
     return st
 
 
