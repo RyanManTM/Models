@@ -109,6 +109,31 @@ the bundle.
   (`kind=syringe`, 0.012 × 0.075 × 0.009, length along h) gives margins w 0.0000, **h −0.0110**, t +0.0017. The
   brief asks for about 0.09 m; the box's look syringe is 0.075.
 
+### standoff_bag
+- The case's standoff bag, on the layout of the code that builds it today: a clear zip bag 0.084 (x) × 0.009 (y) ×
+  0.060 (z), origin at its bottom centre, lying flat.
+  - `bag_clear` throughout.
+  - A pillowy top film draped over the contents with a millimetre of slack.
+  - Heat seals (with their fine ribbing) on the −x, +x and −z sides.
+  - The press-seal zip (two tracks) along the +z edge at z = 0.0265, and the lip above it.
+  - The printed white label "M3 BRASS / STANDOFFS" (`tex_smallparts_standoff_label`, with a hex icon and
+    "4 × STANDOFF + 3 × SCREW"), 0.034 × 0.020, centred at (0.021, top surface, −0.012).
+  - The label's text has its top towards the zip (+z), as on a real zip bag.
+- **Only the bag**: the game spawns the standoffs and screws at the anchors. The previews show copies of
+  `standoff_brass` and `screw_ph2` placed there to check the fit; they are not in the FBX.
+- Size 0.0840 (x) × 0.0069 (y, film top; the hitbox is 0.011) × 0.0600 (z) m; **3146 triangles**, 2 meshes.
+- Anchors (exactly as the brief):
+  - `A_HIT_0` pos (0, 0.0045, 0), size 0.084 × 0.011 × 0.06.
+  - `A_ITEM_0..3` pos (−0.03 + i × 0.0105, 0.0033, −0.006 + (i % 2) × 0.006). Each is rotated about +Y by
+    90° + ((i % 3) − 1) × 16°, so fwd = (sin, 0, cos) of that angle: (0.961, 0, 0.276), (1, 0, 0),
+    (0.961, 0, −0.276), (0.961, 0, 0.276). Meta `kind=standoff_brass`; the standoff's own frame goes there, lying
+    on its side.
+  - `A_SCREW_0..2` pos (0.012 + i × 0.009, 0.0028, 0.009), identity rotation, meta `kind=screw_ph2`.
+  - Added: `A_ZIP_0` pos (0, 0.0016, 0.0265), size 0.084 × 0.004 × 0.006, meta `zip=x,press=1`: the zip, for the
+    code to open the bag.
+- Fits its own spec: the film tops out at 0.0071 (under the 0.009 bag height). It clears every spawned item by at
+  least 0.6 mm.
+
 ### fan4_female and fan3_female
 - The receiving housings on the splitter outputs and on fan extension cables: the end a fan's own plug
   (`plug_fan4` / `plug_fan3`) slides onto.

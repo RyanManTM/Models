@@ -1,0 +1,14 @@
+standoff_bag: 3146 triangles, 2 meshes
+  mesh s_tex_smallparts_standoff_label#tex_smallparts_standoff_label  tris=192
+  mesh standoff_bag_bag_clear#bag_clear  tris=2954
+  A_HIT_0 pos=(-0.0, 0.0045, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.08400,0.01100,0.06000 meta=
+  A_ITEM_0 pos=(-0.03, 0.0033, -0.006) fwd=(0.961, -0.0, 0.276) up=(0.0, 1.0, 0.0) size=0.00800,0.00800,0.01200 meta=kind=standoff_brass
+  A_ITEM_1 pos=(-0.0195, 0.0033, -0.0) fwd=(1.0, -0.0, 0.0) up=(0.0, 1.0, 0.0) size=0.00800,0.00800,0.01200 meta=kind=standoff_brass
+  A_ITEM_2 pos=(-0.009, 0.0033, -0.006) fwd=(0.961, -0.0, -0.276) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.01200 meta=kind=standoff_brass
+  A_ITEM_3 pos=(0.0015, 0.0033, -0.0) fwd=(0.961, -0.0, 0.276) up=(0.0, 1.0, 0.0) size=0.00800,0.00800,0.01200 meta=kind=standoff_brass
+  A_SCREW_0 pos=(0.012, 0.0028, 0.009) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00800,0.00800,0.01000 meta=kind=screw_ph2
+  A_SCREW_1 pos=(0.021, 0.0028, 0.009) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00800,0.00800,0.01000 meta=kind=screw_ph2
+  A_SCREW_2 pos=(0.03, 0.0028, 0.009) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00800,0.00800,0.01000 meta=kind=screw_ph2
+  A_ZIP_0 pos=(-0.0, 0.0016, 0.0265) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.08400,0.00400,0.00600 meta=zip=x,press=1
+  size: 0.0840 (x) x 0.0069 (y) x 0.0600 (z) m; bounds x -0.0420..0.0420, y 0.0002..0.0071, z -0.0300..0.0300
+  note: standoff zip bag on the game's code layout; contents spawned by the game

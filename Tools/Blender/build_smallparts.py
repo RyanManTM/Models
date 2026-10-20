@@ -687,6 +687,125 @@ def build_syringe_paste(root):
     return dict(note="1.5 g FROSTPEAK paste syringe, 7.2 mm barrel; tip at -z", label=SYR_LABEL)
 
 
+# ====================================================================== standoff_bag
+
+SB_LABEL = "smallparts_standoff_label"
+SB_W, SB_H, SB_L = 0.084, 0.009, 0.060      # x, y, z
+SB_ZIP_Z = 0.0265
+SB_SEAL = 0.0035
+
+
+def standoff_label_texture():
+    """tex_smallparts_standoff_label: the white printed label (u along x, v along z; the text's top towards the zip)."""
+    w, h = 680, 400
+    art = P.Art(w, h, bg=(0.97, 0.97, 0.95), name="sb_label")
+    ink = (0.06, 0.06, 0.07)
+    art.rect(14, 14, w - 28, h - 28, ink)
+    art.rect(20, 20, w - 40, h - 40, (0.97, 0.97, 0.95))
+    # a hex-standoff icon, then the text
+    cx, cy = 110, 200
+    art.poly(P.hexagon(62, cx, cy, 0.0), (0.78, 0.6, 0.22))
+    art.circle(cx, cy, 24, (0.97, 0.97, 0.95))
+    art.text("M3 BRASS", 400, 262, 96, ink, "arialbd.ttf", align="CENTER", valign="CENTER", maxw=440)
+    art.text("STANDOFFS", 400, 148, 96, ink, "arialbd.ttf", align="CENTER", valign="CENTER", maxw=440)
+    art.text("4 x STANDOFF  +  3 x SCREW", w / 2, 52, 30, (0.3, 0.3, 0.32), "arialbd.ttf", align="CENTER", valign="CENTER",
+             maxw=600)
+    art.render(SB_LABEL)
+    art.dispose()
+
+
+def standoff_items():
+    """The contents the game spawns (A_ITEM_0..3 standoffs, A_SCREW_0..2 screws) as capsules (a, b, radius, top y)."""
+    items = []
+    for i in range(4):
+        pos = V((-0.03 + i * 0.0105, 0.0033, -0.006 + (i % 2) * 0.006))
+        ang = (90 + ((i % 3) - 1) * 16) * DEG
+        fwd = V((math.sin(ang), 0, math.cos(ang)))
+        items.append((pos - fwd * 0.0045, pos + fwd * 0.00635, 0.0030, 0.0033 + 0.0030, ("A_ITEM_%d" % i, pos, fwd)))
+    for i in range(3):
+        pos = V((0.012 + i * 0.009, 0.0028, 0.009))
+        items.append((pos + V((0, 0, -0.006)), pos + V((0, 0, 0.0024)), 0.0033, 0.0028 + 0.0033, ("A_SCREW_%d" % i, pos, V((0, 0, 1)))))
+    return items
+
+
+def build_standoff_bag(root):
+    """The clear zip bag of the case's standoffs (replacing the bag the game builds in code), exactly on that code's
+    layout: 0.084 x 0.009 x 0.060, origin at its bottom centre, the zip along the +z edge at z = 0.0265, heat-sealed
+    on the other three sides, a pillowy top film draped over the contents, and the printed white label. The bag only:
+    the game spawns the standoffs and screws at A_ITEM_0..3 and A_SCREW_0..2."""
+    standoff_label_texture()
+    tag = "bag_clear"
+    hx, hz = SB_W / 2, SB_L / 2
+    x0, x1 = -hx + SB_SEAL, hx - SB_SEAL
+    z0, z1 = -hz + SB_SEAL, SB_ZIP_Z - 0.0016
+    items = standoff_items()
+    rng = random.Random(21)
+    ph = [rng.uniform(0, TAU) for _ in range(4)]
+
+    def seg_dist(p, a, b):
+        ab = b - a
+        t = max(0.0, min(1.0, (p - a).dot(ab) / ab.length_squared))
+        return (p - (a + ab * t)).length
+
+    def env(x, z):
+        ex = min(x - x0, x1 - x) / 0.006
+        ez = min(z - z0, z1 - z) / 0.006
+        return smoothstep(min(ex, ez))
+
+    def height(x, z):
+        """The top film: a little air everywhere, draped over the contents with a millimetre of slack."""
+        e = env(x, z)
+        h = 0.0007 + 0.0024 * e + 0.00025 * e * math.sin(x * 210 + ph[0]) * math.sin(z * 260 + ph[1])
+        p = V((x, 0, z))
+        for a, b, r, top, _ in items:
+            d = seg_dist(p, V((a.x, 0, a.z)), V((b.x, 0, b.z))) - r
+            k = math.exp(-max(0.0, d / 0.0045) ** 2)
+            h = max(h, (top + 0.0007) * k * e ** 0.35 + 0.0005 * (1 - k))
+        return min(h, SB_H - 0.0004)
+
+    def top(u, v):
+        x = x0 + (x1 - x0) * u
+        z = z0 + (z1 - z0) * v
+        return (x, max(0.00045, height(x, z)), z)
+
+    mb_geo = S.facing(S.grid_surface(top, 40, 30, smooth=True), (0, 1, 0))
+    geo_obj(root, mb_geo, "film", tag, 50.0)
+    # the bottom film
+    geo_obj(root, S.facing(S.grid_surface(lambda u, v: (x0 + (x1 - x0) * u, 0.0002, z0 + (z1 - z0) * v), 1, 1, smooth=False),
+                           (0, -1, 0)), "film_bottom", tag, 50.0)
+    # the heat seals on three sides and the lip above the zip (thin two-sided slabs, with the seal's fine ribbing)
+    for (sx0, sx1, sz0, sz1) in ((-hx, x0, -hz, SB_ZIP_Z - 0.0012), (x1, hx, -hz, SB_ZIP_Z - 0.0012), (x0, x1, -hz, z0),
+                                 (-hx, hx, SB_ZIP_Z + 0.0012, hz)):
+        P.cube("seal", ((sx0 + sx1) / 2, 0.00045, (sz0 + sz1) / 2), (sx1 - sx0, 0.0005, sz1 - sz0), tag, P.WORLD, root)
+    for k in range(5):
+        x = x0 - 0.0007 - k * 0.0005
+        P.cube("seal_rib", (x, 0.00072, (-hz + SB_ZIP_Z) / 2), (0.00018, 0.00006, SB_ZIP_Z + hz - 0.0016), tag, P.WORLD, root)
+        P.cube("seal_rib", (-x, 0.00072, (-hz + SB_ZIP_Z) / 2), (0.00018, 0.00006, SB_ZIP_Z + hz - 0.0016), tag, P.WORLD, root)
+        z = z0 - 0.0007 - k * 0.0005
+        P.cube("seal_rib", (0, 0.00072, z), (SB_W - 0.0016, 0.00006, 0.00018), tag, P.WORLD, root)
+    # the press-seal zip: two interlocking tracks across the bag at z = 0.0265, and the film over them
+    for dz in (-0.0006, 0.0006):
+        P.cube("zip", (0, 0.0009, SB_ZIP_Z + dz), (SB_W - 0.0006, 0.0011, 0.0011), tag, P.WORLD, root, bevel=0.0003)
+    P.cube("zip_cap", (0, 0.0013, SB_ZIP_Z), (SB_W - 0.0006, 0.0006, 0.0028), tag, P.WORLD, root, bevel=0.0002)
+    # the printed label, following the film
+    lcx, lcz, lw, lh = 0.021, -0.012, 0.034, 0.020
+
+    def lab(u, v):
+        x = lcx - lw / 2 + lw * u
+        z = lcz - lh / 2 + lh * v
+        return (x, max(0.00045, height(x, z)) + 0.00015, z)
+    # u runs towards -x (Unity is left-handed: seen from above with +z up the image, -x is on the right), v towards +z
+    lgeo = S.grid_surface(lab, 12, 8, smooth=True, uv_fn=lambda u, v: (1 - u, v))
+    geo_obj(root, S.facing(lgeo, (0, 1, 0)), "label", "tex_" + SB_LABEL, 50.0)
+    # anchors: the hitbox, where the game lays the contents, and the zip
+    P.anchor("A_HIT_0", P.Frame((0, 0.0045, 0)), (0.084, 0.011, 0.06), root)
+    for a, b, r, top_y, (name, pos, fwd) in items:
+        P.anchor(name, P.Frame(tuple(pos), tuple(fwd), (0, 1, 0)), (0.008, 0.008, 0.012) if "ITEM" in name else (0.008, 0.008, 0.010),
+                 root, meta=("kind=standoff_brass" if "ITEM" in name else "kind=screw_ph2"))
+    P.anchor("A_ZIP_0", P.Frame((0, 0.0016, SB_ZIP_Z)), (SB_W, 0.004, 0.006), root, meta="zip=x,press=1")
+    return dict(hit=1, note="standoff zip bag on the game's code layout; contents spawned by the game")
+
+
 # ====================================================================== fan connector housings (female)
 
 FAN_PITCH = 0.00254
@@ -834,9 +953,36 @@ MODELS = {
     "syringe_paste": (build_syringe_paste, dict(fit=("box_cooler_tower A_ITEM_HW_1 (kind=syringe; length along h)",
                                                      (0.012, 0.075, 0.009)), wb=((90, 70), (-150, 30)),
                                                 views=[(60, 40), (-130, 25)], samples=48)),
+    "standoff_bag": (build_standoff_bag, dict(frame_fixed=True, wb=((0, 70), (-150, 30)), views=[(20, 50), (-130, 30)],
+                                              spawn={"A_ITEM_": "standoff_brass", "A_SCREW_": "screw_ph2"})),
     "fan4_female": (build_fan4_female, dict(frame_fixed=True, wb=((35, 25), (-145, 30)), views=[(40, 25), (-150, 30)])),
     "fan3_female": (build_fan3_female, dict(frame_fixed=True, wb=((35, 25), (-145, 30)), views=[(40, 25), (-150, 30)])),
 }
+
+
+def preview_contents(root, spawn):
+    """Previews only (after export): copies of existing part models placed at anchors, as the game spawns them.
+    spawn: {anchor name prefix: model id}."""
+    import bpy
+    anchors = [o for o in c.descendants(root) if o.type == "EMPTY" and o.name.startswith("A_")]
+    for prefix, mid in spawn.items():
+        path = os.path.join(c.MODELS, mid + ".fbx")
+        before = set(bpy.data.objects)
+        bpy.ops.import_scene.fbx(filepath=path, use_custom_props=True)
+        new = [o for o in bpy.data.objects if o not in before]
+        # the import's world space is the part's own frame (the exported root sits at the identity)
+        meshes = [o for o in new if o.type == "MESH"]
+        for a in anchors:
+            if not a.name.startswith(prefix):
+                continue
+            for m in meshes:
+                cp = m.copy()
+                bpy.context.scene.collection.objects.link(cp)
+                cp.parent = None
+                cp.matrix_world = a.matrix_world @ m.matrix_world
+                c.set_parent(cp, root)
+        for o in new:
+            bpy.data.objects.remove(o)
 
 
 def preview_materials():
@@ -872,6 +1018,8 @@ def build(mid, prev):
     print("\n".join(notes))
     if prev:
         preview_materials()
+        if cfg.get("spawn"):
+            preview_contents(root, cfg["spawn"])
         P.preview(root, mid, views=cfg.get("wb", ((0, 78), (-150, 30))), size=(900, 700))
         S.render(root, mid, cfg.get("views", [(25, 45), (-120, 30)]), size=(1000, 760), samples=cfg.get("samples", 40), start=2)
     return tris, meshes, tuple(round(x, 4) for x in size)
