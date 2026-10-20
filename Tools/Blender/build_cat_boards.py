@@ -807,10 +807,10 @@ def main(argv):
         print(f"BUILT {pid} in {time.time() - t:.1f}s")
     rep = os.path.join(c.PREVIEWS, "cat_boards_report.txt")
     with open(rep, "w", encoding="utf-8") as fh:
-        for pid in sorted(set(list(BOARDS) + [k for k in J])):
-            for n in (pid, BOARDS[pid]["shield"] if pid in BOARDS else None):
-                p = os.path.join(c.PREVIEWS, f"{n}_report.txt") if n else None
-                if p and os.path.exists(p):
+        for pid in sorted(J):
+            for n in (pid, BB.BOARDS[pid]["shield"]):
+                p = os.path.join(c.PREVIEWS, f"{n}_report.txt")
+                if os.path.exists(p):
                     with open(p, encoding="utf-8") as f:
                         fh.write(f.read() + "\n")
     print(f"BUILD_CAT_BOARDS done: {len(ids)} jobs in {time.time() - t0:.1f}s")

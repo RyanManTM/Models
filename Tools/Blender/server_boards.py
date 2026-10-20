@@ -455,10 +455,10 @@ class ServerBoard(BB.Board):
     # 2 x 10 GbE, UID button with its LED)
     def io_blocks(self):
         return [
-            ("uid", 140.0, None, ["A_BUTTON_UID_0"], "UID"),
-            ("lan", 118.0, None, ["A_PORT_USBA_0", "A_PORT_USBA_1", "A_PORT_ETH_0"], "BMC"),
-            ("vga", 96.0, None, ["A_PORT_VGA_0"], "VGA"),
-            ("rj2", 74.0, None, ["A_PORT_ETH_1", "A_PORT_ETH_2"], "10GbE"),
+            ("uid", 145.0, None, ["A_BUTTON_UID_0"], "UID"),
+            ("lan", 124.0, None, ["A_PORT_USBA_0", "A_PORT_USBA_1", "A_PORT_ETH_0"], "BMC"),
+            ("vga", 98.0, None, ["A_PORT_VGA_0"], "VGA"),
+            ("rj2", 70.0, None, ["A_PORT_ETH_1", "A_PORT_ETH_2"], "10GbE"),
         ]
 
     def io_uid(self, yc, anchors):
@@ -701,4 +701,3 @@ def build_server(bid, preview=True):
 
 
 JOBS = {bid: (lambda b=bid: build_server(b)) for bid in BOARDS}
-SHIELDS = {bid: cfg["shield"] for bid, cfg in BOARDS.items()}

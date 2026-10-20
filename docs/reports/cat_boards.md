@@ -14,7 +14,7 @@ Branch `claude/cat-12-motherboards`. Script `Tools/Blender/build_cat_boards.py` 
 | 5 | `mb_aegis_z790_keystone` | `io_aegis_z790_keystone` | mb_ridge_z4 + DDR5 notch (L17, DDR5) | done |
 | 6 | `mb_mako_z790_riptide` | `io_mako_z790_riptide` | mb_ridge_z4 + DDR5 notch (L17, DDR5) | done |
 | 7 | `mb_kestrel_z790_talon` | `io_kestrel_z790_talon` | mb_ridge_z4 + DDR5 notch (L17, DDR5) | done |
-| 8 | `mb_ridge_b760_d4` | `io_ridge_b760_d4` | mb_ridge_z4 (L17, DDR4) | not yet |
+| 8 | `mb_ridge_b760_d4` | `io_ridge_b760_d4` | mb_ridge_z4 (L17, DDR4) | done |
 | 9 | `mb_strata_spv` | `io_strata_spv` | new: server board SP-V | done |
 | 10 | `mb_strata_l46` | `io_strata_l46` | new: server board L46 dual | done |
 
@@ -171,6 +171,19 @@ x positions, length and latches are the same on both siblings, so the DIMM slots
   82 SAME.
 - **I/O shield:** pre-attached on the analog (shipped here as the separate `io_kestrel_z790_talon` all the same).
 
+## 8. `mb_ridge_b760_d4` + `io_ridge_b760_d4`: Ridge B760 Pro D4
+
+- **Analog:** ASRock B760 Pro RS/D4. Socket L17, DDR4, ATX; `mb_ridge_z4` layout.
+- **Size:** ATX 0.244 × 0.305, PCB z 0..0.0016; tallest part the I/O cover (z 0.0371); VRM heatsinks only 20–24 mm.
+- **Triangles:** 43,932 in 39 meshes. Shield: 1,244 in 1.
+- **Look:** the budget board: black PCB with the Ridge stripe graphics; small `budget` extruded VRM heatsinks
+  (open fins, a silver stripe) over a shorter span; a low plastic I/O cover over the rear of the port stack only; a
+  low open-fin chipset heatsink; no PCIe armour, no RGB, no second M.2 heatsink; black and grey DIMM slots.
+  Shield: bare steel.
+- **Anchors:** vs `mb_ridge_z4`: 80 SAME, 0 DIFF, ONLY_B `A_FILM_CHIPSET_0`, `A_FILM_IO_0` (the committed z4 predates
+  the films; the low cover keeps its logo plate where `A_FILM_IO_0` sits).
+- **I/O shield:** not pre-attached on the analog.
+
 ## 9. `mb_strata_spv` + `io_strata_spv`: Strata SP-V 1S Server Board
 
 - **Analog:** a single-socket SP5 server board of the Supermicro H13SSL / ASRock Rack GENOAD8X class.
@@ -269,4 +282,24 @@ along x, an OCP slot, and server chassis standoffs at `A_HOLE_*`. `game.socket` 
 
 ## Deviations
 
-- None so far.
+- **`build_board.py` is unchanged.** No hooks were needed: everything is done by overriding look methods in a
+  subclass. `CatBoard.build` and `build_cat_boards.build_shield` are copies of the originals that differ only in the
+  texture file names (`<id without mb_>_pcb/_mk`), the joined-mesh prefix (`mb_`, `io_`) and the shield paint, because
+  the longer catalogue ids would push `<id>_<tag>#<tag>` past Blender's 63-character name limit.
+- **Siblings without film anchors.** The committed `mb_ridge_b5.fbx` and `mb_ridge_z4.fbx` were exported before
+  `build_board.films()` existed, so every new board shows `A_FILM_IO_0` and `A_FILM_CHIPSET_0` as ONLY_B against
+  them. `mb_ridge_x5` (today's `build_board.py`) has them, and the V5 boards are SAME with it anchor for anchor.
+- **L17 + DDR5** is a new combination (documented above): the z4 layout with the b5 DIMM notch. Only the four
+  `A_SOCKET_RAM_*` metas differ from `mb_ridge_z4`.
+- **Rear I/O** keeps each sibling's ports (they carry anchors), so the Z790 boards still show the Z4's PS/2 port
+  and the X870E the B5's port set.
+- **Pre-attached shields.** The analogs of Vanguard, Harpoon, Glide, Keystone, Riptide and Talon come with the shield
+  pre-mounted. As the brief asks, each still ships a separate `io_*` model; the game can fit it automatically for these.
+- **Server sockets without the CPU contract.** The CPU task (catalogue 10) was not available on any branch, so the
+  SP-V and L46 socket sides were designed from its brief (package 72 × 75 mm with an orange carrier on a rail; 61 ×
+  105 mm with a carrier clip). The cooler pose assumes an IHS top 6.5 mm above the contact face (`IHS_H` in
+  `server_boards.py`). Torque values and the screw order are plausible, not taken from a spec.
+- **Server holes** are this contract's own pattern (the rear three at the ATX A, C, F positions), not the full SSI-EEB
+  list. The server front-panel header uses the desktop 2×5 pinout, so the game's front-panel logic applies as is.
+- **Fonts and textures.** Built on Linux, the Windows fonts are replaced by Liberation/DejaVu stand-ins
+  (`dct_common.font_file`), so a Windows rebuild gives slightly different texture text.

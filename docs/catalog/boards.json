@@ -231,6 +231,39 @@
     "new_contract": false
   },
   {
+    "id": "mb_ridge_b760_d4",
+    "model": "mb_ridge_b760_d4",
+    "brand": "Ridge",
+    "name": "Ridge B760 Pro D4",
+    "category": "Motherboard",
+    "price": 129,
+    "power_w": 20,
+    "color": "#202225",
+    "rgb": false,
+    "analog": "ASRock B760 Pro RS/D4 (docs only, never shown in game)",
+    "desc": "A budget B760 for DDR4: small black heatsinks, no frills, everything you need.",
+    "specs": {
+      "form": "ATX",
+      "chipset": "B760",
+      "dimm_slots": 4,
+      "max_ram_gb": 128,
+      "m2_slots": 2,
+      "sata": 4,
+      "pcie_x16": 2,
+      "wifi": false,
+      "lan_gbe": 2.5,
+      "io_shield": "io_ridge_b760_d4",
+      "io_preattached": false
+    },
+    "game": {
+      "socket": "L17",
+      "mem": "DDR4",
+      "perf": 0
+    },
+    "contract": "mb_ridge_z4",
+    "new_contract": false
+  },
+  {
     "id": "mb_strata_spv",
     "model": "mb_strata_spv",
     "brand": "Strata",
