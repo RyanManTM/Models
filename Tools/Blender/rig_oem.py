@@ -327,9 +327,10 @@ def build_rdimm(ctx):
     R.anchor("A_HIT_0", F((0, sy / 2, 0)), (sx, sy, sz))
     R.explode = {"A_INSERT_BLISTER_0": (0.20, 0.03, 0), "A_SEAL_0": (0.03, 0.01, 0), "A_SEAL_1": (0, 0.02, 0.02),
                  "A_ITEM_PART_0": (0, 0.035, 0.0)}
-    explode_docs(R, names, (0.0, 0.07, 0.07), (0.0, 0.01, 0.045))
+    explode_docs(R, names, (-0.02, 0.10, 0.11), (0.0, 0.012, 0.05))
     R.open_view = (40, 48)
-    R.explode_view = (32, 36)
+    R.explode_view = (32, 40)
+    R.explode_fill = 0.9
     R.open_extra = {"A_INSERT_BLISTER_0": (0.10, 0, 0)}
     NOTES[pid] = (f"RDIMM: seal A_SEAL_0 over the end flap (0) -> end flap A_FLAP_0 (1) -> dust flaps A_FLAP_1/2 (2) -> "
                   f"clamshell A_INSERT_BLISTER_0 slides out +x (3) -> on it: the clamshell seal A_SEAL_1 and the {n} papers, "

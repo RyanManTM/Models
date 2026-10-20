@@ -4,7 +4,7 @@ Brief: `docs/tasks/catalog/19-boxes.md` ("server parts"). The coordinator folds 
 and writes `box` / `box_size` into the catalogue JSON (not done here).
 
 ## Status
-**4 of 24 boxes built.** Done: cpu_epoch_9124, cpu_epoch_9354, cpu_epoch_9654, cpu_tiron_plat_8480. Not built yet: ram_kingsland_rdimm5_32, ram_sorin_rdimm5_64, ram_crux_rdimm5_128, ram_kingsland_rdimm4_32, ssd_sorin_pm9a3_3840, ssd_sorin_pm9a3_7680, cooler_srv_epoch_1u, cooler_srv_platinum_2u, psu_strata_crps_800, psu_strata_crps_1600, nic_linkwave_350t2, nic_linkwave_710da2, nic_melnet_strand6_25g, nic_melnet_strand6_100g, hba_broadline_9500_16i, hba_broadline_9560_16i, gpu_verdia_t100, gpu_voltra_mi210, mb_strata_spv, mb_strata_l46.
+**8 of 24 boxes built.** Done: cpu_epoch_9124, cpu_epoch_9354, cpu_epoch_9654, cpu_tiron_plat_8480, ram_kingsland_rdimm5_32, ram_sorin_rdimm5_64, ram_crux_rdimm5_128, ram_kingsland_rdimm4_32. Not built yet: ssd_sorin_pm9a3_3840, ssd_sorin_pm9a3_7680, cooler_srv_epoch_1u, cooler_srv_platinum_2u, psu_strata_crps_800, psu_strata_crps_1600, nic_linkwave_350t2, nic_linkwave_710da2, nic_melnet_strand6_25g, nic_melnet_strand6_100g, hba_broadline_9500_16i, hba_broadline_9560_16i, gpu_verdia_t100, gpu_voltra_mi210, mb_strata_spv, mb_strata_l46.
 
 ## What was made
 - **`Tools/Blender/rig_oem.py`** (new rig module, listed in `build_boxes.RIG_MODULES`): the builders of the kinds
@@ -81,10 +81,10 @@ folded on the manual, and the warranty card.
 | `box_cpu_epoch_9354` | `oem_cpu` | 0.12 × 0.03 × 0.13 | 3562 | Server CPU: 2 seals A_SEAL_0/1 (0) -> tuck lid A_FLAP_0 (1) -> dust flaps A_FLAP_1/2 (2) -> 2 papers on the clamshell, top first (3..4) -> PE foam pad A_INSERT_FOAM_0 lifted out with the clamshell (5) -> clear clamshell lid A_CLAMLID_0 (6) -> CPU in its carrier, bag=none (7) -> clamshell base A_INSERT_CLAM_0 (8). |
 | `box_cpu_epoch_9654` | `oem_cpu` | 0.12 × 0.03 × 0.13 | 3562 | Server CPU: 2 seals A_SEAL_0/1 (0) -> tuck lid A_FLAP_0 (1) -> dust flaps A_FLAP_1/2 (2) -> 2 papers on the clamshell, top first (3..4) -> PE foam pad A_INSERT_FOAM_0 lifted out with the clamshell (5) -> clear clamshell lid A_CLAMLID_0 (6) -> CPU in its carrier, bag=none (7) -> clamshell base A_INSERT_CLAM_0 (8). |
 | `box_cpu_tiron_plat_8480` | `oem_cpu` | 0.11 × 0.03 × 0.16 | 3562 | Server CPU: 2 seals A_SEAL_0/1 (0) -> tuck lid A_FLAP_0 (1) -> dust flaps A_FLAP_1/2 (2) -> 2 papers on the clamshell, top first (3..4) -> PE foam pad A_INSERT_FOAM_0 lifted out with the clamshell (5) -> clear clamshell lid A_CLAMLID_0 (6) -> CPU in its carrier, bag=none (7) -> clamshell base A_INSERT_CLAM_0 (8). |
-| `box_ram_kingsland_rdimm5_32` | `oem_rdimm` | not built | | |
-| `box_ram_sorin_rdimm5_64` | `oem_rdimm` | not built | | |
-| `box_ram_crux_rdimm5_128` | `oem_rdimm` | not built | | |
-| `box_ram_kingsland_rdimm4_32` | `oem_rdimm` | not built | | |
+| `box_ram_kingsland_rdimm5_32` | `oem_rdimm` | 0.16 × 0.025 × 0.06 | 2810 | RDIMM: seal A_SEAL_0 over the end flap (0) -> end flap A_FLAP_0 (1) -> dust flaps A_FLAP_1/2 (2) -> clamshell A_INSERT_BLISTER_0 slides out +x (3) -> on it: the clamshell seal A_SEAL_1 and the 3 papers, top first (4..6) -> clamshell lid A_CLAMLID_0 (7) -> module in its pink bag, guard=1 (8). |
+| `box_ram_sorin_rdimm5_64` | `oem_rdimm` | 0.16 × 0.025 × 0.06 | 2810 | RDIMM: seal A_SEAL_0 over the end flap (0) -> end flap A_FLAP_0 (1) -> dust flaps A_FLAP_1/2 (2) -> clamshell A_INSERT_BLISTER_0 slides out +x (3) -> on it: the clamshell seal A_SEAL_1 and the 3 papers, top first (4..6) -> clamshell lid A_CLAMLID_0 (7) -> module in its pink bag, guard=1 (8). |
+| `box_ram_crux_rdimm5_128` | `oem_rdimm` | 0.16 × 0.025 × 0.065 | 2810 | RDIMM: seal A_SEAL_0 over the end flap (0) -> end flap A_FLAP_0 (1) -> dust flaps A_FLAP_1/2 (2) -> clamshell A_INSERT_BLISTER_0 slides out +x (3) -> on it: the clamshell seal A_SEAL_1 and the 3 papers, top first (4..6) -> clamshell lid A_CLAMLID_0 (7) -> module in its pink bag, guard=1 (8). |
+| `box_ram_kingsland_rdimm4_32` | `oem_rdimm` | 0.16 × 0.025 × 0.06 | 2810 | RDIMM: seal A_SEAL_0 over the end flap (0) -> end flap A_FLAP_0 (1) -> dust flaps A_FLAP_1/2 (2) -> clamshell A_INSERT_BLISTER_0 slides out +x (3) -> on it: the clamshell seal A_SEAL_1 and the 3 papers, top first (4..6) -> clamshell lid A_CLAMLID_0 (7) -> module in its pink bag, guard=1 (8). |
 | `box_ssd_sorin_pm9a3_3840` | `oem_u2` | not built | | |
 | `box_ssd_sorin_pm9a3_7680` | `oem_u2` | not built | | |
 | `box_cooler_srv_epoch_1u` | `oem_heatsink` | not built | | |
