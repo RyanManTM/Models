@@ -1,0 +1,614 @@
+[
+  {
+    "id": "ram_corvex_ddr5_32_black",
+    "model": "ram_corvex_ddr5_32_black",
+    "brand": "Corvex",
+    "name": "Corvex Vector DDR5 32 GB (2 x 16 GB) 6000 CL30",
+    "category": "RAM",
+    "price": 105,
+    "power_w": 5,
+    "color": "#1B1C1F",
+    "rgb": false,
+    "analog": "Corsair Vengeance DDR5 32GB (2x16GB) 6000 CL30 black (docs only, never shown in game)",
+    "desc": "2 x 16 GB DDR5-6000 CL30: black aluminium spreader with a ribbed panel.",
+    "specs": {
+      "kit": "2x16GB",
+      "speed_mts": 6000,
+      "cas": 30,
+      "timings": "30-36-36-76",
+      "voltage": 1.4,
+      "height_mm": 34.9,
+      "spreader": true
+    },
+    "game": {
+      "mem": "DDR5",
+      "ram_gb": 16,
+      "per_box": 2,
+      "perf": 0
+    },
+    "contract": "ram",
+    "new_contract": false
+  },
+  {
+    "id": "ram_corvex_ddr5_32_white_rgb",
+    "model": "ram_corvex_ddr5_32_white_rgb",
+    "brand": "Corvex",
+    "name": "Corvex Vector RGB DDR5 32 GB (2 x 16 GB) 6000 CL36 White",
+    "category": "RAM",
+    "price": 119,
+    "power_w": 5,
+    "color": "#E9EAEC",
+    "rgb": true,
+    "analog": "Corsair Vengeance RGB DDR5 32GB (2x16GB) 6000 CL36 white (docs only, never shown in game)",
+    "desc": "2 x 16 GB DDR5-6000 CL36: white spreader with a full-length RGB light bar.",
+    "specs": {
+      "kit": "2x16GB",
+      "speed_mts": 6000,
+      "cas": 36,
+      "timings": "36-36-36-76",
+      "voltage": 1.35,
+      "height_mm": 44.0,
+      "spreader": true
+    },
+    "game": {
+      "mem": "DDR5",
+      "ram_gb": 16,
+      "per_box": 2,
+      "perf": 0
+    },
+    "contract": "ram",
+    "new_contract": false
+  },
+  {
+    "id": "ram_gstride_ddr5_48_rgb",
+    "model": "ram_gstride_ddr5_48_rgb",
+    "brand": "G.Stride",
+    "name": "G.Stride Trine Z5 RGB DDR5 48 GB (2 x 24 GB) 7200 CL36",
+    "category": "RAM",
+    "price": 189,
+    "power_w": 5,
+    "color": "#C9CCD1",
+    "rgb": true,
+    "analog": "G.Skill Trident Z5 RGB DDR5-7200 48GB (2x24GB) silver/black (docs only, never shown in game)",
+    "desc": "2 x 24 GB DDR5-7200 CL36: brushed-silver and black spreader with a winged RGB light bar.",
+    "specs": {
+      "kit": "2x24GB",
+      "speed_mts": 7200,
+      "cas": 36,
+      "timings": "36-46-46-115",
+      "voltage": 1.4,
+      "height_mm": 44.0,
+      "spreader": true
+    },
+    "game": {
+      "mem": "DDR5",
+      "ram_gb": 24,
+      "per_box": 2,
+      "perf": 0
+    },
+    "contract": "ram",
+    "new_contract": false
+  },
+  {
+    "id": "ram_gstride_ddr5_32_lp",
+    "model": "ram_gstride_ddr5_32_lp",
+    "brand": "G.Stride",
+    "name": "G.Stride Flare X5 DDR5 32 GB (2 x 16 GB) 6000 CL30 low profile",
+    "category": "RAM",
+    "price": 109,
+    "power_w": 5,
+    "color": "#17181B",
+    "rgb": false,
+    "analog": "G.Skill Flare X5 DDR5-6000 32GB (2x16GB) CL30 low profile (docs only, never shown in game)",
+    "desc": "2 x 16 GB DDR5-6000 CL30: low-profile black spreader that clears any tower cooler.",
+    "specs": {
+      "kit": "2x16GB",
+      "speed_mts": 6000,
+      "cas": 30,
+      "timings": "30-36-36-96",
+      "voltage": 1.35,
+      "height_mm": 33.0,
+      "spreader": true
+    },
+    "game": {
+      "mem": "DDR5",
+      "ram_gb": 16,
+      "per_box": 2,
+      "perf": 0
+    },
+    "contract": "ram",
+    "new_contract": false
+  },
+  {
+    "id": "ram_kingsland_ddr5_64",
+    "model": "ram_kingsland_ddr5_64",
+    "brand": "Kingsland",
+    "name": "Kingsland Ferox DDR5 64 GB (2 x 32 GB) 5600 CL36",
+    "category": "RAM",
+    "price": 189,
+    "power_w": 5,
+    "color": "#1C1D20",
+    "rgb": false,
+    "analog": "Kingston Fury Beast DDR5-5600 64GB (2x32GB) black (docs only, never shown in game)",
+    "desc": "2 x 32 GB DDR5-5600 CL36: black angular spreader.",
+    "specs": {
+      "kit": "2x32GB",
+      "speed_mts": 5600,
+      "cas": 36,
+      "timings": "36-38-38-80",
+      "voltage": 1.25,
+      "height_mm": 34.9,
+      "spreader": true
+    },
+    "game": {
+      "mem": "DDR5",
+      "ram_gb": 32,
+      "per_box": 2,
+      "perf": 0
+    },
+    "contract": "ram",
+    "new_contract": false
+  },
+  {
+    "id": "ram_kingsland_ddr5_32_white_rgb",
+    "model": "ram_kingsland_ddr5_32_white_rgb",
+    "brand": "Kingsland",
+    "name": "Kingsland Ferox RGB DDR5 32 GB (2 x 16 GB) 6000 CL30 White",
+    "category": "RAM",
+    "price": 125,
+    "power_w": 5,
+    "color": "#ECEDED",
+    "rgb": true,
+    "analog": "Kingston Fury Beast RGB DDR5-6000 32GB (2x16GB) white (docs only, never shown in game)",
+    "desc": "2 x 16 GB DDR5-6000 CL30: white angular spreader with a wave RGB light bar.",
+    "specs": {
+      "kit": "2x16GB",
+      "speed_mts": 6000,
+      "cas": 30,
+      "timings": "30-36-36-80",
+      "voltage": 1.4,
+      "height_mm": 42.2,
+      "spreader": true
+    },
+    "game": {
+      "mem": "DDR5",
+      "ram_gb": 16,
+      "per_box": 2,
+      "perf": 0
+    },
+    "contract": "ram",
+    "new_contract": false
+  },
+  {
+    "id": "ram_crux_ddr5_96",
+    "model": "ram_crux_ddr5_96",
+    "brand": "Crux",
+    "name": "Crux Pro DDR5 96 GB (2 x 48 GB) 5600 CL46",
+    "category": "RAM",
+    "price": 259,
+    "power_w": 5,
+    "color": "#1A1B1D",
+    "rgb": false,
+    "analog": "Crucial Pro DDR5-5600 96GB (2x48GB) black (docs only, never shown in game)",
+    "desc": "2 x 48 GB DDR5-5600 CL46: plain black aluminium spreader.",
+    "specs": {
+      "kit": "2x48GB",
+      "speed_mts": 5600,
+      "cas": 46,
+      "timings": "46-45-45",
+      "voltage": 1.1,
+      "height_mm": 35.0,
+      "spreader": true
+    },
+    "game": {
+      "mem": "DDR5",
+      "ram_gb": 48,
+      "per_box": 2,
+      "perf": 0
+    },
+    "contract": "ram",
+    "new_contract": false
+  },
+  {
+    "id": "ram_crux_ddr5_16",
+    "model": "ram_crux_ddr5_16",
+    "brand": "Crux",
+    "name": "Crux DDR5 16 GB (2 x 8 GB) 5600 CL46",
+    "category": "RAM",
+    "price": 59,
+    "power_w": 5,
+    "color": "#1F5A32",
+    "rgb": false,
+    "analog": "Crucial DDR5-5600 16GB (2x8GB) UDIMM, bare green PCB (docs only, never shown in game)",
+    "desc": "2 x 8 GB DDR5-5600 CL46: bare green PCB, no heat spreader.",
+    "specs": {
+      "kit": "2x8GB",
+      "speed_mts": 5600,
+      "cas": 46,
+      "timings": "46-45-45",
+      "voltage": 1.1,
+      "height_mm": 31.25,
+      "spreader": false
+    },
+    "game": {
+      "mem": "DDR5",
+      "ram_gb": 8,
+      "per_box": 2,
+      "perf": 0
+    },
+    "contract": "ram",
+    "new_contract": false
+  },
+  {
+    "id": "ram_teamforge_ddr5_32_white_rgb",
+    "model": "ram_teamforge_ddr5_32_white_rgb",
+    "brand": "TeamForge",
+    "name": "TeamForge T-Forge Delta RGB DDR5 32 GB (2 x 16 GB) 6400 CL40 White",
+    "category": "RAM",
+    "price": 125,
+    "power_w": 5,
+    "color": "#EEEFF0",
+    "rgb": true,
+    "analog": "TeamGroup T-Force Delta RGB DDR5-6400 32GB (2x16GB) white (docs only, never shown in game)",
+    "desc": "2 x 16 GB DDR5-6400 CL40: white spreader with a wide triangular RGB diffuser.",
+    "specs": {
+      "kit": "2x16GB",
+      "speed_mts": 6400,
+      "cas": 40,
+      "timings": "40-40-40-84",
+      "voltage": 1.35,
+      "height_mm": 46.1,
+      "spreader": true
+    },
+    "game": {
+      "mem": "DDR5",
+      "ram_gb": 16,
+      "per_box": 2,
+      "perf": 0
+    },
+    "contract": "ram",
+    "new_contract": false
+  },
+  {
+    "id": "ram_volt_ddr5_64_rgb",
+    "model": "ram_volt_ddr5_64_rgb",
+    "brand": "Volt",
+    "name": "Volt Flux RGB DDR5 64 GB (2 x 32 GB) 6400 CL32",
+    "category": "RAM",
+    "price": 229,
+    "power_w": 5,
+    "color": "#30333A",
+    "rgb": true,
+    "analog": "generic DDR5-6400 64GB (2x32GB) RGB kit (Volt house brand) (docs only, never shown in game)",
+    "desc": "2 x 32 GB DDR5-6400 CL32: dark spreader with a raked relief panel and RGB diffuser.",
+    "specs": {
+      "kit": "2x32GB",
+      "speed_mts": 6400,
+      "cas": 32,
+      "timings": "32-39-39-102",
+      "voltage": 1.4,
+      "height_mm": 38.0,
+      "spreader": true
+    },
+    "game": {
+      "mem": "DDR5",
+      "ram_gb": 32,
+      "per_box": 2,
+      "perf": 0
+    },
+    "contract": "ram",
+    "new_contract": false
+  },
+  {
+    "id": "ram_corvex_ddr4_16_lp",
+    "model": "ram_corvex_ddr4_16_lp",
+    "brand": "Corvex",
+    "name": "Corvex Vector LPX DDR4 16 GB (2 x 8 GB) 3200 CL16",
+    "category": "RAM",
+    "price": 39,
+    "power_w": 3,
+    "color": "#1A1B1E",
+    "rgb": false,
+    "analog": "Corsair Vengeance LPX DDR4-3200 16GB (2x8GB) CL16 black (docs only, never shown in game)",
+    "desc": "2 x 8 GB DDR4-3200 CL16: low-profile black spreader with the stepped fin top.",
+    "specs": {
+      "kit": "2x8GB",
+      "speed_mts": 3200,
+      "cas": 16,
+      "timings": "16-18-18-36",
+      "voltage": 1.35,
+      "height_mm": 34.0,
+      "spreader": true
+    },
+    "game": {
+      "mem": "DDR4",
+      "ram_gb": 8,
+      "per_box": 2,
+      "perf": 0
+    },
+    "contract": "ram",
+    "new_contract": false
+  },
+  {
+    "id": "ram_corvex_ddr4_32_rgb",
+    "model": "ram_corvex_ddr4_32_rgb",
+    "brand": "Corvex",
+    "name": "Corvex Vector RGB Pro DDR4 32 GB (2 x 16 GB) 3600 CL18",
+    "category": "RAM",
+    "price": 79,
+    "power_w": 3,
+    "color": "#1D1E21",
+    "rgb": true,
+    "analog": "Corsair Vengeance RGB Pro DDR4-3600 32GB (2x16GB) black (docs only, never shown in game)",
+    "desc": "2 x 16 GB DDR4-3600 CL18: black spreader with a tall ten-zone RGB light bar.",
+    "specs": {
+      "kit": "2x16GB",
+      "speed_mts": 3600,
+      "cas": 18,
+      "timings": "18-22-22-42",
+      "voltage": 1.35,
+      "height_mm": 51.0,
+      "spreader": true
+    },
+    "game": {
+      "mem": "DDR4",
+      "ram_gb": 16,
+      "per_box": 2,
+      "perf": 0
+    },
+    "contract": "ram",
+    "new_contract": false
+  },
+  {
+    "id": "ram_gstride_ddr4_16_red",
+    "model": "ram_gstride_ddr4_16_red",
+    "brand": "G.Stride",
+    "name": "G.Stride Riptide V DDR4 16 GB (2 x 8 GB) 3200 CL16 Red",
+    "category": "RAM",
+    "price": 42,
+    "power_w": 3,
+    "color": "#B3161D",
+    "rgb": false,
+    "analog": "G.Skill Ripjaws V DDR4-3200 16GB (2x8GB) CL16 red (docs only, never shown in game)",
+    "desc": "2 x 8 GB DDR4-3200 CL16: red spreader with the claw-tooth top.",
+    "specs": {
+      "kit": "2x8GB",
+      "speed_mts": 3200,
+      "cas": 16,
+      "timings": "16-18-18-38",
+      "voltage": 1.35,
+      "height_mm": 42.0,
+      "spreader": true
+    },
+    "game": {
+      "mem": "DDR4",
+      "ram_gb": 8,
+      "per_box": 2,
+      "perf": 0
+    },
+    "contract": "ram",
+    "new_contract": false
+  },
+  {
+    "id": "ram_kingsland_ddr4_32",
+    "model": "ram_kingsland_ddr4_32",
+    "brand": "Kingsland",
+    "name": "Kingsland Ferox DDR4 32 GB (2 x 16 GB) 3200 CL16",
+    "category": "RAM",
+    "price": 69,
+    "power_w": 3,
+    "color": "#1C1D20",
+    "rgb": false,
+    "analog": "Kingston Fury Beast DDR4-3200 32GB (2x16GB) black (docs only, never shown in game)",
+    "desc": "2 x 16 GB DDR4-3200 CL16: black angular spreader.",
+    "specs": {
+      "kit": "2x16GB",
+      "speed_mts": 3200,
+      "cas": 16,
+      "timings": "16-18-18",
+      "voltage": 1.35,
+      "height_mm": 34.1,
+      "spreader": true
+    },
+    "game": {
+      "mem": "DDR4",
+      "ram_gb": 16,
+      "per_box": 2,
+      "perf": 0
+    },
+    "contract": "ram",
+    "new_contract": false
+  },
+  {
+    "id": "ram_crux_ddr4_64",
+    "model": "ram_crux_ddr4_64",
+    "brand": "Crux",
+    "name": "Crux Tracer DDR4 64 GB (2 x 32 GB) 3200 CL16",
+    "category": "RAM",
+    "price": 139,
+    "power_w": 3,
+    "color": "#1B1C1F",
+    "rgb": false,
+    "analog": "Crucial Ballistix DDR4-3200 64GB (2x32GB) CL16 black (docs only, never shown in game)",
+    "desc": "2 x 32 GB DDR4-3200 CL16: black spreader with a red rake.",
+    "specs": {
+      "kit": "2x32GB",
+      "speed_mts": 3200,
+      "cas": 16,
+      "timings": "16-18-18-36",
+      "voltage": 1.35,
+      "height_mm": 39.0,
+      "spreader": true
+    },
+    "game": {
+      "mem": "DDR4",
+      "ram_gb": 32,
+      "per_box": 2,
+      "perf": 0
+    },
+    "contract": "ram",
+    "new_contract": false
+  },
+  {
+    "id": "ram_teamforge_ddr4_32_red",
+    "model": "ram_teamforge_ddr4_32_red",
+    "brand": "TeamForge",
+    "name": "TeamForge T-Forge Vulcan Z DDR4 32 GB (2 x 16 GB) 3600 CL18 Red",
+    "category": "RAM",
+    "price": 65,
+    "power_w": 3,
+    "color": "#B8161C",
+    "rgb": false,
+    "analog": "TeamGroup T-Force Vulcan Z DDR4-3600 32GB (2x16GB) red (docs only, never shown in game)",
+    "desc": "2 x 16 GB DDR4-3600 CL18: low-profile red spreader.",
+    "specs": {
+      "kit": "2x16GB",
+      "speed_mts": 3600,
+      "cas": 18,
+      "timings": "18-22-22-42",
+      "voltage": 1.35,
+      "height_mm": 32.0,
+      "spreader": true
+    },
+    "game": {
+      "mem": "DDR4",
+      "ram_gb": 16,
+      "per_box": 2,
+      "perf": 0
+    },
+    "contract": "ram",
+    "new_contract": false
+  },
+  {
+    "id": "ram_kingsland_rdimm5_32",
+    "model": "ram_kingsland_rdimm5_32",
+    "brand": "Kingsland",
+    "name": "Kingsland Server Premier DDR5-4800 RDIMM 32 GB ECC",
+    "category": "RAM",
+    "price": 179,
+    "power_w": 10,
+    "color": "#1D5B34",
+    "rgb": false,
+    "analog": "Kingston Server Premier DDR5-4800 32GB 2Rx8 ECC RDIMM (docs only, never shown in game)",
+    "desc": "32 GB DDR5-4800 CL40: registered ECC server module: RCD, SPD hub and thermal sensors on a bare PCB.",
+    "specs": {
+      "kit": "1x32GB",
+      "speed_mts": 4800,
+      "cas": 40,
+      "timings": "40-39-39",
+      "voltage": 1.1,
+      "height_mm": 31.25,
+      "spreader": false,
+      "ecc": true,
+      "registered": true,
+      "ranks": "2Rx8"
+    },
+    "game": {
+      "mem": "DDR5",
+      "ram_gb": 32,
+      "per_box": 1,
+      "perf": 0
+    },
+    "contract": "rdimm",
+    "new_contract": true
+  },
+  {
+    "id": "ram_sorin_rdimm5_64",
+    "model": "ram_sorin_rdimm5_64",
+    "brand": "Sorin",
+    "name": "Sorin DDR5-4800 RDIMM 64 GB ECC",
+    "category": "RAM",
+    "price": 329,
+    "power_w": 10,
+    "color": "#1A5530",
+    "rgb": false,
+    "analog": "Samsung M321R8GA0BB0-CQK DDR5-4800 64GB 2Rx4 ECC RDIMM (docs only, never shown in game)",
+    "desc": "64 GB DDR5-4800 CL40: registered ECC server module: RCD, SPD hub and thermal sensors on a bare PCB.",
+    "specs": {
+      "kit": "1x64GB",
+      "speed_mts": 4800,
+      "cas": 40,
+      "timings": "40-39-39",
+      "voltage": 1.1,
+      "height_mm": 31.25,
+      "spreader": false,
+      "ecc": true,
+      "registered": true,
+      "ranks": "2Rx4"
+    },
+    "game": {
+      "mem": "DDR5",
+      "ram_gb": 64,
+      "per_box": 1,
+      "perf": 0
+    },
+    "contract": "rdimm",
+    "new_contract": true
+  },
+  {
+    "id": "ram_crux_rdimm5_128",
+    "model": "ram_crux_rdimm5_128",
+    "brand": "Crux",
+    "name": "Crux DDR5-5600 RDIMM 128 GB ECC 3DS",
+    "category": "RAM",
+    "price": 1199,
+    "power_w": 13,
+    "color": "#1E5933",
+    "rgb": false,
+    "analog": "Micron/Crucial DDR5-5600 128GB 2S2Rx4 3DS ECC RDIMM (docs only, never shown in game)",
+    "desc": "128 GB DDR5-5600 CL46: registered ECC server module: RCD, SPD hub and thermal sensors on a bare PCB.",
+    "specs": {
+      "kit": "1x128GB",
+      "speed_mts": 5600,
+      "cas": 46,
+      "timings": "46-45-45",
+      "voltage": 1.1,
+      "height_mm": 38.0,
+      "spreader": false,
+      "ecc": true,
+      "registered": true,
+      "ranks": "2S2Rx4 3DS"
+    },
+    "game": {
+      "mem": "DDR5",
+      "ram_gb": 128,
+      "per_box": 1,
+      "perf": 0
+    },
+    "contract": "rdimm",
+    "new_contract": true
+  },
+  {
+    "id": "ram_kingsland_rdimm4_32",
+    "model": "ram_kingsland_rdimm4_32",
+    "brand": "Kingsland",
+    "name": "Kingsland Server Premier DDR4-3200 RDIMM 32 GB ECC",
+    "category": "RAM",
+    "price": 119,
+    "power_w": 6,
+    "color": "#1D5B34",
+    "rgb": false,
+    "analog": "Kingston Server Premier DDR4-3200 32GB 2Rx4 ECC RDIMM (docs only, never shown in game)",
+    "desc": "32 GB DDR4-3200 CL22: registered ECC server module: RCD, SPD hub and thermal sensors on a bare PCB.",
+    "specs": {
+      "kit": "1x32GB",
+      "speed_mts": 3200,
+      "cas": 22,
+      "timings": "22-22-22",
+      "voltage": 1.2,
+      "height_mm": 31.25,
+      "spreader": false,
+      "ecc": true,
+      "registered": true,
+      "ranks": "2Rx4"
+    },
+    "game": {
+      "mem": "DDR4",
+      "ram_gb": 32,
+      "per_box": 1,
+      "perf": 0
+    },
+    "contract": "rdimm",
+    "new_contract": true
+  }
+]

@@ -1,0 +1,184 @@
+REPORT ram_corvex_ddr5_32_black tris=4894 objects=6
+MESH ram_corvex_ddr5_32_black ram_ceramic#ceramic tris=564
+MESH ram_corvex_ddr5_32_black ram_chip_black#chip_black tris=1056
+MESH ram_corvex_ddr5_32_black ram_gold#gold tris=588
+MESH ram_corvex_ddr5_32_black ram_solder#solder tris=2448
+MESH ram_corvex_ddr5_32_black ram_tex_cr_cvx_ddr5_32_black#tex_cr_cvx_ddr5_32_black tris=214
+MESH ram_corvex_ddr5_32_black ram_thermal_pad#thermal_pad tris=24
+ANCHOR ram_corvex_ddr5_32_black A_HIT_0 pos=(-0.00000,0.00000,0.01745) size=0.00750,0.13335,0.03490 meta=
+ANCHOR ram_corvex_ddr5_32_black A_NOTCH_0 pos=(-0.00000,-0.00390,-0.00000) size=0.00400,0.00250,0.00400 meta=y=-0.0039,mem=DDR5
+REPORT ram_corvex_ddr5_32_white_rgb tris=4970 objects=8
+MESH ram_corvex_ddr5_32_white_rgb ram_ceramic#ceramic tris=564
+MESH ram_corvex_ddr5_32_white_rgb ram_chip_black#chip_black tris=1056
+MESH ram_corvex_ddr5_32_white_rgb ram_gold#gold tris=588
+MESH ram_corvex_ddr5_32_white_rgb ram_rgb#rgb tris=20
+MESH ram_corvex_ddr5_32_white_rgb ram_solder#solder tris=2448
+MESH ram_corvex_ddr5_32_white_rgb ram_tex_cr_cvx_ddr5_32_wrgb#tex_cr_cvx_ddr5_32_wrgb tris=182
+MESH ram_corvex_ddr5_32_white_rgb ram_thermal_pad#thermal_pad tris=24
+MESH ram_corvex_ddr5_32_white_rgb ram_white_plastic#white_plastic tris=88
+ANCHOR ram_corvex_ddr5_32_white_rgb A_HIT_0 pos=(-0.00000,0.00000,0.02200) size=0.00750,0.13335,0.04400 meta=
+ANCHOR ram_corvex_ddr5_32_white_rgb A_NOTCH_0 pos=(-0.00000,-0.00390,-0.00000) size=0.00400,0.00250,0.00400 meta=y=-0.0039,mem=DDR5
+REPORT ram_gstride_ddr5_48_rgb tris=4914 objects=7
+MESH ram_gstride_ddr5_48_rgb ram_ceramic#ceramic tris=564
+MESH ram_gstride_ddr5_48_rgb ram_chip_black#chip_black tris=1056
+MESH ram_gstride_ddr5_48_rgb ram_gold#gold tris=588
+MESH ram_gstride_ddr5_48_rgb ram_rgb#rgb tris=36
+MESH ram_gstride_ddr5_48_rgb ram_solder#solder tris=2448
+MESH ram_gstride_ddr5_48_rgb ram_tex_cr_gs_ddr5_48_rgb#tex_cr_gs_ddr5_48_rgb tris=198
+MESH ram_gstride_ddr5_48_rgb ram_thermal_pad#thermal_pad tris=24
+ANCHOR ram_gstride_ddr5_48_rgb A_HIT_0 pos=(-0.00000,0.00000,0.02200) size=0.00750,0.13335,0.04400 meta=
+ANCHOR ram_gstride_ddr5_48_rgb A_NOTCH_0 pos=(-0.00000,-0.00390,-0.00000) size=0.00400,0.00250,0.00400 meta=y=-0.0039,mem=DDR5
+REPORT ram_gstride_ddr5_32_lp tris=4862 objects=6
+MESH ram_gstride_ddr5_32_lp ram_ceramic#ceramic tris=564
+MESH ram_gstride_ddr5_32_lp ram_chip_black#chip_black tris=1056
+MESH ram_gstride_ddr5_32_lp ram_gold#gold tris=588
+MESH ram_gstride_ddr5_32_lp ram_solder#solder tris=2448
+MESH ram_gstride_ddr5_32_lp ram_tex_cr_gs_ddr5_32_lp#tex_cr_gs_ddr5_32_lp tris=182
+MESH ram_gstride_ddr5_32_lp ram_thermal_pad#thermal_pad tris=24
+ANCHOR ram_gstride_ddr5_32_lp A_HIT_0 pos=(-0.00000,0.00000,0.01650) size=0.00750,0.13335,0.03300 meta=
+ANCHOR ram_gstride_ddr5_32_lp A_NOTCH_0 pos=(-0.00000,-0.00390,-0.00000) size=0.00400,0.00250,0.00400 meta=y=-0.0039,mem=DDR5
+REPORT ram_kingsland_ddr5_64 tris=4870 objects=6
+MESH ram_kingsland_ddr5_64 ram_ceramic#ceramic tris=564
+MESH ram_kingsland_ddr5_64 ram_chip_black#chip_black tris=1056
+MESH ram_kingsland_ddr5_64 ram_gold#gold tris=588
+MESH ram_kingsland_ddr5_64 ram_solder#solder tris=2448
+MESH ram_kingsland_ddr5_64 ram_tex_cr_kl_ddr5_64#tex_cr_kl_ddr5_64 tris=190
+MESH ram_kingsland_ddr5_64 ram_thermal_pad#thermal_pad tris=24
+ANCHOR ram_kingsland_ddr5_64 A_HIT_0 pos=(-0.00000,0.00000,0.01745) size=0.00750,0.13335,0.03490 meta=
+ANCHOR ram_kingsland_ddr5_64 A_NOTCH_0 pos=(-0.00000,-0.00390,-0.00000) size=0.00400,0.00250,0.00400 meta=y=-0.0039,mem=DDR5
+REPORT ram_kingsland_ddr5_32_white_rgb tris=4902 objects=7
+MESH ram_kingsland_ddr5_32_white_rgb ram_ceramic#ceramic tris=564
+MESH ram_kingsland_ddr5_32_white_rgb ram_chip_black#chip_black tris=1056
+MESH ram_kingsland_ddr5_32_white_rgb ram_gold#gold tris=588
+MESH ram_kingsland_ddr5_32_white_rgb ram_rgb#rgb tris=40
+MESH ram_kingsland_ddr5_32_white_rgb ram_solder#solder tris=2448
+MESH ram_kingsland_ddr5_32_white_rgb ram_tex_cr_kl_ddr5_32_wrgb#tex_cr_kl_ddr5_32_wrgb tris=182
+MESH ram_kingsland_ddr5_32_white_rgb ram_thermal_pad#thermal_pad tris=24
+ANCHOR ram_kingsland_ddr5_32_white_rgb A_HIT_0 pos=(-0.00000,0.00000,0.02110) size=0.00750,0.13335,0.04220 meta=
+ANCHOR ram_kingsland_ddr5_32_white_rgb A_NOTCH_0 pos=(-0.00000,-0.00390,-0.00000) size=0.00400,0.00250,0.00400 meta=y=-0.0039,mem=DDR5
+REPORT ram_crux_ddr5_96 tris=4862 objects=6
+MESH ram_crux_ddr5_96 ram_ceramic#ceramic tris=564
+MESH ram_crux_ddr5_96 ram_chip_black#chip_black tris=1056
+MESH ram_crux_ddr5_96 ram_gold#gold tris=588
+MESH ram_crux_ddr5_96 ram_solder#solder tris=2448
+MESH ram_crux_ddr5_96 ram_tex_cr_cx_ddr5_96#tex_cr_cx_ddr5_96 tris=182
+MESH ram_crux_ddr5_96 ram_thermal_pad#thermal_pad tris=24
+ANCHOR ram_crux_ddr5_96 A_HIT_0 pos=(-0.00000,0.00000,0.01750) size=0.00750,0.13335,0.03500 meta=
+ANCHOR ram_crux_ddr5_96 A_NOTCH_0 pos=(-0.00000,-0.00390,-0.00000) size=0.00400,0.00250,0.00400 meta=y=-0.0039,mem=DDR5
+REPORT ram_crux_ddr5_16 tris=5054 objects=5
+MESH ram_crux_ddr5_16 ram_ceramic#ceramic tris=876
+MESH ram_crux_ddr5_16 ram_chip_black#chip_black tris=836
+MESH ram_crux_ddr5_16 ram_gold#gold tris=588
+MESH ram_crux_ddr5_16 ram_solder#solder tris=2448
+MESH ram_crux_ddr5_16 ram_tex_cr_cx_ddr5_16#tex_cr_cx_ddr5_16 tris=306
+ANCHOR ram_crux_ddr5_16 A_HIT_0 pos=(-0.00000,0.00000,0.01562) size=0.00407,0.13335,0.03125 meta=
+ANCHOR ram_crux_ddr5_16 A_NOTCH_0 pos=(-0.00000,-0.00390,-0.00000) size=0.00400,0.00250,0.00400 meta=y=-0.0039,mem=DDR5
+REPORT ram_teamforge_ddr5_32_white_rgb tris=4922 objects=7
+MESH ram_teamforge_ddr5_32_white_rgb ram_ceramic#ceramic tris=564
+MESH ram_teamforge_ddr5_32_white_rgb ram_chip_black#chip_black tris=1056
+MESH ram_teamforge_ddr5_32_white_rgb ram_gold#gold tris=588
+MESH ram_teamforge_ddr5_32_white_rgb ram_rgb#rgb tris=60
+MESH ram_teamforge_ddr5_32_white_rgb ram_solder#solder tris=2448
+MESH ram_teamforge_ddr5_32_white_rgb ram_tex_cr_tf_ddr5_32_wrgb#tex_cr_tf_ddr5_32_wrgb tris=182
+MESH ram_teamforge_ddr5_32_white_rgb ram_thermal_pad#thermal_pad tris=24
+ANCHOR ram_teamforge_ddr5_32_white_rgb A_HIT_0 pos=(-0.00000,0.00000,0.02305) size=0.00750,0.13335,0.04610 meta=
+ANCHOR ram_teamforge_ddr5_32_white_rgb A_NOTCH_0 pos=(-0.00000,-0.00390,-0.00000) size=0.00400,0.00250,0.00400 meta=y=-0.0039,mem=DDR5
+REPORT ram_volt_ddr5_64_rgb tris=5010 objects=8
+MESH ram_volt_ddr5_64_rgb ram_alu_dark#alu_dark tris=88
+MESH ram_volt_ddr5_64_rgb ram_ceramic#ceramic tris=564
+MESH ram_volt_ddr5_64_rgb ram_chip_black#chip_black tris=1056
+MESH ram_volt_ddr5_64_rgb ram_gold#gold tris=588
+MESH ram_volt_ddr5_64_rgb ram_rgb#rgb tris=20
+MESH ram_volt_ddr5_64_rgb ram_solder#solder tris=2448
+MESH ram_volt_ddr5_64_rgb ram_tex_cr_vt_ddr5_64_rgb#tex_cr_vt_ddr5_64_rgb tris=222
+MESH ram_volt_ddr5_64_rgb ram_thermal_pad#thermal_pad tris=24
+ANCHOR ram_volt_ddr5_64_rgb A_HIT_0 pos=(-0.00000,0.00000,0.02130) size=0.00750,0.13335,0.04260 meta=
+ANCHOR ram_volt_ddr5_64_rgb A_NOTCH_0 pos=(-0.00000,-0.00390,-0.00000) size=0.00400,0.00250,0.00400 meta=y=-0.0039,mem=DDR5
+REPORT ram_corvex_ddr4_16_lp tris=5130 objects=6
+MESH ram_corvex_ddr4_16_lp ram_ceramic#ceramic tris=612
+MESH ram_corvex_ddr4_16_lp ram_chip_black#chip_black tris=964
+MESH ram_corvex_ddr4_16_lp ram_gold#gold tris=588
+MESH ram_corvex_ddr4_16_lp ram_solder#solder tris=2448
+MESH ram_corvex_ddr4_16_lp ram_tex_cr_cvx_ddr4_16_lp#tex_cr_cvx_ddr4_16_lp tris=494
+MESH ram_corvex_ddr4_16_lp ram_thermal_pad#thermal_pad tris=24
+ANCHOR ram_corvex_ddr4_16_lp A_HIT_0 pos=(-0.00000,0.00000,0.01700) size=0.00750,0.13335,0.03400 meta=
+ANCHOR ram_corvex_ddr4_16_lp A_NOTCH_0 pos=(-0.00000,0.00430,-0.00000) size=0.00400,0.00250,0.00400 meta=y=0.0043,mem=DDR4
+REPORT ram_corvex_ddr4_32_rgb tris=4986 objects=8
+MESH ram_corvex_ddr4_32_rgb ram_alu_dark#alu_dark tris=132
+MESH ram_corvex_ddr4_32_rgb ram_ceramic#ceramic tris=612
+MESH ram_corvex_ddr4_32_rgb ram_chip_black#chip_black tris=964
+MESH ram_corvex_ddr4_32_rgb ram_gold#gold tris=588
+MESH ram_corvex_ddr4_32_rgb ram_rgb#rgb tris=20
+MESH ram_corvex_ddr4_32_rgb ram_solder#solder tris=2448
+MESH ram_corvex_ddr4_32_rgb ram_tex_cr_cvx_ddr4_32_rgb#tex_cr_cvx_ddr4_32_rgb tris=198
+MESH ram_corvex_ddr4_32_rgb ram_thermal_pad#thermal_pad tris=24
+ANCHOR ram_corvex_ddr4_32_rgb A_HIT_0 pos=(-0.00000,0.00000,0.02550) size=0.00750,0.13335,0.05100 meta=
+ANCHOR ram_corvex_ddr4_32_rgb A_NOTCH_0 pos=(-0.00000,0.00430,-0.00000) size=0.00400,0.00250,0.00400 meta=y=0.0043,mem=DDR4
+REPORT ram_gstride_ddr4_16_red tris=4938 objects=6
+MESH ram_gstride_ddr4_16_red ram_ceramic#ceramic tris=612
+MESH ram_gstride_ddr4_16_red ram_chip_black#chip_black tris=964
+MESH ram_gstride_ddr4_16_red ram_gold#gold tris=588
+MESH ram_gstride_ddr4_16_red ram_solder#solder tris=2448
+MESH ram_gstride_ddr4_16_red ram_tex_cr_gs_ddr4_16_red#tex_cr_gs_ddr4_16_red tris=302
+MESH ram_gstride_ddr4_16_red ram_thermal_pad#thermal_pad tris=24
+ANCHOR ram_gstride_ddr4_16_red A_HIT_0 pos=(-0.00000,0.00000,0.02100) size=0.00750,0.13335,0.04200 meta=
+ANCHOR ram_gstride_ddr4_16_red A_NOTCH_0 pos=(-0.00000,0.00430,-0.00000) size=0.00400,0.00250,0.00400 meta=y=0.0043,mem=DDR4
+REPORT ram_kingsland_ddr4_32 tris=4826 objects=6
+MESH ram_kingsland_ddr4_32 ram_ceramic#ceramic tris=612
+MESH ram_kingsland_ddr4_32 ram_chip_black#chip_black tris=964
+MESH ram_kingsland_ddr4_32 ram_gold#gold tris=588
+MESH ram_kingsland_ddr4_32 ram_solder#solder tris=2448
+MESH ram_kingsland_ddr4_32 ram_tex_cr_kl_ddr4_32#tex_cr_kl_ddr4_32 tris=190
+MESH ram_kingsland_ddr4_32 ram_thermal_pad#thermal_pad tris=24
+ANCHOR ram_kingsland_ddr4_32 A_HIT_0 pos=(-0.00000,0.00000,0.01705) size=0.00750,0.13335,0.03410 meta=
+ANCHOR ram_kingsland_ddr4_32 A_NOTCH_0 pos=(-0.00000,0.00430,-0.00000) size=0.00400,0.00250,0.00400 meta=y=0.0043,mem=DDR4
+REPORT ram_crux_ddr4_64 tris=4858 objects=6
+MESH ram_crux_ddr4_64 ram_ceramic#ceramic tris=612
+MESH ram_crux_ddr4_64 ram_chip_black#chip_black tris=964
+MESH ram_crux_ddr4_64 ram_gold#gold tris=588
+MESH ram_crux_ddr4_64 ram_solder#solder tris=2448
+MESH ram_crux_ddr4_64 ram_tex_cr_cx_ddr4_64#tex_cr_cx_ddr4_64 tris=222
+MESH ram_crux_ddr4_64 ram_thermal_pad#thermal_pad tris=24
+ANCHOR ram_crux_ddr4_64 A_HIT_0 pos=(-0.00000,0.00000,0.01950) size=0.00750,0.13335,0.03900 meta=
+ANCHOR ram_crux_ddr4_64 A_NOTCH_0 pos=(-0.00000,0.00430,-0.00000) size=0.00400,0.00250,0.00400 meta=y=0.0043,mem=DDR4
+REPORT ram_teamforge_ddr4_32_red tris=4834 objects=6
+MESH ram_teamforge_ddr4_32_red ram_ceramic#ceramic tris=612
+MESH ram_teamforge_ddr4_32_red ram_chip_black#chip_black tris=964
+MESH ram_teamforge_ddr4_32_red ram_gold#gold tris=588
+MESH ram_teamforge_ddr4_32_red ram_solder#solder tris=2448
+MESH ram_teamforge_ddr4_32_red ram_tex_cr_tf_ddr4_32_red#tex_cr_tf_ddr4_32_red tris=198
+MESH ram_teamforge_ddr4_32_red ram_thermal_pad#thermal_pad tris=24
+ANCHOR ram_teamforge_ddr4_32_red A_HIT_0 pos=(-0.00000,0.00000,0.01600) size=0.00750,0.13335,0.03200 meta=
+ANCHOR ram_teamforge_ddr4_32_red A_NOTCH_0 pos=(-0.00000,0.00430,-0.00000) size=0.00400,0.00250,0.00400 meta=y=0.0043,mem=DDR4
+REPORT ram_kingsland_rdimm5_32 tris=6494 objects=5
+MESH ram_kingsland_rdimm5_32 ram_ceramic#ceramic tris=1380
+MESH ram_kingsland_rdimm5_32 ram_chip_black#chip_black tris=1000
+MESH ram_kingsland_rdimm5_32 ram_gold#gold tris=588
+MESH ram_kingsland_rdimm5_32 ram_solder#solder tris=2472
+MESH ram_kingsland_rdimm5_32 ram_tex_cr_kl_rdimm5_32#tex_cr_kl_rdimm5_32 tris=1054
+ANCHOR ram_kingsland_rdimm5_32 A_HIT_0 pos=(-0.00000,0.00000,0.01562) size=0.00407,0.13335,0.03125 meta=
+ANCHOR ram_kingsland_rdimm5_32 A_NOTCH_0 pos=(-0.00000,-0.00190,-0.00000) size=0.00400,0.00250,0.00400 meta=y=-0.0019,mem=DDR5,type=RDIMM,ecc=1
+REPORT ram_sorin_rdimm5_64 tris=6494 objects=5
+MESH ram_sorin_rdimm5_64 ram_ceramic#ceramic tris=1380
+MESH ram_sorin_rdimm5_64 ram_chip_black#chip_black tris=1000
+MESH ram_sorin_rdimm5_64 ram_gold#gold tris=588
+MESH ram_sorin_rdimm5_64 ram_solder#solder tris=2472
+MESH ram_sorin_rdimm5_64 ram_tex_cr_sorin_rdimm5_64#tex_cr_sorin_rdimm5_64 tris=1054
+ANCHOR ram_sorin_rdimm5_64 A_HIT_0 pos=(-0.00000,0.00000,0.01562) size=0.00407,0.13335,0.03125 meta=
+ANCHOR ram_sorin_rdimm5_64 A_NOTCH_0 pos=(-0.00000,-0.00190,-0.00000) size=0.00400,0.00250,0.00400 meta=y=-0.0019,mem=DDR5,type=RDIMM,ecc=1
+REPORT ram_crux_rdimm5_128 tris=6494 objects=5
+MESH ram_crux_rdimm5_128 ram_ceramic#ceramic tris=1380
+MESH ram_crux_rdimm5_128 ram_chip_black#chip_black tris=1000
+MESH ram_crux_rdimm5_128 ram_gold#gold tris=588
+MESH ram_crux_rdimm5_128 ram_solder#solder tris=2472
+MESH ram_crux_rdimm5_128 ram_tex_cr_cx_rdimm5_128#tex_cr_cx_rdimm5_128 tris=1054
+ANCHOR ram_crux_rdimm5_128 A_HIT_0 pos=(-0.00000,0.00000,0.01900) size=0.00497,0.13335,0.03800 meta=
+ANCHOR ram_crux_rdimm5_128 A_NOTCH_0 pos=(-0.00000,-0.00190,-0.00000) size=0.00400,0.00250,0.00400 meta=y=-0.0019,mem=DDR5,type=RDIMM,ecc=1
+REPORT ram_kingsland_rdimm4_32 tris=5990 objects=5
+MESH ram_kingsland_rdimm4_32 ram_ceramic#ceramic tris=1332
+MESH ram_kingsland_rdimm4_32 ram_chip_black#chip_black tris=656
+MESH ram_kingsland_rdimm4_32 ram_gold#gold tris=588
+MESH ram_kingsland_rdimm4_32 ram_solder#solder tris=2448
+MESH ram_kingsland_rdimm4_32 ram_tex_cr_kl_rdimm4_32#tex_cr_kl_rdimm4_32 tris=966
+ANCHOR ram_kingsland_rdimm4_32 A_HIT_0 pos=(-0.00000,0.00000,0.01562) size=0.00407,0.13335,0.03125 meta=
+ANCHOR ram_kingsland_rdimm4_32 A_NOTCH_0 pos=(-0.00000,0.00430,-0.00000) size=0.00400,0.00250,0.00400 meta=y=0.0043,mem=DDR4,type=RDIMM,ecc=1
