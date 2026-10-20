@@ -946,10 +946,148 @@ AIOS = {
         hub_bg="#111113", hub_fg="#e6ecf2", accent="#7fb6e6"),
 }
 
+# ====================================================================== server heatsinks
+
+SPV_SCREWS = [(sx * 0.0385, y) for sx in (1, -1) for y in (0.051, 0.0, -0.051)]  # 6 x Torx T20 (socket SP-V)
+L46_SCREWS = [(sx * 0.0345, sy * 0.047) for sx in (1, -1) for sy in (1, -1)]  # 4 x Torx T30 (socket L46)
+
+
+def tex_server(pid, title, sub):
+    at = pb.Atlas(1024, 512)
+    at.add("label", 0, 0, 1024, 256)
+    at.add("film", 0, 256, 512, 256)
+    at.add("blue", 512, 256, 64, 64)
+    cv = pb.Canvas(1024, 512, bg="#e9e9e6")
+    cv.rect(0, 0, 1024, 256, "#ececea")
+    cv.text(title, 40, 70, 54, "#16171a", "arialb", "left", "center", maxw=940)
+    cv.text(sub, 40, 140, 30, "#3c3f45", "arialb", "left", "center", maxw=940)
+    cv.text("TORQUE IN SEQUENCE  1 > 2 > 3 ...  12 KGF-CM", 40, 200, 24, "#a01818", "arialb", "left", "center", maxw=940)
+    cv.barcode(760, 168, 230, 64, seed=len(title))
+    cv.rect(0, 256, 512, 256, "#d9dde2")
+    cv.text("REMOVE COVER", 256, 340, 40, "#1d2a44", "arialb", "center", "center")
+    cv.text("PRE-APPLIED TIM", 256, 410, 30, "#1d2a44", "arialb", "center", "center")
+    cv.rect(512, 256, 64, 64, "#d9dde2")
+    cv.render(pid)
+    return at
+
+
+def torx_screw(m, i, kind, x, y, z_seat, z_head, n, meta):
+    """A captive spring screw with a Torx-looking head (a hexalobe recess approximated by the 'ph' head with a
+    6-point socket ring), the anchor on the head."""
+    a = m.anchor(f"A_SCREW_{kind}_{i}", (x, y, z_head + 0.0024), (0.011, 0.011, 0.014), forward=(0, 0, 1),
+                 up=(0, 1, 0), meta=meta + f",order={n}")
+    m.add("steel", pb.g_helix(0.0034, 0.0004, z_seat + 0.0002, z_head - 0.0002, max(3.0, (z_head - z_seat) / 0.0011),
+                              8, 14), None, (x, y, 0))
+    sc = m.piece(a, "steel_dark", "screw")
+    sc.add(pb.g_cyl(0.0042, 0.0024, 6, bevel=0.0003), None, (x, y, z_head + 0.0012))  # hex-ish captive head
+    sc.add(pb.g_ring(0.0012, 0.0020, 0.0008, 6), None, (x, y, z_head + 0.0026))
+    L = z_head - (bc.Z_BOARD - 0.004)
+    sc.add(pb.g_cyl(0.0019, L, 14), None, (x, y, z_head - L / 2))
+    return a
+
+
+def server_film(m, at, w, h):
+    fa_ = m.anchor("A_FILM_0", (0, 0, 0), (w + 0.004, h + 0.004, 0.003), forward=(0, 0, -1), up=(0, 1, 0),
+                   meta="peel_from=+x,text=REMOVE COVER,covers=preapplied_tim")
+    fp = m.piece(fa_, "tex_" + m.id, "film")
+    fp.add(pb.solid(pb.g_slab(pb.rect2(0, 0, w, h), [], 0.00025, -0.00026, back=False), at.uv("blue")))
+    fp.add(pb.g_quad(min(w, h * 2), min(w, h * 2) / 2, at.uv("film")), pb.label_frame((0, 0, -1), (0, 1, 0)),
+           (0, 0, -0.000265))
+
+
+def build_srv_epoch_1u():
+    """A 1U passive heatsink for Arc Epoch (socket SP-V): 92.4 (x, along the airflow) x 118 (y) x 27 mm, a thick
+    copper base with dense copper-coloured skived fins along x, cut back round six Torx T20 captive screws."""
+    pid = "cooler_srv_epoch_1u"
+    at = tex_server(pid, "STRATA 1U HEATSINK  SP-V", "ARC EPOCH  /  PASSIVE  /  AIRFLOW >")
+    m = pb.Model(pid)
+    X, Y, H = 0.0924, 0.118, 0.027
+    zb = 0.0060
+    m.add("copper", pb.g_slab(pb.rect2(0, 0, X, Y), [pb.circle2(x, y, 0.0024, 16) for (x, y) in SPV_SCREWS], zb, 0.0,
+                              bevel=0.0004))
+    pitch, n = 0.00125, int((Y - 0.002) / 0.00125)
+    for k in range(n):
+        y = -Y / 2 + 0.001 + k * pitch
+        cuts = [sx * 0.0385 for (sx, sy) in [(s[0] / 0.0385, s[1]) for s in SPV_SCREWS] if abs(sy - y) < 0.0062]
+        xs = [-X / 2] + sorted(set(c for cut in cuts for c in (cut - 0.0060, cut + 0.0060))) + [X / 2]
+        for a0, a1 in zip(xs[0::2], xs[1::2]):
+            if a1 - a0 > 0.001:
+                m.add("copper", pb.g_box((a1 - a0, 0.00035, H - zb)), None, ((a0 + a1) / 2, y, (zb + H) / 2))
+    # a steel top strap holding the fin tips, the label on it
+    for sx in (-1, 1):
+        bc.box(m, "steel", (sx * 0.0175 - 0.0045, -Y / 2, H), (sx * 0.0175 + 0.0045, Y / 2, H + 0.0006))
+    bc.box(m, "steel", (-0.0175, -0.030, H), (0.0175, 0.030, H + 0.0006))
+    m.add("tex_" + pid, pb.g_quad(0.040, 0.010, at.uv("label")), pb.label_frame((0, 0, 1), (1, 0, 0)), (0, 0, H + 0.00065))
+    for i, (x, y) in enumerate(SPV_SCREWS):
+        torx_screw(m, i, "T20", x, y, zb, zb + 0.0045, [1, 3, 5, 2, 4, 6][i],
+                   "spring=1,thread=M4,drive=T20,torque=1.2")
+    server_film(m, at, 0.060, 0.060)
+    m.anchor("A_HIT_0", (0, 0, (H + 0.0006) / 2), (X, Y, H + 0.0006))
+    m.anchor("A_AIRFLOW_0", (0, 0, H / 2), (X, Y, H), forward=(1, 0, 0), up=(0, 0, 1),
+             meta="passive=1,needs_cfm=12,height_class=1U")
+    finish(m, pid, [
+        dict(yaw=-40, pitch=30), dict(yaw=130, pitch=25), dict(yaw=90, pitch=10),
+        dict(yaw=200, pitch=-40, target=(0, 0, 0.0), dist=0.25), dict(yaw=0, pitch=0, dist=0.3),
+        dict(yaw=20, pitch=35, target=(0.0385, 0.051, 0.01), dist=0.08),
+    ])
+    return m
+
+
+def build_srv_platinum_2u():
+    """A 2U heatsink for Tiron Platinum (socket L46, narrow ILM): a copper base with screw ears, five 6 mm heat pipes
+    U-bent up into a stack of horizontal aluminium fins (air flows along x between them), four Torx T30 captive
+    screws in wells through the stack."""
+    pid = "cooler_srv_platinum_2u"
+    at = tex_server(pid, "STRATA 2U HEATSINK  L46", "TIRON PLATINUM  /  PASSIVE  /  AIRFLOW >")
+    m = pb.Model(pid)
+    X, Y = 0.078, 0.108
+    zb = 0.0065
+    base = pb.rrect2(0, 0, 0.064, 0.108, 0.003, 3)
+    m.add("copper", pb.g_slab(base, [], zb, 0.0, bevel=0.0004))
+    for (x, y) in L46_SCREWS:  # ears
+        m.add("copper", pb.g_slab(pb.rrect2(x * 0.97, y, 0.016, 0.014, 0.004, 3), [pb.circle2(x, y, 0.0025, 16)],
+                                  0.0040, 0.0, bevel=0.0003))
+    z0, pitch, n = 0.020, 0.0019, 24
+    zt = z0 + (n - 1) * pitch
+    pipes = [-0.026, -0.013, 0.0, 0.013, 0.026]
+    for k, x in enumerate(pipes):
+        w = 0.040 if k % 2 else 0.046
+        half = [(x, w, zt + 0.002), (x, w, z0 - 0.004), (x, w * 0.55, zb + 0.004), (x, 0.012, zb - 0.003)]
+        pts = [(p[0], -p[1], p[2]) for p in half] + list(reversed(half))
+        m.add("nickel", pb.g_sweep(pb.fillet_path(pts, 0.008, 8), 0.0030, 16))
+        for sy in (-1, 1):
+            m.add("nickel", pb.g_cyl(0.0024, 0.0016, 16, r2=0.0012), None, (x, sy * w, zt + 0.0028))
+    fin = pb.rect2(0, 0, X, Y)
+    wells = [pb.circle2(x, y, 0.0062, 20) for (x, y) in L46_SCREWS]
+    for k in range(n):
+        m.add("alu", pb.g_slab(fin, wells, 0.0004, z0 + k * pitch - 0.0002))
+    for k in range(4):  # the side tie bars that hold the stack
+        sx, sy = (1, -1)[k % 2], (1, -1)[k // 2]
+        bc.box(m, "steel", (sx * X / 2 - 0.004, sy * Y / 2 - 0.0008 * (sy > 0) - 0.0002, z0 - 0.001),
+               (sx * X / 2 + 0.000, sy * Y / 2 + 0.0008 * (sy < 0) + 0.0002, zt + 0.001))
+    for (x, y) in L46_SCREWS:  # sleeves in the wells down to the ears
+        m.add("steel", pb.g_ring(0.0050, 0.0058, zt - 0.0040, 24), None, (x, y, 0.0040 + (zt - 0.0040) / 2))
+    m.add("tex_" + pid, pb.g_quad(0.044, 0.011, at.uv("label")), pb.label_frame((0, 0, 1), (1, 0, 0)), (0, 0, zt + 0.00025))
+    for i, (x, y) in enumerate(L46_SCREWS):
+        torx_screw(m, i, "T30", x, y, 0.0040, 0.0105, [1, 3, 4, 2][i], "spring=1,thread=M4,drive=T30,torque=1.1")
+    server_film(m, at, 0.056, 0.094)
+    m.anchor("A_HIT_0", (0, 0, zt / 2), (X, Y, zt + 0.003))
+    m.anchor("A_AIRFLOW_0", (0, 0, (z0 + zt) / 2), (X, Y, zt - z0), forward=(1, 0, 0), up=(0, 0, 1),
+             meta="passive=1,needs_cfm=20,height_class=2U")
+    finish(m, pid, [
+        dict(yaw=-40, pitch=30), dict(yaw=130, pitch=25), dict(yaw=90, pitch=10),
+        dict(yaw=200, pitch=-40, target=(0, 0, 0.0), dist=0.3), dict(yaw=0, pitch=0, dist=0.35),
+        dict(yaw=20, pitch=35, target=(0.0345, 0.047, 0.03), dist=0.1),
+    ])
+    return m
+
+
 BUILDERS = {k: (lambda k=k: build_tower_model(k, TOWERS[k])) for k in TOWERS}
 BUILDERS["cooler_noctis_l9"] = build_low_profile
 BUILDERS["cooler_tiron_stock"] = build_tiron_stock
 BUILDERS.update({k: (lambda k=k: build_aio(k, AIOS[k])) for k in AIOS})
+BUILDERS["cooler_srv_epoch_1u"] = build_srv_epoch_1u
+BUILDERS["cooler_srv_platinum_2u"] = build_srv_platinum_2u
 
 
 def write_report():

@@ -507,3 +507,47 @@
    BOUNDS x -0.2680..0.2040  y -0.2900..0.0940  z -0.0120..0.0537
    TUBES A_TUBE_0 length 0.334 m, A_TUBE_1 length 0.334 m
 
+== cooler_srv_epoch_1u
+   mesh cooler_srv_epoch_1u_copper#copper: 2636 tris
+   mesh cooler_srv_epoch_1u_steel#steel: 5580 tris
+   mesh cooler_srv_epoch_1u_tex_cooler_srv_epoch_1u#tex_cooler_srv_epoch_1u: 2 tris
+   mesh film@A_FILM_0#tex_cooler_srv_epoch_1u: 12 tris
+   mesh screw@A_SCREW_T20_0#steel_dark: 176 tris
+   mesh screw@A_SCREW_T20_1#steel_dark: 176 tris
+   mesh screw@A_SCREW_T20_2#steel_dark: 176 tris
+   mesh screw@A_SCREW_T20_3#steel_dark: 176 tris
+   mesh screw@A_SCREW_T20_4#steel_dark: 176 tris
+   mesh screw@A_SCREW_T20_5#steel_dark: 176 tris
+   TOTAL 9286 tris in 10 meshes
+   A_AIRFLOW_0: pos=(-0.0000,0.0000,0.0135) fwd=(1.00,-0.00,0.00) up=(-0.00,0.00,1.00) size=0.09240,0.11800,0.02700 meta=passive=1,needs_cfm=12,height_class=1U
+   A_FILM_0: pos=(-0.0000,0.0000,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.06400,0.06400,0.00300 meta=peel_from=+x,text=REMOVE COVER,covers=preapplied_tim
+   A_HIT_0: pos=(-0.0000,0.0000,0.0138) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.09240,0.11800,0.02760 meta=
+   A_SCREW_T20_0: pos=(0.0385,0.0510,0.0129) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.01100,0.01100,0.01400 meta=spring=1,thread=M4,drive=T20,torque=1.2,order=1
+   A_SCREW_T20_1: pos=(0.0385,0.0000,0.0129) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.01100,0.01100,0.01400 meta=spring=1,thread=M4,drive=T20,torque=1.2,order=3
+   A_SCREW_T20_2: pos=(0.0385,-0.0510,0.0129) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.01100,0.01100,0.01400 meta=spring=1,thread=M4,drive=T20,torque=1.2,order=5
+   A_SCREW_T20_3: pos=(-0.0385,0.0510,0.0129) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.01100,0.01100,0.01400 meta=spring=1,thread=M4,drive=T20,torque=1.2,order=2
+   A_SCREW_T20_4: pos=(-0.0385,0.0000,0.0129) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.01100,0.01100,0.01400 meta=spring=1,thread=M4,drive=T20,torque=1.2,order=4
+   A_SCREW_T20_5: pos=(-0.0385,-0.0510,0.0129) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.01100,0.01100,0.01400 meta=spring=1,thread=M4,drive=T20,torque=1.2,order=6
+   BOUNDS x -0.0462..0.0462  y -0.0590..0.0590  z -0.0115..0.0277
+
+== cooler_srv_platinum_2u
+   mesh cooler_srv_platinum_2u_alu#alu: 8352 tris
+   mesh cooler_srv_platinum_2u_copper#copper: 1148 tris
+   mesh cooler_srv_platinum_2u_nickel#nickel: 9580 tris
+   mesh cooler_srv_platinum_2u_steel#steel: 6112 tris
+   mesh cooler_srv_platinum_2u_tex_cooler_srv_platinum_2u#tex_cooler_srv_platinum_2u: 2 tris
+   mesh film@A_FILM_0#tex_cooler_srv_platinum_2u: 12 tris
+   mesh screw@A_SCREW_T30_0#steel_dark: 176 tris
+   mesh screw@A_SCREW_T30_1#steel_dark: 176 tris
+   mesh screw@A_SCREW_T30_2#steel_dark: 176 tris
+   mesh screw@A_SCREW_T30_3#steel_dark: 176 tris
+   TOTAL 25910 tris in 10 meshes
+   A_AIRFLOW_0: pos=(-0.0000,0.0000,0.0419) fwd=(1.00,-0.00,0.00) up=(-0.00,0.00,1.00) size=0.07800,0.10800,0.04370 meta=passive=1,needs_cfm=20,height_class=2U
+   A_FILM_0: pos=(-0.0000,0.0000,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.06000,0.09800,0.00300 meta=peel_from=+x,text=REMOVE COVER,covers=preapplied_tim
+   A_HIT_0: pos=(-0.0000,0.0000,0.0318) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.07800,0.10800,0.06670 meta=
+   A_SCREW_T30_0: pos=(0.0345,0.0470,0.0129) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.01100,0.01100,0.01400 meta=spring=1,thread=M4,drive=T30,torque=1.1,order=1
+   A_SCREW_T30_1: pos=(0.0345,-0.0470,0.0129) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.01100,0.01100,0.01400 meta=spring=1,thread=M4,drive=T30,torque=1.1,order=3
+   A_SCREW_T30_2: pos=(-0.0345,0.0470,0.0129) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.01100,0.01100,0.01400 meta=spring=1,thread=M4,drive=T30,torque=1.1,order=4
+   A_SCREW_T30_3: pos=(-0.0345,-0.0470,0.0129) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.01100,0.01100,0.01400 meta=spring=1,thread=M4,drive=T30,torque=1.1,order=2
+   BOUNDS x -0.0430..0.0415  y -0.0542..0.0542  z -0.0115..0.0673
+

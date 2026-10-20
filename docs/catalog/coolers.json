@@ -328,5 +328,62 @@
     },
     "contract": "aio",
     "new_contract": true
+  },
+  {
+    "id": "cooler_srv_epoch_1u",
+    "model": "cooler_srv_epoch_1u",
+    "brand": "Strata",
+    "name": "Strata 1U heatsink SP-V",
+    "category": "Server",
+    "price": 95,
+    "power_w": 0,
+    "color": "#B87333",
+    "rgb": false,
+    "analog": "Dynatron J2 1U SP5 heatsink (docs only, never shown in game)",
+    "desc": "Passive 1U copper heatsink for Arc Epoch CPUs, cooled by the server's fan wall.",
+    "specs": {
+      "height_mm": 27,
+      "length_mm": 92,
+      "width_mm": 118,
+      "screws": 6,
+      "drive": "T20",
+      "airflow": "front to back"
+    },
+    "game": {
+      "cooler_max_w": 300,
+      "socket": "SP-V",
+      "perf": 0
+    },
+    "contract": "heatsink_spv",
+    "new_contract": true
+  },
+  {
+    "id": "cooler_srv_platinum_2u",
+    "model": "cooler_srv_platinum_2u",
+    "brand": "Strata",
+    "name": "Strata 2U heatsink L46",
+    "category": "Server",
+    "price": 85,
+    "power_w": 0,
+    "color": "#C9CCD0",
+    "rgb": false,
+    "analog": "Intel/Supermicro 2U LGA4677 narrow-ILM heatsink (docs only, never shown in game)",
+    "desc": "Passive 2U heat-pipe heatsink for Tiron Platinum CPUs.",
+    "specs": {
+      "height_mm": 67,
+      "length_mm": 78,
+      "width_mm": 108,
+      "screws": 4,
+      "drive": "T30",
+      "heat_pipes": 5,
+      "airflow": "front to back"
+    },
+    "game": {
+      "cooler_max_w": 350,
+      "socket": "L46",
+      "perf": 0
+    },
+    "contract": "heatsink_l46",
+    "new_contract": true
   }
 ]

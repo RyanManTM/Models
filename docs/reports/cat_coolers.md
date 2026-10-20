@@ -20,8 +20,8 @@ Branch `claude/cat-coolers`. Script `Tools/Blender/build_cat_coolers.py` (new; i
 | 10 | `cooler_arctiq_lc240` | AIO (new) | done |
 | 11 | `cooler_corvex_h150i_white` | AIO (new) | done |
 | 12 | `cooler_glacier_ls720` | AIO (new) | done |
-| 13 | `cooler_srv_epoch_1u` | server heatsink SP-V (new) | not yet |
-| 14 | `cooler_srv_platinum_2u` | server heatsink L46 (new) | not yet |
+| 13 | `cooler_srv_epoch_1u` | server heatsink SP-V (new) | done |
+| 14 | `cooler_srv_platinum_2u` | server heatsink L46 (new) | done |
 
 ## Models
 
@@ -38,6 +38,8 @@ Branch `claude/cat-coolers`. Script `Tools/Blender/build_cat_coolers.py` (new; i
 | `cooler_arctiq_lc240` | 33 570 | pump 53 mm, rad 288 x 121 x 38 | aio (new) | pump base: screws and A_FILM_0 SAME as cooler_tower |
 | `cooler_corvex_h150i_white` | 49 678 | pump 56 mm, rad 408 x 121 x 27 | aio (new) | as above, plus A_SCREEN_0 |
 | `cooler_glacier_ls720` | 49 014 | pump 55 mm, rad 408 x 121 x 27 | aio (new) | as above |
+| `cooler_srv_epoch_1u` | 9 286 | 27 mm (1U) | heatsink_spv (new) | new socket, no sibling |
+| `cooler_srv_platinum_2u` | 25 910 | 67 mm (2U) | heatsink_l46 (new) | new socket, no sibling |
 | `cooler_tiron_stock` | 21 550 | 53 mm | cooler_stock | vs `cooler_stock`: SAME 9 of 9 (every anchor) |
 
 ### Anchor comparison (anchor_compare.py, `cooler_tower` = A)
@@ -125,7 +127,36 @@ radiator's +Z (fan side) facing +x, into the case, so the fans pull air in throu
 sit 0.122 m apart and a radiator's 0.120 m: snap fan 0 and let the others sit 2 mm off, or add radiator-specific
 mount points to the case later. Cases with top fan positions take the radiator the same way with +Z facing down.
 
+## New contracts: server heatsinks (`heatsink_spv`, `heatsink_l46`)
+
+Shared frame: origin at the centre of the base contact face (on the CPU's IHS), +z away from the board, x = the
+chassis airflow direction (front -> rear), y across. Passive: the server's fan wall cools them.
+- `A_SCREW_<drive>_n`: captive spring screws (moving piece `screw@...`, the spring static), the anchor on the screw
+  head, forward +z. Meta `spring=1,thread=M4,drive=T20|T30,torque=<N m>,order=<k>`: tighten in `order` 1, 2, 3...
+  (cross pattern) and loosen in reverse.
+- `A_FILM_0`: the clear cover over the pre-applied thermal compound (moving piece, peel from +x; meta
+  `covers=preapplied_tim`).
+- `A_AIRFLOW_0`: forward = the direction the air must flow, meta `passive=1,needs_cfm=..,height_class=1U|2U`.
+- `A_HIT_0`: the body.
+
+**SP-V (Arc Epoch), `cooler_srv_epoch_1u`:** 92.4 (x) x 118 (y) x 27 mm, copper base 6 mm and copper skived fins
+along x, cut back round the screws. Six Torx T20 screws `A_SCREW_T20_0..5` at x = +-0.0385, y = +0.051, 0, -0.051
+(heads at z 0.0129, sequence 1 (+x,+y), 2 (-x,+y), 3 (+x,0), 4 (-x,0), 5 (+x,-y), 6 (-x,-y)). The real SP5
+reference coolers also use six T20 screws; this exact pitch is this task's own design. **What the socket needs:**
+the SP-V socket (CPU task) and the Strata SP-V board (board task) put six M4 threaded studs/holes at these six
+points relative to `A_SOCKET_COOLER_0`, with the package's long side (75 mm) along y.
+
+**L46 (Tiron Platinum), `cooler_srv_platinum_2u`:** 78 (x) x 108 (y) x 67 mm: a copper base with four ears, five
+6 mm heat pipes U-bent into 24 horizontal aluminium fins (air flows between them along x), four Torx T30 screws
+`A_SCREW_T30_0..3` at (+-0.0345, +-0.047) in wells through the stack (heads at z 0.0129, sequence (+x,+y),
+(-x,-y), (+x,-y), (-x,+y)). The 69 x 94 mm pattern is a narrow-ILM-style layout chosen here (real LGA4677 narrow
+ILM is about 69 mm wide); the long axis (y) follows the 61 x 105 mm package. **What the socket needs:** the L46
+socket's ILM carries four M4 studs at these points relative to `A_SOCKET_COOLER_0`.
+
 ## Deviations
+
+- Server heatsinks: the screw heads are a six-sided captive head with a recess ring (the shared helpers have no
+  hexalobe recess); the drive is in the meta. Their category is `Server` (they are not desktop coolers).
 
 - AIOs: the real Corsair pump also has a USB and a SATA lead; here it has the pump 4-pin and one ARGB lead. The
   Arctic pump's small VRM fan and its fan cables run inside the tube sleeve on the real one; here the radiator fans
