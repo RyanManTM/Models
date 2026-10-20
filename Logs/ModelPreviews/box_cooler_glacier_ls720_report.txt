@@ -1,0 +1,39 @@
+box_cooler_glacier_ls720: 6144 triangles, 18 meshes
+  mesh acc_floor@A_INSERT_ACCBOX_0#tex_box_cooler_glacier_ls720_in  tris=60
+  mesh acc_lid@A_FLAP_4#tex_box_cooler_glacier_ls720_in  tris=26
+  mesh box_cooler_glacier_ls720_cardboard#cardboard  tris=60
+  mesh cover@A_INSERT_CARD_0#cardboard  tris=120
+  mesh cover_print@A_INSERT_CARD_0#tex_box_cooler_glacier_ls720_in  tris=2
+  mesh flap@A_FLAP_0#cardboard  tris=12
+  mesh flap@A_FLAP_1#cardboard  tris=12
+  mesh flap@A_FLAP_2#cardboard  tris=12
+  mesh flap@A_FLAP_3#cardboard  tris=12
+  mesh flap_print@A_FLAP_0#tex_box_cooler_glacier_ls720  tris=2
+  mesh flap_print@A_FLAP_1#tex_box_cooler_glacier_ls720  tris=2
+  mesh flap_print@A_FLAP_2#tex_box_cooler_glacier_ls720  tris=2
+  mesh flap_print@A_FLAP_3#tex_box_cooler_glacier_ls720  tris=2
+  mesh s_tex_box_cooler_glacier_ls720#tex_box_cooler_glacier_ls720  tris=10
+  mesh tapelook@A_TAPE_0#tape_clear  tris=2
+  mesh tapelook@A_TAPE_1#tape_clear  tris=2
+  mesh tapelook@A_TAPE_2#tape_clear  tris=2
+  mesh tray@A_INSERT_PULP_0#pulp  tris=5804
+  A_FLAP_0 pos=(-0.0, 0.088, -0.215) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.50000,0.00200,0.21500 meta=hinge=x,open=-215,label=top flap,order=1,under=A_TAPE_0,A_TAPE_1,A_TAPE_2
+  A_FLAP_1 pos=(-0.0, 0.088, 0.215) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.50000,0.00200,0.21500 meta=hinge=x,open=215,label=top flap,order=1,under=A_TAPE_0,A_TAPE_1,A_TAPE_2
+  A_FLAP_2 pos=(-0.25, 0.086, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.15000,0.00200,0.43000 meta=hinge=z,open=200,label=top flap,order=2,under=A_FLAP_0,A_FLAP_1
+  A_FLAP_3 pos=(0.25, 0.086, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.15000,0.00200,0.43000 meta=hinge=z,open=-200,label=top flap,order=2,under=A_FLAP_0,A_FLAP_1
+  A_FLAP_4@A_INSERT_ACCBOX_0 pos=(-0.159, 0.06928, -0.03168) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.15200,0.00060,0.22800 meta=hinge=x,open=-120,tuck=1,label=accessory box flap,order=8,parent=A_INSERT_ACCBOX_0,under=A_INSERT_ACCBOX_0
+  A_HIT_0 pos=(-0.0, 0.045, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.50000,0.09000,0.43000 meta=
+  A_INSERT_ACCBOX_0 pos=(-0.159, 0.0044, 0.08202) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.15200,0.06548,0.22800 meta=lift=+y,dist=0.14,label=accessory box,order=7,under=A_INSERT_CARD_0
+  A_INSERT_CARD_0 pos=(-0.0, 0.07188, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.49400,0.00150,0.42400 meta=lift=+y,dist=0.1,label=card cover,order=6,under=A_ITEM_DOC_2
+  A_INSERT_PULP_0 pos=(-0.0, 0.0024, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.49500,0.02970,0.42500 meta=lift=+y,dist=0.1,label=pulp tray,order=8,under=A_ITEM_PART_0,A_INSERT_ACCBOX_0
+  A_ITEM_DOC_0 pos=(-0.0, 0.07738, -0.0) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.08800,0.05600,0.00040 meta=doc=warranty,form=card,label=warranty card,order=3,under=A_FLAP_2,A_FLAP_3
+  A_ITEM_DOC_1 pos=(0.004, 0.07658, -0.004) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.10500,0.14800,0.00060 meta=doc=safety,form=sheet,label=safety sheet,order=4,under=A_ITEM_DOC_0
+  A_ITEM_DOC_2 pos=(0.008, 0.07338, -0.008) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.10500,0.14800,0.00300 meta=doc=manual,form=booklet,label=user manual,order=5,under=A_ITEM_DOC_1
+  A_ITEM_HW_0@A_INSERT_ACCBOX_0 pos=(-0.159, 0.0051, 0.03187) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.14000,0.09120,0.01200 meta=label=MOUNTING KIT V5/L17,order=9,parent=A_INSERT_ACCBOX_0,under=A_FLAP_4
+  A_ITEM_HW_1@A_INSERT_ACCBOX_0 pos=(-0.159, 0.0051, 0.13675) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.13600,0.07752,0.00800 meta=label=12 x FAN SCREWS, 8 x CASE SCREWS,order=9,parent=A_INSERT_ACCBOX_0,under=A_FLAP_4
+  A_ITEM_PART_0@A_INSERT_PULP_0 pos=(-0.02999, 0.0167, 0.09103) fwd=(0.0, 1.0, -0.0) up=(-0.0, 0.0, 1.0) size=0.47599,0.38805,0.06968 meta=bag=none,label=liquid cooler,order=7,parent=A_INSERT_PULP_0,under=A_INSERT_CARD_0
+  A_TAPE_0 pos=(-0.2502, 0.065, -0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.04800,0.05000,0.00010 meta=strip=0,seg=0,peel=+y,label=tape,order=0
+  A_TAPE_1 pos=(-0.0, 0.0902, -0.0) fwd=(-0.0, 1.0, 0.0) up=(1.0, 0.0, -0.0) size=0.04800,0.50000,0.00010 meta=strip=0,seg=1,peel=+y,label=tape,order=0
+  A_TAPE_2 pos=(0.2502, 0.065, -0.0) fwd=(1.0, 0.0, -0.0) up=(0.0, -1.0, -0.0) size=0.04800,0.05000,0.00010 meta=strip=0,seg=2,peel=+y,label=tape,order=0
+shot from: cooler_glacier_ls720
+AIO: tape strip 0 (A_TAPE_0..2) (0) -> long flaps A_FLAP_0/1 (1) -> short flaps A_FLAP_2/3 (2) -> 3 papers in a pile on the card cover, booklet at the bottom (3..5) -> card cover A_INSERT_CARD_0 (6) -> the whole cooler A_ITEM_PART_0 (pump, tubes, radiator with its fans mounted, as one model) and the accessory box A_INSERT_ACCBOX_0 (7) -> the moulded pulp tray A_INSERT_PULP_0 and the accessory box's tuck flap A_FLAP_4 (8) -> mounting kit A_ITEM_HW_0 and the screw bag A_ITEM_HW_1 (9).
