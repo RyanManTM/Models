@@ -108,6 +108,10 @@ folded on the manual, and the warranty card.
 - HBA and accelerator cables use new `A_ITEM_CORD_0` kinds: `kind=sff8654` (an SFF-8654 x8 cable) and
   `kind=12v2x6` (the T100's auxiliary power cable); the contract lists `c13|dp|sata`.
 
+- The U.2 and heatsink exploded previews (`_3`) were rendered before the foam-carton explode offsets were last
+  tuned for the cards (the top foam now explodes up and back); their models are unchanged by it. A rebuild refreshes them.
+- `rig.check()` prints no `RIG CHECK` line for any of the 24 boxes.
+
 ## Requests for the shared code
 - `A_ITEM_CORD` `kind=`: add `sff8654` and `12v2x6` to the documented kinds (`docs/PACKAGING.md` §2.2) and the
   game's cord look-up.
