@@ -1,0 +1,34 @@
+ac_12k: 9340 triangles, 23 meshes
+  mesh ac_12k_alu#alu  tris=76
+  mesh ac_12k_alu_dark#alu_dark  tris=12
+  mesh ac_12k_black_plastic#black_plastic  tris=152
+  mesh ac_12k_copper#copper  tris=512
+  mesh ac_12k_dark_plastic#dark_plastic  tris=520
+  mesh ac_12k_grey_plastic#grey_plastic  tris=1024
+  mesh ac_12k_mesh_black#mesh_black  tris=12
+  mesh ac_12k_nickel#nickel  tris=160
+  mesh ac_12k_rubber#rubber  tris=720
+  mesh ac_12k_steel#steel  tris=2164
+  mesh ac_12k_tex_ac_12k_coil#tex_ac_12k_coil  tris=70
+  mesh ac_12k_tex_ac_12k_print#tex_ac_12k_print  tris=8
+  mesh ac_12k_white_plastic#white_plastic  tris=3064
+  mesh button_0@A_BUTTON_0#grey_plastic  tris=240
+  mesh button_0@A_BUTTON_0#white_plastic  tris=144
+  mesh button_1@A_BUTTON_1#grey_plastic  tris=8
+  mesh button_1@A_BUTTON_1#white_plastic  tris=144
+  mesh button_2@A_BUTTON_2#grey_plastic  tris=8
+  mesh button_2@A_BUTTON_2#white_plastic  tris=144
+  mesh led_mode_0@A_LED_MODE_0#led_blue  tris=64
+  mesh louver_0@A_LOUVER_0#grey_plastic  tris=24
+  mesh louver_0@A_LOUVER_0#white_plastic  tris=68
+  mesh screen_0@A_SCREEN_0#black_plastic  tris=2
+  A_BUTTON_0 pos=(-0.24, 0.012, 0.2262) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02200,0.02200,0.00600 meta=press=-z_local,travel=0.0015,fn=power
+  A_BUTTON_1 pos=(-0.24, -0.04, 0.2262) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02200,0.02200,0.00600 meta=press=-z_local,travel=0.0015,fn=temp_up
+  A_BUTTON_2 pos=(-0.24, -0.092, 0.2262) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02200,0.02200,0.00600 meta=press=-z_local,travel=0.0015,fn=temp_down
+  A_CORD_0 pos=(-0.356, -0.168, -0.072) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.01200,0.01200,0.02000 meta=r=0.0039,plug=nema5-15,len=1.8,awg=14
+  A_HIT_0 pos=(-0.0, 0.0, 0.0635) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.62000,0.40000,0.32700 meta=
+  A_HIT_1 pos=(-0.0, 0.0, -0.096) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.68000,0.48000,0.00800 meta=
+  A_LED_MODE_0 pos=(-0.24, 0.056, 0.2271) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00520,0.00520,0.00300 meta=colour=blue,fn=mode
+  A_LOUVER_0 pos=(0.06, -0.135, 0.234) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.42000,0.07000,0.01200 meta=hinge=x,open=-45,min=-60,max=10,motor=1
+  A_SCREEN_0 pos=(-0.24, 0.1, 0.233) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.07400,0.04200,0.00300 meta=kind=lcd,ref=296x168,digits=2,colour=blue
+bounds min=(-0.3560, -0.2400, -0.4000) max=(0.3400, 0.2400, 0.2378) size=(0.6960, 0.4800, 0.6379)
