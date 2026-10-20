@@ -321,7 +321,7 @@ CATALOG = [
          game=dict(storage_gb=4000, sata25=False), contract="hdd35", new_contract=True),
     dict(id="hdd_seacrest_8tb", brand="Seacrest", name="Seacrest Tidewolf 8 TB NAS", price=179, power_w=8, color="#c9ccd0", rgb=False,
          analog="Seagate IronWolf 8TB (ST8000VN004)", desc="A NAS drive built for 24/7 duty in multi-bay boxes.",
-         specs=dict(form="3.5\"", interface="SATA 6 Gb/s", rpm=7200, cache_mb=256, read_mbs=210, recording="CMR", helium=True,
+         specs=dict(form="3.5\"", interface="SATA 6 Gb/s", rpm=7200, cache_mb=256, read_mbs=210, recording="CMR", helium=False,
                     workload_tby=180), game=dict(storage_gb=8000, sata25=False), contract="hdd35", new_contract=True),
     dict(id="hdd_seacrest_exos_20tb", brand="Seacrest", name="Seacrest Abyss X20 20 TB", price=329, power_w=9, color="#c9ccd0", rgb=False,
          analog="Seagate Exos X20 20TB (ST20000NM007D)", desc="A sealed helium enterprise drive for servers and storage racks.",

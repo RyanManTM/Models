@@ -359,7 +359,7 @@ U2 = {
 
 
 def u2_textures(sid, cfg):
-    at = pp.Atlas(2048, 1024, bg="#202226")
+    at = pp.Atlas(2048, 2048, bg="#202226")
     rnd = random.Random(zlib.crc32(sid.encode()))
     reg = {}
     # top logo band (between the fins and the connector end): u along +x, v along +z

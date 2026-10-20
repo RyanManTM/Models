@@ -414,7 +414,7 @@
       "cache_mb": 256,
       "read_mbs": 210,
       "recording": "CMR",
-      "helium": true,
+      "helium": false,
       "workload_tby": 180
     },
     "game": {
