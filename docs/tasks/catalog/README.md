@@ -138,6 +138,49 @@ Field rules:
   - **Never edit** a builder another family owns, `dct_common.py`, `parts_pcb.py`, `parts_b.py`, `parts_c.py` or `parts_fan.py`.
 - **Do not edit `README.md`** or anything in `docs/tasks/`, so the branches merge cleanly. Put your README line in your report.
 
+## The unboxing on every part (required)
+The game's unboxing works like real life. You peel the shipping tape, lift the retail box out, then open the box layer by layer: seals, flaps, foam, the clamshell or anti-static bag, then the part and its papers. Every part then still has its **protective films, caps and stickers** for the player to peel or pull off. Nothing vanishes; every piece goes in the bin by hand. See `docs/PACKAGING.md` for the box side.
+
+**Every model you make must carry the anchors for its real protective bits.** The game builds the peel meshes itself from these anchors, and the cap models sit on the part.
+- **A film** is an anchor `A_FILM_<NAME>_<n>`.
+  - Its XY plane is the film surface and +Z faces out. `size` is the film area (w, h, thickness).
+  - Meta `peel=<+x|-x|+y|-y>` gives the direction the player pulls from the tab corner. Add `tab=<corner>` too.
+- **A cap or guard** is a small separate model that sits on the part (like `cap_pcie16`, `cap_dp`, `guard_ram_ddr5`).
+  - Its local +Z is the pull-off direction.
+  - Its `A_HIT_0` meta is `remove=+z,travel=<m>,blocks=install|plug|none`.
+  - If yours needs a new cap model, make it in your script and list where it sits (parent anchor, position, rotation).
+- **A sticker** (a warning or voltage sticker) is an `A_STICKER_<NAME>_<n>` anchor with `peel=`, plus a look mesh if it's printed.
+
+| Part kind | Its protective bits (all of them, as on the real product) |
+|---|---|
+| GPU | `cap_pcie16` on the gold fingers (it sits at the GPU origin by contract), and `cap_dp` / `cap_hdmi` in every display port (they sit at the port anchors). `A_FILM_BACKPLATE_0`, `A_FILM_SHROUD_0`, and an `A_FILM_<NAME>_n` on every other glossy or RGB panel. A film disc on every fan hub sticker (`A_FILM_HUB_<n>`, in the `A_FAN_n` frame). An optional `A_CAP_POWER_0` over the power socket. Data-centre cards: films only. |
+| Motherboard | The PnP socket cap (contract), `A_FILM_M2_0` on the M.2 heatsink pad, `A_FILM_IO_0`, `A_FILM_CHIPSET_0`, and an `A_FILM_<NAME>_n` on every other glossy cover or RGB shroud. Server boards: the socket covers. |
+| RAM | `guard_ram_ddr5` / `guard_ram_ddr4` on the gold fingers (they sit at the RAM origin by contract). `A_FILM_SPREADER_0/1` on both sides of any heat spreader or RGB diffuser. RDIMMs: a new `guard_rdimm_ddr5` / `guard_rdimm_ddr4` for their notch. |
+| CPU | Desktop: none on the part; the clamshell is in the box. Server: a clear contact cover `A_CAP_PADS_0` under the package, plus the carrier. |
+| Cooler | `A_FILM_0` on the base or cold plate (contract), `A_FILM_TOP_0` on the top cover or pump cap, and `A_FILM_HUB_<n>` on every fan hub. Stock coolers: `cap_paste` on `A_PASTE_PRE_0`. AIO: `A_FILM_PUMP_0` on the pump cap or LCD, and a film on any glossy radiator end caps. |
+| Fans | `A_FILM_HUB_0` on the hub sticker. RGB fans: also `A_FILM_RING_0` on a glossy frame. |
+| Case | Films on **every glass panel, on both sides**: `A_FILM_GLASS_<n>`, in that panel's frame, so they ride with the moving panel. Films on glossy trims and the front panel, `A_FILM_<NAME>_n`. Hub films on the pre-installed fans. |
+| PSU | The voltage warning sticker on `A_SWITCH_PSU_0` (`sticker_psu_voltage`), an `A_FILM_<NAME>_n` on glossy side panels or a display, and optional caps on modular ports `A_CAP_MOD_<n>`. CRPS: a film on the handle label. |
+| SSD / HDD | SATA SSD: `A_FILM_LABEL_0`. NVMe with a heatsink: `A_FILM_<NAME>_0` on a glossy heatsink. U.2: a connector cap. HDD: none (it ships in an anti-static bag). |
+| NIC / HBA | A dust plug in **every** SFP, SFP28 and QSFP cage (`cap_sfp` / `cap_qsfp` models at the cage port anchors, blocks=plug). A clear cap on the PCIe edge, sized to its x4, x8 or x16 length. |
+| Rack gear | Films on glossy bezels and on LCDs or screens, `A_FILM_<NAME>_n`. A dust plug in every SFP/QSFP cage of switches. |
+
+**List every film, cap and sticker in your report and in the catalogue JSON:**
+
+```json
+"unbox": {
+  "films":    ["A_FILM_BACKPLATE_0", "A_FILM_SHROUD_0", "A_FILM_HUB_0", "A_FILM_HUB_1"],
+  "caps":     [{"model": "cap_pcie16", "at": "origin", "blocks": "install"},
+               {"model": "cap_dp", "at": "A_PORT_DP_0", "blocks": "plug"}],
+  "stickers": []
+}
+```
+
+**The papers in the box** come from the catalogue too.
+- `"docs"` lists the kinds that come with the part: guide, manual, warranty, sticker (the case badge), driver, safety, quick-start.
+- `"doc_notes"` gives 4–10 short real-sounding facts the game prints in them: install steps, connector tables, slot rules, specs, warnings.
+- The motherboard manuals must state the real slot rules (which DIMM slots first) and the front-panel header pinout.
+
 ## Each family task delivers
 - `Tools/Blender/build_cat_<family>.py`, plus helper modules. It builds all your ids and takes `-- [ids] [--nopreview]`.
 - The models, textures, previews and an anchor report `Logs/ModelPreviews/cat_<family>_report.txt`.

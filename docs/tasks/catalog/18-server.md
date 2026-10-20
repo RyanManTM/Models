@@ -20,6 +20,12 @@ Read `docs/tasks/README.md` (setup, rules) and `docs/tasks/catalog/README.md` (b
 5. Broadline 9500-style 16-port HBA (x8): two internal SFF-8654 connectors.
 6. Broadline RAID card (x8): cache module plus a supercap pack on a cable.
 
+## Retrofit: protective bits on the task-01 gear
+- **Make `cap_sfp` and `cap_qsfp`:** dust plugs with pull tabs, local +Z = pull direction, `blocks=plug`. They sit at the existing `A_PORT_SFP_n` anchors of `switch_24` and on every SFP/QSFP cage you build. List their placement.
+- **Add `A_FILM_<NAME>_n` anchors** on the glossy bezels, LCDs and screens of server_1u, server_2u, ups_2u, ups_tower and pdu_0u.
+  - Use a small optional hook in `build_datacenter.py`, adding only anchors. `extras_compare.py` must report **ONLY ADDED** against the committed FBX.
+  - Re-run `datacenter_fit.py`.
+
 ## Rack gear (8)
 1. **Strata 4U GPU server:** 8 double-width GPU bays, 4 × CRPS PSUs, a fan wall. Moving pieces: the top lid, the GPU sleds and the PSUs.
 2. **Strata 2U storage server:** 24 × 2.5" front bays.
