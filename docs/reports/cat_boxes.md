@@ -4,7 +4,7 @@ Brief: `docs/tasks/catalog/19-boxes.md`. Every catalogue part (`docs/catalog/*.j
 plus the data-centre gear from task 01 and a rebuilt `box_ac_12k`.
 
 ## Status
-**120 of 132 catalogue boxes built.** Not built yet: cooler_arctiq_34_black, cooler_arctiq_34_white, cooler_glacier_ak400_white, cooler_glacier_ak620_black, cooler_noctis_d15_black, cooler_frostpeak_120_rgb, case_phanta_g360a, case_nexa_h5, case_facet_fjord, case_hush_500dx, case_facet_fizzair, case_brickhouse_beige98.
+**121 of 132 catalogue boxes built.** Not built yet: cooler_arctiq_34_white, cooler_glacier_ak400_white, cooler_glacier_ak620_black, cooler_noctis_d15_black, cooler_frostpeak_120_rgb, case_phanta_g360a, case_nexa_h5, case_facet_fjord, case_hush_500dx, case_facet_fizzair, case_brickhouse_beige98.
 
 The work was split by rig module, each built and checked box by box (all four previews looked at):
 - the consumer parts of the existing box kinds (`rig_products.py`): CPUs, GPUs, motherboards, memory, NVMe and SATA
@@ -196,7 +196,7 @@ Opening sequence: the step `order` of each piece, from the rig's notes. Previews
 ### Coolers
 | Box | Size (m) | Tris | Anchors | Opening sequence (order) |
 |---|---|---|---|---|
-| box_cooler_arctiq_34_black | | | | **not built yet** |
+| box_cooler_arctiq_34_black | 0.165 x 0.205 x 0.14 | 1128 | 17 | Tower cooler: tape (0) -> long flaps (1) -> short flaps (2) -> top EPS A_INSERT_FOAM_0 (3) -> cooler A_ITEM_PART_0 and the accessory box A_INSERT_ACCBOX_0 standing in front of it (4) -> bottom EPS A_INSERT_FOAM_1 and the accessory box's tuck flap A_FLAP_4 (5) -> mounting kit A_ITEM_HW_0, paste syringe A_ITEM_HW_1 (kind=syringe, a look mesh on its anchor), manual A_ITEM_DOC_0 (6). |
 | box_cooler_arctiq_34_white | | | | **not built yet** |
 | box_cooler_glacier_ak400_white | | | | **not built yet** |
 | box_cooler_glacier_ak620_black | | | | **not built yet** |

@@ -20,5 +20,5 @@ box_fan_arctiq_p14: 1144 triangles, 11 meshes
   A_ITEM_HW_0 pos=(-0.0, 0.0265, -0.0223) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.03600,0.05000,0.00600 meta=label=4 x FAN SCREWS,order=3,under=A_FLAP_0,A_FLAP_1,A_FLAP_2
   A_ITEM_PART_0@A_INSERT_CARD_0 pos=(0.00148, 0.0821, 0.0119) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.14595,0.15180,0.02938 meta=bag=none,label=fan,order=4,parent=A_INSERT_CARD_0,under=A_INSERT_CARD_0
   A_SEAL_0 pos=(-0.0, 0.159, 0.02762) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01800,0.01200,0.00010 meta=shape=round,peel=+y,print=ARCTIQ SEALED,wrap=0.006,label=seal sticker,order=0
-shot from: cached
+shot from: fan_arctiq_p14
 Fan pack (1 fan, window box): round seal A_SEAL_0 (0) -> tuck lid A_FLAP_0 (1) -> dust flaps A_FLAP_1/2 (2) -> from the back pocket: 2 papers standing at the back wall and 1 accessory (4 x FAN SCREWS) standing against the tray (3), and the die-cut card tray A_INSERT_CARD_0 lifted out (3) -> the fans A_ITEM_PART_0..0 out of the tray (4).
