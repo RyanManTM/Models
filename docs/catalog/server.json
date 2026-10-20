@@ -26,7 +26,32 @@
       "perf": 0
     },
     "contract": "pcie_card",
-    "new_contract": true
+    "new_contract": true,
+    "unbox": {
+      "films": [],
+      "caps": [
+        {
+          "model": "cap_pcie4",
+          "at": "origin",
+          "blocks": "install"
+        }
+      ],
+      "stickers": []
+    },
+    "docs": [
+      "quick-start",
+      "warranty",
+      "driver"
+    ],
+    "doc_notes": [
+      "Install in any PCIe x4, x8 or x16 slot; the card runs at PCIe 2.1 x4.",
+      "Swap to the low-profile bracket for 2U servers: remove the two small screws, fit the short bracket, refit the screws.",
+      "Port 1 is next to the board edge marked P1; the green LED shows link, the amber LED blinks with traffic.",
+      "Supports 10/100/1000BASE-T over Cat5e or better, up to 100 m.",
+      "Wake-on-LAN and VLAN tagging are set in the driver's advanced properties.",
+      "Hold the card by its edges and bracket; do not touch the gold contacts.",
+      "Limited lifetime warranty when registered within 90 days."
+    ]
   },
   {
     "id": "nic_linkwave_710da2",
@@ -55,7 +80,42 @@
       "perf": 0
     },
     "contract": "pcie_card",
-    "new_contract": true
+    "new_contract": true,
+    "unbox": {
+      "films": [],
+      "caps": [
+        {
+          "model": "cap_pcie8",
+          "at": "origin",
+          "blocks": "install"
+        },
+        {
+          "model": "cap_sfp",
+          "at": "A_PORT_SFP_0",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_sfp",
+          "at": "A_PORT_SFP_1",
+          "blocks": "plug"
+        }
+      ],
+      "stickers": []
+    },
+    "docs": [
+      "quick-start",
+      "warranty",
+      "driver"
+    ],
+    "doc_notes": [
+      "Install in a PCIe x8 or x16 slot (PCIe 3.0 x8 for full 2 x 10 Gb/s).",
+      "Use 10GBASE-SR/LR SFP+ optics or SFP+ direct-attach copper cables up to 7 m.",
+      "Keep the dust plugs in unused cages; push a module in until it clicks, pull the bail to remove it.",
+      "Link LED green = 10 Gb/s, amber = 1 Gb/s; the activity LED blinks with traffic.",
+      "Needs 200 LFM of airflow over the heatsink; do not use in a fanless case.",
+      "A low-profile bracket is in the box.",
+      "Limited lifetime warranty."
+    ]
   },
   {
     "id": "nic_melnet_strand6_25g",
@@ -84,7 +144,42 @@
       "perf": 0
     },
     "contract": "pcie_card",
-    "new_contract": true
+    "new_contract": true,
+    "unbox": {
+      "films": [],
+      "caps": [
+        {
+          "model": "cap_pcie8",
+          "at": "origin",
+          "blocks": "install"
+        },
+        {
+          "model": "cap_sfp",
+          "at": "A_PORT_SFP_0",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_sfp",
+          "at": "A_PORT_SFP_1",
+          "blocks": "plug"
+        }
+      ],
+      "stickers": []
+    },
+    "docs": [
+      "quick-start",
+      "warranty",
+      "driver"
+    ],
+    "doc_notes": [
+      "Install in a PCIe 4.0 x8 slot (works in PCIe 3.0 at reduced throughput).",
+      "Each SFP28 cage takes 25G, 10G or 1G modules and DAC cables.",
+      "RoCE v2 and SR-IOV are enabled with the Melnet firmware tool after the driver install.",
+      "Port LEDs: green link, amber activity; both blinking = beacon (identify) mode.",
+      "Requires server airflow of 300 LFM; the controller throttles above 105 °C.",
+      "Keep the dust plugs in unused cages.",
+      "Three-year limited warranty."
+    ]
   },
   {
     "id": "nic_melnet_strand6_100g",
@@ -113,7 +208,42 @@
       "perf": 0
     },
     "contract": "pcie_card",
-    "new_contract": true
+    "new_contract": true,
+    "unbox": {
+      "films": [],
+      "caps": [
+        {
+          "model": "cap_pcie16",
+          "at": "origin",
+          "blocks": "install"
+        },
+        {
+          "model": "cap_qsfp",
+          "at": "A_PORT_QSFP_0",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_qsfp",
+          "at": "A_PORT_QSFP_1",
+          "blocks": "plug"
+        }
+      ],
+      "stickers": []
+    },
+    "docs": [
+      "quick-start",
+      "warranty",
+      "driver"
+    ],
+    "doc_notes": [
+      "Install in a PCIe 4.0 x16 slot for full 2 x 100 Gb/s; an x8 slot halves the bandwidth.",
+      "Each QSFP28 cage takes 100G optics, DAC, or a breakout cable to 4 x 25G.",
+      "Use passive DAC up to 3 m, active optical cables beyond that.",
+      "Typical power 24 W, more with active optics: needs strong front-to-back server airflow.",
+      "Port LEDs: green link, amber activity.",
+      "Keep the dust plugs in unused cages; never look into an open optical port.",
+      "Three-year limited warranty."
+    ]
   },
   {
     "id": "hba_broadline_9500_16i",
@@ -142,7 +272,32 @@
       "perf": 0
     },
     "contract": "pcie_card",
-    "new_contract": true
+    "new_contract": true,
+    "unbox": {
+      "films": [],
+      "caps": [
+        {
+          "model": "cap_pcie8",
+          "at": "origin",
+          "blocks": "install"
+        }
+      ],
+      "stickers": []
+    },
+    "docs": [
+      "quick-start",
+      "warranty",
+      "driver"
+    ],
+    "doc_notes": [
+      "Install in a PCIe 4.0 x8 slot.",
+      "Connector C0 serves drives 0-7, connector C1 drives 8-15 (SFF-8654 x8 SlimSAS).",
+      "Tri-mode: SAS-3 12 Gb/s, SATA 6 Gb/s and NVMe drives through a tri-mode backplane.",
+      "Use SFF-8654 to 4 x SFF-8482 or to the backplane's own connectors; cables are sold separately.",
+      "Drives are passed through to the OS (IT mode): no RAID on this card.",
+      "Needs 200 LFM of airflow over the heatsink.",
+      "Three-year limited warranty."
+    ]
   },
   {
     "id": "hba_broadline_9560_16i",
@@ -174,7 +329,33 @@
       "perf": 0
     },
     "contract": "pcie_card",
-    "new_contract": true
+    "new_contract": true,
+    "unbox": {
+      "films": [],
+      "caps": [
+        {
+          "model": "cap_pcie8",
+          "at": "origin",
+          "blocks": "install"
+        }
+      ],
+      "stickers": []
+    },
+    "docs": [
+      "quick-start",
+      "warranty",
+      "driver",
+      "manual"
+    ],
+    "doc_notes": [
+      "Install in a PCIe 4.0 x8 slot.",
+      "Mount the CacheGuard supercap pack on the chassis clip and plug its cable into the card's 6-pin header before power-on.",
+      "The 8 GB cache is protected by the supercap: on power loss it is copied to flash.",
+      "RAID levels 0, 1, 5, 6, 10, 50 and 60; up to 240 drives with expanders.",
+      "Connector C0 serves drives 0-7, C1 drives 8-15 (SFF-8654 x8).",
+      "Create arrays in the card's BIOS utility (Ctrl+R at boot) or with the Broadline command-line tool.",
+      "Three-year limited warranty, the supercap one year."
+    ]
   },
   {
     "id": "srv_strata_sg840_4u",
@@ -204,7 +385,31 @@
       "perf": 0
     },
     "contract": "rack_device",
-    "new_contract": false
+    "new_contract": false,
+    "unbox": {
+      "films": [
+        "A_FILM_EAR_0",
+        "A_FILM_EAR_1"
+      ],
+      "caps": [],
+      "stickers": []
+    },
+    "docs": [
+      "quick-start",
+      "manual",
+      "warranty",
+      "safety"
+    ],
+    "doc_notes": [
+      "Two people or a lift: the server weighs 48 kg without GPUs.",
+      "Fit the slide rails at the rack's front and rear rails first; the rails click at both ends.",
+      "Slide each GPU sled out by its handle after pressing the green release; one double-width GPU per sled.",
+      "Connect all four power supplies (3+1 redundant, 200-240 V); 3 kW per supply.",
+      "The front ear LEDs: health green, fault amber; the blue ID LED is toggled by the i button.",
+      "Ten hot-swap fans: replace a failed fan within 60 s.",
+      "BMC: connect the IPMI port; default user is on the service tag.",
+      "Three-year next-business-day warranty."
+    ]
   },
   {
     "id": "srv_strata_sr224_2u",
@@ -233,7 +438,30 @@
       "perf": 0
     },
     "contract": "rack_device",
-    "new_contract": false
+    "new_contract": false,
+    "unbox": {
+      "films": [
+        "A_FILM_EAR_0",
+        "A_FILM_EAR_1"
+      ],
+      "caps": [],
+      "stickers": []
+    },
+    "docs": [
+      "quick-start",
+      "manual",
+      "warranty",
+      "safety"
+    ],
+    "doc_notes": [
+      "Fit the slide rails, then slide the server in until the ears meet the rack; tighten the two thumbscrews.",
+      "Bays 0-23 are numbered from the left; press the green release and swing the lever to remove a tray.",
+      "Drive LEDs: green activity, amber fault or locate.",
+      "Connect both power supplies to separate circuits (1+1 redundant).",
+      "Populate DIMMs A1 and B1 first, then A2 and B2.",
+      "Do not run without the air shroud or with empty bays without blanks.",
+      "Three-year next-business-day warranty."
+    ]
   },
   {
     "id": "srv_linkwave_ls4804x",
@@ -260,7 +488,47 @@
       "perf": 0
     },
     "contract": "rack_device",
-    "new_contract": false
+    "new_contract": false,
+    "unbox": {
+      "films": [],
+      "caps": [
+        {
+          "model": "cap_sfp",
+          "at": "A_PORT_SFP_0",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_sfp",
+          "at": "A_PORT_SFP_1",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_sfp",
+          "at": "A_PORT_SFP_2",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_sfp",
+          "at": "A_PORT_SFP_3",
+          "blocks": "plug"
+        }
+      ],
+      "stickers": []
+    },
+    "docs": [
+      "quick-start",
+      "warranty",
+      "safety"
+    ],
+    "doc_notes": [
+      "Mount with the four rack screws through the ears; leave 50 mm behind the rear for airflow.",
+      "Default management address 192.168.1.254, user admin; change the password at first login.",
+      "Ports 1-48: 10/100/1000BASE-T; ports 49-52: 10G SFP+ uplinks (dust plugs fitted).",
+      "Console: RJ45 on the rear, 115200 8-N-1.",
+      "Hold RESET 10 s to restore the factory settings.",
+      "PWR green = on, SYS blinking = booting, FAN amber = fan fault.",
+      "Limited lifetime warranty."
+    ]
   },
   {
     "id": "srv_linkwave_ls1600x",
@@ -287,7 +555,106 @@
       "perf": 0
     },
     "contract": "rack_device",
-    "new_contract": false
+    "new_contract": false,
+    "unbox": {
+      "films": [],
+      "caps": [
+        {
+          "model": "cap_sfp",
+          "at": "A_PORT_SFP_0",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_sfp",
+          "at": "A_PORT_SFP_1",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_sfp",
+          "at": "A_PORT_SFP_2",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_sfp",
+          "at": "A_PORT_SFP_3",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_sfp",
+          "at": "A_PORT_SFP_4",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_sfp",
+          "at": "A_PORT_SFP_5",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_sfp",
+          "at": "A_PORT_SFP_6",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_sfp",
+          "at": "A_PORT_SFP_7",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_sfp",
+          "at": "A_PORT_SFP_8",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_sfp",
+          "at": "A_PORT_SFP_9",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_sfp",
+          "at": "A_PORT_SFP_10",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_sfp",
+          "at": "A_PORT_SFP_11",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_sfp",
+          "at": "A_PORT_SFP_12",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_sfp",
+          "at": "A_PORT_SFP_13",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_sfp",
+          "at": "A_PORT_SFP_14",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_sfp",
+          "at": "A_PORT_SFP_15",
+          "blocks": "plug"
+        }
+      ],
+      "stickers": []
+    },
+    "docs": [
+      "quick-start",
+      "warranty",
+      "safety"
+    ],
+    "doc_notes": [
+      "Mount with the four rack screws through the ears.",
+      "Ports 1-16 are 10G SFP+; they also take 1G SFP modules.",
+      "Connect both power inputs for redundancy; PS1 and PS2 LEDs show each supply.",
+      "Out-of-band management on the MGMT port, console on the RJ45 CONSOLE port at 115200.",
+      "Keep the dust plugs in unused cages.",
+      "Five-year limited warranty."
+    ]
   },
   {
     "id": "srv_strata_shelf_1u",
@@ -311,7 +678,23 @@
       "perf": 0
     },
     "contract": "rack_device",
-    "new_contract": false
+    "new_contract": false,
+    "unbox": {
+      "films": [],
+      "caps": [],
+      "stickers": []
+    },
+    "docs": [
+      "quick-start",
+      "warranty"
+    ],
+    "doc_notes": [
+      "Front mount only: four M6 screws and cage nuts through the ears.",
+      "Maximum load 25 kg, spread evenly across the tray.",
+      "Leave the U above the shelf free for the equipment on it.",
+      "The vent slots keep air moving; don't cover them completely.",
+      "Five-year warranty."
+    ]
   },
   {
     "id": "srv_strata_blank_1u",
@@ -334,7 +717,23 @@
       "perf": 0
     },
     "contract": "rack_device",
-    "new_contract": false
+    "new_contract": false,
+    "unbox": {
+      "films": [],
+      "caps": [],
+      "stickers": []
+    },
+    "docs": [
+      "quick-start",
+      "warranty"
+    ],
+    "doc_notes": [
+      "Fill every empty U on the front of the rack: hot air must not flow back to the intake.",
+      "Fits any EIA-310 19\" rack; two M6 screws with cage nuts per side, both included.",
+      "The flanges point into the rack.",
+      "Tool-less version available as STRATA BP-1T.",
+      "Five-year warranty against rust and paint defects."
+    ]
   },
   {
     "id": "srv_strata_blank_2u",
@@ -357,7 +756,23 @@
       "perf": 0
     },
     "contract": "rack_device",
-    "new_contract": false
+    "new_contract": false,
+    "unbox": {
+      "films": [],
+      "caps": [],
+      "stickers": []
+    },
+    "docs": [
+      "quick-start",
+      "warranty"
+    ],
+    "doc_notes": [
+      "Fill every empty U on the front of the rack: hot air must not flow back to the intake.",
+      "Fits any EIA-310 19\" rack; two M6 screws with cage nuts per side, both included.",
+      "The flanges point into the rack.",
+      "Covers two rack units.",
+      "Five-year warranty against rust and paint defects."
+    ]
   },
   {
     "id": "srv_strata_cma",
@@ -380,7 +795,24 @@
       "perf": 0
     },
     "contract": "rack_device",
-    "new_contract": true
+    "new_contract": true,
+    "unbox": {
+      "films": [],
+      "caps": [],
+      "stickers": []
+    },
+    "docs": [
+      "quick-start",
+      "warranty"
+    ],
+    "doc_notes": [
+      "For STRATA 1U servers on the STRATA sliding rails.",
+      "Clip the outer connector into the right-hand outer rail and the support bracket into the left rail.",
+      "Clip the inner connector onto the server's inner rail until the green tab clicks.",
+      "Route the cables through the hoops and close the straps; leave slack at the elbow.",
+      "Check the server slides fully out and back without pulling a cable.",
+      "Three-year warranty."
+    ]
   },
   {
     "id": "srv_strata_kvm_1u",
@@ -406,6 +838,27 @@
       "perf": 0
     },
     "contract": "rack_device",
-    "new_contract": false
+    "new_contract": false,
+    "unbox": {
+      "films": [
+        "A_FILM_SCREEN_0@A_LID_0@A_DRAWER_0"
+      ],
+      "caps": [],
+      "stickers": []
+    },
+    "docs": [
+      "quick-start",
+      "manual",
+      "warranty",
+      "safety"
+    ],
+    "doc_notes": [
+      "Fit the rails at the front and rear rack rails; the drawer locks closed.",
+      "Pull both green tabs and slide the drawer out, then lift the screen.",
+      "Connect the VGA and USB-B cable to the server or a KVM switch; power through the rear C14 inlet.",
+      "18.5\" LCD, 1366 x 768; the LCD button turns the backlight off.",
+      "Close the screen before pushing the drawer in.",
+      "Three-year warranty."
+    ]
   }
 ]

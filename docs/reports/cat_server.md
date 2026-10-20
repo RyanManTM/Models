@@ -25,15 +25,19 @@ All 14 catalogue items are built (15 ids: the blanking panel is two), plus the s
 | `nic_melnet_strand6_100g_lpbracket` | 0.012 × 0.018 × 0.079 | 900 | 4 | 4 | done |
 | `hba_broadline_9500_16i_lpbracket` | 0.012 × 0.018 × 0.079 | 1,112 | 3 | 4 | done |
 | `hba_broadline_9560_16i_lpbracket` | 0.012 × 0.018 × 0.079 | 1,112 | 3 | 4 | done |
-| `srv_strata_sg840_4u` | 0.483 × 0.177 × 0.787 | 32,460 | 205 | 86 | done |
-| `srv_strata_sr224_2u` | 0.483 × 0.087 × 0.779 | 24,602 | 244 | 118 | done |
+| `srv_strata_sg840_4u` | 0.483 × 0.177 × 0.787 | 32,460 | 205 | 88 | done |
+| `srv_strata_sr224_2u` | 0.483 × 0.087 × 0.779 | 24,602 | 244 | 120 | done |
 | `srv_linkwave_ls4804x` | 0.483 × 0.044 × 0.284 | 18,958 | 113 | 168 | done |
 | `srv_linkwave_ls1600x` | 0.483 × 0.044 × 0.304 | 14,024 | 49 | 68 | done |
 | `srv_strata_shelf_1u` | 0.483 × 0.044 × 0.402 | 2,724 | 3 | 7 | done |
 | `srv_strata_blank_1u` | 0.483 × 0.044 × 0.018 | 1,502 | 14 | 5 | done |
 | `srv_strata_blank_2u` | 0.483 × 0.089 × 0.018 | 1,590 | 14 | 5 | done |
 | `srv_strata_cma` | 0.447 × 0.038 × 0.146 | 2,750 | 13 | 6 | done |
-| `srv_strata_kvm_1u` | 0.488 × 0.043 × 0.785 | 6,662 | 22 | 18 | done |
+| `srv_strata_kvm_1u` | 0.488 × 0.043 × 0.785 | 6,662 | 22 | 19 | done |
+| `cap_sfp` | 0.017 × 0.013 × 0.021 | 460 | 2 | 2 | done |
+| `cap_qsfp` | 0.022 × 0.012 × 0.024 | 460 | 2 | 2 | done |
+| `cap_pcie4` | 0.049 × 0.003 × 0.006 | 240 | 1 | 2 | done |
+| `cap_pcie8` | 0.066 × 0.003 × 0.006 | 240 | 1 | 2 | done |
 
 
 Sizes are the full bounds of each model, moving pieces included (rails, handles, the supercap pack).
@@ -45,7 +49,7 @@ blender -b --factory-startup -P Tools/Blender/build_cat_server.py -- [ids...] [-
 blender -b --factory-startup -P Tools/Blender/cat_server_fit.py -- [--nopreview]
 ```
 
-With no ids it builds all 21 models. Each writes `Assets/Resources/Models/<id>.fbx`, previews
+With no ids it builds all 25 models (the 21 parts and the four caps). Each writes `Assets/Resources/Models/<id>.fbx`, previews
 `Logs/ModelPreviews/<id>_<n>.png` (0–1 Workbench, the rest Cycles) and `Logs/ModelPreviews/<id>_report.txt` (every mesh
 and anchor, the bounds and the frame). Textures: `cat_server_cards.png` (card labels, logos, silkscreen, bracket legends,
 the supercap label), `cat_server_rack.png` (logos, rating labels, port numbers, keyboard legends, the KVM screen, drive
@@ -230,6 +234,73 @@ code is `datacenter_server.py`'s own. New anchor kinds:
   `A_ARM_1@A_ARM_0` (the inner arm, `hinge=y` at the elbow) and `A_MOUNT_INNER_0@A_ARM_1@A_ARM_0` (the plate that clips on the inner rail member's
   rear end at z −0.660, beside the chassis). Closed (server in), the arms lie folded behind the server between
   z −0.694 and −0.766.
+
+## Unboxing: caps, films and papers (retrofit)
+
+Added after the owner's "The unboxing on every part" rule (`docs/tasks/catalog/README.md`). Only anchors and the
+four cap models are new; every changed FBX was proven with `extras_compare.py` against the committed file.
+
+**Cap models** (`cat_server_unbox.py`, the `extras_caps.py` convention: local +Z = the pull-off direction, origin =
+the seat; `A_HIT_0` meta `remove=+z,travel=..,blocks=..`, `A_GRIP_0` at the tab):
+
+| Cap | What | `A_HIT_0` meta |
+|---|---|---|
+| `cap_sfp` | black rubber dust plug: a hollow insert 12 mm into the cage (0.1 mm clearance), a head on the gasket lip, a ribbed pull tab | `remove=+z,travel=0.012,port=sfp,blocks=plug` |
+| `cap_qsfp` | the same for a QSFP28 cage, 14 mm insert | `remove=+z,travel=0.014,port=qsfp,blocks=plug` |
+| `cap_pcie4` | clear U-channel over a 39 mm x4 edge (`cap_pcie16`'s design), key rib in the notch, pull tab at the far end | `remove=+z,travel=0.0015,part=card,blocks=install,edge=0.039,lanes=4` |
+| `cap_pcie8` | the same for a 56 mm x8 edge | `... edge=0.056,lanes=8` |
+
+The x16 card takes the existing `cap_pcie16`: the card's edge is the GPU contract's x16 edge.
+
+**Where the caps sit** (parent, local position, forward / up in the parent's axes):
+
+| Model | Cap | Parent | Pose |
+|---|---|---|---|
+| every card | `cap_pcie4` (350t2), `cap_pcie8` (710da2, strand6_25g, both Broadline cards), `cap_pcie16` (strand6_100g) | the card root | (0, 0, 0), fwd (0, 0, −1), up (0, 1, 0), as `cap_pcie16` on a GPU |
+| `nic_linkwave_710da2`, `nic_melnet_strand6_25g` | `cap_sfp` ×2 | `A_PORT_SFP_0..1` | identity |
+| `nic_melnet_strand6_100g` | `cap_qsfp` ×2 | `A_PORT_QSFP_0..1` | identity |
+| `srv_linkwave_ls4804x` | `cap_sfp` ×4 | `A_PORT_SFP_0..3` | identity |
+| `srv_linkwave_ls1600x` | `cap_sfp` ×16 | `A_PORT_SFP_0..15` | identity (the bottom row's anchors have +Y down, so the plug's tab follows the cage) |
+| `switch_24` (task 01, unchanged) | `cap_sfp` ×4 | `A_PORT_SFP_0..3` | identity |
+
+**Films** (`A_FILM_<NAME>_n`: XY = the film, +Z out, size = w × h × 0.1 mm, meta `film=clear,peel=..,tab=..`):
+
+| Model | Films |
+|---|---|
+| `srv_strata_sg840_4u`, `srv_strata_sr224_2u` | `A_FILM_EAR_0/1` on the glossy control-panel covers of the ears |
+| `srv_strata_kvm_1u` | `A_FILM_SCREEN_0@A_LID_0@A_DRAWER_0` on the LCD (0.414 × 0.235) |
+| `server_1u` | `A_FILM_EAR_0/1` |
+| `server_2u` | `A_FILM_EAR_0/1`, `A_FILM_BEZEL_0@A_BEZEL_0` (rides with the bezel) |
+| `ups_2u`, `ups_tower` | `A_FILM_SCREEN_0` (in the LCD's frame, sloped on the tower), `A_FILM_BEZEL_0@A_BEZEL_0` |
+| `pdu_0u` | `A_FILM_SCREEN_0` on the amp meter |
+
+The switches' fronts are painted steel and the cards have no glossy panels, so they have no films; nothing in the
+family carries a sticker.
+
+**The task-01 gear** gets its films through a small optional hook in `build_datacenter.py` (`unbox_hook()`: it
+wraps `datacenter_common.finish` so `cat_server_unbox.add_films(root, id)` adds the anchors just before export;
+models without films are untouched). Proof, all on Linux with the `bpy` module:
+
+- The old script's re-export against the committed FBX: **SAME** for all five (so the platform changes nothing).
+- The new script's export against the committed FBX:
+
+```text
+COMPARE server_1u: ONLY ADDED: A_FILM_EAR_0, A_FILM_EAR_1 (213 objects unchanged)
+COMPARE server_2u: ONLY ADDED: A_FILM_BEZEL_0@A_BEZEL_0, A_FILM_EAR_0, A_FILM_EAR_1 (276 objects unchanged)
+COMPARE ups_2u: ONLY ADDED: A_FILM_BEZEL_0@A_BEZEL_0, A_FILM_SCREEN_0 (60 objects unchanged)
+COMPARE ups_tower: ONLY ADDED: A_FILM_BEZEL_0@A_BEZEL_0, A_FILM_SCREEN_0 (51 objects unchanged)
+COMPARE pdu_0u: ONLY ADDED: A_FILM_SCREEN_0 (45 objects unchanged)
+COMPARE srv_strata_sg840_4u: ONLY ADDED: A_FILM_EAR_0, A_FILM_EAR_1 (292 objects unchanged)
+COMPARE srv_strata_sr224_2u: ONLY ADDED: A_FILM_EAR_0, A_FILM_EAR_1 (363 objects unchanged)
+COMPARE srv_strata_kvm_1u: ONLY ADDED: A_FILM_SCREEN_0@A_LID_0@A_DRAWER_0 (41 objects unchanged)
+```
+
+Only the FBX files and their `_report.txt` (anchor lines added) were committed; their previews are unchanged and were
+not re-rendered. `datacenter_fit.py` re-run: **FIT TOTAL: OK** (rack_42u 12 devices, rack_12u_open 4).
+`cat_server_fit.py` re-run: **FIT TOTAL: OK**.
+
+**Catalogue JSON:** every entry of `docs/catalog/server.json` now has `unbox` (films, caps with their anchors and
+`blocks`, stickers), `docs` (a quick-start sheet and a warranty card on every part; plus a manual, driver disc or safety sheet where the real product has one) and 4–8 `doc_notes`.
 
 ## The cards
 
@@ -441,6 +512,8 @@ Frame: the card's `A_BRACKET_0` pose. Same anchors for all six: `A_SCREW_PH2_0`,
 | `A_BUTTON_ID_0` | (0.2291, 0.1673, 0.0302) | +z / +y | 0.00900,0.00900,0.00600 | press=-z_local,travel=0.0010,fn=identify |
 | `A_BUTTON_POWER_0` | (-0.2291, 0.1673, 0.0302) | +z / +y | 0.00980,0.00980,0.00600 | press=-z_local,travel=0.0012,fn=power,hold=4 |
 | `A_FAN_0..9 (10)` | (-0.172, 0.0474, -0.32) … (0.172, 0.1315, -0.32) | +z / +y | 0.08000,0.08000,0.03800 | axis=z,spin=1,rpm=11000,hotswap=1,pull=+y … axis=z,spin=1,rpm=11000,hotswap=1,pull=+y |
+| `A_FILM_EAR_0` | (-0.2291, 0.0889, 0.0301) | +z / +y | 0.02270,0.17530,0.00010 | film=clear,peel=-y,tab=-x+y |
+| `A_FILM_EAR_1` | (0.2291, 0.0889, 0.0301) | +z / +y | 0.02270,0.17530,0.00010 | film=clear,peel=-y,tab=+x+y |
 | `A_HIT_0` | (-0, 0.0889, -0.32) | +z / +y | 0.43400,0.17690,0.70000 |  |
 | `A_HIT_1` | (-0.2291, 0.0889, 0.015) | +z / +y | 0.02430,0.17690,0.03000 |  |
 | `A_HIT_2` | (0.2291, 0.0889, 0.015) | +z / +y | 0.02430,0.17690,0.03000 |  |
@@ -498,6 +571,8 @@ Moving pieces: `bay_n@A_BAY_n#alu` ×4, `bay_n@A_BAY_n#black_plastic` ×4, `bay_
 | `A_BUTTON_ID_0` | (0.2291, 0.0781, 0.0302) | +z / +y | 0.00900,0.00900,0.00600 | press=-z_local,travel=0.0010,fn=identify |
 | `A_BUTTON_POWER_0` | (-0.2291, 0.0781, 0.0302) | +z / +y | 0.00980,0.00980,0.00600 | press=-z_local,travel=0.0012,fn=power,hold=4 |
 | `A_FAN_0..5 (6)` | (-0.1683, 0.0322, -0.134) … (0.1683, 0.0322, -0.134) | +z / +y | 0.06000,0.06000,0.03800 | axis=z,spin=1,rpm=6500,hotswap=1,pull=+y … axis=z,spin=1,rpm=6500,hotswap=1,pull=+y |
+| `A_FILM_EAR_0` | (-0.2291, 0.0445, 0.0301) | +z / +y | 0.02270,0.08570,0.00010 | film=clear,peel=-y,tab=-x+y |
+| `A_FILM_EAR_1` | (0.2291, 0.0445, 0.0301) | +z / +y | 0.02270,0.08570,0.00010 | film=clear,peel=-y,tab=+x+y |
 | `A_HIT_0` | (-0, 0.0445, -0.32) | +z / +y | 0.43400,0.08730,0.70000 |  |
 | `A_HIT_1` | (-0.2291, 0.0445, 0.015) | +z / +y | 0.02430,0.08730,0.03000 |  |
 | `A_HIT_2` | (0.2291, 0.0445, 0.015) | +z / +y | 0.02430,0.08730,0.03000 |  |
@@ -689,6 +764,7 @@ Moving pieces: `arm_n@A_ARM_n#black_plastic`, `arm_n@A_ARM_n#nickel`, `arm_n@A_A
 |---|---|---|---|---|
 | `A_BUTTON_LCD_0@A_DRAWER_0` | (0.09, 0.0304, 0.0202) | +z / +y | 0.00900,0.00900,0.00600 | press=-z_local,travel=0.0010,fn=lcd_power |
 | `A_DRAWER_0` | (-0, 0.0224, 0.02) | +z / +y | 0.43600,0.04360,0.52000 | pull=+z,dist=0.450,latch=front_tabs,stop=1 |
+| `A_FILM_SCREEN_0@A_LID_0@A_DRAWER_0` | (-0, 0.0233, -0.112) | -y / +z | 0.41400,0.23500,0.00010 | film=clear,peel=-x,tab=+x+y,on=lcd |
 | `A_HIT_0` | (-0, 0.0222, -0.29) | +z / +y | 0.43600,0.04360,0.62000 |  |
 | `A_HIT_1` | (-0, 0.0222, 0.001) | +z / +y | 0.48260,0.04360,0.00400 |  |
 | `A_LED_POWER_0@A_DRAWER_0` | (0.082, 0.0304, 0.0202) | +z / +y | 0.00220,0.00220,0.00300 | colour=green,fn=power |
