@@ -43,6 +43,32 @@ Looks, by brand (each card has its own overlay, skirts, logo plate, trim and bac
 The backplates have flow-through windows past the PCB end (slats, hex or an open window, with the fin stack grown up
 to the backplate behind them) where the real card has one, the brand print and the serial label.
 
+## Unboxing (films, caps, papers)
+Every card carries the anchors for its protective bits (`docs/tasks/catalog/README.md`, "The unboxing on every part").
+They are listed per card in `docs/catalog/gpus.json` (`unbox`, `docs`, `doc_notes`).
+
+| anchor | on | frame, meta |
+|---|---|---|
+| `A_FILM_BACKPLATE_0` | every card: the backplate | as rx66/77/88 (meta `film=clear,peel_from=+x,...`, kept as the sibling contract) |
+| `A_FILM_SHROUD_0` | every card: the top-edge logo plate | as rx66/77/88 (`peel_from=-x`) |
+| `A_FILM_HUB_<n>@A_FAN_<n>` | every fan hub sticker (desktop cards) | an anchor of the rotor, so it turns with it; +Z = the fan's front (-y); size = the sticker disc (0.328 x fan diameter); `film=clear,shape=disc,on=hub_sticker,peel=+y,tab=+y` |
+| `A_FILM_RGB_0`, `A_FILM_RGB_1` | the face ARGB light bars: 5080 Paladin (bar and slash), 9070 XT Flare+ (bar) | on the bar, +Z = -y; `peel=+x` / `-x` |
+| `A_FILM_FACE_0` | the colour shroud panel of the data-centre cards | on the panel, +Z = -y; `peel=-x` |
+
+Caps (separate models, by contract, not anchors on the card): `cap_pcie16` at the GPU origin (`blocks=install`),
+`cap_dp` at `A_PORT_DP_0..2` and `cap_hdmi` at `A_PORT_HDMI_0` (`blocks=plug`) on every desktop card. The data-centre
+cards have films only (no display ports). The optional `A_CAP_POWER_0` is not added (no power-socket cap model yet).
+No stickers on the cards.
+
+Papers: desktop cards `guide`, `driver`, `sticker` (the case badge); data-centre cards `guide`, `driver`, `safety`.
+The `doc_notes` give the slot (top x16, latch), "remove the PCIe cap", the port dust caps, the power cables, the
+recommended PSU, "the monitor goes into the graphics card", the slots and length needed and the driver step (the
+data-centre cards: server airflow only, no display outputs).
+
+Proof: all 15 FBX re-exported with the film anchors and compared with `extras_compare.py` against the previous FBX
+of this branch: **ONLY ADDED** on every card (the hub films, and the RGB / face films where listed). The textures
+were re-rendered too; those rewrites were dropped from the commit (no change to the art).
+
 ## Contract and anchor comparison (desktop cards)
 
 Same frame and anchor kinds as gpu_rx66 / rx77 / rx88: the PCIe edge at the origin, the full-height bracket at

@@ -207,6 +207,25 @@ def ov_sw(m, n, cell, pts, d=0.0012, y=None, holes=()):
     m.add(n.TEX, pb.g_slab(pts, list(holes), d, y - d, uv_rect=n.at.uv(cell)), G.M_XZ)
 
 
+def face_film(m, n, name, cx, cz, w, h, y, on, peel="-x"):
+    """A clear film on a glossy or RGB panel of the fan-side face: its plane in (x, z) at y, +Z (forward) = -y."""
+    m.anchor(name, (cx, y - 0.00015, cz), (w, h, 0.001), forward=(0, -1, 0), up=(0, 0, 1),
+             meta=f"film=clear,on={on},peel={peel},tab={peel}")
+
+
+def hub_films(m, n_fans, fan_d, fan_thk=0.013):
+    """A_FILM_HUB_<n>: the film disc on every fan hub sticker, an anchor of the rotor (A_FILM_HUB_n@A_FAN_n), on the
+    sticker (parts_fan: radius 0.164 x diameter, 0.31 mm behind the rotor's front face)."""
+    fans = {a.name: a for a in m.anchors if a.name.startswith("A_FAN_")}
+    for i in range(n_fans):
+        a = fans[f"A_FAN_{i}"]
+        p, f, u = pb.unity_pose(a)
+        d = 2 * 0.164 * fan_d
+        pos = p + f * (fan_thk / 2 - 0.0002 + 0.00015)
+        m.anchor(f"A_FILM_HUB_{i}", tuple(pos), (d, d, 0.001), forward=tuple(f), up=tuple(u), parent=a,
+                 meta="film=clear,shape=disc,on=hub_sticker,peel=+y,tab=+y")
+
+
 def ring_holes(n, grow=0.0040):
     """Holes round the fan rings, kept 1 mm apart (overlapping holes break the tessellation)."""
     if len(n.fxs) > 1:
@@ -436,6 +455,7 @@ def zenith_flare():
         x0 = xa + 0.006
         bar = [(x0, 0.010), (x0 + 0.006, 0.010), (x0 + 0.018, H - 0.010), (x0 + 0.012, H - 0.010)]
         ov(m, n, "rgb", bar, 0.0020, y=n.yF - 0.0012, bevel=0.0)
+        face_film(m, n, "A_FILM_RGB_0", x0 + 0.009, H / 2, 0.018, H - 0.020, n.yF - 0.0032, "rgb_bar", "+x")
 
     def skirts(m, n):
         xa, xb, yF = n.xa, n.xb, n.yF
@@ -516,9 +536,12 @@ def aegis_paladin():
         ov(m, n, "black_plastic", frame_pts, 0.0020, y=n.yF - 0.0014)
         bar = [(x0 + 0.006, 0.010), (x0 + 0.014, 0.010), (x0 + 0.039, H - 0.010), (x0 + 0.031, H - 0.010)]
         ov(m, n, "rgb", bar, 0.0010, y=n.yF - 0.0034, bevel=0.0)
+        face_film(m, n, "A_FILM_RGB_0", x0 + 0.0225, H / 2, 0.033, H - 0.020, n.yF - 0.0044, "rgb_bar", "+x")
         # bracket end: a second short light slash
         bar2 = [(xb - 0.016, H * 0.62), (xb - 0.010, H * 0.62), (xb - 0.010, H - 0.012), (xb - 0.022, H - 0.012)]
         ov(m, n, "rgb", bar2, 0.0010, y=n.yF - 0.0014, bevel=0.0)
+        face_film(m, n, "A_FILM_RGB_1", xb - 0.016, (H * 0.62 + H - 0.012) / 2, 0.012, H * 0.38 - 0.012, n.yF - 0.0024,
+                  "rgb_slash", "-x")
 
     def skirts(m, n):
         xa, xb, yF = n.xa, n.xb, n.yF
@@ -799,6 +822,8 @@ def dc_passive(face_cell, end_tag, accent_cell=None):
         panel = pb.chamfer2((xa + 0.030 + xb - 0.010) / 2, (0.002 + H) / 2, (xb - 0.010) - (xa + 0.030), H - 0.010,
                             (0.010, 0.0, 0.0, 0.010))
         ov_sw(m, n, face_cell, panel, 0.0012)
+        face_film(m, n, "A_FILM_FACE_0", (xa + 0.030 + xb - 0.010) / 2, (0.002 + H) / 2, (xb - 0.010) - (xa + 0.030),
+                  H - 0.010, n.yF - 0.0012, "shroud_panel", "-x")
         # a black band at the bracket end, ribs on the panel
         ov(m, n, "paint_black", pb.rect2(xb - 0.0060, (0.002 + H) / 2, 0.0090, H - 0.010), 0.0012)
         for k in range(5):
@@ -995,6 +1020,20 @@ CARDS["gpu_voltra_mi210"] = card(
 
 for _pid, _s in CARDS.items():
     G.SPECS[_pid] = _s
+
+
+_finish = pb.Model.finish
+
+
+def _finish_with_unbox(self, *a, **k):
+    """Adds the hub films once build_gpu has made the fans (anchors only; nothing else changes)."""
+    s = CARDS.get(self.id)
+    if s and s["fans"]:
+        hub_films(self, s["fans"], s["fan_d"])
+    return _finish(self, *a, **k)
+
+
+pb.Model.finish = _finish_with_unbox
 
 
 def build(pid):

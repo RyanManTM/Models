@@ -23,6 +23,8 @@
    A_FAN_0: pos=(-0.0661,-0.0343,0.0590) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.08600,0.08600,0.01300 meta=axis=z,spin=-1,rpm=2400
    A_FAN_1: pos=(0.0356,-0.0343,0.0590) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.08600,0.08600,0.01300 meta=axis=z,spin=-1,rpm=2400
    A_FILM_BACKPLATE_0: pos=(-0.0158,0.0029,0.0595) fwd=(0.00,1.00,-0.00) up=(-0.00,0.00,1.00) size=0.21150,0.10800,0.00100 meta=film=clear,peel_from=+x,chamfer=0.004@+x,screws=proud
+   A_FILM_HUB_0@A_FAN_0: pos=(-0.0661,-0.0408,0.0590) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.02821,0.02821,0.00100 meta=film=clear,shape=disc,on=hub_sticker,peel=+y,tab=+y
+   A_FILM_HUB_1@A_FAN_1: pos=(0.0356,-0.0408,0.0590) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.02821,0.02821,0.00100 meta=film=clear,shape=disc,on=hub_sticker,peel=+y,tab=+y
    A_FILM_SHROUD_0: pos=(-0.0018,-0.0358,0.1164) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.07360,0.01110,0.00100 meta=film=clear,on=logo_plate,peel_from=-x
    A_HIT_0: pos=(-0.0150,-0.0196,0.0580) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.22000,0.04470,0.11600 meta=
    A_HIT_1: pos=(0.1010,-0.0166,0.0465) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.01100,0.03920,0.12000 meta=
@@ -60,6 +62,8 @@
    A_FAN_0: pos=(-0.0736,-0.0423,0.0625) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.09000,0.09000,0.01300 meta=axis=z,spin=-1,rpm=2200
    A_FAN_1: pos=(0.0331,-0.0423,0.0625) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.09000,0.09000,0.01300 meta=axis=z,spin=-1,rpm=2200
    A_FILM_BACKPLATE_0: pos=(-0.0207,0.0029,0.0630) fwd=(0.00,1.00,-0.00) up=(-0.00,0.00,1.00) size=0.22150,0.11500,0.00100 meta=film=clear,peel_from=+x,chamfer=0.004@+x,screws=proud
+   A_FILM_HUB_0@A_FAN_0: pos=(-0.0736,-0.0488,0.0625) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.02952,0.02952,0.00100 meta=film=clear,shape=disc,on=hub_sticker,peel=+y,tab=+y
+   A_FILM_HUB_1@A_FAN_1: pos=(0.0331,-0.0488,0.0625) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.02952,0.02952,0.00100 meta=film=clear,shape=disc,on=hub_sticker,peel=+y,tab=+y
    A_FILM_SHROUD_0: pos=(-0.0085,-0.0420,0.1234) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.07960,0.01160,0.00100 meta=film=clear,on=logo_plate,peel_from=-x
    A_HIT_0: pos=(-0.0200,-0.0236,0.0615) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.23000,0.05270,0.12300 meta=
    A_HIT_1: pos=(0.1010,-0.0166,0.0465) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.01100,0.03920,0.12000 meta=
@@ -97,6 +101,9 @@
    A_FAN_1: pos=(-0.0492,-0.0423,0.0585) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.08000,0.08000,0.01300 meta=axis=z,spin=-1,rpm=1900
    A_FAN_2: pos=(0.0413,-0.0423,0.0585) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.08000,0.08000,0.01300 meta=axis=z,spin=-1,rpm=1900
    A_FILM_BACKPLATE_0: pos=(-0.0498,0.0029,0.0590) fwd=(0.00,1.00,-0.00) up=(-0.00,0.00,1.00) size=0.27950,0.10700,0.00100 meta=film=clear,peel_from=+x,chamfer=0.004@+x,screws=proud
+   A_FILM_HUB_0@A_FAN_0: pos=(-0.1398,-0.0488,0.0585) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.02624,0.02624,0.00100 meta=film=clear,shape=disc,on=hub_sticker,peel=+y,tab=+y
+   A_FILM_HUB_1@A_FAN_1: pos=(-0.0492,-0.0488,0.0585) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.02624,0.02624,0.00100 meta=film=clear,shape=disc,on=hub_sticker,peel=+y,tab=+y
+   A_FILM_HUB_2@A_FAN_2: pos=(0.0413,-0.0488,0.0585) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.02624,0.02624,0.00100 meta=film=clear,shape=disc,on=hub_sticker,peel=+y,tab=+y
    A_FILM_SHROUD_0: pos=(-0.0260,-0.0400,0.1154) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.08760,0.01160,0.00100 meta=film=clear,on=logo_plate,peel_from=-x
    A_HIT_0: pos=(-0.0490,-0.0236,0.0575) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.28800,0.05270,0.11500 meta=
    A_HIT_1: pos=(0.1010,-0.0166,0.0465) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.01100,0.03920,0.12000 meta=
@@ -137,6 +144,9 @@
    A_FAN_1: pos=(-0.0573,-0.0423,0.0640) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.08400,0.08400,0.01300 meta=axis=z,spin=-1,rpm=1900
    A_FAN_2: pos=(0.0386,-0.0423,0.0640) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.08400,0.08400,0.01300 meta=axis=z,spin=-1,rpm=1900
    A_FILM_BACKPLATE_0: pos=(-0.0578,0.0029,0.0645) fwd=(0.00,1.00,-0.00) up=(-0.00,0.00,1.00) size=0.29550,0.11800,0.00100 meta=film=clear,peel_from=+x,chamfer=0.004@+x,screws=proud
+   A_FILM_HUB_0@A_FAN_0: pos=(-0.1531,-0.0488,0.0640) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.02755,0.02755,0.00100 meta=film=clear,shape=disc,on=hub_sticker,peel=+y,tab=+y
+   A_FILM_HUB_1@A_FAN_1: pos=(-0.0573,-0.0488,0.0640) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.02755,0.02755,0.00100 meta=film=clear,shape=disc,on=hub_sticker,peel=+y,tab=+y
+   A_FILM_HUB_2@A_FAN_2: pos=(0.0386,-0.0488,0.0640) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.02755,0.02755,0.00100 meta=film=clear,shape=disc,on=hub_sticker,peel=+y,tab=+y
    A_FILM_SHROUD_0: pos=(-0.0205,-0.0422,0.1264) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.08760,0.01210,0.00100 meta=film=clear,on=logo_plate,peel_from=-x
    A_HIT_0: pos=(-0.0570,-0.0236,0.0630) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.30400,0.05270,0.12600 meta=
    A_HIT_1: pos=(0.1010,-0.0166,0.0465) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.01100,0.03920,0.12000 meta=
@@ -176,6 +186,11 @@
    A_FAN_1: pos=(-0.0793,-0.0623,0.0755) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.09600,0.09600,0.01300 meta=axis=z,spin=-1,rpm=1800
    A_FAN_2: pos=(0.0312,-0.0623,0.0755) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.09600,0.09600,0.01300 meta=axis=z,spin=-1,rpm=1800
    A_FILM_BACKPLATE_0: pos=(-0.0798,0.0029,0.0760) fwd=(0.00,1.00,-0.00) up=(-0.00,0.00,1.00) size=0.33950,0.14100,0.00100 meta=film=clear,peel_from=+x,chamfer=0.004@+x,screws=proud
+   A_FILM_HUB_0@A_FAN_0: pos=(-0.1898,-0.0688,0.0755) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.03149,0.03149,0.00100 meta=film=clear,shape=disc,on=hub_sticker,peel=+y,tab=+y
+   A_FILM_HUB_1@A_FAN_1: pos=(-0.0793,-0.0688,0.0755) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.03149,0.03149,0.00100 meta=film=clear,shape=disc,on=hub_sticker,peel=+y,tab=+y
+   A_FILM_HUB_2@A_FAN_2: pos=(0.0312,-0.0688,0.0755) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.03149,0.03149,0.00100 meta=film=clear,shape=disc,on=hub_sticker,peel=+y,tab=+y
+   A_FILM_RGB_0: pos=(-0.2225,-0.0746,0.0745) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.03300,0.12900,0.00100 meta=film=clear,on=rgb_bar,peel=+x,tab=+x
+   A_FILM_RGB_1: pos=(0.0790,-0.0725,0.1147) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.01200,0.04462,0.00100 meta=film=clear,on=rgb_slash,peel=-x,tab=-x
    A_FILM_SHROUD_0: pos=(-0.0372,-0.0550,0.1494) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.10960,0.01460,0.00100 meta=film=clear,on=logo_plate,peel_from=-x
    A_HIT_0: pos=(-0.0790,-0.0336,0.0745) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.34800,0.07270,0.14900 meta=
    A_HIT_1: pos=(0.1010,-0.0166,0.0465) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.01100,0.03920,0.12000 meta=
@@ -213,6 +228,8 @@
    A_FAN_0: pos=(-0.1291,-0.0323,0.0695) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.11000,0.11000,0.01300 meta=axis=z,spin=-1,rpm=1600
    A_FAN_1: pos=(0.0146,-0.0323,0.0695) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.11000,0.11000,0.01300 meta=axis=z,spin=-1,rpm=1600
    A_FILM_BACKPLATE_0: pos=(-0.0578,0.0029,0.0700) fwd=(0.00,1.00,-0.00) up=(-0.00,0.00,1.00) size=0.29550,0.12900,0.00100 meta=film=clear,peel_from=+x,chamfer=0.004@+x,screws=proud
+   A_FILM_HUB_0@A_FAN_0: pos=(-0.1291,-0.0388,0.0695) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.03608,0.03608,0.00100 meta=film=clear,shape=disc,on=hub_sticker,peel=+y,tab=+y
+   A_FILM_HUB_1@A_FAN_1: pos=(0.0146,-0.0388,0.0695) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.03608,0.03608,0.00100 meta=film=clear,shape=disc,on=hub_sticker,peel=+y,tab=+y
    A_FILM_SHROUD_0: pos=(-0.0418,-0.0250,0.1374) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.09160,0.01260,0.00100 meta=film=clear,on=logo_plate,peel_from=-x
    A_HIT_0: pos=(-0.0570,-0.0187,0.0685) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.30400,0.04270,0.13700 meta=
    A_HIT_1: pos=(0.1010,-0.0166,0.0465) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.01100,0.03920,0.12000 meta=
@@ -251,6 +268,9 @@
    A_FAN_1: pos=(-0.0847,-0.0723,0.0760) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.10000,0.10000,0.01300 meta=axis=z,spin=-1,rpm=1700
    A_FAN_2: pos=(0.0294,-0.0723,0.0760) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.10000,0.10000,0.01300 meta=axis=z,spin=-1,rpm=1700
    A_FILM_BACKPLATE_0: pos=(-0.0852,0.0029,0.0765) fwd=(0.00,1.00,-0.00) up=(-0.00,0.00,1.00) size=0.35050,0.14200,0.00100 meta=film=clear,peel_from=+x,chamfer=0.004@+x,screws=proud
+   A_FILM_HUB_0@A_FAN_0: pos=(-0.1989,-0.0787,0.0760) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.03280,0.03280,0.00100 meta=film=clear,shape=disc,on=hub_sticker,peel=+y,tab=+y
+   A_FILM_HUB_1@A_FAN_1: pos=(-0.0847,-0.0787,0.0760) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.03280,0.03280,0.00100 meta=film=clear,shape=disc,on=hub_sticker,peel=+y,tab=+y
+   A_FILM_HUB_2@A_FAN_2: pos=(0.0294,-0.0787,0.0760) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.03280,0.03280,0.00100 meta=film=clear,shape=disc,on=hub_sticker,peel=+y,tab=+y
    A_FILM_SHROUD_0: pos=(-0.0486,-0.0600,0.1504) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.11160,0.01460,0.00100 meta=film=clear,on=logo_plate,peel_from=-x
    A_HIT_0: pos=(-0.0845,-0.0386,0.0750) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.35900,0.08270,0.15000 meta=
    A_HIT_1: pos=(0.1010,-0.0166,0.0465) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.01100,0.03920,0.12000 meta=
@@ -287,6 +307,8 @@
    A_FAN_0: pos=(-0.0376,-0.0323,0.0355) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.05600,0.05600,0.01300 meta=axis=z,spin=-1,rpm=3200
    A_FAN_1: pos=(0.0451,-0.0323,0.0355) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.05600,0.05600,0.01300 meta=axis=z,spin=-1,rpm=3200
    A_FILM_BACKPLATE_0: pos=(0.0033,0.0029,0.0360) fwd=(0.00,1.00,-0.00) up=(-0.00,0.00,1.00) size=0.17350,0.06100,0.00100 meta=film=clear,peel_from=+x,chamfer=0.004@+x,screws=proud
+   A_FILM_HUB_0@A_FAN_0: pos=(-0.0376,-0.0388,0.0355) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.01837,0.01837,0.00100 meta=film=clear,shape=disc,on=hub_sticker,peel=+y,tab=+y
+   A_FILM_HUB_1@A_FAN_1: pos=(0.0451,-0.0388,0.0355) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.01837,0.01837,0.00100 meta=film=clear,shape=disc,on=hub_sticker,peel=+y,tab=+y
    A_FILM_SHROUD_0: pos=(0.0040,-0.0320,0.0694) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.06160,0.00910,0.00100 meta=film=clear,on=logo_plate,peel_from=-x
    A_HIT_0: pos=(0.0040,-0.0187,0.0345) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.18200,0.04270,0.06900 meta=
    A_HIT_1: pos=(0.1010,-0.0166,0.0465) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.01100,0.03920,0.12000 meta=
@@ -324,6 +346,8 @@
    A_FAN_0: pos=(-0.0811,-0.0353,0.0610) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.09200,0.09200,0.01300 meta=axis=z,spin=-1,rpm=2200
    A_FAN_1: pos=(0.0306,-0.0353,0.0610) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.09200,0.09200,0.01300 meta=axis=z,spin=-1,rpm=2200
    A_FILM_BACKPLATE_0: pos=(-0.0258,0.0029,0.0615) fwd=(0.00,1.00,-0.00) up=(-0.00,0.00,1.00) size=0.23150,0.11200,0.00100 meta=film=clear,peel_from=+x,chamfer=0.004@+x,screws=proud
+   A_FILM_HUB_0@A_FAN_0: pos=(-0.0811,-0.0418,0.0610) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.03018,0.03018,0.00100 meta=film=clear,shape=disc,on=hub_sticker,peel=+y,tab=+y
+   A_FILM_HUB_1@A_FAN_1: pos=(0.0306,-0.0418,0.0610) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.03018,0.03018,0.00100 meta=film=clear,shape=disc,on=hub_sticker,peel=+y,tab=+y
    A_FILM_SHROUD_0: pos=(-0.0010,-0.0360,0.1204) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.07560,0.01110,0.00100 meta=film=clear,on=logo_plate,peel_from=-x
    A_HIT_0: pos=(-0.0250,-0.0202,0.0600) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.24000,0.04570,0.12000 meta=
    A_HIT_1: pos=(0.1010,-0.0166,0.0465) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.01100,0.03920,0.12000 meta=
@@ -360,6 +384,8 @@
    A_FAN_0: pos=(-0.0849,-0.0373,0.0610) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.09400,0.09400,0.01300 meta=axis=z,spin=-1,rpm=2200
    A_FAN_1: pos=(0.0294,-0.0373,0.0610) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.09400,0.09400,0.01300 meta=axis=z,spin=-1,rpm=2200
    A_FILM_BACKPLATE_0: pos=(-0.0282,0.0029,0.0615) fwd=(0.00,1.00,-0.00) up=(-0.00,0.00,1.00) size=0.23650,0.11200,0.00100 meta=film=clear,peel_from=+x,chamfer=0.004@+x,screws=proud
+   A_FILM_HUB_0@A_FAN_0: pos=(-0.0849,-0.0438,0.0610) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.03083,0.03083,0.00100 meta=film=clear,shape=disc,on=hub_sticker,peel=+y,tab=+y
+   A_FILM_HUB_1@A_FAN_1: pos=(0.0294,-0.0438,0.0610) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.03083,0.03083,0.00100 meta=film=clear,shape=disc,on=hub_sticker,peel=+y,tab=+y
    A_FILM_SHROUD_0: pos=(-0.0153,-0.0382,0.1204) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.07560,0.01110,0.00100 meta=film=clear,on=logo_plate,peel_from=-x
    A_HIT_0: pos=(-0.0275,-0.0212,0.0600) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.24500,0.04770,0.12000 meta=
    A_HIT_1: pos=(0.1010,-0.0166,0.0465) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.01100,0.03920,0.12000 meta=
@@ -399,6 +425,10 @@
    A_FAN_1: pos=(-0.0653,-0.0543,0.0650) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.09000,0.09000,0.01300 meta=axis=z,spin=-1,rpm=1900
    A_FAN_2: pos=(0.0359,-0.0543,0.0650) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.09000,0.09000,0.01300 meta=axis=z,spin=-1,rpm=1900
    A_FILM_BACKPLATE_0: pos=(-0.0658,0.0029,0.0655) fwd=(0.00,1.00,-0.00) up=(-0.00,0.00,1.00) size=0.31150,0.12000,0.00100 meta=film=clear,peel_from=+x,chamfer=0.004@+x,screws=proud
+   A_FILM_HUB_0@A_FAN_0: pos=(-0.1664,-0.0608,0.0650) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.02952,0.02952,0.00100 meta=film=clear,shape=disc,on=hub_sticker,peel=+y,tab=+y
+   A_FILM_HUB_1@A_FAN_1: pos=(-0.0653,-0.0608,0.0650) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.02952,0.02952,0.00100 meta=film=clear,shape=disc,on=hub_sticker,peel=+y,tab=+y
+   A_FILM_HUB_2@A_FAN_2: pos=(0.0359,-0.0608,0.0650) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.02952,0.02952,0.00100 meta=film=clear,shape=disc,on=hub_sticker,peel=+y,tab=+y
+   A_FILM_RGB_0: pos=(-0.2100,-0.0654,0.0640) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.01800,0.10800,0.00100 meta=film=clear,on=rgb_bar,peel=+x,tab=+x
    A_FILM_SHROUD_0: pos=(-0.0586,-0.0520,0.1284) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.10160,0.01360,0.00100 meta=film=clear,on=logo_plate,peel_from=-x
    A_HIT_0: pos=(-0.0650,-0.0297,0.0640) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.32000,0.06470,0.12800 meta=
    A_HIT_1: pos=(0.1010,-0.0166,0.0465) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.01100,0.03920,0.12000 meta=
@@ -439,6 +469,9 @@
    A_FAN_1: pos=(-0.0487,-0.0433,0.0625) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.08000,0.08000,0.01300 meta=axis=z,spin=-1,rpm=1900
    A_FAN_2: pos=(0.0414,-0.0433,0.0625) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.08000,0.08000,0.01300 meta=axis=z,spin=-1,rpm=1900
    A_FILM_BACKPLATE_0: pos=(-0.0492,0.0029,0.0630) fwd=(0.00,1.00,-0.00) up=(-0.00,0.00,1.00) size=0.27850,0.11500,0.00100 meta=film=clear,peel_from=+x,chamfer=0.004@+x,screws=proud
+   A_FILM_HUB_0@A_FAN_0: pos=(-0.1389,-0.0498,0.0625) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.02624,0.02624,0.00100 meta=film=clear,shape=disc,on=hub_sticker,peel=+y,tab=+y
+   A_FILM_HUB_1@A_FAN_1: pos=(-0.0487,-0.0498,0.0625) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.02624,0.02624,0.00100 meta=film=clear,shape=disc,on=hub_sticker,peel=+y,tab=+y
+   A_FILM_HUB_2@A_FAN_2: pos=(0.0414,-0.0498,0.0625) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.02624,0.02624,0.00100 meta=film=clear,shape=disc,on=hub_sticker,peel=+y,tab=+y
    A_FILM_SHROUD_0: pos=(-0.0313,-0.0420,0.1234) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.08560,0.01160,0.00100 meta=film=clear,on=logo_plate,peel_from=-x
    A_HIT_0: pos=(-0.0485,-0.0242,0.0615) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.28700,0.05370,0.12300 meta=
    A_HIT_1: pos=(0.1010,-0.0166,0.0465) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.01100,0.03920,0.12000 meta=
@@ -475,6 +508,8 @@
    A_FAN_0: pos=(-0.1051,-0.0373,0.0585) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.09600,0.09600,0.01300 meta=axis=z,spin=-1,rpm=2000
    A_FAN_1: pos=(0.0226,-0.0373,0.0585) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.09600,0.09600,0.01300 meta=axis=z,spin=-1,rpm=2000
    A_FILM_BACKPLATE_0: pos=(-0.0417,0.0029,0.0590) fwd=(0.00,1.00,-0.00) up=(-0.00,0.00,1.00) size=0.26350,0.10700,0.00100 meta=film=clear,peel_from=+x,chamfer=0.004@+x,screws=proud
+   A_FILM_HUB_0@A_FAN_0: pos=(-0.1051,-0.0438,0.0585) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.03149,0.03149,0.00100 meta=film=clear,shape=disc,on=hub_sticker,peel=+y,tab=+y
+   A_FILM_HUB_1@A_FAN_1: pos=(0.0226,-0.0438,0.0585) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.03149,0.03149,0.00100 meta=film=clear,shape=disc,on=hub_sticker,peel=+y,tab=+y
    A_FILM_SHROUD_0: pos=(-0.0274,-0.0300,0.1154) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.08160,0.01160,0.00100 meta=film=clear,on=logo_plate,peel_from=-x
    A_HIT_0: pos=(-0.0410,-0.0212,0.0575) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.27200,0.04770,0.11500 meta=
    A_HIT_1: pos=(0.1010,-0.0166,0.0465) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.01100,0.03920,0.12000 meta=
@@ -503,6 +538,7 @@
    mesh gpu_verdia_t100_tex_gpu_verdia_t100#tex_gpu_verdia_t100: 40 tris
    TOTAL 30618 tris in 14 meshes
    A_FILM_BACKPLATE_0: pos=(-0.0397,0.0029,0.0570) fwd=(0.00,1.00,-0.00) up=(-0.00,0.00,1.00) size=0.25950,0.10300,0.00100 meta=film=clear,peel_from=+x,chamfer=0.004@+x,screws=proud
+   A_FILM_FACE_0: pos=(-0.0290,-0.0413,0.0565) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.22800,0.10100,0.00100 meta=film=clear,on=shroud_panel,peel=-x,tab=-x
    A_FILM_SHROUD_0: pos=(-0.0256,-0.0280,0.1114) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.09160,0.01260,0.00100 meta=film=clear,on=logo_plate,peel_from=-x
    A_HIT_0: pos=(-0.0390,-0.0187,0.0555) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.26800,0.04270,0.11100 meta=
    A_HIT_1: pos=(0.1010,-0.0166,0.0465) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.01100,0.03920,0.12000 meta=
@@ -527,6 +563,7 @@
    mesh gpu_voltra_mi210_tex_gpu_voltra_mi210#tex_gpu_voltra_mi210: 40 tris
    TOTAL 30416 tris in 14 meshes
    A_FILM_BACKPLATE_0: pos=(-0.0393,0.0029,0.0570) fwd=(0.00,1.00,-0.00) up=(-0.00,0.00,1.00) size=0.25850,0.10300,0.00100 meta=film=clear,peel_from=+x,chamfer=0.004@+x,screws=proud
+   A_FILM_FACE_0: pos=(-0.0285,-0.0413,0.0565) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.22700,0.10100,0.00100 meta=film=clear,on=shroud_panel,peel=-x,tab=-x
    A_FILM_SHROUD_0: pos=(-0.0251,-0.0280,0.1114) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.09160,0.01260,0.00100 meta=film=clear,on=logo_plate,peel_from=-x
    A_HIT_0: pos=(-0.0385,-0.0187,0.0555) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.26700,0.04270,0.11100 meta=
    A_HIT_1: pos=(0.1010,-0.0166,0.0465) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.01100,0.03920,0.12000 meta=
