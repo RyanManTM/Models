@@ -110,8 +110,7 @@ class Labels:
     """Small printed legends ("IPMI", "PSU 1", "24") as cells of one atlas region: each gets its own quad, so a
     legend never covers a port the way one big decal over a face would."""
 
-    def __init__(self, atlas, region, cw, ch, texts, fg=(0.86, 0.87, 0.89), bg=(0.035, 0.035, 0.04), font="arialbd.ttf",
-                 size=0.62):
+    def __init__(self, atlas, region, cw, ch, texts, fg=(0.86, 0.87, 0.89), bg=None, font="arialbd.ttf", size=0.62):
         self.atlas, self.region, self.cw, self.ch = atlas, region, cw, ch
         self.texts = list(dict.fromkeys(texts))
         self.fg, self.bg, self.font, self.size = fg, bg, font, size
@@ -126,8 +125,11 @@ class Labels:
         return x + (i % self.cols) * self.cw, y + h - (i // self.cols + 1) * self.ch
 
     def draw(self, art):
+        """bg=None leaves the cells transparent (alpha 0, black underneath): with alpha the legend reads as print
+        on the panel; drawn opaque it is a black box. The Art must then be made with bg=None."""
         x, y, w, h = self.atlas.reg[self.region]
-        art.rect(x, y, w, h, self.bg)
+        if self.bg is not None:
+            art.rect(x, y, w, h, self.bg)
         for t in self.texts:
             cx, cy = self.cell(t)
             art.text(t, cx + self.cw / 2, cy + self.ch / 2, self.ch * self.size, self.fg, self.font, align="CENTER",

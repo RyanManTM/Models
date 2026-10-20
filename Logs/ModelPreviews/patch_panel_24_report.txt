@@ -1,0 +1,65 @@
+patch_panel_24: 6232 triangles, 7 meshes
+  mesh patch_panel_24_black_plastic#black_plastic  tris=3892
+  mesh patch_panel_24_clear_plastic#clear_plastic  tris=12
+  mesh patch_panel_24_dark_plastic#dark_plastic  tris=672
+  mesh patch_panel_24_paint_black#paint_black  tris=1196
+  mesh patch_panel_24_steel#steel  tris=72
+  mesh patch_panel_24_tex_net_print#tex_net_print  tris=100
+  mesh patch_panel_24_white_plastic#white_plastic  tris=288
+  A_BAR_0 pos=(-0.0, 0.00543, -0.106) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.43000,0.01200,0.01200 meta=ties=13,pitch=0.033
+  A_HIT_0 pos=(-0.0, 0.02222, -0.012) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04360,0.03200 meta=
+  A_HIT_1 pos=(-0.0, 0.00642, -0.06) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.43000,0.01200,0.12000 meta=
+  A_PORT_ETH_0 pos=(0.20175, 0.02062, 0.0026) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=1,cat=6
+  A_PORT_ETH_1 pos=(0.18525, 0.02062, 0.0026) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=2,cat=6
+  A_PORT_ETH_10 pos=(0.02875, 0.02062, 0.0026) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=11,cat=6
+  A_PORT_ETH_11 pos=(0.01225, 0.02062, 0.0026) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=12,cat=6
+  A_PORT_ETH_12 pos=(-0.01225, 0.02062, 0.0026) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=13,cat=6
+  A_PORT_ETH_13 pos=(-0.02875, 0.02062, 0.0026) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=14,cat=6
+  A_PORT_ETH_14 pos=(-0.04525, 0.02062, 0.0026) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=15,cat=6
+  A_PORT_ETH_15 pos=(-0.06175, 0.02062, 0.0026) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=16,cat=6
+  A_PORT_ETH_16 pos=(-0.07825, 0.02062, 0.0026) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=17,cat=6
+  A_PORT_ETH_17 pos=(-0.09475, 0.02062, 0.0026) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=18,cat=6
+  A_PORT_ETH_18 pos=(-0.11925, 0.02062, 0.0026) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=19,cat=6
+  A_PORT_ETH_19 pos=(-0.13575, 0.02062, 0.0026) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=20,cat=6
+  A_PORT_ETH_2 pos=(0.16875, 0.02062, 0.0026) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=3,cat=6
+  A_PORT_ETH_20 pos=(-0.15225, 0.02062, 0.0026) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=21,cat=6
+  A_PORT_ETH_21 pos=(-0.16875, 0.02062, 0.0026) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=22,cat=6
+  A_PORT_ETH_22 pos=(-0.18525, 0.02062, 0.0026) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=23,cat=6
+  A_PORT_ETH_23 pos=(-0.20175, 0.02062, 0.0026) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=24,cat=6
+  A_PORT_ETH_3 pos=(0.15225, 0.02062, 0.0026) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=4,cat=6
+  A_PORT_ETH_4 pos=(0.13575, 0.02062, 0.0026) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=5,cat=6
+  A_PORT_ETH_5 pos=(0.11925, 0.02062, 0.0026) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=6,cat=6
+  A_PORT_ETH_6 pos=(0.09475, 0.02062, 0.0026) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=7,cat=6
+  A_PORT_ETH_7 pos=(0.07825, 0.02062, 0.0026) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=8,cat=6
+  A_PORT_ETH_8 pos=(0.06175, 0.02062, 0.0026) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=9,cat=6
+  A_PORT_ETH_9 pos=(0.04525, 0.02062, 0.0026) fwd=(0.0, -0.0, 1.0) up=(-0.0, -1.0, 0.0) size=0.01420,0.01250,0.02000 meta=depth=0.012,rj45=1,latch=+up,port=10,cat=6
+  A_PUNCH_0 pos=(0.20175, 0.01942, -0.0374) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.01400,0.01500,0.01200 meta=idc=110,wires=8,scheme=T568B,port=1
+  A_PUNCH_1 pos=(0.18525, 0.01942, -0.0374) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.01400,0.01500,0.01200 meta=idc=110,wires=8,scheme=T568B,port=2
+  A_PUNCH_10 pos=(0.02875, 0.01942, -0.0374) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.01400,0.01500,0.01200 meta=idc=110,wires=8,scheme=T568B,port=11
+  A_PUNCH_11 pos=(0.01225, 0.01942, -0.0374) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.01400,0.01500,0.01200 meta=idc=110,wires=8,scheme=T568B,port=12
+  A_PUNCH_12 pos=(-0.01225, 0.01942, -0.0374) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.01400,0.01500,0.01200 meta=idc=110,wires=8,scheme=T568B,port=13
+  A_PUNCH_13 pos=(-0.02875, 0.01942, -0.0374) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.01400,0.01500,0.01200 meta=idc=110,wires=8,scheme=T568B,port=14
+  A_PUNCH_14 pos=(-0.04525, 0.01942, -0.0374) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.01400,0.01500,0.01200 meta=idc=110,wires=8,scheme=T568B,port=15
+  A_PUNCH_15 pos=(-0.06175, 0.01942, -0.0374) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.01400,0.01500,0.01200 meta=idc=110,wires=8,scheme=T568B,port=16
+  A_PUNCH_16 pos=(-0.07825, 0.01942, -0.0374) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.01400,0.01500,0.01200 meta=idc=110,wires=8,scheme=T568B,port=17
+  A_PUNCH_17 pos=(-0.09475, 0.01942, -0.0374) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.01400,0.01500,0.01200 meta=idc=110,wires=8,scheme=T568B,port=18
+  A_PUNCH_18 pos=(-0.11925, 0.01942, -0.0374) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.01400,0.01500,0.01200 meta=idc=110,wires=8,scheme=T568B,port=19
+  A_PUNCH_19 pos=(-0.13575, 0.01942, -0.0374) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.01400,0.01500,0.01200 meta=idc=110,wires=8,scheme=T568B,port=20
+  A_PUNCH_2 pos=(0.16875, 0.01942, -0.0374) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.01400,0.01500,0.01200 meta=idc=110,wires=8,scheme=T568B,port=3
+  A_PUNCH_20 pos=(-0.15225, 0.01942, -0.0374) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.01400,0.01500,0.01200 meta=idc=110,wires=8,scheme=T568B,port=21
+  A_PUNCH_21 pos=(-0.16875, 0.01942, -0.0374) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.01400,0.01500,0.01200 meta=idc=110,wires=8,scheme=T568B,port=22
+  A_PUNCH_22 pos=(-0.18525, 0.01942, -0.0374) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.01400,0.01500,0.01200 meta=idc=110,wires=8,scheme=T568B,port=23
+  A_PUNCH_23 pos=(-0.20175, 0.01942, -0.0374) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.01400,0.01500,0.01200 meta=idc=110,wires=8,scheme=T568B,port=24
+  A_PUNCH_3 pos=(0.15225, 0.01942, -0.0374) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.01400,0.01500,0.01200 meta=idc=110,wires=8,scheme=T568B,port=4
+  A_PUNCH_4 pos=(0.13575, 0.01942, -0.0374) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.01400,0.01500,0.01200 meta=idc=110,wires=8,scheme=T568B,port=5
+  A_PUNCH_5 pos=(0.11925, 0.01942, -0.0374) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.01400,0.01500,0.01200 meta=idc=110,wires=8,scheme=T568B,port=6
+  A_PUNCH_6 pos=(0.09475, 0.01942, -0.0374) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.01400,0.01500,0.01200 meta=idc=110,wires=8,scheme=T568B,port=7
+  A_PUNCH_7 pos=(0.07825, 0.01942, -0.0374) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.01400,0.01500,0.01200 meta=idc=110,wires=8,scheme=T568B,port=8
+  A_PUNCH_8 pos=(0.06175, 0.01942, -0.0374) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.01400,0.01500,0.01200 meta=idc=110,wires=8,scheme=T568B,port=9
+  A_PUNCH_9 pos=(0.04525, 0.01942, -0.0374) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.01400,0.01500,0.01200 meta=idc=110,wires=8,scheme=T568B,port=10
+  A_SCREW_RACK_0 pos=(-0.23255, 0.00635, 0.002) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01200,0.01000,0.00600 meta=thread=M6,cage=1,side=l
+  A_SCREW_RACK_1 pos=(-0.23255, 0.0381, 0.002) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01200,0.01000,0.00600 meta=thread=M6,cage=1,side=l
+  A_SCREW_RACK_2 pos=(0.23255, 0.00635, 0.002) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01200,0.01000,0.00600 meta=thread=M6,cage=1,side=r
+  A_SCREW_RACK_3 pos=(0.23255, 0.0381, 0.002) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01200,0.01000,0.00600 meta=thread=M6,cage=1,side=r
+bounds min=(-0.2413, 0.0006, -0.1105) max=(0.2413, 0.0438, 0.0033) size=(0.4826, 0.0432, 0.1138)
+frame: rack device, 1U panel (its own ears), face z=0.002, keystones z=0.0026

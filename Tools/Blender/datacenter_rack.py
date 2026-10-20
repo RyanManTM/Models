@@ -37,8 +37,7 @@ ATLAS.add("numbers", 0, 0, 512, 224)
 ATLAS.add("badge", 0, 448, 512, 64)
 ATLAS.add("rating", 512, 0, 512, 320)
 ATLAS.add("earth", 512, 320, 128, 128)
-NUMBERS = D.Labels(ATLAS, "numbers", 64, 32, [str(k) for k in range(1, 43)], fg=(0.92, 0.92, 0.9), bg=(0.03, 0.03, 0.033),
-                   font="arialbd.ttf", size=0.66)
+NUMBERS = D.Labels(ATLAS, "numbers", 64, 32, [str(k) for k in range(1, 43)], fg=(0.92, 0.92, 0.9), font="arialbd.ttf", size=0.66)
 
 STYLES = {
     "rack_42u": dict(units=42, W=0.600, Dp=1.070, H=2.000, y0=0.0900, zm=0.410, enclosed=True),
@@ -47,7 +46,7 @@ STYLES = {
 
 
 def textures():
-    art = P.Art(ATLAS.w, ATLAS.h, bg=(0.5, 0.5, 0.5), name="rack_print")
+    art = P.Art(ATLAS.w, ATLAS.h, bg=None, name="rack_print")
     NUMBERS.draw(art)
     x, y, w, h = ATLAS.reg["badge"]
     art.rect(x, y, w, h, (0.03, 0.03, 0.035))

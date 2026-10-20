@@ -299,7 +299,7 @@ Moving pieces: `bay_n@A_BAY_n#alu` ×12, `bay_n@A_BAY_n#black_plastic` ×12, `ba
   - `A_PDU_0` (−x) and `A_PDU_1` (+x): zero-U PDU places in the rear side channels, 0.115 behind the rear rails,
     at the bottom end of the PDU (y = 0.12), +Y along it, +Z (the outlet side) facing the rear door. This is the
     `pdu_0u` model's frame. The channel has the keyhole brackets at the PDU's mounting-button heights.
-- **rack_12u_open:** a 4-post open frame, 560 × 800 × 690 on four castors. ZM = 0.371, U1 bottom at y = 0.115. The
+- **rack_12u_open:** a 4-post open frame, 593 × 795 × 691 overall on four castors. ZM = 0.371, U1 bottom at y = 0.115. The
   four posts are C-profile rails, with box-section top and bottom frames, a cable tie bar across the rear and an
   earth stud. `A_HIT_0/1` are the two sides, `A_HIT_2` the base.
 - Texture `rack_print.png`: the U numbers, door badge, rating label and earth sticker.
@@ -346,3 +346,85 @@ Moving pieces: none.
   by −0.37 in z if the game centres boxes on anchors; the meta `base=bottom,extends=-z` records this.
 - No cage nuts or blanking panels are modelled; devices list their screw points as `A_SCREW_RACK_n` (fixed
   ears) or `A_SCREW_THUMB_n` (servers).
+
+## switch_24: LINKWAVE LS-2804X, 24 × 1G + 4 × SFP+
+
+- **Frame:** the rack device frame; body 0.440 × 0.0436 × 0.250, front panel face at z = 0.0045, ears on the
+  rails (z 0..0.002) with `A_SCREW_RACK_0..3` at the 1st and 3rd holes.
+- **Front** (+x is the viewer's left): the logo and status LEDs `A_LED_POWER_0`, `A_LED_SYS_0` (green),
+  `A_LED_FAN_0` (amber) with printed legends. Two ganged 2 × 6 RJ45 blocks in metal shields: `A_PORT_ETH_0..23` is
+  port n+1, with odd ports on the top row (latch up) and even ports below (latch down). Each anchor's +Y points at
+  its latch (`latch=+up`), each port has `A_LED_LINK_n` (green) and `A_LED_ACT_n` (amber) at its corners, and the
+  numbers are printed above and below. Then four SFP+ cages `A_PORT_SFP_0..3` (ports 25–28, `depth=0.042`) with EMI
+  gaskets and `A_LED_SFP_n`; the console RJ45 `A_PORT_CONSOLE_0` in a light-blue surround; a reset pinhole; a
+  vent grille.
+- **Rear:** the C14 inlet `A_PORT_C14_0` (`plug=c13`), two 40 mm fans `A_FAN_0/1` behind hex grilles, an earth
+  screw. Side vents, the rating label on the top cover.
+- Texture `net_print.png` (shared with the patch panel): legends (transparent cells), logo, rating label.
+
+- **Triangles:** 11,794 in 65 meshes.
+- **Bounds:** min=(-0.2413, 0.0004, -0.2490) max=(0.2413, 0.0441, 0.0051) size=(0.4826, 0.0437, 0.2541)
+
+| Anchor | Position | Fwd / up | Size | Meta |
+|---|---|---|---|---|
+| `A_FAN_0` | (0.04, 0.0222, -0.2295) | -z / +y | 0.04000,0.04000,0.02000 | axis=z,spin=1,rpm=6000 |
+| `A_FAN_1` | (0.12, 0.0222, -0.2295) | -z / +y | 0.04000,0.04000,0.02000 | axis=z,spin=1,rpm=6000 |
+| `A_HIT_0` | (0, 0.0222, -0.1205) | +z / +y | 0.44000,0.04360,0.25000 |  |
+| `A_HIT_1` | (0, 0.0222, 0.001) | +z / +y | 0.48260,0.04360,0.00400 |  |
+| `A_LED_ACT_0..23 (24)` | (0.1355, 0.0365, 0.0048) … (-0.0255, 0.0087, 0.0048) | +z / +y | 0.00200,0.00200,0.00300 | colour=amber,fn=activity |
+| `A_LED_FAN_0` | (0.1735, 0.0134, 0.0048) | +z / +y | 0.00260,0.00260,0.00300 | colour=amber,fn=fan |
+| `A_LED_LINK_0..23 (24)` | (0.1445, 0.0365, 0.0048) … (-0.0165, 0.0087, 0.0048) | +z / +y | 0.00200,0.00200,0.00300 | colour=green,fn=link |
+| `A_LED_POWER_0` | (0.1985, 0.0134, 0.0048) | +z / +y | 0.00260,0.00260,0.00300 | colour=green,fn=power |
+| `A_LED_SFP_0` | (-0.068, 0.0376, 0.0048) | +z / +y | 0.00300,0.00200,0.00300 | colour=green,fn=link |
+| `A_LED_SFP_1` | (-0.068, 0.0076, 0.0048) | +z / +y | 0.00300,0.00200,0.00300 | colour=green,fn=link |
+| `A_LED_SFP_2` | (-0.0845, 0.0376, 0.0048) | +z / +y | 0.00300,0.00200,0.00300 | colour=green,fn=link |
+| `A_LED_SFP_3` | (-0.0845, 0.0076, 0.0048) | +z / +y | 0.00300,0.00200,0.00300 | colour=green,fn=link |
+| `A_LED_SYS_0` | (0.186, 0.0134, 0.0048) | +z / +y | 0.00260,0.00260,0.00300 | colour=green,fn=sys |
+| `A_PORT_C14_0` | (-0.15, 0.0224, -0.2455) | -z / +y | 0.02800,0.02000,0.01200 | depth=0.008,plug=c13,inlet=c14 |
+| `A_PORT_CONSOLE_0` | (-0.115, 0.0141, 0.0045) | +z / +y | 0.01450,0.01200,0.02000 | depth=0.012,rj45=1,latch=+up,serial=rs232,baud=115200 |
+| `A_PORT_ETH_0..23 (24)` | (0.14, 0.0311, 0.0045) … (-0.021, 0.0141, 0.0045) | +z / +y | 0.01420,0.01250,0.02000 | depth=0.012,rj45=1,latch=+up,port=1,speed=1g … depth=0.012,rj45=1,latch=+up,port=24,speed=1g |
+| `A_PORT_SFP_0` | (-0.068, 0.0311, 0.0045) | +z / +y | 0.01450,0.01050,0.05000 | depth=0.042,sfp=sfp+,speed=10g,port=25 |
+| `A_PORT_SFP_1` | (-0.068, 0.0141, 0.0045) | +z / +y | 0.01450,0.01050,0.05000 | depth=0.042,sfp=sfp+,speed=10g,port=26 |
+| `A_PORT_SFP_2` | (-0.0845, 0.0311, 0.0045) | +z / +y | 0.01450,0.01050,0.05000 | depth=0.042,sfp=sfp+,speed=10g,port=27 |
+| `A_PORT_SFP_3` | (-0.0845, 0.0141, 0.0045) | +z / +y | 0.01450,0.01050,0.05000 | depth=0.042,sfp=sfp+,speed=10g,port=28 |
+| `A_SCREW_RACK_0` | (-0.2326, 0.0063, 0.002) | +z / +y | 0.01200,0.01000,0.00600 | thread=M6,cage=1,side=l |
+| `A_SCREW_RACK_1` | (-0.2326, 0.0381, 0.002) | +z / +y | 0.01200,0.01000,0.00600 | thread=M6,cage=1,side=l |
+| `A_SCREW_RACK_2` | (0.2326, 0.0063, 0.002) | +z / +y | 0.01200,0.01000,0.00600 | thread=M6,cage=1,side=r |
+| `A_SCREW_RACK_3` | (0.2326, 0.0381, 0.002) | +z / +y | 0.01200,0.01000,0.00600 | thread=M6,cage=1,side=r |
+
+Moving pieces: `fan_n@A_FAN_n#fan_black` ×2, `led_act_n@A_LED_ACT_n#led_yellow` ×24, `led_fan_n@A_LED_FAN_n#led_yellow`, `led_link_n@A_LED_LINK_n#led_green` ×24, `led_power_n@A_LED_POWER_n#led_green`, `led_sfp_n@A_LED_SFP_n#led_green` ×4, `led_sys_n@A_LED_SYS_n#led_green`.
+
+## patch_panel_24: Cat6 keystone patch panel
+
+- **Frame:** the rack device frame; the 2 mm panel is its own pair of ears (z 0..0.002), with
+  `A_SCREW_RACK_0..3`. The top and bottom flanges and side returns are bent back 30 mm.
+- **Front:** 24 Cat6 keystone jacks in four groups of 6 (16.5 mm pitch), each a separate jack (chamfered face,
+  RJ45 mouth with the latch down, contacts, body) in a chamfered cut-out. `A_PORT_ETH_0..23` is port n+1, port 1 at
+  +x (the viewer's left), +Y towards the latch (down), `latch=+up`, `cat=6`. Above them, the numbered white label
+  strip under a clear cover (`clear_plastic`), and a "CAT 6" print below.
+- **Rear:** each keystone's white 110 IDC block with its T568B colour code. `A_PUNCH_0..23` is at the back of the
+  block, +Z towards the rear where the punch-down tool comes from (`idc=110,wires=8,scheme=T568B`). The cable
+  management bar (a steel rod with 13 tie mounts) sits on two brackets 0.11 behind the panel; `A_BAR_0` marks it.
+
+- **Triangles:** 6,232 in 7 meshes.
+- **Bounds:** min=(-0.2413, 0.0006, -0.1105) max=(0.2413, 0.0438, 0.0033) size=(0.4826, 0.0432, 0.1138)
+
+| Anchor | Position | Fwd / up | Size | Meta |
+|---|---|---|---|---|
+| `A_BAR_0` | (0, 0.0054, -0.106) | -z / +y | 0.43000,0.01200,0.01200 | ties=13,pitch=0.033 |
+| `A_HIT_0` | (0, 0.0222, -0.012) | +z / +y | 0.48260,0.04360,0.03200 |  |
+| `A_HIT_1` | (0, 0.0064, -0.06) | +z / +y | 0.43000,0.01200,0.12000 |  |
+| `A_PORT_ETH_0..23 (24)` | (0.2018, 0.0206, 0.0026) … (-0.2018, 0.0206, 0.0026) | +z / -y | 0.01420,0.01250,0.02000 | depth=0.012,rj45=1,latch=+up,port=1,cat=6 … depth=0.012,rj45=1,latch=+up,port=24,cat=6 |
+| `A_PUNCH_0..23 (24)` | (0.2018, 0.0194, -0.0374) … (-0.2018, 0.0194, -0.0374) | -z / +y | 0.01400,0.01500,0.01200 | idc=110,wires=8,scheme=T568B,port=1 … idc=110,wires=8,scheme=T568B,port=24 |
+| `A_SCREW_RACK_0` | (-0.2326, 0.0063, 0.002) | +z / +y | 0.01200,0.01000,0.00600 | thread=M6,cage=1,side=l |
+| `A_SCREW_RACK_1` | (-0.2326, 0.0381, 0.002) | +z / +y | 0.01200,0.01000,0.00600 | thread=M6,cage=1,side=l |
+| `A_SCREW_RACK_2` | (0.2326, 0.0063, 0.002) | +z / +y | 0.01200,0.01000,0.00600 | thread=M6,cage=1,side=r |
+| `A_SCREW_RACK_3` | (0.2326, 0.0381, 0.002) | +z / +y | 0.01200,0.01000,0.00600 | thread=M6,cage=1,side=r |
+
+Moving pieces: none.
+
+**Notes**
+- The keystone contacts and the IDC slots are printed (`tex_net_print`) rather than modelled, to keep 24 jacks
+  cheap. The switch keeps real gold contact combs.
+- The previews leave the strip's clear cover out (the preview renderer has no transparent shader for
+  `clear_plastic`); the model has it.

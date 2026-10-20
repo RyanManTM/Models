@@ -117,7 +117,7 @@ def layout(sid):
 # ====================================================================== artwork
 
 def textures():
-    art = P.Art(ATLAS.w, ATLAS.h, bg=(0.5, 0.5, 0.5), name="server_print")
+    art = P.Art(ATLAS.w, ATLAS.h, bg=None, name="server_print")
     silver = (0.78, 0.8, 0.83)
     # logo badge
     x, y, w, h = ATLAS.reg["logo"]
