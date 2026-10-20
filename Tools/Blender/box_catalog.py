@@ -486,8 +486,9 @@ if __name__ == "__main__":
         import build_boxes as BB
         ids = [a for a in args if not a.startswith("--")]
         sizes = {}
-        for pid, it in items().items():
-            if ids and pid not in ids:
+        BB.load_catalog()                     # the rig modules' item() hooks apply, as in a build
+        for pid, it in BB.ITEMS.items():
+            if "family" not in it or (ids and pid not in ids):
                 continue
             if not os.path.exists(os.path.join(c.MODELS, "box_" + pid + ".fbx")):
                 continue
