@@ -117,6 +117,7 @@ cpu_epoch_9124: 33390 triangles, 6 meshes
   mesh cpu_epoch_9124_solder#solder  tris=3456
   mesh cpu_epoch_9124_tex_cpu_ihs_9124#tex_cpu_ihs_9124  tris=632
   mesh cpu_epoch_9124_tex_cpu_spv_pcb#tex_cpu_spv_pcb  tris=60
+  A_CAP_PADS_0 pos=(-0.0, 0.0, -4e-05) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.07400,0.07740,0.00160 meta=model=cap_cpu_spv,remove=-z,blocks=install
   A_CARRIER_0 pos=(-0.0, 0.0, 0.0016) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.08160,0.09660,0.00305 meta=socket=SP-V,pose=installed,clip=+z,rail=+y,color=#f26b1d
   A_HIT_0 pos=(-0.0, 0.0, 0.0032) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.07200,0.07540,0.00680 meta=
   A_MARK_CARRIER_0@A_CARRIER_0 pos=(0.03579, -0.03749, 0.0026) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00500,0.00500,0.00200 meta=corner=+x-y
@@ -131,6 +132,7 @@ cpu_epoch_9354: 33390 triangles, 6 meshes
   mesh cpu_epoch_9354_solder#solder  tris=3456
   mesh cpu_epoch_9354_tex_cpu_ihs_9354#tex_cpu_ihs_9354  tris=632
   mesh cpu_epoch_9354_tex_cpu_spv_pcb#tex_cpu_spv_pcb  tris=60
+  A_CAP_PADS_0 pos=(-0.0, 0.0, -4e-05) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.07400,0.07740,0.00160 meta=model=cap_cpu_spv,remove=-z,blocks=install
   A_CARRIER_0 pos=(-0.0, 0.0, 0.0016) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.08160,0.09660,0.00305 meta=socket=SP-V,pose=installed,clip=+z,rail=+y,color=#f26b1d
   A_HIT_0 pos=(-0.0, 0.0, 0.0032) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.07200,0.07540,0.00680 meta=
   A_MARK_CARRIER_0@A_CARRIER_0 pos=(0.03579, -0.03749, 0.0026) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00500,0.00500,0.00200 meta=corner=+x-y
@@ -145,6 +147,7 @@ cpu_epoch_9654: 33390 triangles, 6 meshes
   mesh cpu_epoch_9654_solder#solder  tris=3456
   mesh cpu_epoch_9654_tex_cpu_ihs_9654#tex_cpu_ihs_9654  tris=632
   mesh cpu_epoch_9654_tex_cpu_spv_pcb#tex_cpu_spv_pcb  tris=60
+  A_CAP_PADS_0 pos=(-0.0, 0.0, -4e-05) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.07400,0.07740,0.00160 meta=model=cap_cpu_spv,remove=-z,blocks=install
   A_CARRIER_0 pos=(-0.0, 0.0, 0.0016) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.08160,0.09660,0.00305 meta=socket=SP-V,pose=installed,clip=+z,rail=+y,color=#f26b1d
   A_HIT_0 pos=(-0.0, 0.0, 0.0032) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.07200,0.07540,0.00680 meta=
   A_MARK_CARRIER_0@A_CARRIER_0 pos=(0.03579, -0.03749, 0.0026) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00500,0.00500,0.00200 meta=corner=+x-y
@@ -159,10 +162,21 @@ cpu_tiron_plat_8480: 43510 triangles, 6 meshes
   mesh cpu_tiron_plat_8480_solder#solder  tris=8832
   mesh cpu_tiron_plat_8480_tex_cpu_ihs_8480#tex_cpu_ihs_8480  tris=632
   mesh cpu_tiron_plat_8480_tex_cpu_l46_pcb#tex_cpu_l46_pcb  tris=60
+  A_CAP_PADS_0 pos=(-0.0, 0.0, -4e-05) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.06300,0.10700,0.00160 meta=model=cap_cpu_l46,remove=-z,blocks=install
   A_CARRIER_0 pos=(-0.0, 0.0, 0.0016) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.07060,0.12420,0.00305 meta=socket=L46,pose=installed,clip=+z,mount=heatsink,color=#26282b
   A_HIT_0 pos=(-0.0, 0.0, 0.0033) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.06100,0.10500,0.00700 meta=
   A_MARK_CARRIER_0@A_CARRIER_0 pos=(0.03029, -0.05229, 0.0026) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00500,0.00500,0.00200 meta=corner=+x-y
   A_MARK_PIN1_0 pos=(0.0285, -0.0505, 0.0016) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00600,0.00600,0.00200 meta=corner=+x-y
   A_PASTE_0 pos=(-0.0, 0.0, 0.0066) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.03840,0.06320,0.00200 meta=ihs=0.0480x0.0790
 frame: Socket L46 (new contract): origin at the contact face centre, +z up, pin 1 at (+x, -y); the carrier is a moving piece on A_CARRIER_0
+
+cap_cpu_spv: 532 triangles, 1 meshes
+  mesh cap_cpu_spv_glass#glass  tris=532
+  A_HIT_0 pos=(-0.0, 0.0, 0.0008) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.07400,0.07740,0.00160 meta=remove=+z,travel=0.030,blocks=install
+frame: origin at the contact face centre (on the SP-V package's A_CAP_PADS_0), +z = pull-off direction; local +x = the package's -x
+
+cap_cpu_l46: 532 triangles, 1 meshes
+  mesh cap_cpu_l46_glass#glass  tris=532
+  A_HIT_0 pos=(-0.0, 0.0, 0.0008) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.06300,0.10700,0.00160 meta=remove=+z,travel=0.030,blocks=install
+frame: origin at the contact face centre (on the L46 package's A_CAP_PADS_0), +z = pull-off direction; local +x = the package's -x
 

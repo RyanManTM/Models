@@ -23,6 +23,11 @@ All 14 are done, each committed with its model, textures, previews and report.
 | `cpu_epoch_9354` | Arc Epoch 9354 | SP-V | new `cpu_spv` | done |
 | `cpu_epoch_9124` | Arc Epoch 9124 | SP-V | new `cpu_spv` | done |
 | `cpu_tiron_plat_8480` | Tiron Platinum 8480 | L46 | new `cpu_l46` | done |
+| `cap_cpu_spv` | contact cover for SP-V (unboxing cap) | SP-V | new cap | done |
+| `cap_cpu_l46` | contact cover for L46 (unboxing cap) | L46 | new cap | done |
+
+Unboxing retrofit (the catalogue README's "The unboxing on every part"): done for all 14. The JSON has `unbox`,
+`docs` and `doc_notes` on every entry; the 4 server CPUs have `A_CAP_PADS_0` and their caps.
 
 ## Rebuild
 
@@ -30,7 +35,7 @@ All 14 are done, each committed with its model, textures, previews and report.
 blender -b --factory-startup -P Tools/Blender/build_cat_cpus.py -- [ids...] [--nopreview]
 ```
 
-With no ids it builds all 14. It writes `Assets/Resources/Models/<id>.fbx`, the textures, the previews
+With no ids it builds all 14 CPUs and the 2 cap models. It writes `Assets/Resources/Models/<id>.fbx`, the textures, the previews
 `Logs/ModelPreviews/<id>_<n>.png`, the per-model report `Logs/ModelPreviews/<id>_report.txt`, and the family anchor
 report `Logs/ModelPreviews/cat_cpus_report.txt`. The desktop builds also re-render the shared `cpu_v5_pcb.png` and
 `cpu_l17_pcb.png` with unchanged art; they are not committed.
@@ -44,9 +49,10 @@ Built with Blender 5.0.1 as the `bpy` Python module (download.blender.org is blo
 |---|---|
 | `Tools/Blender/build_cat_cpus.py` | new: the family runner, the 10 desktop specs and the V5 marking hook (Data Matrix, 3D cache mark) |
 | `Tools/Blender/cat_cpus_server.py` | new: the SP-V and L46 packages, IHS, substrate and carrier art, the carrier moving piece |
+| `Tools/Blender/cat_cpus_unbox.py` | new: adds `A_CAP_PADS_0` to the committed server CPU FBXs without rebuilding them (see "Unboxing") |
 | `Tools/Blender/cat_shape_compare.py` | new: an order-independent model and texture comparison (see "Existing models unchanged") |
 | `Tools/Blender/build_cpu.py` | three optional spec keys: `ihs_extra`, `copy`, `ihs_tex` (existing CPUs unchanged) |
-| `Assets/Resources/Models/` | the 14 `cpu_*.fbx`, `Textures/cpu_ihs_<model>.png` each, `cpu_spv_pcb.png`, `cpu_l46_pcb.png`, `cpu_spv_carrier.png`, `cpu_l46_carrier.png` |
+| `Assets/Resources/Models/` | the 14 `cpu_*.fbx`, `cap_cpu_spv.fbx`, `cap_cpu_l46.fbx`, `Textures/cpu_ihs_<model>.png` each, `cpu_spv_pcb.png`, `cpu_l46_pcb.png`, `cpu_spv_carrier.png`, `cpu_l46_carrier.png` |
 | `Logs/ModelPreviews/` | 4 previews and `<id>_report.txt` per model, `cat_cpus_report.txt` |
 | `docs/catalog/cpus.json` | the shop data |
 
@@ -135,6 +141,51 @@ blender -b --factory-startup -P Tools/Blender/cat_shape_compare.py -- <old>/Asse
 - **Anchors:** `anchor_compare.py` of `cpu_epoch_9124` and `cpu_epoch_9354` against `cpu_epoch_9654` gives 5 / 5
   SAME for both.
 
+## Unboxing: films, caps, stickers and papers
+
+| Id | Films | Caps | Stickers | Docs |
+|---|---|---|---|---|
+| 10 desktop CPUs | none | none | none | guide, warranty, sticker (case badge) |
+| `cpu_epoch_9124` / `9354` / `9654` | none | `cap_cpu_spv` on `A_CAP_PADS_0`, blocks install | none | guide, warranty |
+| `cpu_tiron_plat_8480` | none | `cap_cpu_l46` on `A_CAP_PADS_0`, blocks install | none | guide, warranty |
+
+- **Desktop CPUs:** nothing on the part, as on the real product. The clamshell is part of the box (task 19), and
+  the models are unchanged.
+- **Server CPUs:** they get one new anchor, plus the carrier they already had (`A_CARRIER_0`). The carrier stays on,
+  because the CPU is installed in it; the JSON says so under `unbox.carrier`.
+  - `A_CAP_PADS_0`, at (0, 0, −0.00004) on the contact face, just under the lands, which stand 0.03 mm proud.
+    - Forward −z, up +y, so the cap's local +Z is the pull-off direction and its local +x is the package's −x.
+    - Size: SP-V 0.0740 × 0.0774 × 0.0016; L46 0.0630 × 0.1070 × 0.0016.
+    - Meta: `model=cap_cpu_spv|cap_cpu_l46,remove=-z,blocks=install`.
+- **Cap models**, `cap_cpu_spv` and `cap_cpu_l46` (532 triangles, 1 mesh, tag `glass`):
+  - Frame: origin at the contact face centre, +z = pull-off direction (away from the pads).
+  - The plate (0.7 mm) overhangs the substrate by 1 mm on each side. That stays below the carrier wall, which starts
+    0.25 mm above the contact face.
+  - A 1.2 mm rim and two stiffening ribs on the outer side.
+  - A pull tab with a grip ridge at −y. The −y end is the same in both frames; it is below the carrier's grip tab.
+  - A moulded pin-1 triangle at the package's (+x, −y) corner.
+  - `A_HIT_0` at (0, 0, 0.0008), the plate size × 0.0016, meta `remove=+z,travel=0.030,blocks=install`.
+  - Where it sits: parent anchor `A_CAP_PADS_0` of the CPU, at the anchor's position with the anchor's rotation
+    (identity in the anchor frame).
+- **Papers:** `doc_notes` holds 8–10 lines per CPU: the socket, the install steps (lever / rail and carrier / heatsink
+  module), the pin-1 triangle, the paste amount, TDP and peak power with the cooler to match, cores and clocks,
+  memory rules and handling warnings.
+
+**ONLY ADDED proof.** A rebuild can't show this with `extras_compare.py`, because the heat-spreader prisms
+triangulate in a different order on every run: even an unchanged rebuild shows the IHS `.polys`/`.uvs` as CHANGED.
+So `cat_cpus_unbox.py` adds the anchor to the committed FBXs instead.
+- It imports each FBX with the axis settings that undo `dct_common.export`; a plain round trip compares SAME.
+- It adds the anchor with the same `cap_anchor()` the build uses, then re-exports.
+- `extras_compare.py <previous FBXs> Assets/Resources/Models` then prints, for all four server CPUs,
+  `ONLY ADDED: A_CAP_PADS_0 (12 objects unchanged)`.
+- A full rebuild with `build_cat_cpus.py` into a scratch project gives the same six anchors: `anchor_compare.py`
+  reports 6 / 6 SAME against the retrofitted FBXs.
+
+```bash
+blender -b --factory-startup -P Tools/Blender/cat_cpus_unbox.py -- [cpu_epoch_9124 ...]
+blender -b --factory-startup -P Tools/Blender/extras_compare.py -- <previous_fbx_dir> Assets/Resources/Models cpu_epoch_9124 cpu_epoch_9354 cpu_epoch_9654 cpu_tiron_plat_8480
+```
+
 ## Deviations
 
 - **Real numbers:**
@@ -173,6 +224,7 @@ Both sockets use the desktop CPU frame and anchor kinds, plus a carrier. The mod
 | `A_PASTE_0` | (0, 0, 0.0064) | +z / +y | 0.0464 × 0.0509 × 0.002 | `ihs=0.0580x0.0636` (the raised top) |
 | `A_HIT_0` | (0, 0, 0.0032) | +z / +y | 0.072 × 0.0754 × 0.0068 | the package |
 | `A_CARRIER_0` | (0, 0, 0.0016) | +z / +y | 0.0816 × 0.0966 × 0.0031 | `socket=SP-V,pose=installed,clip=+z,rail=+y,color=#f26b1d` |
+| `A_CAP_PADS_0` | (0, 0, −0.00004) | −z / +y | 0.0740 × 0.0774 × 0.0016 | `model=cap_cpu_spv,remove=-z,blocks=install` (the contact cover, see Unboxing) |
 | `A_MARK_CARRIER_0@A_CARRIER_0` | (0.0358, −0.0375, 0.0026) | +z / +y | 0.005 × 0.005 × 0.002 | `corner=+x-y` (the carrier's own triangle) |
 
 **The carrier** (`carrier@A_CARRIER_0#tex_cpu_spv_carrier`, a moving piece):
@@ -213,6 +265,7 @@ Both sockets use the desktop CPU frame and anchor kinds, plus a carrier. The mod
 | `A_PASTE_0` | (0, 0, 0.0066) | +z / +y | 0.0384 × 0.0632 × 0.002 | `ihs=0.0480x0.0790` |
 | `A_HIT_0` | (0, 0, 0.0033) | +z / +y | 0.061 × 0.105 × 0.0070 | the package |
 | `A_CARRIER_0` | (0, 0, 0.0016) | +z / +y | 0.0706 × 0.1242 × 0.0031 | `socket=L46,pose=installed,clip=+z,mount=heatsink,color=#26282b` |
+| `A_CAP_PADS_0` | (0, 0, −0.00004) | −z / +y | 0.0630 × 0.1070 × 0.0016 | `model=cap_cpu_l46,remove=-z,blocks=install` (the contact cover, see Unboxing) |
 | `A_MARK_CARRIER_0@A_CARRIER_0` | (0.0303, −0.0523, 0.0026) | +z / +y | 0.005 × 0.005 × 0.002 | `corner=+x-y` |
 
 **The carrier clip** (`carrier@A_CARRIER_0#tex_cpu_l46_carrier`, a moving piece):
