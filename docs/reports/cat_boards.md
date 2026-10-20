@@ -205,6 +205,38 @@ x positions, length and latches are the same on both siblings, so the DIMM slots
   headers, front connectors and rear I/O as the SP-V board. No OCP slot.
 - **Contract:** new, see below.
 
+## Unboxing: films, caps and papers
+
+Added after the catalogue README gained "The unboxing on every part (required)". **Only anchors were added**: each
+desktop board was rebuilt and compared with its previously committed FBX by `anchor_compare.py`. Every existing
+anchor is SAME, and the only ONLY_B rows are the new films below. The triangle counts in the `_report.txt` files are
+unchanged, the textures and shields were not re-committed (unchanged art), and the previews are unchanged.
+
+| Protective bit | Where | Boards |
+|---|---|---|
+| PnP socket cap (contract, a moving piece of the board) | `cap@A_COVER_CPU_0`, `remove=+z`, blocks install | all desktop |
+| `A_FILM_M2_0` | the M.2 heatsink's thermal-pad film (from `build_board`, parented to `A_COVER_M2_0`), `peel=+x` | all desktop |
+| `A_FILM_IO_0` | the I/O cover's logo plate (from `build_board`), `peel_from=-y` | all desktop |
+| `A_FILM_CHIPSET_0` | the chipset heatsink's logo plate (from `build_board`), `peel_from=+x` | all desktop |
+| `A_FILM_VRM_0` **(new)** | the top VRM heatsink's printed plate, plate size + 1 mm, 0.02 mm above it; `film=clear,on=vrm_logo,peel=+x,tab=-x+y` | all desktop |
+| `A_FILM_M2_1` **(new)** | the second M.2 heatsink's plate (31 × 13 mm, z 0.01012); `peel=-x,tab=+x+y` | Vanguard, Harpoon, Glide, Keystone, Riptide, Talon |
+| `A_FILM_RGB_0` **(new)** | the lit emblem on the RGB I/O cover top (z 0.03712); `peel=+y,tab=-x-y` | Vanguard, Riptide |
+| socket covers | `cap@A_COVER_CPU_0` (SP-V PnP cap) / `cap@A_COVER_CPU_0..1` (L46 dust covers), `remove=+z` | server boards |
+
+The three films from `build_board` keep its `peel_from=` meta (the edge the peel starts at), because those anchors
+come from the sibling's code; `peel_from=-y` is the same pull as the new style's `peel=+y`. The new films use
+`peel=` + `tab=`. No sticker anchors (boards ship without warning stickers). The server boards have no glossy covers,
+so they get no films.
+
+`docs/catalog/boards.json` lists them per board under `"unbox"`. Each entry also has `"docs"` (desktop: manual,
+quick-start, warranty, sticker = the case badge; server: manual, quick-start, warranty) and `"doc_notes"`:
+- **Desktop:** the DIMM order (one module in A2, two in A2 + B2, then all four; the `pref=1` slots); the F_PANEL
+  pinout; the M.2_1 (2280) install steps; the BIOS and boot-menu keys per brand (Aegis DEL/F2 + F8, Mako DEL + F11,
+  Kestrel DEL + F12, Ridge F2/DEL + F11); the PnP cap rule; power; front headers; BIOS FlashBack.
+- **Server:** the RDIMM population order; the socket procedure (SP-V: the force frame and rail frame with the
+  1-2-3 torque; L46: the processor-heatsink module on its studs); the F_PANEL pinout; the M.2 slots; the BIOS keys;
+  the BMC LAN and UID button; power.
+
 ## New contract: server board (SSI-EEB), `mb_strata_spv` and `mb_strata_l46`
 
 Written like `docs/MODEL_PIPELINE.md` §2. Values in metres, Unity axes, board frame. Built by

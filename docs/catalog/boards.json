@@ -30,7 +30,39 @@
       "perf": 0
     },
     "contract": "mb_ridge_b5",
-    "new_contract": false
+    "new_contract": false,
+    "unbox": {
+      "films": [
+        "A_FILM_M2_0",
+        "A_FILM_IO_0",
+        "A_FILM_CHIPSET_0",
+        "A_FILM_VRM_0"
+      ],
+      "caps": [
+        {
+          "model": "cap@A_COVER_CPU_0 (on the board)",
+          "at": "A_COVER_CPU_0",
+          "blocks": "install"
+        }
+      ],
+      "stickers": []
+    },
+    "docs": [
+      "manual",
+      "quick-start",
+      "warranty",
+      "sticker"
+    ],
+    "doc_notes": [
+      "Memory: install one module in A2; two modules in A2 and B2; four modules in A1, A2, B1 and B2. DDR5 only.",
+      "Front panel header F_PANEL (2x5, 2.54 mm, pin 10 keyed): 1 HDD_LED+, 3 HDD_LED-, 2 PLED+, 4 PLED-, 6 PWR_SW, 8 PWR GND, 5 RESET GND, 7 RESET, 9 NC.",
+      "M.2_1 (under the M.2 shield, CPU lanes) takes a 2280 NVMe SSD: remove the shield, peel the pad film, insert the SSD at 20 degrees and fix it at the 2280 standoff.",
+      "Press DEL or F2 at power-on to enter the BIOS setup, F8 for the boot menu.",
+      "Socket V5: remove the PnP cap only after the CPU is installed; keep it for returns.",
+      "Connect the 24-pin ATX and the 8-pin CPU power (EPS) before the first boot.",
+      "Front USB: USB3_1 is the 19-pin header; HD_AUDIO is next to it at the bottom edge.",
+      "BIOS FlashBack: put the BIOS file on a FAT32 stick in the marked USB port and hold the button for 3 seconds."
+    ]
   },
   {
     "id": "mb_aegis_x870e_vanguard",
@@ -63,7 +95,41 @@
       "perf": 0
     },
     "contract": "mb_ridge_b5",
-    "new_contract": false
+    "new_contract": false,
+    "unbox": {
+      "films": [
+        "A_FILM_M2_0",
+        "A_FILM_IO_0",
+        "A_FILM_CHIPSET_0",
+        "A_FILM_VRM_0",
+        "A_FILM_M2_1",
+        "A_FILM_RGB_0"
+      ],
+      "caps": [
+        {
+          "model": "cap@A_COVER_CPU_0 (on the board)",
+          "at": "A_COVER_CPU_0",
+          "blocks": "install"
+        }
+      ],
+      "stickers": []
+    },
+    "docs": [
+      "manual",
+      "quick-start",
+      "warranty",
+      "sticker"
+    ],
+    "doc_notes": [
+      "Memory: install one module in A2; two modules in A2 and B2; four modules in A1, A2, B1 and B2. DDR5 only.",
+      "Front panel header F_PANEL (2x5, 2.54 mm, pin 10 keyed): 1 HDD_LED+, 3 HDD_LED-, 2 PLED+, 4 PLED-, 6 PWR_SW, 8 PWR GND, 5 RESET GND, 7 RESET, 9 NC.",
+      "M.2_1 (under the M.2 shield, CPU lanes) takes a 2280 NVMe SSD: remove the shield, peel the pad film, insert the SSD at 20 degrees and fix it at the 2280 standoff. M.2_2 sits under the second shield.",
+      "Press DEL or F2 at power-on to enter the BIOS setup, F8 for the boot menu.",
+      "Socket V5: remove the PnP cap only after the CPU is installed; keep it for returns.",
+      "Connect the 24-pin ATX and the 8-pin CPU power (EPS) before the first boot.",
+      "Front USB: USB3_1 is the 19-pin header; HD_AUDIO is next to it at the bottom edge.",
+      "BIOS FlashBack: put the BIOS file on a FAT32 stick in the marked USB port and hold the button for 3 seconds."
+    ]
   },
   {
     "id": "mb_mako_b650_harpoon",
@@ -96,7 +162,40 @@
       "perf": 0
     },
     "contract": "mb_ridge_b5",
-    "new_contract": false
+    "new_contract": false,
+    "unbox": {
+      "films": [
+        "A_FILM_M2_0",
+        "A_FILM_IO_0",
+        "A_FILM_CHIPSET_0",
+        "A_FILM_VRM_0",
+        "A_FILM_M2_1"
+      ],
+      "caps": [
+        {
+          "model": "cap@A_COVER_CPU_0 (on the board)",
+          "at": "A_COVER_CPU_0",
+          "blocks": "install"
+        }
+      ],
+      "stickers": []
+    },
+    "docs": [
+      "manual",
+      "quick-start",
+      "warranty",
+      "sticker"
+    ],
+    "doc_notes": [
+      "Memory: install one module in A2; two modules in A2 and B2; four modules in A1, A2, B1 and B2. DDR5 only.",
+      "Front panel header F_PANEL (2x5, 2.54 mm, pin 10 keyed): 1 HDD_LED+, 3 HDD_LED-, 2 PLED+, 4 PLED-, 6 PWR_SW, 8 PWR GND, 5 RESET GND, 7 RESET, 9 NC.",
+      "M.2_1 (under the M.2 shield, CPU lanes) takes a 2280 NVMe SSD: remove the shield, peel the pad film, insert the SSD at 20 degrees and fix it at the 2280 standoff. M.2_2 sits under the second shield.",
+      "Press DEL at power-on to enter the BIOS setup, F11 for the boot menu.",
+      "Socket V5: remove the PnP cap only after the CPU is installed; keep it for returns.",
+      "Connect the 24-pin ATX and the 8-pin CPU power (EPS) before the first boot.",
+      "Front USB: USB3_1 is the 19-pin header; HD_AUDIO is next to it at the bottom edge.",
+      "BIOS FlashBack: put the BIOS file on a FAT32 stick in the marked USB port and hold the button for 3 seconds."
+    ]
   },
   {
     "id": "mb_kestrel_b650_glide",
@@ -129,7 +228,40 @@
       "perf": 0
     },
     "contract": "mb_ridge_b5",
-    "new_contract": false
+    "new_contract": false,
+    "unbox": {
+      "films": [
+        "A_FILM_M2_0",
+        "A_FILM_IO_0",
+        "A_FILM_CHIPSET_0",
+        "A_FILM_VRM_0",
+        "A_FILM_M2_1"
+      ],
+      "caps": [
+        {
+          "model": "cap@A_COVER_CPU_0 (on the board)",
+          "at": "A_COVER_CPU_0",
+          "blocks": "install"
+        }
+      ],
+      "stickers": []
+    },
+    "docs": [
+      "manual",
+      "quick-start",
+      "warranty",
+      "sticker"
+    ],
+    "doc_notes": [
+      "Memory: install one module in A2; two modules in A2 and B2; four modules in A1, A2, B1 and B2. DDR5 only.",
+      "Front panel header F_PANEL (2x5, 2.54 mm, pin 10 keyed): 1 HDD_LED+, 3 HDD_LED-, 2 PLED+, 4 PLED-, 6 PWR_SW, 8 PWR GND, 5 RESET GND, 7 RESET, 9 NC.",
+      "M.2_1 (under the M.2 shield, CPU lanes) takes a 2280 NVMe SSD: remove the shield, peel the pad film, insert the SSD at 20 degrees and fix it at the 2280 standoff. M.2_2 sits under the second shield.",
+      "Press DEL at power-on to enter the BIOS setup, F12 for the boot menu.",
+      "Socket V5: remove the PnP cap only after the CPU is installed; keep it for returns.",
+      "Connect the 24-pin ATX and the 8-pin CPU power (EPS) before the first boot.",
+      "Front USB: USB3_1 is the 19-pin header; HD_AUDIO is next to it at the bottom edge.",
+      "BIOS FlashBack: put the BIOS file on a FAT32 stick in the marked USB port and hold the button for 3 seconds."
+    ]
   },
   {
     "id": "mb_aegis_z790_keystone",
@@ -162,7 +294,40 @@
       "perf": 0
     },
     "contract": "mb_ridge_z4 (DDR5 notch of mb_ridge_b5)",
-    "new_contract": false
+    "new_contract": false,
+    "unbox": {
+      "films": [
+        "A_FILM_M2_0",
+        "A_FILM_IO_0",
+        "A_FILM_CHIPSET_0",
+        "A_FILM_VRM_0",
+        "A_FILM_M2_1"
+      ],
+      "caps": [
+        {
+          "model": "cap@A_COVER_CPU_0 (on the board)",
+          "at": "A_COVER_CPU_0",
+          "blocks": "install"
+        }
+      ],
+      "stickers": []
+    },
+    "docs": [
+      "manual",
+      "quick-start",
+      "warranty",
+      "sticker"
+    ],
+    "doc_notes": [
+      "Memory: install one module in A2; two modules in A2 and B2; four modules in A1, A2, B1 and B2. DDR5 only.",
+      "Front panel header F_PANEL (2x5, 2.54 mm, pin 10 keyed): 1 HDD_LED+, 3 HDD_LED-, 2 PLED+, 4 PLED-, 6 PWR_SW, 8 PWR GND, 5 RESET GND, 7 RESET, 9 NC.",
+      "M.2_1 (under the M.2 shield, CPU lanes) takes a 2280 NVMe SSD: remove the shield, peel the pad film, insert the SSD at 20 degrees and fix it at the 2280 standoff. M.2_2 sits under the second shield.",
+      "Press DEL or F2 at power-on to enter the BIOS setup, F8 for the boot menu.",
+      "Socket L17: remove the PnP cap only after the CPU is installed; keep it for returns.",
+      "Connect the 24-pin ATX and the 8-pin CPU power (EPS) before the first boot.",
+      "Front USB: USB3_1 is the 19-pin header; HD_AUDIO is next to it at the bottom edge.",
+      "BIOS FlashBack: put the BIOS file on a FAT32 stick in the marked USB port and hold the button for 3 seconds."
+    ]
   },
   {
     "id": "mb_mako_z790_riptide",
@@ -195,7 +360,41 @@
       "perf": 0
     },
     "contract": "mb_ridge_z4 (DDR5 notch of mb_ridge_b5)",
-    "new_contract": false
+    "new_contract": false,
+    "unbox": {
+      "films": [
+        "A_FILM_M2_0",
+        "A_FILM_IO_0",
+        "A_FILM_CHIPSET_0",
+        "A_FILM_VRM_0",
+        "A_FILM_M2_1",
+        "A_FILM_RGB_0"
+      ],
+      "caps": [
+        {
+          "model": "cap@A_COVER_CPU_0 (on the board)",
+          "at": "A_COVER_CPU_0",
+          "blocks": "install"
+        }
+      ],
+      "stickers": []
+    },
+    "docs": [
+      "manual",
+      "quick-start",
+      "warranty",
+      "sticker"
+    ],
+    "doc_notes": [
+      "Memory: install one module in A2; two modules in A2 and B2; four modules in A1, A2, B1 and B2. DDR5 only.",
+      "Front panel header F_PANEL (2x5, 2.54 mm, pin 10 keyed): 1 HDD_LED+, 3 HDD_LED-, 2 PLED+, 4 PLED-, 6 PWR_SW, 8 PWR GND, 5 RESET GND, 7 RESET, 9 NC.",
+      "M.2_1 (under the M.2 shield, CPU lanes) takes a 2280 NVMe SSD: remove the shield, peel the pad film, insert the SSD at 20 degrees and fix it at the 2280 standoff. M.2_2 sits under the second shield.",
+      "Press DEL at power-on to enter the BIOS setup, F11 for the boot menu.",
+      "Socket L17: remove the PnP cap only after the CPU is installed; keep it for returns.",
+      "Connect the 24-pin ATX and the 8-pin CPU power (EPS) before the first boot.",
+      "Front USB: USB3_1 is the 19-pin header; HD_AUDIO is next to it at the bottom edge.",
+      "BIOS FlashBack: put the BIOS file on a FAT32 stick in the marked USB port and hold the button for 3 seconds."
+    ]
   },
   {
     "id": "mb_kestrel_z790_talon",
@@ -228,7 +427,40 @@
       "perf": 0
     },
     "contract": "mb_ridge_z4 (DDR5 notch of mb_ridge_b5)",
-    "new_contract": false
+    "new_contract": false,
+    "unbox": {
+      "films": [
+        "A_FILM_M2_0",
+        "A_FILM_IO_0",
+        "A_FILM_CHIPSET_0",
+        "A_FILM_VRM_0",
+        "A_FILM_M2_1"
+      ],
+      "caps": [
+        {
+          "model": "cap@A_COVER_CPU_0 (on the board)",
+          "at": "A_COVER_CPU_0",
+          "blocks": "install"
+        }
+      ],
+      "stickers": []
+    },
+    "docs": [
+      "manual",
+      "quick-start",
+      "warranty",
+      "sticker"
+    ],
+    "doc_notes": [
+      "Memory: install one module in A2; two modules in A2 and B2; four modules in A1, A2, B1 and B2. DDR5 only.",
+      "Front panel header F_PANEL (2x5, 2.54 mm, pin 10 keyed): 1 HDD_LED+, 3 HDD_LED-, 2 PLED+, 4 PLED-, 6 PWR_SW, 8 PWR GND, 5 RESET GND, 7 RESET, 9 NC.",
+      "M.2_1 (under the M.2 shield, CPU lanes) takes a 2280 NVMe SSD: remove the shield, peel the pad film, insert the SSD at 20 degrees and fix it at the 2280 standoff. M.2_2 sits under the second shield.",
+      "Press DEL at power-on to enter the BIOS setup, F12 for the boot menu.",
+      "Socket L17: remove the PnP cap only after the CPU is installed; keep it for returns.",
+      "Connect the 24-pin ATX and the 8-pin CPU power (EPS) before the first boot.",
+      "Front USB: USB3_1 is the 19-pin header; HD_AUDIO is next to it at the bottom edge.",
+      "BIOS FlashBack: put the BIOS file on a FAT32 stick in the marked USB port and hold the button for 3 seconds."
+    ]
   },
   {
     "id": "mb_ridge_b760_d4",
@@ -261,7 +493,39 @@
       "perf": 0
     },
     "contract": "mb_ridge_z4",
-    "new_contract": false
+    "new_contract": false,
+    "unbox": {
+      "films": [
+        "A_FILM_M2_0",
+        "A_FILM_IO_0",
+        "A_FILM_CHIPSET_0",
+        "A_FILM_VRM_0"
+      ],
+      "caps": [
+        {
+          "model": "cap@A_COVER_CPU_0 (on the board)",
+          "at": "A_COVER_CPU_0",
+          "blocks": "install"
+        }
+      ],
+      "stickers": []
+    },
+    "docs": [
+      "manual",
+      "quick-start",
+      "warranty",
+      "sticker"
+    ],
+    "doc_notes": [
+      "Memory: install one module in A2; two modules in A2 and B2; four modules in A1, A2, B1 and B2. DDR4 only.",
+      "Front panel header F_PANEL (2x5, 2.54 mm, pin 10 keyed): 1 HDD_LED+, 3 HDD_LED-, 2 PLED+, 4 PLED-, 6 PWR_SW, 8 PWR GND, 5 RESET GND, 7 RESET, 9 NC.",
+      "M.2_1 (under the M.2 shield, CPU lanes) takes a 2280 NVMe SSD: remove the shield, peel the pad film, insert the SSD at 20 degrees and fix it at the 2280 standoff.",
+      "Press F2 or DEL at power-on to enter the BIOS setup, F11 for the boot menu.",
+      "Socket L17: remove the PnP cap only after the CPU is installed; keep it for returns.",
+      "Connect the 24-pin ATX and the 8-pin CPU power (EPS) before the first boot.",
+      "Front USB: USB3_1 is the 19-pin header; HD_AUDIO is next to it at the bottom edge.",
+      "BIOS FlashBack: put the BIOS file on a FAT32 stick in the marked USB port and hold the button for 3 seconds."
+    ]
   },
   {
     "id": "mb_strata_spv",
@@ -296,7 +560,32 @@
       "perf": 0
     },
     "contract": "mb_server_eeb (new)",
-    "new_contract": true
+    "new_contract": true,
+    "unbox": {
+      "films": [],
+      "caps": [
+        {
+          "model": "cap@A_COVER_CPU_0 (on the board)",
+          "at": "A_COVER_CPU_0",
+          "blocks": "install"
+        }
+      ],
+      "stickers": []
+    },
+    "docs": [
+      "manual",
+      "quick-start",
+      "warranty"
+    ],
+    "doc_notes": [
+      "Memory: 12 channels, one RDIMM per channel. Populate P0_DIMMA1 first, then follow A, G, C, I, E, K, B, H, D, J, F, L; use 12 identical RDIMMs for full bandwidth.",
+      "Socket SP-V: open the force frame (screws 3-2-1), lift the rail frame, slide the CPU carrier in, close the rail frame, close the force frame and tighten 1-2-3 to 1.6 N\u00b7m with a T20.",
+      "Front panel header F_PANEL (2x5, 2.54 mm, pin 10 keyed): 1 HDD_LED+, 3 HDD_LED-, 2 PLED+, 4 PLED-, 6 PWR_SW, 8 PWR GND, 5 RESET GND, 7 RESET, 9 NC.",
+      "M.2_1 and M.2_2 take 2280 NVMe SSDs (a 22110 standoff position is printed too).",
+      "Press DEL at power-on for the BIOS setup, F11 for the boot menu.",
+      "BMC: the dedicated management LAN is the RJ45 above the two USB ports; the UID button lights the blue LED.",
+      "Power: connect the 24-pin ATX and every 8-pin EPS (JPWR) before the first boot."
+    ]
   },
   {
     "id": "mb_strata_l46",
@@ -331,6 +620,36 @@
       "perf": 0
     },
     "contract": "mb_server_eeb (new)",
-    "new_contract": true
+    "new_contract": true,
+    "unbox": {
+      "films": [],
+      "caps": [
+        {
+          "model": "cap@A_COVER_CPU_0 (on the board)",
+          "at": "A_COVER_CPU_0",
+          "blocks": "install"
+        },
+        {
+          "model": "cap@A_COVER_CPU_1 (on the board)",
+          "at": "A_COVER_CPU_1",
+          "blocks": "install"
+        }
+      ],
+      "stickers": []
+    },
+    "docs": [
+      "manual",
+      "quick-start",
+      "warranty"
+    ],
+    "doc_notes": [
+      "Memory: 8 channels per CPU, one RDIMM per channel. Populate P0_DIMMA1 and P1_DIMMA1 first; keep both CPUs identical; 16 RDIMMs for full bandwidth. CPU1's slots work only with CPU1 installed.",
+      "Socket L46: clip the CPU to the cooler first (processor-heatsink module), set it on the four studs and tighten the T30 nuts in the order 1-2-3-4 printed on the board.",
+      "Front panel header F_PANEL (2x5, 2.54 mm, pin 10 keyed): 1 HDD_LED+, 3 HDD_LED-, 2 PLED+, 4 PLED-, 6 PWR_SW, 8 PWR GND, 5 RESET GND, 7 RESET, 9 NC.",
+      "M.2_1 and M.2_2 take 2280 NVMe SSDs (a 22110 standoff position is printed too).",
+      "Press DEL at power-on for the BIOS setup, F11 for the boot menu.",
+      "BMC: the dedicated management LAN is the RJ45 above the two USB ports; the UID button lights the blue LED.",
+      "Power: connect the 24-pin ATX and every 8-pin EPS (JPWR) before the first boot."
+    ]
   }
 ]

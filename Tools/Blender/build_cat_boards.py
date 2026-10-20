@@ -243,6 +243,9 @@ class CatBoard(BB.Board):
         if along == "x":
             x, y = am, base + bm
             self.bx(self.MT, x, y, top, w, h, 0.5, bevel=0.15, uv=self.top_map(uv, x, y, top + 0.5, w, h, rest=pe))
+            # the clear protective film on the top heatsink's printed plate (only the top heatsink has one)
+            self.anchor("A_FILM_VRM_0", (x, y, top + 0.52), (w + 1.0, h + 1.0, 1.0),
+                        meta="film=clear,on=vrm_logo,peel=+x,tab=-x+y")
         else:
             x, y = base + bm, am
             self.bx(self.MT, x, y, top, h, w, 0.5, bevel=0.15, uv=self.top_map(uv, x, y, top + 0.5, w, h, up=(1, 0, 0), rest=pe))
@@ -482,6 +485,7 @@ class CatBoard(BB.Board):
             a.line([(3.0, 2.6), (27.0, 2.6)], 0.5, cfg["plate_acc"])
         pe = self.marks.swatch(cfg["plate_bg"])
         self.bx(self.MT, 62.0, yc, 9.6, 30.0, 12.0, 0.5, bevel=0.2, uv=self.top_map(uv, 62.0, yc, 10.1, 30.0, 12.0, rest=pe))
+        self.anchor("A_FILM_M2_1", (62.0, yc, 10.12), (31.0, 13.0, 1.0), meta="film=clear,on=m2_2_logo,peel=-x,tab=+x+y")
         self.occupy(-24.0, yc - 12.0, 82.0, yc + 12.0)
 
     # ------------------------------------------------ chipset (the logo plate stays where A_FILM_CHIPSET_0 is)
@@ -585,6 +589,8 @@ class CatBoard(BB.Board):
                 ey0, ey1 = y0 + 3.5, ym + 6.0 - 38.0 - 2.0
                 ec, eyc = (ex0 + ex1) / 2, (ey0 + ey1) / 2
                 pp.box(self.k["rgb"], (ec * MM, eyc * MM, 36.7 * MM), ((ex1 - ex0) * MM, (ey1 - ey0) * MM, 0.2 * MM))
+                self.anchor("A_FILM_RGB_0", (ec, eyc, 37.12), (ex1 - ex0 + 1.0, ey1 - ey0 + 3.0, 1.0),
+                            meta="film=clear,on=io_rgb_emblem,peel=+y,tab=-x-y")
                 for k_ in range(9):
                     yy = ey0 + 1.0 + k_ * (ey1 - ey0 - 2.0) / 8
                     if abs(yy - eyc) < 8.0:
