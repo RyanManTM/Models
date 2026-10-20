@@ -88,6 +88,27 @@ the bundle.
     piece `tie_0@A_TIE_0#white_plastic`.
 - Fits `box_fan_splitter` `A_ITEM_PART_0` (0.070 × 0.080 × 0.012): margins w +0.0344, h +0.0087, t +0.0047.
 
+### syringe_paste
+- A 1.5 g thermal paste syringe lying flat, 0.086 m long.
+  - A clear barrel (7.2 mm) with the grey paste showing in its front part and in the nozzle.
+  - The nozzle under a ribbed grey cap.
+  - A black rubber stopper and a white X-ribbed plunger with its thumb pad, and the finger flange.
+  - A wrap-round printed label (`tex_smallparts_syringe_label`): "FROSTPEAK", "THERMAL COMPOUND", "1.5 g",
+    "8.5 W/mK", a mountain logo, small print and a lot number.
+- The tip points −z: the top edge as a flat item, or tip up when it stands in a box. The label text runs along the
+  barrel, reading from the plunger to the tip.
+- Size 0.0120 (x) × 0.0073 (y) × 0.0860 (z) m; **2132 triangles**, 6 meshes.
+- Anchors:
+  - `A_HIT_0` pos (0, 0.0036, 0), size 0.0120 × 0.0073 × 0.0860.
+  - `A_CAP_0` pos (0, 0.0036, −0.0298), fwd −z, meta `pull=-z,dist=0.015`: the cap, piece
+    `cap_0@A_CAP_0#grey_plastic`.
+  - `A_PLUNGER_0` pos (0, 0.0036, 0.0430), fwd +z (the thumb's side), meta `slide=-z,dist=0.021`: the plunger,
+    pieces `plunger_0@A_PLUNGER_0#white_plastic` and `#rubber`.
+  - `A_TIP_0` pos (0, 0.0036, −0.0393), fwd −z (where the paste comes out), meta `paste=1.5g`.
+- Space: no anchor was named in the brief. The tower cooler box's look-only syringe anchor `A_ITEM_HW_1`
+  (`kind=syringe`, 0.012 × 0.075 × 0.009, length along h) gives margins w 0.0000, **h −0.0110**, t +0.0017. The
+  brief asks for about 0.09 m; the box's look syringe is 0.075.
+
 ### fan4_female and fan3_female
 - The receiving housings on the splitter outputs and on fan extension cables: the end a fan's own plug
   (`plug_fan4` / `plug_fan3`) slides onto.

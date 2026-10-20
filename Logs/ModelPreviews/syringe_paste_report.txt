@@ -1,0 +1,14 @@
+syringe_paste: 2132 triangles, 6 meshes
+  mesh cap_0@A_CAP_0#grey_plastic  tris=336
+  mesh plunger_0@A_PLUNGER_0#rubber  tris=240
+  mesh plunger_0@A_PLUNGER_0#white_plastic  tris=196
+  mesh s_tex_smallparts_syringe_label#tex_smallparts_syringe_label  tris=560
+  mesh syringe_paste_clear_plastic#clear_plastic  tris=640
+  mesh syringe_paste_paste#paste  tris=160
+  A_CAP_0 pos=(-0.0, 0.0036, -0.0298) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00750,0.00750,0.01450 meta=pull=-z,dist=0.015
+  A_HIT_0 pos=(-0.0, 0.0036, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01200,0.00734,0.08600 meta=
+  A_PLUNGER_0 pos=(-0.0, 0.0036, 0.043) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01000,0.00900,0.00600 meta=slide=-z,dist=0.021
+  A_TIP_0 pos=(-0.0, 0.0036, -0.0393) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00300,0.00300,0.00300 meta=paste=1.5g
+  size: 0.0120 (x) x 0.0073 (y) x 0.0860 (z) m; bounds x -0.0060..0.0060, y -0.0001..0.0073, z -0.0430..0.0430
+  note: 1.5 g FROSTPEAK paste syringe, 7.2 mm barrel; tip at -z
+  space box_cooler_tower A_ITEM_HW_1 (kind=syringe; length along h) (w 0.012, h 0.075, t 0.009): margins w -0.0000, h -0.0110, t +0.0017

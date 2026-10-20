@@ -591,6 +591,102 @@ def build_coil_sata_pair(root):
     return dict(note="two 0.5 m flat SATA data cables folded in 5 layers; cable 2 ends in a right-angle plug")
 
 
+# ====================================================================== syringe_paste
+
+SYR_LABEL = "smallparts_syringe_label"
+
+
+def syringe_label_texture():
+    """tex_smallparts_syringe_label: the wrap-round label. u runs along the barrel (0 = the plunger end, 1 = towards
+    the tip), v round it (0.5 = the top of the barrel as it lies)."""
+    w, h = 1024, 1024
+    art = P.Art(w, h, bg=(0.96, 0.98, 1.0), name="syr_label")
+    navy, ice, ink = (0.05, 0.13, 0.30), (0.55, 0.80, 0.97), (0.10, 0.12, 0.16)
+    art.grad(0, 0, w, h, (0.86, 0.93, 0.99), (0.98, 0.99, 1.0))
+    # navy bands along both long edges of the visible face, an ice stripe inside them
+    for y in (230, 760):
+        art.rect(0, y, w, 34, navy)
+        art.rect(0, y + (34 if y < 500 else -10), w, 10, ice)
+    # the mountain-peak logo at the plunger end, then the brand along the barrel
+    cx, cy = 120, 512
+    art.poly([(cx - 85, cy - 70), (cx - 10, cy + 85), (cx + 30, cy + 20), (cx + 55, cy + 55), (cx + 95, cy - 70)], navy)
+    art.poly([(cx - 34, cy + 32), (cx - 10, cy + 85), (cx + 13, cy + 40), (cx - 2, cy + 50)], (1, 1, 1))
+    art.poly([(cx + 42, cy + 34), (cx + 55, cy + 55), (cx + 68, cy + 34)], (1, 1, 1))
+    art.text("FROSTPEAK", 590, 520, 150, navy, "seguibl.ttf", align="CENTER", valign="CENTER", maxw=760)
+    art.text("THERMAL COMPOUND", 560, 400, 64, ink, "arialbd.ttf", align="CENTER", valign="CENTER", maxw=640)
+    art.rect(800, 600, 190, 92, navy)
+    art.text("1.5 g", 895, 646, 64, (1, 1, 1), "arialbd.ttf", align="CENTER", valign="CENTER")
+    art.text("8.5 W/mK", 520, 646, 54, (0.18, 0.45, 0.75), "arialbd.ttf", align="CENTER", valign="CENTER")
+    # the sides and underneath: small print
+    art.text("NON-CONDUCTIVE \u2022 NON-CURING \u2022 -50 TO 150 \u00b0C", 512, 150, 34, ink, "arialbd.ttf", align="CENTER",
+             valign="CENTER", maxw=960)
+    art.text("Apply a pea-sized dot to the centre of the CPU.", 512, 870, 32, ink, "arial.ttf", align="CENTER",
+             valign="CENTER", maxw=960)
+    art.text("LOT FP2611  EXP 10/2029", 512, 60, 28, (0.35, 0.38, 0.45), "consola.ttf", align="CENTER", valign="CENTER")
+    art.text("FROSTPEAK.COM", 512, 960, 30, navy, "arialbd.ttf", align="CENTER", valign="CENTER")
+    art.render(SYR_LABEL)
+    art.dispose()
+
+
+def build_syringe_paste(root):
+    """A 1.5 g thermal paste syringe lying flat: a clear barrel with the grey paste showing in its front part, the nozzle
+    under a ribbed grey cap, the black rubber stopper, a white X-ribbed plunger with its thumb pad, the finger flange,
+    and the wrap-round FROSTPEAK label on the back part of the barrel. The tip points -z (the top edge of the print
+    as a flat item; standing in a box, tip up)."""
+    syringe_label_texture()
+    Ro, Ri = 0.0036, 0.0029
+    fs = P.Frame((0, Ro, 0), (0, 0, -1), (0, 1, 0))     # local +Z = towards the tip (a), local x = -x
+    a_back, a_front, a_stop = -0.023, 0.025, 0.003
+    # the barrel: one closed tube profile (outside forward to the nozzle tip, back along the inside)
+    prof = [(Ri, a_back), (Ro, a_back), (Ro, a_front), (0.0024, a_front + 0.002), (0.0016, a_front + 0.006),
+            (0.0011, 0.041), (0.00055, 0.041), (0.00055, a_front + 0.006), (0.0012, a_front + 0.0022),
+            (Ri, a_front - 0.0002), (Ri, a_back)]
+    P.lathe("barrel", prof, "clear_plastic", fs, 24, root, smooth=40)
+    # the paste, from the stopper into the nozzle
+    P.lathe("paste", [(0, a_stop), (Ri - 0.00006, a_stop), (Ri - 0.00006, a_front - 0.0003), (0.00115, a_front + 0.0021),
+                      (0.0005, 0.0405), (0, 0.0405)], "paste", fs, 20, root, smooth=40)
+    # the plunger (a moving piece: it slides in towards the tip): the rubber stopper with its two sealing ribs, an
+    # X-ribbed rod, a disc behind the stopper, the thumb pad
+    a_pad = -0.0400
+    pl = P.anchor("A_PLUNGER_0", fs.sub(0, 0, a_pad - 0.0013, fwd=(0, 0, -1), up=(0, 1, 0)), (0.010, 0.009, 0.006), root,
+                  meta=f"slide=-z,dist={a_front - a_stop - 0.001:.3f}")
+    P.lathe("stopper", [(0, a_stop - 0.0001), (Ri - 0.0002, a_stop - 0.0001), (Ri - 0.00002, a_stop - 0.0008),
+                        (Ri - 0.0003, a_stop - 0.0022), (Ri - 0.00002, a_stop - 0.0036), (Ri - 0.0002, a_stop - 0.0048),
+                        (0.0012, a_stop - 0.0050), (0, a_stop - 0.0050)], "rubber", fs, 20, pl, smooth=40)
+    for ang in (45, 135):
+        rf = fs.sub(0, 0, (a_stop - 0.005 + a_pad) / 2, fwd=(0, 0, 1),
+                    up=(math.cos(ang * DEG), math.sin(ang * DEG), 0))
+        P.cube("plunger_rib", (0, 0, 0), (0.0007, 2 * Ri - 0.0007, (a_stop - 0.005) - a_pad), "white_plastic", rf, pl)
+    P.cylinder("plunger_disc", fs.sub(0, 0, a_stop - 0.0058), Ri - 0.0003, 0.0008, "white_plastic", 20, pl)
+    pad = [(0.0045 * math.cos(TAU * k / 24), Ro * 0.98 * math.sin(TAU * k / 24)) for k in range(24)]
+    P.slab("plunger_pad", pad, 0.0013, "white_plastic", fs.sub(0, 0, a_pad - 0.00065), parent=pl)
+    # the finger flange at the back of the barrel
+    P.slab("flange", P.rrect(0.0120, 2 * Ro * 0.98, 0.0032, 0, 0, 4), 0.0014, "clear_plastic", fs.sub(0, 0, a_back + 0.0007),
+           holes=[P.circle(Ri, 0, 0, 20)], parent=root)
+    # the cap over the nozzle (a moving piece: it pulls off towards the tip): a ribbed grey sleeve with a rounded end
+    cap = P.anchor("A_CAP_0", fs.sub(0, 0, 0.0315), (0.0075, 0.0075, 0.0145), root, meta="pull=-z,dist=0.015")
+    P.lathe("cap", [(0.0016, 0.0315), (0.0029, 0.0315), (0.0030, 0.0420), (0.0024, 0.0440), (0.0010, 0.0447), (0, 0.0447),
+                    (0, 0.0330), (0.0016, 0.0330), (0.0016, 0.0315)], "grey_plastic", fs, 20, cap, smooth=45)
+    for k in range(8):
+        ang = k * 45 * DEG + 22.5 * DEG
+        rf = fs.sub(0.00305 * math.cos(ang), 0.00305 * math.sin(ang), 0.0368, fwd=(0, 0, 1),
+                    up=(math.cos(ang), math.sin(ang), 0))
+        P.cube("cap_rib", (0, 0, 0), (0.0005, 0.0005, 0.0090), "grey_plastic", rf, cap)
+    P.anchor("A_TIP_0", fs.sub(0, 0, 0.041), (0.003, 0.003, 0.003), root, meta="paste=1.5g")
+    # the label wrapped round the back part of the barrel (over the plunger), u along the barrel, v round it
+    a0, a1, rl = -0.0215, 0.0045, Ro + 0.00007
+    ctr = V(fs.o)
+
+    def lab(u, v):
+        th = TAU * v - math.pi / 2          # v = 0.5 on top
+        a = a0 + (a1 - a0) * u
+        return ctr + V((0, 0, -a)) + V((rl * math.cos(th), rl * math.sin(th), 0))
+    geo = S.grid_surface(lab, 10, 28, uv_fn=lambda u, v: (u, 1 - v))
+    geo = S.facing(geo, lambda pc: V((pc.x, pc.y - ctr.y, 0)))
+    geo_obj(root, geo, "label", "tex_" + SYR_LABEL, 40.0)
+    return dict(note="1.5 g FROSTPEAK paste syringe, 7.2 mm barrel; tip at -z", label=SYR_LABEL)
+
+
 # ====================================================================== fan connector housings (female)
 
 FAN_PITCH = 0.00254
@@ -735,9 +831,19 @@ MODELS = {
     "coil_sata_pair": (build_coil_sata_pair, dict(fit=("box_mb_ridge_b5/z4 A_ITEM_CORD_0", (0.120, 0.075, 0.012)))),
     "coil_fan_splitter": (build_coil_fan_splitter, dict(fit=("box_fan_splitter A_ITEM_PART_0", (0.070, 0.080, 0.012)),
                                                         wb=((90, 75), (-150, 30)))),
+    "syringe_paste": (build_syringe_paste, dict(fit=("box_cooler_tower A_ITEM_HW_1 (kind=syringe; length along h)",
+                                                     (0.012, 0.075, 0.009)), wb=((90, 70), (-150, 30)),
+                                                views=[(60, 40), (-130, 25)], samples=48)),
     "fan4_female": (build_fan4_female, dict(frame_fixed=True, wb=((35, 25), (-145, 30)), views=[(40, 25), (-150, 30)])),
     "fan3_female": (build_fan3_female, dict(frame_fixed=True, wb=((35, 25), (-145, 30)), views=[(40, 25), (-150, 30)])),
 }
+
+
+def preview_materials():
+    """Cycles stand-ins for tags the shared previews don't define (renders only)."""
+    import bpy
+    if bpy.data.materials.get("pbr_clear_plastic") is None:
+        S._film_material("pbr_clear_plastic", (0.93, 0.96, 1.0), 0.05, 0.08, 0.7, 0.08)
 
 
 def build(mid, prev):
@@ -765,6 +871,7 @@ def build(mid, prev):
     tris, meshes = P.write_report(root, mid, "\n".join(notes))
     print("\n".join(notes))
     if prev:
+        preview_materials()
         P.preview(root, mid, views=cfg.get("wb", ((0, 78), (-150, 30))), size=(900, 700))
         S.render(root, mid, cfg.get("views", [(25, 45), (-120, 30)]), size=(1000, 760), samples=cfg.get("samples", 40), start=2)
     return tris, meshes, tuple(round(x, 4) for x in size)
