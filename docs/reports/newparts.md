@@ -19,7 +19,36 @@ blender -b --factory-startup -P Tools/Blender/build_parts_d.py -- [cpu_arc9 ...]
 
 With no ids, `build_parts_d.py` builds every part of this batch. It writes `Assets/Resources/Models/<id>.fbx`, the
 textures, `Logs/ModelPreviews/<id>_<n>.png` and `Logs/ModelPreviews/<id>_report.txt` (every mesh with its
-triangles, every anchor with position, axes, size and meta).
+triangles, every anchor with position, axes, size and meta). Build the parts first, then the boxes (their product
+shots are rendered from the part FBXs):
+
+```bash
+blender -b --factory-startup -P Tools/Blender/build_boxes.py -- cpu_arc9 gpu_rx77 mb_ridge_x5 case_aero
+```
+
+The CPU build also re-renders the shared `cpu_v5_pcb.png` and the box build the shared `box_seal.png` / `box_tape.png`;
+their art is unchanged, so they are not committed.
+
+**Files**
+
+| File | What |
+|---|---|
+| `Tools/Blender/build_parts_d.py` | new: the batch D runner, the cpu_arc9 / gpu_rx77 specs, the case_aero style, the `PremiumBoard` subclass |
+| `Tools/Blender/anchor_compare.py` | new: anchor-by-anchor comparison of two models |
+| `Tools/Blender/build_gpu.py` | optional spec keys and style hooks (rx66/rx88 unchanged) |
+| `Tools/Blender/build_case.py` | optional style keys for the glass front and bottom fans (brickhouse/breeze unchanged) |
+| `Tools/Blender/build_boxes.py`, `rig_products.py` | the four new box items, part bounds, `ACC_SHELF` (20 rigs unchanged) |
+| `Assets/Resources/Models/` | `cpu_arc9`, `gpu_rx77`, `case_aero`, `mb_ridge_x5`, `io_ridge_x5` and the four `box_*` FBXs, with their textures |
+| `Logs/ModelPreviews/` | previews and `*_report.txt` for all nine models |
+
+**README line to add** (the scripts table):
+
+| `build_parts_d.py` | New parts batch D: CPU `cpu_arc9`, GPU `gpu_rx77`, case `case_aero`, motherboard `mb_ridge_x5` + `io_ridge_x5` (it reuses `build_cpu.py`, `build_gpu.py`, `build_case.py`, `build_board.py`); their boxes come from `build_boxes.py` |
+
+**Reproducibility:** a second `build_parts_d.py --nopreview` run into a scratch project gives `gpu_rx77`, `case_aero`
+and `io_ridge_x5` SAME; `cpu_arc9` (the heat spreader prism) and `mb_ridge_x5` (one mesh) come out with a different
+polygon order, the run-to-run n-gon triangulation the brief mentions for `build_board.py`; a shape comparison
+(vertices, polygon set, area, materials) reports both IDENTICAL.
 
 Anchor comparison against a sibling (used for the tables below):
 
@@ -29,7 +58,9 @@ blender -b --factory-startup -P Tools/Blender/anchor_compare.py -- Assets/Resour
 
 These models were built with Blender 5.0.1 as the `bpy` Python module (download.blender.org was blocked in the
 cloud session); rebuilding a committed model this way gives an FBX that `extras_compare.py` reports SAME (for
-example `plug_atx24`), so the module build matches the desktop Blender build.
+example `plug_atx24`), so the module build matches the desktop Blender build. As a module, `bpy.app.binary_path` is
+empty, so `parts_pcb.preview` finds no studio-light HDRI and the EEVEE previews come out magenta; the runner set
+`bpy.app.binary_path` to the package folder first (desktop Blender needs nothing).
 
 ---
 
@@ -381,3 +412,13 @@ all 20 rigs.
    need 0.36 m of shroud, and the shroud's front 8 cm carries the 2.5" sled at `A_SOCKET_SSD25_0`, whose pose the
    contract fixes. Keeping every functional anchor (sockets, standoffs, screws, plugs, panels) identical won over the
    fan size. If 120 mm bottom fans matter more, the sled has to move (a change to `A_SOCKET_SSD25_0`).
+2. **`box_case_aero` accessory box:** it rides 26 mm higher than on the other cases (on the bottom fans, not on the bare
+   PSU shroud), so `A_INSERT_ACCBOX_0` and the five anchors inside it differ from `box_case_breeze` by +0.026 in y.
+3. **`mb_ridge_x5` film anchors:** it has `A_FILM_IO_0` and `A_FILM_CHIPSET_0`, which `build_board.py` gives every
+   board but the committed `mb_ridge_b5.fbx` / `mb_ridge_z4.fbx` lack (they were exported before `films()` existed).
+   All 80 of the B5's anchors are identical. Re-exporting the B5 and Z4 would add the same two anchors to them; that was
+   left alone here (not this task's models).
+4. **Fonts:** built on Linux, so the printed text uses the Liberation stand-ins that `dct_common.font_file` picks for
+   the Windows fonts (Agency FB, Segoe, Arial, Eras). On the GPU's logo plate the wider stand-in for Agency FB is capped
+   with the new `logo_maxw` spec key so "VOLTRA" does not run into the model name.
+5. **No new material tags.**
