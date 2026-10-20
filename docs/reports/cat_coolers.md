@@ -17,9 +17,9 @@ Branch `claude/cat-coolers`. Script `Tools/Blender/build_cat_coolers.py` (new; i
 | 7 | `cooler_noctis_l9` | cooler_tower | done |
 | 8 | `cooler_frostpeak_120_rgb` | cooler_tower | done |
 | 9 | `cooler_tiron_stock` | cooler_stock | done |
-| 10 | `cooler_arctiq_lc240` | AIO (new) | not yet |
-| 11 | `cooler_corvex_h150i_white` | AIO (new) | not yet |
-| 12 | `cooler_glacier_ls720` | AIO (new) | not yet |
+| 10 | `cooler_arctiq_lc240` | AIO (new) | done |
+| 11 | `cooler_corvex_h150i_white` | AIO (new) | done |
+| 12 | `cooler_glacier_ls720` | AIO (new) | done |
 | 13 | `cooler_srv_epoch_1u` | server heatsink SP-V (new) | not yet |
 | 14 | `cooler_srv_platinum_2u` | server heatsink L46 (new) | not yet |
 
@@ -35,6 +35,9 @@ Branch `claude/cat-coolers`. Script `Tools/Blender/build_cat_coolers.py` (new; i
 | `cooler_noctis_d15_black` | 57 438 | 165 mm | cooler_tower | SAME 6, DIFF 5, ONLY_B 4 (as AK620) |
 | `cooler_noctis_l9` | 24 346 | 37 mm | cooler_tower (low profile) | SAME 6, DIFF 5 (fan faces +z on top; top film on the fan hub) |
 | `cooler_frostpeak_120_rgb` | 38 396 | 158 mm | cooler_tower | SAME 7, DIFF 4, ONLY_B 1 (A_PLUG_ARGB_0) |
+| `cooler_arctiq_lc240` | 33 570 | pump 53 mm, rad 288 x 121 x 38 | aio (new) | pump base: screws and A_FILM_0 SAME as cooler_tower |
+| `cooler_corvex_h150i_white` | 49 678 | pump 56 mm, rad 408 x 121 x 27 | aio (new) | as above, plus A_SCREEN_0 |
+| `cooler_glacier_ls720` | 49 014 | pump 55 mm, rad 408 x 121 x 27 | aio (new) | as above |
 | `cooler_tiron_stock` | 21 550 | 53 mm | cooler_stock | vs `cooler_stock`: SAME 9 of 9 (every anchor) |
 
 ### Anchor comparison (anchor_compare.py, `cooler_tower` = A)
@@ -74,7 +77,59 @@ The installing anchors (the four spring screws and the base film) are SAME on ev
 - `A_HIT_n`: one per fin stack, one per fan, then the base.
 - Total height <= 165 mm (the specs give each one's height).
 
+## New contract: AIO liquid cooler (`aio`)
+
+Ids `cooler_arctiq_lc240`, `cooler_corvex_h150i_white`, `cooler_glacier_ls720`.
+
+**Pump block (static, the model root):** the cooler_tower frame and base contract: origin at the centre of the
+cold plate's contact face, +z away from the board, x towards the rear I/O, y towards the board's top edge.
+- `A_SCREW_PH2_0..3`: the four spring screws on the X bracket, same poses and meta as cooler_tower
+  ((+-0.033, +-0.033, 0.0214), `spring=1,thread=M3,turns=8`).
+- `A_FILM_0`: the base film (moving piece), same as cooler_tower.
+- `A_FILM_TOP_0`: the clear film on the pump cap (meta `on=pump_cap`).
+- `A_PLUG_FAN_0`: the pump's loose 4-pin plug, at cooler_tower's pose; meta `target=AIO_PUMP` (CPU_FAN works too).
+  RGB pumps also have `A_PLUG_ARGB_0` (5 V 3-pin, `target=ARGB`; the fans' RGB is chained into the pump).
+- `A_SCREEN_0` (Corvex only): the round LCD, forward +z, meta `kind=lcd,shape=round,res=480x480,diameter=0.048`.
+  The game draws the screen onto it; the shipped texture shows an idle coolant-temperature face.
+- `A_HIT_0`: the pump body.
+
+**Tubes:** `A_TUBE_0` and `A_TUBE_1` sit at the pump's swivel fittings (on the pump's -x side), forward = the
+direction the tube leaves (-x), up +z. Each carries a moving piece `tube@A_TUBE_n`: 8 straight-swept segments with
+ferrule rings at the joints, modelled in the shipped pose (the radiator lying beside the pump). Meta:
+`to=A_PORT_RAD_n@A_RAD_0,radius=0.0055,segments=8,min_bend=0.035,max_length=<real tube length>,length=<as modelled>`.
+
+**How the game should route them:** once the radiator is placed, rebuild each tube as a swept circle (radius
+0.0055) along a cubic Bezier from `A_TUBE_n` to `A_PORT_RAD_n@A_RAD_0`: P0 = A_TUBE_n, P1 = P0 + its forward x 0.06,
+P3 = the port, P2 = P3 + the port's forward x 0.06 (the tube enters the port against the port's forward). Split it
+into the 8 segments (or bend the 8 shipped segments along the curve), and refuse a placement whose curve would be
+longer than `max_length` or bend tighter than `min_bend`. The two tubes run side by side 0.02 m apart.
+
+**Radiator (moving piece `A_RAD_0`):** origin at the core centre; local +Z = the fan side, local +X = along the
+length (the port tank at -X), local +Y = across. Size = the whole radiator. Meta
+`fans=<n>,size=120,length=<m>,thickness=<m>,fan_side=+z,ports=-x`. In the model it lies flat beside the pump
+(centre (0, -0.20, T/2)), fans up. Everything below belongs to it (flat export, linked by name):
+- `rad@A_RAD_0#...`, `radlabel@A_RAD_0#...` and the fan frames `radfan<k>_*@A_RAD_0#...`: its meshes.
+- `A_RAD_FAN_k@A_RAD_0`: the fan rotors (`radfan<k>_rotor@A_RAD_FAN_k@A_RAD_0`), forward = +Z (away from the core),
+  meta as a case fan (`axis=z,spin=-1,rpm=..`, `rgb=1` on RGB fans). Fan k sits at local x = (k - (n-1)/2) x 0.120.
+- `A_HOLE_RAD_i@A_RAD_0`: the case-side screw holes (4 per fan, at +-0.0525 round each fan centre, on the -Z face),
+  forward -Z, meta `thread=6-32,face=case,fan=<k>`. These line up with a case's 120 mm fan holes.
+- `A_PORT_RAD_0..1@A_RAD_0`: the tube ports on the -X tank, forward -X.
+- `A_PLUG_RADFAN_0@A_RAD_0`: the one plug of the daisy-chained radiator fans (`kind=fan4,target=CPU_OPT,chain=<n>`).
+- `A_HIT_1@A_RAD_0`: the radiator with its fans.
+
+**Mounting in case_breeze:** case_breeze has fans at `A_FAN_1..3` on the front (centres y = 0.352, 0.230, 0.108,
+x -0.1869, forward -x) and `A_FAN_0` at the rear; it has no top fan positions. A 360 radiator replaces the three
+front fans: `A_RAD_FAN_0..2` go on `A_FAN_3, A_FAN_2, A_FAN_1` (or reversed to put the ports at the top), the
+radiator's +Z (fan side) facing +x, into the case, so the fans pull air in through the radiator (the -Z face with
+`A_HOLE_RAD_*` against the front panel). A 240 uses `A_FAN_1..2` (ports at the top, by the pump). The breeze fans
+sit 0.122 m apart and a radiator's 0.120 m: snap fan 0 and let the others sit 2 mm off, or add radiator-specific
+mount points to the case later. Cases with top fan positions take the radiator the same way with +Z facing down.
+
 ## Deviations
+
+- AIOs: the real Corsair pump also has a USB and a SATA lead; here it has the pump 4-pin and one ARGB lead. The
+  Arctic pump's small VRM fan and its fan cables run inside the tube sleeve on the real one; here the radiator fans
+  have their own daisy-chained lead.
 
 - `cooler_tiron_stock`: the real Laminar RM1 clips in with four push pins; here it keeps cooler_stock's four spring
   screws (same poses and meta) so the game installs it like the Spinner. Its paste is three stripes inside the same

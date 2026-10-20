@@ -651,9 +651,305 @@ def build_tiron_stock():
     return m
 
 
+# ====================================================================== AIO liquid coolers
+
+def adopt(objs, anchor):
+    """Turns static objects (a fan's frame, made under the root) into moving pieces of an anchor: pivot on the
+    anchor, named '<name>@<anchor>#<tag>'."""
+    mw = anchor.matrix_world.copy()
+    for o in objs:
+        base, tag = o.name.split("#", 1)
+        o.data.transform(mw.inverted() @ o.matrix_world)
+        o.matrix_world = mw
+        c.attach(o, anchor, base, tag)
+
+
+def resample(path, n):
+    """Splits a polyline into n parts of equal length (lists of points, ends shared)."""
+    P = [V(p) for p in path]
+    L = [0.0]
+    for a, b in zip(P, P[1:]):
+        L.append(L[-1] + (b - a).length)
+    total = L[-1]
+
+    def at(s):
+        for i in range(1, len(P)):
+            if L[i] >= s:
+                t = (s - L[i - 1]) / max(1e-12, L[i] - L[i - 1])
+                return P[i - 1].lerp(P[i], t)
+        return P[-1]
+
+    parts = []
+    for k in range(n):
+        s0, s1 = total * k / n, total * (k + 1) / n
+        pts = [at(s0)] + [P[i] for i in range(len(P)) if s0 < L[i] < s1] + [at(s1)]
+        parts.append(pts)
+    return parts, total
+
+
+def tex_aio(pid, cfg):
+    at = pb.Atlas(2048, 1024)
+    at.add("cap", 0, 0, 512, 512)
+    at.add("hub", 512, 0, 512, 512)
+    at.add("film", 1024, 0, 512, 512)
+    at.add("tab", 1536, 0, 256, 128)
+    at.add("blue", 1792, 0, 64, 64)
+    at.add("rad", 0, 512, 1024, 128)
+    at.add("lcd", 1024, 512, 512, 512)
+    cv = pb.Canvas(2048, 1024, bg="#0d0d0e")
+    cfg["draw_cap"](cv, 256, 256, cfg)
+    cfg["draw_hub"](cv, 768, 256, cfg)
+    fx, fy = 1024, 0
+    cv.rect(fx, fy, 512, 512, "#3d8ee6")
+    for k in range(9):
+        cv.line(fx, fy + 40 + k * 60, fx + 512, fy - 60 + k * 60, 14, "#4a98ec")
+    cv.text("REMOVE", fx + 256, fy + 180, 64, "#ffffff", "arialb", "center", "center")
+    cv.text("BEFORE USE", fx + 256, fy + 270, 52, "#ffffff", "arialb", "center", "center")
+    cv.text(cfg["brand"].upper(), fx + 256, fy + 380, 30, "#e8f2ff", "arialb", "center", "center", spacing=1.3)
+    cv.rect(1536, 0, 256, 128, "#3d8ee6")
+    cv.text("PEEL >", 1536 + 128, 64, 40, "#ffffff", "arialb", "center", "center")
+    cv.rect(1792, 0, 64, 64, "#3d8ee6")
+    cv.rect(0, 512, 1024, 128, cfg["rad_bg"])
+    cv.text(cfg["rad_text"], 512, 576, 58, cfg["rad_fg"], "arialb", "center", "center", spacing=1.4, maxw=900)
+    # the LCD's idle screen (Corvex): coolant temperature on a dark round face
+    lx, ly = 1280, 768
+    cv.rect(1024, 512, 512, 512, "#05070a")
+    cv.circle(lx, ly, 250, "#0b1220")
+    cv.ring(lx, ly, 210, 236, "#1d2a44")
+    for k in range(28):  # a temperature arc
+        a = math.radians(140 + k * 9.3)
+        cv.line(lx + 200 * math.cos(a), ly + 200 * math.sin(a), lx + 236 * math.cos(a), ly + 236 * math.sin(a), 9,
+                "#3ec6ff" if k < 12 else "#26314a")
+    cv.text("32", lx - 10, ly - 10, 150, "#f2f6fa", "arialb", "center", "center")
+    cv.text("C", lx + 112, ly - 64, 40, "#9fb4cc", "arialb", "center", "center")
+    cv.circle(lx + 84, ly - 84, 9, "#9fb4cc")
+    cv.text("COOLANT", lx, ly + 110, 30, "#9fb4cc", "arialb", "center", "center", spacing=1.6)
+    cv.text("CORVEX", lx, ly + 170, 26, "#5c6b80", "arialb", "center", "center", spacing=1.8)
+    cv.render(pid)
+    return at
+
+
+def arctiq_cap(cv, x, y, cfg):
+    cv.rect(x - 256, y - 256, 512, 512, "#111113")
+    cx, cy = x, y - 60
+    for k in range(3):
+        a = k * math.pi / 3
+        cv.line(cx - 70 * math.cos(a), cy - 70 * math.sin(a), cx + 70 * math.cos(a), cy + 70 * math.sin(a), 16, "#c9ccd2")
+    cv.circle(cx, cy, 20, "#111113")
+    cv.text("ARCTIQ", x, y + 70, 64, "#eef0f3", "arialb", "center", "center", spacing=1.25)
+    cv.text("LIQUID CHILLER II", x, y + 140, 24, "#8c9098", "arialb", "center", "center", spacing=1.6, maxw=420)
+
+
+def corvex_cap(cv, x, y, cfg):
+    cv.rect(x - 256, y - 256, 512, 512, "#f1f1ef")
+    cv.text("CORVEX", x, y, 64, "#202024", "arialb", "center", "center", spacing=1.5)
+
+
+def glacier_cap(cv, x, y, cfg):
+    cv.rect(x - 256, y - 256, 512, 512, "#07080a")
+    for k in range(9):  # the 'infinity mirror' tunnel
+        s = 230 - k * 22
+        cv.frame_rect(x - s, y - s, 2 * s, 2 * s, 5, "#3a3f4a" if k % 2 else "#23262d", r=30)
+    cv.text("GLACIER", x, y, 50, "#f0f2f5", "arialb", "center", "center", spacing=1.4)
+
+
+def corvex_hub(cv, x, y, cfg):
+    hub_ring(cv, x, y, "#f2f2f0", "#c9c9c6", "CORVEX", "#202024", "arialb", size=44)
+
+
+def build_aio(pid, cfg):
+    """An AIO: the pump block on the cooler_tower base contract, two segmented tubes (moving pieces of A_TUBE_0/1),
+    the radiator as the moving piece A_RAD_0 with its fans, screw holes, ports and fan plug (see the report)."""
+    at = tex_aio(pid, cfg)
+    m = pb.Model(pid)
+    TEX = "tex_" + pid
+    body_t, cap_t, tube_t = cfg["body_tag"], cfg["cap_tag"], cfg["tube_tag"]
+    # ------------------------------------------------------------ pump block
+    m.add("copper", pb.g_slab(pb.rrect2(0, 0, 0.054, 0.054, 0.004, 3), [], 0.0030, 0.0, bevel=0.0003))
+    B, H = cfg["pump_w"], cfg["pump_h"]
+    m.add(body_t, pb.g_slab(pb.rrect2(0, 0, B, B, cfg.get("pump_r", 0.010), 6), [], H - 0.006, 0.0030, bevel=0.0012))
+    # the X bracket and screws exactly as cooler_tower
+    xb_poly = []
+    for (hx, hy) in [(0.033, 0.033), (-0.033, 0.033), (-0.033, -0.033), (0.033, -0.033)]:
+        d = V((hx, hy, 0)).normalized()
+        p = V((-d.y, d.x, 0))
+        tip = V((hx, hy, 0)) + d * 0.004
+        xb_poly += [tuple(tip - p * 0.0045)[:2], tuple(tip + p * 0.0045)[:2]]
+        nxt = math.atan2(hy, hx) + math.pi / 4
+        xb_poly.append((math.cos(nxt) * 0.0120, math.sin(nxt) * 0.0120))
+    m.add(cfg.get("bracket_tag", "steel_dark"), pb.g_slab(xb_poly, [pb.circle2(x, y, 0.0018, 16) for (x, y) in HOLES],
+                                                          0.0015, 0.0126, bevel=0.0003))
+    for i, (x, y) in enumerate(HOLES):
+        bc.spring_screw(m, i, x, y, 0.0141, 0.0196, head_r=0.0036, spring_r=0.0030)
+    base_film(m, at, TEX)
+    zt = H - 0.003  # body top
+    style = cfg["pump"]
+    film_size = (0.040, 0.040)
+    if style == "arctiq":  # flat square cap with the brand
+        m.add(cap_t, pb.g_slab(pb.rrect2(0, 0, B - 0.004, B - 0.004, 0.008, 6), [], 0.003, zt, bevel=0.0008))
+        m.add(TEX, pb.g_quad(0.042, 0.042, at.uv("cap")), pb.label_frame((0, 0, 1), (0, 1, 0)), (0, 0, zt + 0.00305))
+        top = zt + 0.003
+    elif style == "corvex":  # a round LCD in an RGB ring on a white body
+        m.add(cap_t, pb.g_lathe([(0.0, zt), (0.029, zt), (0.029, zt + 0.006), (0.0275, zt + 0.0075), (0.0, zt + 0.0075)], 64))
+        m.add("rgb", pb.g_ring(0.0262, 0.0278, 0.0012, 64), None, (0, 0, zt + 0.0078))
+        m.add("glass", pb.g_cyl(0.0258, 0.0010, 64), None, (0, 0, zt + 0.0079))
+        m.add(TEX, pb.g_disc(0.0240, 64, at.uv("lcd")), pb.label_frame((0, 0, 1), (0, 1, 0)), (0, 0, zt + 0.00845))
+        m.anchor("A_SCREEN_0", (0, 0, zt + 0.0085), (0.048, 0.048, 0.002), forward=(0, 0, 1), up=(0, 1, 0),
+                 meta="kind=lcd,shape=round,res=480x480,diameter=0.048")
+        m.add(TEX, pb.g_quad(0.030, 0.0075, at.uv("rad")), pb.label_frame((1, 0, 0), (0, 0, 1)), (B / 2 + 0.00005, 0, zt * 0.5))
+        film_size = (0.050, 0.050)
+        top = zt + 0.0085
+    else:  # glacier: square mirror cap with an ARGB frame
+        m.add(cap_t, pb.g_slab(pb.rrect2(0, 0, B - 0.002, B - 0.002, 0.009, 6), [], 0.004, zt, bevel=0.0006))
+        m.add("rgb", pb.g_slab(pb.rrect2(0, 0, B - 0.006, B - 0.006, 0.007, 6),
+                               [pb.rrect2(0, 0, B - 0.011, B - 0.011, 0.006, 6)], 0.0010, zt + 0.0040))
+        m.add("glass", pb.g_slab(pb.rrect2(0, 0, B - 0.011, B - 0.011, 0.006, 6), [], 0.0006, zt + 0.0040))
+        m.add(TEX, pb.g_quad(B - 0.013, B - 0.013, at.uv("cap")), pb.label_frame((0, 0, 1), (0, 1, 0)), (0, 0, zt + 0.0047))
+        top = zt + 0.0050
+    m.anchor("A_FILM_TOP_0", (0, 0, top + 0.0001), (film_size[0], film_size[1], 0.001), forward=(0, 0, 1),
+             up=(0, 1, 0), meta="film=clear,on=pump_cap,peel_from=+x")
+    # swivel fittings on the -x side
+    fz = 0.020 + 0.006
+    fittings = []
+    for sy in (1, -1):
+        y = sy * 0.010
+        m.add(cfg.get("fitting_tag", body_t), pb.xf(pb.g_cyl(0.0060, 0.010, 24), pb.rot("y", math.pi / 2)), None, (-B / 2 - 0.004, y, fz))
+        m.add("steel_dark", pb.xf(pb.g_cyl(0.0064, 0.0025, 24), pb.rot("y", math.pi / 2)), None, (-B / 2 - 0.0095, y, fz))
+        fittings.append(V((-B / 2 - 0.011, y, fz)))
+    # pump cable (and ARGB lead) to the plugs, from the +y side of the body
+    plug(m, 0, (-0.034, 0.090, 0.006), (0, -1, 0), (0, 0, 1), (0.010, B / 2 - 0.002, 0.012),
+         [(0.010, B / 2 + 0.008, 0.010), (-0.020, 0.064, 0.010)], target="AIO_PUMP")
+    if cfg.get("rgb"):
+        plug(m, 0, (-0.016, 0.094, 0.005), (0, -1, 0), (0, 0, 1), (0.018, B / 2 - 0.002, 0.012),
+             [(0.018, B / 2 + 0.010, 0.010), (-0.004, 0.068, 0.010)], kind="argb3", target="ARGB", name="ARGB",
+             tag="connector_white")
+    m.anchor("A_HIT_0", (0, 0, top / 2), (B, B, top))
+    # ------------------------------------------------------------ radiator (moving piece A_RAD_0)
+    n, T = cfg["fans"], cfg["rad_t"]
+    L = 0.120 * n + 0.004  # core length
+    TW = 0.022  # end tank length
+    W = 0.121
+    ry = -0.20
+    rc = V((0.0, ry, T / 2))
+    ra = m.anchor("A_RAD_0", tuple(rc), (L + 2 * TW, W, T), forward=(0, 0, 1), up=(0, 1, 0),
+                  meta=f"fans={n},size=120,length={L + 2 * TW:.3f},thickness={T:.3f},fan_side=+z,ports=-x")
+    rp = lambda tag: m.piece(ra, tag, "rad")  # noqa: E731
+    rad_t, tank_t = cfg["rad_tag"], cfg["tank_tag"]
+    # core: dark fin block with the flat water tubes showing as strips on both faces
+    rp("mesh_black").add(pb.g_box((L, 0.101, T - 0.001)), None, rc)
+    for k in range(13):
+        y = ry + (k - 6) * 0.0078
+        rp(rad_t).add(pb.g_box((L, 0.0016, T - 0.0004)), None, (0, y, T / 2))
+    for sy in (1, -1):  # side rails (C channels) with the screw-hole rows
+        rp(rad_t).add(pb.g_box((L + 0.002, 0.010, T), 0.0005), None, (0, ry + sy * 0.0555, T / 2))
+    holes = []
+    for k in range(n):
+        xc = (k - (n - 1) / 2) * 0.120
+        for sx in (-1, 1):
+            for sy in (-1, 1):
+                for z, s in ((T + 0.00005, 1), (-0.00005, -1)):
+                    rp("steel_dark").add(pb.g_cyl(0.0019, 0.0002, 12), None, (xc + sx * 0.0525, ry + sy * 0.0525, z))
+                holes.append((xc + sx * 0.0525, ry + sy * 0.0525))
+    for sx in (-1, 1):  # end tanks
+        rp(tank_t).add(pb.g_box((TW, W, T + 0.002), 0.0015), None, (sx * (L / 2 + TW / 2), ry, T / 2))
+    m.piece(ra, TEX, "radlabel").add(pb.g_quad(0.090, 0.0113, at.uv("rad")), pb.label_frame((0, 1, 0), (0, 0, 1)),
+                                    (0.0, ry + W / 2 - 0.0004 + 0.0005, T / 2))
+    # ports on the -x tank, pointing -x
+    ports = []
+    for k, y in enumerate((ry + W / 2 - 0.016, ry + W / 2 - 0.036)):
+        x0 = -(L / 2 + TW)
+        rp(tank_t).add(pb.xf(pb.g_cyl(0.0060, 0.008, 24), pb.rot("y", math.pi / 2)), None, (x0 - 0.004, y, T / 2))
+        rp("steel_dark").add(pb.xf(pb.g_cyl(0.0064, 0.0025, 24), pb.rot("y", math.pi / 2)), None, (x0 - 0.0085, y, T / 2))
+        pa = m.anchor(f"A_PORT_RAD_{k}", (x0 - 0.010, y, T / 2), (0.014, 0.014, 0.012), forward=(-1, 0, 0),
+                      up=(0, 0, 1), meta=f"tube=A_TUBE_{k}", parent=ra)
+        ports.append(V((x0 - 0.010, y, T / 2)))
+    for i, (x, y) in enumerate(holes):
+        m.anchor(f"A_HOLE_RAD_{i}", (x, y, 0.0), (0.006, 0.006, 0.004), forward=(0, 0, -1), up=(0, 1, 0),
+                 meta=f"thread=6-32,face=case,fan={i // 4}", parent=ra)
+    # fans on the +z face, their corner screws, a daisy-chained cable to one plug
+    for k in range(n):
+        xc = (k - (n - 1) / 2) * 0.120
+        fa = m.anchor(f"A_RAD_FAN_{k}", (xc, ry, T + 0.0125), (0.12, 0.12, 0.025), forward=(0, 0, 1), up=(0, 1, 0),
+                      meta=pf.fan_meta("ccw", cfg["rpm"], "rgb=1" if cfg.get("rgb") else ""), parent=ra)
+        r = fan(m, fa, 0.12, 0.025, cfg["fan_scheme"], pid, at.uv("hub"), f"radfan{k}", rgb=cfg.get("rgb", False))
+        adopt(r["static"], ra)
+        for sx in (-1, 1):
+            for sy in (-1, 1):
+                rp("steel_dark").add(pb.g_screw_head(0.0028, 0.0016, "ph", 16), None,
+                                     (xc + sx * 0.0525, ry + sy * 0.0525, T + 0.025))
+    cab = [V(((k - (n - 1) / 2) * 0.120 - 0.052, ry - 0.0585, T + 0.004)) for k in range(n)]
+    pts = list(reversed(cab)) + [V((-(L / 2) - 0.004, ry - 0.0615, T * 0.5)), V((-(L / 2) - 0.026, ry - 0.075, 0.004))]
+    rp("black_plastic").add(pb.g_sweep(pb.fillet_path(pts, 0.006, 6), 0.0013, 10))
+    pl_face = V((-(L / 2) - 0.034, ry - 0.085, 0.004))
+    pla = m.anchor("A_PLUG_RADFAN_0", tuple(pl_face), (0.012, 0.008, 0.016), forward=(-1, 0, 0), up=(0, 0, 1),
+                   meta=f"kind=fan4,frame=plug,target=CPU_OPT,chain={n}", parent=ra)
+    M = pb.frame((-1, 0, 0), (0, 0, 1))
+    pl = m.piece(pla, "connector_black", "plug")
+    pl.add(pb.g_slab(pb.rrect2(0, 0, 0.0101, 0.0058, 0.0005, 2),
+                     [pb.rect2((k - 1.5) * 0.00254, -0.0004, 0.0012, 0.0012) for k in range(4)], 0.0025, 0.0), M, pl_face)
+    pl.add(pb.g_box((0.0101, 0.0058, 0.0110), 0.0003), M, pl_face + M @ V((0, 0, 0.0080)))
+    rp("black_plastic").add(pb.g_sweep(pb.fillet_path([pts[-1], pl_face + M @ V((0, 0, 0.020)),
+                                                       pl_face + M @ V((0, 0, 0.012))], 0.004, 4), 0.0013, 10))
+    m.anchor("A_HIT_1", tuple(rc + V((0, 0, 0.0125))), (L + 2 * TW, W, T + 0.025), parent=ra)
+    # ------------------------------------------------------------ tubes: segmented, moving pieces at the pump
+    seg_n = 8
+    lengths = []
+    for k, (f, p) in enumerate(zip(fittings, ports)):
+        path = [f, f + V((-0.035, 0, 0)), V((f.x - 0.075, f.y - 0.045, 0.024)),
+                V((p.x - 0.060, p.y + 0.050, T / 2)), V((p.x - 0.030, p.y, T / 2)), p]
+        path = pb.fillet_path(path, 0.030, 8)
+        ta = m.anchor(f"A_TUBE_{k}", tuple(f), (0.014, 0.014, 0.014), forward=(-1, 0, 0), up=(0, 0, 1),
+                      meta=f"to=A_PORT_RAD_{k}@A_RAD_0,radius=0.0055,segments={seg_n},min_bend=0.035,max_length={cfg['tube_len']}")
+        parts, total = resample(path, seg_n)
+        lengths.append(total)
+        tb = m.piece(ta, tube_t, "tube")
+        for i, part in enumerate(parts):
+            tb.add(pb.g_sweep(part, 0.0055, 14))
+            if i:
+                d = (part[1] - part[0]).normalized()
+                tb.add(pb.g_ring(0.0054, 0.0060, 0.0025, 18), pb.frame(d, (0, 0, 1) if abs(d.z) < 0.9 else (0, 1, 0)), part[0])
+        ta["meta"] = ta["meta"] + f",length={total:.3f}"
+    extra = "   TUBES " + ", ".join(f"A_TUBE_{k} length {l:.3f} m" for k, l in enumerate(lengths))
+    finish(m, pid, [
+        dict(yaw=-30, pitch=-50, dist=0.75), dict(yaw=30, pitch=30, target=(0, 0, 0.03), dist=0.25),
+        dict(yaw=200, pitch=-60, dist=0.75), dict(yaw=-60, pitch=-25, target=(-0.1, -0.1, 0.02), dist=0.4),
+        dict(yaw=0, pitch=0, target=(0, 0, 0.03), dist=0.22),
+        dict(yaw=180, pitch=-10, target=(0, ry, 0.0), dist=0.6),
+    ], extra)
+    return m
+
+
+AIOS = {
+    # Arctic Liquid Freezer II 240-style: 38 mm thick radiator, black, sleeved tubes, no RGB
+    "cooler_arctiq_lc240": dict(
+        tube_len=0.45,
+        brand="Arctiq", pump="arctiq", draw_cap=arctiq_cap, draw_hub=arctiq_hub, fans=2, rad_t=0.038,
+        pump_w=0.070, pump_h=0.053, pump_r=0.012, body_tag="black_plastic", cap_tag="paint_black",
+        tube_tag="rubber", rad_tag="paint_black", tank_tag="black_plastic", fan_scheme=("fan_black", "fan_black"),
+        rpm=1800, rad_bg="#111113", rad_fg="#e8eaee", rad_text="ARCTIQ  LIQUID CHILLER II 240",
+        hub_bg="#111113", hub_fg="#e6ecf2", accent="#9aa0a8"),
+    # Corsair H150i Elite LCD-style, white: 360 mm, RGB fans, round LCD pump cap
+    "cooler_corvex_h150i_white": dict(
+        tube_len=0.40,
+        brand="Corvex", pump="corvex", draw_cap=corvex_cap, draw_hub=corvex_hub, fans=3, rad_t=0.027,
+        pump_w=0.064, pump_h=0.048, pump_r=0.016, body_tag="white_plastic", cap_tag="white_plastic",
+        tube_tag="white_plastic", rad_tag="paint_white", tank_tag="white_plastic", fitting_tag="white_plastic",
+        bracket_tag="steel", fan_scheme=("white_plastic", "white_plastic"), rgb=True, rpm=2100,
+        rad_bg="#f0f0ee", rad_fg="#1f1f22", rad_text="CORVEX  H150i  VISTA LCD"),
+    # DeepCool LS720-style: 360 mm, black, ARGB fans and an ARGB mirror cap
+    "cooler_glacier_ls720": dict(
+        tube_len=0.41,
+        brand="Glacier", pump="glacier", draw_cap=glacier_cap, draw_hub=glacier_hub, fans=3, rad_t=0.027,
+        pump_w=0.068, pump_h=0.050, pump_r=0.012, body_tag="black_plastic", cap_tag="paint_black",
+        tube_tag="rubber", rad_tag="paint_black", tank_tag="black_plastic", fan_scheme=("fan_black", "white_plastic"),
+        rgb=True, rpm=2250, rad_bg="#111113", rad_fg="#e8eaee", rad_text="GLACIER  LS720",
+        hub_bg="#111113", hub_fg="#e6ecf2", accent="#7fb6e6"),
+}
+
 BUILDERS = {k: (lambda k=k: build_tower_model(k, TOWERS[k])) for k in TOWERS}
-BUILDERS["cooler_tiron_stock"] = build_tiron_stock
 BUILDERS["cooler_noctis_l9"] = build_low_profile
+BUILDERS["cooler_tiron_stock"] = build_tiron_stock
+BUILDERS.update({k: (lambda k=k: build_aio(k, AIOS[k])) for k in AIOS})
 
 
 def write_report():

@@ -243,5 +243,90 @@
     },
     "contract": "cooler_stock",
     "new_contract": false
+  },
+  {
+    "id": "cooler_arctiq_lc240",
+    "model": "cooler_arctiq_lc240",
+    "brand": "Arctiq",
+    "name": "Arctiq Liquid Chiller II 240",
+    "category": "Cooler",
+    "price": 75,
+    "power_w": 8,
+    "color": "#111113",
+    "rgb": false,
+    "analog": "Arctic Liquid Freezer II 240 (docs only, never shown in game)",
+    "desc": "240 mm AIO with a thick 38 mm radiator and two 120 mm fans, black.",
+    "specs": {
+      "radiator_mm": 240,
+      "radiator_thickness_mm": 38,
+      "fans": 2,
+      "fan_mm": 120,
+      "tube_mm": 450,
+      "pump_height_mm": 53,
+      "rpm_max": 1800
+    },
+    "game": {
+      "cooler_max_w": 250,
+      "perf": 0
+    },
+    "contract": "aio",
+    "new_contract": true
+  },
+  {
+    "id": "cooler_corvex_h150i_white",
+    "model": "cooler_corvex_h150i_white",
+    "brand": "Corvex",
+    "name": "Corvex H150i Vista LCD White",
+    "category": "Cooler",
+    "price": 260,
+    "power_w": 14,
+    "color": "#F1F1EF",
+    "rgb": true,
+    "analog": "Corsair iCUE H150i Elite LCD XT, white (docs only, never shown in game)",
+    "desc": "360 mm AIO with three RGB fans and a round LCD on the pump, white.",
+    "specs": {
+      "radiator_mm": 360,
+      "radiator_thickness_mm": 27,
+      "fans": 3,
+      "fan_mm": 120,
+      "tube_mm": 400,
+      "pump_height_mm": 56,
+      "rpm_max": 2100,
+      "lcd": "2.1in round 480x480"
+    },
+    "game": {
+      "cooler_max_w": 300,
+      "perf": 0
+    },
+    "contract": "aio",
+    "new_contract": true
+  },
+  {
+    "id": "cooler_glacier_ls720",
+    "model": "cooler_glacier_ls720",
+    "brand": "Glacier",
+    "name": "Glacier LS720",
+    "category": "Cooler",
+    "price": 130,
+    "power_w": 12,
+    "color": "#111113",
+    "rgb": true,
+    "analog": "DeepCool LS720 (docs only, never shown in game)",
+    "desc": "360 mm AIO with three ARGB fans and a mirror pump cap, black.",
+    "specs": {
+      "radiator_mm": 360,
+      "radiator_thickness_mm": 27,
+      "fans": 3,
+      "fan_mm": 120,
+      "tube_mm": 410,
+      "pump_height_mm": 55,
+      "rpm_max": 2250
+    },
+    "game": {
+      "cooler_max_w": 300,
+      "perf": 0
+    },
+    "contract": "aio",
+    "new_contract": true
   }
 ]
