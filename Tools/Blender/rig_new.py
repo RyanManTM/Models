@@ -99,6 +99,12 @@ def item(pid, it):
 
 # ---------------------------------------------------------------- sizes
 
+def size_psu_sfx(pid, it):
+    d = dims(it)              # x the depth (rear +x), y the height (fan -y), z the width
+    blo, bhi = PART_BOUNDS[it["part"]["specs"].get("bracket", "psu_bracket_sfx_atx")]
+    return (up5(d[0] + 0.094), up5(max(bhi[1] - blo[1] + 0.012, d[1] + 0.034)), up5(max(bhi[2] - blo[2] + 0.016, d[2] + 0.04)))
+
+
 def size_hdd_bulk(pid, it):
     d = dims(it)              # the drive lying flat between two foam end caps
     return (up5(d[0] + 0.064), up5(d[1] + 0.032), up5(d[2] + 0.030))
@@ -109,7 +115,7 @@ def size_hdd(pid, it):
     return (up5(d[0] + 0.068), up5(d[1] + 0.022), up5(d[2] + 0.026))
 
 
-SIZE = {"hdd": size_hdd, "hdd_bulk": size_hdd_bulk}
+SIZE = {"hdd": size_hdd, "hdd_bulk": size_hdd_bulk, "psu_sfx": size_psu_sfx}
 
 
 # ---------------------------------------------------------------- shared pieces
@@ -254,4 +260,85 @@ def build_hdd_bulk(ctx):
     return R
 
 
-BUILDERS = {"hdd": build_hdd, "hdd_bulk": build_hdd_bulk}
+# ---------------------------------------------------------------- SFX PSU: the ATX PSU rig plus the SFX-to-ATX bracket
+
+def build_psu_sfx(ctx):
+    """The fully modular ATX PSU rig (rig_products.build_psu) at SFX size: a taped printed carton, the unit fan up in
+    its fabric bag between two EPS saddle caps, the cable pouch on it and the papers on the pouch; the +x end
+    compartment holds the power cord, the screw bag and the SFX-to-ATX bracket standing in its clear bag."""
+    pid = ctx.pid
+    sx, sy, sz = ctx.s
+    R = Rig("box_" + pid)
+    t = 0.002
+    inner = "cardboard"
+    rsc_box(R, ctx, t, inner, tape_tag="tape_clear")
+    short = ["A_FLAP_2", "A_FLAP_3"]
+    spec = ctx.it["part"]["specs"]
+    lo, hi = PART_BOUNDS[pid]
+    bid = spec.get("bracket", "psu_bracket_sfx_atx")
+    blo, bhi = PART_BOUNDS[bid]
+    x0 = lo[0]                                 # the modular panel (-x)
+    x1 = x0 + spec["depth_mm"] / 1000.0        # the rear face (+x); the switch stands past it
+    width = hi[2] - lo[2]
+    xi = sx / 2 - t - 0.0005
+    zi = sz / 2 - t - 0.0005
+    ybot = t + 0.003
+    ay = ybot + hi[1]                          # fan up: local -y points up
+    ax = -xi + 0.016 - x0
+    body_x0, body_x1 = ax + x0, ax + x1
+    ytop = ay - lo[1]
+    pocket = (width + 0.004, (hi[1] - lo[1]) + 0.004)
+    pc = (0.0, (ybot + ytop) / 2)
+    Dp = 0.022
+    plist = paper_list(ctx, booklets_last=True, fit=(0.105, 0.148))
+    npap = len(plist)
+    o_pouch = 3 + npap
+    o_part = o_pouch + 1
+    o_caps = o_part + 1
+    caps = []
+    xw1 = body_x1 + 0.012                      # the +x cap stands off the unit's rear: the switch sits in its pocket
+    for i, (x_wall, inward, xend) in enumerate(((-xi, 1, body_x0), (xw1, -1, body_x1))):
+        nm = f"A_INSERT_FOAM_{i}"
+        Lc = abs(xend - x_wall) + Dp
+        y1 = ytop + 0.0005
+        R.anchor(nm, F((x_wall, t, 0)), (Lc, y1 - t, 2 * zi), lift=("-x" if inward > 0 else "+x"), dist=0.06,
+                 with_="A_ITEM_PART_0", label="EPS end cap", order=o_caps, under=["A_ITEM_PART_0"])
+        eps_cap(R, "cap", nm, x_wall, inward, t + 0.0002, y1, 2 * zi - 0.001, pocket, pc, Lc, Dp, recess=(i == 0))
+        caps.append(nm)
+    R.anchor("A_ITEM_PART_0", F((ax, ay, 0.0), NZ, NY), bsize(pid, 0.003), bag="fabric", label="SFX power supply",
+             order=o_part, under=["A_ITEM_POUCH_0"])
+    yp = ytop + 0.0008
+    pw = min(0.150, (xw1 + 0.001) - (-xi + 0.002))
+    px = (-xi + 0.002 + xw1 + 0.001) / 2
+    R.anchor("A_ITEM_POUCH_0", flat_frame((px, yp, 0.0)), (pw, min(0.130, 2 * zi - 0.01), 0.017), label="modular cable pouch",
+             order=o_pouch, under=[f"A_ITEM_DOC_{npap - 1}"] if npap else short)
+    # the end compartment: the cord coil and the screw bag standing against the cap, the bracket against the end wall
+    yf = t + 0.0005
+    xc = xw1 + 0.0015
+    R.anchor("A_ITEM_CORD_0", F((xc, yf + 0.045, 0.0), X, Y), (0.120, 0.090, 0.016), kind="c13", tie="twist",
+             label="power cord", order=3, under=short)
+    R.anchor("A_ITEM_HW_0", F((xc + 0.017, yf + 0.035, -0.035), X, Y), (0.050, 0.070, 0.005),
+             label="4 x 6-32 SCREWS", order=3, under=short)
+    bx = xi - 0.0035 - bhi[0]
+    R.anchor("A_ITEM_ACC_0", F((bx, yf + 0.002 - blo[1], 0.0), Z, Y), tuple(bhi[k] - blo[k] + 0.004 for k in range(3)),
+             id=bid, bag="clear", frame="model", label="SFX-to-ATX bracket", order=3, under=short)
+    yd = yp + 0.0172
+    names, _ = pile(R, plist, px, yd, 0.0, 3, short, step=(0.003, -0.003))
+    R.anchor("A_HIT_0", F((0, sy / 2, 0)), (sx, sy, sz))
+    R.explode = {"A_ITEM_PART_0": (0.0, 0.12, 0), "A_ITEM_CORD_0": (0.10, 0.13, -0.10), "A_ITEM_HW_0": (0.14, 0.13, -0.02),
+                 "A_ITEM_ACC_0": (0.15, 0.06, 0.06), "A_ITEM_POUCH_0": (-0.05, 0.20, -0.07),
+                 caps[0]: (-0.07, 0.12, 0), caps[1]: (0.06, 0.12, 0),
+                 "A_TAPE_0": (-0.03, 0.02, 0), "A_TAPE_1": (0, 0.03, 0), "A_TAPE_2": (0.03, 0.02, 0)}
+    explode_docs(R, names, (-0.02, 0.24, 0.08), (0.0, 0.015, 0.07))
+    R.open_view = (22, 55)
+    R.explode_view = (28, 30)
+    R.explode_fill = 0.85
+    NOTES[pid] = (f"SFX PSU (fully modular): tape strip 0 (A_TAPE_0..2) (0) -> long flaps (1) -> short flaps (2) -> {npap} papers "
+                  f"in a pile on the pouch (3..{2 + npap}), with the power cord A_ITEM_CORD_0, the screw bag A_ITEM_HW_0 and the "
+                  f"SFX-to-ATX bracket A_ITEM_ACC_0 (id={bid}, frame=model, clear bag) standing in the +x compartment (3) -> "
+                  f"cable pouch A_ITEM_POUCH_0 ({o_pouch}) -> the unit in its fabric bag, lifted out WITH its two EPS saddle "
+                  f"caps ({o_part}) -> caps A_INSERT_FOAM_0/1 pulled off along -x/+x ({o_caps}).")
+    return R
+
+
+BUILDERS = {"hdd": build_hdd, "hdd_bulk": build_hdd_bulk, "psu_sfx": build_psu_sfx}

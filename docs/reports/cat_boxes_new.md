@@ -7,11 +7,11 @@ Brief: `docs/tasks/catalog/19-boxes.md` (the new kinds: AIO, 3.5" HDD retail and
 
 | kind | ids | state |
 |---|---|---|
-| `hdd` | hdd_seacrest_2tb, hdd_westline_4tb, hdd_seacrest_8tb | hdd_seacrest_2tb done; the others not built yet |
+| `hdd` | hdd_seacrest_2tb, hdd_westline_4tb, hdd_seacrest_8tb | done |
 | `hdd_bulk` | hdd_seacrest_exos_20tb | done |
 | `fan_pack` | fan_arctiq_p12_5pack, fan_noctis_a12x25, fan_noctis_a12x25_black, fan_lumin_sl120_white_3pack, fan_corvex_af120_rgb_3pack, fan_arctiq_p14, fan_hush_wing4_140 | not built yet |
 | `aio` | cooler_arctiq_lc240, cooler_corvex_h150i_white, cooler_glacier_ls720 | not built yet |
-| `psu_sfx` | psu_corvex_sf750 | not built yet |
+| `psu_sfx` | psu_corvex_sf750 | done |
 
 ## Boxes
 
@@ -21,6 +21,9 @@ brackets; every piece also carries `under=` (what covers it).
 | box | size | tris | opening sequence (order) |
 |---|---|---|---|
 | `box_hdd_seacrest_2tb` | 0.215 × 0.05 × 0.13 | 5722 | two round seals A_SEAL_0/1 (0) -> tuck lid A_FLAP_0 (1) -> dust flaps A_FLAP_1/2 (2) -> 2 papers lying on the tray (3..4) -> the drive A_ITEM_PART_0 in its silver anti-static bag and the screw bag A_ITEM_HW_0 (5) -> the moulded pulp tray A_INSERT_PULP_0 (6). |
+| `box_hdd_westline_4tb` | 0.215 × 0.05 × 0.13 | 5722 | as hdd_seacrest_2tb. |
+| `box_hdd_seacrest_8tb` | 0.215 × 0.05 × 0.13 | 5722 | as hdd_seacrest_2tb (NAS line words: workload, NAS badge). |
+| `box_psu_corvex_sf750` | 0.2 × 0.1 × 0.17 | 732 | tape strip 0 (A_TAPE_0..2) (0) -> long flaps A_FLAP_0/1 (1) -> short flaps A_FLAP_2/3 (2) -> 3 papers in a pile on the pouch, booklet at the bottom (3..5), and in the +x compartment the power cord A_ITEM_CORD_0 (c13, twist tie), the screw bag A_ITEM_HW_0 and the SFX-to-ATX bracket A_ITEM_ACC_0 (id=psu_bracket_sfx_atx, frame=model, clear bag) standing (3) -> cable pouch A_ITEM_POUCH_0 (6) -> the unit in its fabric bag A_ITEM_PART_0, lifted out WITH its two EPS saddle caps (7) -> caps A_INSERT_FOAM_0/1 pulled off along -x/+x (8). |
 | `box_hdd_seacrest_exos_20tb` | 0.215 × 0.06 × 0.135 | 668 | tape strip 0 (A_TAPE_0..2) (0) -> long flaps A_FLAP_0/1 (1) -> short flaps A_FLAP_2/3 (2) -> 2 papers in a pile on the caps (3..4) -> the drive in its silver anti-static bag A_ITEM_PART_0, lifted out WITH its two black PE foam end caps (5) -> caps A_INSERT_FOAM_0/1 pulled off along -x/+x (6). |
 
 ## Rig designs
@@ -44,6 +47,18 @@ brackets; every piece also carries `under=` (what covers it).
 - **Inserts:** two black PE foam end caps (`A_INSERT_FOAM_0/1`, `with=A_ITEM_PART_0`), each a block with a pocket for
   the drive's end and a finger slot on top; the drive floats in the middle of the box between them.
 - **Contents:** the drive in a silver anti-static bag; the papers in a pile on the caps.
+
+### `psu_sfx`: SFX PSU
+- **Box:** the ATX PSU rig (`rig_products.build_psu`, fully modular branch) at SFX size: a taped printed carton
+  (`rsc_box`, clear tape), the unit fan up in a black fabric bag between two white EPS saddle caps (`eps_cap`, pockets
+  of the unit's measured section; the +x cap stands 12 mm off the rear face so the switch sits in its pocket), the
+  modular cable pouch on the unit and caps, the papers on the pouch.
+- **The end compartment** (+x, between the rear cap and the end wall): the power cord coil and the screw bag standing
+  against the cap, and the **SFX-to-ATX bracket** `A_ITEM_ACC_0` (`id=psu_bracket_sfx_atx`, `frame=model`: the
+  anchor is the bracket model's own frame, so the game spawns `psu_bracket_sfx_atx.fbx` there) standing upright in a
+  clear bag, its plate against the end wall.
+- Size from the unit and the bracket: x = depth + 94 mm (caps and compartment), y = the bracket's height + 12 mm,
+  z = the bracket's width + 16 mm.
 
 ## Deviations
 - None yet.
