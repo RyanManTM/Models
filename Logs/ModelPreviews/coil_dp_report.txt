@@ -1,0 +1,13 @@
+coil_dp: 7416 triangles, 7 meshes
+  mesh coil_dp_black_plastic#black_plastic  tris=1840
+  mesh coil_dp_dark_plastic#dark_plastic  tris=312
+  mesh coil_dp_gold#gold  tris=240
+  mesh coil_dp_nickel#nickel  tris=80
+  mesh coil_dp_rubber#rubber  tris=4156
+  mesh coil_dp_steel#steel  tris=48
+  mesh tie_0@A_TIE_0#white_plastic  tris=740
+  A_HIT_0 pos=(-0.0, 0.00691, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.10792,0.01382,0.11026 meta=
+  A_TIE_0 pos=(-0.02803, 0.01127, -0.03489) fwd=(-0.0, 1.0, 0.0) up=(0.746, 0.0, -0.666) size=0.02369,0.01620,0.01592 meta=tie=twist,colour=white
+  size: 0.1079 (x) x 0.0138 (y) x 0.1103 (z) m; bounds y 0.0000..0.0138
+  note: 1.8 m DisplayPort cable (d 5.8 mm), 6 turns, both DP heads inside the coil
+  fits box_cable_dp A_ITEM_PART_0 (w 0.115, h 0.115, t 0.02): margins w +0.0071, h +0.0047, t +0.0062
