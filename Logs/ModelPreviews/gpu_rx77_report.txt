@@ -1,0 +1,39 @@
+== gpu_rx77
+   mesh gpu_rx77_alu#alu: 10488 tris
+   mesh gpu_rx77_black_plastic#black_plastic: 220 tris
+   mesh gpu_rx77_ceramic#ceramic: 72 tris
+   mesh gpu_rx77_connector_black#connector_black: 796 tris
+   mesh gpu_rx77_fan_black#fan_black: 4140 tris
+   mesh gpu_rx77_gold#gold: 2448 tris
+   mesh gpu_rx77_nickel#nickel: 12120 tris
+   mesh gpu_rx77_paint_black#paint_black: 1328 tris
+   mesh gpu_rx77_pcb_black#pcb_black: 76 tris
+   mesh gpu_rx77_rgb#rgb: 12 tris
+   mesh gpu_rx77_solder#solder: 192 tris
+   mesh gpu_rx77_steel#steel: 2976 tris
+   mesh gpu_rx77_steel_dark#steel_dark: 5280 tris
+   mesh gpu_rx77_tex_gpu_rx77#tex_gpu_rx77: 6 tris
+   mesh gpu_rx77_white_plastic#white_plastic: 360 tris
+   mesh gpufan0_rotor@A_FAN_0#fan_black: 4340 tris
+   mesh gpufan0_sticker@A_FAN_0#tex_gpu_rx77: 144 tris
+   mesh gpufan1_rotor@A_FAN_1#fan_black: 4340 tris
+   mesh gpufan1_sticker@A_FAN_1#tex_gpu_rx77: 144 tris
+   mesh gpufan2_rotor@A_FAN_2#fan_black: 4340 tris
+   mesh gpufan2_sticker@A_FAN_2#tex_gpu_rx77: 144 tris
+   TOTAL 53966 tris in 21 meshes
+   A_FAN_0: pos=(-0.1248,-0.0423,0.0600) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.07800,0.07800,0.01300 meta=axis=z,spin=-1,rpm=1900
+   A_FAN_1: pos=(-0.0402,-0.0423,0.0600) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.07800,0.07800,0.01300 meta=axis=z,spin=-1,rpm=1900
+   A_FAN_2: pos=(0.0443,-0.0423,0.0600) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.07800,0.07800,0.01300 meta=axis=z,spin=-1,rpm=1900
+   A_FILM_BACKPLATE_0: pos=(-0.0408,0.0029,0.0605) fwd=(0.00,1.00,-0.00) up=(-0.00,0.00,1.00) size=0.26150,0.11000,0.00100 meta=film=clear,peel_from=+x,chamfer=0.004@+x,screws=proud
+   A_FILM_SHROUD_0: pos=(-0.0070,-0.0426,0.1184) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.09360,0.01210,0.00100 meta=film=clear,on=logo_plate,peel_from=-x
+   A_HIT_0: pos=(-0.0400,-0.0236,0.0590) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.27000,0.05270,0.11800 meta=
+   A_HIT_1: pos=(0.1010,-0.0166,0.0465) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.01100,0.03920,0.12000 meta=
+   A_HIT_2: pos=(-0.0000,-0.0010,-0.0028) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.09000,0.00300,0.00600 meta=
+   A_PORT_DP_0: pos=(0.0965,-0.0046,0.0180) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.01900,0.00800,0.01200 meta=kind=displayport,chamfer=-y
+   A_PORT_DP_1: pos=(0.0965,-0.0046,0.0370) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.01900,0.00800,0.01200 meta=kind=displayport,chamfer=-y
+   A_PORT_DP_2: pos=(0.0965,-0.0046,0.0560) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.01900,0.00800,0.01200 meta=kind=displayport,chamfer=-y
+   A_PORT_HDMI_0: pos=(0.0965,-0.0046,0.0750) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.01700,0.00800,0.01200 meta=kind=hdmi,narrow=-y
+   A_PORT_PCIE8_0: pos=(-0.1005,-0.0066,0.1120) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.02260,0.01260,0.01200 meta=pins=8,latch=+y
+   A_PORT_PCIE8_1: pos=(-0.0790,-0.0066,0.1120) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.02260,0.01260,0.01200 meta=pins=8,latch=+y
+   A_SCREW_PH2_0: pos=(0.1015,-0.0069,0.1065) fwd=(0.00,-0.00,1.00) up=(1.00,0.00,-0.00) size=0.00800,0.00800,0.00800 meta=slot=0
+   A_SCREW_PH2_1: pos=(0.1015,-0.0272,0.1065) fwd=(0.00,-0.00,1.00) up=(1.00,0.00,-0.00) size=0.00800,0.00800,0.00800 meta=slot=1

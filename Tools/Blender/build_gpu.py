@@ -5,10 +5,17 @@ build_gpu.py - graphics cards gpu_rx66 (dual fan, 200 mm, one PCIe 8-pin) and gp
 Frame (as PartFactory.BuildGpu): origin at the PCIe contact edge (the top of the slot). The card runs from the
 bracket at x = +0.095 towards -x, the cooler faces -y (down in a tower), the height runs along +z away from the
 board. PCB: y -0.0018..-0.0002 (centre -0.001); gold fingers z -0.0052..-0.0012; backplate on +y.
+
+Other scripts add cards by putting a spec into SPECS (build_parts_d.py adds gpu_rx77). Optional spec keys, all absent
+on rx66/rx88: "px" may be a list (one power port per entry, A_PORT_PCIE8_0..n); "sn" / "qr_seed" / "swatch" / "logo_maxw"
+for the artwork; and style hooks called with (m, ns), where ns holds build()'s local variables at that point:
+"backplate" returns the backplate holes (with "core": "screws" | "window"), "overlay" draws the shroud overlay,
+"skirts" returns (top, bottom, end_h), "logo" returns (lw, lh, lx, ly, rgb_x, rgb_y), "trim" adds extra pieces.
 """
 import math
 import os
 import sys
+import types
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import dct_common as c  # noqa: E402
@@ -69,7 +76,7 @@ def make_texture(pid, s):
     cv.rect(0, 0, 1024, 3, "#2a2a2e")
     cv.rect(0, 125, 1024, 3, "#2a2a2e")
     emblem(40, 30, 68, acc, "#f0f0f2")
-    cv.text("VOLTRA", 140, 64, 52, "#f2f2f4", "agency", "left", "center", spacing=1.35)
+    cv.text("VOLTRA", 140, 64, 52, "#f2f2f4", "agency", "left", "center", spacing=1.35, maxw=s.get("logo_maxw"))
     cv.rect(420, 34, 3, 60, "#55565c")
     cv.text(s["model"], 450, 64, 40, "#c9cad0", "eras_md", "left", "center")
     cv.text("GAMING", 990, 64, 22, acc, "agency", "right", "center", spacing=1.5)
@@ -92,13 +99,13 @@ def make_texture(pid, s):
     cv.text(s["model"] + " " + s["mem"], lx + 24, ly + 82, 20, "#111111", "arialb", "left", "center", maxw=300)
     pn = "VT-" + s["model"].replace(" ", "") + "-" + s["mem"][:2].strip("G") + "G"
     cv.text("P/N " + pn, lx + 24, ly + 116, 15, "#222222", "arial", "left", "center")
-    sn = "S/N 2410" + ("66" if "66" in pid else "88") + "A0071942"
+    sn = s.get("sn", "S/N 2410" + ("66" if "66" in pid else "88") + "A0071942")
     cv.text(sn, lx + 24, ly + 140, 15, "#222222", "arial", "left", "center")
     cv.barcode(lx + 24, ly + 158, 290, 52, seed=sum(map(ord, pid)))
     cv.text("MADE IN TAIWAN", lx + 24, ly + 228, 13, "#333333", "arialb", "left", "center")
     # a QR-like code
     import random
-    rng = random.Random(7 if "66" in pid else 9)
+    rng = random.Random(s.get("qr_seed", 7 if "66" in pid else 9))
     qx, qy, q = lx + 352, ly + 40, 8
     cells = []
     for i in range(17):
@@ -114,7 +121,7 @@ def make_texture(pid, s):
         cv.rect(qx + ix * q + 2 * q, qy + iy * q + 2 * q, q, q, "#111111")
     cv.text("CE  FC  UKCA", lx + 390, ly + 205, 14, "#333333", "arialb", "center", "center")
     # accent swatch
-    cv.rect(1536, 256, 128, 128, "#c8141e")
+    cv.rect(1536, 256, 128, 128, s.get("swatch", "#c8141e"))
     # PCB back (512 x 512): dark solder mask, traces, pads, silkscreen
     px0, py0 = 0, 512
     cv.rect(px0, py0, 512, 512, "#101315")
@@ -207,6 +214,7 @@ def build(pid):
     fin_y0, fin_y1 = yF + fp + fan_thk + 0.0012, -0.0062
     xd, zd = s["xd"], s["zd"]
     pcb_end = s["pcb_end"]
+    pxs = s["px"] if isinstance(s["px"], (list, tuple)) else [s["px"]]
 
     # ------------------------------------------------------------------ PCB with the PCIe edge
     tab_bot = -0.0055
@@ -229,7 +237,14 @@ def build(pid):
         box(m, "ceramic", (x, PCB_Y0 - 0.0006, 0.0015), (x + 0.0012, PCB_Y0, 0.0021))
     # ------------------------------------------------------------------ backplate
     holes = []
-    if pid == "gpu_rx66":
+    if "backplate" in s:
+        holes = s["backplate"](m, types.SimpleNamespace(**locals()))
+        if s.get("core") == "screws":
+            core = [(xd + sx * 0.0145, zd + sz * 0.0145) for sx in (-1, 1) for sz in (-1, 1)]
+            holes += [pb.circle2(x, z, 0.0026, 16) for (x, z) in core]
+        else:
+            holes.append(pb.rrect2(xd, zd, 0.046, 0.046, 0.004, 4))
+    elif pid == "gpu_rx66":
         # flow-through slots past the end of the PCB, screw holes for the GPU core bracket
         for k in range(3):
             x = xa + 0.0085 + k * 0.0048
@@ -255,7 +270,7 @@ def build(pid):
     box(m, s["back_tag"], (xa + 0.012, -0.0030, H - 0.0013), (xb - 0.012, BP_Y1, H - 0.0005), bevel=0.0002)
     # brand print / inlay
     lf = pb.label_frame((0, 1, 0), (0, 0, -1))  # reads from the window side (text top towards the board)
-    bx = -0.029 if pid == "gpu_rx66" else -0.059
+    bx = s.get("bp_logo_x", -0.029 if pid == "gpu_rx66" else -0.059)
     m.add(s["logo_tag"], pb.g_text("VOLTRA", "agency", 0.0105, 0.075, 0.00012, spacing=1.3), lf,
           (bx - 0.006, BP_Y1, H * 0.60))
     m.add(s["logo_tag"], pb.g_text(s["model"], "eras_md", 0.0045, 0.05, 0.00012), lf, (bx - 0.006, BP_Y1, H * 0.60 - 0.012))
@@ -267,7 +282,7 @@ def build(pid):
            ((xb + pcb_end) / 2, 0.006), ((xb + pcb_end) / 2 - 0.01, H - 0.006)]
     for (x, z) in scr:
         pb.screw_ph(m.mb("steel_dark"), (x, BP_Y1, z), (0, 1, 0), (0, 0, 1), r=0.0019, h=0.0008)
-    if pid == "gpu_rx66":
+    if s.get("core", "screws" if pid == "gpu_rx66" else "window") == "screws":
         for (x, z) in core:
             pb.screw_ph(m.mb("steel"), (x, BP_Y1, z), (0, 1, 0), (0, 0, 1), r=0.0030, h=0.0012)
     else:
@@ -351,8 +366,8 @@ def build(pid):
     cp = 0.024 if s["pipes"] == 4 else 0.028
     box(m, "nickel", (xd - cp, -0.0080, zd - cp), (xd + cp, -0.0040, zd + cp), bevel=0.0007)
     mid_out = [(pcb_end + 0.003, 0.004), (xb - 0.0125, 0.004), (xb - 0.0125, Hp - 0.002),
-               (s["px"] + 0.0115, Hp - 0.002), (s["px"] + 0.0115, Hp - 0.0115), (s["px"] - 0.0115, Hp - 0.0115),
-               (s["px"] - 0.0115, Hp - 0.002), (pcb_end + 0.003, Hp - 0.002)]
+               (max(pxs) + 0.0115, Hp - 0.002), (max(pxs) + 0.0115, Hp - 0.0115), (min(pxs) - 0.0115, Hp - 0.0115),
+               (min(pxs) - 0.0115, Hp - 0.002), (pcb_end + 0.003, Hp - 0.002)]
     mid_holes = [pb.rrect2(xd, zd, 2 * cp + 0.002, 2 * cp + 0.002, 0.002, 3)]
     slab_xz(m, "paint_black", mid_out, mid_holes, -0.0054, 0.0012)
     # heat pipes: through the cold plate, up into the fins, a U-turn at each end of the stack
@@ -384,7 +399,7 @@ def build(pid):
         if abs(x - xd) < cp + 0.0008:
             pts += [(ytop, zd - cp - 0.0006), (-0.0108, zd - cp - 0.0006), (-0.0108, zd + cp + 0.0006),
                     (ytop, zd + cp + 0.0006)]
-        if abs(x - s["px"]) < 0.0125:
+        if min(pxs) - 0.0125 < x < max(pxs) + 0.0125:
             pts += [(ytop, Hp - 0.0110), (-0.0128, Hp - 0.0110), (-0.0128, zhi)]
         else:
             pts += [(ytop, zhi)]
@@ -409,7 +424,9 @@ def build(pid):
     Mout = pb.frame((0, -1, 0), (0, 0, 1))  # local z = outwards from the fan face
     for x in fxs:
         m.add(s["ring_tag"], pb.g_lathe(ring_prof, 96), Mout, (x, yF, fz))
-    if pid == "gpu_rx66":
+    if "overlay" in s:
+        s["overlay"](m, types.SimpleNamespace(**locals()))
+    elif pid == "gpu_rx66":
         xm = (fxs[0] + fxs[1]) / 2
         over = [(xa + 0.006, 0.010), (xa + 0.020, 0.004), (xm - 0.012, 0.004), (xm, 0.0105), (xm + 0.012, 0.004),
                 (xb - 0.010, 0.004), (xb - 0.0045, 0.012), (xb - 0.0045, H - 0.012), (xb - 0.010, H - 0.004),
@@ -452,7 +469,9 @@ def build(pid):
                   (xb - 0.0075, zz + sgn * 0.0060)]
             m.add(TEX, pb.g_slab(sl, [], 0.0012, yF - 0.0012, uv_rect=at.uv("red")), M_XZ)
     # side skirts: the top edge (faces the window in a tower), the bottom edge and the far end
-    if pid == "gpu_rx66":
+    if "skirts" in s:
+        top, bot, end_h = s["skirts"](m, types.SimpleNamespace(**locals()))
+    elif pid == "gpu_rx66":
         top = [(xa + 0.002, yF), (xb - 0.0015, yF), (xb - 0.0015, yF + 0.018), (xb - 0.016, yF + 0.018),
                (xb - 0.024, yF + 0.012), (xa + 0.045, yF + 0.012), (xa + 0.030, yF + 0.024), (xa + 0.002, yF + 0.024)]
         bot = [(xa + 0.004, yF), (xb - 0.002, yF), (xb - 0.002, yF + 0.012), (xa + 0.035, yF + 0.012),
@@ -474,7 +493,9 @@ def build(pid):
                                        BR_YB + 0.004 - yF - 0.0005, H - 0.003), [], xb - 0.0030, 0.0018)
     # logo plate and RGB light bar on the top edge
     lf_top = pb.label_frame((0, 0, 1), (0, 1, 0))  # reads left to right from the window, bracket on the left
-    if pid == "gpu_rx66":
+    if "logo" in s:
+        lw, lh, lx, ly, rgb_x, rgb_y = s["logo"](m, types.SimpleNamespace(**locals()))
+    elif pid == "gpu_rx66":
         lw, lh, lx = 0.072, 0.009, (xa + 0.045 + xb - 0.024) / 2
         ly = yF + 0.0060
         rgb_x = (xa + 0.010, xb - 0.030)
@@ -488,6 +509,8 @@ def build(pid):
         (lx + lw / 2 + 0.0008, ly + lh / 2 + 0.0008, H + 0.0003), bevel=0.0002)
     m.add(TEX, pb.g_quad(lw, lh, at.uv("logo")), lf_top, (lx, ly, H + 0.00035))
     box(m, "rgb", (rgb_x[0], rgb_y - 0.0009, H - 0.0003), (rgb_x[1], rgb_y + 0.0009, H + 0.0003))
+    if "trim" in s:
+        s["trim"](m, types.SimpleNamespace(**locals()))
     if pid == "gpu_rx88":
         # a red accent stripe along the top edge and a small print on the bottom edge
         m.add(TEX, pb.solid(pb.g_box((xb - 0.034 - xa - 0.124, 0.0010, 0.0005)), at.uv("red")), None,
@@ -502,45 +525,45 @@ def build(pid):
         pf.make_fan(a, diameter=s["fan_d"], thickness=fan_thk, blades=s["blades"], frame=False,
                     tip_ring=s["tip_ring"], sticker=pid, sticker_uv=at.uv("hub"), struts=3, name=f"gpufan{i}")
     # ------------------------------------------------------------------ power connector on the top edge
-    pxc = s["px"]
-    if s["power"] == "pcie8":
-        hw, hd = 0.0186, 0.0096
-        z_face = Hp + 0.0040
-        yc = PCB_Y0 - hd / 2
-        cav = []
-        for col in range(4):
-            for row in range(2):
-                cx = pxc + (col - 1.5) * 0.0042
-                cy = yc + (row - 0.5) * 0.0042
-                d = (col + row) % 2 == 0
-                cav.append(pb.chamfer2(cx, cy, 0.0031, 0.0031, (0.0008, 0.0008, 0.0, 0.0) if d else 0.0002))
-        pin_pts = [(pxc + (col - 1.5) * 0.0042, yc + (row - 0.5) * 0.0042) for col in range(4) for row in range(2)]
-        name, meta = "A_PORT_PCIE8_0", "pins=8,latch=+y"
-        pin_w = 0.0011
-    else:
-        hw, hd = 0.0206, 0.0102
-        z_face = Hp + 0.0040
-        yc = PCB_Y0 - hd / 2
-        cav, pin_pts = [], []
-        for col in range(6):
-            for row in range(2):
-                cx = pxc + (col - 2.5) * 0.0030
-                cy = PCB_Y0 - 0.0046 - row * 0.0030
-                cav.append(pb.rrect2(cx, cy, 0.0022, 0.0022, 0.0003, 2))
-                pin_pts.append((cx, cy))
-        for col in range(4):
-            cx = pxc + (col - 1.5) * 0.0024
-            cav.append(pb.rrect2(cx, PCB_Y0 - 0.0016, 0.0012, 0.0011, 0.0002, 2))
-        name, meta = "A_PORT_12V2X6_0", "pins=12+4,latch=+y,sense=+y"
-        pin_w = 0.0008
-    hout = pb.rrect2(pxc, yc, hw, hd, 0.0006, 2)
-    slab_xy(m, "connector_black", hout, cav, z_face - 0.0030, 0.0030)
-    box(m, "connector_black", (pxc - hw / 2, yc - hd / 2, z_face - 0.0145), (pxc + hw / 2, yc + hd / 2, z_face - 0.0030))
-    for (x, y) in pin_pts:
-        box(m, "solder", (x - pin_w / 2, y - pin_w / 2, z_face - 0.0030), (x + pin_w / 2, y + pin_w / 2, z_face - 0.0009))
-    # latch ramp above the PCB edge, on the +y face
-    box(m, "connector_black", (pxc - 0.0022, PCB_Y0, z_face - 0.0034), (pxc + 0.0022, PCB_Y0 + 0.0011, z_face - 0.0006))
-    m.anchor(name, (pxc, yc, z_face), (hw + 0.004, hd + 0.003, 0.012), forward=(0, 0, 1), up=(0, 1, 0), meta=meta)
+    for pi, pxc in enumerate(pxs):
+        if s["power"] == "pcie8":
+            hw, hd = 0.0186, 0.0096
+            z_face = Hp + 0.0040
+            yc = PCB_Y0 - hd / 2
+            cav = []
+            for col in range(4):
+                for row in range(2):
+                    cx = pxc + (col - 1.5) * 0.0042
+                    cy = yc + (row - 0.5) * 0.0042
+                    d = (col + row) % 2 == 0
+                    cav.append(pb.chamfer2(cx, cy, 0.0031, 0.0031, (0.0008, 0.0008, 0.0, 0.0) if d else 0.0002))
+            pin_pts = [(pxc + (col - 1.5) * 0.0042, yc + (row - 0.5) * 0.0042) for col in range(4) for row in range(2)]
+            name, meta = f"A_PORT_PCIE8_{pi}", "pins=8,latch=+y"
+            pin_w = 0.0011
+        else:
+            hw, hd = 0.0206, 0.0102
+            z_face = Hp + 0.0040
+            yc = PCB_Y0 - hd / 2
+            cav, pin_pts = [], []
+            for col in range(6):
+                for row in range(2):
+                    cx = pxc + (col - 2.5) * 0.0030
+                    cy = PCB_Y0 - 0.0046 - row * 0.0030
+                    cav.append(pb.rrect2(cx, cy, 0.0022, 0.0022, 0.0003, 2))
+                    pin_pts.append((cx, cy))
+            for col in range(4):
+                cx = pxc + (col - 1.5) * 0.0024
+                cav.append(pb.rrect2(cx, PCB_Y0 - 0.0016, 0.0012, 0.0011, 0.0002, 2))
+            name, meta = f"A_PORT_12V2X6_{pi}", "pins=12+4,latch=+y,sense=+y"
+            pin_w = 0.0008
+        hout = pb.rrect2(pxc, yc, hw, hd, 0.0006, 2)
+        slab_xy(m, "connector_black", hout, cav, z_face - 0.0030, 0.0030)
+        box(m, "connector_black", (pxc - hw / 2, yc - hd / 2, z_face - 0.0145), (pxc + hw / 2, yc + hd / 2, z_face - 0.0030))
+        for (x, y) in pin_pts:
+            box(m, "solder", (x - pin_w / 2, y - pin_w / 2, z_face - 0.0030), (x + pin_w / 2, y + pin_w / 2, z_face - 0.0009))
+        # latch ramp above the PCB edge, on the +y face
+        box(m, "connector_black", (pxc - 0.0022, PCB_Y0, z_face - 0.0034), (pxc + 0.0022, PCB_Y0 + 0.0011, z_face - 0.0006))
+        m.anchor(name, (pxc, yc, z_face), (hw + 0.004, hd + 0.003, 0.012), forward=(0, 0, 1), up=(0, 1, 0), meta=meta)
     # ------------------------------------------------------------------ other anchors
     for i, z in enumerate(PORT_Z[:3]):
         m.anchor(f"A_PORT_DP_{i}", (BR_X1, PORT_Y, z), (0.019, 0.008, 0.012), forward=(1, 0, 0), up=(0, 1, 0),
@@ -574,7 +597,7 @@ def build(pid):
         dict(yaw=90, pitch=15, target=(X0, -0.017, 0.055), dist=0.19),  # bracket
         dict(yaw=-15, pitch=-20, target=(fxs[-1], yF, fz), dist=0.16),  # a fan close up
         dict(yaw=-120, pitch=20, target=(xa, -T / 2, H / 2), dist=0.22),  # far end
-        dict(yaw=10, pitch=20, target=(s["px"], -0.006, Hp), dist=0.09),  # power connector
+        dict(yaw=10, pitch=20, target=(sum(pxs) / len(pxs), -0.006, Hp), dist=0.09 + 0.5 * (max(pxs) - min(pxs))),  # power
     ])
     return m
 
