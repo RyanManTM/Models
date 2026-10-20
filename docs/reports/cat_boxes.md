@@ -4,7 +4,7 @@ Brief: `docs/tasks/catalog/19-boxes.md`. Every catalogue part (`docs/catalog/*.j
 plus the data-centre gear from task 01 and a rebuilt `box_ac_12k`.
 
 ## Status
-**1 of 132 catalogue boxes built.** Not built yet: cpu_arc3_8300g, cpu_arc7_9700x, cpu_arc7_9800x3d, cpu_arc9_9950x3d, cpu_tiron_i3_14100, cpu_tiron_i5_14600k, cpu_tiron_i7_14700, cpu_tiron_i7_14700k, cpu_tiron_i9_14900k, cpu_epoch_9124, cpu_epoch_9354, cpu_epoch_9654, cpu_tiron_plat_8480, gpu_verdia_5060_zenith, gpu_verdia_5060ti_aegis_white, gpu_verdia_5070_mako, gpu_verdia_5070ti_kestrel_white, gpu_verdia_5080_aegis, gpu_verdia_5090_ref, gpu_verdia_5090_mako, gpu_verdia_4060_kestrel_lp, gpu_voltra_7600_zenith, gpu_voltra_9060xt_zenith_white, gpu_voltra_9070xt_zenith, gpu_voltra_7900xtx_ref, gpu_tiron_b580_ref, gpu_verdia_t100, gpu_voltra_mi210, mb_aegis_b650_bulwark, mb_aegis_x870e_vanguard, mb_mako_b650_harpoon, mb_kestrel_b650_glide, mb_aegis_z790_keystone, mb_mako_z790_riptide, mb_kestrel_z790_talon, mb_ridge_b760_d4, mb_strata_spv, mb_strata_l46, ram_corvex_ddr5_32_black, ram_corvex_ddr5_32_white_rgb, ram_gstride_ddr5_48_rgb, ram_gstride_ddr5_32_lp, ram_kingsland_ddr5_64, ram_kingsland_ddr5_32_white_rgb, ram_crux_ddr5_96, ram_crux_ddr5_16, ram_teamforge_ddr5_32_white_rgb, ram_volt_ddr5_64_rgb, ram_corvex_ddr4_16_lp, ram_corvex_ddr4_32_rgb, ram_gstride_ddr4_16_red, ram_kingsland_ddr4_32, ram_crux_ddr4_64, ram_teamforge_ddr4_32_red, ram_kingsland_rdimm5_32, ram_sorin_rdimm5_64, ram_crux_rdimm5_128, ram_kingsland_rdimm4_32, ssd_sorin_990pro_1tb, ssd_sorin_990pro_2tb_hs, ssd_sorin_980_500, ssd_westline_sn850x_2tb, ssd_westline_sn850x_1tb_hs, ssd_westline_sn580_1tb, ssd_crux_p3plus_2tb, ssd_crux_t705_2tb_hs, ssd_sorin_870_1tb, ssd_crux_mx500_2tb, ssd_kingsland_a400_480, hdd_seacrest_2tb, hdd_westline_4tb, hdd_seacrest_8tb, hdd_seacrest_exos_20tb, ssd_sorin_pm9a3_3840, ssd_sorin_pm9a3_7680, psu_ampere_550_bronze, psu_corvex_cx650m, psu_seastar_gx850, psu_seastar_px1000_white, psu_corvex_rm850x_white, psu_hush_pp12m_750, psu_hush_dp13_1200, psu_mako_a850g, psu_aegis_1200p, psu_corvex_ax1600i, psu_corvex_sf750, psu_strata_crps_800, psu_strata_crps_1600, cooler_arctiq_34_black, cooler_arctiq_34_white, cooler_glacier_ak400_white, cooler_glacier_ak620_black, cooler_noctis_d15, cooler_noctis_d15_black, cooler_frostpeak_120_rgb, cooler_noctis_l9, cooler_tiron_stock, cooler_arctiq_lc240, cooler_corvex_h150i_white, cooler_glacier_ls720, cooler_srv_epoch_1u, cooler_srv_platinum_2u, case_lumin_216, case_phanta_g360a, case_nexa_h5, case_facet_fjord, case_hush_500dx, case_facet_fizzair, case_brickhouse_beige98, fan_arctiq_p12_5pack, fan_noctis_a12x25, fan_noctis_a12x25_black, fan_lumin_sl120_white_3pack, fan_corvex_af120_rgb_3pack, fan_arctiq_p14, fan_hush_wing4_140, nic_linkwave_350t2, nic_linkwave_710da2, nic_melnet_strand6_25g, nic_melnet_strand6_100g, hba_broadline_9500_16i, hba_broadline_9560_16i, srv_strata_sg840_4u, srv_strata_sr224_2u, srv_linkwave_ls4804x, srv_linkwave_ls1600x, srv_strata_shelf_1u, srv_strata_blank_1u, srv_strata_blank_2u, srv_strata_cma, srv_strata_kvm_1u.
+**14 of 132 catalogue boxes built.** Not built yet: cpu_arc7_9700x, cpu_arc7_9800x3d, cpu_arc9_9950x3d, cpu_tiron_i3_14100, cpu_tiron_i5_14600k, cpu_tiron_i7_14700, cpu_tiron_i7_14700k, cpu_tiron_i9_14900k, cpu_epoch_9124, cpu_epoch_9354, cpu_epoch_9654, cpu_tiron_plat_8480, gpu_verdia_5060ti_aegis_white, gpu_verdia_5070_mako, gpu_verdia_5070ti_kestrel_white, gpu_verdia_5080_aegis, gpu_verdia_5090_ref, gpu_verdia_5090_mako, gpu_verdia_4060_kestrel_lp, gpu_voltra_7600_zenith, gpu_voltra_9060xt_zenith_white, gpu_voltra_9070xt_zenith, gpu_voltra_7900xtx_ref, gpu_tiron_b580_ref, gpu_verdia_t100, gpu_voltra_mi210, mb_aegis_x870e_vanguard, mb_mako_b650_harpoon, mb_kestrel_b650_glide, mb_aegis_z790_keystone, mb_mako_z790_riptide, mb_kestrel_z790_talon, mb_ridge_b760_d4, mb_strata_spv, mb_strata_l46, ram_corvex_ddr5_32_white_rgb, ram_gstride_ddr5_48_rgb, ram_gstride_ddr5_32_lp, ram_kingsland_ddr5_64, ram_kingsland_ddr5_32_white_rgb, ram_crux_ddr5_96, ram_crux_ddr5_16, ram_teamforge_ddr5_32_white_rgb, ram_volt_ddr5_64_rgb, ram_corvex_ddr4_16_lp, ram_corvex_ddr4_32_rgb, ram_gstride_ddr4_16_red, ram_kingsland_ddr4_32, ram_crux_ddr4_64, ram_teamforge_ddr4_32_red, ram_kingsland_rdimm5_32, ram_sorin_rdimm5_64, ram_crux_rdimm5_128, ram_kingsland_rdimm4_32, ssd_sorin_990pro_1tb, ssd_sorin_980_500, ssd_westline_sn850x_2tb, ssd_westline_sn850x_1tb_hs, ssd_westline_sn580_1tb, ssd_crux_p3plus_2tb, ssd_crux_t705_2tb_hs, ssd_crux_mx500_2tb, ssd_kingsland_a400_480, hdd_seacrest_2tb, hdd_westline_4tb, hdd_seacrest_8tb, hdd_seacrest_exos_20tb, ssd_sorin_pm9a3_3840, ssd_sorin_pm9a3_7680, psu_seastar_px1000_white, psu_corvex_rm850x_white, psu_hush_pp12m_750, psu_hush_dp13_1200, psu_mako_a850g, psu_aegis_1200p, psu_corvex_ax1600i, psu_corvex_sf750, psu_strata_crps_800, psu_strata_crps_1600, cooler_arctiq_34_black, cooler_arctiq_34_white, cooler_glacier_ak400_white, cooler_glacier_ak620_black, cooler_noctis_d15_black, cooler_frostpeak_120_rgb, cooler_arctiq_lc240, cooler_corvex_h150i_white, cooler_glacier_ls720, cooler_srv_epoch_1u, cooler_srv_platinum_2u, case_phanta_g360a, case_nexa_h5, case_facet_fjord, case_hush_500dx, case_facet_fizzair, case_brickhouse_beige98, fan_arctiq_p12_5pack, fan_noctis_a12x25, fan_noctis_a12x25_black, fan_lumin_sl120_white_3pack, fan_corvex_af120_rgb_3pack, fan_arctiq_p14, fan_hush_wing4_140, nic_linkwave_350t2, nic_linkwave_710da2, nic_melnet_strand6_25g, nic_melnet_strand6_100g, hba_broadline_9500_16i, hba_broadline_9560_16i, srv_strata_sg840_4u, srv_strata_sr224_2u, srv_linkwave_ls4804x, srv_linkwave_ls1600x, srv_strata_shelf_1u, srv_strata_blank_1u, srv_strata_blank_2u, srv_strata_cma, srv_strata_kvm_1u.
 
 Built in this session (consumer parts of the existing box kinds); the server/OEM boxes, the rack gear and the new
 consumer kinds (AIO, 3.5" HDD, fan packs, SFX PSU) are built by helper sessions on their own branches, each in its
@@ -94,7 +94,7 @@ Opening sequence: the step `order` of each piece, from the rig's notes. Previews
 ### CPUs
 | Box | Size (m) | Tris | Anchors | Opening sequence (order) |
 |---|---|---|---|---|
-| box_cpu_arc3_8300g | | | | **not built yet** |
+| box_cpu_arc3_8300g | 0.11 x 0.07 x 0.11 | 3612 | 13 | CPU: seals (0) -> tuck lid A_FLAP_0 (1) -> dust flaps A_FLAP_1/2 (2) -> tray A_INSERT_CARD_0 and the 3 papers behind it (3) -> clamshell lid A_CLAMLID_0 (4, on the tray once it is out) -> CPU (5) -> clamshell base (6). |
 | box_cpu_arc5_9600x | 0.11 x 0.07 x 0.11 | 3612 | 13 | CPU: seals (0) -> tuck lid A_FLAP_0 (1) -> dust flaps A_FLAP_1/2 (2) -> tray A_INSERT_CARD_0 and the 3 papers behind it (3) -> clamshell lid A_CLAMLID_0 (4, on the tray once it is out) -> CPU (5) -> clamshell base (6). |
 | box_cpu_arc7_9700x | | | | **not built yet** |
 | box_cpu_arc7_9800x3d | | | | **not built yet** |
@@ -108,7 +108,7 @@ Opening sequence: the step `order` of each piece, from the rig's notes. Previews
 ### Graphics cards
 | Box | Size (m) | Tris | Anchors | Opening sequence (order) |
 |---|---|---|---|---|
-| box_gpu_verdia_5060_zenith | | | | **not built yet** |
+| box_gpu_verdia_5060_zenith | 0.285 x 0.08 x 0.165 | 2062 | 8 | GPU: sleeve A_SLEEVE_0 (0) -> lid A_LID_0 (1) -> card in its silver bag A_ITEM_PART_0 (2, rests in the foam) -> PE foam cradle A_INSERT_FOAM_0 (3) -> 3 papers under the foam (4). |
 | box_gpu_verdia_5060ti_aegis_white | | | | **not built yet** |
 | box_gpu_verdia_5070_mako | | | | **not built yet** |
 | box_gpu_verdia_5070ti_kestrel_white | | | | **not built yet** |
@@ -125,7 +125,7 @@ Opening sequence: the step `order` of each piece, from the rig's notes. Previews
 ### Motherboards
 | Box | Size (m) | Tris | Anchors | Opening sequence (order) |
 |---|---|---|---|---|
-| box_mb_aegis_b650_bulwark | | | | **not built yet** |
+| box_mb_aegis_b650_bulwark | 0.32 x 0.07 x 0.27 | 502 | 14 | MB: side seals (0) -> hinged lid A_LID_0 (1) -> board in its bag (2, on the pad) -> foam pad (3) -> tray (4) -> compartment: I/O shield A_ITEM_ACC_0, SATA cables A_ITEM_CORD_0, M.2 screw bag A_ITEM_HW_0, poster, warranty, sticker (5) -> manual under the poster (6). |
 | box_mb_aegis_x870e_vanguard | | | | **not built yet** |
 | box_mb_mako_b650_harpoon | | | | **not built yet** |
 | box_mb_kestrel_b650_glide | | | | **not built yet** |
@@ -137,7 +137,7 @@ Opening sequence: the step `order` of each piece, from the rig's notes. Previews
 ### Memory
 | Box | Size (m) | Tris | Anchors | Opening sequence (order) |
 |---|---|---|---|---|
-| box_ram_corvex_ddr5_32_black | | | | **not built yet** |
+| box_ram_corvex_ddr5_32_black | 0.16 x 0.03 x 0.12 | 4350 | 11 | RAM: end tuck flap A_FLAP_0 (1) -> dust flaps A_FLAP_1/2 (2) -> blister tray A_INSERT_BLISTER_0 slides out +x (3), then on it: installation card A_ITEM_DOC_0 and the blister seal A_SEAL_0 (4) -> blister lid A_CLAMLID_0 (5) -> sticks A_ITEM_PART_0/1 (6, guard=1). |
 | box_ram_corvex_ddr5_32_white_rgb | | | | **not built yet** |
 | box_ram_gstride_ddr5_48_rgb | | | | **not built yet** |
 | box_ram_gstride_ddr5_32_lp | | | | **not built yet** |
@@ -162,23 +162,23 @@ Opening sequence: the step `order` of each piece, from the rig's notes. Previews
 | Box | Size (m) | Tris | Anchors | Opening sequence (order) |
 |---|---|---|---|---|
 | box_ssd_sorin_990pro_1tb | | | | **not built yet** |
-| box_ssd_sorin_990pro_2tb_hs | | | | **not built yet** |
+| box_ssd_sorin_990pro_2tb_hs | 0.11 x 0.025 x 0.08 | 3284 | 10 | SSD M.2: seal A_SEAL_0 over the end flap's top edge (0) -> end flap A_FLAP_0 (1) -> dust flaps (2) -> blister A_INSERT_BLISTER_0 slides out +x (3) -> blister lid A_CLAMLID_0 and the 2 cards under the blister (4) -> SSD (5). |
 | box_ssd_sorin_980_500 | | | | **not built yet** |
 | box_ssd_westline_sn850x_2tb | | | | **not built yet** |
 | box_ssd_westline_sn850x_1tb_hs | | | | **not built yet** |
 | box_ssd_westline_sn580_1tb | | | | **not built yet** |
 | box_ssd_crux_p3plus_2tb | | | | **not built yet** |
 | box_ssd_crux_t705_2tb_hs | | | | **not built yet** |
-| box_ssd_sorin_870_1tb | | | | **not built yet** |
+| box_ssd_sorin_870_1tb | 0.14 x 0.03 x 0.1 | 2868 | 9 | SSD SATA: seal (0) -> end flap (1) -> dust flaps (2) -> black tray A_INSERT_BLISTER_0 slides out +x (3) -> installation card lying on it (4) -> drive in its clear bag (5). |
 | box_ssd_crux_mx500_2tb | | | | **not built yet** |
 | box_ssd_kingsland_a400_480 | | | | **not built yet** |
 
 ### Power supplies
 | Box | Size (m) | Tris | Anchors | Opening sequence (order) |
 |---|---|---|---|---|
-| box_psu_ampere_550_bronze | | | | **not built yet** |
-| box_psu_corvex_cx650m | | | | **not built yet** |
-| box_psu_seastar_gx850 | | | | **not built yet** |
+| box_psu_ampere_550_bronze | 0.21 x 0.12 x 0.18 | 3138 | 16 | PSU (fixed cables): tape strip 0 (0) -> long flaps (1) -> short flaps (2) -> 3 papers in a pile, booklet at the bottom (3..5) -> power cord and screw bag on the PSU (6) -> PSU in its clear bag, lifted out WITH its pulp caps (7) -> caps pulled off along -x/+x (8). |
+| box_psu_corvex_cx650m | 0.21 x 0.135 x 0.18 | 3138 | 17 | PSU (semi-modular): tape strip 0 (0) -> long flaps (1) -> short flaps (2) -> 3 papers in a pile, booklet at the bottom (3..5) -> cable pouch (6) -> power cord and screw bag on the PSU (7) -> PSU in its clear bag, lifted out WITH its pulp caps (8) -> caps pulled off along -x/+x (9). |
+| box_psu_seastar_gx850 | 0.21 x 0.12 x 0.18 | 652 | 17 | PSU (fully modular): tape strip 0 (0) -> long flaps (1) -> short flaps (2) -> 3 papers in a pile, booklet at the bottom (3..5) with the power cord + screw bag standing in the +x compartment (3) -> cable pouch (6) -> PSU in its fabric bag, lifted out WITH its EPS caps (7) -> caps pulled off along -x/+x (8). |
 | box_psu_seastar_px1000_white | | | | **not built yet** |
 | box_psu_corvex_rm850x_white | | | | **not built yet** |
 | box_psu_hush_pp12m_750 | | | | **not built yet** |
@@ -194,16 +194,16 @@ Opening sequence: the step `order` of each piece, from the rig's notes. Previews
 | box_cooler_arctiq_34_white | | | | **not built yet** |
 | box_cooler_glacier_ak400_white | | | | **not built yet** |
 | box_cooler_glacier_ak620_black | | | | **not built yet** |
-| box_cooler_noctis_d15 | | | | **not built yet** |
+| box_cooler_noctis_d15 | 0.185 x 0.215 x 0.21 | 1126 | 17 | Tower cooler: tape (0) -> long flaps (1) -> short flaps (2) -> top EPS A_INSERT_FOAM_0 (3) -> cooler A_ITEM_PART_0 and the accessory box A_INSERT_ACCBOX_0 standing in front of it (4) -> bottom EPS A_INSERT_FOAM_1 and the accessory box's tuck flap A_FLAP_4 (5) -> mounting kit A_ITEM_HW_0, paste syringe A_ITEM_HW_1 (kind=syringe, a look mesh on its anchor), manual A_ITEM_DOC_0 (6). |
 | box_cooler_noctis_d15_black | | | | **not built yet** |
 | box_cooler_frostpeak_120_rgb | | | | **not built yet** |
-| box_cooler_noctis_l9 | | | | **not built yet** |
-| box_cooler_tiron_stock | | | | **not built yet** |
+| box_cooler_noctis_l9 | 0.195 x 0.08 x 0.125 | 988 | 12 | Low-profile cooler: tuck lid A_FLAP_0 (1) -> dust flaps (2) -> 2 papers in a pile on top (3..4) -> cooler A_ITEM_PART_0 and the accessory box A_INSERT_ACCBOX_0 (5) -> EPS tray A_INSERT_FOAM_0 and the accessory box flap A_FLAP_3 (6) -> mounting kit A_ITEM_HW_0, paste A_ITEM_HW_1 (7). |
+| box_cooler_tiron_stock | 0.12 x 0.09 x 0.15 | 4978 | 9 | Stock cooler: tuck lid A_FLAP_0 (1) -> dust flaps (2) -> clear clamshell A_INSERT_CLAM_0 lifted out (3) -> clamshell lid A_CLAMLID_0 and the leaflet under the clamshell (4) -> cooler (5). Box depth 0.15 (was 0.12): the model's fan plug sits 30 mm past the shroud, so the clamshell has a pocket for it behind the cooler. |
 
 ### Cases
 | Box | Size (m) | Tris | Anchors | Opening sequence (order) |
 |---|---|---|---|---|
-| box_case_lumin_216 | | | | **not built yet** |
+| box_case_lumin_216 | 0.52 x 0.56 x 0.3 | 1322 | 19 | Case: printed tape strip 0 (0) -> long flaps (1) -> short flaps (2) -> the case in its clear bag, lifted out by the foam (3) -> front/rear EPS caps A_INSERT_FOAM_0/1, with=A_ITEM_PART_0, pulled off along -x/+x (4). Accessory box A_INSERT_ACCBOX_0@A_ITEM_PART_0 sits INSIDE the case on the PSU shroud (case-frame pose relative to A_ITEM_PART_0), inside=A_PANEL_SIDE_0: take it out of the side opening (+z) once the glass panel is off (5) -> its tuck flap A_FLAP_4 (6) -> standoff bag A_ITEM_ACC_0 (id=standoff_bag, frame=flat), screws A_ITEM_HW_0, cable ties A_ITEM_HW_1 (6) -> manual A_ITEM_DOC_0 (7). |
 | box_case_phanta_g360a | | | | **not built yet** |
 | box_case_nexa_h5 | | | | **not built yet** |
 | box_case_facet_fjord | | | | **not built yet** |
