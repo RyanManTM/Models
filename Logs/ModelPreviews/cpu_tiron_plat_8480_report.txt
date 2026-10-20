@@ -5,6 +5,7 @@ cpu_tiron_plat_8480: 43510 triangles, 6 meshes
   mesh cpu_tiron_plat_8480_solder#solder  tris=8832
   mesh cpu_tiron_plat_8480_tex_cpu_ihs_8480#tex_cpu_ihs_8480  tris=632
   mesh cpu_tiron_plat_8480_tex_cpu_l46_pcb#tex_cpu_l46_pcb  tris=60
+  A_CAP_PADS_0 pos=(-0.0, 0.0, -4e-05) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.06300,0.10700,0.00160 meta=model=cap_cpu_l46,remove=-z,blocks=install
   A_CARRIER_0 pos=(-0.0, 0.0, 0.0016) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.07060,0.12420,0.00305 meta=socket=L46,pose=installed,clip=+z,mount=heatsink,color=#26282b
   A_HIT_0 pos=(-0.0, 0.0, 0.0033) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.06100,0.10500,0.00700 meta=
   A_MARK_CARRIER_0@A_CARRIER_0 pos=(0.03029, -0.05229, 0.0026) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00500,0.00500,0.00200 meta=corner=+x-y
