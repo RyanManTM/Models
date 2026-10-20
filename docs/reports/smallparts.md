@@ -73,6 +73,21 @@ the bundle.
 - Fits `box_mb_ridge_b5` and `box_mb_ridge_z4` `A_ITEM_CORD_0` (0.120 × 0.075 × 0.012): margins w +0.0022,
   h +0.0321, t +0.0001.
 
+### coil_fan_splitter
+- A 4-pin PWM 1-to-2 fan splitter in black braided sleeving (3.6 mm), about 0.1 m from the input to each output,
+  folded for its bag.
+  - The input (the `plug_fan4` look, sockets: it goes onto the board header) and the two receiving outputs (the
+    `fan4_female` housing) lie side by side at the +z end, all three pointing +z.
+  - The second output has no tach pin: only one fan reports its speed, as on real splitters.
+  - Heat shrink on each connector and on the Y junction. The two branches loop back over the top from the
+    junction. A white twist tie holds the three sleeves together.
+- Size 0.0356 (x) × 0.0073 (y) × 0.0713 (z) m; **4536 triangles**, 6 meshes.
+- Anchors:
+  - `A_HIT_0` pos (0, 0.0037, 0), size 0.0356 × 0.0073 × 0.0713.
+  - `A_TIE_0` pos (0, 0.0048, 0.0016), fwd +y, up +z, size 0.0180 × 0.0162 × 0.0100, meta `tie=twist,colour=white`;
+    piece `tie_0@A_TIE_0#white_plastic`.
+- Fits `box_fan_splitter` `A_ITEM_PART_0` (0.070 × 0.080 × 0.012): margins w +0.0344, h +0.0087, t +0.0047.
+
 ### fan4_female and fan3_female
 - The receiving housings on the splitter outputs and on fan extension cables: the end a fan's own plug
   (`plug_fan4` / `plug_fan3`) slides onto.

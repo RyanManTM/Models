@@ -159,14 +159,15 @@ def smoothstep(x):
     return x * x * (3 - 2 * x)
 
 
-def drop_stub(build, *args):
+def drop_stub(build, *args, keys=("_cable",)):
     """Runs a build_plugs plug builder and removes the straight cable stub its overmould leaves (the coil's own
-    cable continues from the strain relief instead). Returns the builder's result."""
+    cable continues from the strain relief instead), or whatever its new objects' names contain one of keys.
+    Returns the builder's result."""
     import bpy
     before = {o.name for o in bpy.data.objects}
     r = build(*args)
     for o in list(bpy.data.objects):
-        if o.name not in before and "_cable" in o.name.split("#", 1)[0]:
+        if o.name not in before and any(k in o.name.split("#", 1)[0] for k in keys):
             bpy.data.objects.remove(o)
     return r
 
@@ -596,11 +597,12 @@ FAN_PITCH = 0.00254
 FAN_PIN_LEN = 0.0058      # the pins stand this far in front of the contact face (as a board header's)
 
 
-def fan_female(fr, parent, pins, tag, colours, anchors_root=None):
+def fan_female(fr, parent, pins, tag, colours, anchors_root=None, wires=True, missing=()):
     """The receiving end of a fan splitter output or extension cable: a housing with the pins standing in front of its
     contact face and the polarising wall with its friction ramp along the +Y side (over pins 1-3), the shape a fan's own
     plug slides onto. Frame: origin at the contact face centre, +Z back along the wires, +Y the ramp side. Pin 1 (GND)
-    is at +x, the 4-pin's PWM pin at -x (outside the wall, so a 3-pin plug fits too)."""
+    is at +x, the 4-pin's PWM pin at -x (outside the wall, so a 3-pin plug fits too). missing: pin indices (0-based)
+    left out (a splitter's second output has no tach pin); wires=False leaves the wire stubs off."""
     p = FAN_PITCH
     W = pins * p + 0.0004 if pins == 4 else pins * p + 0.0003
     L = 0.0075
@@ -625,11 +627,16 @@ def fan_female(fr, parent, pins, tag, colours, anchors_root=None):
     for sx in (-1, 1):
         P.cube("ff_guide", (sx * (W / 2 - 0.0002), py, -0.0012), (0.0004, 0.0012, 0.0024), tag, fr, parent)
     # the pins: square posts with chamfered tips, gold plated, running into the housing
-    for x in xs:
+    for k, x in enumerate(xs):
+        if k in missing:
+            continue
         P.cube("ff_pin", (x, py, (-FAN_PIN_LEN + 0.0035) / 2), (0.00064, 0.00064, FAN_PIN_LEN + 0.0035), "gold", fr, parent)
         P.cube("ff_pin_tip", (x, py, -FAN_PIN_LEN - 0.00012), (0.0004, 0.0004, 0.00024), "gold", fr, parent)
     # wire stubs out of the back (like the plug models)
-    end = PL.wire_stubs(fr, parent, [(x, py) for x in xs], 0.0007, L, 0.026, "rubber", colours, "ff_wire", converge=0.25)
+    if wires:
+        end = PL.wire_stubs(fr, parent, [(x, py) for x in xs], 0.0007, L, 0.026, "rubber", colours, "ff_wire", converge=0.25)
+    else:
+        end = fr.p(0, py, L)
     if anchors_root is not None:
         H = wy1 - yb0
         P.anchor("A_HIT_0", fr.sub(0, (yb0 + wy1) / 2, (L - FAN_PIN_LEN) / 2), (W + 0.002, H + 0.002, L + FAN_PIN_LEN + 0.001),
@@ -655,6 +662,70 @@ def build_fan3_female(root):
                             f"{FAN_PIN_LEN:.4f} in front of the face")
 
 
+# ====================================================================== coil_fan_splitter
+
+SLEEVE_R = 0.0018          # the braided sleeve over the four wires
+
+
+def shrink_tube(parent, a, b, w, h, y=None, name="shrink"):
+    """A flattened heat-shrink sleeve from point a to point b (w across, h high)."""
+    a, b = V(a), V(b)
+    pts = [a + (b - a) * (k / 3) for k in range(4)]
+    geo = ribbon_sweep(pts, oval_profile(w, h, 12), [None] * 4)
+    return geo_obj(parent, geo, name, "black_plastic", 45.0)
+
+
+def build_coil_fan_splitter(root):
+    """A 4-pin PWM 1-to-2 fan splitter (about 0.1 m from the input to each output) in black braided sleeving, folded
+    for its bag: the input plug (the plug_fan4 look, onto the board header) and the two receiving outputs (fan4_female;
+    the second has no tach pin) lie side by side at the +z end, the two branches loop back over the top from the
+    heat-shrunk junction, and a white twist tie holds the three sleeves together."""
+    zf = 0.034                      # the connectors' contact faces (all pointing +z)
+    yp = 0.0034                     # plug_fan4 lying flat: its ribs touch the floor
+    ff = fan_female(P.Frame((-0.0125, 0.0028, zf - 0.006), (0, 0, -1), (0, 1, 0)), root, 4, "connector_black", None,
+                    wires=False)
+    fan_female(P.Frame((0.0125, 0.0028, zf - 0.006), (0, 0, -1), (0, 1, 0)), root, 4, "connector_black", None, wires=False,
+               missing=(2,))
+    drop_stub(PL.plug_fan4, P.Frame((0.0, yp, zf), (0, 0, -1), (0, 1, 0)), root, keys=("fan_wire",))
+    tie_z = 0.0
+    lift = TIE_T + 0.0002
+
+    def bump(p):
+        p = V(p)
+        p.y += lift * math.exp(-((p.z - tie_z) / 0.006) ** 2)
+        return p
+    # heat shrink on each connector's back, and on the junction
+    zb_f = zf - 0.006 - ff["L"]          # the outputs' backs
+    zb_p = zf - 0.013                    # the input plug's back
+    for x, yc, zb in ((-0.0125, 0.0026, zb_f), (0.0125, 0.0026, zb_f), (0.0, yp - 0.0002, zb_p)):
+        shrink_tube(root, (x, yc, zb + 0.001), (x, yc - 0.0003, zb - 0.008), 0.0058, 0.0030)
+    zj0, zj1 = -0.012, -0.026
+    shrink_tube(root, (0, 0.0023, zj0 + 0.001), (0, 0.0023, zj1), 0.0082, 0.0044, name="junction")
+    # the input lead: plug -> junction
+    pin = [V((0.0, yp - 0.0003, zb_p - 0.007)), V((0.0, 0.0024, zb_p - 0.016)), V((0.0, SLEEVE_R + 0.0001, 0.004)),
+           V((0.0, SLEEVE_R + 0.0001, -0.004)), V((0.0, 0.0022, zj0 + 0.002))]
+    pts = [bump(p) for p in P.smooth_path(pin, 5)]
+    sweep(root, pts, circle_profile(SLEEVE_R, 8), "fabric_black", "sleeve", smooth=60.0)
+    # the branches: out of the junction's far end, a loose loop back over the top, beside the junction, together under
+    # the tie, then apart to their outputs
+    for sx in (-1, 1):
+        ctrl = [(sx * 0.0019, 0.0022, zj1 - 0.001), (sx * 0.0024, 0.0020, zj1 - 0.004)]
+        cxu, czu, ru = sx * 0.0074, zj1 - 0.0045, 0.0050
+        for k in range(1, 8):
+            ph = math.pi - math.pi * k / 8
+            ctrl.append((cxu + sx * ru * math.cos(ph), SLEEVE_R + 0.0001, czu - ru * math.sin(ph)))
+        ctrl += [(sx * 0.0124, SLEEVE_R + 0.0001, zj1 + 0.002), (sx * 0.0072, SLEEVE_R + 0.0001, zj0 + 0.004),
+                 (sx * (SLEEVE_R * 2 + 0.0004), SLEEVE_R + 0.0001, tie_z), (sx * 0.0055, SLEEVE_R + 0.0001, 0.008),
+                 (sx * 0.0118, 0.0021, zb_f - 0.010), (sx * 0.0125, 0.0024, zb_f - 0.007)]
+        pts = [bump(p) for p in P.smooth_path(ctrl, 4)]
+        sweep(root, pts, circle_profile(SLEEVE_R, 8), "fabric_black", "sleeve", smooth=60.0)
+    # the twist tie round the three sleeves
+    hw = SLEEVE_R * 3 + 0.0006
+    cen = V((0.0, SLEEVE_R + 0.0001 + lift, tie_z))
+    add_tie(root, cen, (0, 0, 1), hw, SLEEVE_R + 0.0002, pig_dir=(0, 0, -1))
+    return dict(note="4-pin PWM 1-to-2 splitter, braided black sleeves, folded; output 2 without the tach pin")
+
+
 # ====================================================================== registry and driver
 
 MODELS = {
@@ -662,6 +733,8 @@ MODELS = {
     "coil_c13": (build_coil_c13, dict(fit=("box_psu_750 A_ITEM_CORD_0", (0.120, 0.090, 0.016)),
                                       fit2=("box_psu_450 A_ITEM_CORD_0", (0.090, 0.075, 0.014)))),
     "coil_sata_pair": (build_coil_sata_pair, dict(fit=("box_mb_ridge_b5/z4 A_ITEM_CORD_0", (0.120, 0.075, 0.012)))),
+    "coil_fan_splitter": (build_coil_fan_splitter, dict(fit=("box_fan_splitter A_ITEM_PART_0", (0.070, 0.080, 0.012)),
+                                                        wb=((90, 75), (-150, 30)))),
     "fan4_female": (build_fan4_female, dict(frame_fixed=True, wb=((35, 25), (-145, 30)), views=[(40, 25), (-150, 30)])),
     "fan3_female": (build_fan3_female, dict(frame_fixed=True, wb=((35, 25), (-145, 30)), views=[(40, 25), (-150, 30)])),
 }
