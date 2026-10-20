@@ -15,6 +15,7 @@ Nothing here edits an existing model: the existing builders are reused with new 
 import os
 import sys
 import time
+import types
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import dct_common as c  # noqa: E402
@@ -22,6 +23,8 @@ import parts_c as P  # noqa: E402
 import parts_pcb as pp  # noqa: E402
 import build_cpu  # noqa: E402
 import build_gpu  # noqa: E402
+import build_case  # noqa: E402
+import build_board  # noqa: E402
 
 PREVIEW = [True]
 
@@ -130,9 +133,181 @@ def build_gpu_rx77():
     return mdl
 
 
+# ---------------------------------------------------------------- case_aero
+# build_case.py's mid-tower with a new style: black, a panoramic glass front that meets the side glass without a
+# corner pillar, three 92 mm ARGB intake fans lying on the PSU shroud (behind the 2.5" sled), a 120 mm ARGB rear fan.
+# Every anchor except the bottom fans' A_FAN_1..3 is where case_breeze has it.
+
+build_case.STYLES["case_aero"] = dict(
+    brand="AERO", model="VIEW 360", paint="paint_black", trim="black_plastic", bezel="black_plastic",
+    cover_tag="paint_black", screw_tag="steel_dark", logo_tag="alu", logo_font="seguisb.ttf", shroud_logo_tag="alu",
+    front="glass", fans_front=0, fans_bottom=3, bottom_fan_d=0.092, fan_tag="fan_black", fan_rgb=True, fan_pins=4,
+    hub=("AERO", "#121315", "#e8eaee", "#7cc8ff"), thumb_tag="steel_dark", led_power="led_white",
+    label_bg=(0.93, 0.93, 0.9), code="AR-V360", sn="AR3")
+
+
+def build_case_aero():
+    return build_case.build("case_aero")
+
+
+# ---------------------------------------------------------------- mb_ridge_x5 + io_ridge_x5
+# build_board.py's Board with a new config and a subclass that only changes looks (no method that creates an anchor
+# is overridden): a silver PCB, white VRM heatsinks that are taller and wider than the B5's, the rear one meeting the
+# white I/O cover, armour on both full-length PCIe slots, white DIMM slots and latches, a second M.2 heatsink, and a
+# bare-steel I/O shield. The layout (and so every anchor) is mb_ridge_b5's.
+
+BB = build_board
+BB.BOARDS["mb_ridge_x5"] = dict(
+    sock="V5", mem="DDR5", model="X5 ELITE", chipset="RX670", shield="io_ridge_x5",
+    mask="#c4c7cc", trace="#b7bbc1", pour="#bdc1c6", via="#9da2a9", pad="#b6a982", silk="#25282d",
+    deco="#aab0b8", accent="#3c7fc4", heat="paint_white", heat2="alu", latch="white_plastic",
+    shroud="white_plastic", plate_bg="#eceef0", plate_ink="#1b1e23", plate_acc="#3c7fc4")
+
+
+class PremiumBoard(BB.Board):
+    """mb_ridge_b5's layout with the premium look."""
+
+    def dimm_slot(self, x, body, notch_y):
+        super().dimm_slot(x, "white_plastic", notch_y)
+
+    def pcie_slot(self, xa, xb, yc, armour):
+        super().pcie_slot(xa, xb, yc, armour or (xb - xa) > 50.0)   # both full-length slots get the steel armour
+
+    def vrm(self):
+        cfg, k = self.cfg, self.k
+        PT, MM = BB.PT, BB.MM
+        # chokes: the B5's positions and markings
+        uv, ctx = self.mark(7.6, 7.6, 16.0, "#2e2f33")
+        with ctx as a:
+            a.text("R22", 3.8, 4.4, 1.6, "#b8b8b8", font="arialbd")
+            a.text("2346", 3.8, 2.4, 0.9, "#8a8a8a", font="arialbd")
+        choke_side = self.marks.swatch("#2a2b2e")
+        chokes = [(-6.0 + i * 9.5, 129.5) for i in range(6)] + [(72.0, 40.0 + i * 9.5) for i in range(9)]
+        for n, (x, y) in enumerate(chokes):
+            if y > 125.0:
+                self.at(f"PL{n + 1}", x, y - 5.3, 0.9, font="narrowbd")
+            else:
+                self.at(f"PL{n + 1}", x - 5.2, y, 0.9, font="narrowbd", rot=90)
+            self.bx(self.MT, x, y, PT, 7.6, 7.6, 5.4, bevel=0.35, uv=self.top_map(uv, x, y, PT + 5.4, 7.6, 7.6, rest=choke_side))
+            for s in (-1, 1):
+                self.ar(x + s * 2.6 - 1.2, y - 3.2, x + s * 2.6 + 1.2, y + 3.2, cfg["pad"], 0.35)
+            self.occupy(x - 4.2, y - 4.2, x + 4.2, y + 4.2)
+        heat, heat2 = cfg["heat"], cfg["heat2"]
+        # ---- top heatsink: wider and taller than the B5's (x -15..49, up to z 34): a white finned block under a
+        # stepped white cover, silver fin edges toward the socket, a silver accent and the logo plate
+        t = dict(x0=-15.0, x1=49.0, y0=133.6, y1=150.8, z1=34.0)
+        xm, ym = (t["x0"] + t["x1"]) / 2, (t["y0"] + t["y1"]) / 2
+        W, D = t["x1"] - t["x0"], t["y1"] - t["y0"]
+        self.bx(heat, xm, ym, 3.6, W, D, 4.6, bevel=0.6)
+        nf = int((W - 2) / 2.6)
+        for i in range(nf):
+            x = t["x0"] + 1.4 + i * (W - 2.8) / (nf - 1)
+            self.bx(heat, x, ym + 1.0, 8.2, 1.0, D - 2.0, t["z1"] - 15.0)
+            self.bx(heat2, x, t["y0"] + 1.2, 8.2, 1.0, 0.4, t["z1"] - 15.0)          # silver fin edges, socket side
+        capz = t["z1"] - 7.0
+        self.bx(heat, xm, ym + 1.2, capz, W + 0.4, D - 2.4, 3.6, bevel=0.6)
+        BB._slope(k[heat], (xm, t["y0"] + 2.6, capz + 1.8), (xm, t["y0"] - 0.2, capz - 2.0), W + 0.4, 3.2)
+        self.bx(heat, xm + 2.0, ym + 2.2, capz + 3.6, W - 6.0, D - 6.4, 3.4, bevel=0.8)  # the upper step
+        BB._slope(k[heat2], (xm + 2.0, t["y0"] + 3.4, capz + 6.2), (xm + 2.0, t["y0"] + 1.6, capz + 3.8), W - 6.0, 0.6)
+        uv, ctx = self.mark(40.0, 8.0, 20.0, cfg["plate_bg"])
+        with ctx as a:
+            a.text("RIDGE", 2.0, 4.0, 5.0, cfg["plate_ink"], font="agency", ax="LEFT")
+            a.line([(20.0, 2.0), (38.0, 2.0)], 0.5, cfg["plate_acc"])
+            a.text(cfg["model"].split()[0] + " ELITE POWER", 38.0, 5.0, 2.0, cfg["plate_acc"], font="agencyr", ax="RIGHT")
+        pe = self.marks.swatch(cfg["plate_bg"])
+        px, py_ = xm + 2.0, ym + 3.0
+        self.bx(self.MT, px, py_, capz + 7.0, 40.0, 8.0, 0.5, bevel=0.15, uv=self.top_map(uv, px, py_, capz + 7.5, 40.0, 8.0, rest=pe))
+        self.occupy(t["x0"], t["y0"], t["x1"], t["y1"])
+        # ---- rear heatsink: longer and taller (y 26..131, up to z 37), its top level with the I/O cover so the two
+        # read as one white block; fins along x under a cover with a chamfer toward the socket
+        r = self.rear = dict(x0=77.4, x1=95.4, y0=26.0, y1=131.0, z1=37.0)
+        xm, ym = (r["x0"] + r["x1"]) / 2, (r["y0"] + r["y1"]) / 2
+        W, D = r["x1"] - r["x0"], r["y1"] - r["y0"]
+        self.bx(heat, xm, ym, 3.6, W, D, 4.6, bevel=0.6)
+        nf = int((D - 2) / 2.6)
+        for i in range(nf):
+            y = r["y0"] + 1.4 + i * (D - 2.8) / (nf - 1)
+            self.bx(heat, xm + 1.0, y, 8.2, W - 2.0, 1.0, r["z1"] - 15.0)
+            self.bx(heat2, r["x0"] + 1.2, y, 8.2, 0.4, 1.0, r["z1"] - 15.0)
+        capz = r["z1"] - 7.0
+        self.bx(heat, xm + 1.2, ym, capz, W - 2.4, D + 0.4, 3.6, bevel=0.6)
+        BB._slope_x(k[heat], (r["x0"] + 2.6, ym, capz + 1.8), (r["x0"] - 0.2, ym, capz - 2.0), D + 0.4, 3.2)
+        self.bx(heat, xm + 2.2, ym, capz + 3.6, W - 6.4, D - 6.0, 3.4, bevel=0.8)
+        BB._slope_x(k[heat2], (r["x0"] + 3.4, ym, capz + 6.2), (r["x0"] + 1.6, ym, capz + 3.8), D - 6.0, 0.6)
+        # brushed silver inlay with grooves on the cover top
+        self.bx(heat2, xm + 2.6, ym, capz + 7.0, W - 9.0, D - 14.0, 0.3)
+        for j in range(6):
+            self.bx("black_plastic", xm + 2.6, r["y0"] + 12.0 + j * 2.0, capz + 7.25, W - 10.0, 0.5, 0.1)
+        self.occupy(r["x0"], r["y0"], r["x1"], r["y1"])
+        # nickel heat pipe linking both, as on the B5
+        pts = [(30.0, 140.0, 3.4), (46.0, 139.5, 3.4), (58.0, 134.6, 3.4), (70.5, 126.5, 3.4), (80.0, 119.0, 3.4), (86.0, 110.0, 3.4)]
+        c.tube("heatpipe", [(p[0] * MM, p[1] * MM, p[2] * MM) for p in pts], 1.6 * MM, "nickel", self.root, verts=12)
+        # solid polymer capacitors and the memory VRM, as on the B5
+        for (x, y, rr, h) in [(74.5, 145.0, 3.15, 8.0), (74.5, 137.4, 3.15, 8.0), (-17.5, 129.0, 2.5, 6.0), (-17.5, 136.0, 2.5, 6.0),
+                              (70.0, 33.5, 2.5, 6.0), (63.5, 21.0, 2.5, 6.0), (70.0, 21.0, 2.5, 6.0)]:
+            self.solid_cap(x, y, rr, h)
+        for y in (133.0, 123.0):
+            self.small_choke(-70.0, y)
+            self.mosfet(-81.0, y)
+        self.solid_cap(-89.0, 132.0, 2.5, 6.0)
+        self.solid_cap(-89.0, 124.0, 2.5, 6.0)
+
+    def io_shroud(self):
+        super().io_shroud()
+        # the white cover gets a silver strip along its slanted wall and a silver end cap at the bottom
+        y0, y1 = 22.0, 151.5
+        self.bx("alu", 100.3, (y0 + y1) / 2, 30.4, 0.4, y1 - y0 - 8.0, 1.6)
+        self.bx("alu", (99.8 + BB.IO_FACE - 1.7) / 2, y0 + 1.0, 4.0, BB.IO_FACE - 1.7 - 99.8, 2.2, 31.0)
+
+    def m2(self):
+        super().m2()
+        # a second white M.2 heatsink (fixed, looks only) over the M2_2 slot, on posts like the first one
+        PT, MM, k = BB.PT, BB.MM, self.k
+        yc = BB.M2B_Y
+        for px in (-20.0, 78.0):
+            pp.cyl(k["steel"], (px * MM, yc * MM, (PT + (7.2 - PT) / 2) * MM), 2.6 * MM, (7.2 - PT) * MM, "z", 6)
+        heat = self.cfg["heat"]
+        self.bx(heat, 29.0, yc, 7.2, 106.0, 24.0, 2.4, bevel=0.8)
+        for i in range(9):
+            pp.box(k["alu"], ((-14.0 + i * 6.0) * MM, yc * MM, 9.8 * MM), (1.4 * MM, 22.0 * MM, 0.5 * MM), pp.rot("z", 28), 0.0002)
+        for px in (-20.0, 78.0):
+            pp.tube_ring(k["steel"], (px * MM, yc * MM, 9.65 * MM), 1.2 * MM, 2.2 * MM, 0.2 * MM, seg=16)
+        uv, ctx = self.mark(30.0, 14.0, 20.0, self.cfg["plate_bg"])
+        with ctx as a:
+            a.text("M.2_2", 15.0, 8.6, 5.0, self.cfg["plate_ink"], font="agency")
+            a.line([(3.0, 3.0), (27.0, 3.0)], 0.5, self.cfg["plate_acc"])
+        pe = self.marks.swatch(self.cfg["plate_bg"])
+        self.bx(self.MT, 62.0, yc, 9.6, 30.0, 14.0, 0.5, bevel=0.2, uv=self.top_map(uv, 62.0, yc, 10.1, 30.0, 14.0, rest=pe))
+        self.occupy(-24.0, yc - 12.0, 82.0, yc + 12.0)
+
+
+def build_mb_ridge_x5():
+    bid = "mb_ridge_x5"
+    b = PremiumBoard(bid)
+    root = b.build()
+    P.write_report(root, bid, "frame and layout: as mb_ridge_b5 (origin at the PCB centre, +z component side, +x rear I/O)")
+    if PREVIEW[0]:
+        pp.preview(root, bid, views=((15, 55), (-35, 40), (60, 35)), size=(1280, 960), dist=0.62, zup=True)
+        pp.preview(root, bid, views=((-25, 50),), size=(1280, 960), dist=0.2, target=(0.03, 0.06, 0.01), start=3, zup=True)
+        pp.preview(root, bid, views=((50, 30),), size=(1280, 960), dist=0.2, target=(0.1, 0.07, 0.015), start=4, zup=True)
+        pp.preview(root, bid, views=((-60, 45),), size=(1280, 960), dist=0.2, target=(-0.08, -0.1, 0.005), start=5, zup=True)
+        pp.preview(root, bid, views=((-110, 40),), size=(1280, 960), dist=0.16, target=(-0.07, 0.11, 0.008), start=6, zup=True)
+        pp.preview(root, bid, views=((30, 40),), size=(1280, 960), dist=0.16, target=(0.03, -0.03, 0.006), start=7, zup=True)
+        pp.preview(root, bid, views=((-20, 35),), size=(1280, 960), dist=0.14, target=(0.0, -0.14, 0.004), start=8, zup=True)
+        pp.preview(root, bid, views=((-100, 20),), size=(1280, 960), dist=0.12, target=(-0.115, -0.07, 0.006), start=9, zup=True)
+    else:
+        pp.preview = lambda *a, **k: []
+    # the I/O shield: the board's cut-outs in a bare (unpainted) steel plate, to go with the silver theme
+    sroot = BB.build_shield(bid, types.SimpleNamespace(v5=False, shield_cuts=b.shield_cuts, shield_labels=b.shield_labels))
+    P.write_report(sroot, "io_ridge_x5", "frame: as io_ridge_b5 (origin at the plate centre, board axes, outer face +x)")
+    return root
+
+
 JOBS = {
     "cpu_arc9": build_cpu_arc9,
     "gpu_rx77": build_gpu_rx77,
+    "case_aero": build_case_aero,
+    "mb_ridge_x5": build_mb_ridge_x5,
 }
 
 

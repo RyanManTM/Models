@@ -4,6 +4,11 @@ three front fans plus one rear, ARGB).
 
 Run:  "D:\\New folder\\blender.exe" -b --factory-startup -P Tools/Blender/build_case.py -- [case_brickhouse] [case_breeze]
 
+Other scripts add cases by putting a style into STYLES (build_parts_d.py adds case_aero). Optional style keys, absent
+on brickhouse and breeze: front="glass" (a panoramic glass front that meets the side glass without a corner pillar,
+black top and base strips), fans_bottom / bottom_fan_d / BOTTOM_FANS (intake fans lying on the PSU shroud, numbered
+after the rear fan, their plugs resting where the front fans' plugs rest), code / sn (the rear label).
+
 Frame (as PartFactory.BuildCase): origin at the bottom centre, 0.42 (x) x 0.45 (y) x 0.21 (z); -x is the front,
 +x the rear, the window faces +z, the motherboard tray faces +z at z ~ -0.095, the PSU bay is bottom rear.
 The feet reach 8 mm below the origin, as today.
@@ -93,6 +98,8 @@ FP_POS = {"fp_pwrsw": (-0.150, 0.215), "fp_reset": (-0.1385, 0.217), "fp_pled": 
 # fans
 REAR_FAN = (XRI - 0.0128, 0.355, 0.030)
 FRONT_FANS_Y = [0.352, 0.230, 0.108]
+# bottom intake fans (style fans_bottom): (x, z) centres on the PSU shroud top, behind the 2.5" sled on the shroud
+BOTTOM_FANS = [(-0.042, 0.004), (0.052, 0.004), (0.146, 0.004)]
 
 STYLES = {
     "case_brickhouse": dict(
@@ -138,10 +145,10 @@ def textures(cid, st):
     art = P.Art(512, 320, bg=st["label_bg"], name="case_label")
     ink = (0.08, 0.08, 0.09)
     art.text(st["brand"], 24, 262, 46, ink, st["logo_font"], maxw=330)
-    art.text("MODEL: " + ("BH-M1" if "brick" in cid else "BZ-A400M"), 24, 214, 26, ink, "arialbd.ttf")
+    art.text("MODEL: " + st.get("code", "BH-M1" if "brick" in cid else "BZ-A400M"), 24, 214, 26, ink, "arialbd.ttf")
     art.text("ATX MID-TOWER CASE", 24, 182, 22, ink, "arial.ttf")
     art.code128ish(P.shash(cid) & 0xffff, 24, 92, 300, 64, ink)
-    art.text("S/N  " + ("BH1" if "brick" in cid else "BZ4") + "2610190427", 24, 64, 22, ink, "consola.ttf")
+    art.text("S/N  " + st.get("sn", "BH1" if "brick" in cid else "BZ4") + "2610190427", 24, 64, 22, ink, "consola.ttf")
     art.text("MADE IN CHINA", 24, 26, 20, ink, "arial.ttf")
     art.rect(360, 140, 128, 128, ink)
     art.text("CE", 424, 204, 70, st["label_bg"], "arial.ttf", align="CENTER", valign="CENTER")
@@ -227,12 +234,17 @@ def build(cid):
     paint = st["paint"]
     tex = textures(cid, st)
     breeze = st["front"] == "mesh"
+    glass = st["front"] == "glass"
+    n_bottom = st.get("fans_bottom", 0)
+    bfd = st.get("bottom_fan_d", 0.092)
     xm = (XF + XR) / 2
     Lx = XR - XF
 
     # ---------------- bottom panel: PSU intake slots, flanges up both sides
     holes = [P.stadium(0.112, 0.0055, 0.126, -0.052 + 0.013 * k) for k in range(9)]
     holes += [P.circle(0.0021, x, z, 12) for x in (-0.175, 0.16) for z in (-0.08, 0.08)]  # feet screws
+    if n_bottom:
+        holes += P.hex_grid(lambda a, b, r_: -0.168 < a < 0.046 and -0.060 < b < 0.060, 0.0090, 0.0036, -0.170, 0.048, -0.062, 0.062)
     sheet("bottom", paint, (0, T / 2, 0), X, Z, rect(XF, XR, ZBK + R + T, ZG - R - T), holes)
     for zedge, sgn in ((ZG, 1), (ZBK, -1)):
         zc = zedge - sgn * T / 2
@@ -251,7 +263,9 @@ def build(cid):
     P.cube("top_filter_tab", (0.135, YT + 0.0006, 0.0), (0.012, 0.0012, 0.03), "rubber", parent=root, bevel=0.0004)
 
     # ---------------- front wall
-    if breeze:
+    if glass:
+        fh = [rr(-0.086, 0.086, 0.020, 0.406, 0.012)]    # open behind the front glass
+    elif breeze:
         fh = [rr(-0.058, 0.058, 0.050, 0.410, 0.010)]
         for yf in FRONT_FANS_Y:
             fh += [P.circle(0.0022, sz * 0.0525, yf + sy * 0.0525, 12) for sz in (-1, 1) for sy in (-1, 1)]
@@ -339,10 +353,15 @@ def build(cid):
     for g in GROM[-2:]:
         (x, z), (w, h) = g[1], g[2]
         sh.append(rr(x - w / 2, x + w / 2, z - h / 2, z + h / 2, h * 0.45))
-    sh += P.hex_grid(lambda a, b, r_: 0.03 < a < 0.172 and -0.06 < b < 0.075, 0.0075, 0.0032, 0.03, 0.175, -0.065, 0.08)
+    if n_bottom:
+        for (fx, fz_) in BOTTOM_FANS[:n_bottom]:
+            sh.append(P.circle(bfd / 2 - 0.0015, fx, fz_, 48))
+            sh += [P.circle(0.0021, fx + sx_ * (bfd / 2 - 0.0048), fz_ + sz_ * (bfd / 2 - 0.0048), 10) for sx_ in (-1, 1) for sz_ in (-1, 1)]
+    else:
+        sh += P.hex_grid(lambda a, b, r_: 0.03 < a < 0.172 and -0.06 < b < 0.075, 0.0075, 0.0032, 0.03, 0.175, -0.065, 0.08)
     sh += [P.circle(0.0016, x, z, 10) for x in (-0.148, -0.112) for z in (-0.060, 0.024)]  # SSD bracket screws
     sheet("shroud_top", paint, (0, YS, 0), X, Z, rect(sx0 + 0.0018, XRI, Z_TRAY - T, ZS - 0.0018), sh)
-    shf = [P.stadium(0.15, 0.0042, 0.0, 0.025 + 0.011 * k) for k in range(6)] if breeze else []
+    shf = [P.stadium(0.15, 0.0042, 0.0, 0.025 + 0.011 * k) for k in range(6)] if (breeze or glass) else []
     sheet("shroud_front", paint, (sx0 + T / 2, 0, 0), Z, Y, rect(Z_TRAY - T, ZS - 0.0018, T, YS - 0.0018), shf)
     win = rr(0.088, 0.168, 0.026, 0.082, 0.008)  # shows the PSU's label
     sheet("shroud_side", paint, (0, 0, ZS), X, Y, rect(sx0 + 0.0018, XRI, T, YS - 0.0018), [win])
@@ -362,11 +381,12 @@ def build(cid):
         for z in (-0.08, 0.08):
             P.slab("foot", P.rrect(0.046, 0.022, 0.006), 0.0055, "black_plastic", P.plane((x, -0.00275, z), X, Z), parent=root)
             P.slab("foot_pad", P.rrect(0.040, 0.017, 0.005), 0.0025, "rubber", P.plane((x, -0.00675, z), X, Z), parent=root)
-    ff = rr(0.040, 0.202, -0.068, 0.068, 0.004)
-    sheet("filter_frame", "black_plastic", (0, -0.0019, 0), X, Z, ff, [rr(0.046, 0.196, -0.062, 0.062, 0.002)], t=0.0026)
-    sheet("filter_mesh", "mesh_black", (0, -0.0012, 0), X, Z, rr(0.045, 0.197, -0.063, 0.063, 0.002), t=0.0004)
-    for k in range(5):  # the frame's ribs
-        sheet("filter_rib", "black_plastic", (0, -0.0019, 0), X, Z, rect(0.046 + 0.025 * (k + 1) - 0.001, 0.046 + 0.025 * (k + 1) + 0.001, -0.062, 0.062), t=0.0022)
+    fx0 = -0.179 if n_bottom else 0.040   # the filter reaches under the bottom fans' intake
+    ff = rr(fx0, 0.202, -0.068, 0.068, 0.004)
+    sheet("filter_frame", "black_plastic", (0, -0.0019, 0), X, Z, ff, [rr(fx0 + 0.006, 0.196, -0.062, 0.062, 0.002)], t=0.0026)
+    sheet("filter_mesh", "mesh_black", (0, -0.0012, 0), X, Z, rr(fx0 + 0.005, 0.197, -0.063, 0.063, 0.002), t=0.0004)
+    for k in range(round((0.196 - fx0 - 0.006) / 0.025) - 1):  # the frame's ribs
+        sheet("filter_rib", "black_plastic", (0, -0.0019, 0), X, Z, rect(fx0 + 0.006 + 0.025 * (k + 1) - 0.001, fx0 + 0.006 + 0.025 * (k + 1) + 0.001, -0.062, 0.062), t=0.0022)
     P.slab("filter_tab", P.rrect(0.010, 0.034, 0.004, 0.207, 0.0), 0.0026, "black_plastic", P.plane((0, -0.0019, 0), X, Z), parent=root)
     for k in range(4):
         P.cube("filter_grip", (0.2095, -0.0003, -0.009 + k * 0.006), (0.004, 0.0008, 0.0014), "black_plastic", parent=root)
@@ -376,9 +396,9 @@ def build(cid):
     bx0, bx1 = -0.2185, XF           # bezel depth
     bz, by0, by1 = 0.1055, -0.0005, YT + 0.0005
     side_slits = []
-    if not breeze:
+    if st["front"] == "solid":
         side_slits = [P.stadium(0.0105, 0.0026, -0.2088, 0.030 + 0.0082 * k) for k in range(46)]
-    for zs in (bz, -bz):
+    for zs in ((-bz,) if glass else (bz, -bz)):
         sheet("bezel_side", bez, (0, 0, zs - math.copysign(0.0012, zs)), X, Y, rect(bx0 + 0.002, bx1 - 0.0004, by0 + 0.002, by1 - 0.002),
               side_slits, t=0.0024)
         if side_slits:
@@ -390,12 +410,34 @@ def build(cid):
     face_holes = [P.rrect(0.137, 0.017, 0.004, 0, io_y)]  # open behind the front I/O insert
     if breeze:
         face_holes.append(rr(-0.0885, 0.0885, 0.028, 0.401, 0.006))
-    sheet("bezel_face", bez, (bx0 + 0.0016, 0, 0), Z, Y, P.rrect(2 * bz, by1 - by0, 0.006, 0, (by0 + by1) / 2), face_holes, t=0.0026)
-    sheet("bezel_face_edge", bez, (bx0 + 0.0002, 0, 0), Z, Y, P.rrect(2 * bz - 0.0016, by1 - by0 - 0.0016, 0.0052, 0, (by0 + by1) / 2),
-          ([rr(-0.0885 - 0.0008, 0.0885 + 0.0008, 0.028 - 0.0008, 0.401 + 0.0008, 0.0068)] if breeze else []) +
-          [P.rrect(0.137, 0.017, 0.004, 0, io_y)], t=0.0004)
     xface = bx0 - 0.0000  # outer face of the bezel
-    if breeze:
+    if glass:
+        # panoramic front: a black top strip (front I/O) and base strip (logo, ARGB line) with the front glass between
+        # them. The glass runs to the window side's outer glass plane, where the side glass butts against it.
+        gzf = ZG + 0.0045                      # the side glass's outer face
+        GY0, GY1 = 0.0285, 0.4085              # the front glass between the strips
+        for (y0_, y1_, hl) in ((GY1, by1, [P.rrect(0.137, 0.017, 0.004, 0, io_y)]), (by0, GY0, [])):
+            sheet("bezel_face", bez, (bx0 + 0.0016, 0, 0), Z, Y, rr(-bz, gzf, y0_, y1_, 0.003), hl, t=0.0026)
+            sheet("bezel_face_edge", bez, (bx0 + 0.0002, 0, 0), Z, Y, rr(-bz + 0.0008, gzf - 0.0008, y0_ + 0.0008, y1_ - 0.0008, 0.0025),
+                  hl, t=0.0004)
+        sheet("front_glass", "glass", (bx0 + 0.0020, 0, 0), Z, Y, rect(-bz, gzf, GY0, GY1), t=0.004)
+        # black silkscreen on the inside of the front glass: a band on the solid side, thin lines at the strips
+        xs = bx0 + 0.00403
+        sheet("front_glass_band", "paint_black", (xs, 0, 0), Z, Y, rect(-bz, -bz + 0.009, GY0, GY1), t=0.00006)
+        for (y0_, y1_) in ((GY0, GY0 + 0.003), (GY1 - 0.003, GY1)):
+            sheet("front_glass_band", "paint_black", (xs, 0, 0), Z, Y, rect(-bz + 0.009, gzf, y0_, y1_), t=0.00006)
+        # ARGB light line along the top of the base strip, and the brand on the base strip
+        P.cube("front_argb", (xface + 0.0012, GY0 - 0.0016, (gzf - bz) / 2), (0.0016, 0.0016, bz + gzf - 0.012), "rgb", parent=root)
+        P.text3d("bezel_logo", st["brand"], 0.0090, 0.0003, st["logo_tag"], P.Frame((xface, 0.0120, 0.0), NX, Y), st["logo_font"],
+                 parent=root, width=0.05, spacing=1.35)
+    else:
+        sheet("bezel_face", bez, (bx0 + 0.0016, 0, 0), Z, Y, P.rrect(2 * bz, by1 - by0, 0.006, 0, (by0 + by1) / 2), face_holes, t=0.0026)
+        sheet("bezel_face_edge", bez, (bx0 + 0.0002, 0, 0), Z, Y, P.rrect(2 * bz - 0.0016, by1 - by0 - 0.0016, 0.0052, 0, (by0 + by1) / 2),
+              ([rr(-0.0885 - 0.0008, 0.0885 + 0.0008, 0.028 - 0.0008, 0.401 + 0.0008, 0.0068)] if breeze else []) +
+              [P.rrect(0.137, 0.017, 0.004, 0, io_y)], t=0.0004)
+    if glass:
+        pass
+    elif breeze:
         # the mesh insert (texture with real-scale perforation) just behind the face opening
         mf = P.Frame((xface + 0.0016, 0.2145, 0.0), NX, Y)
         P.quad("front_mesh", mf, 0.180, 0.376, "tex_" + cid + "_mesh", root, uv=(0, 0, 1, 1))
@@ -469,11 +511,19 @@ def build(cid):
     gz = ZG + 0.0005 + 0.002
     TH = [(0.1885, 0.42), (0.1885, 0.03)]
     ghole = [P.circle(0.0034, x, y, 16) for (x, y) in TH]
-    sheet("glass", "glass", (0, 0, gz), X, Y, rr(gx0, gx1, gy0, gy1, 0.003), ghole, t=0.004, parent=a_side)
     band = 0.021
-    sheet("glass_band", "paint_black", (0, 0, ZG + 0.00048), X, Y, rr(gx0, gx1, gy0, gy1, 0.003),
-          [rr(gx0 + band, gx1 - band, gy0 + band, gy1 - band - 0.004, 0.004)] + [P.circle(0.0036, x, y, 16) for (x, y) in TH],
-          t=0.00006, parent=a_side)
+    if glass:
+        # the glass runs on to the front glass (no corner pillar); its bands line up with the front strips
+        gxs = bx0 + 0.004
+        sheet("glass", "glass", (0, 0, gz), X, Y, rr(gxs, gx1, gy0, gy1, 0.0015), ghole, t=0.004, parent=a_side)
+        for r_, hl in ((rect(gxs, gx1, GY1, gy1), [P.circle(0.0036, *TH[0], 16)]), (rect(gxs, gx1 - band, gy0, GY0), []),
+                       (rect(gx1 - band, gx1, gy0, GY1), [P.circle(0.0036, *TH[1], 16)])):
+            sheet("glass_band", "paint_black", (0, 0, ZG + 0.00048), X, Y, r_, hl, t=0.00006, parent=a_side)
+    else:
+        sheet("glass", "glass", (0, 0, gz), X, Y, rr(gx0, gx1, gy0, gy1, 0.003), ghole, t=0.004, parent=a_side)
+        sheet("glass_band", "paint_black", (0, 0, ZG + 0.00048), X, Y, rr(gx0, gx1, gy0, gy1, 0.003),
+              [rr(gx0 + band, gx1 - band, gy0 + band, gy1 - band - 0.004, 0.004)] + [P.circle(0.0036, x, y, 16) for (x, y) in TH],
+              t=0.00006, parent=a_side)
     P.text3d("glass_print", "TEMPERED GLASS", 0.0032, 0.00004, "grey_plastic", P.Frame((gx1 - 0.045, gy0 + 0.0105, ZG + 0.00054), Z, Y),
              "arialbd.ttf", parent=a_side, width=0.05)
     P.text3d("glass_print", st["brand"], 0.0045, 0.00004, "grey_plastic", P.Frame((gx0 + 0.045, gy0 + 0.0105, ZG + 0.00054), Z, Y),
@@ -556,14 +606,17 @@ def build(cid):
         P.anchor(f"A_GROMMET_{gi}", fr, (w, h, 0.004), root, meta=f"on={where}")
 
     # ---------------- fans
-    fans = [("A_FAN_0", REAR_FAN)]
+    fans = [("A_FAN_0", REAR_FAN, NX, Y, 0.12)]
     if st["fans_front"]:
         for i, y in enumerate(FRONT_FANS_Y):
-            fans.append((f"A_FAN_{i + 1}", (XF + T + 0.0128, y, 0.0)))
-    for name, pos in fans:
-        fa = P.anchor(name, P.Frame(pos, NX, Y), (0.12, 0.12, 0.025), root,
+            fans.append((f"A_FAN_{i + 1}", (XF + T + 0.0128, y, 0.0), NX, Y, 0.12))
+    yb = YS + T / 2 + 0.0128        # bottom fans: lying on the shroud, air coming up from below (forward -y)
+    for i, (fx, fz_) in enumerate(BOTTOM_FANS[:n_bottom]):
+        fans.append((f"A_FAN_{i + 1}", (fx, yb, fz_), NY, X, bfd))
+    for name, pos, fwd_, up_, d_ in fans:
+        fa = P.anchor(name, P.Frame(pos, fwd_, up_), (d_, d_, 0.025), root,
                       meta=(PF.fan_meta("ccw", 1200) if PF else "axis=z,spin=-1,rpm=1200") + (",rgb=1" if st["fan_rgb"] else ""))
-        make_case_fan(fa, st, tex)
+        make_case_fan(fa, st, tex, d_)
     # fan screws on the rear grille
     for sz in (-1, 1):
         for sy in (-1, 1):
@@ -582,6 +635,14 @@ def build(cid):
         plug_rest.append((f"A_PLUG_FAN_{i + 1}", fan_kind, (-0.128, yp, zp), (-1, 0, 0),
                           [(XF + 0.026, y - 0.058, -0.058), (-0.176, y - 0.045, -0.085), (-0.176, yp, Z_TRAY + 0.006),
                            (-0.170, yp, Z_TRAY + 0.003)]))
+    for i, (fx, fz_) in enumerate(BOTTOM_FANS[:n_bottom]):
+        zp = Z_TRAY + 0.0026
+        yp = 0.385 - 0.04 * i
+        yc_ = YS + T / 2 + 0.0035 + 0.0022 * i
+        plug_rest.append((f"A_PLUG_FAN_{i + 1}", fan_kind, (-0.128, yp, zp), (-1, 0, 0),
+                          [(fx - bfd / 2 + 0.006, yb + 0.004, fz_ - bfd / 2 + 0.006), (fx - bfd / 2 - 0.004, yc_, -0.060),
+                           (fx - bfd / 2 - 0.012, yc_, -0.086 + 0.0022 * i), (-0.174 - 0.0025 * i, yc_ + 0.004, -0.089 + 0.0022 * i),
+                           (-0.176 - 0.0025 * i, yp, Z_TRAY + 0.006), (-0.170, yp, Z_TRAY + 0.003)]))
     fp_list = [("A_PLUG_PWRSW_0", "fp_pwrsw", FP_POS["fp_pwrsw"]), ("A_PLUG_RESET_0", "fp_reset", FP_POS["fp_reset"]),
                ("A_PLUG_PLED_0", "fp_pled", FP_POS["fp_pled"]), ("A_PLUG_HDDLED_0", "fp_hddled", FP_POS["fp_hddled"]),
                ("A_PLUG_USB3_0", "usb3hdr", FP_POS["usb3hdr"]), ("A_PLUG_AUDIO_0", "audiohdr", FP_POS["audiohdr"])]
@@ -674,10 +735,10 @@ def grommet(fr, w, h, root, horizontal=True):
                    fr.sub(0, 0, 0.0006), parent=root)
 
 
-def make_case_fan(fa, st, tex):
+def make_case_fan(fa, st, tex, diameter=0.12):
     if PF is not None:
         try:
-            PF.make_fan(fa, diameter=0.12, thickness=0.025, blades=7, frame=True, rgb=st["fan_rgb"], spin="ccw",
+            PF.make_fan(fa, diameter=diameter, thickness=0.025, blades=7, frame=True, rgb=st["fan_rgb"], spin="ccw",
                         blade_tag=st["fan_tag"], frame_tag=st["fan_tag"], sticker=tex.get("hub"), label=tex.get("motor"),
                         name=fa.name.lower())
             return

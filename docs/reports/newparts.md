@@ -7,7 +7,7 @@ game exactly like their siblings. Status: **in progress** (this report is update
 |---|---|---|
 | `cpu_arc9` | `cpu_arc5`, `cpu_arc7` | done |
 | `gpu_rx77` | `gpu_rx66`, `gpu_rx88` | done |
-| `case_aero` | `case_breeze` | to do |
+| `case_aero` | `case_breeze` | done |
 | `mb_ridge_x5` + `io_ridge_x5` | `mb_ridge_b5` + `io_ridge_b5` | to do |
 | `box_cpu_arc9`, `box_gpu_rx77`, `box_case_aero`, `box_mb_ridge_x5` | the sibling boxes | to do |
 
@@ -144,6 +144,62 @@ are moving pieces of their fan anchors, as on the siblings.
 
 ---
 
+## 3. `case_aero`: AERO View 360 (panoramic ATX mid-tower)
+
+- **Script:** `build_parts_d.py` adds a style to `build_case.STYLES` and calls `build_case.build`. `build_case.py` got
+  optional style keys for it (absent on brickhouse and breeze, which rebuild identically, see below):
+  `front="glass"`, `fans_bottom`, `bottom_fan_d`, `code`, `sn`, and the `BOTTOM_FANS` layout.
+- **Size:** the case contract: 0.42 (x) × 0.45 (y) × 0.21 (z) body, bounds (−0.2193, −0.008, −0.1061) to
+  (0.212, 0.4512, 0.1121), the same as `case_breeze`; origin at the bottom centre, −x front, window +z.
+- **Triangles:** 110,668 in 89 meshes (`case_breeze` 111,788 in 89).
+- **Look:** black painted steel (`paint_black`) and black plastic trim. The front is a panoramic glass pane between a
+  black top strip (the front I/O, unchanged positions) and a black base strip (an `AERO` logo and an ARGB line), running
+  to the window side where the side glass butts against it: no corner pillar. The side glass reaches forward to the
+  front glass, its silkscreen bands line up with the front strips (none on the front edge). The front steel wall is a
+  frame open behind the glass. Three 92 mm ARGB fans (black frames, `rgb` rings) lie on the PSU shroud blowing up,
+  over round openings in the shroud top; a filtered hex intake in the bottom panel under the shroud's front half and a
+  long magnetic filter under the whole floor feed them. A 120 mm ARGB rear fan, the slot covers, the PSU bay, the
+  tray, grommets and 2.5" sleds are the breeze's.
+- **Textures:** `case_aero_label.png` (rear label, model AR-V360), `case_aero_fanhub.png`, `case_aero_fanmotor.png`.
+
+**Anchors:** all 67 of `case_breeze`'s anchors by name. 64 are identical (position, axes, size, meta), including
+`A_SOCKET_MOBO_0`, `A_STANDOFF_0..9` (with the same `pre=` flags: A C F H K M pre-installed), `A_SOCKET_PSU_0`,
+`A_SOCKET_IOSHIELD_0`, `A_SLOTCOVER_0..6` and `A_SCREW_PH2_0..6`, `A_PANEL_SIDE_0` with `A_SCREW_THUMB_0..1`,
+`A_PANEL_BACK_0` with `A_SCREW_THUMB_2..3`, the front I/O (`A_BUTTON_POWER_0`, `A_BUTTON_RESET_0`, `A_LED_POWER_0`,
+`A_LED_HDD_0`, `A_PORT_USBA_FRONT_0..1`), `A_FAN_0` (rear), `A_PLUG_FAN_0..3`, the six front-panel plugs,
+`A_GROMMET_0..5`, `A_SOCKET_SSD25_0..1` and `A_HIT_0..5`. The full list with values is in
+`Logs/ModelPreviews/case_aero_report.txt`.
+
+**Anchor comparison** (`anchor_compare.py`, `case_breeze` → `case_aero`)
+
+| Anchor | Result | case_breeze | case_aero |
+|---|---|---|---|
+| 64 anchors (everything else) | SAME | | |
+| `A_FAN_1` | position, axes, size | (−0.1869, 0.352, 0), forward −x, 0.12 | (−0.042, 0.1168, 0.004), forward −y, up +x, 0.092 |
+| `A_FAN_2` | position, axes, size | (−0.1869, 0.230, 0), forward −x, 0.12 | (0.052, 0.1168, 0.004), forward −y, up +x, 0.092 |
+| `A_FAN_3` | position, axes, size | (−0.1869, 0.108, 0), forward −x, 0.12 | (0.146, 0.1168, 0.004), forward −y, up +x, 0.092 |
+| **Summary** | 67 / 67 names; 64 SAME, 3 DIFF | | |
+
+The fans' meta is unchanged (`axis=z,spin=-1,rpm=1200,rgb=1`) and their plugs `A_PLUG_FAN_1..3` rest exactly where the
+breeze's front-fan plugs rest (`kind=fan4,fan=<n>`); the cables run along the shroud and up the tray's front edge.
+
+**Suggested catalog data**
+
+| Field | Value |
+|---|---|
+| Brand | AERO |
+| Name | AERO View 360 |
+| Form factor | ATX mid-tower (ATX / Micro-ATX / Mini-ITX) |
+| Panels | Panoramic tempered glass front and side (no corner pillar), steel back panel |
+| Fans included | 3 × 92 mm ARGB bottom intake, 1 × 120 mm ARGB rear exhaust |
+| Front I/O | 2 × USB 3.0, USB-C, audio, power, reset |
+| Clearances | GPU up to 360 mm, CPU cooler up to 160 mm |
+| Power draw | about 6 W (four ARGB fans) |
+| Price | $129 |
+| Retail box | `box_case_aero`, 0.52 × 0.56 × 0.30 (as the other cases) |
+
+---
+
 ## Existing models unchanged
 
 `build_gpu.py` (made configurable for `gpu_rx77`): `gpu_rx66` and `gpu_rx88` were re-exported into a scratch project
@@ -154,11 +210,26 @@ COMPARE gpu_rx66: SAME (37 objects)
 COMPARE gpu_rx88: SAME (38 objects)
 ```
 
-Their textures `gpu_rx66.png` and `gpu_rx88.png` are pixel-identical too (max difference 0). The comparison is against a
-re-export from the unchanged script in the same environment because Linux re-exports never match the committed
-Windows exports exactly: the unchanged script already differs in the text meshes (Liberation fonts stand in for
-Agency FB and Eras) and in the heat-pipe sweep vertices. None of the re-exports are committed.
+Their textures `gpu_rx66.png` and `gpu_rx88.png` are pixel-identical too (max difference 0).
+
+`build_case.py` (made configurable for `case_aero`): `case_brickhouse` and `case_breeze`, re-exported the same way:
+
+```
+COMPARE case_brickhouse: SAME (138 objects)
+COMPARE case_breeze: SAME (157 objects)
+```
+
+The comparisons are against a re-export from the unchanged script in the same environment because Linux re-exports
+never match the committed Windows exports exactly: the unchanged scripts already differ in the text meshes
+(Liberation fonts stand in for Agency FB, Eras, Segoe and Arial) and by float noise in a few swept meshes (heat pipes,
+cables). None of the re-exports are committed.
 
 ## Deviations
 
-None so far.
+1. **`case_aero` fans:** the brief asks for both "the same anchor names and positions as `case_breeze` (… fans …)" and
+   "three bottom intake fans", which cannot both hold: the breeze's `A_FAN_1..3` are front fans, and a panoramic glass
+   front has no front fans. The bottom fans keep the names `A_FAN_1..3` (and their plugs keep `A_PLUG_FAN_1..3`
+   exactly), but sit on the PSU shroud facing down (forward −y). They are **92 mm**, not 120 mm: three 120 mm fans
+   need 0.36 m of shroud, and the shroud's front 8 cm carries the 2.5" sled at `A_SOCKET_SSD25_0`, whose pose the
+   contract fixes. Keeping every functional anchor (sockets, standoffs, screws, plugs, panels) identical won over the
+   fan size. If 120 mm bottom fans matter more, the sled has to move (a change to `A_SOCKET_SSD25_0`).
