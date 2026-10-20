@@ -258,6 +258,40 @@ same two anchors.
 
 ---
 
+## 5. Retail box rigs
+
+Built by `build_boxes.py` (new `ITEMS` entries) with the existing rig builders in `rig_products.py` (new
+`PART_BOUNDS` entries; `ACC_SHELF` for the case). Each follows its sibling's kind, opening sequence and contents
+(PACKAGING.md §3), keeps the sibling's `BoxSize`, and its printed art carries a product shot rendered from the new
+part's own FBX (`shot from: <id>` in each box report). Rebuild:
+
+```bash
+blender -b --factory-startup -P Tools/Blender/build_boxes.py -- cpu_arc9 gpu_rx77 mb_ridge_x5 case_aero
+```
+
+Each box writes `box_<id>.fbx`, `tex_box_<id>` (the printed atlas), `tex_box_<id>_in` (inner prints), previews `_0.._1`
+(closed), `_2` (opened, the part in place), `_3` (exploded) and `box_<id>_report.txt` (meshes, anchors with meta, the
+opening sequence). They also rewrite the shared `box_seal.png` / `box_tape.png`, which are not committed (unchanged
+art).
+
+### `box_cpu_arc9` (as `box_cpu_arc5` / `box_cpu_arc7`)
+- 0.11 × 0.07 × 0.11; 3,612 triangles in 13 meshes. Crimson and black print, the "9" numeral, "9900X", badges
+  "12 CORES" / "SOCKET V5", the category stripe and an EAN barcode.
+- Opening: seals `A_SEAL_0/1` (0) → tuck lid `A_FLAP_0` (1) → dust flaps `A_FLAP_1/2` (2) → tray `A_INSERT_CARD_0` and the
+  papers `A_ITEM_DOC_0..2` (guide, warranty, sticker) (3) → clamshell lid `A_CLAMLID_0` (4) → the CPU `A_ITEM_PART_0`
+  (5, `bag=none`) → clamshell base `A_INSERT_CLAM_0` (6).
+- Anchors vs `box_cpu_arc7`: **13 / 13 SAME** (the same package bounds).
+
+### `box_gpu_rx77` (as `box_gpu_rx66` / `box_gpu_rx88`)
+- 0.36 × 0.09 × 0.17; 2,158 triangles in 5 meshes. Steel-blue sleeve with an ice-blue accent, badges "12 GB GDDR6" /
+  "2 x 8-PIN".
+- Opening: sleeve `A_SLEEVE_0` slides off +x (0) → lid `A_LID_0` (1) → the card in its silver bag `A_ITEM_PART_0`
+  (2) → PE foam cradle `A_INSERT_FOAM_0` (3) → guide, driver note, sticker `A_ITEM_DOC_0..2` (4).
+- Anchors vs `box_gpu_rx88`: 6 SAME; `A_ITEM_PART_0` (pose and size follow the shorter card: (0.0343, 0.0207,
+  0.0525), 0.2895 × 0.0646 × 0.1399) and `A_INSERT_FOAM_0` (0.059 tall instead of 0.064, the card is thinner) differ.
+
+---
+
 ## Existing models unchanged
 
 `build_gpu.py` (made configurable for `gpu_rx77`): `gpu_rx66` and `gpu_rx88` were re-exported into a scratch project
@@ -281,6 +315,40 @@ The comparisons are against a re-export from the unchanged script in the same en
 never match the committed Windows exports exactly: the unchanged scripts already differ in the text meshes
 (Liberation fonts stand in for Agency FB, Eras, Segoe and Arial) and by float noise in a few swept meshes (heat pipes,
 cables). None of the re-exports are committed.
+
+`build_board.py`, `build_cpu.py` and `rig_common.py` are unchanged.
+
+**The 20 existing box rigs** (`build_boxes.py` and `rig_products.py` gained the four new items, their part bounds and
+`ACC_SHELF`; the new items are appended after the existing ones so those build in the same order). All 20 were
+re-exported with the unchanged scripts and with the edited ones (`--noshots --nopreview`, the same placeholder product
+shot for both, as the shot only feeds the textures), then compared with `extras_compare.py`:
+
+```
+COMPARE box_case_brickhouse: SAME (35 objects)
+COMPARE box_case_breeze: SAME (35 objects)
+COMPARE box_mb_ridge_b5: SAME (24 objects)
+COMPARE box_mb_ridge_z4: SAME (24 objects)
+COMPARE box_cooler_tower: SAME (36 objects)
+COMPARE box_gpu_rx66: SAME (14 objects)
+COMPARE box_gpu_rx88: SAME (14 objects)
+COMPARE box_psu_750: SAME (32 objects)
+COMPARE box_cable_dp: SAME (11 objects)
+COMPARE box_fan_splitter: SAME (11 objects)
+COMPARE box_cpu_arc5: CHANGED: changed=['clam_base@A_INSERT_CLAM_0#black_plastic.polys', '….uvs', 'clam_lid@A_CLAMLID_0#smoke_plastic.polys', '….uvs']
+COMPARE box_cpu_arc7, box_cpu_tiron5: the same two meshes, .polys/.uvs only
+COMPARE box_cooler_stock: clam_base / clam_lid .polys/.uvs only
+COMPARE box_ram_ddr5_16, box_ram_ddr4_8, box_ssd_1tb: blister / blister_lid .polys/.uvs only
+COMPARE box_psu_450: cap@A_INSERT_PULP_0/1 .polys/.uvs only
+COMPARE box_ssd_sata_500: tray@A_INSERT_BLISTER_0 .polys/.uvs only
+COMPARE box_usb_installer: blister@A_CLAMLID_0 .polys/.uvs only
+```
+
+The ten "CHANGED" rigs are not changed by the edits: the thermoformed shells (`rig_products.blister` / `formed` /
+`R.shell`) come out with a different polygon order on every run. Two runs of the **unchanged** script give the same
+`.polys/.uvs` differences on those meshes (checked on box_cpu_arc5, box_ram_ddr5_16, box_psu_450, box_ssd_sata_500), and
+a shape comparison of the before/after exports (vertex positions, the set of polygons as vertex positions, surface
+area, materials, per object) reports all ten IDENTICAL. Every anchor, every other mesh and every vertex is unchanged in
+all 20 rigs.
 
 ## Deviations
 

@@ -49,7 +49,17 @@ PART_BOUNDS = {
     "case_brickhouse": ((-0.2195, -0.008, -0.1061), (0.212, 0.4512, 0.1121)),
     "case_breeze": ((-0.2193, -0.008, -0.1061), (0.212, 0.4512, 0.1121)),
     "usb_stick": ((-0.0093, -0.0041, 0.0), (0.0093, 0.0045, 0.0572)),
+    # parts batch D (build_parts_d.py)
+    "cpu_arc9": ((-0.02, -0.02, 0.0), (0.02, 0.02, 0.006)),
+    "gpu_rx77": ((-0.175, -0.0526, -0.0135), (0.1065, 0.004, 0.1184)),
+    "mb_ridge_x5": ((-0.123, -0.1525, -0.0015), (0.1337, 0.1525, 0.0373)),
+    "io_ridge_x5": ((-0.0068, -0.0794, -0.0232), (0.0003, 0.0794, 0.0232)),
+    "case_aero": ((-0.2193, -0.008, -0.1061), (0.212, 0.4512, 0.1121)),
 }
+
+# Where a case's accessory box rides inside it (case-frame height of its floor): on the PSU shroud, or on top of the
+# bottom fans lying on the shroud (case_aero).
+ACC_SHELF = {"case_aero": 0.1305}
 
 
 def bsize(mid, pad=0.0):
@@ -1195,8 +1205,8 @@ def build_case(ctx):
             cuts.append(RC.tmp_cube((x_wall + inward * 0.012, yc + sy_ * 0.13, 0), (0.026, 0.16, 0.20), bevel=0.006))
         cuts.append(RC.tmp_cube((x_wall + inward * (Lc - Dp) / 2, y_in - 0.030, 0), (0.026, 0.024, 0.12), bevel=0.008))
         R.cut(ob, cuts)
-    # the accessory box rides inside the case on the PSU shroud, behind the glass (case frame offsets)
-    shroud = 0.1045
+    # the accessory box rides inside the case on the PSU shroud (or on the bottom fans), behind the glass (case frame offsets)
+    shroud = ACC_SHELF.get(pid, 0.1045)
     ab = F((ax + 0.020, ay + shroud, az + 0.015))
     acc, accflap = accessory_box(R, ctx, "A_INSERT_ACCBOX_0", ab, (0.160, 0.034, 0.110), "A_ITEM_PART_0", 4, 5,
                                  ["A_ITEM_PART_0"], lift="+z", dist=0.18, inside="A_PANEL_SIDE_0")
@@ -1219,7 +1229,8 @@ def build_case(ctx):
     R.explode_fill = 0.75
     NOTES[pid] = ("Case: printed tape strip 0 (0) -> long flaps (1) -> short flaps (2) -> the case in its clear bag, lifted out by "
                   "the foam (3) -> front/rear EPS caps A_INSERT_FOAM_0/1, with=A_ITEM_PART_0, pulled off along -x/+x (4). "
-                  "Accessory box A_INSERT_ACCBOX_0@A_ITEM_PART_0 sits INSIDE the case on the PSU shroud (case-frame pose "
+                  "Accessory box A_INSERT_ACCBOX_0@A_ITEM_PART_0 sits INSIDE the case on the "
+                  + ("bottom fans" if pid in ACC_SHELF else "PSU shroud") + " (case-frame pose "
                   "relative to A_ITEM_PART_0), inside=A_PANEL_SIDE_0: take it out of the side opening (+z) once the glass panel "
                   "is off (5) -> its tuck flap A_FLAP_4 (6) -> standoff bag A_ITEM_ACC_0 (id=standoff_bag, frame=flat), "
                   "screws A_ITEM_HW_0, cable ties A_ITEM_HW_1 (6) -> manual A_ITEM_DOC_0 (7).")

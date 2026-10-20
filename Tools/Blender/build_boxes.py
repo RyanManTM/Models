@@ -180,6 +180,27 @@ ITEMS = {
                          specs=["1 x 4-pin female to 2 x 4-pin male", "PWM signal from one fan only", "10 cm sleeved cable",
                                 "Max 1 A per header"], style="bag", bg0=(0.06, 0.07, 0.09), bg1=(0.10, 0.22, 0.36),
                          accent=(0.20, 0.75, 0.95), text=(0.97, 0.97, 0.98), font="seguibl.ttf"),
+    # parts batch D (build_parts_d.py): the same box kinds and sizes as their siblings, built after the 20 above
+    "cpu_arc9": dict(cat="CPU", brand="ARC", model="9", name="9 9900X", line="DESKTOP PROCESSOR",
+                     specs=["12 cores / 24 threads", "Up to 5.6 GHz boost", "76 MB total cache", "Socket V5", "120 W TDP",
+                            "Cooler not included"], badges=["12 CORES", "SOCKET V5"], numeral="9", sub="9900X",
+                     style="retail", bg0=(0.03, 0.025, 0.03), bg1=(0.21, 0.02, 0.06), accent=(0.94, 0.12, 0.20),
+                     text=(0.97, 0.97, 0.96), font="seguibl.ttf", sibling="cpu_arc5"),
+    "gpu_rx77": dict(cat="GPU", brand="VOLTRA", model="RX 7700", name="RX 7700 12 GB", line="GRAPHICS CARD",
+                     specs=["12 GB GDDR6, 192-bit", "PCIe 4.0 x16", "2 x PCIe 8-pin power, 245 W", "3 x DisplayPort 1.4, 1 x HDMI 2.1",
+                            "Triple-fan cooler, metal backplate"], badges=["12 GB GDDR6", "2 x 8-PIN"], style="retail",
+                     bg0=(0.025, 0.03, 0.04), bg1=(0.10, 0.15, 0.21), accent=(0.55, 0.80, 0.96), text=(0.97, 0.97, 0.98),
+                     font="AGENCYB.TTF", ribbon=(0.62, 0.66, 0.72), sibling="gpu_rx88"),
+    "mb_ridge_x5": dict(cat="Motherboard", brand="RIDGE", model="X5 ELITE", name="X5 Elite", line="PREMIUM ATX MOTHERBOARD",
+                        specs=["Socket V5", "4 x DDR5 up to 8000 MT/s", "Armoured PCIe 5.0 x16", "2 x M.2 NVMe with heatsinks",
+                               "Wi-Fi 6E + 2.5G LAN", "USB 3.2 Gen 2"], badges=["SOCKET V5", "DDR5", "PCIe 5.0"],
+                        style="retail", bg0=(0.94, 0.95, 0.96), bg1=(0.76, 0.79, 0.83), accent=(0.20, 0.48, 0.78),
+                        text=(0.07, 0.08, 0.10), font="AGENCYB.TTF", sibling="mb_ridge_b5", bag="antistatic_silver"),
+    "case_aero": dict(cat="Case", brand="AERO", model="VIEW 360", name="View 360", line="PANORAMIC ATX MID-TOWER",
+                      specs=["Panoramic glass front and side, no corner pillar", "3 x 92 mm ARGB bottom + 1 x 120 mm ARGB rear",
+                             "ATX / Micro-ATX / Mini-ITX", "Front I/O: 2 x USB 3.0, USB-C, audio", "GPU up to 360 mm",
+                             "Magnetic dust filters"], style="carton", ink=(0.08, 0.08, 0.09), accent=(0.30, 0.66, 0.92),
+                      font="seguisb.ttf", sibling="case_breeze"),
 }
 
 # Box ids that exist in Assets/Resources/Models but are not rebuilt here (kept as they are).
