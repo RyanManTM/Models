@@ -656,3 +656,370 @@ def previews(rig, ctx):
              fill=getattr(rig, "explode_fill", 0.82))
     RC.undo_pose(undo)
     RC.clear_extras(rig)
+
+
+# ---------------------------------------------------------------- rack_12u_open: the flat pack
+
+# the open frame's members (datacenter_rack.frame_open / rail): frames 0.788 deep x 0.56 wide x 0.035, posts
+# C-profile 0.045 x 0.0285 x 0.549 long, the tie bar 0.504 x 0.020 x 0.005, four plate castors
+FP = dict(fl=0.788, fw=0.560, fh=0.035, plate=0.004, div=0.003, post=(0.549, 0.045, 0.0285), layer=0.066)
+
+
+def size_flatpack(pid, it):
+    t = 0.005
+    sx = up5(FP["fl"] + 0.024 + 2 * (t + 0.0005))
+    sz = up5(FP["fw"] + 0.024 + 2 * (t + 0.0005))
+    plist = papers_of(it, (0.3, 0.3))
+    ph = sum(p[2][2] + 0.0002 for p in plist)
+    sy = up5(t + FP["plate"] + 2 * FP["fh"] + FP["div"] + FP["layer"] + ph + 0.006 + 2 * t)
+    return (sx, sy, sz)
+
+
+def frame_look(R, anc, y0, plates=False):
+    """One open-frame rectangle lying flat (its depth along the box x): two box-section side rails and two cross
+    members; the bottom frame has the four castor mounting plates under its corners."""
+    fl, fw, fh = FP["fl"], FP["fw"], FP["fh"]
+    yb = y0 + (FP["plate"] if plates else 0.0)
+    for sg in (-1, 1):
+        R.cube("frame_side", (0, yb + fh / 2, sg * (fw / 2 - 0.0135)), (fl, fh, 0.027), "paint_black", anc=anc, bevel=0.002, seg=1)
+        R.cube("frame_cross", (sg * (fl / 2 - 0.028), yb + fh / 2, 0), (0.024, fh - 0.008, fw - 0.054), "paint_black", anc=anc,
+               bevel=0.002, seg=1)
+        if plates:
+            for sz_ in (-1, 1):
+                R.cube("caster_mount", (sg * (fl / 2 - 0.025), y0 + FP["plate"] / 2, sz_ * (fw / 2 - 0.0135)), (0.060, FP["plate"], 0.060),
+                       "steel", anc=anc)
+    for sg in (-1, 1):                                  # gussets in the corners where the posts stand
+        for sz_ in (-1, 1):
+            R.cube("frame_gusset", (sg * (fl / 2 - 0.055), yb + fh - 0.0015, sz_ * (fw / 2 - 0.045)), (0.040, 0.003, 0.040),
+                   "paint_black", anc=anc)
+
+
+def post_look(R, anc, o):
+    """A C-profile rack post lying on its back along x (the 19" flange up)."""
+    L, w, h = FP["post"]
+    fr = F(o, X, Y)
+    path = [(-w / 2 + 0.012, h), (-w / 2, h), (-w / 2, 0), (w / 2, 0), (w / 2, h), (w / 2 - 0.012, h)]
+    R.own(P.bent("post", path, 0.002, L, "paint_black", fr, parent=R.root), anc, "post")
+    for k in range(12):                                 # the square cage-nut holes, as dark plugs in the web
+        for hh in (0.00635, 0.022225, 0.0381):
+            xx = -L / 2 + 0.008 + k * 0.04445 + hh
+            R.cube("post_hole", (xx, 0.0021, 0.0085), (0.0095, 0.0004, 0.0095), "dark_plastic", F(o, Z, Y), anc=anc)
+
+
+def castor_look(R, anc, o):
+    """A plate castor standing on its wheel (datacenter_rack.caster)."""
+    x, y, z = o
+    h, wr = 0.061, 0.022
+    R.cube("castor_plate", (x, y + h - 0.002, z), (0.060, 0.004, 0.060), "steel", anc=anc)
+    R.cylinder("castor_swivel", F((x, y + h - 0.008, z), Y, Z), 0.018, 0.008, "steel", 16, anc=anc, z0=-0.004)
+    R.cube("castor_yoke", (x, y + wr + 0.012, z + 0.003), (0.026, 0.030, 0.026), "steel", anc=anc)
+    R.cylinder("castor_wheel", F((x, y + wr, z + 0.003), X, Y), wr, 0.020, "rubber", 18, anc=anc)
+    R.cylinder("castor_hub", F((x, y + wr, z + 0.003), X, Y), wr * 0.45, 0.0215, "grey_plastic", 12, anc=anc)
+
+
+def build_flatpack(ctx):
+    pid, it = ctx.pid, ctx.it
+    sx, sy, sz = ctx.s
+    R = Rig("box_" + pid)
+    seq = Seq()
+    t = 0.005
+    covers = RP.rsc_box(R, ctx, t, "cardboard", tape_tag="tape_brown", tape_w=0.048, tape_down=0.06)
+    short = covers[2:]
+    seq.add(0, "tape A_TAPE_0..2")
+    seq.add(1, "long flaps A_FLAP_0/1")
+    seq.add(2, "short flaps A_FLAP_2/3")
+    xi, zi = sx / 2 - t - 0.0005, sz / 2 - t - 0.0005
+    y1 = t + 0.0005                                     # bottom frame (on its plates)
+    y2 = y1 + FP["plate"] + FP["fh"]                    # divider
+    y3 = y2 + FP["div"] + 0.0003                        # top frame
+    y4 = y3 + FP["fh"] + 0.0005                         # the top layer
+    plist = papers_of(it, (0.3, 0.3))
+    n = len(plist)
+    o_l = 3 + n
+    # the top layer: castors in their bag at -x, the two hardware bags at +x with the papers on them
+    names, _ = RP.pile(R, plist, 0.13, y4 + 0.0125, 0.0, 3, short, step=(0.004, -0.003))
+    hw = []
+    for k, (lab, xx) in enumerate((("CAGE NUTS M6 x 40", 0.06), ("SCREWS M6 x 16 + WASHERS x 40", 0.20))):
+        nm = f"A_ITEM_HW_{k}"
+        R.anchor(nm, RP.flat_frame((xx, y4, 0.08 if k else -0.08)), (0.090, 0.120, 0.012), label=lab, order=o_l,
+                 under=[names[-1]] if names else short)
+        hw.append(nm)
+    if n:
+        seq.add(3, f"{n} papers on the hardware bags", f"3..{2 + n}" if n > 1 else None)
+    kit = []
+
+    def kit_anchor(member, fr, size, order, under, lab=None, **kw):
+        nm = f"A_ITEM_KIT_{len(kit)}"
+        R.anchor(nm, fr, size, kit=pid, member=member, label=lab or member.replace("_", " "), look=1, lift="+y",
+                 dist=0.25, order=order, under=under, **kw)
+        kit.append(nm)
+        return nm
+
+    cas = kit_anchor("castors", F((-0.24, y4, 0.0)), (0.13, 0.065, 0.13), o_l, short, lab="4 castors", bag="clear")
+    for dx_ in (-0.034, 0.034):
+        for dz_ in (-0.034, 0.034):
+            castor_look(R, cas, (-0.24 + dx_, y4, dz_))
+    seq.add(o_l, f"castor bag {cas}, cage nuts A_ITEM_HW_0 and screws A_ITEM_HW_1")
+    top_l = [cas] + hw
+    posts = []
+    for k, zz in enumerate((-0.165, -0.095, 0.095, 0.165)):
+        nm = kit_anchor("post", F((-0.03, y3, zz)), FP["post"][:1] + (FP["post"][2], FP["post"][1]), o_l + 1, top_l,
+                        n=k)
+        post_look(R, nm, (-0.03, y3, zz))
+        posts.append(nm)
+    tie = kit_anchor("tie_bar", F((0.0, y3, 0.0)), (0.504, 0.005, 0.020), o_l + 1, top_l, lab="cable tie bar")
+    R.cube("tie_bar", (0.0, y3 + 0.0025, 0.0), (0.504, 0.005, 0.020), "steel", anc=tie)
+    for k in range(9):
+        R.cube("tie_slot", (-0.2 + k * 0.05, y3 + 0.0052, 0.0), (0.008, 0.0005, 0.011), "dark_plastic", anc=tie)
+    topf = kit_anchor("top_frame", F((0, y3, 0)), (FP["fl"], FP["fh"], FP["fw"]), o_l + 1, top_l, lab="top frame")
+    frame_look(R, topf, y3)
+    seq.add(o_l + 1, f"4 posts {posts[0]}..{posts[-1][-1]}, tie bar {tie} and the top frame {topf}")
+    div = R.anchor("A_INSERT_CARD_0", F((0, y2, 0)), (2 * xi, FP["div"], 2 * zi), lift="+y", dist=0.18, label="divider",
+                   order=o_l + 2, under=posts + [tie, topf])
+    R.cube("divider", (0, y2 + FP["div"] / 2, 0), (2 * xi - 0.002, FP["div"], 2 * zi - 0.002), "cardboard", anc=div)
+    seq.add(o_l + 2, "cardboard divider A_INSERT_CARD_0")
+    botf = kit_anchor("bottom_frame", F((0, y1, 0)), (FP["fl"], FP["fh"] + FP["plate"], FP["fw"]), o_l + 3, [div],
+                      lab="bottom frame")
+    frame_look(R, botf, y1, plates=True)
+    seq.add(o_l + 3, f"bottom frame {botf}")
+    # the assembled rack: spawned standing in front of the carton once every member is out
+    lo, hi = RP.PART_BOUNDS[it["model_id"]]
+    zf = sz / 2 + 0.05 - lo[2]
+    R.anchor("A_ITEM_PART_0", F((-(lo[0] + hi[0]) / 2, 0.0, zf)), RP.bsize(it["model_id"], 0.0), bag="none", kit=1,
+             spawn="assembled", label=it["name"], order=o_l + 4, under=kit)
+    seq.add(o_l + 4, "assembly: the rack A_ITEM_PART_0 spawns standing in front of the carton (spawn=assembled), the "
+                     "KIT look pieces go")
+    R.anchor("A_HIT_0", F((0, sy / 2, 0)), (sx, sy, sz))
+    R.explode = {"A_TAPE_0": (-0.04, 0.03, 0), "A_TAPE_1": (0, 0.04, 0), "A_TAPE_2": (0.04, 0.03, 0),
+                 cas: (-0.25, 0.55, 0.0), hw[0]: (0.05, 0.55, -0.12), hw[1]: (0.25, 0.55, 0.12), topf: (0, 0.30, 0),
+                 tie: (0, 0.42, -0.02), div: (0, 0.18, 0), botf: (0, 0.06, 0), "A_ITEM_PART_0": (0, 0, 0.3)}
+    for k, nm in enumerate(posts):
+        R.explode[nm] = (0, 0.36 + 0.03 * k, 0)
+    RP.explode_docs(R, names, (0.15, 0.68, 0.0), (0.03, 0.02, 0.06))
+    R.open_view = (20, 40)
+    R.open_fill = 0.95
+    R.explode_view = (24, 26)
+    NOTES[pid] = seq.text("12U open frame, flat-packed: ")
+    return R
+
+
+# ---------------------------------------------------------------- rack_42u: on a pallet
+
+PAL = dict(w=0.800, l=1.200, h=0.144)
+
+
+def pallet_frame(it):
+    """The rack's pose on the pallet and the wrap envelope (the corner posts, the cap, the film)."""
+    lo, hi = it["bounds"]
+    y_roof = PAL["h"] + hi[1] - lo[1]
+    ex, ez = max(-lo[0], hi[0]), max(-lo[2], hi[2])
+    y_top = y_roof + 0.014                              # the cap's underside (papers and a hardware bag on the roof)
+    return dict(ax=-(lo[0] + hi[0]) / 2, ay=PAL["h"] - lo[1], az=-(lo[2] + hi[2]) / 2, y_roof=y_roof, ex=ex, ez=ez,
+                y_top=y_top, Ex=ex + 0.005 + 0.0025 + 0.0065, Ez=ez + 0.005 + 0.0025 + 0.0065)
+
+
+def size_pallet(pid, it):
+    pf = pallet_frame(it)
+    return (PAL["w"], round(pf["y_top"] + 0.004 + 0.0012 + 0.0012, 4), PAL["l"])
+
+
+PAL_REG = {"wood": (0, 0, 1024, 1024), "post": (1024, 0, 256, 1024), "cap": (1280, 512, 768, 512),
+           "stamp": (1280, 256, 384, 256), "label": (1664, 256, 384, 256), "keys": (1280, 0, 384, 256)}
+
+
+def art_pallet(pid, it, s, hero, kraft):
+    """tex_box_rack_42u: the pallet wood, the corner posts' and top cap's print, the ISPM stamp and the product label."""
+    import random
+    W, H = 2048, 1024
+    a = P.Art(W, H, bg=(0.5, 0.5, 0.5), name="pallet")
+    rnd = random.Random(42)
+    x, y, w, h = PAL_REG["wood"]
+    a.rect(x, y, w, h, (0.80, 0.67, 0.47))
+    for k in range(240):                                # the grain: thin streaks along u
+        yy = y + rnd.random() * h
+        a.rect(x, yy, w, 0.6 + rnd.random() * 2.2, (0.58, 0.44, 0.28) if rnd.random() < 0.5 else (0.88, 0.76, 0.56),
+               alpha=0.18 + rnd.random() * 0.3)
+    for k in range(14):                                 # knots
+        cx, cy, r = x + rnd.random() * w, y + rnd.random() * h, 5 + rnd.random() * 9
+        a.circle(cx, cy, r * 1.8, (0.66, 0.50, 0.32), alpha=0.5)
+        a.circle(cx, cy, r, (0.40, 0.27, 0.15), alpha=0.85)
+    ink = (0.10, 0.09, 0.08)
+    for reg in ("post", "cap"):
+        x, y, w, h = PAL_REG[reg]
+        a.image(kraft, x, y, w, h)
+    x, y, w, h = PAL_REG["post"]
+    a.text("STRATA", x + w * 0.55, y + 140, 78, ink, "seguibl.ttf", rot=math.pi / 2, maxw=h * 0.4)
+    a.text("THIS SIDE UP  ↑  HANDLE WITH CARE", x + w * 0.20, y + 520, 26, ink, "arialbd.ttf", rot=math.pi / 2, maxw=h * 0.46)
+    a.rect(x + w * 0.88, y, w * 0.06, h, it["accent"])
+    x, y, w, h = PAL_REG["cap"]
+    a.text("STRATA", x + 40, y + h - 110, 86, ink, "seguibl.ttf", maxw=w * 0.5)
+    a.text("SRK-4260  42U RACK ENCLOSURE", x + 40, y + h - 160, 30, ink, "arialbd.ttf", maxw=w * 0.6)
+    a.text("DO NOT STACK", x + w / 2, y + 150, 64, (0.75, 0.08, 0.06), "arialbd.ttf", align="CENTER", maxw=w * 0.8)
+    a.text("GROSS WEIGHT 162 kg   -   FORKLIFT OR PALLET JACK ONLY", x + w / 2, y + 80, 22, ink, "arialbd.ttf",
+           align="CENTER", maxw=w * 0.9)
+    BB = _bb()
+    BB.arrows(a, x + w - 170, y + h - 170, 130, ink)
+    x, y, w, h = PAL_REG["stamp"]
+    a.rect(x, y, w, h, (0.80, 0.67, 0.47), alpha=0.0)
+    for (x0, y0, x1, y1) in ((0, 0, w, 6), (0, h - 6, w, h), (0, 0, 6, h), (w - 6, 0, w, h)):
+        a.rect(x + x0, y + y0, x1 - x0, y1 - y0, ink, alpha=0.85)
+    a.text("IPPC", x + 30, y + h - 70, 40, ink, "arialbd.ttf", alpha=0.85)
+    a.text("NL - 049217", x + 30, y + h - 130, 34, ink, "arialbd.ttf", alpha=0.85)
+    a.text("HT   EPAL", x + 30, y + 50, 50, ink, "arialbd.ttf", alpha=0.85)
+    x, y, w, h = PAL_REG["label"]
+    BB.oem_label(BB.Face(a, (x, y, w, h)), it, x + 8, y + 8, w - 16, h - 16, P.shash(pid) & 0xffff)
+    x, y, w, h = PAL_REG["keys"]
+    a.rect(x, y, w, h, (0.97, 0.97, 0.95))
+    a.text("DOOR KEYS", x + w / 2, y + h * 0.62, 46, ink, "arialbd.ttf", align="CENTER", maxw=w * 0.9)
+    a.text("front door + side panels", x + w / 2, y + h * 0.34, 24, ink, "arial.ttf", align="CENTER", maxw=w * 0.9)
+    a.render("box_" + pid)
+    a.dispose()
+    return PAL_REG, W, H, None
+
+
+def board(R, ctx, name, centre, size, along_z, k):
+    """One pallet board or block with the wood print (grain along its length; a different strip of the atlas each)."""
+    u0, v0, u1, v1 = ctx.uv["wood"]
+    f0 = (k * 0.137) % 0.85
+    uv = (u0, v0 + (v1 - v0) * f0, u1, v0 + (v1 - v0) * (f0 + 0.12))
+    L_, H_, W_ = (size[2], size[1], size[0]) if along_z else (size[0], size[1], size[2])
+    fr = P.plane(centre, Z, X) if along_z else P.plane(centre, X, Z)
+    R.cube(name, (0, 0, 0), (L_, W_, H_), ctx.tex, fr, uv=uv)
+
+
+def build_pallet(ctx):
+    pid, it = ctx.pid, ctx.it
+    sx, sy, sz = ctx.s
+    R = Rig("box_" + pid)
+    seq = Seq()
+    pf = pallet_frame(it)
+    # the EUR pallet (the rig body): 3 bottom boards, 9 blocks, 3 cross boards, 5 top deck boards
+    k = 0
+    for xx, ww in ((-0.3275, 0.100), (0.0, 0.145), (0.3275, 0.100)):
+        board(R, ctx, "pallet_bottom", (xx, 0.011, 0), (ww, 0.022, PAL["l"]), True, k)
+        k += 1
+        for zz, dd in ((-0.5275, 0.145), (0.0, 0.145), (0.5275, 0.145)):
+            board(R, ctx, "pallet_block", (xx, 0.061, zz), (ww, 0.078, dd), False, k)
+            k += 1
+    for zz in (-0.5275, 0.0, 0.5275):
+        board(R, ctx, "pallet_cross", (0, 0.111, zz), (PAL["w"], 0.022, 0.145), False, k)
+        k += 1
+    for xx, ww in ((-0.3275, 0.145), (-0.165, 0.100), (0.0, 0.145), (0.165, 0.100), (0.3275, 0.145)):
+        board(R, ctx, "pallet_deck", (xx, 0.133, 0), (ww - 0.002, 0.022, PAL["l"]), True, k)
+        k += 1
+    for xx in (-0.3275, 0.0, 0.3275):                  # the stamps on the front blocks
+        R.quad("pallet_stamp", F((xx, 0.061, PAL["l"] / 2 + 0.00015), Z, Y), 0.09, 0.06, ctx.tex, ctx.uv["stamp"])
+    # the rack standing on the deck
+    R.anchor("A_ITEM_PART_0", F((pf["ax"], pf["ay"], pf["az"])), RP.bsize(it["model_id"], 0.0), bag="none",
+             label=it["name"], order=4, under=["A_INSERT_CARD_0", "A_INSERT_CARD_1", "A_INSERT_CARD_2", "A_INSERT_CARD_3"])
+    ex, ez, y0, yt = pf["ex"], pf["ez"], PAL["h"], pf["y_top"]
+    tp = 0.005
+    # corner posts (cardboard L angles), printed outside
+    for i, (sgx, sgz) in enumerate(((-1, 1), (1, 1), (1, -1), (-1, -1))):
+        nm = f"A_INSERT_CARD_{i}"
+        sides = {(-1, 1): ("A_INSERT_WRAP_0", "A_INSERT_WRAP_3"), (1, 1): ("A_INSERT_WRAP_0", "A_INSERT_WRAP_1"),
+                 (1, -1): ("A_INSERT_WRAP_2", "A_INSERT_WRAP_1"), (-1, -1): ("A_INSERT_WRAP_2", "A_INSERT_WRAP_3")}[(sgx, sgz)]
+        R.anchor(nm, F((sgx * ex, y0, sgz * ez)), (0.05, yt - y0, 0.05), lift=("+x" if sgx > 0 else "-x"), dist=0.12,
+                 label="corner post", order=3, under=["A_INSERT_CARD_4", *sides])
+        H = yt - y0
+        xo, zo = sgx * (ex + tp / 2), sgz * (ez + tp / 2)
+        R.cube("post", (xo, y0 + H / 2, sgz * (ez + tp - 0.025)), (tp, H, 0.05), "cardboard", anc=nm)
+        R.cube("post", (sgx * (ex + tp - 0.025), y0 + H / 2, zo), (0.05 - tp, H, tp), "cardboard", anc=nm)
+        R.quad("post_print", F((sgx * (ex + tp + 0.0002), y0 + H / 2, sgz * (ez + tp - 0.025)), (sgx, 0, 0), Y), 0.05, H,
+               ctx.tex, ctx.uv["post"], anc=nm)
+        R.quad("post_print", F((sgx * (ex + tp - 0.025), y0 + H / 2, sgz * (ez + tp + 0.0002)), (0, 0, sgz), Y), 0.05, H,
+               ctx.tex, ctx.uv["post"], anc=nm)
+    seq.add(3, "corner posts A_INSERT_CARD_0..3")
+    # the top cap: a corrugated tray upside down over the rack's roof and the post tops
+    cx_, cz_ = ex + tp + 0.0025, ez + tp + 0.0025
+    cap = R.anchor("A_INSERT_CARD_4", F((0, yt - 0.07, 0)), (2 * cx_, 0.074, 2 * cz_), lift="+y", dist=0.20,
+                   label="top cap", order=2, under=["A_INSERT_WRAP_4", "A_STRAP_0", "A_STRAP_1"])
+    R.cube("cap", (0, yt + 0.002, 0), (2 * cx_, 0.004, 2 * cz_), "cardboard", anc=cap)
+    R.quad("cap_print", F((0, yt + 0.0042, 0), Y, NZ), 2 * cx_, 2 * cz_ * 0.7, ctx.tex, ctx.uv["cap"], anc=cap)
+    for sg in (-1, 1):
+        R.cube("cap_skirt", (sg * (cx_ - 0.00125), yt - 0.035, 0), (0.0025, 0.07, 2 * cz_), "cardboard", anc=cap)
+        R.cube("cap_skirt", (0, yt - 0.035, sg * (cz_ - 0.00125)), (2 * cx_ - 0.005, 0.07, 0.0025), "cardboard", anc=cap)
+    seq.add(2, "top cap A_INSERT_CARD_4")
+    # on the roof, under the cap: the papers and the cage-nut kit (they travel with the rack)
+    plist = papers_of(it, (0.5, 0.4))
+    names, _ = RP.pile(R, plist, 0.0, pf["y_roof"] + 0.0003, -0.25, 3, [cap], parent="A_ITEM_PART_0")
+    R.anchor("A_ITEM_HW_0", RP.flat_frame((0.0, pf["y_roof"] + 0.0003, 0.22)), (0.090, 0.120, 0.012), parent="A_ITEM_PART_0",
+             label="CAGE NUTS + SCREWS M6 x 50", order=3, under=[cap])
+    seq.add(3, f"on the roof: {len(names)} papers (3..{2 + len(names)}) and the cage-nut kit A_ITEM_HW_0")
+    # the keys in a small bag taped to the front door, by the handle
+    lo, hi = it["bounds"]
+    zd = pf["az"] + 0.5355
+    ko = (pf["ax"] + 0.150, pf["ay"] + 1.06, zd)
+    tape = R.anchor("A_TAPE_0", F((ko[0], ko[1], zd + 0.0072)), (0.048, 0.110, 0.0001), parent="A_ITEM_PART_0", strip=0,
+                    seg=0, peel="+y", label="tape", order=2, under=["A_INSERT_WRAP_0"])
+    R.quad("tapelook", F((ko[0], ko[1], zd + 0.0073)), 0.048, 0.110, "tape_clear", anc=tape)
+    keys = R.anchor("A_ITEM_HW_1", F(ko), (0.060, 0.080, 0.007), parent="A_ITEM_PART_0", kind="keys", label="DOOR KEYS",
+                    look=1, bag="clear", order=3, under=[tape])
+    keys_look(R, keys, (ko[0], ko[1], zd + 0.0005), fwd=Z, up=Y)
+    R.quad("keys_label", F((ko[0], ko[1] - 0.030, zd + 0.0066)), 0.050, 0.030, ctx.tex, ctx.uv["keys"], anc=keys)
+    seq.add(2, "the tape A_TAPE_0 over the keys on the front door")
+    seq.add(3, "the door keys A_ITEM_HW_1 (kind=keys, for the front door lock)")
+    # stretch film: one sheet per side and one over the top (cut and peeled in big sheets)
+    Ex, Ez = cx_ + 0.001, cz_ + 0.001
+    Hf = yt + 0.004 - (y0 + 0.004)
+    ym = y0 + 0.004 + Hf / 2
+    tf = 0.0004
+    films = [("A_INSERT_WRAP_0", (0, ym, Ez + tf / 2), (2 * Ex + 2 * tf, Hf, tf), "+z", ["A_STRAP_0", "A_STRAP_1", "A_STRAP_2", "A_STRAP_3"]),
+             ("A_INSERT_WRAP_1", (Ex + tf / 2, ym, 0), (tf, Hf, 2 * Ez), "+x", ["A_STRAP_2", "A_STRAP_3"]),
+             ("A_INSERT_WRAP_2", (0, ym, -Ez - tf / 2), (2 * Ex + 2 * tf, Hf, tf), "-z", ["A_STRAP_0", "A_STRAP_1", "A_STRAP_2", "A_STRAP_3"]),
+             ("A_INSERT_WRAP_3", (-Ex - tf / 2, ym, 0), (tf, Hf, 2 * Ez), "-x", ["A_STRAP_2", "A_STRAP_3"]),
+             ("A_INSERT_WRAP_4", (0, yt + 0.004 + tf / 2 + 0.0001, 0), (2 * Ex + 2 * tf, tf, 2 * Ez + 2 * tf), "+y", ["A_STRAP_0", "A_STRAP_1"])]
+    wraps = []
+    for nm, cen, siz, d, und in films:
+        R.anchor(nm, F((cen[0], cen[1] - (siz[1] / 2 if d != "+y" else 0), cen[2])), siz, lift=d, dist=0.25, kind="stretch_film",
+                 peel="+y", label="stretch film", order=1, under=und)
+        R.cube("film", cen, siz, "film_clear", anc=nm)
+        wraps.append(nm)
+    for k, yy in enumerate((0.45, 0.95, 1.45, 1.90)):   # the wrap bands where the film is thicker (overlaps)
+        R.cube("film", (0, yy, Ez + tf + 0.0002), (2 * Ex, 0.12, 0.0003), "film_clear", anc="A_INSERT_WRAP_0")
+        R.cube("film", (0, yy, -Ez - tf - 0.0002), (2 * Ex, 0.12, 0.0003), "film_clear", anc="A_INSERT_WRAP_2")
+        for sg, nm in ((1, "A_INSERT_WRAP_1"), (-1, "A_INSERT_WRAP_3")):
+            R.cube("film", (sg * (Ex + tf + 0.0002), yy, 0), (0.0003, 0.12, 2 * Ez), "film_clear", anc=nm)
+    seq.add(1, "stretch film in five sheets A_INSERT_WRAP_0..4 (front, +x, back, -x, top)")
+    # strapping bands: two over the top and through the pallet (along z), two round the posts
+    ts, ws = 0.0008, 0.012
+    Zp, yl, yd = PAL["l"] / 2 + 0.001, 0.0985, PAL["h"] + 0.0006
+    Zl, yT = Ez + 0.0012 + ts, yt + 0.004 + 0.0012 + ts
+    for i, xx in enumerate((-0.2, 0.2)):
+        nm = f"A_STRAP_{i}"
+        R.anchor(nm, F((xx, yT, 0)), (ws, ts, 2 * Zl), kind="pp_band", cut=1, label="strapping band", order=0)
+        cl = [(-Zp, yl), (Zp, yl), (Zp, yd), (Zl, yd), (Zl, yT), (-Zl, yT), (-Zl, yd), (-Zp, yd)]
+        R.slab("strap", P.poly_offset(cl, ts / 2), ws, "black_plastic", P.plane((xx, 0, 0), Z, Y),
+               holes=[P.poly_offset(cl, -ts / 2)], anc=nm)
+        R.cube("strap_seal", (xx, yT + ts, 0.0), (0.016, 0.0016, 0.030), "nickel", anc=nm)
+    Xs, Zs = Ex + 0.0015 + ts, Ez + 0.0015 + ts
+    for i, yy in enumerate((0.62, 1.62)):
+        nm = f"A_STRAP_{2 + i}"
+        R.anchor(nm, F((0, yy, Zs)), (2 * Xs, ws, ts), kind="pp_band", cut=1, label="strapping band", order=0)
+        cl = [(-Xs, -Zs), (Xs, -Zs), (Xs, Zs), (-Xs, Zs)]
+        R.slab("strap", P.poly_offset(cl, ts / 2), ws, "black_plastic", P.plane((0, yy, 0), X, Z),
+               holes=[P.poly_offset(cl, -ts / 2)], anc=nm)
+        R.cube("strap_seal", (0.0, yy, Zs + ts), (0.030, 0.016, 0.0016), "nickel", anc=nm)
+    seq.add(0, "strapping bands A_STRAP_0..3 (cut)")
+    seq.add(4, "the rack A_ITEM_PART_0 rolls off the pallet")
+    R.anchor("A_HIT_0", F((0, sy / 2, 0)), (sx, sy, sz))
+    R.explode = {"A_STRAP_0": (-0.25, 0.25, 0), "A_STRAP_1": (0.25, 0.25, 0), "A_STRAP_2": (0, 0.0, 0.55),
+                 "A_STRAP_3": (0, 0.0, 0.70), "A_INSERT_WRAP_0": (0, 0, 0.35), "A_INSERT_WRAP_1": (0.35, 0, 0),
+                 "A_INSERT_WRAP_2": (0, 0, -0.35), "A_INSERT_WRAP_3": (-0.35, 0, 0), "A_INSERT_WRAP_4": (0, 0.55, 0),
+                 cap: (0, 0.35, 0), "A_TAPE_0": (0.05, 0.0, 0.20), keys: (0.15, 0.0, 0.25), "A_ITEM_HW_0": (0, 0.12, 0.2),
+                 "A_INSERT_CARD_0": (-0.18, 0, 0.18), "A_INSERT_CARD_1": (0.18, 0, 0.18),
+                 "A_INSERT_CARD_2": (0.18, 0, -0.18), "A_INSERT_CARD_3": (-0.18, 0, -0.18)}
+    RP.explode_docs(R, names, (0.0, 0.10, -0.2), (0.04, 0.02, 0.05))
+    R.open_hide = wraps + ["A_STRAP_0", "A_STRAP_1", "A_STRAP_2", "A_STRAP_3", "A_INSERT_CARD_0", "A_INSERT_CARD_1",
+                           "A_INSERT_CARD_2", "A_INSERT_CARD_3", "A_INSERT_CARD_4", "A_TAPE_0"]
+    R.views = ((30, 18), (-150, 20))
+    R.open_view = (28, 22)
+    R.explode_view = (32, 22)
+    R.explode_fill = 0.75
+    NOTES[pid] = seq.text("42U rack on a pallet: ")
+    return R
+
+
+BUILDERS.update({"rack_flatpack": build_flatpack, "rack_pallet": _with_kit(build_pallet)})
+SIZE.update({"rack_flatpack": size_flatpack, "rack_pallet": size_pallet})
+ART["rack_pallet"] = art_pallet
