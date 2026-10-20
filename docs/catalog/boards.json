@@ -130,5 +130,108 @@
     },
     "contract": "mb_ridge_b5",
     "new_contract": false
+  },
+  {
+    "id": "mb_aegis_z790_keystone",
+    "model": "mb_aegis_z790_keystone",
+    "brand": "Aegis",
+    "name": "Aegis Keystone Z790-A WiFi",
+    "category": "Motherboard",
+    "price": 249,
+    "power_w": 30,
+    "color": "#C9CED5",
+    "rgb": true,
+    "analog": "ASUS Prime Z790-A WIFI (docs only, never shown in game)",
+    "desc": "Clean silver-and-white Z790 for DDR5: brushed silver heatsinks with white covers and an RGB chipset edge.",
+    "specs": {
+      "form": "ATX",
+      "chipset": "Z790",
+      "dimm_slots": 4,
+      "max_ram_gb": 192,
+      "m2_slots": 2,
+      "sata": 4,
+      "pcie_x16": 2,
+      "wifi": true,
+      "lan_gbe": 2.5,
+      "io_shield": "io_aegis_z790_keystone",
+      "io_preattached": true
+    },
+    "game": {
+      "socket": "L17",
+      "mem": "DDR5",
+      "perf": 0
+    },
+    "contract": "mb_ridge_z4 (DDR5 notch of mb_ridge_b5)",
+    "new_contract": false
+  },
+  {
+    "id": "mb_strata_spv",
+    "model": "mb_strata_spv",
+    "brand": "Strata",
+    "name": "Strata SP-V 1S Server Board",
+    "category": "Server",
+    "price": 749,
+    "power_w": 60,
+    "color": "#0E3B2C",
+    "rgb": false,
+    "analog": "Supermicro H13SSL / ASRock Rack GENOAD8X-class single-socket SP5 board (docs only, never shown in game)",
+    "desc": "Single-socket Arc Epoch board: 12 DDR5 RDIMM slots, 3 x PCIe 5.0 x16, OCP 3.0 NIC slot, 2 x M.2, BMC with dedicated LAN.",
+    "specs": {
+      "form": "SSI-EEB",
+      "sockets": 1,
+      "dimm_slots": 12,
+      "max_ram_gb": 3072,
+      "m2_slots": 2,
+      "sata": 4,
+      "mcio": 2,
+      "pcie_x16": 3,
+      "ocp": 1,
+      "bmc": true,
+      "lan_gbe": 10,
+      "io_shield": "io_strata_spv",
+      "io_preattached": false
+    },
+    "game": {
+      "socket": "SP-V",
+      "mem": "DDR5",
+      "perf": 0
+    },
+    "contract": "mb_server_eeb (new)",
+    "new_contract": true
+  },
+  {
+    "id": "mb_strata_l46",
+    "model": "mb_strata_l46",
+    "brand": "Strata",
+    "name": "Strata L46 2S Server Board",
+    "category": "Server",
+    "price": 899,
+    "power_w": 90,
+    "color": "#0E3B2C",
+    "rgb": false,
+    "analog": "Supermicro X13DEI-class dual-socket LGA4677 board (docs only, never shown in game)",
+    "desc": "Dual-socket Tiron Platinum board: 16 DDR5 RDIMM slots, 4 x PCIe 5.0 x16, 2 x M.2, BMC with dedicated LAN.",
+    "specs": {
+      "form": "SSI-EEB",
+      "sockets": 2,
+      "dimm_slots": 16,
+      "max_ram_gb": 4096,
+      "m2_slots": 2,
+      "sata": 4,
+      "mcio": 2,
+      "pcie_x16": 4,
+      "ocp": 0,
+      "bmc": true,
+      "lan_gbe": 10,
+      "io_shield": "io_strata_l46",
+      "io_preattached": false
+    },
+    "game": {
+      "socket": "L46",
+      "mem": "DDR5",
+      "perf": 0
+    },
+    "contract": "mb_server_eeb (new)",
+    "new_contract": true
   }
 ]
