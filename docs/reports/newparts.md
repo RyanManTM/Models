@@ -1,7 +1,7 @@
 # Task 03 report: new parts to buy, with retail boxes
 
 Four new catalog parts, each built by reusing an existing builder with a new spec or style, so they drop into the
-game exactly like their siblings. Status: **in progress** (this report is updated with every model).
+game exactly like their siblings. Status: **done**.
 
 | Part | Sibling(s) | Status |
 |---|---|---|
@@ -9,7 +9,7 @@ game exactly like their siblings. Status: **in progress** (this report is update
 | `gpu_rx77` | `gpu_rx66`, `gpu_rx88` | done |
 | `case_aero` | `case_breeze` | done |
 | `mb_ridge_x5` + `io_ridge_x5` | `mb_ridge_b5` + `io_ridge_b5` | done |
-| `box_cpu_arc9`, `box_gpu_rx77`, `box_case_aero`, `box_mb_ridge_x5` | the sibling boxes | to do |
+| `box_cpu_arc9`, `box_gpu_rx77`, `box_mb_ridge_x5`, `box_case_aero` | the sibling boxes | done |
 
 ## Rebuild
 
@@ -289,6 +289,28 @@ art).
   (2) → PE foam cradle `A_INSERT_FOAM_0` (3) → guide, driver note, sticker `A_ITEM_DOC_0..2` (4).
 - Anchors vs `box_gpu_rx88`: 6 SAME; `A_ITEM_PART_0` (pose and size follow the shorter card: (0.0343, 0.0207,
   0.0525), 0.2895 × 0.0646 × 0.1399) and `A_INSERT_FOAM_0` (0.059 tall instead of 0.064, the card is thinner) differ.
+
+### `box_mb_ridge_x5` (as `box_mb_ridge_b5`)
+- 0.32 × 0.07 × 0.27; 502 triangles in 9 meshes. A dark steel-blue print (so the white board's product shot stands out)
+  with an ice-blue accent, badges "SOCKET V5" / "DDR5" / "PCIe 5.0". The board ships in an anti-static silver bag, as
+  the B5.
+- Opening: side seals `A_SEAL_0/1` (0) → hinged lid `A_LID_0` (1) → the board in its bag `A_ITEM_PART_0` (2) → foam pad
+  `A_INSERT_FOAM_0` (3) → tray `A_INSERT_CARD_0` (4) → the compartment: I/O shield `A_ITEM_ACC_0` (`id=io_ridge_x5`),
+  SATA cables `A_ITEM_CORD_0` (`kind=sata`), M.2 screw bag `A_ITEM_HW_0`, poster, warranty card, sticker (5) → manual (6).
+- Anchors vs `box_mb_ridge_b5`: 12 SAME; `A_ITEM_ACC_0` differs only in its meta (`id=io_ridge_x5`) and `A_ITEM_PART_0`
+  only in its size (0.0448 instead of 0.0447 tall: the X5's rear heatsink is 0.1 mm taller than the B5's I/O cover).
+
+### `box_case_aero` (as `box_case_breeze`)
+- 0.52 × 0.56 × 0.30; 1,322 triangles in 17 meshes. The brown printed carton with a one-colour line-art print of the
+  case (its three bottom fans visible), "AERO", "PANORAMIC ATX MID-TOWER", "VIEW 360" in the accent blue, the specs and
+  handling marks on the sides, the shipping-label sticker.
+- Opening (as the breeze): tape strip 0 (0) → long flaps (1) → short flaps (2) → the case in its clear bag
+  `A_ITEM_PART_0`, lifted out by the foam (3) → EPS end caps `A_INSERT_FOAM_0/1` (`with=A_ITEM_PART_0`) (4) → the
+  accessory box `A_INSERT_ACCBOX_0@A_ITEM_PART_0` inside the case, out through the side opening once the glass is off
+  (`inside=A_PANEL_SIDE_0`) (5) → its flap (6) → standoff bag, screws, cable ties (7) → manual (8).
+- Anchors vs `box_case_breeze`: 11 SAME; the accessory box and the five anchors inside it sit 26 mm higher, on top of the
+  bottom fans instead of on the bare PSU shroud (`ACC_SHELF["case_aero"] = 0.1305` in `rig_products.py`). The box rides
+  inside the case (the realistic option of PACKAGING.md §3), as on the other cases.
 
 ---
 
