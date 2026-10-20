@@ -21,6 +21,7 @@ contract psu (as psu_450/psu_750): rear face at x +0.070, depth 0.175 (front fac
    mesh rocker@A_SWITCH_PSU_0#black_plastic: 52 tris
    TOTAL 43094 tris in 19 meshes
    A_FAN_0: pos=(-0.0175,-0.0292,-0.0000) fwd=(0.00,-1.00,0.00) up=(1.00,0.00,0.00) size=0.13500,0.13500,0.02500 meta=axis=z,spin=-1,rpm=1500
+   A_FILM_SIDE_0: pos=(-0.0175,0.0000,-0.0757) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.15500,0.06600,0.00010 meta=peel=-x,tab=+x+y,over=brushed_plate
    A_HIT_0: pos=(-0.0175,0.0000,-0.0000) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.17500,0.08600,0.15000 meta=
    A_PORT_C13_0: pos=(0.0714,0.0040,0.0470) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.03000,0.02300,0.02000 meta=kind=iec_c14_inlet,key=-y
    A_PORT_MOD_12V2X6_0: pos=(-0.1054,0.0242,-0.0291) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.02420,0.01420,0.01200 meta=pins=12+4,sense=+y,latch=+y
