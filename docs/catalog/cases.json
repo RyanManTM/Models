@@ -1,0 +1,128 @@
+[
+  {
+    "id": "case_lumin_216", "model": "case_lumin_216", "brand": "Lumin", "name": "Lumin Airwave 216 RGB",
+    "category": "Case", "price": 100, "power_w": 6, "color": "#141416", "rgb": true,
+    "analog": "Lian Li Lancool 216 RGB (docs only, never shown in game)",
+    "desc": "Airflow mid-tower with a fine-mesh front and two big 160 mm ARGB intake fans.",
+    "specs": { "form_factor": "ATX mid-tower", "front": "mesh", "fans_included": "2 x 160 mm ARGB front + 1 x 120 mm ARGB rear", "max_gpu_mm": 392, "max_cooler_mm": 180, "side_panel": "tempered glass" },
+    "game": { "case_airflow": 0.8, "perf": 0 },
+    "contract": "case", "new_contract": false
+  },
+  {
+    "id": "case_phanta_g360a", "model": "case_phanta_g360a", "brand": "Phanta", "name": "Phanta Umbra G360A",
+    "category": "Case", "price": 90, "power_w": 8, "color": "#121214", "rgb": true,
+    "analog": "Phanteks Eclipse G360A (docs only, never shown in game)",
+    "desc": "Mesh-front mid-tower with three 120 mm ARGB intake fans and an ARGB front strip.",
+    "specs": { "form_factor": "ATX mid-tower", "front": "mesh", "fans_included": "3 x 120 mm ARGB front", "max_gpu_mm": 400, "max_cooler_mm": 162, "side_panel": "tempered glass" },
+    "game": { "case_airflow": 0.85, "perf": 0 },
+    "contract": "case", "new_contract": false
+  },
+  {
+    "id": "case_nexa_h5", "model": "case_nexa_h5", "brand": "Nexa", "name": "Nexa H5 Draft",
+    "category": "Case", "price": 95, "power_w": 4, "color": "#EDEDEB", "rgb": false,
+    "analog": "NZXT H5 Flow (2024), white (docs only, never shown in game)",
+    "desc": "Clean white mid-tower with a perforated front panel and two 120 mm intake fans.",
+    "specs": { "form_factor": "ATX mid-tower", "front": "perforated steel", "fans_included": "2 x 120 mm front + 1 x 120 mm rear", "max_gpu_mm": 365, "max_cooler_mm": 165, "side_panel": "tempered glass" },
+    "game": { "case_airflow": 0.88, "perf": 0 },
+    "contract": "case", "new_contract": false
+  },
+  {
+    "id": "case_facet_fjord", "model": "case_facet_fjord", "brand": "Facet", "name": "Facet Fjord",
+    "category": "Case", "price": 140, "power_w": 4, "color": "#202022", "rgb": false,
+    "analog": "Fractal Design North, Charcoal Black (docs only, never shown in game)",
+    "desc": "Scandinavian mid-tower: walnut slats over a mesh front, charcoal steel, no RGB.",
+    "specs": { "form_factor": "ATX mid-tower", "front": "walnut slats over mesh", "fans_included": "2 x 140 mm front + 1 x 120 mm rear", "max_gpu_mm": 355, "max_cooler_mm": 170, "side_panel": "tempered glass" },
+    "game": { "case_airflow": 0.9, "perf": 0 },
+    "contract": "case", "new_contract": false
+  },
+  {
+    "id": "case_hush_500dx", "model": "case_hush_500dx", "brand": "Hush", "name": "Hush Calm Base 500DX",
+    "category": "Case", "price": 110, "power_w": 5, "color": "#111112", "rgb": true,
+    "analog": "be quiet! Pure Base 500DX, black (docs only, never shown in game)",
+    "desc": "Quiet airflow mid-tower with a mesh centre and an ARGB light strip down the front.",
+    "specs": { "form_factor": "ATX mid-tower", "front": "mesh centre, solid sides, ARGB strip", "fans_included": "2 x 140 mm front + 1 x 120 mm rear", "max_gpu_mm": 369, "max_cooler_mm": 190, "side_panel": "tempered glass" },
+    "game": { "case_airflow": 0.9, "perf": 0 },
+    "contract": "case", "new_contract": false
+  },
+  {
+    "id": "case_facet_fizzair", "model": "case_facet_fizzair", "brand": "Facet", "name": "Facet Fizz Air",
+    "category": "Case", "price": 75, "power_w": 6, "color": "#ECECEA", "rgb": false,
+    "analog": "Fractal Design Pop Air, white with a coloured core (docs only, never shown in game)",
+    "desc": "Budget white mid-tower: honeycomb mesh front with teal accents and three 120 mm fans.",
+    "specs": { "form_factor": "ATX mid-tower", "front": "hex mesh", "fans_included": "3 x 120 mm front + 1 x 120 mm rear", "max_gpu_mm": 405, "max_cooler_mm": 170, "side_panel": "tempered glass", "accent": "teal" },
+    "game": { "case_airflow": 0.88, "perf": 0 },
+    "contract": "case", "new_contract": false
+  },
+  {
+    "id": "case_brickhouse_beige98", "model": "case_brickhouse_beige98", "brand": "Brickhouse", "name": "Brickhouse Beige 98",
+    "category": "Case", "price": 69, "power_w": 2, "color": "#DBCDA8", "rgb": false,
+    "analog": "None: a fun retro throwback to late-90s beige AT towers (docs only)",
+    "desc": "Retro beige tower with a fake CD drive, a floppy bay and a TURBO button. It does nothing. Probably.",
+    "specs": { "form_factor": "ATX mid-tower", "front": "solid beige with 5.25 and 3.5 inch bay covers", "fans_included": "1 x 120 mm rear", "max_gpu_mm": 330, "max_cooler_mm": 160, "side_panel": "tempered glass", "turbo": "66 MHz display" },
+    "game": { "case_airflow": 1.15, "perf": 0 },
+    "contract": "case", "new_contract": false
+  },
+  {
+    "id": "fan_arctiq_p12_5pack", "model": "fan_arctiq_p12", "brand": "Arctiq", "name": "Arctiq P12 PWM 120 mm (5-pack)",
+    "category": "Accessory", "price": 30, "power_w": 1, "color": "#141416", "rgb": false,
+    "analog": "Arctic P12 PWM PST, 5-pack (docs only, never shown in game)",
+    "desc": "Five quiet, high-pressure 120 mm PWM fans. The best value cooling you can buy.",
+    "specs": { "size_mm": 120, "depth_mm": 25, "rpm_max": 1800, "airflow_cfm": 56, "static_pressure_mmh2o": 2.2, "noise_dba": 22.5, "connector": "4-pin PWM", "argb": false },
+    "game": { "per_box": 5, "perf": 0 },
+    "contract": "case_fan", "new_contract": true
+  },
+  {
+    "id": "fan_noctis_a12x25", "model": "fan_noctis_a12x25", "brand": "Noctis", "name": "Noctis NF-A12x25 PWM 120 mm",
+    "category": "Accessory", "price": 33, "power_w": 2, "color": "#D6C29E", "rgb": false,
+    "analog": "Noctua NF-A12x25 PWM (docs only, never shown in game)",
+    "desc": "The famous beige-and-brown 120 mm fan: nine blades, tight tip clearance, whisper quiet.",
+    "specs": { "size_mm": 120, "depth_mm": 25, "rpm_max": 2000, "airflow_cfm": 60.1, "static_pressure_mmh2o": 2.34, "noise_dba": 22.6, "connector": "4-pin PWM", "argb": false },
+    "game": { "per_box": 1, "perf": 0 },
+    "contract": "case_fan", "new_contract": true
+  },
+  {
+    "id": "fan_noctis_a12x25_black", "model": "fan_noctis_a12x25_black", "brand": "Noctis", "name": "Noctis NF-A12x25 PWM onyx 120 mm",
+    "category": "Accessory", "price": 35, "power_w": 2, "color": "#141415", "rgb": false,
+    "analog": "Noctua NF-A12x25 PWM chromax.black.swap (docs only, never shown in game)",
+    "desc": "The same nine-blade 120 mm fan, all in black with black anti-vibration pads.",
+    "specs": { "size_mm": 120, "depth_mm": 25, "rpm_max": 2000, "airflow_cfm": 60.1, "static_pressure_mmh2o": 2.34, "noise_dba": 22.6, "connector": "4-pin PWM", "argb": false },
+    "game": { "per_box": 1, "perf": 0 },
+    "contract": "case_fan", "new_contract": true
+  },
+  {
+    "id": "fan_lumin_sl120_white_3pack", "model": "fan_lumin_sl120_white", "brand": "Lumin", "name": "Lumin Link Fan SL120 white (3-pack)",
+    "category": "Accessory", "price": 80, "power_w": 7, "color": "#EFEFED", "rgb": true,
+    "analog": "Lian Li UNI FAN SL120 V2 white, 3-pack (docs only, never shown in game)",
+    "desc": "Three white ARGB fans that slide together and daisy-chain: one cable for the whole row.",
+    "specs": { "size_mm": 120, "depth_mm": 25, "rpm_max": 1900, "airflow_cfm": 64.5, "static_pressure_mmh2o": 2.3, "noise_dba": 29, "connector": "4-pin PWM + 3-pin 5V ARGB via link", "argb": true, "daisy_chain": true },
+    "game": { "per_box": 3, "perf": 0 },
+    "contract": "case_fan", "new_contract": true
+  },
+  {
+    "id": "fan_corvex_af120_rgb_3pack", "model": "fan_corvex_af120_rgb", "brand": "Corvex", "name": "Corvex AF120 RGB Pro (3-pack)",
+    "category": "Accessory", "price": 65, "power_w": 7, "color": "#131314", "rgb": true,
+    "analog": "Corsair AF120 RGB Elite, black, 3-pack (docs only, never shown in game)",
+    "desc": "Three black 120 mm fans with clear blades and a glowing ARGB hub ring.",
+    "specs": { "size_mm": 120, "depth_mm": 25, "rpm_max": 1500, "airflow_cfm": 47.7, "static_pressure_mmh2o": 1.8, "noise_dba": 25, "connector": "4-pin PWM + 3-pin 5V ARGB", "argb": true },
+    "game": { "per_box": 3, "perf": 0 },
+    "contract": "case_fan", "new_contract": true
+  },
+  {
+    "id": "fan_arctiq_p14", "model": "fan_arctiq_p14", "brand": "Arctiq", "name": "Arctiq P14 PWM 140 mm",
+    "category": "Accessory", "price": 9, "power_w": 1, "color": "#141416", "rgb": false,
+    "analog": "Arctic P14 PWM PST (docs only, never shown in game)",
+    "desc": "A big, quiet 140 mm PWM fan with wide pressure-optimised blades.",
+    "specs": { "size_mm": 140, "depth_mm": 25, "rpm_max": 1700, "airflow_cfm": 72.8, "static_pressure_mmh2o": 2.4, "noise_dba": 24, "connector": "4-pin PWM", "argb": false },
+    "game": { "per_box": 1, "perf": 0 },
+    "contract": "case_fan", "new_contract": true
+  },
+  {
+    "id": "fan_hush_wing4_140", "model": "fan_hush_wing4_140", "brand": "Hush", "name": "Hush Calm Wing 4 140 mm PWM",
+    "category": "Accessory", "price": 28, "power_w": 2, "color": "#111112", "rgb": false,
+    "analog": "be quiet! Silent Wings 4 140mm PWM (docs only, never shown in game)",
+    "desc": "A premium silent 140 mm fan: seven blades, orange-trimmed anti-vibration corners.",
+    "specs": { "size_mm": 140, "depth_mm": 25, "rpm_max": 1100, "airflow_cfm": 68.3, "static_pressure_mmh2o": 1.4, "noise_dba": 15.3, "connector": "4-pin PWM", "argb": false },
+    "game": { "per_box": 1, "perf": 0 },
+    "contract": "case_fan", "new_contract": true
+  }
+]
