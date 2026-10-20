@@ -1,0 +1,26 @@
+box_fan_noctis_a12x25: 1152 triangles, 11 meshes
+  mesh box_fan_noctis_a12x25_clear_plastic#clear_plastic  tris=2
+  mesh box_fan_noctis_a12x25_paper_white#paper_white  tris=300
+  mesh dust@A_FLAP_1#paper_white  tris=12
+  mesh dust@A_FLAP_2#paper_white  tris=12
+  mesh dust_print@A_FLAP_1#tex_box_fan_noctis_a12x25  tris=12
+  mesh dust_print@A_FLAP_2#tex_box_fan_noctis_a12x25  tris=12
+  mesh lid@A_FLAP_0#paper_white  tris=132
+  mesh lid_print@A_FLAP_0#tex_box_fan_noctis_a12x25  tris=2
+  mesh s_tex_box_fan_noctis_a12x25#tex_box_fan_noctis_a12x25  tris=260
+  mesh seallook@A_SEAL_0#seal_clear  tris=28
+  mesh tray_back@A_INSERT_CARD_0#tex_box_fan_noctis_a12x25_in  tris=380
+  A_FLAP_0 pos=(-0.0, 0.1442, -0.0271) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.14000,0.00080,0.05500 meta=hinge=x,open=-115,tuck=1,label=tuck flap,order=1,under=A_SEAL_0
+  A_FLAP_1 pos=(-0.0692, 0.1442, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01960,0.00080,0.05340 meta=hinge=z,open=95,label=dust flap,order=2,under=A_FLAP_0
+  A_FLAP_2 pos=(0.0692, 0.1442, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01960,0.00080,0.05340 meta=hinge=z,open=-95,label=dust flap,order=2,under=A_FLAP_0
+  A_HIT_0 pos=(-0.0, 0.0725, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.14000,0.14500,0.05500 meta=
+  A_INSERT_CARD_0 pos=(-0.0, 0.001, 0.00961) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.13660,0.13680,0.03218 meta=lift=+y,dist=0.165,label=card tray,order=3,under=A_FLAP_0,A_FLAP_1,A_FLAP_2
+  A_ITEM_DOC_0 pos=(-0.0, 0.03, -0.0231) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.08800,0.05600,0.00040 meta=doc=warranty,form=card,label=warranty card,order=3,under=A_FLAP_0,A_FLAP_1,A_FLAP_2
+  A_ITEM_DOC_1 pos=(-0.0, 0.052, -0.026) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.10000,0.10000,0.00250 meta=doc=manual,form=booklet,label=user manual,order=3,under=A_FLAP_0,A_FLAP_1,A_FLAP_2
+  A_ITEM_HW_0 pos=(-0.041, 0.0265, -0.0223) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.03600,0.05000,0.00600 meta=label=4 x FAN SCREWS,order=3,under=A_FLAP_0,A_FLAP_1,A_FLAP_2
+  A_ITEM_HW_1 pos=(0.001, 0.0315, -0.0223) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.04000,0.06000,0.00800 meta=kind=cable,label=LOW-NOISE ADAPTER,order=3,under=A_FLAP_0,A_FLAP_1,A_FLAP_2
+  A_ITEM_HW_2 pos=(0.042, 0.024, -0.0223) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.03400,0.04500,0.00700 meta=label=4 x ANTI-VIBRATION MOUNTS,order=3,under=A_FLAP_0,A_FLAP_1,A_FLAP_2
+  A_ITEM_PART_0@A_INSERT_CARD_0 pos=(0.0011, 0.0721, 0.0107) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.12520,0.13180,0.03058 meta=bag=none,label=fan,order=4,parent=A_INSERT_CARD_0,under=A_INSERT_CARD_0
+  A_SEAL_0 pos=(-0.0, 0.139, 0.02762) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01800,0.01200,0.00010 meta=shape=round,peel=+y,print=NOCTIS SEALED,wrap=0.006,label=seal sticker,order=0
+shot from: cached
+Fan pack (1 fan, window box): round seal A_SEAL_0 (0) -> tuck lid A_FLAP_0 (1) -> dust flaps A_FLAP_1/2 (2) -> from the back pocket: 2 papers standing at the back wall and 3 accessories (4 x FAN SCREWS, LOW-NOISE ADAPTER, 4 x ANTI-VIBRATION MOUNTS) standing against the tray (3), and the die-cut card tray A_INSERT_CARD_0 lifted out (3) -> the fans A_ITEM_PART_0..0 out of the tray (4).

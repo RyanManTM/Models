@@ -1,0 +1,30 @@
+box_fan_corvex_af120_rgb_3pack: 2596 triangles, 14 meshes
+  mesh box_fan_corvex_af120_rgb_3pack_clear_plastic#clear_plastic  tris=6
+  mesh box_fan_corvex_af120_rgb_3pack_paper_white#paper_white  tris=692
+  mesh dust@A_FLAP_1#paper_white  tris=12
+  mesh dust@A_FLAP_2#paper_white  tris=12
+  mesh dust_print@A_FLAP_1#tex_box_fan_corvex_af120_rgb_3pack  tris=12
+  mesh dust_print@A_FLAP_2#tex_box_fan_corvex_af120_rgb_3pack  tris=12
+  mesh hub@A_ITEM_HW_1#black_plastic  tris=108
+  mesh hub_led@A_ITEM_HW_1#clear_plastic  tris=12
+  mesh hub_port@A_ITEM_HW_1#white_plastic  tris=48
+  mesh lid@A_FLAP_0#paper_white  tris=132
+  mesh lid_print@A_FLAP_0#tex_box_fan_corvex_af120_rgb_3pack  tris=2
+  mesh s_tex_box_fan_corvex_af120_rgb_3pack#tex_box_fan_corvex_af120_rgb_3pack  tris=652
+  mesh seallook@A_SEAL_0#seal_clear  tris=28
+  mesh tray_back@A_INSERT_CARD_0#tex_box_fan_corvex_af120_rgb_3pack_in  tris=868
+  A_FLAP_0 pos=(-0.0, 0.1442, -0.0321) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.40000,0.00080,0.06500 meta=hinge=x,open=-115,tuck=1,label=tuck flap,order=1,under=A_SEAL_0
+  A_FLAP_1 pos=(-0.1992, 0.1442, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.03000,0.00080,0.06340 meta=hinge=z,open=95,label=dust flap,order=2,under=A_FLAP_0
+  A_FLAP_2 pos=(0.1992, 0.1442, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.03000,0.00080,0.06340 meta=hinge=z,open=-95,label=dust flap,order=2,under=A_FLAP_0
+  A_HIT_0 pos=(-0.0, 0.0725, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.40000,0.14500,0.06500 meta=
+  A_INSERT_CARD_0 pos=(-0.0, 0.001, 0.01493) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.39660,0.13720,0.03153 meta=lift=+y,dist=0.165,label=card tray,order=3,under=A_FLAP_0,A_FLAP_1,A_FLAP_2
+  A_ITEM_DOC_0 pos=(-0.0, 0.03, -0.0281) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.08800,0.05600,0.00040 meta=doc=warranty,form=card,label=warranty card,order=3,under=A_FLAP_0,A_FLAP_1,A_FLAP_2
+  A_ITEM_DOC_1 pos=(-0.0, 0.052, -0.031) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.10000,0.10000,0.00250 meta=doc=manual,form=booklet,label=user manual,order=3,under=A_FLAP_0,A_FLAP_1,A_FLAP_2
+  A_ITEM_HW_0 pos=(-0.037, 0.0265, -0.0273) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.03600,0.05000,0.00600 meta=label=12 x FAN SCREWS,order=3,under=A_FLAP_0,A_FLAP_1,A_FLAP_2
+  A_ITEM_HW_1 pos=(0.02, 0.0255, -0.0273) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.07000,0.04800,0.01600 meta=kind=hub,label=RGB FAN HUB,order=3,under=A_FLAP_0,A_FLAP_1,A_FLAP_2
+  A_ITEM_PART_0@A_INSERT_CARD_0 pos=(-0.12826, 0.0721, 0.01635) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.12672,0.13220,0.02993 meta=bag=none,label=fan 1 of 3,order=4,parent=A_INSERT_CARD_0,under=A_INSERT_CARD_0
+  A_ITEM_PART_1@A_INSERT_CARD_0 pos=(0.00146, 0.0721, 0.01635) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.12672,0.13220,0.02993 meta=bag=none,label=fan 2 of 3,order=4,parent=A_INSERT_CARD_0,under=A_INSERT_CARD_0
+  A_ITEM_PART_2@A_INSERT_CARD_0 pos=(0.13118, 0.0721, 0.01635) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.12672,0.13220,0.02993 meta=bag=none,label=fan 3 of 3,order=4,parent=A_INSERT_CARD_0,under=A_INSERT_CARD_0
+  A_SEAL_0 pos=(-0.0, 0.139, 0.03262) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01800,0.01200,0.00010 meta=shape=round,peel=+y,print=CORVEX SEALED,wrap=0.006,label=seal sticker,order=0
+shot from: fan_corvex_af120_rgb
+Fan pack (3 fans, window box): round seal A_SEAL_0 (0) -> tuck lid A_FLAP_0 (1) -> dust flaps A_FLAP_1/2 (2) -> from the back pocket: 2 papers standing at the back wall and 2 accessories (12 x FAN SCREWS, RGB FAN HUB) standing against the tray (3), and the die-cut card tray A_INSERT_CARD_0 lifted out (3) -> the fans A_ITEM_PART_0..2 out of the tray (4).
