@@ -1,0 +1,10 @@
+cpu_tiron_i3_14100: 14410 triangles, 5 meshes
+  mesh cpu_tiron_i3_14100_ceramic#ceramic  tris=768
+  mesh cpu_tiron_i3_14100_gold#gold  tris=11498
+  mesh cpu_tiron_i3_14100_solder#solder  tris=1536
+  mesh cpu_tiron_i3_14100_tex_cpu_ihs_14100#tex_cpu_ihs_14100  tris=476
+  mesh cpu_tiron_i3_14100_tex_cpu_l17_pcb#tex_cpu_l17_pcb  tris=132
+  A_HIT_0 pos=(-0.0, 0.0, 0.003) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.03750,0.04500,0.00640 meta=
+  A_MARK_PIN1_0 pos=(0.01805, -0.0218, 0.0011) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00600,0.00600,0.00200 meta=corner=+x-y
+  A_PASTE_0 pos=(-0.0, 0.0, 0.006) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.03000,0.03000,0.00200 meta=ihs=0.0366x0.0292
+frame: as cpu_tiron5 (Socket L17 package, origin at the contact face centre, +z up)
