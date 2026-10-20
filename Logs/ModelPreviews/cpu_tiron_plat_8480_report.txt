@@ -1,0 +1,13 @@
+cpu_tiron_plat_8480: 43510 triangles, 6 meshes
+  mesh carrier@A_CARRIER_0#tex_cpu_l46_carrier  tris=946
+  mesh cpu_tiron_plat_8480_ceramic#ceramic  tris=4416
+  mesh cpu_tiron_plat_8480_gold#gold  tris=28624
+  mesh cpu_tiron_plat_8480_solder#solder  tris=8832
+  mesh cpu_tiron_plat_8480_tex_cpu_ihs_8480#tex_cpu_ihs_8480  tris=632
+  mesh cpu_tiron_plat_8480_tex_cpu_l46_pcb#tex_cpu_l46_pcb  tris=60
+  A_CARRIER_0 pos=(-0.0, 0.0, 0.0016) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.07060,0.12420,0.00305 meta=socket=L46,pose=installed,clip=+z,mount=heatsink,color=#26282b
+  A_HIT_0 pos=(-0.0, 0.0, 0.0033) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.06100,0.10500,0.00700 meta=
+  A_MARK_CARRIER_0@A_CARRIER_0 pos=(0.03029, -0.05229, 0.0026) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00500,0.00500,0.00200 meta=corner=+x-y
+  A_MARK_PIN1_0 pos=(0.0285, -0.0505, 0.0016) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00600,0.00600,0.00200 meta=corner=+x-y
+  A_PASTE_0 pos=(-0.0, 0.0, 0.0066) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.03840,0.06320,0.00200 meta=ihs=0.0480x0.0790
+frame: Socket L46 (new contract): origin at the contact face centre, +z up, pin 1 at (+x, -y); the carrier is a moving piece on A_CARRIER_0
