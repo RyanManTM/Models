@@ -4,7 +4,7 @@ Brief: `docs/tasks/catalog/19-boxes.md`. Every catalogue part (`docs/catalog/*.j
 plus the data-centre gear from task 01 and a rebuilt `box_ac_12k`.
 
 ## Status
-**126 of 132 catalogue boxes built.** Not built yet: case_phanta_g360a, case_nexa_h5, case_facet_fjord, case_hush_500dx, case_facet_fizzair, case_brickhouse_beige98.
+**127 of 132 catalogue boxes built.** Not built yet: case_nexa_h5, case_facet_fjord, case_hush_500dx, case_facet_fizzair, case_brickhouse_beige98.
 
 The work was split by rig module, each built and checked box by box (all four previews looked at):
 - the consumer parts of the existing box kinds (`rig_products.py`): CPUs, GPUs, motherboards, memory, NVMe and SATA
@@ -210,7 +210,7 @@ Opening sequence: the step `order` of each piece, from the rig's notes. Previews
 | Box | Size (m) | Tris | Anchors | Opening sequence (order) |
 |---|---|---|---|---|
 | box_case_lumin_216 | 0.52 x 0.56 x 0.3 | 1322 | 19 | Case: printed tape strip 0 (0) -> long flaps (1) -> short flaps (2) -> the case in its clear bag, lifted out by the foam (3) -> front/rear EPS caps A_INSERT_FOAM_0/1, with=A_ITEM_PART_0, pulled off along -x/+x (4). Accessory box A_INSERT_ACCBOX_0@A_ITEM_PART_0 sits INSIDE the case on the PSU shroud (case-frame pose relative to A_ITEM_PART_0), inside=A_PANEL_SIDE_0: take it out of the side opening (+z) once the glass panel is off (5) -> its tuck flap A_FLAP_4 (6) -> standoff bag A_ITEM_ACC_0 (id=standoff_bag, frame=flat), screws A_ITEM_HW_0, cable ties A_ITEM_HW_1 (6) -> manual A_ITEM_DOC_0 (7). |
-| box_case_phanta_g360a | | | | **not built yet** |
+| box_case_phanta_g360a | 0.52 x 0.56 x 0.3 | 1322 | 19 | Case: printed tape strip 0 (0) -> long flaps (1) -> short flaps (2) -> the case in its clear bag, lifted out by the foam (3) -> front/rear EPS caps A_INSERT_FOAM_0/1, with=A_ITEM_PART_0, pulled off along -x/+x (4). Accessory box A_INSERT_ACCBOX_0@A_ITEM_PART_0 sits INSIDE the case on the PSU shroud (case-frame pose relative to A_ITEM_PART_0), inside=A_PANEL_SIDE_0: take it out of the side opening (+z) once the glass panel is off (5) -> its tuck flap A_FLAP_4 (6) -> standoff bag A_ITEM_ACC_0 (id=standoff_bag, frame=flat), screws A_ITEM_HW_0, cable ties A_ITEM_HW_1 (6) -> manual A_ITEM_DOC_0 (7). |
 | box_case_nexa_h5 | | | | **not built yet** |
 | box_case_facet_fjord | | | | **not built yet** |
 | box_case_hush_500dx | | | | **not built yet** |
