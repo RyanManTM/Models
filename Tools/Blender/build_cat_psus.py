@@ -490,6 +490,8 @@ def side_dress(m, s, g, at, TEX):
         prof = pb.chamfer2(xc, 0.0, 2 * hx - 0.020, 2 * H2 - 0.020, (0.0, 0.010, 0.0, 0.010))
         dz = 0.0007
         m.add("alu_dark", pb.g_slab(prof, [], dz, 0.0), Matrix(((1, 0, 0), (0, 1, 0), (0, 0, os_))), (0, 0, z0))
+        m.anchor("A_FILM_SIDE_0", (xc, 0.0, os_ * (W2 + dz)), (2 * hx - 0.020, 2 * H2 - 0.020, 0.0001), forward=(0, 0, os_),
+                 up=(0, 1, 0), meta="peel=-x,tab=+x+y,over=brushed_plate")
         side2 = pb.label_frame((0, 0, os_), (0, 1, 0))
         m.add("black_plastic", pb.g_text(s["side"], s["side_font"], 0.012, min(0.09, s["depth"] * 0.6), 0.00008, spacing=1.2),
               side2, (xc, 0.004, os_ * (W2 + dz + 0.00002)))
@@ -522,6 +524,10 @@ def armour(m, s, g, at, TEX, os_):
           (ox, oy, os_ * (W2 + t - 0.0004)))
     m.anchor("A_SCREEN_0", (ox, oy, os_ * (W2 + t - 0.0004)), (0.038, 0.0135, 0.004), forward=(0, 0, os_), up=(0, 1, 0),
              meta="kind=oled,res=128x48,shows=watts")
+    m.anchor("A_FILM_OLED_0", (ox, oy, os_ * (W2 + t - 0.0003)), (0.040, 0.015, 0.0001), forward=(0, 0, os_), up=(0, 1, 0),
+             meta="peel=-x,tab=+x+y,over=oled")
+    m.anchor("A_FILM_SIDE_0", ((x0 + x1) / 2, (y0 + y1) / 2, os_ * (W2 + t)), (x1 - x0, y1 - y0, 0.0001), forward=(0, 0, os_),
+             up=(0, 1, 0), meta="peel=+x,tab=-x-y,over=armour_plate,cut=oled")
     side = pb.label_frame((0, 0, os_), (0, 1, 0))
     m.add("grey_plastic", pb.g_text(s["side"], s["side_font"], 0.009, 0.05, 0.00008, spacing=1.25), side,
           (x1 - 0.042, -0.004, os_ * (W2 + t + 0.00002)))
@@ -723,6 +729,8 @@ def build_crps(pid):
     # legend on the rear above the inlet
     m.add(TEX, pb.g_quad(0.0122, 0.007, at.uv("legend")), pb.label_frame((1, 0, 0), (0, 1, 0)),
           (X1 - 0.0027, 0.0155, 0.017))
+    m.anchor("A_FILM_LABEL_0", (X1 - 0.0026, 0.0155, 0.017), (0.0130, 0.0078, 0.0001), forward=(1, 0, 0), up=(0, 1, 0),
+             meta="peel=-z,tab=+z+y,over=handle_label")
     m.anchor("A_HIT_0", (0, 0, 0), (2 * X1, 2 * H2, 2 * W2))
     m.finish()
     txt = m.report()
@@ -745,6 +753,54 @@ def write_report(pid, txt, contract):
         f.write(contract + "\n" + txt + "\n")
 
 
+def films_of(s):
+    if s["id"] in [u["id"] for u in CRPS]:
+        return ["A_FILM_LABEL_0"]
+    if s.get("armour"):
+        return ["A_FILM_OLED_0", "A_FILM_SIDE_0"]
+    if s.get("side_plate"):
+        return ["A_FILM_SIDE_0"]
+    return []
+
+
+def papers(s):
+    """The unboxing bits (films, caps, stickers) and the papers in the box, per unit."""
+    crps = s["id"] in [u["id"] for u in CRPS]
+    unbox = {"films": films_of(s), "caps": [],
+             "stickers": [] if crps else [{"model": "sticker_psu_voltage", "at": "A_SWITCH_PSU_0", "blocks": "plug"}]}
+    if crps:
+        notes = [f"{s['name']}: {s['watts']} W, 80 PLUS {s['tier'].title()}, CRPS 73.5 x 40 x 185 mm.",
+                 "Install: slide the module into the PSU bay, card edge first, until the latch clicks.",
+                 "Remove: press the latch tab towards the handle, then pull the handle straight out.",
+                 "Hot-plug: a redundant module can be swapped with the server running.",
+                 "Status LED: green = output OK, blinking green = standby, amber = fault or no AC.",
+                 f"AC input: {s['ac']} through the C14 inlet; use a C13 cord rated 10 A or more.",
+                 f"DC output: {s['dc']} through the card-edge connector.",
+                 "Do not mix wattages or efficiency levels in one redundant pair."]
+        return {"unbox": unbox, "docs": ["quick-start", "safety", "warranty"], "doc_notes": notes}
+    eps, pcie, p16, sata = s["conns"]
+    table = f"Connectors: 1x ATX 24-pin, {eps}x EPS 4+4 pin, {pcie}x PCIe 6+2 pin" + \
+        (f", {p16}x 12V-2x6 (600 W)" if p16 else "") + f", {sata}x SATA power."
+    mod = {"none": "All cables are fixed to the unit.",
+           "semi": "The 24-pin and EPS cables are fixed; PCIe and SATA cables plug into the modular panel.",
+           "full": "Every cable is modular: plug in only the cables your build needs."}[s["modular"]]
+    notes = [f"{s['name']}: {s['watts']} W, 80 PLUS {s['tier'].title()}, {s['eff']} efficient at 50 % load.",
+             table, mod,
+             "Mount the PSU fan down when the case has a bottom vent with a dust filter, otherwise fan up.",
+             "Switch: I = on, O = off. Switch off and unplug the AC cord before connecting or removing cables.",
+             "Peel the voltage sticker off the switch before first use.",
+             "The ATX 24-pin and EPS 8-pin go to the motherboard; PCIe or 12V-2x6 cables go to the graphics card.",
+             "CAUTION: hazardous voltage inside. Do not open the cover; no user-serviceable parts."]
+    if s["modular"] != "none":
+        notes.append(f"Use only {s['brand']} modular cables made for this unit. Modular pinouts differ between "
+                     "brands and models; a foreign cable can destroy your components.")
+    if p16:
+        notes.append("12V-2x6: push the plug in fully until the latch clicks; do not bend the cable within 35 mm of the plug.")
+    if s.get("form") == "sfx":
+        notes.append("SFX: fits small-form-factor cases directly, or an ATX bay with the included SFX-to-ATX bracket.")
+    return {"unbox": unbox, "docs": ["manual", "safety", "warranty"], "doc_notes": notes[:10]}
+
+
 def catalogue():
     out = []
     for s in UNITS:
@@ -761,7 +817,7 @@ def catalogue():
                         desc=s["desc"], specs=specs,
                         game=dict(psu_watts=s["watts"], psu_efficiency=s["tier"].title(), psu_eps8=eps, psu_pcie8=pcie,
                                   psu_16=p16, psu_sata=sata, psu_modular=s["modular"] == "full", perf=0),
-                        contract="psu_sfx" if sfx else "psu", new_contract=sfx))
+                        contract="psu_sfx" if sfx else "psu", new_contract=sfx, **papers(s)))
     for s in CRPS:
         out.append(dict(id=s["id"], model=s["id"], brand=s["brand"], name=s["name"], category="Server",
                         price=s["price"], power_w=0, color=s["color"], rgb=False,
@@ -770,7 +826,7 @@ def catalogue():
                                "efficiency": f"80 PLUS {s['tier'].title()}", "hot_swap": True},
                         game=dict(psu_watts=s["watts"], psu_efficiency=s["tier"].title(), psu_eps8=0, psu_pcie8=0,
                                   psu_16=0, psu_sata=0, psu_modular=False, perf=0),
-                        contract="psu_crps", new_contract=True))
+                        contract="psu_crps", new_contract=True, **papers(s)))
     path = os.path.join(c.PROJECT, "docs", "catalog", "psus.json")
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:

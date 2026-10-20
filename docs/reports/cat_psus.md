@@ -134,6 +134,29 @@ would need a depth check: `specs.depth_mm`).
 - Game data: `psu_watts`, `psu_efficiency`; all connector counts 0 (power goes through the card edge).
   `category` = Server.
 
+## Unboxing: films, caps, stickers and papers
+Per `docs/tasks/catalog/README.md` "The unboxing on every part". Only anchors were added. Each changed FBX was
+re-exported and checked with `extras_compare.py` against the committed one (and against a Linux re-export with the
+previous script): every one prints **ONLY ADDED**. Models with no new anchors were not re-exported.
+
+| id | films (anchors) | caps | stickers | extras_compare |
+|---|---|---|---|---|
+| 8 plain ATX units + SF750 | – | – | `sticker_psu_voltage` on `A_SWITCH_PSU_0` | not re-exported |
+| `psu_hush_dp13_1200` | `A_FILM_SIDE_0` (brushed side plate, `peel=-x,tab=+x+y`) | – | voltage sticker | ONLY ADDED: A_FILM_SIDE_0 |
+| `psu_corvex_ax1600i` | `A_FILM_SIDE_0` (brushed side plate) | – | voltage sticker | ONLY ADDED: A_FILM_SIDE_0 |
+| `psu_aegis_1200p` | `A_FILM_SIDE_0` (armour plate, `cut=oled`), `A_FILM_OLED_0` (display) | – | voltage sticker | ONLY ADDED: A_FILM_OLED_0, A_FILM_SIDE_0 |
+| `psu_strata_crps_800` / `_1600` | `A_FILM_LABEL_0` (handle label, rear face, `peel=-z`) | – | – | ONLY ADDED: A_FILM_LABEL_0 |
+
+- Films: the XY plane is the film surface, +Z faces out, `size` = (w, h, 0.0001).
+- **The voltage sticker** uses the existing `sticker_psu_voltage` model in `A_SWITCH_PSU_0`'s frame (as on psu_450/750),
+  listed in the JSON as `{"model": "sticker_psu_voltage", "at": "A_SWITCH_PSU_0", "blocks": "plug"}`. CRPS modules
+  have no switch and no sticker.
+- **No modular-port caps** (`A_CAP_MOD_<n>` is optional): the real units ship with open modular sockets.
+- **JSON:** every entry has `unbox` (films / caps / stickers as above), `docs` (ATX/SFX: manual, safety, warranty;
+  CRPS: quick-start, safety, warranty) and 8–10 `doc_notes` (the connector table, how modular it is, the switch
+  and unplug rule, the voltage sticker, "use only <brand> modular cables made for this unit", 12V-2x6 seating, the
+  SFX bracket; CRPS: install and remove, hot-plug, the LED codes, AC and DC ratings).
+
 ## Deviations
 - The ATX inlet anchor keeps the existing name `A_PORT_C13_0` (as psu_450/psu_750) so the ATX contract stays
   identical; the CRPS uses `A_PORT_C14_0` as the brief asks.
