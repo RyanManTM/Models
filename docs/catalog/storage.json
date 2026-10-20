@@ -1,0 +1,514 @@
+[
+  {
+    "id": "ssd_sorin_990pro_1tb",
+    "model": "ssd_sorin_990pro_1tb",
+    "brand": "Sorin",
+    "name": "Sorin 990 Pro 1 TB",
+    "category": "Storage",
+    "price": 99,
+    "power_w": 8,
+    "color": "#141414",
+    "rgb": false,
+    "analog": "Samsung 990 PRO 1TB (docs only, never shown in game)",
+    "desc": "Fast PCIe 4.0 NVMe drive with a nickel-coated controller, up to 7450 MB/s.",
+    "specs": {
+      "form": "M.2 2280",
+      "interface": "PCIe 4.0 x4 NVMe",
+      "read_mbs": 7450,
+      "write_mbs": 6900,
+      "tbw": 600,
+      "dram": true,
+      "nand": "TLC",
+      "sides": 1,
+      "has_heatsink": false
+    },
+    "game": {
+      "storage_gb": 1000,
+      "sata25": false,
+      "perf": 0
+    },
+    "contract": "ssd_1tb",
+    "new_contract": false
+  },
+  {
+    "id": "ssd_sorin_990pro_2tb_hs",
+    "model": "ssd_sorin_990pro_2tb_hs",
+    "brand": "Sorin",
+    "name": "Sorin 990 Pro 2 TB Heatsink",
+    "category": "Storage",
+    "price": 179,
+    "power_w": 9,
+    "color": "#121315",
+    "rgb": true,
+    "analog": "Samsung 990 PRO with Heatsink 2TB (docs only, never shown in game)",
+    "desc": "The 990 Pro with a black aluminium heatsink and an RGB light bar.",
+    "specs": {
+      "form": "M.2 2280",
+      "interface": "PCIe 4.0 x4 NVMe",
+      "read_mbs": 7450,
+      "write_mbs": 6900,
+      "tbw": 1200,
+      "dram": true,
+      "nand": "TLC",
+      "sides": 1,
+      "has_heatsink": true,
+      "height_mm": 8.2
+    },
+    "game": {
+      "storage_gb": 2000,
+      "sata25": false,
+      "perf": 0
+    },
+    "contract": "ssd_1tb",
+    "new_contract": false
+  },
+  {
+    "id": "ssd_sorin_980_500",
+    "model": "ssd_sorin_980_500",
+    "brand": "Sorin",
+    "name": "Sorin 980 500 GB",
+    "category": "Storage",
+    "price": 45,
+    "power_w": 5,
+    "color": "#121212",
+    "rgb": false,
+    "analog": "Samsung 980 500GB (docs only, never shown in game)",
+    "desc": "A budget PCIe 3.0 NVMe drive without DRAM, a big step up from SATA.",
+    "specs": {
+      "form": "M.2 2280",
+      "interface": "PCIe 3.0 x4 NVMe",
+      "read_mbs": 3100,
+      "write_mbs": 2600,
+      "tbw": 300,
+      "dram": false,
+      "nand": "TLC",
+      "sides": 1,
+      "has_heatsink": false
+    },
+    "game": {
+      "storage_gb": 500,
+      "sata25": false,
+      "perf": 0
+    },
+    "contract": "ssd_1tb",
+    "new_contract": false
+  },
+  {
+    "id": "ssd_westline_sn850x_2tb",
+    "model": "ssd_westline_sn850x_2tb",
+    "brand": "Westline",
+    "name": "Westline Onyx SN850X 2 TB",
+    "category": "Storage",
+    "price": 139,
+    "power_w": 9,
+    "color": "#0d0d0f",
+    "rgb": false,
+    "analog": "WD_BLACK SN850X 2TB (docs only, never shown in game)",
+    "desc": "A gaming PCIe 4.0 drive with DRAM cache and chips on both sides.",
+    "specs": {
+      "form": "M.2 2280",
+      "interface": "PCIe 4.0 x4 NVMe",
+      "read_mbs": 7300,
+      "write_mbs": 6600,
+      "tbw": 1200,
+      "dram": true,
+      "nand": "TLC",
+      "sides": 2,
+      "has_heatsink": false
+    },
+    "game": {
+      "storage_gb": 2000,
+      "sata25": false,
+      "perf": 0
+    },
+    "contract": "ssd_1tb",
+    "new_contract": false
+  },
+  {
+    "id": "ssd_westline_sn850x_1tb_hs",
+    "model": "ssd_westline_sn850x_1tb_hs",
+    "brand": "Westline",
+    "name": "Westline Onyx SN850X 1 TB Heatsink",
+    "category": "Storage",
+    "price": 99,
+    "power_w": 8,
+    "color": "#111214",
+    "rgb": true,
+    "analog": "WD_BLACK SN850X with Heatsink 1TB (docs only, never shown in game)",
+    "desc": "The SN850X with a finned heatsink and an RGB light bar.",
+    "specs": {
+      "form": "M.2 2280",
+      "interface": "PCIe 4.0 x4 NVMe",
+      "read_mbs": 7300,
+      "write_mbs": 6300,
+      "tbw": 600,
+      "dram": true,
+      "nand": "TLC",
+      "sides": 1,
+      "has_heatsink": true,
+      "height_mm": 8.8
+    },
+    "game": {
+      "storage_gb": 1000,
+      "sata25": false,
+      "perf": 0
+    },
+    "contract": "ssd_1tb",
+    "new_contract": false
+  },
+  {
+    "id": "ssd_westline_sn580_1tb",
+    "model": "ssd_westline_sn580_1tb",
+    "brand": "Westline",
+    "name": "Westline Azure SN580 1 TB",
+    "category": "Storage",
+    "price": 59,
+    "power_w": 5,
+    "color": "#2a74c9",
+    "rgb": false,
+    "analog": "WD Blue SN580 1TB (docs only, never shown in game)",
+    "desc": "A cool-running DRAM-less PCIe 4.0 drive for everyday builds.",
+    "specs": {
+      "form": "M.2 2280",
+      "interface": "PCIe 4.0 x4 NVMe",
+      "read_mbs": 4150,
+      "write_mbs": 4150,
+      "tbw": 600,
+      "dram": false,
+      "nand": "TLC",
+      "sides": 1,
+      "has_heatsink": false
+    },
+    "game": {
+      "storage_gb": 1000,
+      "sata25": false,
+      "perf": 0
+    },
+    "contract": "ssd_1tb",
+    "new_contract": false
+  },
+  {
+    "id": "ssd_crux_p3plus_2tb",
+    "model": "ssd_crux_p3plus_2tb",
+    "brand": "Crux",
+    "name": "Crux P3 Plus 2 TB",
+    "category": "Storage",
+    "price": 109,
+    "power_w": 6,
+    "color": "#101215",
+    "rgb": false,
+    "analog": "Crucial P3 Plus 2TB (docs only, never shown in game)",
+    "desc": "Lots of PCIe 4.0 space for little money: QLC flash, no DRAM.",
+    "specs": {
+      "form": "M.2 2280",
+      "interface": "PCIe 4.0 x4 NVMe",
+      "read_mbs": 5000,
+      "write_mbs": 4200,
+      "tbw": 440,
+      "dram": false,
+      "nand": "QLC",
+      "sides": 1,
+      "has_heatsink": false
+    },
+    "game": {
+      "storage_gb": 2000,
+      "sata25": false,
+      "perf": 0
+    },
+    "contract": "ssd_1tb",
+    "new_contract": false
+  },
+  {
+    "id": "ssd_crux_t705_2tb_hs",
+    "model": "ssd_crux_t705_2tb_hs",
+    "brand": "Crux",
+    "name": "Crux T705 2 TB Heatsink",
+    "category": "Storage",
+    "price": 249,
+    "power_w": 12,
+    "color": "#1a1b1e",
+    "rgb": false,
+    "analog": "Crucial T705 with heatsink 2TB (docs only, never shown in game)",
+    "desc": "A PCIe 5.0 flagship, 14500 MB/s, under a tall finned heatsink.",
+    "specs": {
+      "form": "M.2 2280",
+      "interface": "PCIe 5.0 x4 NVMe",
+      "read_mbs": 14500,
+      "write_mbs": 12700,
+      "tbw": 1200,
+      "dram": true,
+      "nand": "TLC",
+      "sides": 2,
+      "has_heatsink": true,
+      "height_mm": 22.6
+    },
+    "game": {
+      "storage_gb": 2000,
+      "sata25": false,
+      "perf": 0
+    },
+    "contract": "ssd_1tb",
+    "new_contract": false
+  },
+  {
+    "id": "ssd_sorin_870_1tb",
+    "model": "ssd_sorin_870_1tb",
+    "brand": "Sorin",
+    "name": "Sorin 870 Edge 1 TB",
+    "category": "Storage",
+    "price": 89,
+    "power_w": 4,
+    "color": "#17181a",
+    "rgb": false,
+    "analog": "Samsung 870 EVO 1TB (docs only, never shown in game)",
+    "desc": "The reliable 2.5\" SATA classic, 560 MB/s, 7 mm.",
+    "specs": {
+      "form": "2.5\" 7 mm",
+      "interface": "SATA 6 Gb/s",
+      "read_mbs": 560,
+      "write_mbs": 530,
+      "tbw": 600,
+      "dram": true,
+      "nand": "TLC"
+    },
+    "game": {
+      "storage_gb": 1000,
+      "sata25": true,
+      "perf": 0
+    },
+    "contract": "ssd_sata_500",
+    "new_contract": false
+  },
+  {
+    "id": "ssd_crux_mx500_2tb",
+    "model": "ssd_crux_mx500_2tb",
+    "brand": "Crux",
+    "name": "Crux MX500 2 TB",
+    "category": "Storage",
+    "price": 129,
+    "power_w": 4,
+    "color": "#55585e",
+    "rgb": false,
+    "analog": "Crucial MX500 2TB (docs only, never shown in game)",
+    "desc": "Two terabytes of SATA SSD in a grey metal shell.",
+    "specs": {
+      "form": "2.5\" 7 mm",
+      "interface": "SATA 6 Gb/s",
+      "read_mbs": 560,
+      "write_mbs": 510,
+      "tbw": 700,
+      "dram": true,
+      "nand": "TLC"
+    },
+    "game": {
+      "storage_gb": 2000,
+      "sata25": true,
+      "perf": 0
+    },
+    "contract": "ssd_sata_500",
+    "new_contract": false
+  },
+  {
+    "id": "ssd_kingsland_a400_480",
+    "model": "ssd_kingsland_a400_480",
+    "brand": "Kingsland",
+    "name": "Kingsland A400 480 GB",
+    "category": "Storage",
+    "price": 32,
+    "power_w": 2,
+    "color": "#121214",
+    "rgb": false,
+    "analog": "Kingston A400 480GB (docs only, never shown in game)",
+    "desc": "The cheapest way off a hard drive: a plastic-shell SATA SSD.",
+    "specs": {
+      "form": "2.5\" 7 mm",
+      "interface": "SATA 6 Gb/s",
+      "read_mbs": 500,
+      "write_mbs": 450,
+      "tbw": 160,
+      "dram": false,
+      "nand": "TLC"
+    },
+    "game": {
+      "storage_gb": 480,
+      "sata25": true,
+      "perf": 0
+    },
+    "contract": "ssd_sata_500",
+    "new_contract": false
+  },
+  {
+    "id": "hdd_seacrest_2tb",
+    "model": "hdd_seacrest_2tb",
+    "brand": "Seacrest",
+    "name": "Seacrest Shoreline 2 TB",
+    "category": "Storage",
+    "price": 64,
+    "power_w": 5,
+    "color": "#c9ccd0",
+    "rgb": false,
+    "analog": "Seagate BarraCuda 2TB (ST2000DM008) (docs only, never shown in game)",
+    "desc": "A 7200 rpm desktop hard drive for bulk games and files.",
+    "specs": {
+      "form": "3.5\"",
+      "interface": "SATA 6 Gb/s",
+      "rpm": 7200,
+      "cache_mb": 256,
+      "read_mbs": 220,
+      "recording": "SMR",
+      "helium": false
+    },
+    "game": {
+      "storage_gb": 2000,
+      "sata25": false,
+      "perf": 0
+    },
+    "contract": "hdd35",
+    "new_contract": true
+  },
+  {
+    "id": "hdd_westline_4tb",
+    "model": "hdd_westline_4tb",
+    "brand": "Westline",
+    "name": "Westline Azure 4 TB",
+    "category": "Storage",
+    "price": 84,
+    "power_w": 5,
+    "color": "#c9ccd0",
+    "rgb": false,
+    "analog": "WD Blue 4TB (WD40EZAZ) (docs only, never shown in game)",
+    "desc": "A quiet 5400 rpm-class desktop drive with lots of room.",
+    "specs": {
+      "form": "3.5\"",
+      "interface": "SATA 6 Gb/s",
+      "rpm": 5400,
+      "cache_mb": 256,
+      "read_mbs": 180,
+      "recording": "SMR",
+      "helium": false
+    },
+    "game": {
+      "storage_gb": 4000,
+      "sata25": false,
+      "perf": 0
+    },
+    "contract": "hdd35",
+    "new_contract": true
+  },
+  {
+    "id": "hdd_seacrest_8tb",
+    "model": "hdd_seacrest_8tb",
+    "brand": "Seacrest",
+    "name": "Seacrest Tidewolf 8 TB NAS",
+    "category": "Storage",
+    "price": 179,
+    "power_w": 8,
+    "color": "#c9ccd0",
+    "rgb": false,
+    "analog": "Seagate IronWolf 8TB (ST8000VN004) (docs only, never shown in game)",
+    "desc": "A NAS drive built for 24/7 duty in multi-bay boxes.",
+    "specs": {
+      "form": "3.5\"",
+      "interface": "SATA 6 Gb/s",
+      "rpm": 7200,
+      "cache_mb": 256,
+      "read_mbs": 210,
+      "recording": "CMR",
+      "helium": true,
+      "workload_tby": 180
+    },
+    "game": {
+      "storage_gb": 8000,
+      "sata25": false,
+      "perf": 0
+    },
+    "contract": "hdd35",
+    "new_contract": true
+  },
+  {
+    "id": "hdd_seacrest_exos_20tb",
+    "model": "hdd_seacrest_exos_20tb",
+    "brand": "Seacrest",
+    "name": "Seacrest Abyss X20 20 TB",
+    "category": "Storage",
+    "price": 329,
+    "power_w": 9,
+    "color": "#c9ccd0",
+    "rgb": false,
+    "analog": "Seagate Exos X20 20TB (ST20000NM007D) (docs only, never shown in game)",
+    "desc": "A sealed helium enterprise drive for servers and storage racks.",
+    "specs": {
+      "form": "3.5\"",
+      "interface": "SATA 6 Gb/s",
+      "rpm": 7200,
+      "cache_mb": 256,
+      "read_mbs": 272,
+      "recording": "CMR",
+      "helium": true,
+      "workload_tby": 550
+    },
+    "game": {
+      "storage_gb": 20000,
+      "sata25": false,
+      "perf": 0
+    },
+    "contract": "hdd35",
+    "new_contract": true
+  },
+  {
+    "id": "ssd_sorin_pm9a3_3840",
+    "model": "ssd_sorin_pm9a3_3840",
+    "brand": "Sorin",
+    "name": "Sorin PM9A3 3.84 TB U.2",
+    "category": "Storage",
+    "price": 449,
+    "power_w": 13,
+    "color": "#a9adb3",
+    "rgb": false,
+    "analog": "Samsung PM9A3 3.84TB U.2 (MZQL23T8HCLS) (docs only, never shown in game)",
+    "desc": "An enterprise PCIe 4.0 U.2 drive in a finned aluminium shell.",
+    "specs": {
+      "form": "2.5\" 15 mm U.2",
+      "interface": "PCIe 4.0 x4 NVMe (SFF-8639)",
+      "read_mbs": 6900,
+      "write_mbs": 4100,
+      "dwpd": 1,
+      "plp": true
+    },
+    "game": {
+      "storage_gb": 3840,
+      "sata25": false,
+      "perf": 0
+    },
+    "contract": "u2",
+    "new_contract": true
+  },
+  {
+    "id": "ssd_sorin_pm9a3_7680",
+    "model": "ssd_sorin_pm9a3_7680",
+    "brand": "Sorin",
+    "name": "Sorin PM9A3 7.68 TB U.2",
+    "category": "Storage",
+    "price": 799,
+    "power_w": 14,
+    "color": "#a9adb3",
+    "rgb": false,
+    "analog": "Samsung PM9A3 7.68TB U.2 (MZQL27T6HBLA) (docs only, never shown in game)",
+    "desc": "Double the space of the 3.84 TB, for busy database servers.",
+    "specs": {
+      "form": "2.5\" 15 mm U.2",
+      "interface": "PCIe 4.0 x4 NVMe (SFF-8639)",
+      "read_mbs": 6900,
+      "write_mbs": 4100,
+      "dwpd": 1,
+      "plp": true
+    },
+    "game": {
+      "storage_gb": 7680,
+      "sata25": false,
+      "perf": 0
+    },
+    "contract": "u2",
+    "new_contract": true
+  }
+]
