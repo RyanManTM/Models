@@ -8,7 +8,6 @@ contract psu (as psu_450/psu_750): rear face at x +0.070, depth 0.190 (front fac
    mesh psu_aegis_1200p_connector_beige#connector_beige: 24 tris
    mesh psu_aegis_1200p_connector_black#connector_black: 5292 tris
    mesh psu_aegis_1200p_fan_black#fan_black: 4512 tris
-   mesh psu_aegis_1200p_glass#glass: 12 tris
    mesh psu_aegis_1200p_grey_plastic#grey_plastic: 2100 tris
    mesh psu_aegis_1200p_nickel#nickel: 132 tris
    mesh psu_aegis_1200p_paint_black#paint_black: 16384 tris
@@ -21,7 +20,7 @@ contract psu (as psu_450/psu_750): rear face at x +0.070, depth 0.190 (front fac
    mesh psufan_rotor@A_FAN_0#fan_black: 3708 tris
    mesh psufan_sticker@A_FAN_0#tex_psu_aegis_1200p: 144 tris
    mesh rocker@A_SWITCH_PSU_0#black_plastic: 52 tris
-   TOTAL 37936 tris in 21 meshes
+   TOTAL 37924 tris in 20 meshes
    A_FAN_0: pos=(-0.0250,-0.0292,-0.0000) fwd=(0.00,-1.00,0.00) up=(1.00,0.00,0.00) size=0.13500,0.13500,0.02500 meta=axis=z,spin=-1,rpm=1500
    A_HIT_0: pos=(-0.0250,0.0000,-0.0000) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.19000,0.08600,0.15000 meta=
    A_PORT_C13_0: pos=(0.0714,0.0040,0.0470) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.03000,0.02300,0.02000 meta=kind=iec_c14_inlet,key=-y
@@ -40,7 +39,7 @@ contract psu (as psu_450/psu_750): rear face at x +0.070, depth 0.190 (front fac
    A_PORT_MOD_SATA_2: pos=(-0.1204,-0.0140,-0.0322) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.01880,0.01360,0.01200 meta=pins=6,key=sata,latch=+y,feeds=3
    A_PORT_MOD_SATA_3: pos=(-0.1204,-0.0140,-0.0499) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.01880,0.01360,0.01200 meta=pins=6,key=sata,latch=+y,feeds=3
    A_RGB_0: pos=(-0.0250,0.0000,0.0766) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.17800,0.07400,0.00400 meta=kind=argb,zones=2
-   A_SCREEN_0: pos=(0.0240,0.0210,0.0754) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.03800,0.01350,0.00400 meta=kind=oled,res=128x48,shows=watts
+   A_SCREEN_0: pos=(0.0240,0.0210,0.0762) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.03800,0.01350,0.00400 meta=kind=oled,res=128x48,shows=watts
    A_SCREW_PH2_0: pos=(0.0700,0.0370,-0.0690) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.00800,0.00800,0.00800 meta=thread=6-32
    A_SCREW_PH2_1: pos=(0.0700,0.0370,0.0690) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.00800,0.00800,0.00800 meta=thread=6-32
    A_SCREW_PH2_2: pos=(0.0700,-0.0370,-0.0690) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.00800,0.00800,0.00800 meta=thread=6-32

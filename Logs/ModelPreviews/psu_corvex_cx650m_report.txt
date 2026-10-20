@@ -27,9 +27,9 @@ contract psu (as psu_450/psu_750): rear face at x +0.070, depth 0.140 (front fac
    A_PORT_C13_0: pos=(0.0714,0.0040,0.0470) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.03000,0.02300,0.02000 meta=kind=iec_c14_inlet,key=-y
    A_PORT_MOD_PCIE_0: pos=(-0.0704,0.0194,-0.0140) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.02300,0.01360,0.01200 meta=pins=8,key=pcie,latch=+y,feeds=2
    A_PORT_MOD_PCIE_1: pos=(-0.0704,0.0194,-0.0360) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.02300,0.01360,0.01200 meta=pins=8,key=pcie,latch=+y,feeds=2
-   A_PORT_MOD_SATA_0: pos=(-0.0704,-0.0093,-0.0072) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.01880,0.01360,0.01200 meta=pins=6,key=sata,latch=+y,feeds=1
-   A_PORT_MOD_SATA_1: pos=(-0.0704,-0.0093,-0.0250) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.01880,0.01360,0.01200 meta=pins=6,key=sata,latch=+y,feeds=1
-   A_PORT_MOD_SATA_2: pos=(-0.0704,-0.0093,-0.0428) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.01880,0.01360,0.01200 meta=pins=6,key=sata,latch=+y,feeds=1
+   A_PORT_MOD_SATA_0: pos=(-0.0704,-0.0093,-0.0072) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.01880,0.01360,0.01200 meta=pins=6,key=sata,latch=+y,feeds=3
+   A_PORT_MOD_SATA_1: pos=(-0.0704,-0.0093,-0.0250) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.01880,0.01360,0.01200 meta=pins=6,key=sata,latch=+y,feeds=3
+   A_PORT_MOD_SATA_2: pos=(-0.0704,-0.0093,-0.0428) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.01880,0.01360,0.01200 meta=pins=6,key=sata,latch=+y,feeds=2
    A_SCREW_PH2_0: pos=(0.0700,0.0370,-0.0690) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.00800,0.00800,0.00800 meta=thread=6-32
    A_SCREW_PH2_1: pos=(0.0700,0.0370,0.0690) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.00800,0.00800,0.00800 meta=thread=6-32
    A_SCREW_PH2_2: pos=(0.0700,-0.0370,-0.0690) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.00800,0.00800,0.00800 meta=thread=6-32

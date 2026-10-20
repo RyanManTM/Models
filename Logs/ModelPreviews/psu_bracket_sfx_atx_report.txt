@@ -1,0 +1,15 @@
+contract psu (ATX frame): drops on A_SOCKET_PSU_0; carries an SFX unit at A_SOCKET_PSU_SFX_0
+== psu_bracket_sfx_atx
+   mesh psu_bracket_sfx_atx_paint_black#paint_black: 864 tris
+   mesh psu_bracket_sfx_atx_steel_dark#steel_dark: 1056 tris
+   TOTAL 1920 tris in 2 meshes
+   A_HIT_0: pos=(0.0580,0.0000,-0.0000) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.02400,0.08600,0.15000 meta=
+   A_SCREW_PH2_0: pos=(0.0700,0.0370,-0.0690) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.00800,0.00800,0.00800 meta=thread=6-32,into=case
+   A_SCREW_PH2_1: pos=(0.0700,0.0370,0.0690) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.00800,0.00800,0.00800 meta=thread=6-32,into=case
+   A_SCREW_PH2_2: pos=(0.0700,-0.0370,-0.0690) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.00800,0.00800,0.00800 meta=thread=6-32,into=case
+   A_SCREW_PH2_3: pos=(0.0700,-0.0270,0.0450) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.00800,0.00800,0.00800 meta=thread=6-32,into=case
+   A_SCREW_PH2_4: pos=(0.0700,0.0143,-0.0640) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.00800,0.00800,0.00800 meta=thread=6-32,into=sfx
+   A_SCREW_PH2_5: pos=(0.0700,0.0143,0.0490) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.00800,0.00800,0.00800 meta=thread=6-32,into=sfx
+   A_SCREW_PH2_6: pos=(0.0700,-0.0367,-0.0640) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.00800,0.00800,0.00800 meta=thread=6-32,into=sfx
+   A_SCREW_PH2_7: pos=(0.0700,-0.0367,0.0330) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.00800,0.00800,0.00800 meta=thread=6-32,into=sfx
+   A_SOCKET_PSU_SFX_0: pos=(0.0188,-0.0113,-0.0075) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.10000,0.06350,0.12500 meta=insert=+x,unit=psu_sfx

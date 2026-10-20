@@ -56,7 +56,7 @@ UNITS = [
          code="CX650M", watts=650, tier="BRONZE", eff="85%", modular="semi", depth=0.140, paint="paint_black",
          style="Corvex", fan=0.12, blades=7, grille="wire", conns=(1, 4, 0, 8), price=75, color="#1A1A1B", rgb=False,
          analog="Corsair CX650M", amps="10-5A", c335="120W",
-         rows=[["pcie", "pcie"], ["sata", "sata", "sata"]], feeds={"pcie": 2},
+         rows=[["pcie", "pcie"], ["sata", "sata", "sata"]], feeds={"pcie": 2, "sata": [3, 3, 2]},
          desc="Semi-modular 650 W Bronze: the 24-pin and CPU cables are fixed, the rest plug in.",
          side="CORVEX", side_font="franklin"),
     dict(id="psu_seastar_gx850", brand="Seastar", series="Apex GX", name="Seastar Apex GX-850 850 W Gold",
@@ -64,7 +64,7 @@ UNITS = [
          style="Seastar", fan=0.12, blades=9, grille="hex", conns=(2, 6, 0, 10), price=130, color="#161617",
          rgb=False, analog="Seasonic Focus GX-850", amps="10-5A", c335="120W",
          rows=[["atx", "sata", "sata"], ["cpu", "cpu", "pcie", "pcie", "pcie", "pcie"], ["sata", "sata", "sata"]],
-         feeds={"pcie": [2, 2, 1, 1]},
+         feeds={"pcie": [2, 2, 1, 1], "sata": 2},
          desc="Fully modular 850 W Gold with a quiet hybrid fan mode and a ten-year warranty.",
          side="SEASTAR", side_font="segoe_black"),
     dict(id="psu_seastar_px1000_white", brand="Seastar", series="Summit PX", name="Seastar Summit PX-1000 1000 W Platinum White",
@@ -72,6 +72,7 @@ UNITS = [
          style="Seastar_white", fan=0.135, blades=9, grille="slots", conns=(2, 4, 1, 8), price=230, color="#EDEDEB",
          rgb=False, analog="Seasonic Vertex PX-1000 (white)", atx3="3.1", amps="12-6A", c335="125W",
          rows=[["atx", "p16"], ["cpu", "cpu", "pcie", "pcie", "pcie", "pcie"], ["sata", "sata", "sata", "sata"]],
+         feeds={"sata": 2},
          desc="White 1000 W Platinum, ATX 3.1 with a native 12V-2x6 cable for the newest graphics cards.",
          side="SEASTAR", side_font="segoe_black", hub_bg="#e8e8e6", hub_ink="#202226", white_fan=True),
     dict(id="psu_corvex_rm850x_white", brand="Corvex", series="RMx Series", name="Corvex RM850x 850 W Gold White",
@@ -102,6 +103,7 @@ UNITS = [
          style="Mako", fan=0.135, blades=9, grille="slots", conns=(2, 4, 1, 8), price=120, color="#141414", rgb=False,
          analog="MSI MPG A850G PCIE5", atx3="3.1", amps="12-6A", c335="120W",
          rows=[["atx", "p16"], ["cpu", "cpu", "pcie", "pcie", "pcie", "pcie"], ["sata", "sata", "sata", "sata"]],
+         feeds={"sata": 2},
          desc="850 W Gold, ATX 3.1 with a native 12V-2x6 cable, black with a red trim.",
          side="MAKO", side_font="franklin", trim="red"),
     dict(id="psu_aegis_1200p", brand="Aegis", series="Valkyr", name="Aegis Valkyr 1200P 1200 W Platinum",
@@ -270,11 +272,10 @@ def housing(m, s, g, at, TEX):
     # pan: the fan-side bottom (open or stamped), bent up into the rear and front walls
     fan_r = s["fan"] / 2 - 0.0025
     style = s["grille"]
-    if style in ("wire", "ring"):
-        bot_holes = [pb.circle2(xc, 0.0, fan_r, 128)]
-    else:
-        bot_holes = perforation(style, xc, fan_r, 0.0135)
+    bot_holes = [pb.circle2(xc, 0.0, fan_r + 0.001, 128)]
     m.add(P, pb.g_slab(pb.rect2(xc, 0, D - 2 * r, 2 * (W2 - SH)), bot_holes, SH, -H2), M_XZ)
+    if style not in ("wire", "ring"):  # the stamped grille: a perforated disc filling the round opening
+        m.add(P, pb.g_slab(pb.circle2(xc, 0.0, fan_r + 0.001, 128), perforation(style, xc, fan_r, 0.0135), SH, -H2), M_XZ)
     for sx, xe in ((1, x1), (-1, x0)):
         a0 = (math.pi * 1.5 if sx > 0 else math.pi)
         bend = pb.g_ring(r - SH, r, 2 * (W2 - SH), 10, a0, a0 + math.pi / 2)
@@ -518,15 +519,14 @@ def armour(m, s, g, at, TEX, os_):
     # OLED: black glass window over the screen face
     ox, oy = x1 - 0.040, y1 - 0.016
     m.add(TEX, pb.g_quad(0.038, 0.0135, at.uv("oled")), pb.label_frame((0, 0, os_), (0, 1, 0)),
-          (ox, oy, os_ * (W2 + 0.0004)))
-    m.add("glass", pb.g_slab(pb.rect2(ox, oy, 0.042, 0.016), [], 0.0003, 0.0), Mz, (0, 0, os_ * (W2 + t - 0.0003)))
-    m.anchor("A_SCREEN_0", (ox, oy, os_ * (W2 + 0.0004)), (0.038, 0.0135, 0.004), forward=(0, 0, os_), up=(0, 1, 0),
+          (ox, oy, os_ * (W2 + t - 0.0004)))
+    m.anchor("A_SCREEN_0", (ox, oy, os_ * (W2 + t - 0.0004)), (0.038, 0.0135, 0.004), forward=(0, 0, os_), up=(0, 1, 0),
              meta="kind=oled,res=128x48,shows=watts")
     side = pb.label_frame((0, 0, os_), (0, 1, 0))
-    m.add("grey_plastic", pb.g_text(s["side"], s["side_font"], 0.010, 0.06, 0.00008, spacing=1.25), side,
-          (x0 + 0.030, -0.006, os_ * (W2 + t + 0.00002)))
-    m.add("grey_plastic", pb.g_text(f"{s['watts']}W  PLATINUM", "arialb", 0.0032, 0.06, 0.00008, spacing=1.3), side,
-          (x0 + 0.030, -0.018, os_ * (W2 + t + 0.00002)))
+    m.add("grey_plastic", pb.g_text(s["side"], s["side_font"], 0.009, 0.05, 0.00008, spacing=1.25), side,
+          (x1 - 0.042, -0.004, os_ * (W2 + t + 0.00002)))
+    m.add("grey_plastic", pb.g_text(f"{s['watts']}W  PLATINUM", "arialb", 0.0030, 0.05, 0.00008, spacing=1.3), side,
+          (x1 - 0.042, -0.014, os_ * (W2 + t + 0.00002)))
     m.anchor("A_RGB_0", (xc, 0.0, os_ * (W2 + t)), (2 * hx - 0.012, 2 * H2 - 0.012, 0.004), forward=(0, 0, os_),
              up=(0, 1, 0), meta="kind=argb,zones=2")
 
@@ -654,7 +654,7 @@ def build_crps(pid):
     # side vents near the front and the top label
     for k in range(10):
         box(m, "black_plastic", (X0 + 0.012 + k * 0.006, -0.010, W2 + 0.00005), (X0 + 0.015 + k * 0.006, 0.010, W2 + 0.0002))
-    m.add(TEX, pb.g_quad(0.120, 0.048, at.uv("label")), pb.label_frame((0, 1, 0), (-1, 0, 0)), (-0.010, H2 + 0.0001, 0.0))
+    m.add(TEX, pb.g_quad(0.120, 0.048, at.uv("label")), pb.label_frame((0, 1, 0), (0, 0, -1)), (-0.010, H2 + 0.0001, 0.0))
     # guide rail along the -z side bottom (keys the module in the cage)
     box(m, "steel", (X0 + 0.010, -H2 + 0.002, -W2 - 0.0012), (X1 - 0.030, -H2 + 0.006, -W2))
     # front (-x): closed end plate with the PCB card edge sticking out
@@ -673,7 +673,7 @@ def build_crps(pid):
     m.anchor("A_PORT_EDGE_0", (X0 - 0.010, ey, 0.0), (0.012, 0.006, 0.050), forward=(-1, 0, 0), up=(0, 1, 0),
              meta="kind=crps_card_edge,pads=2x26,pcb=1.6mm")
     # rear (+x): end plate with the fan grille, C14 inlet (vertical), LED; handle and latch
-    fz, fd = -0.014, 0.038
+    fz, fd = -0.014, 0.033
     iz, iy = 0.019, 0.001
     grille = []
     for j in range(-4, 5):
@@ -685,9 +685,9 @@ def build_crps(pid):
     led_cut = pb.circle2(0.0305, 0.015, 0.0014, 12)
     m.add(B, pb.g_slab(pb.rect2(0, 0, 2 * W2, 2 * H2), grille + [inlet_cut, led_cut], 0.0012, X1 - 0.004), M_ZY)
     # the fan behind the grille (40 mm)
-    fa = m.anchor("A_FAN_0", (X1 - 0.004 - 0.0005 - 0.014, 0.0, fz), (0.040, 0.040, 0.028), forward=(1, 0, 0),
+    fa = m.anchor("A_FAN_0", (X1 - 0.004 - 0.0005 - 0.014, 0.0, fz), (0.032, 0.032, 0.028), forward=(1, 0, 0),
                   up=(0, 1, 0), meta=pf.fan_meta("ccw", 12000))
-    pf.make_fan(fa, diameter=0.040, thickness=0.028, blades=7, frame=True, sticker=pid, sticker_uv=at.uv("hub"),
+    pf.make_fan(fa, diameter=0.032, thickness=0.028, blades=7, frame=True, sticker=pid, sticker_uv=at.uv("hub"),
                 name="crpsfan")
     # vertical C14 inlet
     key = pb.chamfer2(iz, iy, 0.0158, 0.0244, (0.0006, 0.0032, 0.0032, 0.0006))
@@ -721,7 +721,7 @@ def build_crps(pid):
         m.piece(la, TEX, "latch").add(pb.solid(pb.g_box((0.0008, 0.005, 0.0006)), at.uv("swatch")), None,
                                       (X1 + 0.002 + k * 0.002, -0.0125, W2 + 0.0019))
     # legend on the rear above the inlet
-    m.add(TEX, pb.g_quad(0.014, 0.008, at.uv("legend")), pb.label_frame((1, 0, 0), (0, 1, 0)),
+    m.add(TEX, pb.g_quad(0.0122, 0.007, at.uv("legend")), pb.label_frame((1, 0, 0), (0, 1, 0)),
           (X1 - 0.0027, 0.0155, 0.017))
     m.anchor("A_HIT_0", (0, 0, 0), (2 * X1, 2 * H2, 2 * W2))
     m.finish()

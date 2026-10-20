@@ -8,7 +8,7 @@ contract psu (as psu_450/psu_750): rear face at x +0.070, depth 0.160 (front fac
    mesh psu_corvex_rm850x_white_connector_black#connector_black: 4978 tris
    mesh psu_corvex_rm850x_white_dark_plastic#dark_plastic: 3372 tris
    mesh psu_corvex_rm850x_white_nickel#nickel: 132 tris
-   mesh psu_corvex_rm850x_white_paint_white#paint_white: 16366 tris
+   mesh psu_corvex_rm850x_white_paint_white#paint_white: 17414 tris
    mesh psu_corvex_rm850x_white_pcb_black#pcb_black: 12 tris
    mesh psu_corvex_rm850x_white_solder#solder: 1392 tris
    mesh psu_corvex_rm850x_white_steel_dark#steel_dark: 2304 tris
@@ -17,7 +17,7 @@ contract psu (as psu_450/psu_750): rear face at x +0.070, depth 0.160 (front fac
    mesh psufan_rotor@A_FAN_0#white_plastic: 3708 tris
    mesh psufan_sticker@A_FAN_0#tex_psu_corvex_rm850x_white: 144 tris
    mesh rocker@A_SWITCH_PSU_0#black_plastic: 52 tris
-   TOTAL 38578 tris in 17 meshes
+   TOTAL 39626 tris in 17 meshes
    A_FAN_0: pos=(-0.0100,-0.0292,-0.0000) fwd=(0.00,-1.00,0.00) up=(1.00,0.00,0.00) size=0.13500,0.13500,0.02500 meta=axis=z,spin=-1,rpm=1500
    A_HIT_0: pos=(-0.0100,0.0000,-0.0000) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.16000,0.08600,0.15000 meta=
    A_PORT_C13_0: pos=(0.0714,0.0040,0.0470) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.03000,0.02300,0.02000 meta=kind=iec_c14_inlet,key=-y

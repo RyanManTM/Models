@@ -1,0 +1,50 @@
+contract psu (as psu_450/psu_750): rear face at x +0.070, depth 0.200 (front face x -0.130)
+== psu_corvex_ax1600i
+   mesh mark@A_SWITCH_PSU_0#paint_white: 204 tris
+   mesh psu_corvex_ax1600i_alu#alu: 480 tris
+   mesh psu_corvex_ax1600i_alu_dark#alu_dark: 20 tris
+   mesh psu_corvex_ax1600i_black_plastic#black_plastic: 3908 tris
+   mesh psu_corvex_ax1600i_chip_black#chip_black: 12 tris
+   mesh psu_corvex_ax1600i_connector_beige#connector_beige: 24 tris
+   mesh psu_corvex_ax1600i_connector_black#connector_black: 6464 tris
+   mesh psu_corvex_ax1600i_fan_black#fan_black: 4512 tris
+   mesh psu_corvex_ax1600i_grey_plastic#grey_plastic: 3268 tris
+   mesh psu_corvex_ax1600i_nickel#nickel: 132 tris
+   mesh psu_corvex_ax1600i_paint_black#paint_black: 18590 tris
+   mesh psu_corvex_ax1600i_pcb_green#pcb_green: 12 tris
+   mesh psu_corvex_ax1600i_solder#solder: 1944 tris
+   mesh psu_corvex_ax1600i_steel_dark#steel_dark: 2304 tris
+   mesh psu_corvex_ax1600i_tex_psu_corvex_ax1600i#tex_psu_corvex_ax1600i: 126 tris
+   mesh psu_corvex_ax1600i_white_plastic#white_plastic: 120 tris
+   mesh psufan_rotor@A_FAN_0#fan_black: 3708 tris
+   mesh psufan_sticker@A_FAN_0#tex_psu_corvex_ax1600i: 144 tris
+   mesh rocker@A_SWITCH_PSU_0#black_plastic: 52 tris
+   TOTAL 46024 tris in 19 meshes
+   A_FAN_0: pos=(-0.0300,-0.0292,-0.0000) fwd=(0.00,-1.00,0.00) up=(1.00,0.00,0.00) size=0.14000,0.14000,0.02500 meta=axis=z,spin=-1,rpm=1500
+   A_HIT_0: pos=(-0.0300,0.0000,-0.0000) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.20000,0.08600,0.15000 meta=
+   A_PORT_C13_0: pos=(0.0714,0.0040,0.0470) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.03000,0.02300,0.02000 meta=kind=iec_c14_inlet,key=-y
+   A_PORT_MOD_ATX_0: pos=(-0.1304,0.0266,0.0191) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.05660,0.01360,0.01200 meta=pins=24,latch=+y
+   A_PORT_MOD_CPU_0: pos=(-0.1304,0.0123,0.0562) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.02300,0.01360,0.01200 meta=pins=8,key=cpu,latch=+y,feeds=1
+   A_PORT_MOD_CPU_1: pos=(-0.1304,0.0123,0.0342) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.02300,0.01360,0.01200 meta=pins=8,key=cpu,latch=+y,feeds=1
+   A_PORT_MOD_PCIE_0: pos=(-0.1304,0.0123,0.0098) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.02300,0.01360,0.01200 meta=pins=8,key=pcie,latch=+y,feeds=1
+   A_PORT_MOD_PCIE_1: pos=(-0.1304,0.0123,-0.0122) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.02300,0.01360,0.01200 meta=pins=8,key=pcie,latch=+y,feeds=1
+   A_PORT_MOD_PCIE_2: pos=(-0.1304,0.0123,-0.0342) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.02300,0.01360,0.01200 meta=pins=8,key=pcie,latch=+y,feeds=1
+   A_PORT_MOD_PCIE_3: pos=(-0.1304,0.0123,-0.0562) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.02300,0.01360,0.01200 meta=pins=8,key=pcie,latch=+y,feeds=1
+   A_PORT_MOD_PCIE_4: pos=(-0.1304,-0.0021,0.0550) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.02300,0.01360,0.01200 meta=pins=8,key=pcie,latch=+y,feeds=1
+   A_PORT_MOD_PCIE_5: pos=(-0.1304,-0.0021,0.0330) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.02300,0.01360,0.01200 meta=pins=8,key=pcie,latch=+y,feeds=1
+   A_PORT_MOD_PCIE_6: pos=(-0.1304,-0.0021,0.0110) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.02300,0.01360,0.01200 meta=pins=8,key=pcie,latch=+y,feeds=1
+   A_PORT_MOD_PCIE_7: pos=(-0.1304,-0.0021,-0.0110) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.02300,0.01360,0.01200 meta=pins=8,key=pcie,latch=+y,feeds=1
+   A_PORT_MOD_PCIE_8: pos=(-0.1304,-0.0021,-0.0330) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.02300,0.01360,0.01200 meta=pins=8,key=pcie,latch=+y,feeds=1
+   A_PORT_MOD_PCIE_9: pos=(-0.1304,-0.0021,-0.0550) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.02300,0.01360,0.01200 meta=pins=8,key=pcie,latch=+y,feeds=1
+   A_PORT_MOD_SATA_0: pos=(-0.1304,0.0266,-0.0202) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.01880,0.01360,0.01200 meta=pins=6,key=sata,latch=+y,feeds=4
+   A_PORT_MOD_SATA_1: pos=(-0.1304,0.0266,-0.0380) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.01880,0.01360,0.01200 meta=pins=6,key=sata,latch=+y,feeds=4
+   A_PORT_MOD_SATA_2: pos=(-0.1304,-0.0164,0.0356) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.01880,0.01360,0.01200 meta=pins=6,key=sata,latch=+y,feeds=2
+   A_PORT_MOD_SATA_3: pos=(-0.1304,-0.0164,0.0178) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.01880,0.01360,0.01200 meta=pins=6,key=sata,latch=+y,feeds=2
+   A_PORT_MOD_SATA_4: pos=(-0.1304,-0.0164,0.0000) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.01880,0.01360,0.01200 meta=pins=6,key=sata,latch=+y,feeds=2
+   A_PORT_MOD_SATA_5: pos=(-0.1304,-0.0164,-0.0178) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.01880,0.01360,0.01200 meta=pins=6,key=sata,latch=+y,feeds=1
+   A_PORT_MOD_SATA_6: pos=(-0.1304,-0.0164,-0.0356) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.01880,0.01360,0.01200 meta=pins=6,key=sata,latch=+y,feeds=1
+   A_SCREW_PH2_0: pos=(0.0700,0.0370,-0.0690) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.00800,0.00800,0.00800 meta=thread=6-32
+   A_SCREW_PH2_1: pos=(0.0700,0.0370,0.0690) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.00800,0.00800,0.00800 meta=thread=6-32
+   A_SCREW_PH2_2: pos=(0.0700,-0.0370,-0.0690) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.00800,0.00800,0.00800 meta=thread=6-32
+   A_SCREW_PH2_3: pos=(0.0700,-0.0270,0.0450) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.00800,0.00800,0.00800 meta=thread=6-32
+   A_SWITCH_PSU_0: pos=(0.0704,0.0260,0.0470) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.02400,0.01800,0.01000 meta=hinge=y,on=-9,off=9,on_side=+z,mark_on=I,mark_off=O
