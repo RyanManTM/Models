@@ -208,6 +208,9 @@ def ov_sw(m, n, cell, pts, d=0.0012, y=None, holes=()):
 
 
 def ring_holes(n, grow=0.0040):
+    """Holes round the fan rings, kept 1 mm apart (overlapping holes break the tessellation)."""
+    if len(n.fxs) > 1:
+        grow = min(grow, (n.fxs[1] - n.fxs[0] - 0.001) / 2 - n.r_hole)
     return [pb.circle2(x, n.fz, n.r_hole + grow, 96) for x in n.fxs]
 
 
@@ -586,10 +589,10 @@ def mako_leviathan():
     an ARGB band on the top edge, a 4-slot body with deep skirts."""
     def overlay(m, n):
         xa, xb, H, fz, fxs = n.xa, n.xb, n.H, n.fz, n.fxs
-        face_frame(m, n, "alu", 0.0015, 0.0018, grow=0.0050, chamfer=0.008)
-        face_frame(m, n, "black_plastic", 0.0080, 0.0010, grow=0.0042, chamfer=0.006)
+        face_frame(m, n, "alu", 0.0015, 0.0012, grow=0.0050, chamfer=0.008)
+        face_frame(m, n, "black_plastic", 0.0120, 0.0020, grow=0.0042, chamfer=0.006)
         for sz in (1, -1):
-            z0 = 0.002 + 0.0050 if sz > 0 else H - 0.0050
+            z0 = 0.002 + 0.0085 if sz > 0 else H - 0.0085
             strip_xz(m, n, "rgb", (xa + 0.030, z0), (xb - 0.030, z0), 0.0014, 0.0005, y=n.yF - 0.0018)
         for i in range(len(fxs) - 1):
             xm = (fxs[i] + fxs[i + 1]) / 2
@@ -765,11 +768,8 @@ def tiron_ref():
     """Tiron Lumen B580 reference: matte black, a silver frame band along both long edges, two big fans, no RGB."""
     def overlay(m, n):
         xa, xb, H, fz, fxs = n.xa, n.xb, n.H, n.fz, n.fxs
-        for sz in (1, -1):
-            z0 = 0.002 if sz > 0 else H
-            band = [(xa + 0.004, z0 + sz * 0.0015), (xb - 0.004, z0 + sz * 0.0015), (xb - 0.004, z0 + sz * 0.0065),
-                    (xa + 0.012, z0 + sz * 0.0065)]
-            ov(m, n, "alu", band, 0.0014, bevel=0.0003)
+        face_frame(m, n, "alu", 0.0010, 0.0012, grow=0.0040, chamfer=0.003)
+        face_frame(m, n, "paint_black", 0.0085, 0.0018, grow=0.0036, chamfer=0.008)
         xm = (fxs[0] + fxs[1]) / 2
         ov(m, n, "paint_black", pb.rrect2(xm, fz, 0.010, H - 0.020, 0.003, 3), 0.0010)
 
