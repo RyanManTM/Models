@@ -578,21 +578,23 @@ class CatBoard(BB.Board):
                     self.pbox(dark, 95.45, yy, 17.0, 0.12, 1.0, 7.0)
                 self.pbox(st["trim"], 95.6, ym, 6.0, 0.5, y1 - y0 - 30.0, 1.2)
             elif kind == "rgb":
-                # a lit emblem panel on the socket-side face: an RGB plate behind a dark grille, the brand's shield
-                # emblem in the middle, framed in the trim colour
-                ey0, ey1, ez0, ez1 = y0 + 24.0, y0 + 92.0, 7.0, 25.0
-                pp.box(self.k["rgb"], (95.55 * MM, (ey0 + ey1) / 2 * MM, (ez0 + ez1) / 2 * MM), (0.5 * MM, (ey1 - ey0) * MM, (ez1 - ez0) * MM))
-                em = (ey0 + ey1) / 2
-                for k_ in range(14):
-                    yy = ey0 + 2.0 + k_ * (ey1 - ey0 - 4.0) / 13
-                    if abs(yy - em) < 9.0:
+                # a lit emblem on the cover top, beside the logo plate (the socket-side face is hidden behind the
+                # rear VRM heatsink): an RGB plate under a dark grille with the brand's shield cut out, framed in the
+                # trim colour
+                ex0, ex1 = 101.0, xr - 1.0
+                ey0, ey1 = y0 + 3.5, ym + 6.0 - 38.0 - 2.0
+                ec, eyc = (ex0 + ex1) / 2, (ey0 + ey1) / 2
+                pp.box(self.k["rgb"], (ec * MM, eyc * MM, 36.7 * MM), ((ex1 - ex0) * MM, (ey1 - ey0) * MM, 0.2 * MM))
+                for k_ in range(9):
+                    yy = ey0 + 1.0 + k_ * (ey1 - ey0 - 2.0) / 8
+                    if abs(yy - eyc) < 8.0:
                         continue
-                    self.pbox(dark, 95.05, yy, ez0, 0.6, 2.2, ez1 - ez0)
-                sh = [(em - 7.0, ez1 - 2.0), (em + 7.0, ez1 - 2.0), (em + 7.0, ez0 + 8.0), (em, ez0 + 2.0), (em - 7.0, ez0 + 8.0)]
-                self.yz_shape(dark, [(em - 9.0, ez1), (em + 9.0, ez1), (em + 9.0, ez0), (em - 9.0, ez0)], 94.8, 95.3, hole=sh)
-                self.yz_shape(trim, [(em - 4.6, ez1 - 4.4), (em + 4.6, ez1 - 4.4), (em + 4.6, ez0 + 8.6), (em, ez0 + 4.6), (em - 4.6, ez0 + 8.6)], 94.9, 95.25)
-                for zz in (ez0 - 1.0, ez1 + 1.0):
-                    self.pbox(trim, 95.0, (ey0 + ey1) / 2, zz - 0.5, 0.6, ey1 - ey0 + 2.0, 1.0)
+                    self.pbox(dark, ec, yy, 36.8, ex1 - ex0, 1.4, 0.3)
+                sh = [(ec - 7.0, eyc - 6.0), (ec - 7.0, eyc + 6.0), (ec + 3.0, eyc + 6.0), (ec + 8.0, eyc), (ec + 3.0, eyc - 6.0)]
+                self.pplan(trim, sh, 36.7, 37.0, 0.15)
+                self.pplan(dark, [(ec - 5.0, eyc - 3.6), (ec - 5.0, eyc + 3.6), (ec + 2.0, eyc + 3.6), (ec + 5.0, eyc), (ec + 2.0, eyc - 3.6)], 37.0, 37.05)
+                for yy in (ey0 - 0.6, ey1 + 0.6):
+                    self.pbox(trim, ec, yy, 36.6, ex1 - ex0, 1.0, 0.5)
                 self.pbox(trim, 95.6, ym, 3.0, 0.5, y1 - y0 - 30.0, 1.2)
         if st["io_rgb"]:
             pp.box(self.k["rgb"], (100.4 * MM, (ym + 2) * MM, 36.9 * MM), (1.4 * MM, (y1 - y0 - 10) * MM, 0.7 * MM), bevel=0.0002)

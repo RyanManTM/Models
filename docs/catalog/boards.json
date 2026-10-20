@@ -33,6 +33,39 @@
     "new_contract": false
   },
   {
+    "id": "mb_aegis_x870e_vanguard",
+    "model": "mb_aegis_x870e_vanguard",
+    "brand": "Aegis",
+    "name": "Aegis Vanguard X870E-E Gaming WiFi",
+    "category": "Motherboard",
+    "price": 499,
+    "power_w": 40,
+    "color": "#1C1D20",
+    "rgb": true,
+    "analog": "ASUS ROG Strix X870E-E Gaming WiFi (docs only, never shown in game)",
+    "desc": "Flagship X870E: tall armour heatsinks with mirror trim, an RGB I/O cover, two armoured x16 slots, Wi-Fi 7, 5 GbE.",
+    "specs": {
+      "form": "ATX",
+      "chipset": "X870E",
+      "dimm_slots": 4,
+      "max_ram_gb": 192,
+      "m2_slots": 2,
+      "sata": 4,
+      "pcie_x16": 2,
+      "wifi": true,
+      "lan_gbe": 5.0,
+      "io_shield": "io_aegis_x870e_vanguard",
+      "io_preattached": true
+    },
+    "game": {
+      "socket": "V5",
+      "mem": "DDR5",
+      "perf": 0
+    },
+    "contract": "mb_ridge_b5",
+    "new_contract": false
+  },
+  {
     "id": "mb_mako_b650_harpoon",
     "model": "mb_mako_b650_harpoon",
     "brand": "Mako",

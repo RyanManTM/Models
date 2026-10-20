@@ -8,7 +8,7 @@ Branch `claude/cat-12-motherboards`. Script `Tools/Blender/build_cat_boards.py` 
 | # | Id | I/O shield | Contract (layout sibling) | Status |
 |---|---|---|---|---|
 | 1 | `mb_aegis_b650_bulwark` | `io_aegis_b650_bulwark` | mb_ridge_b5 (V5, DDR5) | done |
-| 2 | `mb_aegis_x870e_vanguard` | `io_aegis_x870e_vanguard` | mb_ridge_b5 (V5, DDR5) | not yet |
+| 2 | `mb_aegis_x870e_vanguard` | `io_aegis_x870e_vanguard` | mb_ridge_b5 (V5, DDR5) | done |
 | 3 | `mb_mako_b650_harpoon` | `io_mako_b650_harpoon` | mb_ridge_b5 (V5, DDR5) | done |
 | 4 | `mb_kestrel_b650_glide` | `io_kestrel_b650_glide` | mb_ridge_b5 (V5, DDR5) | done |
 | 5 | `mb_aegis_z790_keystone` | `io_aegis_z790_keystone` | mb_ridge_z4 + DDR5 notch (L17, DDR5) | not yet |
@@ -86,6 +86,20 @@ SAME and the two film anchors are ONLY_B.
   tan corner slash. No RGB. Shield: painted black.
 - **Anchors:** vs `mb_ridge_x5`: 82 SAME, 0 DIFF. vs `mb_ridge_b5`: 80 SAME, ONLY_B `A_FILM_CHIPSET_0`, `A_FILM_IO_0`.
 - **I/O shield:** not pre-attached on the analog.
+
+## 2. `mb_aegis_x870e_vanguard` + `io_aegis_x870e_vanguard`: Aegis Vanguard X870E-E Gaming WiFi
+
+- **Analog:** ASUS ROG Strix X870E-E Gaming WiFi. Socket V5, DDR5, ATX; `mb_ridge_b5` layout.
+- **Size:** ATX 0.244 × 0.305, PCB z 0..0.0016; tallest part the I/O cover (z 0.0371; the rear VRM heatsink reaches
+  the same height, the top one 0.034).
+- **Triangles:** 45,512 in 41 meshes. Shield: 1,244 in 1.
+- **Look:** black PCB with dark angular graphics and red accents; tall `armour` VRM heatsinks in near-black with
+  mirror-silver (`alu`) chamfers and inlays; an **RGB I/O cover**: a lit emblem panel on the cover top (an `rgb` plate
+  under a dark grille with a silver shield emblem) plus the RGB light bar; steel armour on **both** full-length PCIe
+  slots; a black `slab` chipset heatsink with diagonal grooves; two dark M.2 heatsinks with silver ridges; black
+  DIMM slots. Shield: painted black.
+- **Anchors:** vs `mb_ridge_x5`: 82 SAME, 0 DIFF.
+- **I/O shield:** pre-attached on the analog (shipped here as the separate `io_aegis_x870e_vanguard` all the same).
 
 ## 3. `mb_mako_b650_harpoon` + `io_mako_b650_harpoon`: Mako Harpoon B650 WiFi
 
