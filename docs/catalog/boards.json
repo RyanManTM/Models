@@ -1,0 +1,19 @@
+[
+  {
+    "id": "mb_aegis_b650_bulwark",
+    "model": "mb_aegis_b650_bulwark",
+    "brand": "Aegis",
+    "name": "Aegis Bulwark Gaming B650-Plus WiFi",
+    "category": "Motherboard",
+    "price": 179,
+    "power_w": 25,
+    "color": "#2B2C2D",
+    "rgb": false,
+    "analog": "ASUS TUF Gaming B650-PLUS WIFI (docs only, never shown in game)",
+    "desc": "Military-spec B650 board: tan-striped armour heatsinks, steel x16 slot, Wi-Fi and 2.5 GbE.",
+    "specs": { "form": "ATX", "chipset": "B650", "dimm_slots": 4, "max_ram_gb": 192, "m2_slots": 2, "sata": 4, "pcie_x16": 2, "wifi": true, "lan_gbe": 2.5, "io_shield": "io_aegis_b650_bulwark", "io_preattached": false },
+    "game": { "socket": "V5", "mem": "DDR5", "perf": 0 },
+    "contract": "mb_ridge_b5",
+    "new_contract": false
+  }
+]
