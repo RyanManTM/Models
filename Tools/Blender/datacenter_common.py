@@ -537,19 +537,73 @@ def bounds(root, skip=()):
     return lo, hi
 
 
+def pose_pieces(root, poses):
+    """Turns moving pieces for a preview: poses = [(anchor_name, axis, degrees), ...] in the game's convention
+    (Unity, left-handed: a positive angle about +x turns +y towards +z, about +y turns +z towards +x). Returns
+    the saved matrices to restore."""
+    from mathutils import Matrix
+    saved = {}
+    objs = {o.name: o for o in c.descendants(root)}
+    for anc, axis, deg in poses:
+        a = objs.get(anc)
+        if a is None:
+            print("pose: no anchor", anc)
+            continue
+        ang = math.radians(deg)
+        # Unity local axis -> Blender local rotation (x: +X, y: -Z, z: +Y; see dct_common.basis)
+        R = {"x": Matrix.Rotation(ang, 4, "X"), "y": Matrix.Rotation(-ang, 4, "Z"), "z": Matrix.Rotation(ang, 4, "Y")}[axis]
+        am = a.matrix_world.copy()
+        M = am @ R @ am.inverted()
+        for o in c.descendants(root):
+            if ("@" + anc) in o.name or o is a:
+                saved.setdefault(o.name, o.matrix_world.copy())
+                o.matrix_world = M @ o.matrix_world
+    return saved
+
+
+def add_fill(root, energy=3.0, directions=((0.4, -0.8, -0.6), (-0.6, -0.4, 0.5))):
+    """Sun lights for previews of big dark models (directions are Unity vectors the light travels along)."""
+    import bpy
+    out = []
+    for k, d in enumerate(directions):
+        ld = bpy.data.lights.new(f"fill{k}", "SUN")
+        ld.energy = energy if k == 0 else energy * 0.5
+        ob = c.link(bpy.data.objects.new(f"fill{k}", ld))
+        v = conv(d)
+        ob.rotation_euler = v.to_track_quat("-Z", "Y").to_euler()
+        out.append(ob)
+    return out
+
+
+def conv(v):
+    return c.conv(v)
+
+
 def finish(root, mid, preview_views=((30, 20), (150, 25)), beauty_views=((28, 15), (150, 20)), size=(1000, 750),
-           samples=40, extra=None, beauty_kw=None, more_beauty=()):
-    """finalize, export, report, previews (Workbench) and beauty renders (Cycles) of one model."""
+           samples=40, extra=None, beauty_kw=None, more_beauty=(), fill=None):
+    """finalize, export, report, previews (Workbench) and beauty renders (Cycles) of one model.
+    more_beauty: [(views, kw)], kw may hold pose=[(anchor, axis, deg)] to render moving pieces open.
+    fill: sun energy for an extra fill light in the beauty renders (dark models)."""
+    import bpy
     P.finalize(root, mid)
     c.export(root, mid)
     lo, hi = bounds(root)
     line = "bounds min=(%.4f, %.4f, %.4f) max=(%.4f, %.4f, %.4f) size=(%.4f, %.4f, %.4f)" % (*lo, *hi, *(hi[i] - lo[i] for i in range(3)))
     tris, meshes = P.write_report(root, mid, line + ("\n" + extra if extra else ""))
     P.preview(root, mid, views=preview_views, size=size)
+    lights = add_fill(root, fill) if (fill and P.PREVIEW[0]) else []
     n = len(preview_views)
     P.beauty(root, mid, views=beauty_views, size=size, samples=samples, start_index=n, **(beauty_kw or {}))
     k = n + len(beauty_views)
     for views, kw in more_beauty:
+        kw = dict(kw)
+        poses = kw.pop("pose", None)
+        saved = pose_pieces(root, poses) if (poses and P.PREVIEW[0]) else {}
         P.beauty(root, mid, views=views, size=size, samples=samples, start_index=k, **kw)
+        objs = {o.name: o for o in c.descendants(root)}
+        for nm, mw in saved.items():
+            objs[nm].matrix_world = mw
         k += len(views)
+    for ob in lights:
+        bpy.data.objects.remove(ob)
     return tris, meshes

@@ -1,0 +1,26 @@
+rack_12u_open: 5274 triangles, 8 meshes
+  mesh rack_12u_open_dark_plastic#dark_plastic  tris=108
+  mesh rack_12u_open_grey_plastic#grey_plastic  tris=192
+  mesh rack_12u_open_nickel#nickel  tris=24
+  mesh rack_12u_open_paint_black#paint_black  tris=3688
+  mesh rack_12u_open_paint_white#paint_white  tris=288
+  mesh rack_12u_open_rubber#rubber  tris=288
+  mesh rack_12u_open_steel#steel  tris=588
+  mesh rack_12u_open_tex_rack_print#tex_rack_print  tris=98
+  A_HIT_0 pos=(-0.262, 0.345, 0.001) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.04000,0.69000,0.80000 meta=
+  A_HIT_1 pos=(0.262, 0.345, 0.001) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.04000,0.69000,0.80000 meta=
+  A_HIT_2 pos=(-0.0, 0.07, 0.001) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.56000,0.07000,0.80000 meta=
+  A_RACKU_0 pos=(-0.0, 0.115, 0.371) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=1,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_1 pos=(-0.0, 0.15945, 0.371) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=2,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_10 pos=(-0.0, 0.5595, 0.371) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=11,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_11 pos=(-0.0, 0.60395, 0.371) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=12,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_2 pos=(-0.0, 0.2039, 0.371) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=3,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_3 pos=(-0.0, 0.24835, 0.371) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=4,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_4 pos=(-0.0, 0.2928, 0.371) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=5,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_5 pos=(-0.0, 0.33725, 0.371) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=6,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_6 pos=(-0.0, 0.3817, 0.371) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=7,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_7 pos=(-0.0, 0.42615, 0.371) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=8,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_8 pos=(-0.0, 0.4706, 0.371) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=9,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_9 pos=(-0.0, 0.51505, 0.371) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=10,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+bounds min=(-0.2965, 0.0003, -0.4190) max=(0.2965, 0.6914, 0.3760) size=(0.5930, 0.6911, 0.7950)
+frame: floor at y=0, footprint centred; front mounting plane z=0.371, rear rails' rear face z=-0.371; U1 bottom y=0.115, top of U12 y=0.6484

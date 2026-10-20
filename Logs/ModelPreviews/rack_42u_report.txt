@@ -1,0 +1,83 @@
+rack_42u: 20442 triangles, 29 meshes
+  mesh door_front_0@A_DOOR_FRONT_0#black_plastic  tris=152
+  mesh door_front_0@A_DOOR_FRONT_0#dark_plastic  tris=12
+  mesh door_front_0@A_DOOR_FRONT_0#nickel  tris=96
+  mesh door_front_0@A_DOOR_FRONT_0#paint_black  tris=192
+  mesh door_front_0@A_DOOR_FRONT_0#steel_dark  tris=144
+  mesh door_front_0@A_DOOR_FRONT_0#tex_rack_perf  tris=432
+  mesh door_front_0@A_DOOR_FRONT_0#tex_rack_print  tris=2
+  mesh door_rear_0@A_DOOR_REAR_0#black_plastic  tris=152
+  mesh door_rear_0@A_DOOR_REAR_0#paint_black  tris=192
+  mesh door_rear_0@A_DOOR_REAR_0#steel_dark  tris=144
+  mesh door_rear_0@A_DOOR_REAR_0#tex_rack_perf  tris=216
+  mesh door_rear_1@A_DOOR_REAR_1#black_plastic  tris=152
+  mesh door_rear_1@A_DOOR_REAR_1#paint_black  tris=192
+  mesh door_rear_1@A_DOOR_REAR_1#steel_dark  tris=144
+  mesh door_rear_1@A_DOOR_REAR_1#tex_rack_perf  tris=216
+  mesh panel_side_0@A_PANEL_SIDE_0#black_plastic  tris=228
+  mesh panel_side_0@A_PANEL_SIDE_0#nickel  tris=112
+  mesh panel_side_0@A_PANEL_SIDE_0#paint_black  tris=148
+  mesh panel_side_1@A_PANEL_SIDE_1#black_plastic  tris=228
+  mesh panel_side_1@A_PANEL_SIDE_1#nickel  tris=112
+  mesh panel_side_1@A_PANEL_SIDE_1#paint_black  tris=148
+  mesh rack_42u_black_plastic#black_plastic  tris=480
+  mesh rack_42u_grey_plastic#grey_plastic  tris=192
+  mesh rack_42u_nickel#nickel  tris=24
+  mesh rack_42u_paint_black#paint_black  tris=12800
+  mesh rack_42u_paint_white#paint_white  tris=1008
+  mesh rack_42u_rubber#rubber  tris=648
+  mesh rack_42u_steel#steel  tris=1536
+  mesh rack_42u_tex_rack_print#tex_rack_print  tris=340
+  A_DOOR_FRONT_0 pos=(-0.296, 1.02, 0.525) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.60000,1.90000,0.02000 meta=hinge=y,open=-110,lock=1,handle=A_HANDLE_0
+  A_DOOR_REAR_0 pos=(-0.296, 1.02, -0.525) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.30000,1.90000,0.02000 meta=hinge=y,open=110,lock=0,leaf=0
+  A_DOOR_REAR_1 pos=(0.296, 1.02, -0.525) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.30000,1.90000,0.02000 meta=hinge=y,open=-110,lock=1,leaf=1
+  A_HANDLE_0@A_DOOR_FRONT_0 pos=(0.26, 1.035, 0.551) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02000,0.10000,0.02000 meta=turn=90,lock=1
+  A_HIT_0 pos=(-0.0, 1.0, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.60000,2.00000,1.07000 meta=
+  A_PANEL_SIDE_0 pos=(-0.3, 1.016, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02000,1.88800,1.01000 meta=remove=-x,dist=0.06,lift=+y,latch=2,order=0
+  A_PANEL_SIDE_1 pos=(0.3, 1.016, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02000,1.88800,1.01000 meta=remove=+x,dist=0.06,lift=+y,latch=2,order=0
+  A_PDU_0 pos=(-0.27, 0.12, -0.445) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.05600,1.80000,0.04400 meta=zeroU=1,len=1.80,side=l,mount=buttons,model=pdu_0u
+  A_PDU_1 pos=(0.27, 0.12, -0.445) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.05600,1.80000,0.04400 meta=zeroU=1,len=1.80,side=r,mount=buttons,model=pdu_0u
+  A_RACKU_0 pos=(-0.0, 0.09, 0.41) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=1,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_1 pos=(-0.0, 0.13445, 0.41) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=2,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_10 pos=(-0.0, 0.5345, 0.41) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=11,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_11 pos=(-0.0, 0.57895, 0.41) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=12,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_12 pos=(-0.0, 0.6234, 0.41) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=13,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_13 pos=(-0.0, 0.66785, 0.41) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=14,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_14 pos=(-0.0, 0.7123, 0.41) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=15,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_15 pos=(-0.0, 0.75675, 0.41) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=16,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_16 pos=(-0.0, 0.8012, 0.41) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=17,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_17 pos=(-0.0, 0.84565, 0.41) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=18,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_18 pos=(-0.0, 0.8901, 0.41) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=19,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_19 pos=(-0.0, 0.93455, 0.41) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=20,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_2 pos=(-0.0, 0.1789, 0.41) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=3,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_20 pos=(-0.0, 0.979, 0.41) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=21,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_21 pos=(-0.0, 1.02345, 0.41) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=22,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_22 pos=(-0.0, 1.0679, 0.41) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=23,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_23 pos=(-0.0, 1.11235, 0.41) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=24,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_24 pos=(-0.0, 1.1568, 0.41) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=25,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_25 pos=(-0.0, 1.20125, 0.41) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=26,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_26 pos=(-0.0, 1.2457, 0.41) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=27,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_27 pos=(-0.0, 1.29015, 0.41) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=28,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_28 pos=(-0.0, 1.3346, 0.41) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=29,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_29 pos=(-0.0, 1.37905, 0.41) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=30,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_3 pos=(-0.0, 0.22335, 0.41) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=4,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_30 pos=(-0.0, 1.4235, 0.41) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=31,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_31 pos=(-0.0, 1.46795, 0.41) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=32,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_32 pos=(-0.0, 1.5124, 0.41) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=33,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_33 pos=(-0.0, 1.55685, 0.41) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=34,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_34 pos=(-0.0, 1.6013, 0.41) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=35,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_35 pos=(-0.0, 1.64575, 0.41) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=36,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_36 pos=(-0.0, 1.6902, 0.41) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=37,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_37 pos=(-0.0, 1.73465, 0.41) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=38,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_38 pos=(-0.0, 1.7791, 0.41) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=39,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_39 pos=(-0.0, 1.82355, 0.41) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=40,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_4 pos=(-0.0, 0.2678, 0.41) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=5,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_40 pos=(-0.0, 1.868, 0.41) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=41,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_41 pos=(-0.0, 1.91245, 0.41) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=42,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_5 pos=(-0.0, 0.31225, 0.41) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=6,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_6 pos=(-0.0, 0.3567, 0.41) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=7,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_7 pos=(-0.0, 0.40115, 0.41) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=8,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_8 pos=(-0.0, 0.4456, 0.41) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=9,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+  A_RACKU_9 pos=(-0.0, 0.49005, 0.41) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04445,0.74000 meta=u=10,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74
+bounds min=(-0.3052, -0.0005, -0.5480) max=(0.3052, 2.0015, 0.5510) size=(0.6104, 2.0020, 1.0990)
+frame: floor at y=0, footprint centred; front mounting plane z=0.41, rear rails' rear face z=-0.332; U1 bottom y=0.09, top of U42 y=1.9569

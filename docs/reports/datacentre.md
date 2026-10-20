@@ -273,3 +273,76 @@ Moving pieces: `bay_n@A_BAY_n#alu` ×12, `bay_n@A_BAY_n#black_plastic` ×12, `ba
   ports, the rear ID LED, the shroud, the bezel lock and light bar, and `A_HIT_1/2` over the two ears.
 - The interior is looks only (no DIMM, CPU or fan-socket anchors yet). If the game later lets players swap DIMMs or
   fans, only anchors need adding.
+
+## rack_42u and rack_12u_open
+
+- **Frame:** origin on the floor at the centre of the footprint; +Z is the front, +Y up.
+- **Mounting:** two front rails whose front face is the front mounting plane (z = ZM) and two rear rails 0.740 behind
+  it (their flange faces the rear, its rear face at ZM − 0.742). Square 9.5 mm cage-nut holes at the EIA-310 heights
+  (6.35, 22.225 and 38.1 mm above the bottom of each U), centred ±232.55 mm, with the U numbers printed beside them
+  (front and rear) and a tick at each U boundary. The servers' slide rails span exactly this 0.740.
+- **`A_RACKU_n`** (n = 0 is U1 at the bottom): the install pose of a rack device. It sits at the centre of the front
+  mounting plane, at the **bottom** of that U, +Z out of the front, size 0.4826 × 0.04445 × 0.740. Meta
+  `u=<n+1>,pitch=0.04445,depth=0.74,extends=-z,base=bottom`. A k-U device installed at `A_RACKU_n` takes U n+1 … n+k,
+  and its origin lands exactly on the anchor.
+- **rack_42u** (600 × 1070 × 2000, black powder coat): ZM = 0.410, U1 bottom at y = 0.090, U42 top at y = 1.957.
+  Corner posts, top and bottom frames, rail support beams, a roof with two brush cable entries and a blanking
+  plate, a floor panel with a brushed cable entry, four casters and four levelling feet, the rating label and an
+  earth stud inside.
+  - `A_DOOR_FRONT_0` (`hinge=y,open=-110`, hinged on −x): a perforated door (hex perforation as an alpha-cut
+    tiled texture, `rack_perf.png`, two-sided), its folded frame, three hinges, the swing handle with a key lock
+    (`A_HANDLE_0@A_DOOR_FRONT_0`, `turn=90`) and the badge.
+  - The split rear doors: `A_DOOR_REAR_0` (−x hinge, `open=110`) and `A_DOOR_REAR_1` (+x hinge, `open=-110`). Both
+    open outwards; the preview `rack_42u_4/6` renders them open with these exact values.
+  - `A_PANEL_SIDE_0` (−x) and `A_PANEL_SIDE_1` (+x): removable side panels (`remove=∓x,lift=+y`) with folded edges,
+    inner ribs, two key latches and a grip.
+  - `A_PDU_0` (−x) and `A_PDU_1` (+x): zero-U PDU places in the rear side channels, 0.115 behind the rear rails,
+    at the bottom end of the PDU (y = 0.12), +Y along it, +Z (the outlet side) facing the rear door. This is the
+    `pdu_0u` model's frame. The channel has the keyhole brackets at the PDU's mounting-button heights.
+- **rack_12u_open:** a 4-post open frame, 560 × 800 × 690 on four castors. ZM = 0.371, U1 bottom at y = 0.115. The
+  four posts are C-profile rails, with box-section top and bottom frames, a cable tie bar across the rear and an
+  earth stud. `A_HIT_0/1` are the two sides, `A_HIT_2` the base.
+- Texture `rack_print.png`: the U numbers, door badge, rating label and earth sticker.
+
+### rack_42u
+
+- **Triangles:** 20,442 in 29 meshes.
+- **Bounds:** min=(-0.3052, -0.0005, -0.5480) max=(0.3052, 2.0015, 0.5510) size=(0.6104, 2.0020, 1.0990)
+
+| Anchor | Position | Fwd / up | Size | Meta |
+|---|---|---|---|---|
+| `A_DOOR_FRONT_0` | (-0.296, 1.02, 0.525) | +z / +y | 0.60000,1.90000,0.02000 | hinge=y,open=-110,lock=1,handle=A_HANDLE_0 |
+| `A_DOOR_REAR_0` | (-0.296, 1.02, -0.525) | +z / +y | 0.30000,1.90000,0.02000 | hinge=y,open=110,lock=0,leaf=0 |
+| `A_DOOR_REAR_1` | (0.296, 1.02, -0.525) | +z / +y | 0.30000,1.90000,0.02000 | hinge=y,open=-110,lock=1,leaf=1 |
+| `A_HANDLE_0@A_DOOR_FRONT_0` | (0.26, 1.035, 0.551) | +z / +y | 0.02000,0.10000,0.02000 | turn=90,lock=1 |
+| `A_HIT_0` | (0, 1, 0) | +z / +y | 0.60000,2.00000,1.07000 |  |
+| `A_PANEL_SIDE_0` | (-0.3, 1.016, 0) | +z / +y | 0.02000,1.88800,1.01000 | remove=-x,dist=0.06,lift=+y,latch=2,order=0 |
+| `A_PANEL_SIDE_1` | (0.3, 1.016, 0) | +z / +y | 0.02000,1.88800,1.01000 | remove=+x,dist=0.06,lift=+y,latch=2,order=0 |
+| `A_PDU_0` | (-0.27, 0.12, -0.445) | -z / +y | 0.05600,1.80000,0.04400 | zeroU=1,len=1.80,side=l,mount=buttons,model=pdu_0u |
+| `A_PDU_1` | (0.27, 0.12, -0.445) | -z / +y | 0.05600,1.80000,0.04400 | zeroU=1,len=1.80,side=r,mount=buttons,model=pdu_0u |
+| `A_RACKU_0..41 (42)` | (0, 0.09, 0.41) … (0, 1.9124, 0.41) | +z / +y | 0.48260,0.04445,0.74000 | u=1,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74 … u=42,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74 |
+
+Moving pieces: `door_front_n@A_DOOR_FRONT_n#black_plastic`, `door_front_n@A_DOOR_FRONT_n#dark_plastic`, `door_front_n@A_DOOR_FRONT_n#nickel`, `door_front_n@A_DOOR_FRONT_n#paint_black`, `door_front_n@A_DOOR_FRONT_n#steel_dark`, `door_front_n@A_DOOR_FRONT_n#tex_rack_perf`, `door_front_n@A_DOOR_FRONT_n#tex_rack_print`, `door_rear_n@A_DOOR_REAR_n#black_plastic` ×2, `door_rear_n@A_DOOR_REAR_n#paint_black` ×2, `door_rear_n@A_DOOR_REAR_n#steel_dark` ×2, `door_rear_n@A_DOOR_REAR_n#tex_rack_perf` ×2, `panel_side_n@A_PANEL_SIDE_n#black_plastic` ×2, `panel_side_n@A_PANEL_SIDE_n#nickel` ×2, `panel_side_n@A_PANEL_SIDE_n#paint_black` ×2.
+
+### rack_12u_open
+
+- **Triangles:** 5,274 in 8 meshes.
+- **Bounds:** min=(-0.2965, 0.0003, -0.4190) max=(0.2965, 0.6914, 0.3760) size=(0.5930, 0.6911, 0.7950)
+
+| Anchor | Position | Fwd / up | Size | Meta |
+|---|---|---|---|---|
+| `A_HIT_0` | (-0.262, 0.345, 0.001) | +z / +y | 0.04000,0.69000,0.80000 |  |
+| `A_HIT_1` | (0.262, 0.345, 0.001) | +z / +y | 0.04000,0.69000,0.80000 |  |
+| `A_HIT_2` | (0, 0.07, 0.001) | +z / +y | 0.56000,0.07000,0.80000 |  |
+| `A_RACKU_0..11 (12)` | (0, 0.115, 0.371) … (0, 0.6039, 0.371) | +z / +y | 0.48260,0.04445,0.74000 | u=1,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74 … u=12,pitch=0.04445,depth=0.74,extends=-z,base=bottom,rear=-0.74 |
+
+Moving pieces: none.
+
+**Deviations / notes**
+- **`A_RACKU_n` sits at the bottom of its U, not at the U's vertical centre.** The brief says both "the centre of
+  that U's front mounting plane" (the rack) and "origin … at the bottom of the device's U space, so it installs
+  directly at a rack's `A_RACKU_n`" (the devices). Only the bottom-of-U pose lets a device install directly, so I
+  chose that. The anchor is horizontally centred. The game's click box for a U should be offset by +U/2 in y and
+  by −0.37 in z if the game centres boxes on anchors; the meta `base=bottom,extends=-z` records this.
+- No cage nuts or blanking panels are modelled; devices list their screw points as `A_SCREW_RACK_n` (fixed
+  ears) or `A_SCREW_THUMB_n` (servers).
