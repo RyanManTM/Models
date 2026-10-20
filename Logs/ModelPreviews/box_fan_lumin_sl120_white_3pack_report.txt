@@ -26,5 +26,5 @@ box_fan_lumin_sl120_white_3pack: 2584 triangles, 14 meshes
   A_ITEM_PART_1@A_INSERT_CARD_0 pos=(-0.00479, 0.07235, 0.0162) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.14018,0.13245,0.03008 meta=bag=none,label=fan 2 of 3,order=4,parent=A_INSERT_CARD_0,under=A_INSERT_CARD_0
   A_ITEM_PART_2@A_INSERT_CARD_0 pos=(0.13839, 0.07235, 0.0162) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.14018,0.13245,0.03008 meta=bag=none,label=fan 3 of 3,order=4,parent=A_INSERT_CARD_0,under=A_INSERT_CARD_0
   A_SEAL_0 pos=(-0.0, 0.139, 0.03262) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01800,0.01200,0.00010 meta=shape=round,peel=+y,print=LUMIN SEALED,wrap=0.006,label=seal sticker,order=0
-shot from: cached
+shot from: fan_lumin_sl120_white
 Fan pack (3 fans, window box): round seal A_SEAL_0 (0) -> tuck lid A_FLAP_0 (1) -> dust flaps A_FLAP_1/2 (2) -> from the back pocket: 2 papers standing at the back wall and 2 accessories (12 x FAN SCREWS, ARGB FAN CONTROLLER) standing against the tray (3), and the die-cut card tray A_INSERT_CARD_0 lifted out (3) -> the fans A_ITEM_PART_0..2 out of the tray (4).
