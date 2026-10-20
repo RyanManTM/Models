@@ -418,6 +418,15 @@ def size_sandwich(pid, it):
     return sandwich_plan(pid, it)["s"]
 
 
+def acc_names(accs):
+    """The anchor names of the accessories, in order: brackets A_ITEM_ACC_<n>, cables A_ITEM_CORD_<n>."""
+    out, n = [], {"bracket": 0, "cord": 0}
+    for (k, _), _, _ in accs:
+        out.append(f"A_ITEM_{'ACC' if k == 'bracket' else 'CORD'}_{n[k]}")
+        n[k] += 1
+    return out
+
+
 def build_sandwich(ctx):
     pid = ctx.pid
     sx, sy, sz = ctx.s
@@ -452,8 +461,7 @@ def build_sandwich(ctx):
         R.cut(ob, cuts)
     # the bottom foam: the part's pocket, finger notches, the accessories' pockets
     bot = R.anchor("A_INSERT_FOAM_0", F((0, y0, 0)), (inX, ys - y0, inZ), lift="+y", dist=0.08, label="bottom foam",
-                   order=o_bot, under=["A_ITEM_PART_0"] + [f"A_ITEM_{'ACC' if k == 'bracket' else 'CORD'}_{i}"
-                                                             for i, ((k, _), _, _) in enumerate(q["accs"])])
+                   order=o_bot, under=["A_ITEM_PART_0"] + acc_names(q["accs"]))
     ob = R.cube("foam_bottom", (0, (y0 + ys) / 2, 0), (inX, ys - y0, inZ), "pe_foam", anc=bot, bevel=0.0015)
     cuts = [RC.tmp_cube((pcen[0], (ypb + ys) / 2 + 0.0005, pcen[1]), (pd[0], ys - ypb + 0.001, pd[2]), bevel=0.001)]
     nr = min(0.014, pd[2] * 0.25)
@@ -469,7 +477,7 @@ def build_sandwich(ctx):
              label=sp["label"], order=o_part, under=[top])
     # the accessories in their pockets
     ia, ic = 0, 0
-    acc_names = []
+    anames = []
     for (k, ref), d, (ax, az) in q["accs"]:
         yb = ys - d[1] - 0.002 + 0.0005
         if k == "bracket":
@@ -484,19 +492,19 @@ def build_sandwich(ctx):
             R.anchor(nm, flat_frame((ax, yb, az)), (w, h, tt), parent=bot, kind=ref, tie="twist",
                      label={"sff8654": "SFF-8654 cable", "12v2x6": "auxiliary power cable"}[ref], order=o_part, under=[top])
             ic += 1
-        acc_names.append(nm)
+        anames.append(nm)
     R.anchor("A_HIT_0", F((0, sy / 2, 0)), (sx, sy, sz))
-    R.explode = {"A_INSERT_FOAM_1": (0, 0.10 + sy, 0), "A_ITEM_PART_0": (0, 0.06 + sy * 0.6, 0), "A_INSERT_FOAM_0": (0, 0.0, 0),
+    R.explode = {"A_INSERT_FOAM_1": (0, 0.10 + sy, -sz * 0.75), "A_ITEM_PART_0": (0, 0.07 + sy * 0.8, 0), "A_INSERT_FOAM_0": (0, 0.0, 0),
                  "A_TAPE_0": (-0.03, 0.02, 0), "A_TAPE_1": (0, 0.03, 0), "A_TAPE_2": (0.03, 0.02, 0)}
-    for i, nm in enumerate(acc_names):
+    for i, nm in enumerate(anames):
         R.explode[nm] = (0.0, 0.05 + sy * 0.4, sz * 0.6 + 0.03 * i)
-    explode_docs(R, names, (0.0, 0.16 + sy * 1.2, 0.06), (0.0, 0.02, 0.06))
+    explode_docs(R, names, (0.0, 0.16 + sy * 1.4, -sz * 0.75), (0.0, 0.02, 0.05))
     R.open_view = (24, 55)
     R.explode_view = (26, 32)
     R.explode_fill = 0.78
     acc_txt = ""
-    if acc_names:
-        acc_txt = " and " + ", ".join(f"{a} ({k})" for a, ((k, _), _, _) in zip(acc_names, q["accs"]))
+    if anames:
+        acc_txt = " and " + ", ".join(f"{a} ({k})" for a, ((k, _), _, _) in zip(anames, q["accs"]))
     NOTES[pid] = (f"OEM foam carton ({ctx.it['kind']}): tape strip 0 A_TAPE_0..2 (0) -> long flaps A_FLAP_0/1 (1) -> short flaps "
                   f"A_FLAP_2/3 (2) -> {n} papers on the top foam, top first (3..{2 + n}) -> top foam A_INSERT_FOAM_1 ({o_top}) "
                   f"-> {sp['label']} in its bag (bag={ctx.it.get('bag')}){acc_txt} in their pockets ({o_part}) -> bottom foam "

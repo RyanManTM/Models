@@ -4,7 +4,7 @@ Brief: `docs/tasks/catalog/19-boxes.md` ("server parts"). The coordinator folds 
 and writes `box` / `box_size` into the catalogue JSON (not done here).
 
 ## Status
-**14 of 24 boxes built.** Done: cpu_epoch_9124, cpu_epoch_9354, cpu_epoch_9654, cpu_tiron_plat_8480, ram_kingsland_rdimm5_32, ram_sorin_rdimm5_64, ram_crux_rdimm5_128, ram_kingsland_rdimm4_32, ssd_sorin_pm9a3_3840, ssd_sorin_pm9a3_7680, cooler_srv_epoch_1u, cooler_srv_platinum_2u, psu_strata_crps_800, psu_strata_crps_1600. Not built yet: nic_linkwave_350t2, nic_linkwave_710da2, nic_melnet_strand6_25g, nic_melnet_strand6_100g, hba_broadline_9500_16i, hba_broadline_9560_16i, gpu_verdia_t100, gpu_voltra_mi210, mb_strata_spv, mb_strata_l46.
+**22 of 24 boxes built.** Done: cpu_epoch_9124, cpu_epoch_9354, cpu_epoch_9654, cpu_tiron_plat_8480, ram_kingsland_rdimm5_32, ram_sorin_rdimm5_64, ram_crux_rdimm5_128, ram_kingsland_rdimm4_32, ssd_sorin_pm9a3_3840, ssd_sorin_pm9a3_7680, cooler_srv_epoch_1u, cooler_srv_platinum_2u, psu_strata_crps_800, psu_strata_crps_1600, nic_linkwave_350t2, nic_linkwave_710da2, nic_melnet_strand6_25g, nic_melnet_strand6_100g, hba_broadline_9500_16i, hba_broadline_9560_16i, gpu_verdia_t100, gpu_voltra_mi210. Not built yet: mb_strata_spv, mb_strata_l46.
 
 ## What was made
 - **`Tools/Blender/rig_oem.py`** (new rig module, listed in `build_boxes.RIG_MODULES`): the builders of the kinds
@@ -91,14 +91,14 @@ folded on the manual, and the warranty card.
 | `box_cooler_srv_platinum_2u` | `oem_heatsink` | 0.12 × 0.115 × 0.145 | 552 | OEM foam carton (oem_heatsink): tape strip 0 A_TAPE_0..2 (0) -> long flaps A_FLAP_0/1 (1) -> short flaps A_FLAP_2/3 (2) -> 3 papers on the top foam, top first (3..5) -> top foam A_INSERT_FOAM_1 (6) -> heatsink in its bag (bag=none) in their pockets (7) -> bottom foam A_INSERT_FOAM_0 (8). |
 | `box_psu_strata_crps_800` | `oem_psu` | 0.265 × 0.065 × 0.11 | 868 | CRPS PSU: tape strip 0 A_TAPE_0..2 (0) -> long flaps (1) -> short flaps (2) -> 3 papers in a pile, top first (3..5) -> the module in its pink bag, lifted out WITH its two EPS end caps (6) -> caps A_INSERT_FOAM_0/1 pulled off along -x/+x (7). |
 | `box_psu_strata_crps_1600` | `oem_psu` | 0.265 × 0.065 × 0.11 | 868 | CRPS PSU: tape strip 0 A_TAPE_0..2 (0) -> long flaps (1) -> short flaps (2) -> 3 papers in a pile, top first (3..5) -> the module in its pink bag, lifted out WITH its two EPS end caps (6) -> caps A_INSERT_FOAM_0/1 pulled off along -x/+x (7). |
-| `box_nic_linkwave_350t2` | `oem_card` | not built | | |
-| `box_nic_linkwave_710da2` | `oem_card` | not built | | |
-| `box_nic_melnet_strand6_25g` | `oem_card` | not built | | |
-| `box_nic_melnet_strand6_100g` | `oem_card` | not built | | |
-| `box_hba_broadline_9500_16i` | `oem_card` | not built | | |
-| `box_hba_broadline_9560_16i` | `oem_card` | not built | | |
-| `box_gpu_verdia_t100` | `oem_card` | not built | | |
-| `box_gpu_voltra_mi210` | `oem_card` | not built | | |
+| `box_nic_linkwave_350t2` | `oem_card` | 0.18 × 0.06 × 0.19 | 712 | OEM foam carton (oem_card): tape strip 0 A_TAPE_0..2 (0) -> long flaps A_FLAP_0/1 (1) -> short flaps A_FLAP_2/3 (2) -> 3 papers on the top foam, top first (3..5) -> top foam A_INSERT_FOAM_1 (6) -> network card in its bag (bag=antistatic_silver) and A_ITEM_ACC_0 (bracket) in their pockets (7) -> bottom foam A_INSERT_FOAM_0 (8). |
+| `box_nic_linkwave_710da2` | `oem_card` | 0.22 × 0.06 × 0.19 | 788 | OEM foam carton (oem_card): tape strip 0 A_TAPE_0..2 (0) -> long flaps A_FLAP_0/1 (1) -> short flaps A_FLAP_2/3 (2) -> 3 papers on the top foam, top first (3..5) -> top foam A_INSERT_FOAM_1 (6) -> network card in its bag (bag=antistatic_silver) and A_ITEM_ACC_0 (bracket) in their pockets (7) -> bottom foam A_INSERT_FOAM_0 (8). |
+| `box_nic_melnet_strand6_25g` | `oem_card` | 0.22 × 0.06 × 0.19 | 788 | OEM foam carton (oem_card): tape strip 0 A_TAPE_0..2 (0) -> long flaps A_FLAP_0/1 (1) -> short flaps A_FLAP_2/3 (2) -> 3 papers on the top foam, top first (3..5) -> top foam A_INSERT_FOAM_1 (6) -> network card in its bag (bag=antistatic_silver) and A_ITEM_ACC_0 (bracket) in their pockets (7) -> bottom foam A_INSERT_FOAM_0 (8). |
+| `box_nic_melnet_strand6_100g` | `oem_card` | 0.22 × 0.06 × 0.19 | 788 | OEM foam carton (oem_card): tape strip 0 A_TAPE_0..2 (0) -> long flaps A_FLAP_0/1 (1) -> short flaps A_FLAP_2/3 (2) -> 3 papers on the top foam, top first (3..5) -> top foam A_INSERT_FOAM_1 (6) -> network card in its bag (bag=antistatic_silver) and A_ITEM_ACC_0 (bracket) in their pockets (7) -> bottom foam A_INSERT_FOAM_0 (8). |
+| `box_hba_broadline_9500_16i` | `oem_card` | 0.22 × 0.06 × 0.25 | 876 | OEM foam carton (oem_card): tape strip 0 A_TAPE_0..2 (0) -> long flaps A_FLAP_0/1 (1) -> short flaps A_FLAP_2/3 (2) -> 3 papers on the top foam, top first (3..5) -> top foam A_INSERT_FOAM_1 (6) -> storage controller in its bag (bag=antistatic_silver) and A_ITEM_ACC_0 (bracket), A_ITEM_CORD_0 (cord) in their pockets (7) -> bottom foam A_INSERT_FOAM_0 (8). |
+| `box_hba_broadline_9560_16i` | `oem_card` | 0.28 × 0.06 × 0.25 | 872 | OEM foam carton (oem_card): tape strip 0 A_TAPE_0..2 (0) -> long flaps A_FLAP_0/1 (1) -> short flaps A_FLAP_2/3 (2) -> 4 papers on the top foam, top first (3..6) -> top foam A_INSERT_FOAM_1 (7) -> storage controller in its bag (bag=antistatic_silver) and A_ITEM_ACC_0 (bracket), A_ITEM_CORD_0 (cord) in their pockets (8) -> bottom foam A_INSERT_FOAM_0 (9). |
+| `box_gpu_verdia_t100` | `oem_card` | 0.32 × 0.085 × 0.245 | 720 | OEM foam carton (oem_card): tape strip 0 A_TAPE_0..2 (0) -> long flaps A_FLAP_0/1 (1) -> short flaps A_FLAP_2/3 (2) -> 3 papers on the top foam, top first (3..5) -> top foam A_INSERT_FOAM_1 (6) -> accelerator card in its bag (bag=antistatic_silver) and A_ITEM_CORD_0 (cord) in their pockets (7) -> bottom foam A_INSERT_FOAM_0 (8). |
+| `box_gpu_voltra_mi210` | `oem_card` | 0.32 × 0.085 × 0.165 | 600 | OEM foam carton (oem_card): tape strip 0 A_TAPE_0..2 (0) -> long flaps A_FLAP_0/1 (1) -> short flaps A_FLAP_2/3 (2) -> 3 papers on the top foam, top first (3..5) -> top foam A_INSERT_FOAM_1 (6) -> accelerator card in its bag (bag=antistatic_silver) in their pockets (7) -> bottom foam A_INSERT_FOAM_0 (8). |
 | `box_mb_strata_spv` | `oem_board` | not built | | |
 | `box_mb_strata_l46` | `oem_board` | not built | | |
 
