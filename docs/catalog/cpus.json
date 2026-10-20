@@ -1,0 +1,427 @@
+[
+  {
+    "id": "cpu_arc3_8300g",
+    "model": "cpu_arc3_8300g",
+    "brand": "Arc",
+    "name": "Arc 3 8300G",
+    "category": "CPU",
+    "price": 119,
+    "power_w": 65,
+    "color": "#C4C6C9",
+    "rgb": false,
+    "analog": "AMD Ryzen 3 8300G (docs only, never shown in game)",
+    "desc": "A 4-core Socket V5 APU with built-in graphics, for a cheap first build without a graphics card.",
+    "specs": {
+      "cores": 4,
+      "threads": 8,
+      "base_ghz": 3.4,
+      "boost_ghz": 4.9,
+      "l3_mb": 8,
+      "tdp_w": 65,
+      "peak_w": 88,
+      "igpu": "Voltra 740M"
+    },
+    "game": {
+      "socket": "V5",
+      "perf": 0
+    },
+    "contract": "cpu_arc5",
+    "new_contract": false
+  },
+  {
+    "id": "cpu_arc5_9600x",
+    "model": "cpu_arc5_9600x",
+    "brand": "Arc",
+    "name": "Arc 5 9600X",
+    "category": "CPU",
+    "price": 189,
+    "power_w": 65,
+    "color": "#C4C6C9",
+    "rgb": false,
+    "analog": "AMD Ryzen 5 9600X (docs only, never shown in game)",
+    "desc": "6 fast cores on Socket V5: the sensible gaming chip.",
+    "specs": {
+      "cores": 6,
+      "threads": 12,
+      "base_ghz": 3.9,
+      "boost_ghz": 5.4,
+      "l3_mb": 32,
+      "tdp_w": 65,
+      "peak_w": 88,
+      "igpu": "Voltra (2 CU)"
+    },
+    "game": {
+      "socket": "V5",
+      "perf": 0
+    },
+    "contract": "cpu_arc5",
+    "new_contract": false
+  },
+  {
+    "id": "cpu_arc7_9700x",
+    "model": "cpu_arc7_9700x",
+    "brand": "Arc",
+    "name": "Arc 7 9700X",
+    "category": "CPU",
+    "price": 279,
+    "power_w": 65,
+    "color": "#C4C6C9",
+    "rgb": false,
+    "analog": "AMD Ryzen 7 9700X (docs only, never shown in game)",
+    "desc": "8 cores at 65 W on Socket V5, cool and quick.",
+    "specs": {
+      "cores": 8,
+      "threads": 16,
+      "base_ghz": 3.8,
+      "boost_ghz": 5.5,
+      "l3_mb": 32,
+      "tdp_w": 65,
+      "peak_w": 88,
+      "igpu": "Voltra (2 CU)"
+    },
+    "game": {
+      "socket": "V5",
+      "perf": 0
+    },
+    "contract": "cpu_arc5",
+    "new_contract": false
+  },
+  {
+    "id": "cpu_arc7_9800x3d",
+    "model": "cpu_arc7_9800x3d",
+    "brand": "Arc",
+    "name": "Arc 7 9800X3D",
+    "category": "CPU",
+    "price": 469,
+    "power_w": 120,
+    "color": "#C4C6C9",
+    "rgb": false,
+    "analog": "AMD Ryzen 7 9800X3D (docs only, never shown in game)",
+    "desc": "8 cores with stacked 3D cache: the fastest gaming CPU you can buy.",
+    "specs": {
+      "cores": 8,
+      "threads": 16,
+      "base_ghz": 4.7,
+      "boost_ghz": 5.2,
+      "l3_mb": 96,
+      "tdp_w": 120,
+      "peak_w": 162,
+      "igpu": "Voltra (2 CU)",
+      "cache_3d": true
+    },
+    "game": {
+      "socket": "V5",
+      "perf": 0
+    },
+    "contract": "cpu_arc5",
+    "new_contract": false
+  },
+  {
+    "id": "cpu_arc9_9950x3d",
+    "model": "cpu_arc9_9950x3d",
+    "brand": "Arc",
+    "name": "Arc 9 9950X3D",
+    "category": "CPU",
+    "price": 649,
+    "power_w": 170,
+    "color": "#C4C6C9",
+    "rgb": false,
+    "analog": "AMD Ryzen 9 9950X3D (docs only, never shown in game)",
+    "desc": "16 cores and 3D cache on Socket V5, for gaming and heavy work alike.",
+    "specs": {
+      "cores": 16,
+      "threads": 32,
+      "base_ghz": 4.3,
+      "boost_ghz": 5.7,
+      "l3_mb": 128,
+      "tdp_w": 170,
+      "peak_w": 230,
+      "igpu": "Voltra (2 CU)",
+      "cache_3d": true
+    },
+    "game": {
+      "socket": "V5",
+      "perf": 0
+    },
+    "contract": "cpu_arc5",
+    "new_contract": false
+  },
+  {
+    "id": "cpu_tiron_i3_14100",
+    "model": "cpu_tiron_i3_14100",
+    "brand": "Tiron",
+    "name": "Tiron i3-14100",
+    "category": "CPU",
+    "price": 109,
+    "power_w": 60,
+    "color": "#C4C6C9",
+    "rgb": false,
+    "analog": "Intel Core i3-14100 (docs only, never shown in game)",
+    "desc": "4 cores on Socket L17 with integrated graphics: a budget office or starter chip.",
+    "specs": {
+      "cores": 4,
+      "threads": 8,
+      "base_ghz": 3.5,
+      "boost_ghz": 4.7,
+      "l3_mb": 12,
+      "tdp_w": 60,
+      "peak_w": 110,
+      "igpu": "Tiron UHD 730",
+      "p_cores": 4,
+      "e_cores": 0
+    },
+    "game": {
+      "socket": "L17",
+      "perf": 0
+    },
+    "contract": "cpu_tiron5",
+    "new_contract": false
+  },
+  {
+    "id": "cpu_tiron_i5_14600k",
+    "model": "cpu_tiron_i5_14600k",
+    "brand": "Tiron",
+    "name": "Tiron i5-14600K",
+    "category": "CPU",
+    "price": 229,
+    "power_w": 125,
+    "color": "#C4C6C9",
+    "rgb": false,
+    "analog": "Intel Core i5-14600K (docs only, never shown in game)",
+    "desc": "14 cores, unlocked: the overclocker's favourite on Socket L17.",
+    "specs": {
+      "cores": 14,
+      "threads": 20,
+      "base_ghz": 3.5,
+      "boost_ghz": 5.3,
+      "l3_mb": 24,
+      "tdp_w": 125,
+      "peak_w": 181,
+      "igpu": "Tiron UHD 770",
+      "p_cores": 6,
+      "e_cores": 8,
+      "unlocked": true
+    },
+    "game": {
+      "socket": "L17",
+      "perf": 0
+    },
+    "contract": "cpu_tiron5",
+    "new_contract": false
+  },
+  {
+    "id": "cpu_tiron_i7_14700",
+    "model": "cpu_tiron_i7_14700",
+    "brand": "Tiron",
+    "name": "Tiron i7-14700",
+    "category": "CPU",
+    "price": 309,
+    "power_w": 65,
+    "color": "#C4C6C9",
+    "rgb": false,
+    "analog": "Intel Core i7-14700 (docs only, never shown in game)",
+    "desc": "20 cores at a 65 W base: lots of threads for a quiet workstation.",
+    "specs": {
+      "cores": 20,
+      "threads": 28,
+      "base_ghz": 2.1,
+      "boost_ghz": 5.4,
+      "l3_mb": 33,
+      "tdp_w": 65,
+      "peak_w": 219,
+      "igpu": "Tiron UHD 770",
+      "p_cores": 8,
+      "e_cores": 12
+    },
+    "game": {
+      "socket": "L17",
+      "perf": 0
+    },
+    "contract": "cpu_tiron5",
+    "new_contract": false
+  },
+  {
+    "id": "cpu_tiron_i7_14700k",
+    "model": "cpu_tiron_i7_14700k",
+    "brand": "Tiron",
+    "name": "Tiron i7-14700K",
+    "category": "CPU",
+    "price": 329,
+    "power_w": 125,
+    "color": "#C4C6C9",
+    "rgb": false,
+    "analog": "Intel Core i7-14700K (docs only, never shown in game)",
+    "desc": "20 cores, unlocked, up to 5.6 GHz. Bring a big cooler.",
+    "specs": {
+      "cores": 20,
+      "threads": 28,
+      "base_ghz": 3.4,
+      "boost_ghz": 5.6,
+      "l3_mb": 33,
+      "tdp_w": 125,
+      "peak_w": 253,
+      "igpu": "Tiron UHD 770",
+      "p_cores": 8,
+      "e_cores": 12,
+      "unlocked": true
+    },
+    "game": {
+      "socket": "L17",
+      "perf": 0
+    },
+    "contract": "cpu_tiron5",
+    "new_contract": false
+  },
+  {
+    "id": "cpu_tiron_i9_14900k",
+    "model": "cpu_tiron_i9_14900k",
+    "brand": "Tiron",
+    "name": "Tiron i9-14900K",
+    "category": "CPU",
+    "price": 429,
+    "power_w": 125,
+    "color": "#C4C6C9",
+    "rgb": false,
+    "analog": "Intel Core i9-14900K (docs only, never shown in game)",
+    "desc": "24 cores and 6.0 GHz: the hottest chip on Socket L17, in every sense.",
+    "specs": {
+      "cores": 24,
+      "threads": 32,
+      "base_ghz": 3.2,
+      "boost_ghz": 6.0,
+      "l3_mb": 36,
+      "tdp_w": 125,
+      "peak_w": 253,
+      "igpu": "Tiron UHD 770",
+      "p_cores": 8,
+      "e_cores": 16,
+      "unlocked": true
+    },
+    "game": {
+      "socket": "L17",
+      "perf": 0
+    },
+    "contract": "cpu_tiron5",
+    "new_contract": false
+  },
+  {
+    "id": "cpu_epoch_9124",
+    "model": "cpu_epoch_9124",
+    "brand": "Arc Epoch",
+    "name": "Arc Epoch 9124",
+    "category": "CPU",
+    "price": 1149,
+    "power_w": 200,
+    "color": "#C4C6C9",
+    "rgb": false,
+    "analog": "AMD EPYC 9124 (docs only, never shown in game)",
+    "desc": "An entry 16-core server CPU for Socket SP-V, with 12 memory channels. Ships in its orange carrier.",
+    "specs": {
+      "cores": 16,
+      "threads": 32,
+      "base_ghz": 3.0,
+      "boost_ghz": 3.7,
+      "l3_mb": 64,
+      "tdp_w": 200,
+      "peak_w": 200,
+      "mem_channels": 12,
+      "pcie_lanes": 128
+    },
+    "game": {
+      "socket": "SP-V",
+      "perf": 0
+    },
+    "contract": "cpu_spv",
+    "new_contract": true
+  },
+  {
+    "id": "cpu_epoch_9354",
+    "model": "cpu_epoch_9354",
+    "brand": "Arc Epoch",
+    "name": "Arc Epoch 9354",
+    "category": "CPU",
+    "price": 3099,
+    "power_w": 280,
+    "color": "#C4C6C9",
+    "rgb": false,
+    "analog": "AMD EPYC 9354 (docs only, never shown in game)",
+    "desc": "32 cores and 256 MB of cache for Socket SP-V: a strong virtualisation host.",
+    "specs": {
+      "cores": 32,
+      "threads": 64,
+      "base_ghz": 3.25,
+      "boost_ghz": 3.8,
+      "l3_mb": 256,
+      "tdp_w": 280,
+      "peak_w": 280,
+      "mem_channels": 12,
+      "pcie_lanes": 128
+    },
+    "game": {
+      "socket": "SP-V",
+      "perf": 0
+    },
+    "contract": "cpu_spv",
+    "new_contract": true
+  },
+  {
+    "id": "cpu_epoch_9654",
+    "model": "cpu_epoch_9654",
+    "brand": "Arc Epoch",
+    "name": "Arc Epoch 9654",
+    "category": "CPU",
+    "price": 5199,
+    "power_w": 360,
+    "color": "#C4C6C9",
+    "rgb": false,
+    "analog": "AMD EPYC 9654 (docs only, never shown in game)",
+    "desc": "96 cores in one socket: the flagship of Socket SP-V.",
+    "specs": {
+      "cores": 96,
+      "threads": 192,
+      "base_ghz": 2.4,
+      "boost_ghz": 3.7,
+      "l3_mb": 384,
+      "tdp_w": 360,
+      "peak_w": 360,
+      "mem_channels": 12,
+      "pcie_lanes": 128
+    },
+    "game": {
+      "socket": "SP-V",
+      "perf": 0
+    },
+    "contract": "cpu_spv",
+    "new_contract": true
+  },
+  {
+    "id": "cpu_tiron_plat_8480",
+    "model": "cpu_tiron_plat_8480",
+    "brand": "Tiron",
+    "name": "Tiron Platinum 8480",
+    "category": "CPU",
+    "price": 4199,
+    "power_w": 350,
+    "color": "#C4C6C9",
+    "rgb": false,
+    "analog": "Intel Xeon Platinum 8480+ (docs only, never shown in game)",
+    "desc": "56 cores on Socket L46, with 8 memory channels and built-in accelerators. Ships in its carrier clip.",
+    "specs": {
+      "cores": 56,
+      "threads": 112,
+      "base_ghz": 2.0,
+      "boost_ghz": 3.8,
+      "l3_mb": 105,
+      "tdp_w": 350,
+      "peak_w": 350,
+      "mem_channels": 8,
+      "pcie_lanes": 80
+    },
+    "game": {
+      "socket": "L46",
+      "perf": 0
+    },
+    "contract": "cpu_l46",
+    "new_contract": true
+  }
+]
