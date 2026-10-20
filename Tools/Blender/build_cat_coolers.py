@@ -497,7 +497,74 @@ TOWERS = {
 }
 
 
+def build_low_profile():
+    """Noctua NH-L9-style: 37 mm tall. A nickel base block, two flat U heat pipes through a stack of 9 horizontal
+    fins (95 x 95 mm), a 92 x 14 mm fan on top blowing down. The cooler_tower screws keep their exact poses: they sit
+    in wells cut through the fins, on a flat mounting plate (the X bracket's job) under the stack."""
+    pid = "cooler_noctis_l9"
+    cfg = tower_cfg(brand="Noctis", model_line="NH-L9", draw_top=noctis_top, draw_top2=noctis_top2,
+                    draw_hub=noctis_hub, top_bg="#b8bbbf", top_fg="#3a2a22", accent="#6b3b2a", hub_bg="#6b3b2a",
+                    hub_fg="#e3d2b4", film_col="#6e3a2b", film_stripe="#7b4636")
+    at = tex_tower(pid, cfg)
+    col = tex_col(pid, {"frame": "#d6c3a0", "blade": "#6e3a2b"})
+    m = pb.Model(pid)
+    TEX = "tex_" + pid
+    # base block with the pipe grooves capped, and the flat mounting plate
+    bc.box(m, "nickel", (-0.019, -0.020, 0.0), (0.019, 0.020, 0.0042), bevel=0.0004)
+    bc.box(m, "copper", (-0.0165, -0.0175, 0.0042), (0.0165, 0.0175, 0.0075), bevel=0.0003)
+    plate = pb.rrect2(0, 0, 0.082, 0.082, 0.008, 4)
+    m.add("steel", pb.g_slab(plate, [pb.circle2(x, y, 0.0018, 16) for (x, y) in HOLES]
+                             + [pb.rrect2(0, 0, 0.032, 0.032, 0.003, 3)], 0.0010, 0.0075, bevel=0.0002))
+    # two flat U pipes: across the base along y, then out through the fins
+    for xb in (-0.0085, 0.0085):
+        pts = [(xb + 0.006 * (1 if xb > 0 else -1), -0.046, 0.0148), (xb, -0.024, 0.0148), (xb, -0.015, 0.0045),
+               (xb, 0.015, 0.0045), (xb, 0.024, 0.0148), (xb + 0.006 * (1 if xb > 0 else -1), 0.046, 0.0148)]
+        m.add("nickel", pb.g_sweep(pb.fillet_path(pts, 0.006, 8), 0.0026, 16))
+        for sy in (-1, 1):
+            m.add("nickel", pb.xf(pb.g_cyl(0.0022, 0.0014, 16, r2=0.0011), pb.rot("x", sy * math.pi / 2)), None,
+                  (xb + 0.006 * (1 if xb > 0 else -1), sy * 0.0472, 0.0148))
+    # nine horizontal fins with screw wells and a cut-out round the base
+    S = 0.095
+    fin = pb.rrect2(0, 0, S, S, 0.004, 3)
+    wells = [pb.circle2(x, y, 0.0048, 20) for (x, y) in HOLES]
+    z0, pitch, n = 0.0090, 0.0015, 9
+    for k in range(n):
+        hole = [pb.rrect2(0, 0, 0.034, 0.036, 0.003, 3)] if k < 3 else []
+        m.add("alu", pb.g_slab(fin, wells + hole, 0.0004, z0 + k * pitch - 0.0002))
+    zt = z0 + (n - 1) * pitch
+    # seat collars in the wells (the springs rest on them) and the screws
+    for i, (x, y) in enumerate(HOLES):
+        m.add("steel", pb.g_ring(0.0019, 0.0040, 0.0066, 20), None, (x, y, 0.0085 + 0.0033))
+        bc.spring_screw(m, i, x, y, 0.0141, 0.0196, head_r=0.0036, spring_r=0.0030)
+    base_film(m, at, TEX)
+    # 92 x 14 mm fan on top, blowing down (intake +z), held by two wire clips on the -+x sides
+    fz = zt + 0.0004 + 0.0012 + 0.007
+    fa = m.anchor("A_FAN_0", (0, 0, fz), (0.092, 0.092, 0.014), forward=(0, 0, 1), up=(0, 1, 0),
+                  meta=pf.fan_meta("ccw", 2500))
+    fan(m, fa, 0.092, 0.014, ("col:frame", "col:blade"), pid, at.uv("hub"), "fan0", col=col)
+    for sx in (-1, 1):
+        q = 0.0412
+        pts = [(sx * q, -q, fz + 0.0062), (sx * q, -q, fz + 0.0072), (sx * 0.0476, -0.030, zt - 0.003),
+               (sx * 0.0476, 0.030, zt - 0.003), (sx * q, q, fz + 0.0072), (sx * q, q, fz + 0.0062)]
+        m.add("steel", pb.g_sweep(pb.fillet_path(pts, 0.002, 5), 0.0006, 8))
+    plug(m, 0, (-0.034, 0.090, 0.006), (0, -1, 0), (0, 0, 1), (-0.040, 0.040, fz - 0.007),
+         [(-0.044, 0.046, fz - 0.006), (-0.044, 0.050, z0), (-0.036, 0.064, 0.012)])
+    m.anchor("A_HIT_0", (0, 0, (z0 + zt) / 2), (S, S, zt - z0 + 0.002))
+    m.anchor("A_HIT_1", (0, 0, fz), (0.092, 0.092, 0.014))
+    m.anchor("A_HIT_2", (0, 0, 0.004), (0.040, 0.040, 0.008))
+    # no top cover: the clear film sits on the fan's hub sticker
+    m.anchor("A_FILM_TOP_0", (0, 0, fz + 0.0075), (0.030, 0.030, 0.001), forward=(0, 0, 1), up=(0, 1, 0),
+             meta="film=clear,on=fan_hub,peel_from=+x")
+    finish(m, pid, [
+        dict(yaw=25, pitch=35), dict(yaw=-40, pitch=-30), dict(yaw=75, pitch=12),
+        dict(yaw=160, pitch=25, target=(0, 0, 0.0), dist=0.22), dict(yaw=0, pitch=0, dist=0.3),
+        dict(yaw=60, pitch=40, target=(0.033, 0.033, 0.015), dist=0.09),
+    ])
+    return m
+
+
 BUILDERS = {k: (lambda k=k: build_tower_model(k, TOWERS[k])) for k in TOWERS}
+BUILDERS["cooler_noctis_l9"] = build_low_profile
 
 
 def write_report():

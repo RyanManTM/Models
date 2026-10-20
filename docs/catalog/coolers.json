@@ -188,5 +188,32 @@
     },
     "contract": "cooler_tower",
     "new_contract": false
+  },
+  {
+    "id": "cooler_noctis_l9",
+    "model": "cooler_noctis_l9",
+    "brand": "Noctis",
+    "name": "Noctis NH-L9 low profile",
+    "category": "Cooler",
+    "price": 45,
+    "power_w": 2,
+    "color": "#D6C3A0",
+    "rgb": false,
+    "analog": "Noctua NH-L9i / NH-L9a (docs only, never shown in game)",
+    "desc": "A 37 mm low-profile cooler with a 92 mm fan, for small cases and light CPUs.",
+    "specs": {
+      "height_mm": 37,
+      "fans": 1,
+      "fan_mm": 92,
+      "heat_pipes": 2,
+      "towers": 0,
+      "rpm_max": 2500
+    },
+    "game": {
+      "cooler_max_w": 95,
+      "perf": 0
+    },
+    "contract": "cooler_tower",
+    "new_contract": false
   }
 ]

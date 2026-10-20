@@ -14,7 +14,7 @@ Branch `claude/cat-coolers`. Script `Tools/Blender/build_cat_coolers.py` (new; i
 | 4 | `cooler_glacier_ak620_black` | cooler_tower | done |
 | 5 | `cooler_noctis_d15` | cooler_tower | done |
 | 6 | `cooler_noctis_d15_black` | cooler_tower | done |
-| 7 | `cooler_noctis_l9` | cooler_tower | not yet |
+| 7 | `cooler_noctis_l9` | cooler_tower | done |
 | 8 | `cooler_frostpeak_120_rgb` | cooler_tower | done |
 | 9 | `cooler_tiron_stock` | cooler_stock | not yet |
 | 10 | `cooler_arctiq_lc240` | AIO (new) | not yet |
@@ -33,6 +33,7 @@ Branch `claude/cat-coolers`. Script `Tools/Blender/build_cat_coolers.py` (new; i
 | `cooler_glacier_ak620_black` | 67 548 | 160 mm | cooler_tower | SAME 6, DIFF 5, ONLY_B 4 (A_FAN_1, A_PLUG_FAN_1, A_HIT_3..4) |
 | `cooler_noctis_d15` | 57 438 | 165 mm | cooler_tower | SAME 6, DIFF 5, ONLY_B 4 (as AK620) |
 | `cooler_noctis_d15_black` | 57 438 | 165 mm | cooler_tower | SAME 6, DIFF 5, ONLY_B 4 (as AK620) |
+| `cooler_noctis_l9` | 24 346 | 37 mm | cooler_tower (low profile) | SAME 6, DIFF 5 (fan faces +z on top; top film on the fan hub) |
 | `cooler_frostpeak_120_rgb` | 38 396 | 158 mm | cooler_tower | SAME 7, DIFF 4, ONLY_B 1 (A_PLUG_ARGB_0) |
 
 ### Anchor comparison (anchor_compare.py, `cooler_tower` = A)
@@ -73,6 +74,10 @@ The installing anchors (the four spring screws and the base film) are SAME on ev
 - Total height <= 165 mm (the specs give each one's height).
 
 ## Deviations
+
+- `cooler_noctis_l9` is a low-profile cooler on the tower contract: the X bracket is a flat plate under the fin stack
+  and the four spring screws keep their exact poses in wells cut through the fins (as on the real NH-L9). Its fan
+  lies on top, so `A_FAN_0` faces +z, and with no top cover `A_FILM_TOP_0` sits on the fan hub (meta `on=fan_hub`).
 
 - Fans hang on steel wire clips on every tower (the Arctic original clips its fan with plastic brackets).
 - Noctis browns and beiges have no plain tag; they are solid swatches of `tex_<id>_col` (one extra PNG per model).
