@@ -31,5 +31,5 @@ box_psu_seastar_px1000_white: 652 triangles, 15 meshes
   A_TAPE_0 pos=(-0.1152, 0.095, -0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.04800,0.05000,0.00010 meta=strip=0,seg=0,peel=+y,label=tape,order=0
   A_TAPE_1 pos=(-0.0, 0.1202, -0.0) fwd=(-0.0, 1.0, 0.0) up=(1.0, 0.0, -0.0) size=0.04800,0.23000,0.00010 meta=strip=0,seg=1,peel=+y,label=tape,order=0
   A_TAPE_2 pos=(0.1152, 0.095, -0.0) fwd=(1.0, 0.0, -0.0) up=(0.0, -1.0, -0.0) size=0.04800,0.05000,0.00010 meta=strip=0,seg=2,peel=+y,label=tape,order=0
-shot from: psu_seastar_px1000_white
+shot from: cached
 PSU (fully modular): tape strip 0 (0) -> long flaps (1) -> short flaps (2) -> 3 papers in a pile, booklet at the bottom (3..5) with the power cord + screw bag standing in the +x compartment (3) -> cable pouch (6) -> PSU in its fabric bag, lifted out WITH its EPS caps (7) -> caps pulled off along -x/+x (8).
