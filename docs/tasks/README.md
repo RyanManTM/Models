@@ -32,7 +32,7 @@ To start one, give a cloud session on this repository the prompt *"Do the task i
 2. Download and unpack Blender:
    `curl -L -o /tmp/blender.tar.xz https://download.blender.org/release/Blender5.0/blender-5.0.1-linux-x64.tar.xz && sudo tar -xJf /tmp/blender.tar.xz -C /opt`
 3. Run it as `/opt/blender-5.0.1-linux-x64/blender -b --factory-startup -P <script> -- <args>`.
-4. **Smoke test:** `... -P Tools/Blender/build_plugs.py -- atx24`, then `git checkout -- .` to drop the rebuilt files.
+4. **Smoke test:** `... -P Tools/Blender/build_plugs.py -- plug_atx24`, then `git checkout -- .` to drop the rebuilt files.
 5. If Workbench or EEVEE previews fail headless, prefix the command with `xvfb-run -a -s "-screen 0 1920x1080x24"`. As a last resort, render previews with Cycles on the CPU.
 6. If download.blender.org is blocked, try `pip install bpy` (Blender as a Python module).
 7. If Blender can't run at all, write your report saying what blocked you, then commit, push and stop.

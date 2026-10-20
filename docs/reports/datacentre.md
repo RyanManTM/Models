@@ -4,14 +4,40 @@ Script: `Tools/Blender/build_datacenter.py` with the helpers `datacenter_common.
 low-poly fans, print atlases), `datacenter_ac.py`, `datacenter_server.py`, `datacenter_rack.py`, `datacenter_net.py`
 and `datacenter_power.py`.
 
+## Models
+
+| Model | Size (x × y × z, m) | Triangles | Meshes | Anchors |
+|---|---|---|---|---|
+| `ac_12k` | 0.696 × 0.480 × 0.638 | 9,340 | 23 | 9 |
+| `server_1u` | 0.483 × 0.044 × 0.779 | 22,984 | 140 | 72 |
+| `server_2u` | 0.483 × 0.087 × 0.796 | 25,164 | 189 | 86 |
+| `rack_42u` | 0.610 × 2.002 × 1.099 | 20,442 | 29 | 51 |
+| `rack_12u_open` | 0.593 × 0.691 × 0.795 | 5,274 | 8 | 15 |
+| `switch_24` | 0.483 × 0.044 × 0.254 | 11,794 | 65 | 93 |
+| `patch_panel_24` | 0.483 × 0.043 × 0.114 | 6,232 | 7 | 55 |
+| `ups_2u` | 0.483 × 0.088 × 0.518 | 8,596 | 30 | 29 |
+| `ups_tower` | 0.170 × 0.219 × 0.485 | 7,782 | 27 | 23 |
+| `pdu_0u` | 0.045 × 1.870 × 0.078 | 7,554 | 9 | 35 |
+| `pdu_1u` | 0.483 × 0.044 × 0.235 | 2,972 | 8 | 17 |
+
+Budgets: servers and the switch under 25k triangles, racks under 40k. Sizes are the full bounds of each model,
+moving pieces included (rails, handles, cord boots).
+
 ## Rebuild
 
 ```bash
 blender -b --factory-startup -P Tools/Blender/build_datacenter.py -- [ids...] [--nopreview]
 ```
 
-With no ids it builds every model below. Each model writes `Assets/Resources/Models/<id>.fbx`, its textures in
-`Assets/Resources/Models/Textures/`, previews `Logs/ModelPreviews/<id>_<n>.png` (0–1 Workbench, the rest Cycles) and
+With no ids it builds every model below. Then the fit check installs the devices in both racks at their
+anchors, checks every ear hole against the rack holes and every device against its neighbours, and renders
+`Logs/ModelPreviews/datacentre_fit*.png`:
+
+```bash
+blender -b --factory-startup -P Tools/Blender/datacenter_fit.py -- [--nopreview]
+```
+
+Each model writes `Assets/Resources/Models/<id>.fbx`, its textures in `Assets/Resources/Models/Textures/`, previews `Logs/ModelPreviews/<id>_<n>.png` (0–1 Workbench, the rest Cycles) and
 the full anchor report `Logs/ModelPreviews/<id>_report.txt` (every mesh and every anchor, plus the bounds).
 
 Built in the cloud session with the `bpy` 5.0.1 module (download.blender.org was blocked; `pip install bpy==5.0.1`
@@ -487,7 +513,7 @@ Moving pieces: `battery_n@A_BATTERY_n#black_plastic`, `battery_n@A_BATTERY_n#cop
   boot, `plug=nema5-15p,len=1.8`), `A_PORT_USBB_0`, the breaker `A_BUTTON_BREAKER_0`, a fan `A_FAN_0`, and the
   rating label on the −x side.
 
-- **Triangles:** 8,006 in 27 meshes.
+- **Triangles:** 7,782 in 27 meshes.
 - **Bounds:** min=(-0.0852, 0.0000, -0.2650) max=(0.0850, 0.2190, 0.2198) size=(0.1702, 0.2190, 0.4848)
 
 | Anchor | Position | Fwd / up | Size | Meta |
@@ -500,7 +526,7 @@ Moving pieces: `battery_n@A_BATTERY_n#black_plastic`, `battery_n@A_BATTERY_n#cop
 | `A_BUTTON_POWER_0` | (0.0554, 0.1713, 0.2156) | (0.000, 0.423, 0.906) / (0.000, 0.906, -0.423) | 0.01260,0.01260,0.00600 | press=-z_local,travel=0.0012,fn=power,hold=2 |
 | `A_BUTTON_UP_0` | (0.0154, 0.1713, 0.2156) | (0.000, 0.423, 0.906) / (0.000, 0.906, -0.423) | 0.01300,0.01000,0.00600 | press=-z_local,travel=0.0010,fn=up |
 | `A_CORD_0` | (-0.05, 0.022, -0.265) | -z / +y | 0.01200,0.01200,0.02000 | r=0.0040,plug=nema5-15p,len=1.8,awg=14 |
-| `A_FAN_0` | (0.06, 0.188, -0.2075) | -z / +y | 0.05000,0.05000,0.02000 | axis=z,spin=1,rpm=2800 |
+| `A_FAN_0` | (0.054, 0.186, -0.2075) | -z / +y | 0.04500,0.04500,0.02000 | axis=z,spin=1,rpm=2800 |
 | `A_HIT_0` | (0, 0.1095, 0) | +z / +y | 0.17000,0.21900,0.43900 |  |
 | `A_LED_BATTERY_0` | (0.0227, 0.1913, 0.2058) | (0.000, 0.423, 0.906) / (0.000, 0.906, -0.423) | 0.00300,0.00300,0.00300 | colour=yellow,fn=battery |
 | `A_LED_FAULT_0` | (0.0227, 0.1827, 0.2098) | (0.000, 0.423, 0.906) / (0.000, 0.906, -0.423) | 0.00300,0.00300,0.00300 | colour=red,fn=fault |
@@ -576,3 +602,19 @@ Moving pieces: `led_switch_n@A_LED_SWITCH_n@A_SWITCH_POWER_n#led_red`, `switch_p
 - Texture `power_print.png` (shared by the four): legends (transparent cells), logos, rating labels.
 - The tower UPS outlets are NEMA 5-15R and its input is an attached cord, because it serves the basement PCs
   (their cords end in NEMA 5-15P). The rack gear uses IEC C13/C19 throughout.
+
+## Fit check (`datacenter_fit.py`)
+
+The script imports the exported FBX files and installs the devices exactly as the game would: each device's
+origin goes on `A_RACKU_n` and each `pdu_0u` on `A_PDU_n`. Then it checks:
+- every `A_SCREW_RACK_n` and `A_SCREW_THUMB_n` of every device lands on a rack hole (within 1 mm);
+- no two devices overlap in height.
+
+Result: **FIT TOTAL: OK**.
+- rack_42u: 12 devices. UPS ×2 at U1–U4, two 2U servers at U9–U12, three 1U servers at U15–U17, the 1U PDU at
+  U31, the switch at U39, the patch panel at U40, and both zero-U PDUs in the rear channels.
+- rack_12u_open: 4 devices. A UPS at U1–2, a 1U server at U5, the switch at U10, the patch panel at U11.
+
+The servers' slide rails reach both racks' rear rails. The zero-U PDUs clear the rear doors, the side panels and
+the rails. Renders: `Logs/ModelPreviews/datacentre_fit_0/1.png` (front, door and +x panel hidden),
+`datacentre_fit_rear_0.png`, `datacentre_fit_12u_0.png`.

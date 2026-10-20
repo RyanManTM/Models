@@ -1,4 +1,4 @@
-ups_tower: 8006 triangles, 27 meshes
+ups_tower: 7782 triangles, 27 meshes
   mesh battery_0@A_BATTERY_0#black_plastic  tris=236
   mesh battery_0@A_BATTERY_0#copper  tris=36
   mesh battery_0@A_BATTERY_0#steel  tris=144
@@ -21,7 +21,7 @@ ups_tower: 8006 triangles, 27 meshes
   mesh led_fault_0@A_LED_FAULT_0#led_red  tris=64
   mesh led_online_0@A_LED_ONLINE_0#led_green  tris=64
   mesh screen_0@A_SCREEN_0#black_plastic  tris=2
-  mesh ups_tower_black_plastic#black_plastic  tris=4564
+  mesh ups_tower_black_plastic#black_plastic  tris=4340
   mesh ups_tower_dark_plastic#dark_plastic  tris=632
   mesh ups_tower_grey_plastic#grey_plastic  tris=192
   mesh ups_tower_rubber#rubber  tris=224
@@ -34,7 +34,7 @@ ups_tower: 8006 triangles, 27 meshes
   A_BUTTON_POWER_0 pos=(0.05544, 0.17129, 0.2156) fwd=(0.0, 0.423, 0.906) up=(-0.0, 0.906, -0.423) size=0.01260,0.01260,0.00600 meta=press=-z_local,travel=0.0012,fn=power,hold=2
   A_BUTTON_UP_0 pos=(0.0154, 0.17129, 0.2156) fwd=(0.0, 0.423, 0.906) up=(-0.0, 0.906, -0.423) size=0.01300,0.01000,0.00600 meta=press=-z_local,travel=0.0010,fn=up
   A_CORD_0 pos=(-0.05, 0.022, -0.265) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.01200,0.01200,0.02000 meta=r=0.0040,plug=nema5-15p,len=1.8,awg=14
-  A_FAN_0 pos=(0.06, 0.188, -0.2075) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.05000,0.05000,0.02000 meta=axis=z,spin=1,rpm=2800
+  A_FAN_0 pos=(0.054, 0.186, -0.2075) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.04500,0.04500,0.02000 meta=axis=z,spin=1,rpm=2800
   A_HIT_0 pos=(-0.0, 0.1095, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.17000,0.21900,0.43900 meta=
   A_LED_BATTERY_0 pos=(0.02268, 0.19129, 0.20583) fwd=(0.0, 0.423, 0.906) up=(-0.0, 0.906, -0.423) size=0.00300,0.00300,0.00300 meta=colour=yellow,fn=battery
   A_LED_FAULT_0 pos=(0.02268, 0.18268, 0.20984) fwd=(0.0, 0.423, 0.906) up=(-0.0, 0.906, -0.423) size=0.00300,0.00300,0.00300 meta=colour=red,fn=fault
