@@ -4,7 +4,7 @@ Brief: `docs/tasks/catalog/19-boxes.md`. Every catalogue part (`docs/catalog/*.j
 plus the data-centre gear from task 01 and a rebuilt `box_ac_12k`.
 
 ## Status
-**100 of 132 catalogue boxes built.** Not built yet: mb_kestrel_b650_glide, mb_aegis_z790_keystone, mb_mako_z790_riptide, mb_kestrel_z790_talon, mb_ridge_b760_d4, ram_teamforge_ddr5_32_white_rgb, ram_volt_ddr5_64_rgb, ram_corvex_ddr4_16_lp, ram_corvex_ddr4_32_rgb, ram_gstride_ddr4_16_red, ram_kingsland_ddr4_32, ram_crux_ddr4_64, ram_teamforge_ddr4_32_red, psu_seastar_px1000_white, psu_corvex_rm850x_white, psu_hush_pp12m_750, psu_hush_dp13_1200, psu_mako_a850g, psu_aegis_1200p, psu_corvex_ax1600i, cooler_arctiq_34_black, cooler_arctiq_34_white, cooler_glacier_ak400_white, cooler_glacier_ak620_black, cooler_noctis_d15_black, cooler_frostpeak_120_rgb, case_phanta_g360a, case_nexa_h5, case_facet_fjord, case_hush_500dx, case_facet_fizzair, case_brickhouse_beige98.
+**101 of 132 catalogue boxes built.** Not built yet: mb_kestrel_b650_glide, mb_aegis_z790_keystone, mb_mako_z790_riptide, mb_kestrel_z790_talon, mb_ridge_b760_d4, ram_volt_ddr5_64_rgb, ram_corvex_ddr4_16_lp, ram_corvex_ddr4_32_rgb, ram_gstride_ddr4_16_red, ram_kingsland_ddr4_32, ram_crux_ddr4_64, ram_teamforge_ddr4_32_red, psu_seastar_px1000_white, psu_corvex_rm850x_white, psu_hush_pp12m_750, psu_hush_dp13_1200, psu_mako_a850g, psu_aegis_1200p, psu_corvex_ax1600i, cooler_arctiq_34_black, cooler_arctiq_34_white, cooler_glacier_ak400_white, cooler_glacier_ak620_black, cooler_noctis_d15_black, cooler_frostpeak_120_rgb, case_phanta_g360a, case_nexa_h5, case_facet_fjord, case_hush_500dx, case_facet_fizzair, case_brickhouse_beige98.
 
 The work was split by rig module, each built and checked box by box (all four previews looked at):
 - the consumer parts of the existing box kinds (`rig_products.py`): CPUs, GPUs, motherboards, memory, NVMe and SATA
@@ -151,7 +151,7 @@ Opening sequence: the step `order` of each piece, from the rig's notes. Previews
 | box_ram_kingsland_ddr5_32_white_rgb | 0.16 x 0.03 x 0.12 | 4350 | 11 | RAM: end tuck flap A_FLAP_0 (1) -> dust flaps A_FLAP_1/2 (2) -> blister tray A_INSERT_BLISTER_0 slides out +x (3) -> on it the blister seal A_SEAL_0 and 2 papers in a pile on the lid (4..5) -> blister lid A_CLAMLID_0 (6) -> sticks A_ITEM_PART_0/1 (7, guard=1). |
 | box_ram_crux_ddr5_96 | 0.16 x 0.03 x 0.12 | 4350 | 11 | RAM: end tuck flap A_FLAP_0 (1) -> dust flaps A_FLAP_1/2 (2) -> blister tray A_INSERT_BLISTER_0 slides out +x (3) -> on it the blister seal A_SEAL_0 and 2 papers in a pile on the lid (4..5) -> blister lid A_CLAMLID_0 (6) -> sticks A_ITEM_PART_0/1 (7, guard=1). |
 | box_ram_crux_ddr5_16 | 0.16 x 0.03 x 0.12 | 4350 | 11 | RAM: end tuck flap A_FLAP_0 (1) -> dust flaps A_FLAP_1/2 (2) -> blister tray A_INSERT_BLISTER_0 slides out +x (3) -> on it the blister seal A_SEAL_0 and 2 papers in a pile on the lid (4..5) -> blister lid A_CLAMLID_0 (6) -> sticks A_ITEM_PART_0/1 (7, guard=1). |
-| box_ram_teamforge_ddr5_32_white_rgb | | | | **not built yet** |
+| box_ram_teamforge_ddr5_32_white_rgb | 0.16 x 0.03 x 0.12 | 4350 | 11 | RAM: end tuck flap A_FLAP_0 (1) -> dust flaps A_FLAP_1/2 (2) -> blister tray A_INSERT_BLISTER_0 slides out +x (3) -> on it the blister seal A_SEAL_0 and 2 papers in a pile on the lid (4..5) -> blister lid A_CLAMLID_0 (6) -> sticks A_ITEM_PART_0/1 (7, guard=1). |
 | box_ram_volt_ddr5_64_rgb | | | | **not built yet** |
 | box_ram_corvex_ddr4_16_lp | | | | **not built yet** |
 | box_ram_corvex_ddr4_32_rgb | | | | **not built yet** |
