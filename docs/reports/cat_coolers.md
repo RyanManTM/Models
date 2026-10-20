@@ -35,7 +35,7 @@ Branch `claude/cat-coolers`. Script `Tools/Blender/build_cat_coolers.py` (new; i
 | `cooler_noctis_d15_black` | 57 438 | 165 mm | cooler_tower | SAME 6, DIFF 5, ONLY_B 4 (as AK620) |
 | `cooler_noctis_l9` | 24 346 | 37 mm | cooler_tower (low profile) | SAME 6, DIFF 5 (fan faces +z on top; top film on the fan hub) |
 | `cooler_frostpeak_120_rgb` | 38 396 | 158 mm | cooler_tower | SAME 7, DIFF 4, ONLY_B 1 (A_PLUG_ARGB_0) |
-| `cooler_tiron_stock` | 21 550 | 53 mm | cooler_stock | vs `cooler_stock`: SAME 10 of 10 (every anchor) |
+| `cooler_tiron_stock` | 21 550 | 53 mm | cooler_stock | vs `cooler_stock`: SAME 9 of 9 (every anchor) |
 
 ### Anchor comparison (anchor_compare.py, `cooler_tower` = A)
 
