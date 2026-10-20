@@ -428,3 +428,151 @@ Moving pieces: none.
   cheap. The switch keeps real gold contact combs.
 - The previews leave the strip's clear cover out (the preview renderer has no transparent shader for
   `clear_plastic`); the model has it.
+
+## ups_2u: AMPERE Smart 2200 RM, 2U rack UPS
+
+- **Frame:** the rack device frame; body 0.432 × 0.0873 × 0.480, the chassis front plate at z = 0.004, the bezel
+  face at z = 0.032, ears on the rails with `A_SCREW_RACK_0..3` (the bottom and top holes of the 2U).
+- **Front:** the display module at +x (the viewer's left): the LCD `A_SCREEN_0` (0.058 × 0.026; its dark quad is
+  attached to it), the power button `A_BUTTON_POWER_0`, the menu buttons `A_BUTTON_UP_0`, `A_BUTTON_DOWN_0`,
+  `A_BUTTON_ENTER_0` and the LEDs `A_LED_ONLINE_0` (green), `A_LED_BATTERY_0` (amber), `A_LED_FAULT_0` (red).
+  The removable bezel `A_BEZEL_0` (`remove=+z,order=0`), with ribbed vents and the logo, covers the battery pack
+  `A_BATTERY_0` (`pull=+z,dist=0.38,order=1,under=A_BEZEL_0`). The pack is a complete piece: a steel tray, four
+  12 V blocks with terminals and links, the front plate with its handle and screws, and the rear connector, which
+  meets a socket at the back of the bay.
+- **Rear:** 8 × C13 outlets `A_PORT_C13_0..7` in two numbered groups (`plug=c14,group=1|2`), the C20 inlet
+  `A_PORT_C20_0` (`plug=c19`), `A_PORT_USBB_0`, `A_PORT_SERIAL_0` (RJ45), the input breaker `A_BUTTON_BREAKER_0`,
+  the network-management-card slot cover, a 60 mm fan `A_FAN_0` behind its grille, an earth screw and legends.
+
+- **Triangles:** 8,596 in 30 meshes.
+- **Bounds:** min=(-0.2413, 0.0004, -0.4845) max=(0.2413, 0.0885, 0.0332) size=(0.4826, 0.0881, 0.5177)
+
+| Anchor | Position | Fwd / up | Size | Meta |
+|---|---|---|---|---|
+| `A_BATTERY_0` | (-0.05, 0.0445, 0.004) | +z / +y | 0.30000,0.07530,0.36000 | pull=+z,dist=0.38,order=1,under=A_BEZEL_0,kind=vrla,cells=4x12v9ah,connector=anderson |
+| `A_BEZEL_0` | (-0.052, 0.0445, 0.032) | +z / +y | 0.32400,0.08530,0.02800 | remove=+z,dist=0.05,order=0,clips=4 |
+| `A_BUTTON_BREAKER_0` | (-0.2, 0.0688, -0.4815) | -z / +y | 0.01200,0.01200,0.01000 | press=-z_local,travel=0.003,fn=reset,rating=15a |
+| `A_BUTTON_DOWN_0` | (0.1586, 0.0213, 0.0321) | +z / +y | 0.01300,0.01000,0.00600 | press=-z_local,travel=0.0010,fn=down |
+| `A_BUTTON_ENTER_0` | (0.1426, 0.0213, 0.0321) | +z / +y | 0.01300,0.01000,0.00600 | press=-z_local,travel=0.0010,fn=enter |
+| `A_BUTTON_POWER_0` | (0.1996, 0.0213, 0.0321) | +z / +y | 0.01260,0.01260,0.00600 | press=-z_local,travel=0.0012,fn=power,hold=2 |
+| `A_BUTTON_UP_0` | (0.1746, 0.0213, 0.0321) | +z / +y | 0.01300,0.01000,0.00600 | press=-z_local,travel=0.0010,fn=up |
+| `A_FAN_0` | (-0.1, 0.0458, -0.462) | -z / +y | 0.06000,0.06000,0.02500 | axis=z,spin=1,rpm=3200 |
+| `A_HIT_0` | (0, 0.0445, -0.222) | +z / +y | 0.43200,0.08730,0.50800 |  |
+| `A_HIT_1` | (0, 0.0445, 0.001) | +z / +y | 0.48260,0.08730,0.00400 |  |
+| `A_LED_BATTERY_0` | (0.1963, 0.0563, 0.0317) | +z / +y | 0.00300,0.00300,0.00300 | colour=yellow,fn=battery |
+| `A_LED_FAULT_0` | (0.1963, 0.0468, 0.0317) | +z / +y | 0.00300,0.00300,0.00300 | colour=red,fn=fault |
+| `A_LED_ONLINE_0` | (0.1963, 0.0658, 0.0317) | +z / +y | 0.00300,0.00300,0.00300 | colour=green,fn=online |
+| `A_PORT_C13_0..7 (8)` | (0.133, 0.0228, -0.4775) … (0.077, 0.0568, -0.4775) | -z / +y | 0.02600,0.01800,0.01200 | depth=0.007,plug=c14,outlet=c13,group=1 … depth=0.007,plug=c14,outlet=c13,group=2 |
+| `A_PORT_C20_0` | (-0.17, 0.0308, -0.4775) | -z / +y | 0.03400,0.02500,0.01400 | depth=0.009,plug=c19,inlet=c20 |
+| `A_PORT_SERIAL_0` | (-0.04, 0.0308, -0.4775) | -z / +y | 0.01450,0.01200,0.02000 | depth=0.012,rj45=1,latch=-up,serial=rs232 |
+| `A_PORT_USBB_0` | (-0.04, 0.0608, -0.4775) | -z / +y | 0.01200,0.01200,0.01200 | depth=0.008,usb=b |
+| `A_SCREEN_0` | (0.1573, 0.0568, 0.0317) | +z / +y | 0.05800,0.02600,0.00300 | kind=lcd,ref=256x112,colour=blue_white |
+| `A_SCREW_RACK_0` | (-0.2326, 0.0063, 0.002) | +z / +y | 0.01200,0.01000,0.00600 | thread=M6,cage=1,side=l |
+| `A_SCREW_RACK_1` | (-0.2326, 0.0825, 0.002) | +z / +y | 0.01200,0.01000,0.00600 | thread=M6,cage=1,side=l |
+| `A_SCREW_RACK_2` | (0.2326, 0.0063, 0.002) | +z / +y | 0.01200,0.01000,0.00600 | thread=M6,cage=1,side=r |
+| `A_SCREW_RACK_3` | (0.2326, 0.0825, 0.002) | +z / +y | 0.01200,0.01000,0.00600 | thread=M6,cage=1,side=r |
+
+Moving pieces: `battery_n@A_BATTERY_n#black_plastic`, `battery_n@A_BATTERY_n#copper`, `battery_n@A_BATTERY_n#steel`, `battery_n@A_BATTERY_n#tex_parts_c_palette`, `battery_n@A_BATTERY_n#tex_power_print`, `bezel_n@A_BEZEL_n#black_plastic`, `bezel_n@A_BEZEL_n#dark_plastic`, `bezel_n@A_BEZEL_n#tex_power_print`, `button_breaker_n@A_BUTTON_BREAKER_n#white_plastic`, `button_down_n@A_BUTTON_DOWN_n#black_plastic`, `button_down_n@A_BUTTON_DOWN_n#grey_plastic`, `button_enter_n@A_BUTTON_ENTER_n#black_plastic`, `button_enter_n@A_BUTTON_ENTER_n#grey_plastic`, `button_power_n@A_BUTTON_POWER_n#black_plastic`, `button_power_n@A_BUTTON_POWER_n#grey_plastic`, `button_up_n@A_BUTTON_UP_n#black_plastic`, `button_up_n@A_BUTTON_UP_n#grey_plastic`, `fan_n@A_FAN_n#fan_black`, `led_battery_n@A_LED_BATTERY_n#led_yellow`, `led_fault_n@A_LED_FAULT_n#led_red`, `led_online_n@A_LED_ONLINE_n#led_green`, `screen_n@A_SCREEN_n#black_plastic`.
+
+## ups_tower: AMPERE Smart 1500, tower UPS (basement)
+
+- **Frame:** origin on the floor at the centre of the footprint, +Z the front; 0.170 W × 0.219 H × 0.439 D on
+  four rubber feet.
+- **Front:** the same controls as the rack UPS (`A_SCREEN_0`, `A_BUTTON_POWER_0`, `A_BUTTON_UP_0` /
+  `DOWN_0` / `ENTER_0`, `A_LED_ONLINE_0`, `A_LED_BATTERY_0`, `A_LED_FAULT_0`) on a panel sloped back 25° at the top,
+  so it reads from above when the UPS stands on the floor. The front bezel `A_BEZEL_0` covers the battery door and
+  the two-block pack `A_BATTERY_0` (`pull=+z,under=A_BEZEL_0`).
+- **Rear:** 8 × NEMA 5-15R receptacles `A_PORT_NEMA515_0..7` (meta `plug=nema5-15p`; 0–5 battery + surge, 6–7
+  surge only), so the PC power cords plug straight in. Also the attached input cord `A_CORD_0` (the end of its
+  boot, `plug=nema5-15p,len=1.8`), `A_PORT_USBB_0`, the breaker `A_BUTTON_BREAKER_0`, a fan `A_FAN_0`, and the
+  rating label on the −x side.
+
+- **Triangles:** 8,006 in 27 meshes.
+- **Bounds:** min=(-0.0852, 0.0000, -0.2650) max=(0.0850, 0.2190, 0.2198) size=(0.1702, 0.2190, 0.4848)
+
+| Anchor | Position | Fwd / up | Size | Meta |
+|---|---|---|---|---|
+| `A_BATTERY_0` | (0, 0.0825, 0.1895) | +z / +y | 0.12000,0.12310,0.18000 | pull=+z,dist=0.20,order=1,under=A_BEZEL_0,kind=vrla,cells=2x12v9ah |
+| `A_BEZEL_0` | (0, 0.0827, 0.2195) | +z / +y | 0.17000,0.14910,0.03000 | remove=+z,dist=0.05,order=0,clips=4 |
+| `A_BUTTON_BREAKER_0` | (-0.04, 0.205, -0.225) | -z / +y | 0.01200,0.01200,0.01000 | press=-z_local,travel=0.003,fn=reset,rating=15a |
+| `A_BUTTON_DOWN_0` | (-0.0006, 0.1713, 0.2156) | (0.000, 0.423, 0.906) / (0.000, 0.906, -0.423) | 0.01300,0.01000,0.00600 | press=-z_local,travel=0.0010,fn=down |
+| `A_BUTTON_ENTER_0` | (-0.0166, 0.1713, 0.2156) | (0.000, 0.423, 0.906) / (0.000, 0.906, -0.423) | 0.01300,0.01000,0.00600 | press=-z_local,travel=0.0010,fn=enter |
+| `A_BUTTON_POWER_0` | (0.0554, 0.1713, 0.2156) | (0.000, 0.423, 0.906) / (0.000, 0.906, -0.423) | 0.01260,0.01260,0.00600 | press=-z_local,travel=0.0012,fn=power,hold=2 |
+| `A_BUTTON_UP_0` | (0.0154, 0.1713, 0.2156) | (0.000, 0.423, 0.906) / (0.000, 0.906, -0.423) | 0.01300,0.01000,0.00600 | press=-z_local,travel=0.0010,fn=up |
+| `A_CORD_0` | (-0.05, 0.022, -0.265) | -z / +y | 0.01200,0.01200,0.02000 | r=0.0040,plug=nema5-15p,len=1.8,awg=14 |
+| `A_FAN_0` | (0.06, 0.188, -0.2075) | -z / +y | 0.05000,0.05000,0.02000 | axis=z,spin=1,rpm=2800 |
+| `A_HIT_0` | (0, 0.1095, 0) | +z / +y | 0.17000,0.21900,0.43900 |  |
+| `A_LED_BATTERY_0` | (0.0227, 0.1913, 0.2058) | (0.000, 0.423, 0.906) / (0.000, 0.906, -0.423) | 0.00300,0.00300,0.00300 | colour=yellow,fn=battery |
+| `A_LED_FAULT_0` | (0.0227, 0.1827, 0.2098) | (0.000, 0.423, 0.906) / (0.000, 0.906, -0.423) | 0.00300,0.00300,0.00300 | colour=red,fn=fault |
+| `A_LED_ONLINE_0` | (0.0227, 0.1999, 0.2018) | (0.000, 0.423, 0.906) / (0.000, 0.906, -0.423) | 0.00300,0.00300,0.00300 | colour=green,fn=online |
+| `A_PORT_NEMA515_0..7 (8)` | (0.02, 0.05, -0.221) … (-0.02, 0.158, -0.221) | -z / +y | 0.02400,0.03000,0.01400 | depth=0.010,plug=nema5-15p,outlet=nema5-15r,group=battery … depth=0.010,plug=nema5-15p,outlet=nema5-15r,group=surge |
+| `A_PORT_USBB_0` | (-0.06, 0.175, -0.221) | -z / +y | 0.01200,0.01200,0.01200 | depth=0.008,usb=b |
+| `A_SCREEN_0` | (-0.0123, 0.1945, 0.2044) | (0.000, 0.423, 0.906) / (0.000, 0.906, -0.423) | 0.05000,0.02000,0.00300 | kind=lcd,ref=256x112,colour=blue_white |
+
+Moving pieces: `battery_n@A_BATTERY_n#black_plastic`, `battery_n@A_BATTERY_n#copper`, `battery_n@A_BATTERY_n#steel`, `battery_n@A_BATTERY_n#tex_parts_c_palette`, `battery_n@A_BATTERY_n#tex_power_print`, `bezel_n@A_BEZEL_n#black_plastic`, `bezel_n@A_BEZEL_n#dark_plastic`, `bezel_n@A_BEZEL_n#tex_power_print`, `button_breaker_n@A_BUTTON_BREAKER_n#white_plastic`, `button_down_n@A_BUTTON_DOWN_n#black_plastic`, `button_down_n@A_BUTTON_DOWN_n#grey_plastic`, `button_enter_n@A_BUTTON_ENTER_n#black_plastic`, `button_enter_n@A_BUTTON_ENTER_n#grey_plastic`, `button_power_n@A_BUTTON_POWER_n#black_plastic`, `button_power_n@A_BUTTON_POWER_n#grey_plastic`, `button_up_n@A_BUTTON_UP_n#black_plastic`, `button_up_n@A_BUTTON_UP_n#grey_plastic`, `fan_n@A_FAN_n#fan_black`, `led_battery_n@A_LED_BATTERY_n#led_yellow`, `led_fault_n@A_LED_FAULT_n#led_red`, `led_online_n@A_LED_ONLINE_n#led_green`, `screen_n@A_SCREEN_n#black_plastic`.
+
+## pdu_0u: AMPERE metered zero-U PDU, 24 × C13 + 4 × C19
+
+- **Frame:** origin at the centre of the bottom end of the body, +Y along it, outlets on +Z, the mounting buttons on
+  −Z. Body 0.044 × 1.80 × 0.056 (dark extruded aluminium, black end caps). This is the pose of the rack's
+  `A_PDU_0/1`.
+- From the bottom: the two bank breakers `A_SWITCH_BREAKER_0/1` (toggles as moving pieces,
+  `hinge=x,on=-25,off=25,on_side=+y`), the 3-digit amp meter `A_SCREEN_0` (`kind=7seg`) and the logo. Then bank A
+  (`A_PORT_C19_0` + 8 × C13), bank B (`A_PORT_C19_1`, 8 × C13, `A_PORT_C19_2`) and bank C (8 × C13 +
+  `A_PORT_C19_3`). `A_PORT_C13_0..23` (`plug=c14,bank=A|B|C`) and `A_PORT_C19_0..3` (`plug=c20`) are numbered and
+  labelled on the face.
+- The input cord leaves the bottom end through a boot: `A_CORD_0` (`plug=l6-30p,len=3.0`). Two mounting buttons
+  `A_MOUNT_0/1` on the back at y = 0.20 and 1.60 match the keyhole brackets in the rack's PDU channel.
+
+- **Triangles:** 7,554 in 9 meshes.
+- **Bounds:** min=(-0.0225, -0.0700, -0.0370) max=(0.0225, 1.8000, 0.0410) size=(0.0450, 1.8700, 0.0780)
+
+| Anchor | Position | Fwd / up | Size | Meta |
+|---|---|---|---|---|
+| `A_CORD_0` | (0, -0.07, -0.008) | -y / +z | 0.01600,0.01600,0.02000 | r=0.0062,plug=l6-30p,len=3.0,awg=10 |
+| `A_HIT_0` | (0, 0.9, 0) | +z / +y | 0.04400,1.80000,0.05600 |  |
+| `A_MOUNT_0` | (0, 0.2, -0.037) | -z / +y | 0.02000,0.02000,0.01200 | kind=button,keyhole=1 |
+| `A_MOUNT_1` | (0, 1.6, -0.037) | -z / +y | 0.02000,0.02000,0.01200 | kind=button,keyhole=1 |
+| `A_PORT_C13_0..23 (24)` | (0, 0.443, 0.028) … (0, 1.537, 0.028) | +z / +y | 0.02600,0.01800,0.01200 | depth=0.007,plug=c14,outlet=c13,bank=A,n=1 … depth=0.007,plug=c14,outlet=c13,bank=C,n=24 |
+| `A_PORT_C19_0` | (0, 0.399, 0.028) | +z / +y | 0.03200,0.02400,0.01400 | depth=0.008,plug=c20,outlet=c19,bank=A,n=1 |
+| `A_PORT_C19_1` | (0, 0.813, 0.028) | +z / +y | 0.03200,0.02400,0.01400 | depth=0.008,plug=c20,outlet=c19,bank=B,n=2 |
+| `A_PORT_C19_2` | (0, 1.167, 0.028) | +z / +y | 0.03200,0.02400,0.01400 | depth=0.008,plug=c20,outlet=c19,bank=B,n=3 |
+| `A_PORT_C19_3` | (0, 1.581, 0.028) | +z / +y | 0.03200,0.02400,0.01400 | depth=0.008,plug=c20,outlet=c19,bank=C,n=4 |
+| `A_SCREEN_0` | (0, 0.256, 0.0284) | +z / +y | 0.02400,0.01000,0.00300 | kind=7seg,digits=3,colour=red,shows=amps |
+| `A_SWITCH_BREAKER_0` | (0, 0.184, 0.032) | +z / +y | 0.02000,0.01600,0.01200 | hinge=x,on=-25,off=25,on_side=+y,rating=16a,mark_on=I,mark_off=O |
+| `A_SWITCH_BREAKER_1` | (0, 0.224, 0.032) | +z / +y | 0.02000,0.01600,0.01200 | hinge=x,on=-25,off=25,on_side=+y,rating=16a,mark_on=I,mark_off=O |
+
+Moving pieces: `screen_n@A_SCREEN_n#black_plastic`, `switch_breaker_n@A_SWITCH_BREAKER_n#white_plastic` ×2.
+
+## pdu_1u: AMPERE 1U PDU, 8 × C13 with a lit switch
+
+- **Frame:** the rack device frame; body 0.440 × 0.0436 × 0.180, the front at z = 0.003, ears with
+  `A_SCREW_RACK_0..3`.
+- **Front:** 8 × C13 `A_PORT_C13_0..7` numbered 1–8 from +x (`plug=c14`), the logo, and the lit rocker
+  `A_SWITCH_POWER_0` (`hinge=x,on=-9,off=9,on_side=+y,lit=1`, like the PSU rocker: modelled in its neutral pose).
+  Its red lamp window is `A_LED_SWITCH_0@A_SWITCH_POWER_0` (`led_red`), and an "O" mark sits on the lower half.
+- **Rear:** the input cord `A_CORD_0` (`plug=c20,len=2.5`, to feed from a UPS's C19 or the zero-U PDU), the rating
+  label on the top.
+
+- **Triangles:** 2,972 in 8 meshes.
+- **Bounds:** min=(-0.2413, 0.0004, -0.2290) max=(0.2413, 0.0441, 0.0063) size=(0.4826, 0.0437, 0.2353)
+
+| Anchor | Position | Fwd / up | Size | Meta |
+|---|---|---|---|---|
+| `A_CORD_0` | (0.15, 0.0222, -0.229) | -z / +y | 0.01400,0.01400,0.02000 | r=0.0045,plug=c20,len=2.5,awg=14 |
+| `A_HIT_0` | (0, 0.0222, -0.087) | +z / +y | 0.44000,0.04360,0.18000 |  |
+| `A_HIT_1` | (0, 0.0222, 0.001) | +z / +y | 0.48260,0.04360,0.00400 |  |
+| `A_LED_SWITCH_0@A_SWITCH_POWER_0` | (-0.17, 0.0261, 0.0055) | (0.000, 0.225, 0.974) / (0.000, 0.974, -0.225) | 0.01800,0.00400,0.00300 | colour=red,fn=power_on |
+| `A_PORT_C13_0..7 (8)` | (0.15, 0.0222, 0.003) … (-0.102, 0.0222, 0.003) | +z / +y | 0.02600,0.01800,0.01200 | depth=0.007,plug=c14,outlet=c13,n=1 … depth=0.007,plug=c14,outlet=c13,n=8 |
+| `A_SCREW_RACK_0` | (-0.2326, 0.0063, 0.002) | +z / +y | 0.01200,0.01000,0.00600 | thread=M6,cage=1,side=l |
+| `A_SCREW_RACK_1` | (-0.2326, 0.0381, 0.002) | +z / +y | 0.01200,0.01000,0.00600 | thread=M6,cage=1,side=l |
+| `A_SCREW_RACK_2` | (0.2326, 0.0063, 0.002) | +z / +y | 0.01200,0.01000,0.00600 | thread=M6,cage=1,side=r |
+| `A_SCREW_RACK_3` | (0.2326, 0.0381, 0.002) | +z / +y | 0.01200,0.01000,0.00600 | thread=M6,cage=1,side=r |
+| `A_SWITCH_POWER_0` | (-0.17, 0.0222, 0.0035) | +z / +y | 0.02600,0.01800,0.01000 | hinge=x,on=-9,off=9,on_side=+y,mark_on=I,mark_off=O,lit=1,led=A_LED_SWITCH_0 |
+
+Moving pieces: `led_switch_n@A_LED_SWITCH_n@A_SWITCH_POWER_n#led_red`, `switch_power_n@A_SWITCH_POWER_n#black_plastic`, `switch_power_n@A_SWITCH_POWER_n#white_plastic`.
+
+**Notes**
+- Texture `power_print.png` (shared by the four): legends (transparent cells), logos, rating labels.
+- The tower UPS outlets are NEMA 5-15R and its input is an attached cord, because it serves the basement PCs
+  (their cords end in NEMA 5-15P). The rack gear uses IEC C13/C19 throughout.

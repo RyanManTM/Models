@@ -286,7 +286,8 @@ def c14_inlet(fr, parent=None, depth=0.010):
     """A C14 inlet behind its face hole: the moulded cavity and the three male pins."""
     root = parent or ROOT[0]
     cavity(fr, c14_outline(), depth, root, margin=0.002)
-    for (x, y, ww, hh) in ((-0.007, -0.002, 0.0009, 0.0042), (0.007, -0.002, 0.0009, 0.0042), (0.0, 0.0042, 0.0042, 0.0009)):
+    # three flat blades, all upright (as on the PSUs): line and neutral low, earth in the middle towards the keyed corners
+    for (x, y, ww, hh) in ((-0.007, -0.002, 0.0009, 0.0042), (0.007, -0.002, 0.0009, 0.0042), (0.0, 0.0040, 0.0009, 0.0042)):
         P.cube("c14_pin", (x, y, -depth + 0.0045), (ww, hh, 0.0075), "nickel", fr, root)
 
 
@@ -306,7 +307,7 @@ def c13_outlet(fr, parent=None, depth=0.008, tag="black_plastic"):
     # recess: a dark moat round the boss
     P.slab("c13_moat", recess, 0.0006, "dark_plastic", fr.sub(0, 0, -depth + 0.0003), parent=root)
     P.slab("c13_boss", boss, depth - 0.0006, tag, fr.sub(0, 0, -(depth - 0.0006) / 2),
-           holes=[rect(-0.0075, -0.0063, -0.0045, 0.0005), rect(0.0063, 0.0075, -0.0045, 0.0005), rect(-0.0021, 0.0021, 0.0026, 0.0040)],
+           holes=[rect(-0.0075, -0.0063, -0.0045, 0.0005), rect(0.0063, 0.0075, -0.0045, 0.0005), rect(-0.0007, 0.0007, 0.0016, 0.0058)],
            parent=root)
     P.slab("c13_slots", P.rrect(0.018, 0.010, 0.0005, 0, -0.0005), 0.0004, "dark_plastic", fr.sub(0, 0, -depth + 0.0012), parent=root)
 

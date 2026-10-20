@@ -1,0 +1,47 @@
+pdu_0u: 7554 triangles, 9 meshes
+  mesh pdu_0u_alu_dark#alu_dark  tris=44
+  mesh pdu_0u_black_plastic#black_plastic  tris=4140
+  mesh pdu_0u_dark_plastic#dark_plastic  tris=2912
+  mesh pdu_0u_rubber#rubber  tris=48
+  mesh pdu_0u_steel#steel  tris=256
+  mesh pdu_0u_tex_power_print#tex_power_print  tris=64
+  mesh screen_0@A_SCREEN_0#black_plastic  tris=2
+  mesh switch_breaker_0@A_SWITCH_BREAKER_0#white_plastic  tris=44
+  mesh switch_breaker_1@A_SWITCH_BREAKER_1#white_plastic  tris=44
+  A_CORD_0 pos=(-0.0, -0.07, -0.008) fwd=(0.0, -1.0, 0.0) up=(-0.0, 0.0, 1.0) size=0.01600,0.01600,0.02000 meta=r=0.0062,plug=l6-30p,len=3.0,awg=10
+  A_HIT_0 pos=(-0.0, 0.9, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.04400,1.80000,0.05600 meta=
+  A_MOUNT_0 pos=(-0.0, 0.2, -0.037) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.02000,0.02000,0.01200 meta=kind=button,keyhole=1
+  A_MOUNT_1 pos=(-0.0, 1.6, -0.037) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.02000,0.02000,0.01200 meta=kind=button,keyhole=1
+  A_PORT_C13_0 pos=(-0.0, 0.443, 0.028) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02600,0.01800,0.01200 meta=depth=0.007,plug=c14,outlet=c13,bank=A,n=1
+  A_PORT_C13_1 pos=(-0.0, 0.481, 0.028) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02600,0.01800,0.01200 meta=depth=0.007,plug=c14,outlet=c13,bank=A,n=2
+  A_PORT_C13_10 pos=(-0.0, 0.933, 0.028) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02600,0.01800,0.01200 meta=depth=0.007,plug=c14,outlet=c13,bank=B,n=11
+  A_PORT_C13_11 pos=(-0.0, 0.971, 0.028) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02600,0.01800,0.01200 meta=depth=0.007,plug=c14,outlet=c13,bank=B,n=12
+  A_PORT_C13_12 pos=(-0.0, 1.009, 0.028) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02600,0.01800,0.01200 meta=depth=0.007,plug=c14,outlet=c13,bank=B,n=13
+  A_PORT_C13_13 pos=(-0.0, 1.047, 0.028) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02600,0.01800,0.01200 meta=depth=0.007,plug=c14,outlet=c13,bank=B,n=14
+  A_PORT_C13_14 pos=(-0.0, 1.085, 0.028) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02600,0.01800,0.01200 meta=depth=0.007,plug=c14,outlet=c13,bank=B,n=15
+  A_PORT_C13_15 pos=(-0.0, 1.123, 0.028) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02600,0.01800,0.01200 meta=depth=0.007,plug=c14,outlet=c13,bank=B,n=16
+  A_PORT_C13_16 pos=(-0.0, 1.271, 0.028) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02600,0.01800,0.01200 meta=depth=0.007,plug=c14,outlet=c13,bank=C,n=17
+  A_PORT_C13_17 pos=(-0.0, 1.309, 0.028) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02600,0.01800,0.01200 meta=depth=0.007,plug=c14,outlet=c13,bank=C,n=18
+  A_PORT_C13_18 pos=(-0.0, 1.347, 0.028) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02600,0.01800,0.01200 meta=depth=0.007,plug=c14,outlet=c13,bank=C,n=19
+  A_PORT_C13_19 pos=(-0.0, 1.385, 0.028) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02600,0.01800,0.01200 meta=depth=0.007,plug=c14,outlet=c13,bank=C,n=20
+  A_PORT_C13_2 pos=(-0.0, 0.519, 0.028) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02600,0.01800,0.01200 meta=depth=0.007,plug=c14,outlet=c13,bank=A,n=3
+  A_PORT_C13_20 pos=(-0.0, 1.423, 0.028) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02600,0.01800,0.01200 meta=depth=0.007,plug=c14,outlet=c13,bank=C,n=21
+  A_PORT_C13_21 pos=(-0.0, 1.461, 0.028) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02600,0.01800,0.01200 meta=depth=0.007,plug=c14,outlet=c13,bank=C,n=22
+  A_PORT_C13_22 pos=(-0.0, 1.499, 0.028) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02600,0.01800,0.01200 meta=depth=0.007,plug=c14,outlet=c13,bank=C,n=23
+  A_PORT_C13_23 pos=(-0.0, 1.537, 0.028) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02600,0.01800,0.01200 meta=depth=0.007,plug=c14,outlet=c13,bank=C,n=24
+  A_PORT_C13_3 pos=(-0.0, 0.557, 0.028) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02600,0.01800,0.01200 meta=depth=0.007,plug=c14,outlet=c13,bank=A,n=4
+  A_PORT_C13_4 pos=(-0.0, 0.595, 0.028) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02600,0.01800,0.01200 meta=depth=0.007,plug=c14,outlet=c13,bank=A,n=5
+  A_PORT_C13_5 pos=(-0.0, 0.633, 0.028) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02600,0.01800,0.01200 meta=depth=0.007,plug=c14,outlet=c13,bank=A,n=6
+  A_PORT_C13_6 pos=(-0.0, 0.671, 0.028) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02600,0.01800,0.01200 meta=depth=0.007,plug=c14,outlet=c13,bank=A,n=7
+  A_PORT_C13_7 pos=(-0.0, 0.709, 0.028) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02600,0.01800,0.01200 meta=depth=0.007,plug=c14,outlet=c13,bank=A,n=8
+  A_PORT_C13_8 pos=(-0.0, 0.857, 0.028) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02600,0.01800,0.01200 meta=depth=0.007,plug=c14,outlet=c13,bank=B,n=9
+  A_PORT_C13_9 pos=(-0.0, 0.895, 0.028) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02600,0.01800,0.01200 meta=depth=0.007,plug=c14,outlet=c13,bank=B,n=10
+  A_PORT_C19_0 pos=(-0.0, 0.399, 0.028) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.03200,0.02400,0.01400 meta=depth=0.008,plug=c20,outlet=c19,bank=A,n=1
+  A_PORT_C19_1 pos=(-0.0, 0.813, 0.028) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.03200,0.02400,0.01400 meta=depth=0.008,plug=c20,outlet=c19,bank=B,n=2
+  A_PORT_C19_2 pos=(-0.0, 1.167, 0.028) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.03200,0.02400,0.01400 meta=depth=0.008,plug=c20,outlet=c19,bank=B,n=3
+  A_PORT_C19_3 pos=(-0.0, 1.581, 0.028) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.03200,0.02400,0.01400 meta=depth=0.008,plug=c20,outlet=c19,bank=C,n=4
+  A_SCREEN_0 pos=(-0.0, 0.256, 0.0284) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02400,0.01000,0.00300 meta=kind=7seg,digits=3,colour=red,shows=amps
+  A_SWITCH_BREAKER_0 pos=(-0.0, 0.184, 0.032) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02000,0.01600,0.01200 meta=hinge=x,on=-25,off=25,on_side=+y,rating=16a,mark_on=I,mark_off=O
+  A_SWITCH_BREAKER_1 pos=(-0.0, 0.224, 0.032) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02000,0.01600,0.01200 meta=hinge=x,on=-25,off=25,on_side=+y,rating=16a,mark_on=I,mark_off=O
+bounds min=(-0.0225, -0.0700, -0.0370) max=(0.0225, 1.8000, 0.0410) size=(0.0450, 1.8700, 0.0780)
+frame: origin at the bottom end of the body (cross-section centre), +Y along it, outlets on +Z; 0.044 x 1.8 x 0.056

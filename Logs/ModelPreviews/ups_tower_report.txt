@@ -1,0 +1,53 @@
+ups_tower: 8006 triangles, 27 meshes
+  mesh battery_0@A_BATTERY_0#black_plastic  tris=236
+  mesh battery_0@A_BATTERY_0#copper  tris=36
+  mesh battery_0@A_BATTERY_0#steel  tris=144
+  mesh battery_0@A_BATTERY_0#tex_parts_c_palette  tris=332
+  mesh battery_0@A_BATTERY_0#tex_power_print  tris=2
+  mesh bezel_0@A_BEZEL_0#black_plastic  tris=12
+  mesh bezel_0@A_BEZEL_0#dark_plastic  tris=394
+  mesh bezel_0@A_BEZEL_0#tex_power_print  tris=2
+  mesh button_breaker_0@A_BUTTON_BREAKER_0#white_plastic  tris=64
+  mesh button_down_0@A_BUTTON_DOWN_0#black_plastic  tris=8
+  mesh button_down_0@A_BUTTON_DOWN_0#grey_plastic  tris=76
+  mesh button_enter_0@A_BUTTON_ENTER_0#black_plastic  tris=36
+  mesh button_enter_0@A_BUTTON_ENTER_0#grey_plastic  tris=76
+  mesh button_power_0@A_BUTTON_POWER_0#black_plastic  tris=144
+  mesh button_power_0@A_BUTTON_POWER_0#grey_plastic  tris=240
+  mesh button_up_0@A_BUTTON_UP_0#black_plastic  tris=8
+  mesh button_up_0@A_BUTTON_UP_0#grey_plastic  tris=76
+  mesh fan_0@A_FAN_0#fan_black  tris=292
+  mesh led_battery_0@A_LED_BATTERY_0#led_yellow  tris=64
+  mesh led_fault_0@A_LED_FAULT_0#led_red  tris=64
+  mesh led_online_0@A_LED_ONLINE_0#led_green  tris=64
+  mesh screen_0@A_SCREEN_0#black_plastic  tris=2
+  mesh ups_tower_black_plastic#black_plastic  tris=4564
+  mesh ups_tower_dark_plastic#dark_plastic  tris=632
+  mesh ups_tower_grey_plastic#grey_plastic  tris=192
+  mesh ups_tower_rubber#rubber  tris=224
+  mesh ups_tower_tex_power_print#tex_power_print  tris=22
+  A_BATTERY_0 pos=(-0.0, 0.08255, 0.1895) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.12000,0.12310,0.18000 meta=pull=+z,dist=0.20,order=1,under=A_BEZEL_0,kind=vrla,cells=2x12v9ah
+  A_BEZEL_0 pos=(-0.0, 0.08268, 0.2195) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.17000,0.14910,0.03000 meta=remove=+z,dist=0.05,order=0,clips=4
+  A_BUTTON_BREAKER_0 pos=(-0.04, 0.205, -0.225) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.01200,0.01200,0.01000 meta=press=-z_local,travel=0.003,fn=reset,rating=15a
+  A_BUTTON_DOWN_0 pos=(-0.0006, 0.17129, 0.2156) fwd=(0.0, 0.423, 0.906) up=(-0.0, 0.906, -0.423) size=0.01300,0.01000,0.00600 meta=press=-z_local,travel=0.0010,fn=down
+  A_BUTTON_ENTER_0 pos=(-0.0166, 0.17129, 0.2156) fwd=(0.0, 0.423, 0.906) up=(-0.0, 0.906, -0.423) size=0.01300,0.01000,0.00600 meta=press=-z_local,travel=0.0010,fn=enter
+  A_BUTTON_POWER_0 pos=(0.05544, 0.17129, 0.2156) fwd=(0.0, 0.423, 0.906) up=(-0.0, 0.906, -0.423) size=0.01260,0.01260,0.00600 meta=press=-z_local,travel=0.0012,fn=power,hold=2
+  A_BUTTON_UP_0 pos=(0.0154, 0.17129, 0.2156) fwd=(0.0, 0.423, 0.906) up=(-0.0, 0.906, -0.423) size=0.01300,0.01000,0.00600 meta=press=-z_local,travel=0.0010,fn=up
+  A_CORD_0 pos=(-0.05, 0.022, -0.265) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.01200,0.01200,0.02000 meta=r=0.0040,plug=nema5-15p,len=1.8,awg=14
+  A_FAN_0 pos=(0.06, 0.188, -0.2075) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.05000,0.05000,0.02000 meta=axis=z,spin=1,rpm=2800
+  A_HIT_0 pos=(-0.0, 0.1095, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.17000,0.21900,0.43900 meta=
+  A_LED_BATTERY_0 pos=(0.02268, 0.19129, 0.20583) fwd=(0.0, 0.423, 0.906) up=(-0.0, 0.906, -0.423) size=0.00300,0.00300,0.00300 meta=colour=yellow,fn=battery
+  A_LED_FAULT_0 pos=(0.02268, 0.18268, 0.20984) fwd=(0.0, 0.423, 0.906) up=(-0.0, 0.906, -0.423) size=0.00300,0.00300,0.00300 meta=colour=red,fn=fault
+  A_LED_ONLINE_0 pos=(0.02268, 0.1999, 0.20181) fwd=(0.0, 0.423, 0.906) up=(-0.0, 0.906, -0.423) size=0.00300,0.00300,0.00300 meta=colour=green,fn=online
+  A_PORT_NEMA515_0 pos=(0.02, 0.05, -0.221) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.02400,0.03000,0.01400 meta=depth=0.010,plug=nema5-15p,outlet=nema5-15r,group=battery
+  A_PORT_NEMA515_1 pos=(-0.02, 0.05, -0.221) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.02400,0.03000,0.01400 meta=depth=0.010,plug=nema5-15p,outlet=nema5-15r,group=battery
+  A_PORT_NEMA515_2 pos=(0.02, 0.086, -0.221) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.02400,0.03000,0.01400 meta=depth=0.010,plug=nema5-15p,outlet=nema5-15r,group=battery
+  A_PORT_NEMA515_3 pos=(-0.02, 0.086, -0.221) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.02400,0.03000,0.01400 meta=depth=0.010,plug=nema5-15p,outlet=nema5-15r,group=battery
+  A_PORT_NEMA515_4 pos=(0.02, 0.122, -0.221) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.02400,0.03000,0.01400 meta=depth=0.010,plug=nema5-15p,outlet=nema5-15r,group=battery
+  A_PORT_NEMA515_5 pos=(-0.02, 0.122, -0.221) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.02400,0.03000,0.01400 meta=depth=0.010,plug=nema5-15p,outlet=nema5-15r,group=battery
+  A_PORT_NEMA515_6 pos=(0.02, 0.158, -0.221) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.02400,0.03000,0.01400 meta=depth=0.010,plug=nema5-15p,outlet=nema5-15r,group=surge
+  A_PORT_NEMA515_7 pos=(-0.02, 0.158, -0.221) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.02400,0.03000,0.01400 meta=depth=0.010,plug=nema5-15p,outlet=nema5-15r,group=surge
+  A_PORT_USBB_0 pos=(-0.06, 0.175, -0.221) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.01200,0.01200,0.01200 meta=depth=0.008,usb=b
+  A_SCREEN_0 pos=(-0.01232, 0.19447, 0.20435) fwd=(0.0, 0.423, 0.906) up=(-0.0, 0.906, -0.423) size=0.05000,0.02000,0.00300 meta=kind=lcd,ref=256x112,colour=blue_white
+bounds min=(-0.0852, 0.0000, -0.2650) max=(0.0850, 0.2190, 0.2198) size=(0.1702, 0.2190, 0.4848)
+frame: floor at y=0, footprint centred, front +z; body 0.17 x 0.219 x 0.439

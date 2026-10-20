@@ -1,0 +1,62 @@
+ups_2u: 8596 triangles, 30 meshes
+  mesh battery_0@A_BATTERY_0#black_plastic  tris=236
+  mesh battery_0@A_BATTERY_0#copper  tris=36
+  mesh battery_0@A_BATTERY_0#steel  tris=144
+  mesh battery_0@A_BATTERY_0#tex_parts_c_palette  tris=332
+  mesh battery_0@A_BATTERY_0#tex_power_print  tris=2
+  mesh bezel_0@A_BEZEL_0#black_plastic  tris=12
+  mesh bezel_0@A_BEZEL_0#dark_plastic  tris=304
+  mesh bezel_0@A_BEZEL_0#tex_power_print  tris=2
+  mesh button_breaker_0@A_BUTTON_BREAKER_0#white_plastic  tris=64
+  mesh button_down_0@A_BUTTON_DOWN_0#black_plastic  tris=8
+  mesh button_down_0@A_BUTTON_DOWN_0#grey_plastic  tris=76
+  mesh button_enter_0@A_BUTTON_ENTER_0#black_plastic  tris=36
+  mesh button_enter_0@A_BUTTON_ENTER_0#grey_plastic  tris=76
+  mesh button_power_0@A_BUTTON_POWER_0#black_plastic  tris=144
+  mesh button_power_0@A_BUTTON_POWER_0#grey_plastic  tris=240
+  mesh button_up_0@A_BUTTON_UP_0#black_plastic  tris=8
+  mesh button_up_0@A_BUTTON_UP_0#grey_plastic  tris=76
+  mesh fan_0@A_FAN_0#fan_black  tris=292
+  mesh led_battery_0@A_LED_BATTERY_0#led_yellow  tris=64
+  mesh led_fault_0@A_LED_FAULT_0#led_red  tris=64
+  mesh led_online_0@A_LED_ONLINE_0#led_green  tris=64
+  mesh screen_0@A_SCREEN_0#black_plastic  tris=2
+  mesh ups_2u_black_plastic#black_plastic  tris=2236
+  mesh ups_2u_dark_plastic#dark_plastic  tris=1072
+  mesh ups_2u_gold#gold  tris=132
+  mesh ups_2u_grey_plastic#grey_plastic  tris=192
+  mesh ups_2u_nickel#nickel  tris=228
+  mesh ups_2u_paint_black#paint_black  tris=2304
+  mesh ups_2u_steel#steel  tris=116
+  mesh ups_2u_tex_power_print#tex_power_print  tris=34
+  A_BATTERY_0 pos=(-0.05, 0.04445, 0.004) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.30000,0.07530,0.36000 meta=pull=+z,dist=0.38,order=1,under=A_BEZEL_0,kind=vrla,cells=4x12v9ah,connector=anderson
+  A_BEZEL_0 pos=(-0.052, 0.04445, 0.032) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.32400,0.08530,0.02800 meta=remove=+z,dist=0.05,order=0,clips=4
+  A_BUTTON_BREAKER_0 pos=(-0.2, 0.0688, -0.4815) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.01200,0.01200,0.01000 meta=press=-z_local,travel=0.003,fn=reset,rating=15a
+  A_BUTTON_DOWN_0 pos=(0.1586, 0.02126, 0.0321) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01300,0.01000,0.00600 meta=press=-z_local,travel=0.0010,fn=down
+  A_BUTTON_ENTER_0 pos=(0.1426, 0.02126, 0.0321) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01300,0.01000,0.00600 meta=press=-z_local,travel=0.0010,fn=enter
+  A_BUTTON_POWER_0 pos=(0.19956, 0.02126, 0.0321) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01260,0.01260,0.00600 meta=press=-z_local,travel=0.0012,fn=power,hold=2
+  A_BUTTON_UP_0 pos=(0.1746, 0.02126, 0.0321) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01300,0.01000,0.00600 meta=press=-z_local,travel=0.0010,fn=up
+  A_FAN_0 pos=(-0.1, 0.0458, -0.462) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.06000,0.06000,0.02500 meta=axis=z,spin=1,rpm=3200
+  A_HIT_0 pos=(-0.0, 0.04445, -0.222) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.43200,0.08730,0.50800 meta=
+  A_HIT_1 pos=(-0.0, 0.04445, 0.001) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.08730,0.00400 meta=
+  A_LED_BATTERY_0 pos=(0.19632, 0.05632, 0.0317) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00300,0.00300,0.00300 meta=colour=yellow,fn=battery
+  A_LED_FAULT_0 pos=(0.19632, 0.04682, 0.0317) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00300,0.00300,0.00300 meta=colour=red,fn=fault
+  A_LED_ONLINE_0 pos=(0.19632, 0.06582, 0.0317) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00300,0.00300,0.00300 meta=colour=green,fn=online
+  A_PORT_C13_0 pos=(0.133, 0.0228, -0.4775) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.02600,0.01800,0.01200 meta=depth=0.007,plug=c14,outlet=c13,group=1
+  A_PORT_C13_1 pos=(0.167, 0.0228, -0.4775) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.02600,0.01800,0.01200 meta=depth=0.007,plug=c14,outlet=c13,group=1
+  A_PORT_C13_2 pos=(0.133, 0.0568, -0.4775) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.02600,0.01800,0.01200 meta=depth=0.007,plug=c14,outlet=c13,group=1
+  A_PORT_C13_3 pos=(0.167, 0.0568, -0.4775) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.02600,0.01800,0.01200 meta=depth=0.007,plug=c14,outlet=c13,group=1
+  A_PORT_C13_4 pos=(0.043, 0.0228, -0.4775) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.02600,0.01800,0.01200 meta=depth=0.007,plug=c14,outlet=c13,group=2
+  A_PORT_C13_5 pos=(0.077, 0.0228, -0.4775) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.02600,0.01800,0.01200 meta=depth=0.007,plug=c14,outlet=c13,group=2
+  A_PORT_C13_6 pos=(0.043, 0.0568, -0.4775) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.02600,0.01800,0.01200 meta=depth=0.007,plug=c14,outlet=c13,group=2
+  A_PORT_C13_7 pos=(0.077, 0.0568, -0.4775) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.02600,0.01800,0.01200 meta=depth=0.007,plug=c14,outlet=c13,group=2
+  A_PORT_C20_0 pos=(-0.17, 0.0308, -0.4775) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.03400,0.02500,0.01400 meta=depth=0.009,plug=c19,inlet=c20
+  A_PORT_SERIAL_0 pos=(-0.04, 0.0308, -0.4775) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.01450,0.01200,0.02000 meta=depth=0.012,rj45=1,latch=-up,serial=rs232
+  A_PORT_USBB_0 pos=(-0.04, 0.0608, -0.4775) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.01200,0.01200,0.01200 meta=depth=0.008,usb=b
+  A_SCREEN_0 pos=(0.15732, 0.05682, 0.0317) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.05800,0.02600,0.00300 meta=kind=lcd,ref=256x112,colour=blue_white
+  A_SCREW_RACK_0 pos=(-0.23255, 0.00635, 0.002) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01200,0.01000,0.00600 meta=thread=M6,cage=1,side=l
+  A_SCREW_RACK_1 pos=(-0.23255, 0.08255, 0.002) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01200,0.01000,0.00600 meta=thread=M6,cage=1,side=l
+  A_SCREW_RACK_2 pos=(0.23255, 0.00635, 0.002) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01200,0.01000,0.00600 meta=thread=M6,cage=1,side=r
+  A_SCREW_RACK_3 pos=(0.23255, 0.08255, 0.002) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01200,0.01000,0.00600 meta=thread=M6,cage=1,side=r
+bounds min=(-0.2413, 0.0004, -0.4845) max=(0.2413, 0.0885, 0.0332) size=(0.4826, 0.0881, 0.5177)
+frame: rack device, 2U, body 0.432 x 0.0873 x 0.480, bezel face z=0.032, rear z=-0.476

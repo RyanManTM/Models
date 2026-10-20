@@ -305,11 +305,11 @@ def pdu_places(st, root):
         P.anchor(f"A_PDU_{k}", P.Frame((sx * 0.270, 0.120, st["zm"] - MOUNT_DEPTH - 0.115), NZ, Y), (0.056, 1.80, 0.044), root,
                  meta=f"zeroU=1,len=1.80,side={'l' if sx < 0 else 'r'},mount=buttons,model=pdu_0u")
         # the mounting brackets (keyhole tabs) on the channel's beam at the PDU's button heights
+        # the PDU's back (with its two buttons) faces +z at z0 + 0.028: the channel and its keyhole tabs sit behind it
+        z_back = st["zm"] - MOUNT_DEPTH - 0.115 + 0.028
         for yy in (0.32, 1.72):
-            D.box("pdu_bracket", (sx * 0.255 - 0.002, yy - 0.020, st["zm"] - MOUNT_DEPTH - 0.095), (sx * 0.255 + 0.002, yy + 0.020, st["zm"] - MOUNT_DEPTH - 0.060),
-                  "steel", root)
-        D.box("pdu_channel", (min(sx * 0.255, sx * 0.272), 0.10, st["zm"] - MOUNT_DEPTH - 0.095), (max(sx * 0.255, sx * 0.272), 1.95, st["zm"] - MOUNT_DEPTH - 0.075),
-              PAINT, root)
+            D.box("pdu_bracket", (sx * 0.270 - 0.012, yy - 0.025, z_back + 0.0090), (sx * 0.270 + 0.012, yy + 0.025, z_back + 0.0105), "steel", root)
+        D.box("pdu_channel", (min(sx * 0.258, sx * 0.282), 0.10, z_back + 0.0105), (max(sx * 0.258, sx * 0.282), 1.95, z_back + 0.0225), PAINT, root)
 
 
 def frame_open(st, root):

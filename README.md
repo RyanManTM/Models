@@ -39,6 +39,7 @@ On Windows that is `"<path>\blender.exe" -b --factory-startup -P ...`.
 | `build_boxes.py` | Retail packaging rigs `box_<partid>`, with printed art rendered from the part models |
 | `build_shipping.py` | Shipping cartons and their flats, filler (paper, air pillows, bubble wrap), crumpled trash, twist ties and bags, the box cutter, unboxing table, wheelie bin, bin bags, paperwork tray |
 | `build_extras.py` | Papers (`doc_*`), part caps and guards (`cap_*`, `guard_*`), the PSU voltage sticker |
+| `build_datacenter.py` | Data-centre gear: the wall AC `ac_12k`, rack servers `server_1u/2u`, racks `rack_42u`, `rack_12u_open`, `switch_24`, `patch_panel_24`, UPSs `ups_2u/ups_tower`, PDUs `pdu_0u/1u` (`datacenter_*.py`; `datacenter_fit.py` installs them in the racks as a fit check) |
 
 ### Fonts on Linux
 The printed art uses Windows fonts (Arial, Segoe UI, Consolas, Impact, …). Where those aren't installed,
