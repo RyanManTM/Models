@@ -10,8 +10,8 @@ Catalogue data: `docs/catalog/cases.json` (14 entries). Anchor report: `Logs/Mod
 | case_lumin_216 | yes | 99,168 | 84 | case (case_breeze) | 63 SAME, front fans differ (below) |
 | case_phanta_g360a | yes | 110,284 | 89 | case (case_breeze) | 67 SAME |
 | case_nexa_h5 | yes | 93,334 | 83 | case (case_breeze) | 62 SAME, front fans differ |
-| case_facet_fjord | not yet | | | case | |
-| case_hush_500dx | not yet | | | case | |
+| case_facet_fjord | yes | 95,292 | 86 | case (case_breeze) | 62 SAME, front fans differ |
+| case_hush_500dx | yes | 94,844 | 85 | case (case_breeze) | 62 SAME, front fans differ |
 | case_facet_fizzair | not yet | | | case | |
 | case_brickhouse_beige98 | not yet | | | case | |
 | fan_arctiq_p12 | not yet | | | case_fan (new) | |
@@ -35,12 +35,16 @@ standoff, panel, front I/O, front-panel plug and hitbox anchors are case_breeze'
 | case_lumin_216 | 63 | A_FAN_1, A_FAN_2 (160 mm at y 0.318 / 0.155; breeze 120 mm at 0.352 / 0.230) | – | A_FAN_3, A_PLUG_FAN_3 |
 | case_phanta_g360a | 67 | – | – | – |
 | case_nexa_h5 | 62 | A_FAN_1, A_FAN_2 (120 mm at y 0.300 / 0.170); A_FAN_0..2 meta without `rgb=1` (plain fans) | – | A_FAN_3, A_PLUG_FAN_3 |
+| case_facet_fjord | 62 | A_FAN_1, A_FAN_2 (140 mm at y 0.300 / 0.155); A_FAN_0..2 meta without `rgb=1` | – | A_FAN_3, A_PLUG_FAN_3 |
+| case_hush_500dx | 62 | A_FAN_1, A_FAN_2 (140 mm at y 0.300 / 0.155); A_FAN_0..2 meta without `rgb=1` | – | A_FAN_3, A_PLUG_FAN_3 |
 
 Fan differences (allowed: front, top and bottom only; the rear A_FAN_0 / A_PLUG_FAN_0 are always SAME):
 
 - **case_lumin_216**: two 160 mm ARGB front fans, A_FAN_1..2 (size 0.16), plugs A_PLUG_FAN_1..2 where breeze has them.
 - **case_phanta_g360a**: as case_breeze (three 120 mm ARGB front fans, one rear).
 - **case_nexa_h5**: two 120 mm front fans, A_FAN_1..2 at y 0.300 / 0.170; no RGB, so no `rgb=1` in the fan meta.
+- **case_facet_fjord**: two 140 mm front fans, A_FAN_1..2 (size 0.14) at y 0.300 / 0.155; no RGB.
+- **case_hush_500dx**: two 140 mm front fans, A_FAN_1..2 (size 0.14) at y 0.300 / 0.155; non-RGB fans (the ARGB is the front strip).
 
 ### Looks
 - **case_lumin_216** (Lumin Airwave 216 RGB): black, a fine black hex-mesh front with two thin side grooves and the
@@ -49,6 +53,10 @@ Fan differences (allowed: front, top and bottom only; the rear A_FAN_0 / A_PLUG_
   in a black channel down the front's edge, an ARGB line on the shroud edge, the PHANTA logo on the base band.
 - **case_nexa_h5** (Nexa H5 Draft): white, a white perforated (round-hole) steel front, white non-RGB fans, rail feet,
   a small NEXA logo.
+- **case_facet_fjord** (Facet Fjord): charcoal, twelve walnut slats (grain texture) over a black mesh set back
+  behind them, two cross battens, round turned feet, two black 140 mm fans, no RGB.
+- **case_hush_500dx** (Hush Calm Base 500DX): black, solid side covers leave a centre mesh band, an ARGB light strip
+  runs down the left cover's inner edge (a dark diffuser on the right), two 140 mm black fans, the hush logo.
 
 ### build_case.py hooks
 Optional style keys, absent on case_brickhouse, case_breeze and case_aero:
