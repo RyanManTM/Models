@@ -1,0 +1,11 @@
+nic_linkwave_350t2_lpbracket: 564 triangles, 4 meshes
+  mesh nic_linkwave_350t2_lpbracket_dark_plastic#dark_plastic  tris=24
+  mesh nic_linkwave_350t2_lpbracket_nickel#nickel  tris=144
+  mesh nic_linkwave_350t2_lpbracket_steel#steel  tris=392
+  mesh s_tex_cat_server_cards#tex_cat_server_cards  tris=4
+  A_HIT_0 pos=(0.00425, 0.0007, -0.0204) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01100,0.01840,0.07920 meta=
+  A_SCREW_PH1_0 pos=(0.0011, -0.0015, -0.0363) fwd=(1.0, -0.0, 0.0) up=(0.0, 1.0, 0.0) size=0.00500,0.00500,0.00400 meta=thread=4-40,holds=bracket
+  A_SCREW_PH1_1 pos=(0.0011, -0.0015, 0.0048) fwd=(1.0, -0.0, 0.0) up=(0.0, 1.0, 0.0) size=0.00500,0.00500,0.00400 meta=thread=4-40,holds=bracket
+  A_SCREW_PH2_0 pos=(0.005, 0.0, 0.0192) fwd=(0.0, -0.0, 1.0) up=(1.0, 0.0, 0.0) size=0.00800,0.00800,0.00800 meta=slot=0
+bounds min=(-0.0016, -0.0085, -0.0600) max=(0.0100, 0.0099, 0.0192) size=(0.0116, 0.0184, 0.0792)
+frame: nic_linkwave_350t2's A_BRACKET_0 pose (card x 0.0965, y -0.0069, z 0.0465); tab z=0.0657, screw slot at card (x 0.1015, y -0.0069)

@@ -1,0 +1,6 @@
+cap_pcie8: 240 triangles, 1 meshes
+  mesh cap_pcie8_clear_plastic#clear_plastic  tris=240
+  A_GRIP_0 pos=(0.0166, -0.001, 0.0041) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00720,0.00150,0.00400 meta=pull=+z
+  A_HIT_0 pos=(-0.01265, -0.001, 0.00331) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.06570,0.00274,0.00582 meta=remove=+z,travel=0.0015,part=card,blocks=install,edge=0.056,lanes=8
+bounds min=(-0.0455, -0.0024, 0.0004) max=(0.0202, 0.0004, 0.0062) size=(0.0657, 0.0027, 0.0058)
+frame: the card frame turned so +z = the pull (card -z): sits at the card root, forward (0,0,-1), up (0,1,0); edge x -0.0115..0.0445

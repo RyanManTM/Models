@@ -1,0 +1,22 @@
+srv_strata_blank_2u: 1590 triangles, 14 meshes
+  mesh screw_rack_0@A_SCREW_RACK_0#black_plastic  tris=120
+  mesh screw_rack_0@A_SCREW_RACK_0#dark_plastic  tris=24
+  mesh screw_rack_0@A_SCREW_RACK_0#nickel  tris=120
+  mesh screw_rack_1@A_SCREW_RACK_1#black_plastic  tris=120
+  mesh screw_rack_1@A_SCREW_RACK_1#dark_plastic  tris=24
+  mesh screw_rack_1@A_SCREW_RACK_1#nickel  tris=120
+  mesh screw_rack_2@A_SCREW_RACK_2#black_plastic  tris=120
+  mesh screw_rack_2@A_SCREW_RACK_2#dark_plastic  tris=24
+  mesh screw_rack_2@A_SCREW_RACK_2#nickel  tris=120
+  mesh screw_rack_3@A_SCREW_RACK_3#black_plastic  tris=120
+  mesh screw_rack_3@A_SCREW_RACK_3#dark_plastic  tris=24
+  mesh screw_rack_3@A_SCREW_RACK_3#nickel  tris=120
+  mesh srv_strata_blank_2u_paint_black#paint_black  tris=532
+  mesh srv_strata_blank_2u_tex_cat_server_rack#tex_cat_server_rack  tris=2
+  A_HIT_0 pos=(-0.0, 0.04445, -0.004) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.08810,0.01600 meta=
+  A_SCREW_RACK_0 pos=(-0.23255, 0.00635, 0.0012) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01200,0.01000,0.00600 meta=thread=M6,cage=1,side=l,fitted=1
+  A_SCREW_RACK_1 pos=(-0.23255, 0.08255, 0.0012) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01200,0.01000,0.00600 meta=thread=M6,cage=1,side=l,fitted=1
+  A_SCREW_RACK_2 pos=(0.23255, 0.00635, 0.0012) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01200,0.01000,0.00600 meta=thread=M6,cage=1,side=r,fitted=1
+  A_SCREW_RACK_3 pos=(0.23255, 0.08255, 0.0012) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01200,0.01000,0.00600 meta=thread=M6,cage=1,side=r,fitted=1
+bounds min=(-0.2413, 0.0001, -0.0120) max=(0.2413, 0.0888, 0.0058) size=(0.4826, 0.0886, 0.0178)
+frame: rack device, 2U blanking panel, face z=0.0012, flanges to z=-0.012

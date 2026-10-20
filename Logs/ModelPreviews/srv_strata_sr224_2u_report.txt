@@ -1,0 +1,367 @@
+srv_strata_sr224_2u: 24602 triangles, 244 meshes
+  mesh bay_0@A_BAY_0#alu  tris=12
+  mesh bay_0@A_BAY_0#black_plastic  tris=120
+  mesh bay_0@A_BAY_0#dark_plastic  tris=56
+  mesh bay_0@A_BAY_0#tex_cat_server_rack  tris=2
+  mesh bay_0@A_BAY_0#tex_parts_c_palette  tris=12
+  mesh bay_10@A_BAY_10#alu  tris=12
+  mesh bay_10@A_BAY_10#black_plastic  tris=120
+  mesh bay_10@A_BAY_10#dark_plastic  tris=56
+  mesh bay_10@A_BAY_10#tex_cat_server_rack  tris=2
+  mesh bay_10@A_BAY_10#tex_parts_c_palette  tris=12
+  mesh bay_11@A_BAY_11#alu  tris=12
+  mesh bay_11@A_BAY_11#black_plastic  tris=120
+  mesh bay_11@A_BAY_11#dark_plastic  tris=56
+  mesh bay_11@A_BAY_11#tex_cat_server_rack  tris=2
+  mesh bay_11@A_BAY_11#tex_parts_c_palette  tris=12
+  mesh bay_12@A_BAY_12#alu  tris=12
+  mesh bay_12@A_BAY_12#black_plastic  tris=120
+  mesh bay_12@A_BAY_12#dark_plastic  tris=56
+  mesh bay_12@A_BAY_12#tex_cat_server_rack  tris=2
+  mesh bay_12@A_BAY_12#tex_parts_c_palette  tris=12
+  mesh bay_13@A_BAY_13#alu  tris=12
+  mesh bay_13@A_BAY_13#black_plastic  tris=120
+  mesh bay_13@A_BAY_13#dark_plastic  tris=56
+  mesh bay_13@A_BAY_13#tex_cat_server_rack  tris=2
+  mesh bay_13@A_BAY_13#tex_parts_c_palette  tris=12
+  mesh bay_14@A_BAY_14#alu  tris=12
+  mesh bay_14@A_BAY_14#black_plastic  tris=120
+  mesh bay_14@A_BAY_14#dark_plastic  tris=56
+  mesh bay_14@A_BAY_14#tex_cat_server_rack  tris=2
+  mesh bay_14@A_BAY_14#tex_parts_c_palette  tris=12
+  mesh bay_15@A_BAY_15#alu  tris=12
+  mesh bay_15@A_BAY_15#black_plastic  tris=120
+  mesh bay_15@A_BAY_15#dark_plastic  tris=56
+  mesh bay_15@A_BAY_15#tex_cat_server_rack  tris=2
+  mesh bay_15@A_BAY_15#tex_parts_c_palette  tris=12
+  mesh bay_16@A_BAY_16#alu  tris=12
+  mesh bay_16@A_BAY_16#black_plastic  tris=120
+  mesh bay_16@A_BAY_16#dark_plastic  tris=56
+  mesh bay_16@A_BAY_16#tex_cat_server_rack  tris=2
+  mesh bay_16@A_BAY_16#tex_parts_c_palette  tris=12
+  mesh bay_17@A_BAY_17#alu  tris=12
+  mesh bay_17@A_BAY_17#black_plastic  tris=120
+  mesh bay_17@A_BAY_17#dark_plastic  tris=56
+  mesh bay_17@A_BAY_17#tex_cat_server_rack  tris=2
+  mesh bay_17@A_BAY_17#tex_parts_c_palette  tris=12
+  mesh bay_18@A_BAY_18#alu  tris=12
+  mesh bay_18@A_BAY_18#black_plastic  tris=120
+  mesh bay_18@A_BAY_18#dark_plastic  tris=56
+  mesh bay_18@A_BAY_18#tex_cat_server_rack  tris=2
+  mesh bay_18@A_BAY_18#tex_parts_c_palette  tris=12
+  mesh bay_19@A_BAY_19#alu  tris=12
+  mesh bay_19@A_BAY_19#black_plastic  tris=120
+  mesh bay_19@A_BAY_19#dark_plastic  tris=56
+  mesh bay_19@A_BAY_19#tex_cat_server_rack  tris=2
+  mesh bay_19@A_BAY_19#tex_parts_c_palette  tris=12
+  mesh bay_1@A_BAY_1#alu  tris=12
+  mesh bay_1@A_BAY_1#black_plastic  tris=120
+  mesh bay_1@A_BAY_1#dark_plastic  tris=56
+  mesh bay_1@A_BAY_1#tex_cat_server_rack  tris=2
+  mesh bay_1@A_BAY_1#tex_parts_c_palette  tris=12
+  mesh bay_20@A_BAY_20#alu  tris=12
+  mesh bay_20@A_BAY_20#black_plastic  tris=120
+  mesh bay_20@A_BAY_20#dark_plastic  tris=56
+  mesh bay_20@A_BAY_20#tex_cat_server_rack  tris=2
+  mesh bay_20@A_BAY_20#tex_parts_c_palette  tris=12
+  mesh bay_21@A_BAY_21#alu  tris=12
+  mesh bay_21@A_BAY_21#black_plastic  tris=120
+  mesh bay_21@A_BAY_21#dark_plastic  tris=56
+  mesh bay_21@A_BAY_21#tex_cat_server_rack  tris=2
+  mesh bay_21@A_BAY_21#tex_parts_c_palette  tris=12
+  mesh bay_22@A_BAY_22#alu  tris=12
+  mesh bay_22@A_BAY_22#black_plastic  tris=120
+  mesh bay_22@A_BAY_22#dark_plastic  tris=56
+  mesh bay_22@A_BAY_22#tex_cat_server_rack  tris=2
+  mesh bay_22@A_BAY_22#tex_parts_c_palette  tris=12
+  mesh bay_23@A_BAY_23#alu  tris=12
+  mesh bay_23@A_BAY_23#black_plastic  tris=120
+  mesh bay_23@A_BAY_23#dark_plastic  tris=56
+  mesh bay_23@A_BAY_23#tex_cat_server_rack  tris=2
+  mesh bay_23@A_BAY_23#tex_parts_c_palette  tris=12
+  mesh bay_2@A_BAY_2#alu  tris=12
+  mesh bay_2@A_BAY_2#black_plastic  tris=120
+  mesh bay_2@A_BAY_2#dark_plastic  tris=56
+  mesh bay_2@A_BAY_2#tex_cat_server_rack  tris=2
+  mesh bay_2@A_BAY_2#tex_parts_c_palette  tris=12
+  mesh bay_3@A_BAY_3#alu  tris=12
+  mesh bay_3@A_BAY_3#black_plastic  tris=120
+  mesh bay_3@A_BAY_3#dark_plastic  tris=56
+  mesh bay_3@A_BAY_3#tex_cat_server_rack  tris=2
+  mesh bay_3@A_BAY_3#tex_parts_c_palette  tris=12
+  mesh bay_4@A_BAY_4#alu  tris=12
+  mesh bay_4@A_BAY_4#black_plastic  tris=120
+  mesh bay_4@A_BAY_4#dark_plastic  tris=56
+  mesh bay_4@A_BAY_4#tex_cat_server_rack  tris=2
+  mesh bay_4@A_BAY_4#tex_parts_c_palette  tris=12
+  mesh bay_5@A_BAY_5#alu  tris=12
+  mesh bay_5@A_BAY_5#black_plastic  tris=120
+  mesh bay_5@A_BAY_5#dark_plastic  tris=56
+  mesh bay_5@A_BAY_5#tex_cat_server_rack  tris=2
+  mesh bay_5@A_BAY_5#tex_parts_c_palette  tris=12
+  mesh bay_6@A_BAY_6#alu  tris=12
+  mesh bay_6@A_BAY_6#black_plastic  tris=120
+  mesh bay_6@A_BAY_6#dark_plastic  tris=56
+  mesh bay_6@A_BAY_6#tex_cat_server_rack  tris=2
+  mesh bay_6@A_BAY_6#tex_parts_c_palette  tris=12
+  mesh bay_7@A_BAY_7#alu  tris=12
+  mesh bay_7@A_BAY_7#black_plastic  tris=120
+  mesh bay_7@A_BAY_7#dark_plastic  tris=56
+  mesh bay_7@A_BAY_7#tex_cat_server_rack  tris=2
+  mesh bay_7@A_BAY_7#tex_parts_c_palette  tris=12
+  mesh bay_8@A_BAY_8#alu  tris=12
+  mesh bay_8@A_BAY_8#black_plastic  tris=120
+  mesh bay_8@A_BAY_8#dark_plastic  tris=56
+  mesh bay_8@A_BAY_8#tex_cat_server_rack  tris=2
+  mesh bay_8@A_BAY_8#tex_parts_c_palette  tris=12
+  mesh bay_9@A_BAY_9#alu  tris=12
+  mesh bay_9@A_BAY_9#black_plastic  tris=120
+  mesh bay_9@A_BAY_9#dark_plastic  tris=56
+  mesh bay_9@A_BAY_9#tex_cat_server_rack  tris=2
+  mesh bay_9@A_BAY_9#tex_parts_c_palette  tris=12
+  mesh button_id_0@A_BUTTON_ID_0#black_plastic  tris=24
+  mesh button_id_0@A_BUTTON_ID_0#grey_plastic  tris=144
+  mesh button_power_0@A_BUTTON_POWER_0#black_plastic  tris=144
+  mesh button_power_0@A_BUTTON_POWER_0#grey_plastic  tris=240
+  mesh fan_0@A_FAN_0#fan_black  tris=292
+  mesh fan_1@A_FAN_1#fan_black  tris=292
+  mesh fan_2@A_FAN_2#fan_black  tris=292
+  mesh fan_3@A_FAN_3#fan_black  tris=292
+  mesh fan_4@A_FAN_4#fan_black  tris=292
+  mesh fan_5@A_FAN_5#fan_black  tris=292
+  mesh led_act_0@A_LED_ACT_0#led_yellow  tris=12
+  mesh led_act_1@A_LED_ACT_1#led_yellow  tris=12
+  mesh led_act_2@A_LED_ACT_2#led_yellow  tris=12
+  mesh led_act_3@A_LED_ACT_3#led_yellow  tris=12
+  mesh led_drive_0@A_LED_DRIVE_0@A_BAY_0#led_green  tris=12
+  mesh led_drive_10@A_LED_DRIVE_10@A_BAY_10#led_green  tris=12
+  mesh led_drive_11@A_LED_DRIVE_11@A_BAY_11#led_green  tris=12
+  mesh led_drive_12@A_LED_DRIVE_12@A_BAY_12#led_green  tris=12
+  mesh led_drive_13@A_LED_DRIVE_13@A_BAY_13#led_green  tris=12
+  mesh led_drive_14@A_LED_DRIVE_14@A_BAY_14#led_green  tris=12
+  mesh led_drive_15@A_LED_DRIVE_15@A_BAY_15#led_green  tris=12
+  mesh led_drive_16@A_LED_DRIVE_16@A_BAY_16#led_green  tris=12
+  mesh led_drive_17@A_LED_DRIVE_17@A_BAY_17#led_green  tris=12
+  mesh led_drive_18@A_LED_DRIVE_18@A_BAY_18#led_green  tris=12
+  mesh led_drive_19@A_LED_DRIVE_19@A_BAY_19#led_green  tris=12
+  mesh led_drive_1@A_LED_DRIVE_1@A_BAY_1#led_green  tris=12
+  mesh led_drive_20@A_LED_DRIVE_20@A_BAY_20#led_green  tris=12
+  mesh led_drive_21@A_LED_DRIVE_21@A_BAY_21#led_green  tris=12
+  mesh led_drive_22@A_LED_DRIVE_22@A_BAY_22#led_green  tris=12
+  mesh led_drive_23@A_LED_DRIVE_23@A_BAY_23#led_green  tris=12
+  mesh led_drive_2@A_LED_DRIVE_2@A_BAY_2#led_green  tris=12
+  mesh led_drive_3@A_LED_DRIVE_3@A_BAY_3#led_green  tris=12
+  mesh led_drive_4@A_LED_DRIVE_4@A_BAY_4#led_green  tris=12
+  mesh led_drive_5@A_LED_DRIVE_5@A_BAY_5#led_green  tris=12
+  mesh led_drive_6@A_LED_DRIVE_6@A_BAY_6#led_green  tris=12
+  mesh led_drive_7@A_LED_DRIVE_7@A_BAY_7#led_green  tris=12
+  mesh led_drive_8@A_LED_DRIVE_8@A_BAY_8#led_green  tris=12
+  mesh led_drive_9@A_LED_DRIVE_9@A_BAY_9#led_green  tris=12
+  mesh led_drivefault_0@A_LED_DRIVEFAULT_0@A_BAY_0#led_yellow  tris=12
+  mesh led_drivefault_10@A_LED_DRIVEFAULT_10@A_BAY_10#led_yellow  tris=12
+  mesh led_drivefault_11@A_LED_DRIVEFAULT_11@A_BAY_11#led_yellow  tris=12
+  mesh led_drivefault_12@A_LED_DRIVEFAULT_12@A_BAY_12#led_yellow  tris=12
+  mesh led_drivefault_13@A_LED_DRIVEFAULT_13@A_BAY_13#led_yellow  tris=12
+  mesh led_drivefault_14@A_LED_DRIVEFAULT_14@A_BAY_14#led_yellow  tris=12
+  mesh led_drivefault_15@A_LED_DRIVEFAULT_15@A_BAY_15#led_yellow  tris=12
+  mesh led_drivefault_16@A_LED_DRIVEFAULT_16@A_BAY_16#led_yellow  tris=12
+  mesh led_drivefault_17@A_LED_DRIVEFAULT_17@A_BAY_17#led_yellow  tris=12
+  mesh led_drivefault_18@A_LED_DRIVEFAULT_18@A_BAY_18#led_yellow  tris=12
+  mesh led_drivefault_19@A_LED_DRIVEFAULT_19@A_BAY_19#led_yellow  tris=12
+  mesh led_drivefault_1@A_LED_DRIVEFAULT_1@A_BAY_1#led_yellow  tris=12
+  mesh led_drivefault_20@A_LED_DRIVEFAULT_20@A_BAY_20#led_yellow  tris=12
+  mesh led_drivefault_21@A_LED_DRIVEFAULT_21@A_BAY_21#led_yellow  tris=12
+  mesh led_drivefault_22@A_LED_DRIVEFAULT_22@A_BAY_22#led_yellow  tris=12
+  mesh led_drivefault_23@A_LED_DRIVEFAULT_23@A_BAY_23#led_yellow  tris=12
+  mesh led_drivefault_2@A_LED_DRIVEFAULT_2@A_BAY_2#led_yellow  tris=12
+  mesh led_drivefault_3@A_LED_DRIVEFAULT_3@A_BAY_3#led_yellow  tris=12
+  mesh led_drivefault_4@A_LED_DRIVEFAULT_4@A_BAY_4#led_yellow  tris=12
+  mesh led_drivefault_5@A_LED_DRIVEFAULT_5@A_BAY_5#led_yellow  tris=12
+  mesh led_drivefault_6@A_LED_DRIVEFAULT_6@A_BAY_6#led_yellow  tris=12
+  mesh led_drivefault_7@A_LED_DRIVEFAULT_7@A_BAY_7#led_yellow  tris=12
+  mesh led_drivefault_8@A_LED_DRIVEFAULT_8@A_BAY_8#led_yellow  tris=12
+  mesh led_drivefault_9@A_LED_DRIVEFAULT_9@A_BAY_9#led_yellow  tris=12
+  mesh led_fault_0@A_LED_FAULT_0#led_yellow  tris=12
+  mesh led_health_0@A_LED_HEALTH_0#led_green  tris=12
+  mesh led_id_0@A_LED_ID_0#led_blue  tris=64
+  mesh led_id_1@A_LED_ID_1#led_blue  tris=64
+  mesh led_ipmi_0@A_LED_IPMI_0#led_green  tris=12
+  mesh led_link_0@A_LED_LINK_0#led_green  tris=12
+  mesh led_link_1@A_LED_LINK_1#led_green  tris=12
+  mesh led_link_2@A_LED_LINK_2#led_green  tris=12
+  mesh led_link_3@A_LED_LINK_3#led_green  tris=12
+  mesh led_net_0@A_LED_NET_0#led_green  tris=12
+  mesh led_power_0@A_LED_POWER_0#led_green  tris=160
+  mesh led_psu_0@A_LED_PSU_0@A_PSU_0#led_green  tris=64
+  mesh led_psu_1@A_LED_PSU_1@A_PSU_1#led_green  tris=64
+  mesh lid_0@A_LID_0#black_plastic  tris=76
+  mesh lid_0@A_LID_0#dark_plastic  tris=60
+  mesh lid_0@A_LID_0#nickel  tris=64
+  mesh lid_0@A_LID_0#steel  tris=132
+  mesh lid_0@A_LID_0#tex_server_print  tris=2
+  mesh psu_0@A_PSU_0#black_plastic  tris=228
+  mesh psu_0@A_PSU_0#dark_plastic  tris=76
+  mesh psu_0@A_PSU_0#fan_black  tris=80
+  mesh psu_0@A_PSU_0#gold  tris=12
+  mesh psu_0@A_PSU_0#nickel  tris=36
+  mesh psu_0@A_PSU_0#pcb_green  tris=12
+  mesh psu_0@A_PSU_0#steel  tris=12
+  mesh psu_0@A_PSU_0#steel_dark  tris=656
+  mesh psu_0@A_PSU_0#tex_parts_c_palette  tris=76
+  mesh psu_0@A_PSU_0#tex_server_print  tris=2
+  mesh psu_1@A_PSU_1#black_plastic  tris=228
+  mesh psu_1@A_PSU_1#dark_plastic  tris=76
+  mesh psu_1@A_PSU_1#fan_black  tris=80
+  mesh psu_1@A_PSU_1#gold  tris=12
+  mesh psu_1@A_PSU_1#nickel  tris=36
+  mesh psu_1@A_PSU_1#pcb_green  tris=12
+  mesh psu_1@A_PSU_1#steel  tris=12
+  mesh psu_1@A_PSU_1#steel_dark  tris=656
+  mesh psu_1@A_PSU_1#tex_parts_c_palette  tris=76
+  mesh psu_1@A_PSU_1#tex_server_print  tris=2
+  mesh rail_l_0@A_RAIL_L_0#steel  tris=72
+  mesh rail_l_0@A_RAIL_L_0#steel_dark  tris=172
+  mesh rail_r_0@A_RAIL_R_0#steel  tris=72
+  mesh rail_r_0@A_RAIL_R_0#steel_dark  tris=172
+  mesh screw_thumb_0@A_SCREW_THUMB_0#steel  tris=364
+  mesh screw_thumb_1@A_SCREW_THUMB_1#steel  tris=364
+  mesh shroud_0@A_SHROUD_0#black_plastic  tris=124
+  mesh shroud_0@A_SHROUD_0#tex_server_print  tris=2
+  mesh srv_strata_sr224_2u_alu#alu  tris=980
+  mesh srv_strata_sr224_2u_alu_dark#alu_dark  tris=36
+  mesh srv_strata_sr224_2u_black_plastic#black_plastic  tris=4248
+  mesh srv_strata_sr224_2u_chip_black#chip_black  tris=12
+  mesh srv_strata_sr224_2u_copper#copper  tris=24
+  mesh srv_strata_sr224_2u_dark_plastic#dark_plastic  tris=980
+  mesh srv_strata_sr224_2u_gold#gold  tris=660
+  mesh srv_strata_sr224_2u_grey_plastic#grey_plastic  tris=192
+  mesh srv_strata_sr224_2u_nickel#nickel  tris=1280
+  mesh srv_strata_sr224_2u_paint_black#paint_black  tris=728
+  mesh srv_strata_sr224_2u_pcb_green#pcb_green  tris=312
+  mesh srv_strata_sr224_2u_steel#steel  tris=1396
+  mesh srv_strata_sr224_2u_steel_dark#steel_dark  tris=940
+  mesh srv_strata_sr224_2u_tex_cat_server_rack#tex_cat_server_rack  tris=4
+  mesh srv_strata_sr224_2u_tex_server_print#tex_server_print  tris=82
+  mesh srv_strata_sr224_2u_white_plastic#white_plastic  tris=384
+  A_BAY_0 pos=(0.20413, 0.0406, 0.03) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01735,0.07600,0.10400 meta=pull=+z,dist=0.114,kind=sff,slot=0,latch=1,orient=vertical
+  A_BAY_1 pos=(0.18638, 0.0406, 0.03) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01735,0.07600,0.10400 meta=pull=+z,dist=0.114,kind=sff,slot=1,latch=1,orient=vertical
+  A_BAY_10 pos=(0.02662, 0.0406, 0.03) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01735,0.07600,0.10400 meta=pull=+z,dist=0.114,kind=sff,slot=10,latch=1,orient=vertical
+  A_BAY_11 pos=(0.00888, 0.0406, 0.03) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01735,0.07600,0.10400 meta=pull=+z,dist=0.114,kind=sff,slot=11,latch=1,orient=vertical
+  A_BAY_12 pos=(-0.00888, 0.0406, 0.03) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01735,0.07600,0.10400 meta=pull=+z,dist=0.114,kind=sff,slot=12,latch=1,orient=vertical
+  A_BAY_13 pos=(-0.02662, 0.0406, 0.03) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01735,0.07600,0.10400 meta=pull=+z,dist=0.114,kind=sff,slot=13,latch=1,orient=vertical
+  A_BAY_14 pos=(-0.04437, 0.0406, 0.03) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01735,0.07600,0.10400 meta=pull=+z,dist=0.114,kind=sff,slot=14,latch=1,orient=vertical
+  A_BAY_15 pos=(-0.06213, 0.0406, 0.03) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01735,0.07600,0.10400 meta=pull=+z,dist=0.114,kind=sff,slot=15,latch=1,orient=vertical
+  A_BAY_16 pos=(-0.07987, 0.0406, 0.03) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01735,0.07600,0.10400 meta=pull=+z,dist=0.114,kind=sff,slot=16,latch=1,orient=vertical
+  A_BAY_17 pos=(-0.09763, 0.0406, 0.03) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01735,0.07600,0.10400 meta=pull=+z,dist=0.114,kind=sff,slot=17,latch=1,orient=vertical
+  A_BAY_18 pos=(-0.11537, 0.0406, 0.03) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01735,0.07600,0.10400 meta=pull=+z,dist=0.114,kind=sff,slot=18,latch=1,orient=vertical
+  A_BAY_19 pos=(-0.13313, 0.0406, 0.03) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01735,0.07600,0.10400 meta=pull=+z,dist=0.114,kind=sff,slot=19,latch=1,orient=vertical
+  A_BAY_2 pos=(0.16862, 0.0406, 0.03) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01735,0.07600,0.10400 meta=pull=+z,dist=0.114,kind=sff,slot=2,latch=1,orient=vertical
+  A_BAY_20 pos=(-0.15088, 0.0406, 0.03) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01735,0.07600,0.10400 meta=pull=+z,dist=0.114,kind=sff,slot=20,latch=1,orient=vertical
+  A_BAY_21 pos=(-0.16862, 0.0406, 0.03) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01735,0.07600,0.10400 meta=pull=+z,dist=0.114,kind=sff,slot=21,latch=1,orient=vertical
+  A_BAY_22 pos=(-0.18638, 0.0406, 0.03) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01735,0.07600,0.10400 meta=pull=+z,dist=0.114,kind=sff,slot=22,latch=1,orient=vertical
+  A_BAY_23 pos=(-0.20413, 0.0406, 0.03) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01735,0.07600,0.10400 meta=pull=+z,dist=0.114,kind=sff,slot=23,latch=1,orient=vertical
+  A_BAY_3 pos=(0.15088, 0.0406, 0.03) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01735,0.07600,0.10400 meta=pull=+z,dist=0.114,kind=sff,slot=3,latch=1,orient=vertical
+  A_BAY_4 pos=(0.13313, 0.0406, 0.03) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01735,0.07600,0.10400 meta=pull=+z,dist=0.114,kind=sff,slot=4,latch=1,orient=vertical
+  A_BAY_5 pos=(0.11537, 0.0406, 0.03) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01735,0.07600,0.10400 meta=pull=+z,dist=0.114,kind=sff,slot=5,latch=1,orient=vertical
+  A_BAY_6 pos=(0.09763, 0.0406, 0.03) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01735,0.07600,0.10400 meta=pull=+z,dist=0.114,kind=sff,slot=6,latch=1,orient=vertical
+  A_BAY_7 pos=(0.07987, 0.0406, 0.03) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01735,0.07600,0.10400 meta=pull=+z,dist=0.114,kind=sff,slot=7,latch=1,orient=vertical
+  A_BAY_8 pos=(0.06213, 0.0406, 0.03) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01735,0.07600,0.10400 meta=pull=+z,dist=0.114,kind=sff,slot=8,latch=1,orient=vertical
+  A_BAY_9 pos=(0.04437, 0.0406, 0.03) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01735,0.07600,0.10400 meta=pull=+z,dist=0.114,kind=sff,slot=9,latch=1,orient=vertical
+  A_BUTTON_ID_0 pos=(0.22915, 0.0781, 0.0302) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00900,0.00900,0.00600 meta=press=-z_local,travel=0.0010,fn=identify
+  A_BUTTON_POWER_0 pos=(-0.22915, 0.0781, 0.0302) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00980,0.00980,0.00600 meta=press=-z_local,travel=0.0012,fn=power,hold=4
+  A_FAN_0 pos=(-0.16833, 0.0322, -0.134) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.06000,0.06000,0.03800 meta=axis=z,spin=1,rpm=6500,hotswap=1,pull=+y
+  A_FAN_1 pos=(-0.101, 0.0322, -0.134) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.06000,0.06000,0.03800 meta=axis=z,spin=1,rpm=6500,hotswap=1,pull=+y
+  A_FAN_2 pos=(-0.03367, 0.0322, -0.134) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.06000,0.06000,0.03800 meta=axis=z,spin=1,rpm=6500,hotswap=1,pull=+y
+  A_FAN_3 pos=(0.03367, 0.0322, -0.134) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.06000,0.06000,0.03800 meta=axis=z,spin=1,rpm=6500,hotswap=1,pull=+y
+  A_FAN_4 pos=(0.101, 0.0322, -0.134) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.06000,0.06000,0.03800 meta=axis=z,spin=1,rpm=6500,hotswap=1,pull=+y
+  A_FAN_5 pos=(0.16833, 0.0322, -0.134) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.06000,0.06000,0.03800 meta=axis=z,spin=1,rpm=6500,hotswap=1,pull=+y
+  A_FILM_EAR_0 pos=(-0.22915, 0.04445, 0.03005) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02270,0.08570,0.00010 meta=film=clear,peel=-y,tab=-x+y
+  A_FILM_EAR_1 pos=(0.22915, 0.04445, 0.03005) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02270,0.08570,0.00010 meta=film=clear,peel=-y,tab=+x+y
+  A_HIT_0 pos=(-0.0, 0.04445, -0.32) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.43400,0.08730,0.70000 meta=
+  A_HIT_1 pos=(-0.22915, 0.04445, 0.015) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02430,0.08730,0.03000 meta=
+  A_HIT_2 pos=(0.22915, 0.04445, 0.015) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02430,0.08730,0.03000 meta=
+  A_LED_ACT_0 pos=(-0.0182, 0.0098, -0.6701) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00220,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_1 pos=(-0.0022, 0.0098, -0.6701) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00220,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_2 pos=(0.0138, 0.0098, -0.6701) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00220,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_ACT_3 pos=(0.0298, 0.0098, -0.6701) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00220,0.00200,0.00300 meta=colour=amber,fn=activity
+  A_LED_DRIVEFAULT_0@A_BAY_0 pos=(0.20763, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=amber,fn=fault
+  A_LED_DRIVEFAULT_10@A_BAY_10 pos=(0.03012, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=amber,fn=fault
+  A_LED_DRIVEFAULT_11@A_BAY_11 pos=(0.01237, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=amber,fn=fault
+  A_LED_DRIVEFAULT_12@A_BAY_12 pos=(-0.00538, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=amber,fn=fault
+  A_LED_DRIVEFAULT_13@A_BAY_13 pos=(-0.02313, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=amber,fn=fault
+  A_LED_DRIVEFAULT_14@A_BAY_14 pos=(-0.04087, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=amber,fn=fault
+  A_LED_DRIVEFAULT_15@A_BAY_15 pos=(-0.05863, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=amber,fn=fault
+  A_LED_DRIVEFAULT_16@A_BAY_16 pos=(-0.07638, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=amber,fn=fault
+  A_LED_DRIVEFAULT_17@A_BAY_17 pos=(-0.09413, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=amber,fn=fault
+  A_LED_DRIVEFAULT_18@A_BAY_18 pos=(-0.11187, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=amber,fn=fault
+  A_LED_DRIVEFAULT_19@A_BAY_19 pos=(-0.12962, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=amber,fn=fault
+  A_LED_DRIVEFAULT_1@A_BAY_1 pos=(0.18988, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=amber,fn=fault
+  A_LED_DRIVEFAULT_20@A_BAY_20 pos=(-0.14738, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=amber,fn=fault
+  A_LED_DRIVEFAULT_21@A_BAY_21 pos=(-0.16512, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=amber,fn=fault
+  A_LED_DRIVEFAULT_22@A_BAY_22 pos=(-0.18288, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=amber,fn=fault
+  A_LED_DRIVEFAULT_23@A_BAY_23 pos=(-0.20063, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=amber,fn=fault
+  A_LED_DRIVEFAULT_2@A_BAY_2 pos=(0.17212, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=amber,fn=fault
+  A_LED_DRIVEFAULT_3@A_BAY_3 pos=(0.15438, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=amber,fn=fault
+  A_LED_DRIVEFAULT_4@A_BAY_4 pos=(0.13663, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=amber,fn=fault
+  A_LED_DRIVEFAULT_5@A_BAY_5 pos=(0.11887, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=amber,fn=fault
+  A_LED_DRIVEFAULT_6@A_BAY_6 pos=(0.10113, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=amber,fn=fault
+  A_LED_DRIVEFAULT_7@A_BAY_7 pos=(0.08337, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=amber,fn=fault
+  A_LED_DRIVEFAULT_8@A_BAY_8 pos=(0.06562, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=amber,fn=fault
+  A_LED_DRIVEFAULT_9@A_BAY_9 pos=(0.04787, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=amber,fn=fault
+  A_LED_DRIVE_0@A_BAY_0 pos=(0.20063, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=green,fn=activity
+  A_LED_DRIVE_10@A_BAY_10 pos=(0.02313, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=green,fn=activity
+  A_LED_DRIVE_11@A_BAY_11 pos=(0.00538, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=green,fn=activity
+  A_LED_DRIVE_12@A_BAY_12 pos=(-0.01237, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=green,fn=activity
+  A_LED_DRIVE_13@A_BAY_13 pos=(-0.03012, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=green,fn=activity
+  A_LED_DRIVE_14@A_BAY_14 pos=(-0.04787, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=green,fn=activity
+  A_LED_DRIVE_15@A_BAY_15 pos=(-0.06562, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=green,fn=activity
+  A_LED_DRIVE_16@A_BAY_16 pos=(-0.08337, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=green,fn=activity
+  A_LED_DRIVE_17@A_BAY_17 pos=(-0.10113, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=green,fn=activity
+  A_LED_DRIVE_18@A_BAY_18 pos=(-0.11887, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=green,fn=activity
+  A_LED_DRIVE_19@A_BAY_19 pos=(-0.13663, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=green,fn=activity
+  A_LED_DRIVE_1@A_BAY_1 pos=(0.18288, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=green,fn=activity
+  A_LED_DRIVE_20@A_BAY_20 pos=(-0.15438, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=green,fn=activity
+  A_LED_DRIVE_21@A_BAY_21 pos=(-0.17212, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=green,fn=activity
+  A_LED_DRIVE_22@A_BAY_22 pos=(-0.18988, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=green,fn=activity
+  A_LED_DRIVE_23@A_BAY_23 pos=(-0.20763, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=green,fn=activity
+  A_LED_DRIVE_2@A_BAY_2 pos=(0.16512, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=green,fn=activity
+  A_LED_DRIVE_3@A_BAY_3 pos=(0.14738, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=green,fn=activity
+  A_LED_DRIVE_4@A_BAY_4 pos=(0.12962, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=green,fn=activity
+  A_LED_DRIVE_5@A_BAY_5 pos=(0.11187, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=green,fn=activity
+  A_LED_DRIVE_6@A_BAY_6 pos=(0.09413, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=green,fn=activity
+  A_LED_DRIVE_7@A_BAY_7 pos=(0.07638, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=green,fn=activity
+  A_LED_DRIVE_8@A_BAY_8 pos=(0.05863, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=green,fn=activity
+  A_LED_DRIVE_9@A_BAY_9 pos=(0.04087, 0.0736, 0.0303) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00240,0.00200,0.00300 meta=colour=green,fn=activity
+  A_LED_FAULT_0 pos=(0.22915, 0.0541, 0.0302) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00260,0.00200,0.00300 meta=colour=amber,fn=fault
+  A_LED_HEALTH_0 pos=(0.22915, 0.0621, 0.0302) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00260,0.00200,0.00300 meta=colour=green,fn=health
+  A_LED_ID_0 pos=(0.22395, 0.0781, 0.0302) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00200,0.00200,0.00300 meta=colour=blue,fn=identify
+  A_LED_ID_1 pos=(0.05, 0.0308, -0.6701) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00300,0.00300,0.00300 meta=colour=blue,fn=identify
+  A_LED_IPMI_0 pos=(-0.1025, 0.0096, -0.6701) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00220,0.00200,0.00300 meta=colour=green
+  A_LED_LINK_0 pos=(-0.0098, 0.0098, -0.6701) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00220,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_1 pos=(0.0062, 0.0098, -0.6701) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00220,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_2 pos=(0.0222, 0.0098, -0.6701) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00220,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_LINK_3 pos=(0.0382, 0.0098, -0.6701) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00220,0.00200,0.00300 meta=colour=green,fn=link
+  A_LED_NET_0 pos=(0.22915, 0.0461, 0.0302) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00260,0.00200,0.00300 meta=colour=green,fn=network
+  A_LED_POWER_0 pos=(-0.22915, 0.0781, 0.0306) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01000,0.01000,0.00300 meta=colour=green,fn=power,ring=1
+  A_LED_PSU_0@A_PSU_0 pos=(0.171, 0.039, -0.6712) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00240,0.00240,0.00300 meta=colour=green,fn=psu_ok
+  A_LED_PSU_1@A_PSU_1 pos=(-0.1835, 0.039, -0.6712) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00240,0.00240,0.00300 meta=colour=green,fn=psu_ok
+  A_LID_0 pos=(-0.0, 0.0881, -0.327) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.43400,0.00400,0.68600 meta=slide=-z,dist=0.020,lift=+y,latch=1
+  A_PORT_C14_0@A_PSU_0 pos=(0.159, 0.027, -0.6712) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.02800,0.02000,0.01200 meta=depth=0.008,plug=c13,inlet=c14
+  A_PORT_C14_1@A_PSU_1 pos=(-0.1955, 0.027, -0.6712) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.02800,0.02000,0.01200 meta=depth=0.008,plug=c13,inlet=c14
+  A_PORT_ETH_0 pos=(-0.014, 0.0148, -0.67) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.01450,0.01200,0.02000 meta=depth=0.012,rj45=1,latch=+up,speed=10g,lom=1
+  A_PORT_ETH_1 pos=(0.002, 0.0148, -0.67) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.01450,0.01200,0.02000 meta=depth=0.012,rj45=1,latch=+up,speed=10g,lom=2
+  A_PORT_ETH_2 pos=(0.018, 0.0148, -0.67) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.01450,0.01200,0.02000 meta=depth=0.012,rj45=1,latch=+up,speed=10g,lom=3
+  A_PORT_ETH_3 pos=(0.034, 0.0148, -0.67) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.01450,0.01200,0.02000 meta=depth=0.012,rj45=1,latch=+up,speed=10g,lom=4
+  A_PORT_IPMI_0 pos=(-0.098, 0.0148, -0.67) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.01600,0.01400,0.02000 meta=depth=0.012,rj45=1,latch=+up,net=bmc
+  A_PORT_USBA_0 pos=(-0.04, 0.0108, -0.67) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.01450,0.00720,0.02000 meta=depth=0.009,usb=3.0
+  A_PORT_USBA_1 pos=(-0.04, 0.0188, -0.67) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.01450,0.00720,0.02000 meta=depth=0.009,usb=3.0
+  A_PORT_VGA_0 pos=(-0.068, 0.0148, -0.6704) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.03200,0.01300,0.01200 meta=depth=0.006,vga=1
+  A_PSU_0 pos=(0.17725, 0.023, -0.67) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.07350,0.04000,0.18500 meta=pull=-z,dist=0.195,watts=800,eff=platinum,slot=0
+  A_PSU_1 pos=(-0.17725, 0.023, -0.67) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.07350,0.04000,0.18500 meta=pull=-z,dist=0.195,watts=800,eff=platinum,slot=1
+  A_RAIL_L_0 pos=(-0.221, 0.0248, -0.002) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00800,0.04000,0.73800 meta=kind=slide,side=l,front=0,rear=-0.74,len=0.738,extend=+z,travel=0.62
+  A_RAIL_R_0 pos=(0.221, 0.0248, -0.002) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00800,0.04000,0.73800 meta=kind=slide,side=r,front=0,rear=-0.74,len=0.738,extend=+z,travel=0.62
+  A_SCREW_THUMB_0 pos=(-0.23255, 0.0381, 0.03) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01200,0.01200,0.01200 meta=thread=M6,captive=1,len=0.032,turns=4
+  A_SCREW_THUMB_1 pos=(0.23255, 0.0381, 0.03) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01200,0.01200,0.01200 meta=thread=M6,captive=1,len=0.032,turns=4
+  A_SHROUD_0 pos=(-0.0, 0.0739, -0.3075) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.40000,0.00600,0.16000 meta=lift=+y,dist=0.06,order=1
+bounds min=(-0.2415, 0.0008, -0.7425) max=(0.2415, 0.0882, 0.0367) size=(0.4831, 0.0874, 0.7792)
+frame: rack device, 2U, chassis 0.434 x 0.0873 x 0.700, front z=0.03, rear z=-0.670, bottom y=0.00080, top y=0.08810; 24 vertical 2.5" bays numbered from +x
