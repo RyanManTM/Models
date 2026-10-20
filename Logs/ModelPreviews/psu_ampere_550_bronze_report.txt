@@ -1,0 +1,30 @@
+contract psu (as psu_450/psu_750): rear face at x +0.070, depth 0.140 (front face x -0.070)
+== psu_ampere_550_bronze
+   mesh mark@A_SWITCH_PSU_0#paint_white: 204 tris
+   mesh psu_ampere_550_bronze_alu#alu: 480 tris
+   mesh psu_ampere_550_bronze_black_plastic#black_plastic: 1280 tris
+   mesh psu_ampere_550_bronze_chip_black#chip_black: 12 tris
+   mesh psu_ampere_550_bronze_connector_beige#connector_beige: 24 tris
+   mesh psu_ampere_550_bronze_fan_black#fan_black: 4512 tris
+   mesh psu_ampere_550_bronze_grey_plastic#grey_plastic: 3188 tris
+   mesh psu_ampere_550_bronze_mesh_black#mesh_black: 1380 tris
+   mesh psu_ampere_550_bronze_nickel#nickel: 132 tris
+   mesh psu_ampere_550_bronze_paint_black#paint_black: 16388 tris
+   mesh psu_ampere_550_bronze_pcb_green#pcb_green: 12 tris
+   mesh psu_ampere_550_bronze_rubber#rubber: 480 tris
+   mesh psu_ampere_550_bronze_steel_dark#steel_dark: 2304 tris
+   mesh psu_ampere_550_bronze_tex_psu_ampere_550_bronze#tex_psu_ampere_550_bronze: 124 tris
+   mesh psu_ampere_550_bronze_white_plastic#white_plastic: 120 tris
+   mesh psufan_rotor@A_FAN_0#fan_black: 3076 tris
+   mesh psufan_sticker@A_FAN_0#tex_psu_ampere_550_bronze: 144 tris
+   mesh rocker@A_SWITCH_PSU_0#black_plastic: 52 tris
+   TOTAL 33912 tris in 18 meshes
+   A_CABLE_EXIT_0: pos=(-0.0710,0.0240,0.0300) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.03000,0.03000,0.02000 meta=bundle=atx24,eps8,pcie8,sata*6,molex*2,stub=0.026
+   A_FAN_0: pos=(-0.0000,-0.0292,-0.0000) fwd=(0.00,-1.00,0.00) up=(1.00,0.00,0.00) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=1500
+   A_HIT_0: pos=(-0.0000,0.0000,-0.0000) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.14000,0.08600,0.15000 meta=
+   A_PORT_C13_0: pos=(0.0714,0.0040,0.0470) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.03000,0.02300,0.02000 meta=kind=iec_c14_inlet,key=-y
+   A_SCREW_PH2_0: pos=(0.0700,0.0370,-0.0690) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.00800,0.00800,0.00800 meta=thread=6-32
+   A_SCREW_PH2_1: pos=(0.0700,0.0370,0.0690) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.00800,0.00800,0.00800 meta=thread=6-32
+   A_SCREW_PH2_2: pos=(0.0700,-0.0370,-0.0690) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.00800,0.00800,0.00800 meta=thread=6-32
+   A_SCREW_PH2_3: pos=(0.0700,-0.0270,0.0450) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.00800,0.00800,0.00800 meta=thread=6-32
+   A_SWITCH_PSU_0: pos=(0.0704,0.0260,0.0470) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.02400,0.01800,0.01000 meta=hinge=y,on=-9,off=9,on_side=+z,mark_on=I,mark_off=O

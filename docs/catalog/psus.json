@@ -1,0 +1,854 @@
+[
+  {
+    "id": "psu_ampere_550_bronze",
+    "model": "psu_ampere_550_bronze",
+    "brand": "Ampere",
+    "name": "Ampere BP-550 550 W Bronze",
+    "category": "PSU",
+    "price": 49,
+    "power_w": 0,
+    "color": "#1A1A1B",
+    "rgb": false,
+    "analog": "Corsair CV550 / EVGA 550 BR (docs only, never shown in game)",
+    "desc": "A no-frills 550 W Bronze unit with fixed cables for a first build.",
+    "specs": {
+      "form_factor": "ATX",
+      "width_mm": 150,
+      "height_mm": 86,
+      "depth_mm": 140,
+      "fan_mm": 120,
+      "modular": "none",
+      "efficiency": "80 PLUS Bronze",
+      "atx_version": "2.x",
+      "eps8": 1,
+      "pcie8": 2,
+      "p12v2x6": 0,
+      "sata": 6
+    },
+    "game": {
+      "psu_watts": 550,
+      "psu_efficiency": "Bronze",
+      "psu_eps8": 1,
+      "psu_pcie8": 2,
+      "psu_16": 0,
+      "psu_sata": 6,
+      "psu_modular": false,
+      "perf": 0
+    },
+    "contract": "psu",
+    "new_contract": false,
+    "unbox": {
+      "films": [],
+      "caps": [],
+      "stickers": [
+        {
+          "model": "sticker_psu_voltage",
+          "at": "A_SWITCH_PSU_0",
+          "blocks": "plug"
+        }
+      ]
+    },
+    "docs": [
+      "manual",
+      "safety",
+      "warranty"
+    ],
+    "doc_notes": [
+      "Ampere BP-550 550 W Bronze: 550 W, 80 PLUS Bronze, 85% efficient at 50 % load.",
+      "Connectors: 1x ATX 24-pin, 1x EPS 4+4 pin, 2x PCIe 6+2 pin, 6x SATA power.",
+      "All cables are fixed to the unit.",
+      "Mount the PSU fan down when the case has a bottom vent with a dust filter, otherwise fan up.",
+      "Switch: I = on, O = off. Switch off and unplug the AC cord before connecting or removing cables.",
+      "Peel the voltage sticker off the switch before first use.",
+      "The ATX 24-pin and EPS 8-pin go to the motherboard; PCIe or 12V-2x6 cables go to the graphics card.",
+      "CAUTION: hazardous voltage inside. Do not open the cover; no user-serviceable parts."
+    ]
+  },
+  {
+    "id": "psu_corvex_cx650m",
+    "model": "psu_corvex_cx650m",
+    "brand": "Corvex",
+    "name": "Corvex CX650M 650 W Bronze",
+    "category": "PSU",
+    "price": 75,
+    "power_w": 0,
+    "color": "#1A1A1B",
+    "rgb": false,
+    "analog": "Corsair CX650M (docs only, never shown in game)",
+    "desc": "Semi-modular 650 W Bronze: the 24-pin and CPU cables are fixed, the rest plug in.",
+    "specs": {
+      "form_factor": "ATX",
+      "width_mm": 150,
+      "height_mm": 86,
+      "depth_mm": 140,
+      "fan_mm": 120,
+      "modular": "semi",
+      "efficiency": "80 PLUS Bronze",
+      "atx_version": "2.x",
+      "eps8": 1,
+      "pcie8": 4,
+      "p12v2x6": 0,
+      "sata": 8
+    },
+    "game": {
+      "psu_watts": 650,
+      "psu_efficiency": "Bronze",
+      "psu_eps8": 1,
+      "psu_pcie8": 4,
+      "psu_16": 0,
+      "psu_sata": 8,
+      "psu_modular": false,
+      "perf": 0
+    },
+    "contract": "psu",
+    "new_contract": false,
+    "unbox": {
+      "films": [],
+      "caps": [],
+      "stickers": [
+        {
+          "model": "sticker_psu_voltage",
+          "at": "A_SWITCH_PSU_0",
+          "blocks": "plug"
+        }
+      ]
+    },
+    "docs": [
+      "manual",
+      "safety",
+      "warranty"
+    ],
+    "doc_notes": [
+      "Corvex CX650M 650 W Bronze: 650 W, 80 PLUS Bronze, 85% efficient at 50 % load.",
+      "Connectors: 1x ATX 24-pin, 1x EPS 4+4 pin, 4x PCIe 6+2 pin, 8x SATA power.",
+      "The 24-pin and EPS cables are fixed; PCIe and SATA cables plug into the modular panel.",
+      "Mount the PSU fan down when the case has a bottom vent with a dust filter, otherwise fan up.",
+      "Switch: I = on, O = off. Switch off and unplug the AC cord before connecting or removing cables.",
+      "Peel the voltage sticker off the switch before first use.",
+      "The ATX 24-pin and EPS 8-pin go to the motherboard; PCIe or 12V-2x6 cables go to the graphics card.",
+      "CAUTION: hazardous voltage inside. Do not open the cover; no user-serviceable parts.",
+      "Use only Corvex modular cables made for this unit. Modular pinouts differ between brands and models; a foreign cable can destroy your components."
+    ]
+  },
+  {
+    "id": "psu_seastar_gx850",
+    "model": "psu_seastar_gx850",
+    "brand": "Seastar",
+    "name": "Seastar Apex GX-850 850 W Gold",
+    "category": "PSU",
+    "price": 130,
+    "power_w": 0,
+    "color": "#161617",
+    "rgb": false,
+    "analog": "Seasonic Focus GX-850 (docs only, never shown in game)",
+    "desc": "Fully modular 850 W Gold with a quiet hybrid fan mode and a ten-year warranty.",
+    "specs": {
+      "form_factor": "ATX",
+      "width_mm": 150,
+      "height_mm": 86,
+      "depth_mm": 140,
+      "fan_mm": 120,
+      "modular": "full",
+      "efficiency": "80 PLUS Gold",
+      "atx_version": "2.x",
+      "eps8": 2,
+      "pcie8": 6,
+      "p12v2x6": 0,
+      "sata": 10
+    },
+    "game": {
+      "psu_watts": 850,
+      "psu_efficiency": "Gold",
+      "psu_eps8": 2,
+      "psu_pcie8": 6,
+      "psu_16": 0,
+      "psu_sata": 10,
+      "psu_modular": true,
+      "perf": 0
+    },
+    "contract": "psu",
+    "new_contract": false,
+    "unbox": {
+      "films": [],
+      "caps": [],
+      "stickers": [
+        {
+          "model": "sticker_psu_voltage",
+          "at": "A_SWITCH_PSU_0",
+          "blocks": "plug"
+        }
+      ]
+    },
+    "docs": [
+      "manual",
+      "safety",
+      "warranty"
+    ],
+    "doc_notes": [
+      "Seastar Apex GX-850 850 W Gold: 850 W, 80 PLUS Gold, 90% efficient at 50 % load.",
+      "Connectors: 1x ATX 24-pin, 2x EPS 4+4 pin, 6x PCIe 6+2 pin, 10x SATA power.",
+      "Every cable is modular: plug in only the cables your build needs.",
+      "Mount the PSU fan down when the case has a bottom vent with a dust filter, otherwise fan up.",
+      "Switch: I = on, O = off. Switch off and unplug the AC cord before connecting or removing cables.",
+      "Peel the voltage sticker off the switch before first use.",
+      "The ATX 24-pin and EPS 8-pin go to the motherboard; PCIe or 12V-2x6 cables go to the graphics card.",
+      "CAUTION: hazardous voltage inside. Do not open the cover; no user-serviceable parts.",
+      "Use only Seastar modular cables made for this unit. Modular pinouts differ between brands and models; a foreign cable can destroy your components."
+    ]
+  },
+  {
+    "id": "psu_seastar_px1000_white",
+    "model": "psu_seastar_px1000_white",
+    "brand": "Seastar",
+    "name": "Seastar Summit PX-1000 1000 W Platinum White",
+    "category": "PSU",
+    "price": 230,
+    "power_w": 0,
+    "color": "#EDEDEB",
+    "rgb": false,
+    "analog": "Seasonic Vertex PX-1000 (white) (docs only, never shown in game)",
+    "desc": "White 1000 W Platinum, ATX 3.1 with a native 12V-2x6 cable for the newest graphics cards.",
+    "specs": {
+      "form_factor": "ATX",
+      "width_mm": 150,
+      "height_mm": 86,
+      "depth_mm": 160,
+      "fan_mm": 135,
+      "modular": "full",
+      "efficiency": "80 PLUS Platinum",
+      "atx_version": "3.1",
+      "eps8": 2,
+      "pcie8": 4,
+      "p12v2x6": 1,
+      "sata": 8
+    },
+    "game": {
+      "psu_watts": 1000,
+      "psu_efficiency": "Platinum",
+      "psu_eps8": 2,
+      "psu_pcie8": 4,
+      "psu_16": 1,
+      "psu_sata": 8,
+      "psu_modular": true,
+      "perf": 0
+    },
+    "contract": "psu",
+    "new_contract": false,
+    "unbox": {
+      "films": [],
+      "caps": [],
+      "stickers": [
+        {
+          "model": "sticker_psu_voltage",
+          "at": "A_SWITCH_PSU_0",
+          "blocks": "plug"
+        }
+      ]
+    },
+    "docs": [
+      "manual",
+      "safety",
+      "warranty"
+    ],
+    "doc_notes": [
+      "Seastar Summit PX-1000 1000 W Platinum White: 1000 W, 80 PLUS Platinum, 92% efficient at 50 % load.",
+      "Connectors: 1x ATX 24-pin, 2x EPS 4+4 pin, 4x PCIe 6+2 pin, 1x 12V-2x6 (600 W), 8x SATA power.",
+      "Every cable is modular: plug in only the cables your build needs.",
+      "Mount the PSU fan down when the case has a bottom vent with a dust filter, otherwise fan up.",
+      "Switch: I = on, O = off. Switch off and unplug the AC cord before connecting or removing cables.",
+      "Peel the voltage sticker off the switch before first use.",
+      "The ATX 24-pin and EPS 8-pin go to the motherboard; PCIe or 12V-2x6 cables go to the graphics card.",
+      "CAUTION: hazardous voltage inside. Do not open the cover; no user-serviceable parts.",
+      "Use only Seastar modular cables made for this unit. Modular pinouts differ between brands and models; a foreign cable can destroy your components.",
+      "12V-2x6: push the plug in fully until the latch clicks; do not bend the cable within 35 mm of the plug."
+    ]
+  },
+  {
+    "id": "psu_corvex_rm850x_white",
+    "model": "psu_corvex_rm850x_white",
+    "brand": "Corvex",
+    "name": "Corvex RM850x 850 W Gold White",
+    "category": "PSU",
+    "price": 140,
+    "power_w": 0,
+    "color": "#EDEDEB",
+    "rgb": false,
+    "analog": "Corsair RM850x (2024) White (docs only, never shown in game)",
+    "desc": "Silent, white, fully modular 850 W Gold with a 12V-2x6 cable; the fan stops at low load.",
+    "specs": {
+      "form_factor": "ATX",
+      "width_mm": 150,
+      "height_mm": 86,
+      "depth_mm": 160,
+      "fan_mm": 135,
+      "modular": "full",
+      "efficiency": "80 PLUS Gold",
+      "atx_version": "3.1",
+      "eps8": 3,
+      "pcie8": 4,
+      "p12v2x6": 1,
+      "sata": 14
+    },
+    "game": {
+      "psu_watts": 850,
+      "psu_efficiency": "Gold",
+      "psu_eps8": 3,
+      "psu_pcie8": 4,
+      "psu_16": 1,
+      "psu_sata": 14,
+      "psu_modular": true,
+      "perf": 0
+    },
+    "contract": "psu",
+    "new_contract": false,
+    "unbox": {
+      "films": [],
+      "caps": [],
+      "stickers": [
+        {
+          "model": "sticker_psu_voltage",
+          "at": "A_SWITCH_PSU_0",
+          "blocks": "plug"
+        }
+      ]
+    },
+    "docs": [
+      "manual",
+      "safety",
+      "warranty"
+    ],
+    "doc_notes": [
+      "Corvex RM850x 850 W Gold White: 850 W, 80 PLUS Gold, 90% efficient at 50 % load.",
+      "Connectors: 1x ATX 24-pin, 3x EPS 4+4 pin, 4x PCIe 6+2 pin, 1x 12V-2x6 (600 W), 14x SATA power.",
+      "Every cable is modular: plug in only the cables your build needs.",
+      "Mount the PSU fan down when the case has a bottom vent with a dust filter, otherwise fan up.",
+      "Switch: I = on, O = off. Switch off and unplug the AC cord before connecting or removing cables.",
+      "Peel the voltage sticker off the switch before first use.",
+      "The ATX 24-pin and EPS 8-pin go to the motherboard; PCIe or 12V-2x6 cables go to the graphics card.",
+      "CAUTION: hazardous voltage inside. Do not open the cover; no user-serviceable parts.",
+      "Use only Corvex modular cables made for this unit. Modular pinouts differ between brands and models; a foreign cable can destroy your components.",
+      "12V-2x6: push the plug in fully until the latch clicks; do not bend the cable within 35 mm of the plug."
+    ]
+  },
+  {
+    "id": "psu_hush_pp12m_750",
+    "model": "psu_hush_pp12m_750",
+    "brand": "Hush",
+    "name": "Hush Clean Power 12 M 750 W Gold",
+    "category": "PSU",
+    "price": 100,
+    "power_w": 0,
+    "color": "#141414",
+    "rgb": false,
+    "analog": "be quiet! Pure Power 12 M 750W (docs only, never shown in game)",
+    "desc": "Quiet 750 W Gold with a 12V-2x6 cable, black with brushed silver stripes.",
+    "specs": {
+      "form_factor": "ATX",
+      "width_mm": 150,
+      "height_mm": 86,
+      "depth_mm": 160,
+      "fan_mm": 120,
+      "modular": "full",
+      "efficiency": "80 PLUS Gold",
+      "atx_version": "3.0",
+      "eps8": 2,
+      "pcie8": 2,
+      "p12v2x6": 1,
+      "sata": 6
+    },
+    "game": {
+      "psu_watts": 750,
+      "psu_efficiency": "Gold",
+      "psu_eps8": 2,
+      "psu_pcie8": 2,
+      "psu_16": 1,
+      "psu_sata": 6,
+      "psu_modular": true,
+      "perf": 0
+    },
+    "contract": "psu",
+    "new_contract": false,
+    "unbox": {
+      "films": [],
+      "caps": [],
+      "stickers": [
+        {
+          "model": "sticker_psu_voltage",
+          "at": "A_SWITCH_PSU_0",
+          "blocks": "plug"
+        }
+      ]
+    },
+    "docs": [
+      "manual",
+      "safety",
+      "warranty"
+    ],
+    "doc_notes": [
+      "Hush Clean Power 12 M 750 W Gold: 750 W, 80 PLUS Gold, 90% efficient at 50 % load.",
+      "Connectors: 1x ATX 24-pin, 2x EPS 4+4 pin, 2x PCIe 6+2 pin, 1x 12V-2x6 (600 W), 6x SATA power.",
+      "Every cable is modular: plug in only the cables your build needs.",
+      "Mount the PSU fan down when the case has a bottom vent with a dust filter, otherwise fan up.",
+      "Switch: I = on, O = off. Switch off and unplug the AC cord before connecting or removing cables.",
+      "Peel the voltage sticker off the switch before first use.",
+      "The ATX 24-pin and EPS 8-pin go to the motherboard; PCIe or 12V-2x6 cables go to the graphics card.",
+      "CAUTION: hazardous voltage inside. Do not open the cover; no user-serviceable parts.",
+      "Use only Hush modular cables made for this unit. Modular pinouts differ between brands and models; a foreign cable can destroy your components.",
+      "12V-2x6: push the plug in fully until the latch clicks; do not bend the cable within 35 mm of the plug."
+    ]
+  },
+  {
+    "id": "psu_hush_dp13_1200",
+    "model": "psu_hush_dp13_1200",
+    "brand": "Hush",
+    "name": "Hush Shadow Power 13 1200 W Titanium",
+    "category": "PSU",
+    "price": 330,
+    "power_w": 0,
+    "color": "#141414",
+    "rgb": false,
+    "analog": "be quiet! Dark Power 13 / Dark Power Pro 13 (Titanium) (docs only, never shown in game)",
+    "desc": "Flagship 1200 W Titanium, near-silent, with a brushed silver fan ring.",
+    "specs": {
+      "form_factor": "ATX",
+      "width_mm": 150,
+      "height_mm": 86,
+      "depth_mm": 175,
+      "fan_mm": 135,
+      "modular": "full",
+      "efficiency": "80 PLUS Titanium",
+      "atx_version": "3.0",
+      "eps8": 2,
+      "pcie8": 6,
+      "p12v2x6": 1,
+      "sata": 12
+    },
+    "game": {
+      "psu_watts": 1200,
+      "psu_efficiency": "Titanium",
+      "psu_eps8": 2,
+      "psu_pcie8": 6,
+      "psu_16": 1,
+      "psu_sata": 12,
+      "psu_modular": true,
+      "perf": 0
+    },
+    "contract": "psu",
+    "new_contract": false,
+    "unbox": {
+      "films": [
+        "A_FILM_SIDE_0"
+      ],
+      "caps": [],
+      "stickers": [
+        {
+          "model": "sticker_psu_voltage",
+          "at": "A_SWITCH_PSU_0",
+          "blocks": "plug"
+        }
+      ]
+    },
+    "docs": [
+      "manual",
+      "safety",
+      "warranty"
+    ],
+    "doc_notes": [
+      "Hush Shadow Power 13 1200 W Titanium: 1200 W, 80 PLUS Titanium, 94% efficient at 50 % load.",
+      "Connectors: 1x ATX 24-pin, 2x EPS 4+4 pin, 6x PCIe 6+2 pin, 1x 12V-2x6 (600 W), 12x SATA power.",
+      "Every cable is modular: plug in only the cables your build needs.",
+      "Mount the PSU fan down when the case has a bottom vent with a dust filter, otherwise fan up.",
+      "Switch: I = on, O = off. Switch off and unplug the AC cord before connecting or removing cables.",
+      "Peel the voltage sticker off the switch before first use.",
+      "The ATX 24-pin and EPS 8-pin go to the motherboard; PCIe or 12V-2x6 cables go to the graphics card.",
+      "CAUTION: hazardous voltage inside. Do not open the cover; no user-serviceable parts.",
+      "Use only Hush modular cables made for this unit. Modular pinouts differ between brands and models; a foreign cable can destroy your components.",
+      "12V-2x6: push the plug in fully until the latch clicks; do not bend the cable within 35 mm of the plug."
+    ]
+  },
+  {
+    "id": "psu_mako_a850g",
+    "model": "psu_mako_a850g",
+    "brand": "Mako",
+    "name": "Mako Forge A850G PCIE5 850 W Gold",
+    "category": "PSU",
+    "price": 120,
+    "power_w": 0,
+    "color": "#141414",
+    "rgb": false,
+    "analog": "MSI MPG A850G PCIE5 (docs only, never shown in game)",
+    "desc": "850 W Gold, ATX 3.1 with a native 12V-2x6 cable, black with a red trim.",
+    "specs": {
+      "form_factor": "ATX",
+      "width_mm": 150,
+      "height_mm": 86,
+      "depth_mm": 140,
+      "fan_mm": 135,
+      "modular": "full",
+      "efficiency": "80 PLUS Gold",
+      "atx_version": "3.1",
+      "eps8": 2,
+      "pcie8": 4,
+      "p12v2x6": 1,
+      "sata": 8
+    },
+    "game": {
+      "psu_watts": 850,
+      "psu_efficiency": "Gold",
+      "psu_eps8": 2,
+      "psu_pcie8": 4,
+      "psu_16": 1,
+      "psu_sata": 8,
+      "psu_modular": true,
+      "perf": 0
+    },
+    "contract": "psu",
+    "new_contract": false,
+    "unbox": {
+      "films": [],
+      "caps": [],
+      "stickers": [
+        {
+          "model": "sticker_psu_voltage",
+          "at": "A_SWITCH_PSU_0",
+          "blocks": "plug"
+        }
+      ]
+    },
+    "docs": [
+      "manual",
+      "safety",
+      "warranty"
+    ],
+    "doc_notes": [
+      "Mako Forge A850G PCIE5 850 W Gold: 850 W, 80 PLUS Gold, 90% efficient at 50 % load.",
+      "Connectors: 1x ATX 24-pin, 2x EPS 4+4 pin, 4x PCIe 6+2 pin, 1x 12V-2x6 (600 W), 8x SATA power.",
+      "Every cable is modular: plug in only the cables your build needs.",
+      "Mount the PSU fan down when the case has a bottom vent with a dust filter, otherwise fan up.",
+      "Switch: I = on, O = off. Switch off and unplug the AC cord before connecting or removing cables.",
+      "Peel the voltage sticker off the switch before first use.",
+      "The ATX 24-pin and EPS 8-pin go to the motherboard; PCIe or 12V-2x6 cables go to the graphics card.",
+      "CAUTION: hazardous voltage inside. Do not open the cover; no user-serviceable parts.",
+      "Use only Mako modular cables made for this unit. Modular pinouts differ between brands and models; a foreign cable can destroy your components.",
+      "12V-2x6: push the plug in fully until the latch clicks; do not bend the cable within 35 mm of the plug."
+    ]
+  },
+  {
+    "id": "psu_aegis_1200p",
+    "model": "psu_aegis_1200p",
+    "brand": "Aegis",
+    "name": "Aegis Valkyr 1200P 1200 W Platinum",
+    "category": "PSU",
+    "price": 330,
+    "power_w": 0,
+    "color": "#121214",
+    "rgb": true,
+    "analog": "ASUS ROG Thor 1200P2 (docs only, never shown in game)",
+    "desc": "1200 W Platinum with an RGB side panel and an OLED power read-out.",
+    "specs": {
+      "form_factor": "ATX",
+      "width_mm": 150,
+      "height_mm": 86,
+      "depth_mm": 190,
+      "fan_mm": 135,
+      "modular": "full",
+      "efficiency": "80 PLUS Platinum",
+      "atx_version": "3.0",
+      "eps8": 2,
+      "pcie8": 6,
+      "p12v2x6": 1,
+      "sata": 12
+    },
+    "game": {
+      "psu_watts": 1200,
+      "psu_efficiency": "Platinum",
+      "psu_eps8": 2,
+      "psu_pcie8": 6,
+      "psu_16": 1,
+      "psu_sata": 12,
+      "psu_modular": true,
+      "perf": 0
+    },
+    "contract": "psu",
+    "new_contract": false,
+    "unbox": {
+      "films": [
+        "A_FILM_OLED_0",
+        "A_FILM_SIDE_0"
+      ],
+      "caps": [],
+      "stickers": [
+        {
+          "model": "sticker_psu_voltage",
+          "at": "A_SWITCH_PSU_0",
+          "blocks": "plug"
+        }
+      ]
+    },
+    "docs": [
+      "manual",
+      "safety",
+      "warranty"
+    ],
+    "doc_notes": [
+      "Aegis Valkyr 1200P 1200 W Platinum: 1200 W, 80 PLUS Platinum, 92% efficient at 50 % load.",
+      "Connectors: 1x ATX 24-pin, 2x EPS 4+4 pin, 6x PCIe 6+2 pin, 1x 12V-2x6 (600 W), 12x SATA power.",
+      "Every cable is modular: plug in only the cables your build needs.",
+      "Mount the PSU fan down when the case has a bottom vent with a dust filter, otherwise fan up.",
+      "Switch: I = on, O = off. Switch off and unplug the AC cord before connecting or removing cables.",
+      "Peel the voltage sticker off the switch before first use.",
+      "The ATX 24-pin and EPS 8-pin go to the motherboard; PCIe or 12V-2x6 cables go to the graphics card.",
+      "CAUTION: hazardous voltage inside. Do not open the cover; no user-serviceable parts.",
+      "Use only Aegis modular cables made for this unit. Modular pinouts differ between brands and models; a foreign cable can destroy your components.",
+      "12V-2x6: push the plug in fully until the latch clicks; do not bend the cable within 35 mm of the plug."
+    ]
+  },
+  {
+    "id": "psu_corvex_ax1600i",
+    "model": "psu_corvex_ax1600i",
+    "brand": "Corvex",
+    "name": "Corvex AX1600i 1600 W Titanium",
+    "category": "PSU",
+    "price": 580,
+    "power_w": 0,
+    "color": "#141414",
+    "rgb": false,
+    "analog": "Corsair AX1600i (docs only, never shown in game)",
+    "desc": "The 1600 W Titanium flagship with digital control, 200 mm deep.",
+    "specs": {
+      "form_factor": "ATX",
+      "width_mm": 150,
+      "height_mm": 86,
+      "depth_mm": 200,
+      "fan_mm": 140,
+      "modular": "full",
+      "efficiency": "80 PLUS Titanium",
+      "atx_version": "2.x",
+      "eps8": 2,
+      "pcie8": 10,
+      "p12v2x6": 0,
+      "sata": 16
+    },
+    "game": {
+      "psu_watts": 1600,
+      "psu_efficiency": "Titanium",
+      "psu_eps8": 2,
+      "psu_pcie8": 10,
+      "psu_16": 0,
+      "psu_sata": 16,
+      "psu_modular": true,
+      "perf": 0
+    },
+    "contract": "psu",
+    "new_contract": false,
+    "unbox": {
+      "films": [
+        "A_FILM_SIDE_0"
+      ],
+      "caps": [],
+      "stickers": [
+        {
+          "model": "sticker_psu_voltage",
+          "at": "A_SWITCH_PSU_0",
+          "blocks": "plug"
+        }
+      ]
+    },
+    "docs": [
+      "manual",
+      "safety",
+      "warranty"
+    ],
+    "doc_notes": [
+      "Corvex AX1600i 1600 W Titanium: 1600 W, 80 PLUS Titanium, 94% efficient at 50 % load.",
+      "Connectors: 1x ATX 24-pin, 2x EPS 4+4 pin, 10x PCIe 6+2 pin, 16x SATA power.",
+      "Every cable is modular: plug in only the cables your build needs.",
+      "Mount the PSU fan down when the case has a bottom vent with a dust filter, otherwise fan up.",
+      "Switch: I = on, O = off. Switch off and unplug the AC cord before connecting or removing cables.",
+      "Peel the voltage sticker off the switch before first use.",
+      "The ATX 24-pin and EPS 8-pin go to the motherboard; PCIe or 12V-2x6 cables go to the graphics card.",
+      "CAUTION: hazardous voltage inside. Do not open the cover; no user-serviceable parts.",
+      "Use only Corvex modular cables made for this unit. Modular pinouts differ between brands and models; a foreign cable can destroy your components."
+    ]
+  },
+  {
+    "id": "psu_corvex_sf750",
+    "model": "psu_corvex_sf750",
+    "brand": "Corvex",
+    "name": "Corvex SF750 750 W Platinum SFX",
+    "category": "PSU",
+    "price": 180,
+    "power_w": 0,
+    "color": "#141414",
+    "rgb": false,
+    "analog": "Corsair SF750 Platinum (docs only, never shown in game)",
+    "desc": "Tiny SFX 750 W Platinum for small-form-factor builds; an ATX bracket comes in the box.",
+    "specs": {
+      "form_factor": "SFX",
+      "width_mm": 125,
+      "height_mm": 63.5,
+      "depth_mm": 100,
+      "fan_mm": 92,
+      "modular": "full",
+      "efficiency": "80 PLUS Platinum",
+      "atx_version": "2.x",
+      "eps8": 2,
+      "pcie8": 4,
+      "p12v2x6": 0,
+      "sata": 8,
+      "bracket": "psu_bracket_sfx_atx"
+    },
+    "game": {
+      "psu_watts": 750,
+      "psu_efficiency": "Platinum",
+      "psu_eps8": 2,
+      "psu_pcie8": 4,
+      "psu_16": 0,
+      "psu_sata": 8,
+      "psu_modular": true,
+      "perf": 0
+    },
+    "contract": "psu_sfx",
+    "new_contract": true,
+    "unbox": {
+      "films": [],
+      "caps": [],
+      "stickers": [
+        {
+          "model": "sticker_psu_voltage",
+          "at": "A_SWITCH_PSU_0",
+          "blocks": "plug"
+        }
+      ]
+    },
+    "docs": [
+      "manual",
+      "safety",
+      "warranty"
+    ],
+    "doc_notes": [
+      "Corvex SF750 750 W Platinum SFX: 750 W, 80 PLUS Platinum, 92% efficient at 50 % load.",
+      "Connectors: 1x ATX 24-pin, 2x EPS 4+4 pin, 4x PCIe 6+2 pin, 8x SATA power.",
+      "Every cable is modular: plug in only the cables your build needs.",
+      "Mount the PSU fan down when the case has a bottom vent with a dust filter, otherwise fan up.",
+      "Switch: I = on, O = off. Switch off and unplug the AC cord before connecting or removing cables.",
+      "Peel the voltage sticker off the switch before first use.",
+      "The ATX 24-pin and EPS 8-pin go to the motherboard; PCIe or 12V-2x6 cables go to the graphics card.",
+      "CAUTION: hazardous voltage inside. Do not open the cover; no user-serviceable parts.",
+      "Use only Corvex modular cables made for this unit. Modular pinouts differ between brands and models; a foreign cable can destroy your components.",
+      "SFX: fits small-form-factor cases directly, or an ATX bay with the included SFX-to-ATX bracket."
+    ]
+  },
+  {
+    "id": "psu_strata_crps_800",
+    "model": "psu_strata_crps_800",
+    "brand": "Strata",
+    "name": "Strata 800 W Platinum CRPS Hot-Plug PSU",
+    "category": "Server",
+    "price": 150,
+    "power_w": 0,
+    "color": "#B8BCC2",
+    "rgb": false,
+    "analog": "Dell / HPE 800 W Platinum CRPS hot-plug PSU (docs only, never shown in game)",
+    "desc": "Hot-swap 800 W Platinum server supply; slides into a redundant PSU bay.",
+    "specs": {
+      "form_factor": "CRPS",
+      "width_mm": 73.5,
+      "height_mm": 40,
+      "depth_mm": 185,
+      "fan_mm": 40,
+      "efficiency": "80 PLUS Platinum",
+      "hot_swap": true
+    },
+    "game": {
+      "psu_watts": 800,
+      "psu_efficiency": "Platinum",
+      "psu_eps8": 0,
+      "psu_pcie8": 0,
+      "psu_16": 0,
+      "psu_sata": 0,
+      "psu_modular": false,
+      "perf": 0
+    },
+    "contract": "psu_crps",
+    "new_contract": true,
+    "unbox": {
+      "films": [
+        "A_FILM_LABEL_0"
+      ],
+      "caps": [],
+      "stickers": []
+    },
+    "docs": [
+      "quick-start",
+      "safety",
+      "warranty"
+    ],
+    "doc_notes": [
+      "Strata 800 W Platinum CRPS Hot-Plug PSU: 800 W, 80 PLUS Platinum, CRPS 73.5 x 40 x 185 mm.",
+      "Install: slide the module into the PSU bay, card edge first, until the latch clicks.",
+      "Remove: press the latch tab towards the handle, then pull the handle straight out.",
+      "Hot-plug: a redundant module can be swapped with the server running.",
+      "Status LED: green = output OK, blinking green = standby, amber = fault or no AC.",
+      "AC input: 100-240V~ 10-5A 50/60Hz through the C14 inlet; use a C13 cord rated 10 A or more.",
+      "DC output: +12V 66.7A, +12Vsb 3A through the card-edge connector.",
+      "Do not mix wattages or efficiency levels in one redundant pair."
+    ]
+  },
+  {
+    "id": "psu_strata_crps_1600",
+    "model": "psu_strata_crps_1600",
+    "brand": "Strata",
+    "name": "Strata 1600 W Titanium CRPS Hot-Plug PSU",
+    "category": "Server",
+    "price": 320,
+    "power_w": 0,
+    "color": "#4A4D52",
+    "rgb": false,
+    "analog": "Dell / HPE 1600 W Titanium CRPS hot-plug PSU (docs only, never shown in game)",
+    "desc": "Hot-swap 1600 W Titanium server supply for GPU and storage servers.",
+    "specs": {
+      "form_factor": "CRPS",
+      "width_mm": 73.5,
+      "height_mm": 40,
+      "depth_mm": 185,
+      "fan_mm": 40,
+      "efficiency": "80 PLUS Titanium",
+      "hot_swap": true
+    },
+    "game": {
+      "psu_watts": 1600,
+      "psu_efficiency": "Titanium",
+      "psu_eps8": 0,
+      "psu_pcie8": 0,
+      "psu_16": 0,
+      "psu_sata": 0,
+      "psu_modular": false,
+      "perf": 0
+    },
+    "contract": "psu_crps",
+    "new_contract": true,
+    "unbox": {
+      "films": [
+        "A_FILM_LABEL_0"
+      ],
+      "caps": [],
+      "stickers": []
+    },
+    "docs": [
+      "quick-start",
+      "safety",
+      "warranty"
+    ],
+    "doc_notes": [
+      "Strata 1600 W Titanium CRPS Hot-Plug PSU: 1600 W, 80 PLUS Titanium, CRPS 73.5 x 40 x 185 mm.",
+      "Install: slide the module into the PSU bay, card edge first, until the latch clicks.",
+      "Remove: press the latch tab towards the handle, then pull the handle straight out.",
+      "Hot-plug: a redundant module can be swapped with the server running.",
+      "Status LED: green = output OK, blinking green = standby, amber = fault or no AC.",
+      "AC input: 200-240V~ 10A 50/60Hz through the C14 inlet; use a C13 cord rated 10 A or more.",
+      "DC output: +12V 133A, +12Vsb 3.5A through the card-edge connector.",
+      "Do not mix wattages or efficiency levels in one redundant pair."
+    ]
+  }
+]
