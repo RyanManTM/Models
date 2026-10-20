@@ -46,7 +46,9 @@
       ],
       "caps": [],
       "stickers": []
-    }
+    },
+    "box": "box_cooler_arctiq_34_black",
+    "box_size": [0.165, 0.205, 0.14]
   },
   {
     "id": "cooler_arctiq_34_white",
@@ -95,7 +97,9 @@
       ],
       "caps": [],
       "stickers": []
-    }
+    },
+    "box": "box_cooler_arctiq_34_white",
+    "box_size": [0.165, 0.205, 0.14]
   },
   {
     "id": "cooler_glacier_ak400_white",
@@ -144,7 +148,9 @@
       ],
       "caps": [],
       "stickers": []
-    }
+    },
+    "box": "box_cooler_glacier_ak400_white",
+    "box_size": [0.17, 0.205, 0.14]
   },
   {
     "id": "cooler_glacier_ak620_black",
@@ -195,7 +201,9 @@
       ],
       "caps": [],
       "stickers": []
-    }
+    },
+    "box": "box_cooler_glacier_ak620_black",
+    "box_size": [0.175, 0.21, 0.19]
   },
   {
     "id": "cooler_noctis_d15",
@@ -246,7 +254,9 @@
       ],
       "caps": [],
       "stickers": []
-    }
+    },
+    "box": "box_cooler_noctis_d15",
+    "box_size": [0.185, 0.215, 0.21]
   },
   {
     "id": "cooler_noctis_d15_black",
@@ -297,7 +307,9 @@
       ],
       "caps": [],
       "stickers": []
-    }
+    },
+    "box": "box_cooler_noctis_d15_black",
+    "box_size": [0.185, 0.215, 0.21]
   },
   {
     "id": "cooler_frostpeak_120_rgb",
@@ -348,7 +360,9 @@
       ],
       "caps": [],
       "stickers": []
-    }
+    },
+    "box": "box_cooler_frostpeak_120_rgb",
+    "box_size": [0.17, 0.205, 0.145]
   },
   {
     "id": "cooler_noctis_l9",
@@ -397,7 +411,9 @@
       ],
       "caps": [],
       "stickers": []
-    }
+    },
+    "box": "box_cooler_noctis_l9",
+    "box_size": [0.195, 0.08, 0.125]
   },
   {
     "id": "cooler_tiron_stock",
@@ -452,7 +468,9 @@
         }
       ],
       "stickers": []
-    }
+    },
+    "box": "box_cooler_tiron_stock",
+    "box_size": [0.12, 0.09, 0.15]
   },
   {
     "id": "cooler_arctiq_lc240",
@@ -507,7 +525,9 @@
       ],
       "caps": [],
       "stickers": []
-    }
+    },
+    "box": "box_cooler_arctiq_lc240",
+    "box_size": [0.385, 0.105, 0.43]
   },
   {
     "id": "cooler_corvex_h150i_white",
@@ -564,7 +584,9 @@
       ],
       "caps": [],
       "stickers": []
-    }
+    },
+    "box": "box_cooler_corvex_h150i_white",
+    "box_size": [0.5, 0.09, 0.43]
   },
   {
     "id": "cooler_glacier_ls720",
@@ -620,7 +642,9 @@
       ],
       "caps": [],
       "stickers": []
-    }
+    },
+    "box": "box_cooler_glacier_ls720",
+    "box_size": [0.5, 0.09, 0.43]
   },
   {
     "id": "cooler_srv_epoch_1u",
@@ -669,7 +693,9 @@
       ],
       "caps": [],
       "stickers": []
-    }
+    },
+    "box": "box_cooler_srv_epoch_1u",
+    "box_size": [0.13, 0.075, 0.155]
   },
   {
     "id": "cooler_srv_platinum_2u",
@@ -719,6 +745,8 @@
       ],
       "caps": [],
       "stickers": []
-    }
+    },
+    "box": "box_cooler_srv_platinum_2u",
+    "box_size": [0.12, 0.115, 0.145]
   }
 ]

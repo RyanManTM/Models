@@ -59,8 +59,9 @@ pdu_1u), rack_12u_open, rack_42u and the rebuilt box_ac_12k (hand-written items 
   them differently on every run, so two exports of the same shell never compared SAME.
 
 ## Proof: the 24 existing rigs are unchanged
-Old builders (`build_boxes.py`, `rig_products.py` as on `main`) and the new ones, both with this `rig_common.py`,
-exported on Linux into a scratch project, compared with `Tools/Blender/extras_compare.py`:
+Old builders (`build_boxes.py`, `rig_products.py` as on `main`) and the final ones (with every rig module and the
+catalogue loader in place), both with this `rig_common.py`, exported on Linux into a scratch project, compared with
+`Tools/Blender/extras_compare.py`:
 
 ```
 COMPARE box_case_brickhouse: SAME (35 objects)
@@ -159,10 +160,6 @@ Opening sequence: the step `order` of each piece, from the rig's notes. Previews
 | box_ram_kingsland_ddr4_32 | 0.16 x 0.03 x 0.12 | 4350 | 11 | RAM: end tuck flap A_FLAP_0 (1) -> dust flaps A_FLAP_1/2 (2) -> blister tray A_INSERT_BLISTER_0 slides out +x (3) -> on it the blister seal A_SEAL_0 and 2 papers in a pile on the lid (4..5) -> blister lid A_CLAMLID_0 (6) -> sticks A_ITEM_PART_0/1 (7, guard=1). |
 | box_ram_crux_ddr4_64 | 0.16 x 0.03 x 0.12 | 4350 | 11 | RAM: end tuck flap A_FLAP_0 (1) -> dust flaps A_FLAP_1/2 (2) -> blister tray A_INSERT_BLISTER_0 slides out +x (3) -> on it the blister seal A_SEAL_0 and 2 papers in a pile on the lid (4..5) -> blister lid A_CLAMLID_0 (6) -> sticks A_ITEM_PART_0/1 (7, guard=1). |
 | box_ram_teamforge_ddr4_32_red | 0.16 x 0.03 x 0.12 | 4350 | 11 | RAM: end tuck flap A_FLAP_0 (1) -> dust flaps A_FLAP_1/2 (2) -> blister tray A_INSERT_BLISTER_0 slides out +x (3) -> on it the blister seal A_SEAL_0 and 2 papers in a pile on the lid (4..5) -> blister lid A_CLAMLID_0 (6) -> sticks A_ITEM_PART_0/1 (7, guard=1). |
-| box_ram_kingsland_rdimm5_32 | 0.16 x 0.025 x 0.06 | 2810 | 12 | RDIMM: seal A_SEAL_0 over the end flap (0) -> end flap A_FLAP_0 (1) -> dust flaps A_FLAP_1/2 (2) -> clamshell A_INSERT_BLISTER_0 slides out +x (3) -> on it: the clamshell seal A_SEAL_1 and the 3 papers, top first (4..6) -> clamshell lid A_CLAMLID_0 (7) -> module in its pink bag, guard=1 (8). |
-| box_ram_sorin_rdimm5_64 | 0.16 x 0.025 x 0.06 | 2810 | 12 | RDIMM: seal A_SEAL_0 over the end flap (0) -> end flap A_FLAP_0 (1) -> dust flaps A_FLAP_1/2 (2) -> clamshell A_INSERT_BLISTER_0 slides out +x (3) -> on it: the clamshell seal A_SEAL_1 and the 3 papers, top first (4..6) -> clamshell lid A_CLAMLID_0 (7) -> module in its pink bag, guard=1 (8). |
-| box_ram_crux_rdimm5_128 | 0.16 x 0.025 x 0.065 | 2810 | 12 | RDIMM: seal A_SEAL_0 over the end flap (0) -> end flap A_FLAP_0 (1) -> dust flaps A_FLAP_1/2 (2) -> clamshell A_INSERT_BLISTER_0 slides out +x (3) -> on it: the clamshell seal A_SEAL_1 and the 3 papers, top first (4..6) -> clamshell lid A_CLAMLID_0 (7) -> module in its pink bag, guard=1 (8). |
-| box_ram_kingsland_rdimm4_32 | 0.16 x 0.025 x 0.06 | 2810 | 12 | RDIMM: seal A_SEAL_0 over the end flap (0) -> end flap A_FLAP_0 (1) -> dust flaps A_FLAP_1/2 (2) -> clamshell A_INSERT_BLISTER_0 slides out +x (3) -> on it: the clamshell seal A_SEAL_1 and the 3 papers, top first (4..6) -> clamshell lid A_CLAMLID_0 (7) -> module in its pink bag, guard=1 (8). |
 
 ### Storage
 | Box | Size (m) | Tris | Anchors | Opening sequence (order) |
@@ -652,6 +649,16 @@ Everything else follows the contract as it is. The new names, all of them in the
   compartment" holds the accessory box, not the fans (see the new-kinds section).
 - The **window boxes** (fan packs) print the regular retail art; the window hides part of the front print.
 - Tower coolers keep the existing rig's layout: the papers stand in the accessory box with the mounting kit.
+
+## The helpers' requests for the shared code
+- Done: `build_boxes.band_face` keeps the logo clear of the product name on short faces; the HDD retail boxes, the fan
+  boxes and the two Kestrel GPU boxes were rebuilt with it. Light brand colours are printed darker on white boxes
+  (the white RAM kits, PSUs and the 5060 Ti were rebuilt with it). `box_catalog.py -- --json` applies the rig modules'
+  item hooks.
+- Open (optional, the modules work around them today): window cut-outs in `compose` so a window box's print avoids
+  its windows; options on `rig_products.previews` (a fill for the closed views, anchors to hide in the opened view,
+  contents placed before the closed views) and `add_contents` skipping `look=1` anchors (`rig_rack` and `rig_new` carry
+  their own copies); a logo size relative to the face height in `compose_oem` for long, low cartons.
 
 ## Rebuild
 ```

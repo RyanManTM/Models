@@ -62,7 +62,9 @@
       "Connect the 24-pin ATX and the 8-pin CPU power (EPS) before the first boot.",
       "Front USB: USB3_1 is the 19-pin header; HD_AUDIO is next to it at the bottom edge.",
       "BIOS FlashBack: put the BIOS file on a FAT32 stick in the marked USB port and hold the button for 3 seconds."
-    ]
+    ],
+    "box": "box_mb_aegis_b650_bulwark",
+    "box_size": [0.32, 0.07, 0.27]
   },
   {
     "id": "mb_aegis_x870e_vanguard",
@@ -129,7 +131,9 @@
       "Connect the 24-pin ATX and the 8-pin CPU power (EPS) before the first boot.",
       "Front USB: USB3_1 is the 19-pin header; HD_AUDIO is next to it at the bottom edge.",
       "BIOS FlashBack: put the BIOS file on a FAT32 stick in the marked USB port and hold the button for 3 seconds."
-    ]
+    ],
+    "box": "box_mb_aegis_x870e_vanguard",
+    "box_size": [0.32, 0.07, 0.27]
   },
   {
     "id": "mb_mako_b650_harpoon",
@@ -195,7 +199,9 @@
       "Connect the 24-pin ATX and the 8-pin CPU power (EPS) before the first boot.",
       "Front USB: USB3_1 is the 19-pin header; HD_AUDIO is next to it at the bottom edge.",
       "BIOS FlashBack: put the BIOS file on a FAT32 stick in the marked USB port and hold the button for 3 seconds."
-    ]
+    ],
+    "box": "box_mb_mako_b650_harpoon",
+    "box_size": [0.32, 0.07, 0.27]
   },
   {
     "id": "mb_kestrel_b650_glide",
@@ -261,7 +267,9 @@
       "Connect the 24-pin ATX and the 8-pin CPU power (EPS) before the first boot.",
       "Front USB: USB3_1 is the 19-pin header; HD_AUDIO is next to it at the bottom edge.",
       "BIOS FlashBack: put the BIOS file on a FAT32 stick in the marked USB port and hold the button for 3 seconds."
-    ]
+    ],
+    "box": "box_mb_kestrel_b650_glide",
+    "box_size": [0.32, 0.07, 0.27]
   },
   {
     "id": "mb_aegis_z790_keystone",
@@ -327,7 +335,9 @@
       "Connect the 24-pin ATX and the 8-pin CPU power (EPS) before the first boot.",
       "Front USB: USB3_1 is the 19-pin header; HD_AUDIO is next to it at the bottom edge.",
       "BIOS FlashBack: put the BIOS file on a FAT32 stick in the marked USB port and hold the button for 3 seconds."
-    ]
+    ],
+    "box": "box_mb_aegis_z790_keystone",
+    "box_size": [0.32, 0.07, 0.27]
   },
   {
     "id": "mb_mako_z790_riptide",
@@ -394,7 +404,9 @@
       "Connect the 24-pin ATX and the 8-pin CPU power (EPS) before the first boot.",
       "Front USB: USB3_1 is the 19-pin header; HD_AUDIO is next to it at the bottom edge.",
       "BIOS FlashBack: put the BIOS file on a FAT32 stick in the marked USB port and hold the button for 3 seconds."
-    ]
+    ],
+    "box": "box_mb_mako_z790_riptide",
+    "box_size": [0.32, 0.07, 0.27]
   },
   {
     "id": "mb_kestrel_z790_talon",
@@ -460,7 +472,9 @@
       "Connect the 24-pin ATX and the 8-pin CPU power (EPS) before the first boot.",
       "Front USB: USB3_1 is the 19-pin header; HD_AUDIO is next to it at the bottom edge.",
       "BIOS FlashBack: put the BIOS file on a FAT32 stick in the marked USB port and hold the button for 3 seconds."
-    ]
+    ],
+    "box": "box_mb_kestrel_z790_talon",
+    "box_size": [0.32, 0.07, 0.27]
   },
   {
     "id": "mb_ridge_b760_d4",
@@ -525,7 +539,9 @@
       "Connect the 24-pin ATX and the 8-pin CPU power (EPS) before the first boot.",
       "Front USB: USB3_1 is the 19-pin header; HD_AUDIO is next to it at the bottom edge.",
       "BIOS FlashBack: put the BIOS file on a FAT32 stick in the marked USB port and hold the button for 3 seconds."
-    ]
+    ],
+    "box": "box_mb_ridge_b760_d4",
+    "box_size": [0.32, 0.07, 0.27]
   },
   {
     "id": "mb_strata_spv",
@@ -585,7 +601,9 @@
       "Press DEL at power-on for the BIOS setup, F11 for the boot menu.",
       "BMC: the dedicated management LAN is the RJ45 above the two USB ports; the UID button lights the blue LED.",
       "Power: connect the 24-pin ATX and every 8-pin EPS (JPWR) before the first boot."
-    ]
+    ],
+    "box": "box_mb_strata_spv",
+    "box_size": [0.36, 0.065, 0.325]
   },
   {
     "id": "mb_strata_l46",
@@ -650,6 +668,8 @@
       "Press DEL at power-on for the BIOS setup, F11 for the boot menu.",
       "BMC: the dedicated management LAN is the RJ45 above the two USB ports; the UID button lights the blue LED.",
       "Power: connect the 24-pin ATX and every 8-pin EPS (JPWR) before the first boot."
-    ]
+    ],
+    "box": "box_mb_strata_l46",
+    "box_size": [0.36, 0.065, 0.325]
   }
 ]

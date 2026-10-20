@@ -47,7 +47,9 @@
       "Do not remove the label: it spreads heat and voids the warranty if removed.",
       "Use the motherboard's M.2 heatsink if it has one; peel its pad film first.",
       "Newly installed drives must be initialised (GPT) and formatted before they show up."
-    ]
+    ],
+    "box": "box_ssd_sorin_990pro_1tb",
+    "box_size": [0.11, 0.025, 0.08]
   },
   {
     "id": "ssd_sorin_990pro_2tb_hs",
@@ -100,7 +102,9 @@
       "Pre-installed heatsink (8.2 mm tall): remove the motherboard's M.2 heatsink and its pad first.",
       "Peel the clear film off the heatsink before use.",
       "Newly installed drives must be initialised (GPT) and formatted before they show up."
-    ]
+    ],
+    "box": "box_ssd_sorin_990pro_2tb_hs",
+    "box_size": [0.11, 0.025, 0.08]
   },
   {
     "id": "ssd_sorin_980_500",
@@ -150,7 +154,9 @@
       "Do not remove the label: it spreads heat and voids the warranty if removed.",
       "Use the motherboard's M.2 heatsink if it has one; peel its pad film first.",
       "Newly installed drives must be initialised (GPT) and formatted before they show up."
-    ]
+    ],
+    "box": "box_ssd_sorin_980_500",
+    "box_size": [0.11, 0.025, 0.08]
   },
   {
     "id": "ssd_westline_sn850x_2tb",
@@ -201,7 +207,9 @@
       "Use the motherboard's M.2 heatsink if it has one; peel its pad film first.",
       "Chips on both sides: check the space under the drive on slim notebooks.",
       "Newly installed drives must be initialised (GPT) and formatted before they show up."
-    ]
+    ],
+    "box": "box_ssd_westline_sn850x_2tb",
+    "box_size": [0.11, 0.025, 0.08]
   },
   {
     "id": "ssd_westline_sn850x_1tb_hs",
@@ -254,7 +262,9 @@
       "Pre-installed heatsink (8.8 mm tall): remove the motherboard's M.2 heatsink and its pad first.",
       "Peel the clear film off the heatsink before use.",
       "Newly installed drives must be initialised (GPT) and formatted before they show up."
-    ]
+    ],
+    "box": "box_ssd_westline_sn850x_1tb_hs",
+    "box_size": [0.11, 0.03, 0.08]
   },
   {
     "id": "ssd_westline_sn580_1tb",
@@ -304,7 +314,9 @@
       "Do not remove the label: it spreads heat and voids the warranty if removed.",
       "Use the motherboard's M.2 heatsink if it has one; peel its pad film first.",
       "Newly installed drives must be initialised (GPT) and formatted before they show up."
-    ]
+    ],
+    "box": "box_ssd_westline_sn580_1tb",
+    "box_size": [0.11, 0.025, 0.08]
   },
   {
     "id": "ssd_crux_p3plus_2tb",
@@ -354,7 +366,9 @@
       "Do not remove the label: it spreads heat and voids the warranty if removed.",
       "Use the motherboard's M.2 heatsink if it has one; peel its pad film first.",
       "Newly installed drives must be initialised (GPT) and formatted before they show up."
-    ]
+    ],
+    "box": "box_ssd_crux_p3plus_2tb",
+    "box_size": [0.11, 0.025, 0.08]
   },
   {
     "id": "ssd_crux_t705_2tb_hs",
@@ -408,7 +422,9 @@
       "Peel the clear film off the heatsink before use.",
       "Chips on both sides: check the space under the drive on slim notebooks.",
       "Newly installed drives must be initialised (GPT) and formatted before they show up."
-    ]
+    ],
+    "box": "box_ssd_crux_t705_2tb_hs",
+    "box_size": [0.11, 0.04, 0.08]
   },
   {
     "id": "ssd_sorin_870_1tb",
@@ -458,7 +474,9 @@
       "Peel the clear film off the top label before installing.",
       "Initialise (GPT) and format the drive before use.",
       "Limited 3-year warranty; keep the serial-number label."
-    ]
+    ],
+    "box": "box_ssd_sorin_870_1tb",
+    "box_size": [0.14, 0.03, 0.1]
   },
   {
     "id": "ssd_crux_mx500_2tb",
@@ -508,7 +526,9 @@
       "Peel the clear film off the top label before installing.",
       "Initialise (GPT) and format the drive before use.",
       "Limited 3-year warranty; keep the serial-number label."
-    ]
+    ],
+    "box": "box_ssd_crux_mx500_2tb",
+    "box_size": [0.14, 0.03, 0.1]
   },
   {
     "id": "ssd_kingsland_a400_480",
@@ -558,7 +578,9 @@
       "Peel the clear film off the top label before installing.",
       "Initialise (GPT) and format the drive before use.",
       "Limited 3-year warranty; keep the serial-number label."
-    ]
+    ],
+    "box": "box_ssd_kingsland_a400_480",
+    "box_size": [0.14, 0.03, 0.1]
   },
   {
     "id": "hdd_seacrest_2tb",
@@ -606,7 +628,9 @@
       "Do not cover the breather hole on the top cover.",
       "Drives over 2 TB need a GPT partition table to use their full capacity.",
       "Limited warranty: 2 years desktop, 3 years NAS, 5 years enterprise."
-    ]
+    ],
+    "box": "box_hdd_seacrest_2tb",
+    "box_size": [0.215, 0.05, 0.13]
   },
   {
     "id": "hdd_westline_4tb",
@@ -654,7 +678,9 @@
       "Do not cover the breather hole on the top cover.",
       "Drives over 2 TB need a GPT partition table to use their full capacity.",
       "Limited warranty: 2 years desktop, 3 years NAS, 5 years enterprise."
-    ]
+    ],
+    "box": "box_hdd_westline_4tb",
+    "box_size": [0.215, 0.05, 0.13]
   },
   {
     "id": "hdd_seacrest_8tb",
@@ -704,7 +730,9 @@
       "Rated for 24/7 use, 180 TB/year workload.",
       "Drives over 2 TB need a GPT partition table to use their full capacity.",
       "Limited warranty: 2 years desktop, 3 years NAS, 5 years enterprise."
-    ]
+    ],
+    "box": "box_hdd_seacrest_8tb",
+    "box_size": [0.215, 0.05, 0.13]
   },
   {
     "id": "hdd_seacrest_exos_20tb",
@@ -754,7 +782,9 @@
       "Rated for 24/7 use, 550 TB/year workload.",
       "Drives over 2 TB need a GPT partition table to use their full capacity.",
       "Limited warranty: 2 years desktop, 3 years NAS, 5 years enterprise."
-    ]
+    ],
+    "box": "box_hdd_seacrest_exos_20tb",
+    "box_size": [0.215, 0.06, 0.135]
   },
   {
     "id": "ssd_sorin_pm9a3_3840",
@@ -807,7 +837,9 @@
       "Power-loss protection capacitors keep in-flight data safe on power failure.",
       "Needs airflow: keep the fins in the server's front-to-back air path.",
       "Limited 5-year warranty for data-centre use."
-    ]
+    ],
+    "box": "box_ssd_sorin_pm9a3_3840",
+    "box_size": [0.14, 0.055, 0.11]
   },
   {
     "id": "ssd_sorin_pm9a3_7680",
@@ -860,6 +892,8 @@
       "Power-loss protection capacitors keep in-flight data safe on power failure.",
       "Needs airflow: keep the fins in the server's front-to-back air path.",
       "Limited 5-year warranty for data-centre use."
-    ]
+    ],
+    "box": "box_ssd_sorin_pm9a3_7680",
+    "box_size": [0.14, 0.055, 0.11]
   }
 ]

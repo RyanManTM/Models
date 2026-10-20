@@ -49,7 +49,9 @@
       "Memory: DDR5 only. Install sticks in A2 and B2 first for two-stick kits.",
       "Never touch the gold pads under the CPU or the pins in the socket.",
       "Update the motherboard BIOS before first boot if the board is older than the CPU."
-    ]
+    ],
+    "box": "box_cpu_arc3_8300g",
+    "box_size": [0.11, 0.07, 0.11]
   },
   {
     "id": "cpu_arc5_9600x",
@@ -100,7 +102,9 @@
       "Memory: DDR5 only. Install sticks in A2 and B2 first for two-stick kits.",
       "Never touch the gold pads under the CPU or the pins in the socket.",
       "Update the motherboard BIOS before first boot if the board is older than the CPU."
-    ]
+    ],
+    "box": "box_cpu_arc5_9600x",
+    "box_size": [0.11, 0.07, 0.11]
   },
   {
     "id": "cpu_arc7_9700x",
@@ -151,7 +155,9 @@
       "Memory: DDR5 only. Install sticks in A2 and B2 first for two-stick kits.",
       "Never touch the gold pads under the CPU or the pins in the socket.",
       "Update the motherboard BIOS before first boot if the board is older than the CPU."
-    ]
+    ],
+    "box": "box_cpu_arc7_9700x",
+    "box_size": [0.11, 0.07, 0.11]
   },
   {
     "id": "cpu_arc7_9800x3d",
@@ -204,7 +210,9 @@
       "Memory: DDR5 only. Install sticks in A2 and B2 first for two-stick kits.",
       "Never touch the gold pads under the CPU or the pins in the socket.",
       "Update the motherboard BIOS before first boot if the board is older than the CPU."
-    ]
+    ],
+    "box": "box_cpu_arc7_9800x3d",
+    "box_size": [0.11, 0.07, 0.11]
   },
   {
     "id": "cpu_arc9_9950x3d",
@@ -257,7 +265,9 @@
       "Memory: DDR5 only. Install sticks in A2 and B2 first for two-stick kits.",
       "Never touch the gold pads under the CPU or the pins in the socket.",
       "Update the motherboard BIOS before first boot if the board is older than the CPU."
-    ]
+    ],
+    "box": "box_cpu_arc9_9950x3d",
+    "box_size": [0.11, 0.07, 0.11]
   },
   {
     "id": "cpu_tiron_i3_14100",
@@ -309,7 +319,9 @@
       "4 cores (4 P + 0 E), 8 threads, up to 4.7 GHz, 12 MB cache.",
       "Built-in graphics: plug the monitor into the motherboard's outputs when no graphics card is fitted.",
       "Never touch the gold pads under the CPU. The socket pins bend easily."
-    ]
+    ],
+    "box": "box_cpu_tiron_i3_14100",
+    "box_size": [0.11, 0.07, 0.11]
   },
   {
     "id": "cpu_tiron_i5_14600k",
@@ -363,7 +375,9 @@
       "14 cores (6 P + 8 E), 20 threads, up to 5.3 GHz, 24 MB cache.",
       "Built-in graphics: plug the monitor into the motherboard's outputs when no graphics card is fitted.",
       "Never touch the gold pads under the CPU. The socket pins bend easily."
-    ]
+    ],
+    "box": "box_cpu_tiron_i5_14600k",
+    "box_size": [0.11, 0.07, 0.11]
   },
   {
     "id": "cpu_tiron_i7_14700",
@@ -415,7 +429,9 @@
       "20 cores (8 P + 12 E), 28 threads, up to 5.4 GHz, 33 MB cache.",
       "Built-in graphics: plug the monitor into the motherboard's outputs when no graphics card is fitted.",
       "Never touch the gold pads under the CPU. The socket pins bend easily."
-    ]
+    ],
+    "box": "box_cpu_tiron_i7_14700",
+    "box_size": [0.11, 0.07, 0.11]
   },
   {
     "id": "cpu_tiron_i7_14700k",
@@ -469,7 +485,9 @@
       "20 cores (8 P + 12 E), 28 threads, up to 5.6 GHz, 33 MB cache.",
       "Built-in graphics: plug the monitor into the motherboard's outputs when no graphics card is fitted.",
       "Never touch the gold pads under the CPU. The socket pins bend easily."
-    ]
+    ],
+    "box": "box_cpu_tiron_i7_14700k",
+    "box_size": [0.11, 0.07, 0.11]
   },
   {
     "id": "cpu_tiron_i9_14900k",
@@ -523,7 +541,9 @@
       "24 cores (8 P + 16 E), 32 threads, up to 6.0 GHz, 36 MB cache.",
       "Built-in graphics: plug the monitor into the motherboard's outputs when no graphics card is fitted.",
       "Never touch the gold pads under the CPU. The socket pins bend easily."
-    ]
+    ],
+    "box": "box_cpu_tiron_i9_14900k",
+    "box_size": [0.11, 0.07, 0.11]
   },
   {
     "id": "cpu_epoch_9124",
@@ -581,7 +601,9 @@
       "16 cores / 32 threads, 3.0 GHz base, up to 3.7 GHz, 64 MB L3 cache.",
       "12 DDR5 RDIMM channels: fit one RDIMM per channel for full bandwidth. 128 PCIe 5.0 lanes.",
       "Socket SP-V only; not compatible with desktop V5 boards."
-    ]
+    ],
+    "box": "box_cpu_epoch_9124",
+    "box_size": [0.12, 0.03, 0.13]
   },
   {
     "id": "cpu_epoch_9354",
@@ -639,7 +661,9 @@
       "32 cores / 64 threads, 3.25 GHz base, up to 3.8 GHz, 256 MB L3 cache.",
       "12 DDR5 RDIMM channels: fit one RDIMM per channel for full bandwidth. 128 PCIe 5.0 lanes.",
       "Socket SP-V only; not compatible with desktop V5 boards."
-    ]
+    ],
+    "box": "box_cpu_epoch_9354",
+    "box_size": [0.12, 0.03, 0.13]
   },
   {
     "id": "cpu_epoch_9654",
@@ -697,7 +721,9 @@
       "96 cores / 192 threads, 2.4 GHz base, up to 3.7 GHz, 384 MB L3 cache.",
       "12 DDR5 RDIMM channels: fit one RDIMM per channel for full bandwidth. 128 PCIe 5.0 lanes.",
       "Socket SP-V only; not compatible with desktop V5 boards."
-    ]
+    ],
+    "box": "box_cpu_epoch_9654",
+    "box_size": [0.12, 0.03, 0.13]
   },
   {
     "id": "cpu_tiron_plat_8480",
@@ -755,6 +781,8 @@
       "56 cores / 112 threads, 2.0 GHz base, up to 3.8 GHz, 105 MB cache.",
       "8 DDR5 RDIMM channels: fit one RDIMM per channel for full bandwidth. 80 PCIe 5.0 lanes.",
       "Socket L46 only; not compatible with desktop L17 boards."
-    ]
+    ],
+    "box": "box_cpu_tiron_plat_8480",
+    "box_size": [0.11, 0.03, 0.16]
   }
 ]

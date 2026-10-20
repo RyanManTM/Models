@@ -51,7 +51,9 @@
       "Wake-on-LAN and VLAN tagging are set in the driver's advanced properties.",
       "Hold the card by its edges and bracket; do not touch the gold contacts.",
       "Limited lifetime warranty when registered within 90 days."
-    ]
+    ],
+    "box": "box_nic_linkwave_350t2",
+    "box_size": [0.18, 0.06, 0.19]
   },
   {
     "id": "nic_linkwave_710da2",
@@ -115,7 +117,9 @@
       "Needs 200 LFM of airflow over the heatsink; do not use in a fanless case.",
       "A low-profile bracket is in the box.",
       "Limited lifetime warranty."
-    ]
+    ],
+    "box": "box_nic_linkwave_710da2",
+    "box_size": [0.22, 0.06, 0.19]
   },
   {
     "id": "nic_melnet_strand6_25g",
@@ -179,7 +183,9 @@
       "Requires server airflow of 300 LFM; the controller throttles above 105 °C.",
       "Keep the dust plugs in unused cages.",
       "Three-year limited warranty."
-    ]
+    ],
+    "box": "box_nic_melnet_strand6_25g",
+    "box_size": [0.22, 0.06, 0.19]
   },
   {
     "id": "nic_melnet_strand6_100g",
@@ -243,7 +249,9 @@
       "Port LEDs: green link, amber activity.",
       "Keep the dust plugs in unused cages; never look into an open optical port.",
       "Three-year limited warranty."
-    ]
+    ],
+    "box": "box_nic_melnet_strand6_100g",
+    "box_size": [0.22, 0.06, 0.19]
   },
   {
     "id": "hba_broadline_9500_16i",
@@ -297,7 +305,9 @@
       "Drives are passed through to the OS (IT mode): no RAID on this card.",
       "Needs 200 LFM of airflow over the heatsink.",
       "Three-year limited warranty."
-    ]
+    ],
+    "box": "box_hba_broadline_9500_16i",
+    "box_size": [0.22, 0.06, 0.25]
   },
   {
     "id": "hba_broadline_9560_16i",
@@ -355,7 +365,9 @@
       "Connector C0 serves drives 0-7, C1 drives 8-15 (SFF-8654 x8).",
       "Create arrays in the card's BIOS utility (Ctrl+R at boot) or with the Broadline command-line tool.",
       "Three-year limited warranty, the supercap one year."
-    ]
+    ],
+    "box": "box_hba_broadline_9560_16i",
+    "box_size": [0.28, 0.06, 0.25]
   },
   {
     "id": "srv_strata_sg840_4u",
@@ -409,7 +421,9 @@
       "Ten hot-swap fans: replace a failed fan within 60 s.",
       "BMC: connect the IPMI port; default user is on the service tag.",
       "Three-year next-business-day warranty."
-    ]
+    ],
+    "box": "box_srv_strata_sg840_4u",
+    "box_size": [0.895, 0.275, 0.535]
   },
   {
     "id": "srv_strata_sr224_2u",
@@ -461,7 +475,9 @@
       "Populate DIMMs A1 and B1 first, then A2 and B2.",
       "Do not run without the air shroud or with empty bays without blanks.",
       "Three-year next-business-day warranty."
-    ]
+    ],
+    "box": "box_srv_strata_sr224_2u",
+    "box_size": [0.865, 0.175, 0.525]
   },
   {
     "id": "srv_linkwave_ls4804x",
@@ -528,7 +544,9 @@
       "Hold RESET 10 s to restore the factory settings.",
       "PWR green = on, SYS blinking = booting, FAN amber = fan fault.",
       "Limited lifetime warranty."
-    ]
+    ],
+    "box": "box_srv_linkwave_ls4804x",
+    "box_size": [0.555, 0.1, 0.32]
   },
   {
     "id": "srv_linkwave_ls1600x",
@@ -654,7 +672,9 @@
       "Out-of-band management on the MGMT port, console on the RJ45 CONSOLE port at 115200.",
       "Keep the dust plugs in unused cages.",
       "Five-year limited warranty."
-    ]
+    ],
+    "box": "box_srv_linkwave_ls1600x",
+    "box_size": [0.555, 0.1, 0.34]
   },
   {
     "id": "srv_strata_shelf_1u",
@@ -694,7 +714,9 @@
       "Leave the U above the shelf free for the equipment on it.",
       "The vent slots keep air moving; don't cover them completely.",
       "Five-year warranty."
-    ]
+    ],
+    "box": "box_srv_strata_shelf_1u",
+    "box_size": [0.555, 0.09, 0.44]
   },
   {
     "id": "srv_strata_blank_1u",
@@ -733,7 +755,9 @@
       "The flanges point into the rack.",
       "Tool-less version available as STRATA BP-1T.",
       "Five-year warranty against rust and paint defects."
-    ]
+    ],
+    "box": "box_srv_strata_blank_1u",
+    "box_size": [0.52, 0.05, 0.115]
   },
   {
     "id": "srv_strata_blank_2u",
@@ -772,7 +796,9 @@
       "The flanges point into the rack.",
       "Covers two rack units.",
       "Five-year warranty against rust and paint defects."
-    ]
+    ],
+    "box": "box_srv_strata_blank_2u",
+    "box_size": [0.52, 0.05, 0.16]
   },
   {
     "id": "srv_strata_cma",
@@ -812,7 +838,9 @@
       "Route the cables through the hoops and close the straps; leave slack at the elbow.",
       "Check the server slides fully out and back without pulling a cable.",
       "Three-year warranty."
-    ]
+    ],
+    "box": "box_srv_strata_cma",
+    "box_size": [0.485, 0.07, 0.215]
   },
   {
     "id": "srv_strata_kvm_1u",
@@ -859,6 +887,8 @@
       "18.5\" LCD, 1366 x 768; the LCD button turns the backlight off.",
       "Close the screen before pushing the drawer in.",
       "Three-year warranty."
-    ]
+    ],
+    "box": "box_srv_strata_kvm_1u",
+    "box_size": [0.855, 0.105, 0.525]
   }
 ]

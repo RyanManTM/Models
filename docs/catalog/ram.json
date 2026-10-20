@@ -65,7 +65,9 @@
       "Touch a grounded metal part of the case before handling; hold the stick by its edges.",
       "The first boot with new DDR5 can take a few minutes while the board trains the memory.",
       "Peel the clear film off both sides of the heat spreader before installing."
-    ]
+    ],
+    "box": "box_ram_corvex_ddr5_32_black",
+    "box_size": [0.16, 0.03, 0.12]
   },
   {
     "id": "ram_corvex_ddr5_32_white_rgb",
@@ -134,7 +136,9 @@
       "The first boot with new DDR5 can take a few minutes while the board trains the memory.",
       "The RGB light bar runs from the slot's 5 V supply; set colours in the motherboard's RGB software.",
       "Peel the clear film off both sides of the heat spreader before installing."
-    ]
+    ],
+    "box": "box_ram_corvex_ddr5_32_white_rgb",
+    "box_size": [0.16, 0.03, 0.12]
   },
   {
     "id": "ram_gstride_ddr5_48_rgb",
@@ -203,7 +207,9 @@
       "The first boot with new DDR5 can take a few minutes while the board trains the memory.",
       "The RGB light bar runs from the slot's 5 V supply; set colours in the motherboard's RGB software.",
       "Peel the clear film off both sides of the heat spreader before installing."
-    ]
+    ],
+    "box": "box_ram_gstride_ddr5_48_rgb",
+    "box_size": [0.16, 0.03, 0.12]
   },
   {
     "id": "ram_gstride_ddr5_32_lp",
@@ -271,7 +277,9 @@
       "Touch a grounded metal part of the case before handling; hold the stick by its edges.",
       "The first boot with new DDR5 can take a few minutes while the board trains the memory.",
       "Peel the clear film off both sides of the heat spreader before installing."
-    ]
+    ],
+    "box": "box_ram_gstride_ddr5_32_lp",
+    "box_size": [0.16, 0.03, 0.12]
   },
   {
     "id": "ram_kingsland_ddr5_64",
@@ -339,7 +347,9 @@
       "Touch a grounded metal part of the case before handling; hold the stick by its edges.",
       "The first boot with new DDR5 can take a few minutes while the board trains the memory.",
       "Peel the clear film off both sides of the heat spreader before installing."
-    ]
+    ],
+    "box": "box_ram_kingsland_ddr5_64",
+    "box_size": [0.16, 0.03, 0.12]
   },
   {
     "id": "ram_kingsland_ddr5_32_white_rgb",
@@ -408,7 +418,9 @@
       "The first boot with new DDR5 can take a few minutes while the board trains the memory.",
       "The RGB light bar runs from the slot's 5 V supply; set colours in the motherboard's RGB software.",
       "Peel the clear film off both sides of the heat spreader before installing."
-    ]
+    ],
+    "box": "box_ram_kingsland_ddr5_32_white_rgb",
+    "box_size": [0.16, 0.03, 0.12]
   },
   {
     "id": "ram_crux_ddr5_96",
@@ -476,7 +488,9 @@
       "Touch a grounded metal part of the case before handling; hold the stick by its edges.",
       "The first boot with new DDR5 can take a few minutes while the board trains the memory.",
       "Peel the clear film off both sides of the heat spreader before installing."
-    ]
+    ],
+    "box": "box_ram_crux_ddr5_96",
+    "box_size": [0.16, 0.03, 0.12]
   },
   {
     "id": "ram_crux_ddr5_16",
@@ -540,7 +554,9 @@
       "Open the slot latches, align the notch and press both ends down until the latches click.",
       "Touch a grounded metal part of the case before handling; hold the stick by its edges.",
       "The first boot with new DDR5 can take a few minutes while the board trains the memory."
-    ]
+    ],
+    "box": "box_ram_crux_ddr5_16",
+    "box_size": [0.16, 0.03, 0.12]
   },
   {
     "id": "ram_teamforge_ddr5_32_white_rgb",
@@ -609,7 +625,9 @@
       "The first boot with new DDR5 can take a few minutes while the board trains the memory.",
       "The RGB light bar runs from the slot's 5 V supply; set colours in the motherboard's RGB software.",
       "Peel the clear film off both sides of the heat spreader before installing."
-    ]
+    ],
+    "box": "box_ram_teamforge_ddr5_32_white_rgb",
+    "box_size": [0.16, 0.03, 0.12]
   },
   {
     "id": "ram_volt_ddr5_64_rgb",
@@ -678,7 +696,9 @@
       "The first boot with new DDR5 can take a few minutes while the board trains the memory.",
       "The RGB light bar runs from the slot's 5 V supply; set colours in the motherboard's RGB software.",
       "Peel the clear film off both sides of the heat spreader before installing."
-    ]
+    ],
+    "box": "box_ram_volt_ddr5_64_rgb",
+    "box_size": [0.16, 0.03, 0.12]
   },
   {
     "id": "ram_corvex_ddr4_16_lp",
@@ -745,7 +765,9 @@
       "Open the slot latches, align the notch and press both ends down until the latches click.",
       "Touch a grounded metal part of the case before handling; hold the stick by its edges.",
       "Peel the clear film off both sides of the heat spreader before installing."
-    ]
+    ],
+    "box": "box_ram_corvex_ddr4_16_lp",
+    "box_size": [0.16, 0.03, 0.12]
   },
   {
     "id": "ram_corvex_ddr4_32_rgb",
@@ -813,7 +835,9 @@
       "Touch a grounded metal part of the case before handling; hold the stick by its edges.",
       "The RGB light bar runs from the slot's 5 V supply; set colours in the motherboard's RGB software.",
       "Peel the clear film off both sides of the heat spreader before installing."
-    ]
+    ],
+    "box": "box_ram_corvex_ddr4_32_rgb",
+    "box_size": [0.16, 0.03, 0.125]
   },
   {
     "id": "ram_gstride_ddr4_16_red",
@@ -880,7 +904,9 @@
       "Open the slot latches, align the notch and press both ends down until the latches click.",
       "Touch a grounded metal part of the case before handling; hold the stick by its edges.",
       "Peel the clear film off both sides of the heat spreader before installing."
-    ]
+    ],
+    "box": "box_ram_gstride_ddr4_16_red",
+    "box_size": [0.16, 0.03, 0.12]
   },
   {
     "id": "ram_kingsland_ddr4_32",
@@ -947,7 +973,9 @@
       "Open the slot latches, align the notch and press both ends down until the latches click.",
       "Touch a grounded metal part of the case before handling; hold the stick by its edges.",
       "Peel the clear film off both sides of the heat spreader before installing."
-    ]
+    ],
+    "box": "box_ram_kingsland_ddr4_32",
+    "box_size": [0.16, 0.03, 0.12]
   },
   {
     "id": "ram_crux_ddr4_64",
@@ -1014,7 +1042,9 @@
       "Open the slot latches, align the notch and press both ends down until the latches click.",
       "Touch a grounded metal part of the case before handling; hold the stick by its edges.",
       "Peel the clear film off both sides of the heat spreader before installing."
-    ]
+    ],
+    "box": "box_ram_crux_ddr4_64",
+    "box_size": [0.16, 0.03, 0.12]
   },
   {
     "id": "ram_teamforge_ddr4_32_red",
@@ -1081,7 +1111,9 @@
       "Open the slot latches, align the notch and press both ends down until the latches click.",
       "Touch a grounded metal part of the case before handling; hold the stick by its edges.",
       "Peel the clear film off both sides of the heat spreader before installing."
-    ]
+    ],
+    "box": "box_ram_teamforge_ddr4_32_red",
+    "box_size": [0.16, 0.03, 0.12]
   },
   {
     "id": "ram_kingsland_rdimm5_32",
@@ -1149,7 +1181,9 @@
       "Align the notch, press both ends straight down until the latches close.",
       "ESD-sensitive: hold by the edges and wear a grounded wrist strap.",
       "Memory training on first boot can take several minutes on large configurations."
-    ]
+    ],
+    "box": "box_ram_kingsland_rdimm5_32",
+    "box_size": [0.16, 0.025, 0.06]
   },
   {
     "id": "ram_sorin_rdimm5_64",
@@ -1217,7 +1251,9 @@
       "Align the notch, press both ends straight down until the latches close.",
       "ESD-sensitive: hold by the edges and wear a grounded wrist strap.",
       "Memory training on first boot can take several minutes on large configurations."
-    ]
+    ],
+    "box": "box_ram_sorin_rdimm5_64",
+    "box_size": [0.16, 0.025, 0.06]
   },
   {
     "id": "ram_crux_rdimm5_128",
@@ -1285,7 +1321,9 @@
       "Align the notch, press both ends straight down until the latches close.",
       "ESD-sensitive: hold by the edges and wear a grounded wrist strap.",
       "Memory training on first boot can take several minutes on large configurations."
-    ]
+    ],
+    "box": "box_ram_crux_rdimm5_128",
+    "box_size": [0.16, 0.025, 0.065]
   },
   {
     "id": "ram_kingsland_rdimm4_32",
@@ -1353,6 +1391,8 @@
       "Align the notch, press both ends straight down until the latches close.",
       "ESD-sensitive: hold by the edges and wear a grounded wrist strap.",
       "Memory training on first boot can take several minutes on large configurations."
-    ]
+    ],
+    "box": "box_ram_kingsland_rdimm4_32",
+    "box_size": [0.16, 0.025, 0.06]
   }
 ]

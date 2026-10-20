@@ -62,7 +62,9 @@
       "Peel the voltage sticker off the switch before first use.",
       "The ATX 24-pin and EPS 8-pin go to the motherboard; PCIe or 12V-2x6 cables go to the graphics card.",
       "CAUTION: hazardous voltage inside. Do not open the cover; no user-serviceable parts."
-    ]
+    ],
+    "box": "box_psu_ampere_550_bronze",
+    "box_size": [0.21, 0.12, 0.18]
   },
   {
     "id": "psu_corvex_cx650m",
@@ -128,7 +130,9 @@
       "The ATX 24-pin and EPS 8-pin go to the motherboard; PCIe or 12V-2x6 cables go to the graphics card.",
       "CAUTION: hazardous voltage inside. Do not open the cover; no user-serviceable parts.",
       "Use only Corvex modular cables made for this unit. Modular pinouts differ between brands and models; a foreign cable can destroy your components."
-    ]
+    ],
+    "box": "box_psu_corvex_cx650m",
+    "box_size": [0.21, 0.135, 0.18]
   },
   {
     "id": "psu_seastar_gx850",
@@ -194,7 +198,9 @@
       "The ATX 24-pin and EPS 8-pin go to the motherboard; PCIe or 12V-2x6 cables go to the graphics card.",
       "CAUTION: hazardous voltage inside. Do not open the cover; no user-serviceable parts.",
       "Use only Seastar modular cables made for this unit. Modular pinouts differ between brands and models; a foreign cable can destroy your components."
-    ]
+    ],
+    "box": "box_psu_seastar_gx850",
+    "box_size": [0.21, 0.12, 0.18]
   },
   {
     "id": "psu_seastar_px1000_white",
@@ -261,7 +267,9 @@
       "CAUTION: hazardous voltage inside. Do not open the cover; no user-serviceable parts.",
       "Use only Seastar modular cables made for this unit. Modular pinouts differ between brands and models; a foreign cable can destroy your components.",
       "12V-2x6: push the plug in fully until the latch clicks; do not bend the cable within 35 mm of the plug."
-    ]
+    ],
+    "box": "box_psu_seastar_px1000_white",
+    "box_size": [0.23, 0.12, 0.18]
   },
   {
     "id": "psu_corvex_rm850x_white",
@@ -328,7 +336,9 @@
       "CAUTION: hazardous voltage inside. Do not open the cover; no user-serviceable parts.",
       "Use only Corvex modular cables made for this unit. Modular pinouts differ between brands and models; a foreign cable can destroy your components.",
       "12V-2x6: push the plug in fully until the latch clicks; do not bend the cable within 35 mm of the plug."
-    ]
+    ],
+    "box": "box_psu_corvex_rm850x_white",
+    "box_size": [0.23, 0.12, 0.18]
   },
   {
     "id": "psu_hush_pp12m_750",
@@ -395,7 +405,9 @@
       "CAUTION: hazardous voltage inside. Do not open the cover; no user-serviceable parts.",
       "Use only Hush modular cables made for this unit. Modular pinouts differ between brands and models; a foreign cable can destroy your components.",
       "12V-2x6: push the plug in fully until the latch clicks; do not bend the cable within 35 mm of the plug."
-    ]
+    ],
+    "box": "box_psu_hush_pp12m_750",
+    "box_size": [0.23, 0.12, 0.18]
   },
   {
     "id": "psu_hush_dp13_1200",
@@ -464,7 +476,9 @@
       "CAUTION: hazardous voltage inside. Do not open the cover; no user-serviceable parts.",
       "Use only Hush modular cables made for this unit. Modular pinouts differ between brands and models; a foreign cable can destroy your components.",
       "12V-2x6: push the plug in fully until the latch clicks; do not bend the cable within 35 mm of the plug."
-    ]
+    ],
+    "box": "box_psu_hush_dp13_1200",
+    "box_size": [0.245, 0.12, 0.18]
   },
   {
     "id": "psu_mako_a850g",
@@ -531,7 +545,9 @@
       "CAUTION: hazardous voltage inside. Do not open the cover; no user-serviceable parts.",
       "Use only Mako modular cables made for this unit. Modular pinouts differ between brands and models; a foreign cable can destroy your components.",
       "12V-2x6: push the plug in fully until the latch clicks; do not bend the cable within 35 mm of the plug."
-    ]
+    ],
+    "box": "box_psu_mako_a850g",
+    "box_size": [0.21, 0.12, 0.18]
   },
   {
     "id": "psu_aegis_1200p",
@@ -601,7 +617,9 @@
       "CAUTION: hazardous voltage inside. Do not open the cover; no user-serviceable parts.",
       "Use only Aegis modular cables made for this unit. Modular pinouts differ between brands and models; a foreign cable can destroy your components.",
       "12V-2x6: push the plug in fully until the latch clicks; do not bend the cable within 35 mm of the plug."
-    ]
+    ],
+    "box": "box_psu_aegis_1200p",
+    "box_size": [0.26, 0.12, 0.18]
   },
   {
     "id": "psu_corvex_ax1600i",
@@ -669,7 +687,9 @@
       "The ATX 24-pin and EPS 8-pin go to the motherboard; PCIe or 12V-2x6 cables go to the graphics card.",
       "CAUTION: hazardous voltage inside. Do not open the cover; no user-serviceable parts.",
       "Use only Corvex modular cables made for this unit. Modular pinouts differ between brands and models; a foreign cable can destroy your components."
-    ]
+    ],
+    "box": "box_psu_corvex_ax1600i",
+    "box_size": [0.27, 0.12, 0.18]
   },
   {
     "id": "psu_corvex_sf750",
@@ -737,7 +757,9 @@
       "CAUTION: hazardous voltage inside. Do not open the cover; no user-serviceable parts.",
       "Use only Corvex modular cables made for this unit. Modular pinouts differ between brands and models; a foreign cable can destroy your components.",
       "SFX: fits small-form-factor cases directly, or an ATX bay with the included SFX-to-ATX bracket."
-    ]
+    ],
+    "box": "box_psu_corvex_sf750",
+    "box_size": [0.2, 0.1, 0.17]
   },
   {
     "id": "psu_strata_crps_800",
@@ -793,7 +815,9 @@
       "AC input: 100-240V~ 10-5A 50/60Hz through the C14 inlet; use a C13 cord rated 10 A or more.",
       "DC output: +12V 66.7A, +12Vsb 3A through the card-edge connector.",
       "Do not mix wattages or efficiency levels in one redundant pair."
-    ]
+    ],
+    "box": "box_psu_strata_crps_800",
+    "box_size": [0.265, 0.065, 0.11]
   },
   {
     "id": "psu_strata_crps_1600",
@@ -849,6 +873,8 @@
       "AC input: 200-240V~ 10A 50/60Hz through the C14 inlet; use a C13 cord rated 10 A or more.",
       "DC output: +12V 133A, +12Vsb 3.5A through the card-edge connector.",
       "Do not mix wattages or efficiency levels in one redundant pair."
-    ]
+    ],
+    "box": "box_psu_strata_crps_1600",
+    "box_size": [0.265, 0.065, 0.11]
   }
 ]
