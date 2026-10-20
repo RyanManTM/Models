@@ -1,0 +1,724 @@
+[
+  {
+    "id": "cooler_arctiq_34_black",
+    "model": "cooler_arctiq_34_black",
+    "brand": "Arctiq",
+    "name": "Arctiq Chiller 34 eSport Black",
+    "category": "Cooler",
+    "price": 35,
+    "power_w": 3,
+    "color": "#16161A",
+    "rgb": false,
+    "analog": "Arctic Freezer 34 eSports, black (docs only, never shown in game)",
+    "desc": "Single-tower 120 mm air cooler with four direct-touch heat pipes, all black.",
+    "specs": {
+      "height_mm": 157,
+      "fans": 1,
+      "fan_mm": 120,
+      "heat_pipes": 4,
+      "towers": 1,
+      "rpm_max": 2100
+    },
+    "game": {
+      "cooler_max_w": 200,
+      "perf": 0
+    },
+    "contract": "cooler_tower",
+    "new_contract": false,
+    "docs": [
+      "manual",
+      "warranty"
+    ],
+    "doc_notes": [
+      "Intel L17: fit the backplate under the board, screw the four standoffs through the board, lay the X bracket on top and tighten its four spring screws a few turns at a time in a cross pattern.",
+      "Arc V5: remove the board's plastic retention clips, keep the stock backplate, screw the four standoffs into it and fit the X bracket and its four spring screws in a cross pattern.",
+      "Peel the blue film off the base before mounting. Leaving it on will overheat the CPU.",
+      "Thermal paste: put a pea-sized dot (about 4 mm, 0.1 ml) in the middle of the CPU's heat spreader. The mounting pressure spreads it, so don't spread it yourself.",
+      "Plug the fan's 4-pin plug into the CPU_FAN header next to the socket; the board won't boot without a signal there.",
+      "Height 157 mm: check that your case has at least this much room for the CPU cooler.",
+      "Warranty: 3 years."
+    ],
+    "unbox": {
+      "films": [
+        "A_FILM_0",
+        "A_FILM_TOP_0",
+        "A_FILM_HUB_0@A_FAN_0"
+      ],
+      "caps": [],
+      "stickers": []
+    }
+  },
+  {
+    "id": "cooler_arctiq_34_white",
+    "model": "cooler_arctiq_34_white",
+    "brand": "Arctiq",
+    "name": "Arctiq Chiller 34 eSport White",
+    "category": "Cooler",
+    "price": 37,
+    "power_w": 3,
+    "color": "#ECECEA",
+    "rgb": false,
+    "analog": "Arctic Freezer 34 eSports, white (docs only, never shown in game)",
+    "desc": "Single-tower 120 mm air cooler with four heat pipes, a white fan and a white top.",
+    "specs": {
+      "height_mm": 157,
+      "fans": 1,
+      "fan_mm": 120,
+      "heat_pipes": 4,
+      "towers": 1,
+      "rpm_max": 2100
+    },
+    "game": {
+      "cooler_max_w": 200,
+      "perf": 0
+    },
+    "contract": "cooler_tower",
+    "new_contract": false,
+    "docs": [
+      "manual",
+      "warranty"
+    ],
+    "doc_notes": [
+      "Intel L17: fit the backplate under the board, screw the four standoffs through the board, lay the X bracket on top and tighten its four spring screws a few turns at a time in a cross pattern.",
+      "Arc V5: remove the board's plastic retention clips, keep the stock backplate, screw the four standoffs into it and fit the X bracket and its four spring screws in a cross pattern.",
+      "Peel the blue film off the base before mounting. Leaving it on will overheat the CPU.",
+      "Thermal paste: put a pea-sized dot (about 4 mm, 0.1 ml) in the middle of the CPU's heat spreader. The mounting pressure spreads it, so don't spread it yourself.",
+      "Plug the fan's 4-pin plug into the CPU_FAN header next to the socket; the board won't boot without a signal there.",
+      "Height 157 mm: check that your case has at least this much room for the CPU cooler.",
+      "Warranty: 3 years."
+    ],
+    "unbox": {
+      "films": [
+        "A_FILM_0",
+        "A_FILM_TOP_0",
+        "A_FILM_HUB_0@A_FAN_0"
+      ],
+      "caps": [],
+      "stickers": []
+    }
+  },
+  {
+    "id": "cooler_glacier_ak400_white",
+    "model": "cooler_glacier_ak400_white",
+    "brand": "Glacier",
+    "name": "Glacier AK400 WH",
+    "category": "Cooler",
+    "price": 40,
+    "power_w": 3,
+    "color": "#F0F0EE",
+    "rgb": false,
+    "analog": "DeepCool AK400 WH (docs only, never shown in game)",
+    "desc": "Single-tower 120 mm cooler with four heat pipes and white-painted jagged fins.",
+    "specs": {
+      "height_mm": 155,
+      "fans": 1,
+      "fan_mm": 120,
+      "heat_pipes": 4,
+      "towers": 1,
+      "rpm_max": 1850
+    },
+    "game": {
+      "cooler_max_w": 220,
+      "perf": 0
+    },
+    "contract": "cooler_tower",
+    "new_contract": false,
+    "docs": [
+      "manual",
+      "warranty"
+    ],
+    "doc_notes": [
+      "Intel L17: fit the backplate under the board, screw the four standoffs through the board, lay the X bracket on top and tighten its four spring screws a few turns at a time in a cross pattern.",
+      "Arc V5: remove the board's plastic retention clips, keep the stock backplate, screw the four standoffs into it and fit the X bracket and its four spring screws in a cross pattern.",
+      "Peel the blue film off the base before mounting. Leaving it on will overheat the CPU.",
+      "Thermal paste: put a pea-sized dot (about 4 mm, 0.1 ml) in the middle of the CPU's heat spreader. The mounting pressure spreads it, so don't spread it yourself.",
+      "Plug the fan's 4-pin plug into the CPU_FAN header next to the socket; the board won't boot without a signal there.",
+      "Height 155 mm: check that your case has at least this much room for the CPU cooler.",
+      "Warranty: 3 years."
+    ],
+    "unbox": {
+      "films": [
+        "A_FILM_0",
+        "A_FILM_TOP_0",
+        "A_FILM_HUB_0@A_FAN_0"
+      ],
+      "caps": [],
+      "stickers": []
+    }
+  },
+  {
+    "id": "cooler_glacier_ak620_black",
+    "model": "cooler_glacier_ak620_black",
+    "brand": "Glacier",
+    "name": "Glacier AK620",
+    "category": "Cooler",
+    "price": 65,
+    "power_w": 5,
+    "color": "#141416",
+    "rgb": false,
+    "analog": "DeepCool AK620 (black) (docs only, never shown in game)",
+    "desc": "Dual-tower cooler with six heat pipes and two 120 mm fans, black.",
+    "specs": {
+      "height_mm": 160,
+      "fans": 2,
+      "fan_mm": 120,
+      "heat_pipes": 6,
+      "towers": 2,
+      "rpm_max": 1850
+    },
+    "game": {
+      "cooler_max_w": 260,
+      "perf": 0
+    },
+    "contract": "cooler_tower",
+    "new_contract": false,
+    "docs": [
+      "manual",
+      "warranty"
+    ],
+    "doc_notes": [
+      "Intel L17: fit the backplate under the board, screw the four standoffs through the board, lay the X bracket on top and tighten its four spring screws a few turns at a time in a cross pattern.",
+      "Arc V5: remove the board's plastic retention clips, keep the stock backplate, screw the four standoffs into it and fit the X bracket and its four spring screws in a cross pattern.",
+      "Peel the blue film off the base before mounting. Leaving it on will overheat the CPU.",
+      "Thermal paste: put a pea-sized dot (about 4 mm, 0.1 ml) in the middle of the CPU's heat spreader. The mounting pressure spreads it, so don't spread it yourself.",
+      "Plug the fan's 4-pin plug into the CPU_FAN header next to the socket; the board won't boot without a signal there. Plug the second fan into CPU_OPT or SYS_FAN.",
+      "Height 160 mm: check that your case has at least this much room for the CPU cooler.",
+      "Clip on the middle fan before the front fan. Both fans blow towards the rear I/O.",
+      "Warranty: 3 years."
+    ],
+    "unbox": {
+      "films": [
+        "A_FILM_0",
+        "A_FILM_TOP_0",
+        "A_FILM_HUB_0@A_FAN_0",
+        "A_FILM_HUB_1@A_FAN_1"
+      ],
+      "caps": [],
+      "stickers": []
+    }
+  },
+  {
+    "id": "cooler_noctis_d15",
+    "model": "cooler_noctis_d15",
+    "brand": "Noctis",
+    "name": "Noctis NH-D15",
+    "category": "Cooler",
+    "price": 110,
+    "power_w": 4,
+    "color": "#D6C3A0",
+    "rgb": false,
+    "analog": "Noctua NH-D15 (docs only, never shown in game)",
+    "desc": "The classic dual-tower: six heat pipes, two quiet 140 mm fans in beige and brown.",
+    "specs": {
+      "height_mm": 165,
+      "fans": 2,
+      "fan_mm": 140,
+      "heat_pipes": 6,
+      "towers": 2,
+      "rpm_max": 1500
+    },
+    "game": {
+      "cooler_max_w": 250,
+      "perf": 0
+    },
+    "contract": "cooler_tower",
+    "new_contract": false,
+    "docs": [
+      "manual",
+      "warranty"
+    ],
+    "doc_notes": [
+      "Intel L17: fit the backplate under the board, screw the four standoffs through the board, lay the X bracket on top and tighten its four spring screws a few turns at a time in a cross pattern.",
+      "Arc V5: remove the board's plastic retention clips, keep the stock backplate, screw the four standoffs into it and fit the X bracket and its four spring screws in a cross pattern.",
+      "Peel the blue film off the base before mounting. Leaving it on will overheat the CPU.",
+      "Thermal paste: put a pea-sized dot (about 4 mm, 0.1 ml) in the middle of the CPU's heat spreader. The mounting pressure spreads it, so don't spread it yourself.",
+      "Plug the fan's 4-pin plug into the CPU_FAN header next to the socket; the board won't boot without a signal there. Plug the second fan into CPU_OPT or SYS_FAN.",
+      "Height 165 mm: check that your case has at least this much room for the CPU cooler.",
+      "Clip on the middle fan before the front fan. Both fans blow towards the rear I/O.",
+      "Warranty: 6 years."
+    ],
+    "unbox": {
+      "films": [
+        "A_FILM_0",
+        "A_FILM_TOP_0",
+        "A_FILM_HUB_0@A_FAN_0",
+        "A_FILM_HUB_1@A_FAN_1"
+      ],
+      "caps": [],
+      "stickers": []
+    }
+  },
+  {
+    "id": "cooler_noctis_d15_black",
+    "model": "cooler_noctis_d15_black",
+    "brand": "Noctis",
+    "name": "Noctis NH-D15 obsidian",
+    "category": "Cooler",
+    "price": 120,
+    "power_w": 4,
+    "color": "#121214",
+    "rgb": false,
+    "analog": "Noctua NH-D15 chromax.black (docs only, never shown in game)",
+    "desc": "NH-D15 in an all-black coating with black 140 mm fans.",
+    "specs": {
+      "height_mm": 165,
+      "fans": 2,
+      "fan_mm": 140,
+      "heat_pipes": 6,
+      "towers": 2,
+      "rpm_max": 1500
+    },
+    "game": {
+      "cooler_max_w": 250,
+      "perf": 0
+    },
+    "contract": "cooler_tower",
+    "new_contract": false,
+    "docs": [
+      "manual",
+      "warranty"
+    ],
+    "doc_notes": [
+      "Intel L17: fit the backplate under the board, screw the four standoffs through the board, lay the X bracket on top and tighten its four spring screws a few turns at a time in a cross pattern.",
+      "Arc V5: remove the board's plastic retention clips, keep the stock backplate, screw the four standoffs into it and fit the X bracket and its four spring screws in a cross pattern.",
+      "Peel the blue film off the base before mounting. Leaving it on will overheat the CPU.",
+      "Thermal paste: put a pea-sized dot (about 4 mm, 0.1 ml) in the middle of the CPU's heat spreader. The mounting pressure spreads it, so don't spread it yourself.",
+      "Plug the fan's 4-pin plug into the CPU_FAN header next to the socket; the board won't boot without a signal there. Plug the second fan into CPU_OPT or SYS_FAN.",
+      "Height 165 mm: check that your case has at least this much room for the CPU cooler.",
+      "Clip on the middle fan before the front fan. Both fans blow towards the rear I/O.",
+      "Warranty: 6 years."
+    ],
+    "unbox": {
+      "films": [
+        "A_FILM_0",
+        "A_FILM_TOP_0",
+        "A_FILM_HUB_0@A_FAN_0",
+        "A_FILM_HUB_1@A_FAN_1"
+      ],
+      "caps": [],
+      "stickers": []
+    }
+  },
+  {
+    "id": "cooler_frostpeak_120_rgb",
+    "model": "cooler_frostpeak_120_rgb",
+    "brand": "Frostpeak",
+    "name": "Frostpeak Tower 120 RGB",
+    "category": "Cooler",
+    "price": 45,
+    "power_w": 5,
+    "color": "#121315",
+    "rgb": true,
+    "analog": "generic ARGB single tower (e.g. ID-Cooling SE-224-XTS ARGB) (docs only, never shown in game)",
+    "desc": "The house tower with an ARGB fan and a glowing ring in the top cap.",
+    "specs": {
+      "height_mm": 158,
+      "fans": 1,
+      "fan_mm": 120,
+      "heat_pipes": 4,
+      "towers": 1,
+      "rpm_max": 1800,
+      "argb": "5V 3-pin"
+    },
+    "game": {
+      "cooler_max_w": 180,
+      "perf": 0
+    },
+    "contract": "cooler_tower",
+    "new_contract": false,
+    "docs": [
+      "manual",
+      "warranty"
+    ],
+    "doc_notes": [
+      "Intel L17: fit the backplate under the board, screw the four standoffs through the board, lay the X bracket on top and tighten its four spring screws a few turns at a time in a cross pattern.",
+      "Arc V5: remove the board's plastic retention clips, keep the stock backplate, screw the four standoffs into it and fit the X bracket and its four spring screws in a cross pattern.",
+      "Peel the blue film off the base before mounting. Leaving it on will overheat the CPU.",
+      "Thermal paste: put a pea-sized dot (about 4 mm, 0.1 ml) in the middle of the CPU's heat spreader. The mounting pressure spreads it, so don't spread it yourself.",
+      "Plug the fan's 4-pin plug into the CPU_FAN header next to the socket; the board won't boot without a signal there.",
+      "Height 158 mm: check that your case has at least this much room for the CPU cooler.",
+      "Plug the 3-pin ARGB lead into a 5 V ARGB header (never a 12 V RGB header).",
+      "Warranty: 3 years."
+    ],
+    "unbox": {
+      "films": [
+        "A_FILM_0",
+        "A_FILM_TOP_0",
+        "A_FILM_HUB_0@A_FAN_0"
+      ],
+      "caps": [],
+      "stickers": []
+    }
+  },
+  {
+    "id": "cooler_noctis_l9",
+    "model": "cooler_noctis_l9",
+    "brand": "Noctis",
+    "name": "Noctis NH-L9 low profile",
+    "category": "Cooler",
+    "price": 45,
+    "power_w": 2,
+    "color": "#D6C3A0",
+    "rgb": false,
+    "analog": "Noctua NH-L9i / NH-L9a (docs only, never shown in game)",
+    "desc": "A 37 mm low-profile cooler with a 92 mm fan, for small cases and light CPUs.",
+    "specs": {
+      "height_mm": 37,
+      "fans": 1,
+      "fan_mm": 92,
+      "heat_pipes": 2,
+      "towers": 0,
+      "rpm_max": 2500
+    },
+    "game": {
+      "cooler_max_w": 95,
+      "perf": 0
+    },
+    "contract": "cooler_tower",
+    "new_contract": false,
+    "docs": [
+      "manual",
+      "warranty"
+    ],
+    "doc_notes": [
+      "Intel L17: fit the backplate under the board, screw the four standoffs through the board, lay the X bracket on top and tighten its four spring screws a few turns at a time in a cross pattern.",
+      "Arc V5: remove the board's plastic retention clips, keep the stock backplate, screw the four standoffs into it and fit the X bracket and its four spring screws in a cross pattern.",
+      "Peel the blue film off the base before mounting. Leaving it on will overheat the CPU.",
+      "Thermal paste: put a pea-sized dot (about 4 mm, 0.1 ml) in the middle of the CPU's heat spreader. The mounting pressure spreads it, so don't spread it yourself.",
+      "Plug the fan's 4-pin plug into the CPU_FAN header next to the socket; the board won't boot without a signal there.",
+      "Height 37 mm: check that your case has at least this much room for the CPU cooler.",
+      "Warranty: 6 years."
+    ],
+    "unbox": {
+      "films": [
+        "A_FILM_0",
+        "A_FILM_TOP_0",
+        "A_FILM_HUB_0@A_FAN_0"
+      ],
+      "caps": [],
+      "stickers": []
+    }
+  },
+  {
+    "id": "cooler_tiron_stock",
+    "model": "cooler_tiron_stock",
+    "brand": "Tiron",
+    "name": "Tiron RM1 stock cooler",
+    "category": "Cooler",
+    "price": 15,
+    "power_w": 2,
+    "color": "#111214",
+    "rgb": false,
+    "analog": "Intel Laminar RM1 (docs only, never shown in game)",
+    "desc": "The round boxed cooler from Tiron's L17 CPUs, paste already applied.",
+    "specs": {
+      "height_mm": 53,
+      "fans": 1,
+      "fan_mm": 78,
+      "heat_pipes": 0,
+      "towers": 0,
+      "rpm_max": 2800
+    },
+    "game": {
+      "cooler_max_w": 65,
+      "socket": "L17",
+      "perf": 0
+    },
+    "contract": "cooler_stock",
+    "new_contract": false,
+    "docs": [
+      "manual",
+      "warranty"
+    ],
+    "doc_notes": [
+      "For Tiron L17 processors. The holes also fit the V5 boards in this game.",
+      "Pull the clear cap off the pre-applied paste. Don't touch the grey paste, and don't add more.",
+      "Lower the cooler straight down onto the CPU so the screws line up with the four holes round the socket.",
+      "Tighten the four spring screws a few turns at a time in a cross pattern until they stop.",
+      "Plug the fan's 4-pin plug into the CPU_FAN header next to the socket; the board won't boot without a signal there.",
+      "If you take the cooler off, clean both surfaces and use fresh paste: a pea-sized dot.",
+      "Rated for processors up to 65 W.",
+      "Warranty: 3 years with the boxed processor."
+    ],
+    "unbox": {
+      "films": [
+        "A_FILM_HUB_0@A_FAN_0"
+      ],
+      "caps": [
+        {
+          "model": "cap_paste",
+          "at": "A_PASTE_PRE_0",
+          "blocks": "install"
+        }
+      ],
+      "stickers": []
+    }
+  },
+  {
+    "id": "cooler_arctiq_lc240",
+    "model": "cooler_arctiq_lc240",
+    "brand": "Arctiq",
+    "name": "Arctiq Liquid Chiller II 240",
+    "category": "Cooler",
+    "price": 75,
+    "power_w": 8,
+    "color": "#111113",
+    "rgb": false,
+    "analog": "Arctic Liquid Freezer II 240 (docs only, never shown in game)",
+    "desc": "240 mm AIO with a thick 38 mm radiator and two 120 mm fans, black.",
+    "specs": {
+      "radiator_mm": 240,
+      "radiator_thickness_mm": 38,
+      "fans": 2,
+      "fan_mm": 120,
+      "tube_mm": 450,
+      "pump_height_mm": 53,
+      "rpm_max": 1800
+    },
+    "game": {
+      "cooler_max_w": 250,
+      "perf": 0
+    },
+    "contract": "aio",
+    "new_contract": true,
+    "docs": [
+      "manual",
+      "warranty",
+      "safety"
+    ],
+    "doc_notes": [
+      "Fits Intel L17 and Arc V5. Use the matching standoffs and backplate (see the steps for your socket).",
+      "Peel the blue film off the cold plate before mounting, and the clear film off the pump cap.",
+      "Thermal paste: put a pea-sized dot (about 4 mm, 0.1 ml) in the middle of the CPU's heat spreader. The mounting pressure spreads it, so don't spread it yourself.",
+      "Mount the 240 mm radiator first, on the front or top fan positions. Keep the end tank with the tubes lower than the radiator's highest point, so any air collects away from the pump.",
+      "Never mount the radiator with the pump above it: the air would collect in the pump and make it rattle.",
+      "Front mount: the fans pull air in through the radiator from the front of the case. Top mount: they blow the air out through the top.",
+      "Plug the pump's 4-pin plug into the AIO_PUMP header, or into CPU_FAN set to full speed. Chain the radiator fans' plug into CPU_OPT or SYS_FAN.",
+      "Don't kink the tubes. Bend them no tighter than a 35 mm radius, and never cut or open them.",
+      "Warranty: 6 years."
+    ],
+    "unbox": {
+      "films": [
+        "A_FILM_0",
+        "A_FILM_TOP_0",
+        "A_FILM_PUMP_0",
+        "A_FILM_HUB_0@A_RAD_FAN_0@A_RAD_0",
+        "A_FILM_HUB_1@A_RAD_FAN_1@A_RAD_0"
+      ],
+      "caps": [],
+      "stickers": []
+    }
+  },
+  {
+    "id": "cooler_corvex_h150i_white",
+    "model": "cooler_corvex_h150i_white",
+    "brand": "Corvex",
+    "name": "Corvex H150i Vista LCD White",
+    "category": "Cooler",
+    "price": 260,
+    "power_w": 14,
+    "color": "#F1F1EF",
+    "rgb": true,
+    "analog": "Corsair iCUE H150i Elite LCD XT, white (docs only, never shown in game)",
+    "desc": "360 mm AIO with three RGB fans and a round LCD on the pump, white.",
+    "specs": {
+      "radiator_mm": 360,
+      "radiator_thickness_mm": 27,
+      "fans": 3,
+      "fan_mm": 120,
+      "tube_mm": 400,
+      "pump_height_mm": 54,
+      "rpm_max": 2100,
+      "lcd": "2.1in round 480x480"
+    },
+    "game": {
+      "cooler_max_w": 300,
+      "perf": 0
+    },
+    "contract": "aio",
+    "new_contract": true,
+    "docs": [
+      "manual",
+      "warranty",
+      "safety"
+    ],
+    "doc_notes": [
+      "Fits Intel L17 and Arc V5. Use the matching standoffs and backplate (see the steps for your socket).",
+      "Peel the blue film off the cold plate before mounting, and the clear film off the pump cap.",
+      "Thermal paste: put a pea-sized dot (about 4 mm, 0.1 ml) in the middle of the CPU's heat spreader. The mounting pressure spreads it, so don't spread it yourself.",
+      "Mount the 360 mm radiator first, on the front or top fan positions. Keep the end tank with the tubes lower than the radiator's highest point, so any air collects away from the pump.",
+      "Never mount the radiator with the pump above it: the air would collect in the pump and make it rattle.",
+      "Front mount: the fans pull air in through the radiator from the front of the case. Top mount: they blow the air out through the top.",
+      "Plug the pump's 4-pin plug into the AIO_PUMP header, or into CPU_FAN set to full speed. Chain the radiator fans' plug into CPU_OPT or SYS_FAN. Plug the 3-pin ARGB lead into a 5 V ARGB header (never a 12 V RGB header).",
+      "Don't kink the tubes. Bend them no tighter than a 35 mm radius, and never cut or open them.",
+      "Warranty: 5 years."
+    ],
+    "unbox": {
+      "films": [
+        "A_FILM_0",
+        "A_FILM_TOP_0",
+        "A_FILM_PUMP_0",
+        "A_FILM_HUB_0@A_RAD_FAN_0@A_RAD_0",
+        "A_FILM_HUB_1@A_RAD_FAN_1@A_RAD_0",
+        "A_FILM_HUB_2@A_RAD_FAN_2@A_RAD_0"
+      ],
+      "caps": [],
+      "stickers": []
+    }
+  },
+  {
+    "id": "cooler_glacier_ls720",
+    "model": "cooler_glacier_ls720",
+    "brand": "Glacier",
+    "name": "Glacier LS720",
+    "category": "Cooler",
+    "price": 130,
+    "power_w": 12,
+    "color": "#111113",
+    "rgb": true,
+    "analog": "DeepCool LS720 (docs only, never shown in game)",
+    "desc": "360 mm AIO with three ARGB fans and a mirror pump cap, black.",
+    "specs": {
+      "radiator_mm": 360,
+      "radiator_thickness_mm": 27,
+      "fans": 3,
+      "fan_mm": 120,
+      "tube_mm": 410,
+      "pump_height_mm": 52,
+      "rpm_max": 2250
+    },
+    "game": {
+      "cooler_max_w": 300,
+      "perf": 0
+    },
+    "contract": "aio",
+    "new_contract": true,
+    "docs": [
+      "manual",
+      "warranty",
+      "safety"
+    ],
+    "doc_notes": [
+      "Fits Intel L17 and Arc V5. Use the matching standoffs and backplate (see the steps for your socket).",
+      "Peel the blue film off the cold plate before mounting, and the clear film off the pump cap.",
+      "Thermal paste: put a pea-sized dot (about 4 mm, 0.1 ml) in the middle of the CPU's heat spreader. The mounting pressure spreads it, so don't spread it yourself.",
+      "Mount the 360 mm radiator first, on the front or top fan positions. Keep the end tank with the tubes lower than the radiator's highest point, so any air collects away from the pump.",
+      "Never mount the radiator with the pump above it: the air would collect in the pump and make it rattle.",
+      "Front mount: the fans pull air in through the radiator from the front of the case. Top mount: they blow the air out through the top.",
+      "Plug the pump's 4-pin plug into the AIO_PUMP header, or into CPU_FAN set to full speed. Chain the radiator fans' plug into CPU_OPT or SYS_FAN. Plug the 3-pin ARGB lead into a 5 V ARGB header (never a 12 V RGB header).",
+      "Don't kink the tubes. Bend them no tighter than a 35 mm radius, and never cut or open them.",
+      "Warranty: 5 years."
+    ],
+    "unbox": {
+      "films": [
+        "A_FILM_0",
+        "A_FILM_TOP_0",
+        "A_FILM_PUMP_0",
+        "A_FILM_HUB_0@A_RAD_FAN_0@A_RAD_0",
+        "A_FILM_HUB_1@A_RAD_FAN_1@A_RAD_0",
+        "A_FILM_HUB_2@A_RAD_FAN_2@A_RAD_0"
+      ],
+      "caps": [],
+      "stickers": []
+    }
+  },
+  {
+    "id": "cooler_srv_epoch_1u",
+    "model": "cooler_srv_epoch_1u",
+    "brand": "Strata",
+    "name": "Strata 1U heatsink SP-V",
+    "category": "Server",
+    "price": 95,
+    "power_w": 0,
+    "color": "#B87333",
+    "rgb": false,
+    "analog": "Dynatron J2 1U SP5 heatsink (docs only, never shown in game)",
+    "desc": "Passive 1U copper heatsink for Arc Epoch CPUs, cooled by the server's fan wall.",
+    "specs": {
+      "height_mm": 27,
+      "length_mm": 92,
+      "width_mm": 118,
+      "screws": 6,
+      "drive": "T20",
+      "airflow": "front to back"
+    },
+    "game": {
+      "cooler_max_w": 300,
+      "socket": "SP-V",
+      "perf": 0
+    },
+    "contract": "heatsink_spv",
+    "new_contract": true,
+    "docs": [
+      "guide",
+      "warranty",
+      "safety"
+    ],
+    "doc_notes": [
+      "Fits socket SP-V only. Do not mount on desktop boards.",
+      "Peel the clear cover off the pre-applied thermal compound just before mounting. Do not touch the compound.",
+      "Line the fins up with the chassis airflow: the AIRFLOW arrow on the label points to the rear of the server.",
+      "Tighten the 6 captive T20 screws in the order printed on the label (1, 2, 3...) to 1.1-1.4 N m, then go round once more.",
+      "Loosen the screws in reverse order. Twist the heatsink gently to break the paste seal before lifting.",
+      "Passive heatsink: it needs the server's fan wall running and every blank fitted. Don't power on with the lid off for long.",
+      "Warranty: 3 years, return to the place of purchase with the proof of purchase."
+    ],
+    "unbox": {
+      "films": [
+        "A_FILM_0"
+      ],
+      "caps": [],
+      "stickers": []
+    }
+  },
+  {
+    "id": "cooler_srv_platinum_2u",
+    "model": "cooler_srv_platinum_2u",
+    "brand": "Strata",
+    "name": "Strata 2U heatsink L46",
+    "category": "Server",
+    "price": 85,
+    "power_w": 0,
+    "color": "#C9CCD0",
+    "rgb": false,
+    "analog": "Intel/Supermicro 2U LGA4677 narrow-ILM heatsink (docs only, never shown in game)",
+    "desc": "Passive 2U heat-pipe heatsink for Tiron Platinum CPUs.",
+    "specs": {
+      "height_mm": 67,
+      "length_mm": 78,
+      "width_mm": 108,
+      "screws": 4,
+      "drive": "T30",
+      "heat_pipes": 5,
+      "airflow": "front to back"
+    },
+    "game": {
+      "cooler_max_w": 350,
+      "socket": "L46",
+      "perf": 0
+    },
+    "contract": "heatsink_l46",
+    "new_contract": true,
+    "docs": [
+      "guide",
+      "warranty",
+      "safety"
+    ],
+    "doc_notes": [
+      "Fits socket L46 only. Do not mount on desktop boards.",
+      "Peel the clear cover off the pre-applied thermal compound just before mounting. Do not touch the compound.",
+      "Line the fins up with the chassis airflow: the AIRFLOW arrow on the label points to the rear of the server.",
+      "Tighten the 4 captive T30 screws in the order printed on the label (1, 2, 3...) to 1.1-1.4 N m, then go round once more.",
+      "Loosen the screws in reverse order. Twist the heatsink gently to break the paste seal before lifting.",
+      "Passive heatsink: it needs the server's fan wall running and every blank fitted. Don't power on with the lid off for long.",
+      "Warranty: 3 years, return to the place of purchase with the proof of purchase."
+    ],
+    "unbox": {
+      "films": [
+        "A_FILM_0"
+      ],
+      "caps": [],
+      "stickers": []
+    }
+  }
+]

@@ -1,0 +1,576 @@
+== cooler_arctiq_34_black
+   mesh cooler_arctiq_34_black_alu#alu: 8940 tris
+   mesh cooler_arctiq_34_black_alu_dark#alu_dark: 60 tris
+   mesh cooler_arctiq_34_black_black_plastic#black_plastic: 1764 tris
+   mesh cooler_arctiq_34_black_fan_black#fan_black: 4512 tris
+   mesh cooler_arctiq_34_black_nickel#nickel: 9288 tris
+   mesh cooler_arctiq_34_black_paint_black#paint_black: 64 tris
+   mesh cooler_arctiq_34_black_steel#steel: 6084 tris
+   mesh cooler_arctiq_34_black_tex_cooler_arctiq_34_black#tex_cooler_arctiq_34_black: 2 tris
+   mesh cooler_arctiq_34_black_white_plastic#white_plastic: 120 tris
+   mesh fan0_rotor@A_FAN_0#fan_black: 3076 tris
+   mesh fan0_sticker@A_FAN_0#tex_cooler_arctiq_34_black: 144 tris
+   mesh film@A_FILM_0#tex_cooler_arctiq_34_black: 30 tris
+   mesh plug@A_PLUG_FAN_0#connector_black: 252 tris
+   mesh screw@A_SCREW_PH2_0#steel: 584 tris
+   mesh screw@A_SCREW_PH2_1#steel: 584 tris
+   mesh screw@A_SCREW_PH2_2#steel: 584 tris
+   mesh screw@A_SCREW_PH2_3#steel: 584 tris
+   TOTAL 36672 tris in 17 meshes
+   A_FAN_0: pos=(-0.0380,0.0000,0.0958) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=2100
+   A_FILM_0: pos=(-0.0000,0.0000,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.04400,0.04400,0.00300 meta=peel_from=+x,text=REMOVE BEFORE USE
+   A_FILM_HUB_0@A_FAN_0: pos=(-0.0492,0.0000,0.0958) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.03385,0.03385,0.00010 meta=film=clear,on=fan_hub,shape=disc,radius=0.0169,peel=+x,tab=+x
+   A_FILM_TOP_0: pos=(0.0005,0.0000,0.1571) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.03900,0.11400,0.00100 meta=film=clear,on=top_cover,peel_from=+x
+   A_HIT_0: pos=(-0.0000,0.0000,0.0983) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.04900,0.12400,0.11950 meta=
+   A_HIT_1: pos=(-0.0380,0.0000,0.0958) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.02500,0.12000,0.12000 meta=
+   A_HIT_2: pos=(-0.0000,0.0000,0.0120) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.07500,0.07500,0.02400 meta=
+   A_PLUG_FAN_0: pos=(-0.0340,0.0900,0.0060) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.01200,0.00800,0.01600 meta=kind=fan4,frame=plug,target=CPU_FAN
+   A_SCREW_PH2_0: pos=(0.0330,0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_1: pos=(0.0330,-0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_2: pos=(-0.0330,0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_3: pos=(-0.0330,-0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   BOUNDS x -0.0505..0.0389  y -0.0630..0.0900  z -0.0120..0.1574
+
+== cooler_arctiq_34_white
+   mesh cooler_arctiq_34_white_alu#alu: 8940 tris
+   mesh cooler_arctiq_34_white_alu_dark#alu_dark: 60 tris
+   mesh cooler_arctiq_34_white_black_plastic#black_plastic: 616 tris
+   mesh cooler_arctiq_34_white_nickel#nickel: 9288 tris
+   mesh cooler_arctiq_34_white_paint_white#paint_white: 64 tris
+   mesh cooler_arctiq_34_white_steel#steel: 6084 tris
+   mesh cooler_arctiq_34_white_tex_cooler_arctiq_34_white#tex_cooler_arctiq_34_white: 2 tris
+   mesh cooler_arctiq_34_white_white_plastic#white_plastic: 5780 tris
+   mesh fan0_rotor@A_FAN_0#white_plastic: 3076 tris
+   mesh fan0_sticker@A_FAN_0#tex_cooler_arctiq_34_white: 144 tris
+   mesh film@A_FILM_0#tex_cooler_arctiq_34_white: 30 tris
+   mesh plug@A_PLUG_FAN_0#connector_black: 252 tris
+   mesh screw@A_SCREW_PH2_0#steel: 584 tris
+   mesh screw@A_SCREW_PH2_1#steel: 584 tris
+   mesh screw@A_SCREW_PH2_2#steel: 584 tris
+   mesh screw@A_SCREW_PH2_3#steel: 584 tris
+   TOTAL 36672 tris in 16 meshes
+   A_FAN_0: pos=(-0.0380,0.0000,0.0958) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=2100
+   A_FILM_0: pos=(-0.0000,0.0000,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.04400,0.04400,0.00300 meta=peel_from=+x,text=REMOVE BEFORE USE
+   A_FILM_HUB_0@A_FAN_0: pos=(-0.0492,0.0000,0.0958) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.03385,0.03385,0.00010 meta=film=clear,on=fan_hub,shape=disc,radius=0.0169,peel=+x,tab=+x
+   A_FILM_TOP_0: pos=(0.0005,0.0000,0.1571) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.03900,0.11400,0.00100 meta=film=clear,on=top_cover,peel_from=+x
+   A_HIT_0: pos=(-0.0000,0.0000,0.0983) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.04900,0.12400,0.11950 meta=
+   A_HIT_1: pos=(-0.0380,0.0000,0.0958) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.02500,0.12000,0.12000 meta=
+   A_HIT_2: pos=(-0.0000,0.0000,0.0120) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.07500,0.07500,0.02400 meta=
+   A_PLUG_FAN_0: pos=(-0.0340,0.0900,0.0060) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.01200,0.00800,0.01600 meta=kind=fan4,frame=plug,target=CPU_FAN
+   A_SCREW_PH2_0: pos=(0.0330,0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_1: pos=(0.0330,-0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_2: pos=(-0.0330,0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_3: pos=(-0.0330,-0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   BOUNDS x -0.0505..0.0389  y -0.0630..0.0900  z -0.0120..0.1574
+
+== cooler_glacier_ak400_white
+   mesh cooler_glacier_ak400_white_alu#alu: 156 tris
+   mesh cooler_glacier_ak400_white_alu_dark#alu_dark: 60 tris
+   mesh cooler_glacier_ak400_white_black_plastic#black_plastic: 616 tris
+   mesh cooler_glacier_ak400_white_nickel#nickel: 9288 tris
+   mesh cooler_glacier_ak400_white_paint_white#paint_white: 15416 tris
+   mesh cooler_glacier_ak400_white_steel#steel: 6084 tris
+   mesh cooler_glacier_ak400_white_tex_cooler_glacier_ak400_white#tex_cooler_glacier_ak400_white: 2 tris
+   mesh cooler_glacier_ak400_white_white_plastic#white_plastic: 4632 tris
+   mesh fan0_rotor@A_FAN_0#white_plastic: 3076 tris
+   mesh fan0_sticker@A_FAN_0#tex_cooler_glacier_ak400_white: 144 tris
+   mesh film@A_FILM_0#tex_cooler_glacier_ak400_white: 30 tris
+   mesh plug@A_PLUG_FAN_0#connector_black: 252 tris
+   mesh screw@A_SCREW_PH2_0#steel: 584 tris
+   mesh screw@A_SCREW_PH2_1#steel: 584 tris
+   mesh screw@A_SCREW_PH2_2#steel: 584 tris
+   mesh screw@A_SCREW_PH2_3#steel: 584 tris
+   TOTAL 42092 tris in 16 meshes
+   A_FAN_0: pos=(-0.0370,0.0000,0.0952) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=1850
+   A_FILM_0: pos=(-0.0000,0.0000,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.04400,0.04400,0.00300 meta=peel_from=+x,text=REMOVE BEFORE USE
+   A_FILM_HUB_0@A_FAN_0: pos=(-0.0482,0.0000,0.0952) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.03385,0.03385,0.00010 meta=film=clear,on=fan_hub,shape=disc,radius=0.0169,peel=+x,tab=+x
+   A_FILM_TOP_0: pos=(0.0005,0.0000,0.1553) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.03700,0.11500,0.00100 meta=film=clear,on=top_cover,peel_from=+x
+   A_HIT_0: pos=(-0.0000,0.0000,0.0976) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.04700,0.12500,0.11720 meta=
+   A_HIT_1: pos=(-0.0370,0.0000,0.0952) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.02500,0.12000,0.12000 meta=
+   A_HIT_2: pos=(-0.0000,0.0000,0.0120) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.07500,0.07500,0.02400 meta=
+   A_PLUG_FAN_0: pos=(-0.0340,0.0900,0.0060) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.01200,0.00800,0.01600 meta=kind=fan4,frame=plug,target=CPU_FAN
+   A_SCREW_PH2_0: pos=(0.0330,0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_1: pos=(0.0330,-0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_2: pos=(-0.0330,0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_3: pos=(-0.0330,-0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   BOUNDS x -0.0495..0.0389  y -0.0635..0.0900  z -0.0120..0.1556
+
+== cooler_glacier_ak620_black
+   mesh cooler_glacier_ak620_black_alu#alu: 92 tris
+   mesh cooler_glacier_ak620_black_alu_dark#alu_dark: 25148 tris
+   mesh cooler_glacier_ak620_black_black_plastic#black_plastic: 1232 tris
+   mesh cooler_glacier_ak620_black_fan_black#fan_black: 9024 tris
+   mesh cooler_glacier_ak620_black_nickel#nickel: 88 tris
+   mesh cooler_glacier_ak620_black_paint_black#paint_black: 1768 tris
+   mesh cooler_glacier_ak620_black_steel#steel: 7036 tris
+   mesh cooler_glacier_ak620_black_steel_dark#steel_dark: 13608 tris
+   mesh cooler_glacier_ak620_black_tex_cooler_glacier_ak620_black#tex_cooler_glacier_ak620_black: 2 tris
+   mesh cooler_glacier_ak620_black_white_plastic#white_plastic: 240 tris
+   mesh fan0_rotor@A_FAN_0#fan_black: 3076 tris
+   mesh fan0_sticker@A_FAN_0#tex_cooler_glacier_ak620_black: 144 tris
+   mesh fan1_rotor@A_FAN_1#fan_black: 3076 tris
+   mesh fan1_sticker@A_FAN_1#tex_cooler_glacier_ak620_black: 144 tris
+   mesh film@A_FILM_0#tex_cooler_glacier_ak620_black: 30 tris
+   mesh plug@A_PLUG_FAN_0#connector_black: 252 tris
+   mesh plug@A_PLUG_FAN_1#connector_black: 252 tris
+   mesh screw@A_SCREW_PH2_0#steel: 584 tris
+   mesh screw@A_SCREW_PH2_1#steel: 584 tris
+   mesh screw@A_SCREW_PH2_2#steel: 584 tris
+   mesh screw@A_SCREW_PH2_3#steel: 584 tris
+   TOTAL 67548 tris in 21 meshes
+   A_FAN_0: pos=(-0.0690,0.0000,0.0984) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=1850
+   A_FAN_1: pos=(-0.0000,0.0000,0.0984) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=1850
+   A_FILM_0: pos=(-0.0000,0.0000,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.04400,0.04400,0.00300 meta=peel_from=+x,text=REMOVE BEFORE USE
+   A_FILM_HUB_0@A_FAN_0: pos=(-0.0802,0.0000,0.0984) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.03385,0.03385,0.00010 meta=film=clear,on=fan_hub,shape=disc,radius=0.0169,peel=+x,tab=+x
+   A_FILM_HUB_1@A_FAN_1: pos=(-0.0112,0.0000,0.0984) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.03385,0.03385,0.00010 meta=film=clear,on=fan_hub,shape=disc,radius=0.0169,peel=+x,tab=+x
+   A_FILM_TOP_0: pos=(0.0350,0.0000,0.1597) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.03200,0.11900,0.00100 meta=film=clear,on=top_cover,peel_from=+x
+   A_HIT_0: pos=(-0.0345,0.0000,0.1008) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.04200,0.12900,0.11960 meta=
+   A_HIT_1: pos=(0.0345,0.0000,0.1008) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.04200,0.12900,0.11960 meta=
+   A_HIT_2: pos=(-0.0690,0.0000,0.0984) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.02500,0.12000,0.12000 meta=
+   A_HIT_3: pos=(-0.0000,0.0000,0.0984) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.02500,0.12000,0.12000 meta=
+   A_HIT_4: pos=(-0.0000,0.0000,0.0120) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.07500,0.07500,0.02400 meta=
+   A_PLUG_FAN_0: pos=(-0.0340,0.0900,0.0060) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.01200,0.00800,0.01600 meta=kind=fan4,frame=plug,target=CPU_FAN
+   A_PLUG_FAN_1: pos=(-0.0160,0.0940,0.0060) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.01200,0.00800,0.01600 meta=kind=fan4,frame=plug,target=SYS_FAN
+   A_SCREW_PH2_0: pos=(0.0330,0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_1: pos=(0.0330,-0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_2: pos=(-0.0330,0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_3: pos=(-0.0330,-0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   BOUNDS x -0.0815..0.0570  y -0.0655..0.0940  z -0.0120..0.1600
+
+== cooler_noctis_d15
+   mesh cooler_noctis_d15_alu#alu: 15068 tris
+   mesh cooler_noctis_d15_alu_dark#alu_dark: 60 tris
+   mesh cooler_noctis_d15_black_plastic#black_plastic: 1232 tris
+   mesh cooler_noctis_d15_nickel#nickel: 15464 tris
+   mesh cooler_noctis_d15_steel#steel: 7036 tris
+   mesh cooler_noctis_d15_tex_cooler_noctis_d15#tex_cooler_noctis_d15: 4 tris
+   mesh cooler_noctis_d15_tex_cooler_noctis_d15_col#tex_cooler_noctis_d15_col: 9024 tris
+   mesh cooler_noctis_d15_white_plastic#white_plastic: 240 tris
+   mesh fan0_rotor@A_FAN_0#tex_cooler_noctis_d15_col: 3076 tris
+   mesh fan0_sticker@A_FAN_0#tex_cooler_noctis_d15: 144 tris
+   mesh fan1_rotor@A_FAN_1#tex_cooler_noctis_d15_col: 3076 tris
+   mesh fan1_sticker@A_FAN_1#tex_cooler_noctis_d15: 144 tris
+   mesh film@A_FILM_0#tex_cooler_noctis_d15: 30 tris
+   mesh plug@A_PLUG_FAN_0#connector_black: 252 tris
+   mesh plug@A_PLUG_FAN_1#connector_black: 252 tris
+   mesh screw@A_SCREW_PH2_0#steel: 584 tris
+   mesh screw@A_SCREW_PH2_1#steel: 584 tris
+   mesh screw@A_SCREW_PH2_2#steel: 584 tris
+   mesh screw@A_SCREW_PH2_3#steel: 584 tris
+   TOTAL 57438 tris in 19 meshes
+   A_FAN_0: pos=(-0.0795,0.0000,0.0935) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.14000,0.14000,0.02500 meta=axis=z,spin=-1,rpm=1500
+   A_FAN_1: pos=(0.0005,0.0000,0.0935) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.14000,0.14000,0.02500 meta=axis=z,spin=-1,rpm=1500
+   A_FILM_0: pos=(-0.0000,0.0000,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.04400,0.04400,0.00300 meta=peel_from=+x,text=REMOVE BEFORE USE
+   A_FILM_HUB_0@A_FAN_0: pos=(-0.0907,0.0000,0.0935) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.03949,0.03949,0.00010 meta=film=clear,on=fan_hub,shape=disc,radius=0.0197,peel=+x,tab=+x
+   A_FILM_HUB_1@A_FAN_1: pos=(-0.0107,0.0000,0.0935) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.03949,0.03949,0.00010 meta=film=clear,on=fan_hub,shape=disc,radius=0.0197,peel=+x,tab=+x
+   A_FILM_TOP_0: pos=(0.0405,0.0000,0.1644) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.04000,0.14000,0.00100 meta=film=clear,on=top_cover,peel_from=+x
+   A_HIT_0: pos=(-0.0400,0.0000,0.1057) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.05200,0.15000,0.11930 meta=
+   A_HIT_1: pos=(0.0400,0.0000,0.1057) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.05200,0.15000,0.11930 meta=
+   A_HIT_2: pos=(-0.0795,0.0000,0.0935) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.02500,0.14000,0.14000 meta=
+   A_HIT_3: pos=(0.0005,0.0000,0.0935) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.02500,0.14000,0.14000 meta=
+   A_HIT_4: pos=(-0.0000,0.0000,0.0120) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.07500,0.07500,0.02400 meta=
+   A_PLUG_FAN_0: pos=(-0.0340,0.0900,0.0060) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.01200,0.00800,0.01600 meta=kind=fan4,frame=plug,target=CPU_FAN
+   A_PLUG_FAN_1: pos=(-0.0160,0.0940,0.0060) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.01200,0.00800,0.01600 meta=kind=fan4,frame=plug,target=SYS_FAN
+   A_SCREW_PH2_0: pos=(0.0330,0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_1: pos=(0.0330,-0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_2: pos=(-0.0330,0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_3: pos=(-0.0330,-0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   BOUNDS x -0.0920..0.0675  y -0.0760..0.0940  z -0.0120..0.1647
+
+== cooler_noctis_d15_black
+   mesh cooler_noctis_d15_black_alu_dark#alu_dark: 280 tris
+   mesh cooler_noctis_d15_black_black_plastic#black_plastic: 1232 tris
+   mesh cooler_noctis_d15_black_fan_black#fan_black: 9024 tris
+   mesh cooler_noctis_d15_black_nickel#nickel: 88 tris
+   mesh cooler_noctis_d15_black_paint_black#paint_black: 18520 tris
+   mesh cooler_noctis_d15_black_steel#steel: 5132 tris
+   mesh cooler_noctis_d15_black_steel_dark#steel_dark: 13608 tris
+   mesh cooler_noctis_d15_black_tex_cooler_noctis_d15_black#tex_cooler_noctis_d15_black: 4 tris
+   mesh cooler_noctis_d15_black_white_plastic#white_plastic: 240 tris
+   mesh fan0_rotor@A_FAN_0#fan_black: 3076 tris
+   mesh fan0_sticker@A_FAN_0#tex_cooler_noctis_d15_black: 144 tris
+   mesh fan1_rotor@A_FAN_1#fan_black: 3076 tris
+   mesh fan1_sticker@A_FAN_1#tex_cooler_noctis_d15_black: 144 tris
+   mesh film@A_FILM_0#tex_cooler_noctis_d15_black: 30 tris
+   mesh plug@A_PLUG_FAN_0#connector_black: 252 tris
+   mesh plug@A_PLUG_FAN_1#connector_black: 252 tris
+   mesh screw@A_SCREW_PH2_0#steel: 584 tris
+   mesh screw@A_SCREW_PH2_1#steel: 584 tris
+   mesh screw@A_SCREW_PH2_2#steel: 584 tris
+   mesh screw@A_SCREW_PH2_3#steel: 584 tris
+   TOTAL 57438 tris in 20 meshes
+   A_FAN_0: pos=(-0.0795,0.0000,0.0935) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.14000,0.14000,0.02500 meta=axis=z,spin=-1,rpm=1500
+   A_FAN_1: pos=(0.0005,0.0000,0.0935) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.14000,0.14000,0.02500 meta=axis=z,spin=-1,rpm=1500
+   A_FILM_0: pos=(-0.0000,0.0000,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.04400,0.04400,0.00300 meta=peel_from=+x,text=REMOVE BEFORE USE
+   A_FILM_HUB_0@A_FAN_0: pos=(-0.0907,0.0000,0.0935) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.03949,0.03949,0.00010 meta=film=clear,on=fan_hub,shape=disc,radius=0.0197,peel=+x,tab=+x
+   A_FILM_HUB_1@A_FAN_1: pos=(-0.0107,0.0000,0.0935) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.03949,0.03949,0.00010 meta=film=clear,on=fan_hub,shape=disc,radius=0.0197,peel=+x,tab=+x
+   A_FILM_TOP_0: pos=(0.0405,0.0000,0.1644) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.04000,0.14000,0.00100 meta=film=clear,on=top_cover,peel_from=+x
+   A_HIT_0: pos=(-0.0400,0.0000,0.1057) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.05200,0.15000,0.11930 meta=
+   A_HIT_1: pos=(0.0400,0.0000,0.1057) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.05200,0.15000,0.11930 meta=
+   A_HIT_2: pos=(-0.0795,0.0000,0.0935) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.02500,0.14000,0.14000 meta=
+   A_HIT_3: pos=(0.0005,0.0000,0.0935) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.02500,0.14000,0.14000 meta=
+   A_HIT_4: pos=(-0.0000,0.0000,0.0120) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.07500,0.07500,0.02400 meta=
+   A_PLUG_FAN_0: pos=(-0.0340,0.0900,0.0060) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.01200,0.00800,0.01600 meta=kind=fan4,frame=plug,target=CPU_FAN
+   A_PLUG_FAN_1: pos=(-0.0160,0.0940,0.0060) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.01200,0.00800,0.01600 meta=kind=fan4,frame=plug,target=SYS_FAN
+   A_SCREW_PH2_0: pos=(0.0330,0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_1: pos=(0.0330,-0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_2: pos=(-0.0330,0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_3: pos=(-0.0330,-0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   BOUNDS x -0.0920..0.0675  y -0.0760..0.0940  z -0.0120..0.1647
+
+== cooler_frostpeak_120_rgb
+   mesh cooler_frostpeak_120_rgb_alu#alu: 7724 tris
+   mesh cooler_frostpeak_120_rgb_alu_dark#alu_dark: 60 tris
+   mesh cooler_frostpeak_120_rgb_black_plastic#black_plastic: 1604 tris
+   mesh cooler_frostpeak_120_rgb_fan_black#fan_black: 4512 tris
+   mesh cooler_frostpeak_120_rgb_nickel#nickel: 9288 tris
+   mesh cooler_frostpeak_120_rgb_paint_black#paint_black: 1148 tris
+   mesh cooler_frostpeak_120_rgb_rgb#rgb: 1856 tris
+   mesh cooler_frostpeak_120_rgb_steel#steel: 6084 tris
+   mesh cooler_frostpeak_120_rgb_tex_cooler_frostpeak_120_rgb#tex_cooler_frostpeak_120_rgb: 2 tris
+   mesh cooler_frostpeak_120_rgb_white_plastic#white_plastic: 120 tris
+   mesh fan0_rotor@A_FAN_0#white_plastic: 3076 tris
+   mesh fan0_sticker@A_FAN_0#tex_cooler_frostpeak_120_rgb: 144 tris
+   mesh film@A_FILM_0#tex_cooler_frostpeak_120_rgb: 30 tris
+   mesh plug@A_PLUG_ARGB_0#connector_white: 160 tris
+   mesh plug@A_PLUG_FAN_0#connector_black: 252 tris
+   mesh screw@A_SCREW_PH2_0#steel: 584 tris
+   mesh screw@A_SCREW_PH2_1#steel: 584 tris
+   mesh screw@A_SCREW_PH2_2#steel: 584 tris
+   mesh screw@A_SCREW_PH2_3#steel: 584 tris
+   TOTAL 38396 tris in 19 meshes
+   A_FAN_0: pos=(-0.0385,0.0000,0.0962) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=1800,rgb=1
+   A_FILM_0: pos=(-0.0000,0.0000,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.04400,0.04400,0.00300 meta=peel_from=+x,text=REMOVE BEFORE USE
+   A_FILM_HUB_0@A_FAN_0: pos=(-0.0497,0.0000,0.0962) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.03385,0.03385,0.00010 meta=film=clear,on=fan_hub,shape=disc,radius=0.0169,peel=+x,tab=+x
+   A_FILM_TOP_0: pos=(0.0005,0.0000,0.1574) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.04000,0.11500,0.00100 meta=film=clear,on=top_cover,peel_from=+x
+   A_HIT_0: pos=(-0.0000,0.0000,0.0987) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.05000,0.12500,0.11930 meta=
+   A_HIT_1: pos=(-0.0385,0.0000,0.0962) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.02500,0.12000,0.12000 meta=
+   A_HIT_2: pos=(-0.0000,0.0000,0.0120) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.07500,0.07500,0.02400 meta=
+   A_PLUG_ARGB_0: pos=(-0.0240,0.0920,0.0050) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.01200,0.00800,0.01600 meta=kind=argb3,frame=plug,target=ARGB
+   A_PLUG_FAN_0: pos=(-0.0340,0.0900,0.0060) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.01200,0.00800,0.01600 meta=kind=fan4,frame=plug,target=CPU_FAN
+   A_SCREW_PH2_0: pos=(0.0330,0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_1: pos=(0.0330,-0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_2: pos=(-0.0330,0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_3: pos=(-0.0330,-0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   BOUNDS x -0.0516..0.0389  y -0.0635..0.0920  z -0.0120..0.1578
+
+== cooler_noctis_l9
+   mesh cooler_noctis_l9_alu#alu: 3768 tris
+   mesh cooler_noctis_l9_black_plastic#black_plastic: 596 tris
+   mesh cooler_noctis_l9_copper#copper: 44 tris
+   mesh cooler_noctis_l9_nickel#nickel: 2724 tris
+   mesh cooler_noctis_l9_steel#steel: 6744 tris
+   mesh cooler_noctis_l9_tex_cooler_noctis_l9_col#tex_cooler_noctis_l9_col: 4512 tris
+   mesh cooler_noctis_l9_white_plastic#white_plastic: 120 tris
+   mesh fan0_rotor@A_FAN_0#tex_cooler_noctis_l9_col: 3076 tris
+   mesh fan0_sticker@A_FAN_0#tex_cooler_noctis_l9: 144 tris
+   mesh film@A_FILM_0#tex_cooler_noctis_l9: 30 tris
+   mesh plug@A_PLUG_FAN_0#connector_black: 252 tris
+   mesh screw@A_SCREW_PH2_0#steel: 584 tris
+   mesh screw@A_SCREW_PH2_1#steel: 584 tris
+   mesh screw@A_SCREW_PH2_2#steel: 584 tris
+   mesh screw@A_SCREW_PH2_3#steel: 584 tris
+   TOTAL 24346 tris in 15 meshes
+   A_FAN_0: pos=(-0.0000,0.0000,0.0296) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.09200,0.09200,0.01400 meta=axis=z,spin=-1,rpm=2500
+   A_FILM_0: pos=(-0.0000,0.0000,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.04400,0.04400,0.00300 meta=peel_from=+x,text=REMOVE BEFORE USE
+   A_FILM_HUB_0@A_FAN_0: pos=(-0.0000,0.0000,0.0353) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.02595,0.02595,0.00010 meta=film=clear,on=fan_hub,shape=disc,radius=0.0130,peel=+x,tab=+x
+   A_FILM_TOP_0: pos=(-0.0000,0.0000,0.0371) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.03000,0.03000,0.00100 meta=film=clear,on=fan_hub,peel_from=+x
+   A_HIT_0: pos=(-0.0000,0.0000,0.0150) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.09500,0.09500,0.01400 meta=
+   A_HIT_1: pos=(-0.0000,0.0000,0.0296) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.09200,0.09200,0.01400 meta=
+   A_HIT_2: pos=(-0.0000,0.0000,0.0040) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.04000,0.04000,0.00800 meta=
+   A_PLUG_FAN_0: pos=(-0.0340,0.0900,0.0060) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.01200,0.00800,0.01600 meta=kind=fan4,frame=plug,target=CPU_FAN
+   A_SCREW_PH2_0: pos=(0.0330,0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_1: pos=(0.0330,-0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_2: pos=(-0.0330,0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_3: pos=(-0.0330,-0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   BOUNDS x -0.0482..0.0482  y -0.0479..0.0900  z -0.0120..0.0367
+
+== cooler_tiron_stock
+   mesh cooler_tiron_stock_alu#alu: 1888 tris
+   mesh cooler_tiron_stock_black_plastic#black_plastic: 5752 tris
+   mesh cooler_tiron_stock_copper#copper: 512 tris
+   mesh cooler_tiron_stock_fan_black#fan_black: 1424 tris
+   mesh cooler_tiron_stock_steel#steel: 5040 tris
+   mesh cooler_tiron_stock_tex_cooler_tiron_stock#tex_cooler_tiron_stock: 2 tris
+   mesh cooler_tiron_stock_white_plastic#white_plastic: 120 tris
+   mesh paste@A_PASTE_PRE_0#paste: 372 tris
+   mesh plug@A_PLUG_FAN_0#connector_black: 252 tris
+   mesh screw@A_SCREW_PH2_0#steel: 584 tris
+   mesh screw@A_SCREW_PH2_1#steel: 584 tris
+   mesh screw@A_SCREW_PH2_2#steel: 584 tris
+   mesh screw@A_SCREW_PH2_3#steel: 584 tris
+   mesh stockfan_rotor@A_FAN_0#fan_black: 3708 tris
+   mesh stockfan_sticker@A_FAN_0#tex_cooler_tiron_stock: 144 tris
+   TOTAL 21550 tris in 15 meshes
+   A_FAN_0: pos=(-0.0000,0.0000,0.0445) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.07800,0.07800,0.01400 meta=axis=z,spin=-1,rpm=2800
+   A_FILM_HUB_0@A_FAN_0: pos=(-0.0000,0.0000,0.0514) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.02558,0.02558,0.00010 meta=film=clear,on=fan_hub,shape=disc,radius=0.0128,peel=+x,tab=+x
+   A_HIT_0: pos=(-0.0000,0.0000,0.0270) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.10000,0.10000,0.05400 meta=
+   A_HIT_1: pos=(-0.0000,0.0000,0.0030) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.03600,0.03600,0.00600 meta=
+   A_PASTE_PRE_0: pos=(-0.0000,0.0000,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.03000,0.03000,0.00400 meta=kind=preapplied,area=0.028x0.028
+   A_PLUG_FAN_0: pos=(0.0100,0.0800,0.0040) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.01200,0.00800,0.01600 meta=kind=fan4,frame=plug,target=CPU_FAN
+   A_SCREW_PH2_0: pos=(0.0330,0.0330,0.0280) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_1: pos=(0.0330,-0.0330,0.0280) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_2: pos=(-0.0330,0.0330,0.0280) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_3: pos=(-0.0330,-0.0330,0.0280) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   BOUNDS x -0.0470..0.0470  y -0.0470..0.0800  z -0.0120..0.0525
+
+== cooler_arctiq_lc240
+   mesh cooler_arctiq_lc240_black_plastic#black_plastic: 868 tris
+   mesh cooler_arctiq_lc240_copper#copper: 124 tris
+   mesh cooler_arctiq_lc240_paint_black#paint_black: 220 tris
+   mesh cooler_arctiq_lc240_steel#steel: 4464 tris
+   mesh cooler_arctiq_lc240_steel_dark#steel_dark: 860 tris
+   mesh cooler_arctiq_lc240_tex_cooler_arctiq_lc240#tex_cooler_arctiq_lc240: 2 tris
+   mesh film@A_FILM_0#tex_cooler_arctiq_lc240: 30 tris
+   mesh plug@A_PLUG_FAN_0#connector_black: 252 tris
+   mesh plug@A_PLUG_RADFAN_0@A_RAD_0#connector_black: 168 tris
+   mesh rad@A_RAD_0#black_plastic: 732 tris
+   mesh rad@A_RAD_0#mesh_black: 12 tris
+   mesh rad@A_RAD_0#paint_black: 244 tris
+   mesh rad@A_RAD_0#steel_dark: 2688 tris
+   mesh radfan0_fan_black@A_RAD_0#fan_black: 4512 tris
+   mesh radfan0_rotor@A_RAD_FAN_0@A_RAD_0#fan_black: 3076 tris
+   mesh radfan0_sticker@A_RAD_FAN_0@A_RAD_0#tex_cooler_arctiq_lc240: 144 tris
+   mesh radfan0_white_plastic@A_RAD_0#white_plastic: 120 tris
+   mesh radfan1_fan_black@A_RAD_0#fan_black: 4512 tris
+   mesh radfan1_rotor@A_RAD_FAN_1@A_RAD_0#fan_black: 3076 tris
+   mesh radfan1_sticker@A_RAD_FAN_1@A_RAD_0#tex_cooler_arctiq_lc240: 144 tris
+   mesh radfan1_white_plastic@A_RAD_0#white_plastic: 120 tris
+   mesh radlabel@A_RAD_0#tex_cooler_arctiq_lc240: 2 tris
+   mesh screw@A_SCREW_PH2_0#steel: 584 tris
+   mesh screw@A_SCREW_PH2_1#steel: 584 tris
+   mesh screw@A_SCREW_PH2_2#steel: 584 tris
+   mesh screw@A_SCREW_PH2_3#steel: 584 tris
+   mesh tube@A_TUBE_0#rubber: 2432 tris
+   mesh tube@A_TUBE_1#rubber: 2432 tris
+   TOTAL 33570 tris in 28 meshes
+   A_FILM_0: pos=(-0.0000,0.0000,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.04400,0.04400,0.00300 meta=peel_from=+x,text=REMOVE BEFORE USE
+   A_FILM_HUB_0@A_RAD_FAN_0@A_RAD_0: pos=(-0.0600,-0.2000,0.0617) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.03385,0.03385,0.00010 meta=film=clear,on=fan_hub,shape=disc,radius=0.0169,peel=+x,tab=+x
+   A_FILM_HUB_1@A_RAD_FAN_1@A_RAD_0: pos=(0.0600,-0.2000,0.0617) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.03385,0.03385,0.00010 meta=film=clear,on=fan_hub,shape=disc,radius=0.0169,peel=+x,tab=+x
+   A_FILM_PUMP_0: pos=(-0.0000,0.0000,0.0531) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.04000,0.04000,0.00010 meta=film=clear,on=pump_cap,peel=+x,tab=+x+y,same_as=A_FILM_TOP_0
+   A_FILM_TOP_0: pos=(-0.0000,0.0000,0.0531) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.04000,0.04000,0.00100 meta=film=clear,on=pump_cap,peel_from=+x
+   A_HIT_0: pos=(-0.0000,0.0000,0.0265) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.07000,0.07000,0.05300 meta=
+   A_HIT_1@A_RAD_0: pos=(-0.0000,-0.2000,0.0315) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.28800,0.12100,0.06300 meta=
+   A_HOLE_RAD_0@A_RAD_0: pos=(-0.1125,-0.2525,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.00600,0.00600,0.00400 meta=thread=6-32,face=case,fan=0
+   A_HOLE_RAD_1@A_RAD_0: pos=(-0.1125,-0.1475,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.00600,0.00600,0.00400 meta=thread=6-32,face=case,fan=0
+   A_HOLE_RAD_2@A_RAD_0: pos=(-0.0075,-0.2525,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.00600,0.00600,0.00400 meta=thread=6-32,face=case,fan=0
+   A_HOLE_RAD_3@A_RAD_0: pos=(-0.0075,-0.1475,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.00600,0.00600,0.00400 meta=thread=6-32,face=case,fan=0
+   A_HOLE_RAD_4@A_RAD_0: pos=(0.0075,-0.2525,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.00600,0.00600,0.00400 meta=thread=6-32,face=case,fan=1
+   A_HOLE_RAD_5@A_RAD_0: pos=(0.0075,-0.1475,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.00600,0.00600,0.00400 meta=thread=6-32,face=case,fan=1
+   A_HOLE_RAD_6@A_RAD_0: pos=(0.1125,-0.2525,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.00600,0.00600,0.00400 meta=thread=6-32,face=case,fan=1
+   A_HOLE_RAD_7@A_RAD_0: pos=(0.1125,-0.1475,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.00600,0.00600,0.00400 meta=thread=6-32,face=case,fan=1
+   A_PLUG_FAN_0: pos=(-0.0340,0.0900,0.0060) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.01200,0.00800,0.01600 meta=kind=fan4,frame=plug,target=AIO_PUMP
+   A_PLUG_RADFAN_0@A_RAD_0: pos=(-0.1560,-0.2850,0.0040) fwd=(-1.00,-0.00,0.00) up=(-0.00,0.00,1.00) size=0.01200,0.00800,0.01600 meta=kind=fan4,frame=plug,target=CPU_OPT,chain=2
+   A_PORT_RAD_0@A_RAD_0: pos=(-0.1540,-0.1555,0.0190) fwd=(-1.00,-0.00,0.00) up=(-0.00,0.00,1.00) size=0.01400,0.01400,0.01200 meta=tube=A_TUBE_0
+   A_PORT_RAD_1@A_RAD_0: pos=(-0.1540,-0.1755,0.0190) fwd=(-1.00,-0.00,0.00) up=(-0.00,0.00,1.00) size=0.01400,0.01400,0.01200 meta=tube=A_TUBE_1
+   A_RAD_0: pos=(-0.0000,-0.2000,0.0190) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.28800,0.12100,0.03800 meta=fans=2,size=120,length=0.288,thickness=0.038,fan_side=+z,ports=-x
+   A_RAD_FAN_0@A_RAD_0: pos=(-0.0600,-0.2000,0.0505) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=1800
+   A_RAD_FAN_1@A_RAD_0: pos=(0.0600,-0.2000,0.0505) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=1800
+   A_SCREW_PH2_0: pos=(0.0330,0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_1: pos=(0.0330,-0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_2: pos=(-0.0330,0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_3: pos=(-0.0330,-0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_TUBE_0: pos=(-0.0460,0.0100,0.0260) fwd=(-1.00,-0.00,0.00) up=(-0.00,0.00,1.00) size=0.01400,0.01400,0.01400 meta=to=A_PORT_RAD_0@A_RAD_0,radius=0.0055,segments=8,min_bend=0.035,max_length=0.45,length=0.286
+   A_TUBE_1: pos=(-0.0460,-0.0100,0.0260) fwd=(-1.00,-0.00,0.00) up=(-0.00,0.00,1.00) size=0.01400,0.01400,0.01400 meta=to=A_PORT_RAD_1@A_RAD_0,radius=0.0055,segments=8,min_bend=0.035,max_length=0.45,length=0.286
+   BOUNDS x -0.2102..0.1440  y -0.2900..0.0900  z -0.0120..0.0647
+   TUBES A_TUBE_0 length 0.286 m, A_TUBE_1 length 0.286 m
+
+== cooler_corvex_h150i_white
+   mesh cooler_corvex_h150i_white_black_plastic#black_plastic: 912 tris
+   mesh cooler_corvex_h150i_white_copper#copper: 124 tris
+   mesh cooler_corvex_h150i_white_glass#glass: 256 tris
+   mesh cooler_corvex_h150i_white_rgb#rgb: 512 tris
+   mesh cooler_corvex_h150i_white_steel#steel: 5132 tris
+   mesh cooler_corvex_h150i_white_steel_dark#steel_dark: 192 tris
+   mesh cooler_corvex_h150i_white_tex_cooler_corvex_h150i_white#tex_cooler_corvex_h150i_white: 66 tris
+   mesh cooler_corvex_h150i_white_white_plastic#white_plastic: 796 tris
+   mesh film@A_FILM_0#tex_cooler_corvex_h150i_white: 30 tris
+   mesh plug@A_PLUG_ARGB_0#connector_white: 160 tris
+   mesh plug@A_PLUG_FAN_0#connector_black: 252 tris
+   mesh plug@A_PLUG_RADFAN_0@A_RAD_0#connector_black: 168 tris
+   mesh rad@A_RAD_0#black_plastic: 472 tris
+   mesh rad@A_RAD_0#mesh_black: 12 tris
+   mesh rad@A_RAD_0#paint_white: 244 tris
+   mesh rad@A_RAD_0#steel_dark: 3936 tris
+   mesh rad@A_RAD_0#white_plastic: 280 tris
+   mesh radfan0_rgb@A_RAD_0#rgb: 1792 tris
+   mesh radfan0_rotor@A_RAD_FAN_0@A_RAD_0#white_plastic: 3076 tris
+   mesh radfan0_sticker@A_RAD_FAN_0@A_RAD_0#tex_cooler_corvex_h150i_white: 144 tris
+   mesh radfan0_white_plastic@A_RAD_0#white_plastic: 4632 tris
+   mesh radfan1_rgb@A_RAD_0#rgb: 1792 tris
+   mesh radfan1_rotor@A_RAD_FAN_1@A_RAD_0#white_plastic: 3076 tris
+   mesh radfan1_sticker@A_RAD_FAN_1@A_RAD_0#tex_cooler_corvex_h150i_white: 144 tris
+   mesh radfan1_white_plastic@A_RAD_0#white_plastic: 4632 tris
+   mesh radfan2_rgb@A_RAD_0#rgb: 1792 tris
+   mesh radfan2_rotor@A_RAD_FAN_2@A_RAD_0#white_plastic: 3076 tris
+   mesh radfan2_sticker@A_RAD_FAN_2@A_RAD_0#tex_cooler_corvex_h150i_white: 144 tris
+   mesh radfan2_white_plastic@A_RAD_0#white_plastic: 4632 tris
+   mesh radlabel@A_RAD_0#tex_cooler_corvex_h150i_white: 2 tris
+   mesh screw@A_SCREW_PH2_0#steel: 584 tris
+   mesh screw@A_SCREW_PH2_1#steel: 584 tris
+   mesh screw@A_SCREW_PH2_2#steel: 584 tris
+   mesh screw@A_SCREW_PH2_3#steel: 584 tris
+   mesh tube@A_TUBE_0#white_plastic: 2432 tris
+   mesh tube@A_TUBE_1#white_plastic: 2432 tris
+   TOTAL 49678 tris in 36 meshes
+   A_FILM_0: pos=(-0.0000,0.0000,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.04400,0.04400,0.00300 meta=peel_from=+x,text=REMOVE BEFORE USE
+   A_FILM_HUB_0@A_RAD_FAN_0@A_RAD_0: pos=(-0.1200,-0.2000,0.0507) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.03385,0.03385,0.00010 meta=film=clear,on=fan_hub,shape=disc,radius=0.0169,peel=+x,tab=+x
+   A_FILM_HUB_1@A_RAD_FAN_1@A_RAD_0: pos=(-0.0000,-0.2000,0.0507) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.03385,0.03385,0.00010 meta=film=clear,on=fan_hub,shape=disc,radius=0.0169,peel=+x,tab=+x
+   A_FILM_HUB_2@A_RAD_FAN_2@A_RAD_0: pos=(0.1200,-0.2000,0.0507) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.03385,0.03385,0.00010 meta=film=clear,on=fan_hub,shape=disc,radius=0.0169,peel=+x,tab=+x
+   A_FILM_PUMP_0: pos=(-0.0000,0.0000,0.0536) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.05000,0.05000,0.00010 meta=film=clear,on=lcd,peel=+x,tab=+x+y,same_as=A_FILM_TOP_0
+   A_FILM_TOP_0: pos=(-0.0000,0.0000,0.0536) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.05000,0.05000,0.00100 meta=film=clear,on=pump_cap,peel_from=+x
+   A_HIT_0: pos=(-0.0000,0.0000,0.0268) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.06400,0.06400,0.05350 meta=
+   A_HIT_1@A_RAD_0: pos=(-0.0000,-0.2000,0.0260) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.40800,0.12100,0.05200 meta=
+   A_HOLE_RAD_0@A_RAD_0: pos=(-0.1725,-0.2525,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.00600,0.00600,0.00400 meta=thread=6-32,face=case,fan=0
+   A_HOLE_RAD_10@A_RAD_0: pos=(0.1725,-0.2525,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.00600,0.00600,0.00400 meta=thread=6-32,face=case,fan=2
+   A_HOLE_RAD_11@A_RAD_0: pos=(0.1725,-0.1475,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.00600,0.00600,0.00400 meta=thread=6-32,face=case,fan=2
+   A_HOLE_RAD_1@A_RAD_0: pos=(-0.1725,-0.1475,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.00600,0.00600,0.00400 meta=thread=6-32,face=case,fan=0
+   A_HOLE_RAD_2@A_RAD_0: pos=(-0.0675,-0.2525,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.00600,0.00600,0.00400 meta=thread=6-32,face=case,fan=0
+   A_HOLE_RAD_3@A_RAD_0: pos=(-0.0675,-0.1475,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.00600,0.00600,0.00400 meta=thread=6-32,face=case,fan=0
+   A_HOLE_RAD_4@A_RAD_0: pos=(-0.0525,-0.2525,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.00600,0.00600,0.00400 meta=thread=6-32,face=case,fan=1
+   A_HOLE_RAD_5@A_RAD_0: pos=(-0.0525,-0.1475,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.00600,0.00600,0.00400 meta=thread=6-32,face=case,fan=1
+   A_HOLE_RAD_6@A_RAD_0: pos=(0.0525,-0.2525,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.00600,0.00600,0.00400 meta=thread=6-32,face=case,fan=1
+   A_HOLE_RAD_7@A_RAD_0: pos=(0.0525,-0.1475,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.00600,0.00600,0.00400 meta=thread=6-32,face=case,fan=1
+   A_HOLE_RAD_8@A_RAD_0: pos=(0.0675,-0.2525,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.00600,0.00600,0.00400 meta=thread=6-32,face=case,fan=2
+   A_HOLE_RAD_9@A_RAD_0: pos=(0.0675,-0.1475,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.00600,0.00600,0.00400 meta=thread=6-32,face=case,fan=2
+   A_PLUG_ARGB_0: pos=(-0.0160,0.0940,0.0050) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.01200,0.00800,0.01600 meta=kind=argb3,frame=plug,target=ARGB
+   A_PLUG_FAN_0: pos=(-0.0340,0.0900,0.0060) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.01200,0.00800,0.01600 meta=kind=fan4,frame=plug,target=AIO_PUMP
+   A_PLUG_RADFAN_0@A_RAD_0: pos=(-0.2160,-0.2850,0.0040) fwd=(-1.00,-0.00,0.00) up=(-0.00,0.00,1.00) size=0.01200,0.00800,0.01600 meta=kind=fan4,frame=plug,target=CPU_OPT,chain=3
+   A_PORT_RAD_0@A_RAD_0: pos=(-0.2140,-0.1555,0.0135) fwd=(-1.00,-0.00,0.00) up=(-0.00,0.00,1.00) size=0.01400,0.01400,0.01200 meta=tube=A_TUBE_0
+   A_PORT_RAD_1@A_RAD_0: pos=(-0.2140,-0.1755,0.0135) fwd=(-1.00,-0.00,0.00) up=(-0.00,0.00,1.00) size=0.01400,0.01400,0.01200 meta=tube=A_TUBE_1
+   A_RAD_0: pos=(-0.0000,-0.2000,0.0135) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.40800,0.12100,0.02700 meta=fans=3,size=120,length=0.408,thickness=0.027,fan_side=+z,ports=-x
+   A_RAD_FAN_0@A_RAD_0: pos=(-0.1200,-0.2000,0.0395) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=2100,rgb=1
+   A_RAD_FAN_1@A_RAD_0: pos=(-0.0000,-0.2000,0.0395) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=2100,rgb=1
+   A_RAD_FAN_2@A_RAD_0: pos=(0.1200,-0.2000,0.0395) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=2100,rgb=1
+   A_SCREEN_0: pos=(-0.0000,0.0000,0.0535) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.04800,0.04800,0.00200 meta=kind=lcd,shape=round,res=480x480,diameter=0.048
+   A_SCREW_PH2_0: pos=(0.0330,0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_1: pos=(0.0330,-0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_2: pos=(-0.0330,0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_3: pos=(-0.0330,-0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_TUBE_0: pos=(-0.0430,0.0100,0.0260) fwd=(-1.00,-0.00,0.00) up=(-0.00,0.00,1.00) size=0.01400,0.01400,0.01400 meta=to=A_PORT_RAD_0@A_RAD_0,radius=0.0055,segments=8,min_bend=0.035,max_length=0.4,length=0.336
+   A_TUBE_1: pos=(-0.0430,-0.0100,0.0260) fwd=(-1.00,-0.00,0.00) up=(-0.00,0.00,1.00) size=0.01400,0.01400,0.01400 meta=to=A_PORT_RAD_1@A_RAD_0,radius=0.0055,segments=8,min_bend=0.035,max_length=0.4,length=0.336
+   BOUNDS x -0.2680..0.2040  y -0.2900..0.0940  z -0.0120..0.0537
+   TUBES A_TUBE_0 length 0.336 m, A_TUBE_1 length 0.336 m
+
+== cooler_glacier_ls720
+   mesh cooler_glacier_ls720_black_plastic#black_plastic: 1324 tris
+   mesh cooler_glacier_ls720_copper#copper: 124 tris
+   mesh cooler_glacier_ls720_glass#glass: 108 tris
+   mesh cooler_glacier_ls720_paint_black#paint_black: 220 tris
+   mesh cooler_glacier_ls720_rgb#rgb: 224 tris
+   mesh cooler_glacier_ls720_steel#steel: 4464 tris
+   mesh cooler_glacier_ls720_steel_dark#steel_dark: 860 tris
+   mesh cooler_glacier_ls720_tex_cooler_glacier_ls720#tex_cooler_glacier_ls720: 2 tris
+   mesh film@A_FILM_0#tex_cooler_glacier_ls720: 30 tris
+   mesh plug@A_PLUG_ARGB_0#connector_white: 160 tris
+   mesh plug@A_PLUG_FAN_0#connector_black: 252 tris
+   mesh plug@A_PLUG_RADFAN_0@A_RAD_0#connector_black: 168 tris
+   mesh rad@A_RAD_0#black_plastic: 752 tris
+   mesh rad@A_RAD_0#mesh_black: 12 tris
+   mesh rad@A_RAD_0#paint_black: 244 tris
+   mesh rad@A_RAD_0#steel_dark: 3936 tris
+   mesh radfan0_fan_black@A_RAD_0#fan_black: 4512 tris
+   mesh radfan0_rgb@A_RAD_0#rgb: 1792 tris
+   mesh radfan0_rotor@A_RAD_FAN_0@A_RAD_0#white_plastic: 3076 tris
+   mesh radfan0_sticker@A_RAD_FAN_0@A_RAD_0#tex_cooler_glacier_ls720: 144 tris
+   mesh radfan0_white_plastic@A_RAD_0#white_plastic: 120 tris
+   mesh radfan1_fan_black@A_RAD_0#fan_black: 4512 tris
+   mesh radfan1_rgb@A_RAD_0#rgb: 1792 tris
+   mesh radfan1_rotor@A_RAD_FAN_1@A_RAD_0#white_plastic: 3076 tris
+   mesh radfan1_sticker@A_RAD_FAN_1@A_RAD_0#tex_cooler_glacier_ls720: 144 tris
+   mesh radfan1_white_plastic@A_RAD_0#white_plastic: 120 tris
+   mesh radfan2_fan_black@A_RAD_0#fan_black: 4512 tris
+   mesh radfan2_rgb@A_RAD_0#rgb: 1792 tris
+   mesh radfan2_rotor@A_RAD_FAN_2@A_RAD_0#white_plastic: 3076 tris
+   mesh radfan2_sticker@A_RAD_FAN_2@A_RAD_0#tex_cooler_glacier_ls720: 144 tris
+   mesh radfan2_white_plastic@A_RAD_0#white_plastic: 120 tris
+   mesh radlabel@A_RAD_0#tex_cooler_glacier_ls720: 2 tris
+   mesh screw@A_SCREW_PH2_0#steel: 584 tris
+   mesh screw@A_SCREW_PH2_1#steel: 584 tris
+   mesh screw@A_SCREW_PH2_2#steel: 584 tris
+   mesh screw@A_SCREW_PH2_3#steel: 584 tris
+   mesh tube@A_TUBE_0#rubber: 2432 tris
+   mesh tube@A_TUBE_1#rubber: 2432 tris
+   TOTAL 49014 tris in 38 meshes
+   A_FILM_0: pos=(-0.0000,0.0000,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.04400,0.04400,0.00300 meta=peel_from=+x,text=REMOVE BEFORE USE
+   A_FILM_HUB_0@A_RAD_FAN_0@A_RAD_0: pos=(-0.1200,-0.2000,0.0507) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.03385,0.03385,0.00010 meta=film=clear,on=fan_hub,shape=disc,radius=0.0169,peel=+x,tab=+x
+   A_FILM_HUB_1@A_RAD_FAN_1@A_RAD_0: pos=(-0.0000,-0.2000,0.0507) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.03385,0.03385,0.00010 meta=film=clear,on=fan_hub,shape=disc,radius=0.0169,peel=+x,tab=+x
+   A_FILM_HUB_2@A_RAD_FAN_2@A_RAD_0: pos=(0.1200,-0.2000,0.0507) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.03385,0.03385,0.00010 meta=film=clear,on=fan_hub,shape=disc,radius=0.0169,peel=+x,tab=+x
+   A_FILM_PUMP_0: pos=(-0.0000,0.0000,0.0521) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.04000,0.04000,0.00010 meta=film=clear,on=pump_cap,peel=+x,tab=+x+y,same_as=A_FILM_TOP_0
+   A_FILM_TOP_0: pos=(-0.0000,0.0000,0.0521) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.04000,0.04000,0.00100 meta=film=clear,on=pump_cap,peel_from=+x
+   A_HIT_0: pos=(-0.0000,0.0000,0.0260) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.06800,0.06800,0.05200 meta=
+   A_HIT_1@A_RAD_0: pos=(-0.0000,-0.2000,0.0260) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.40800,0.12100,0.05200 meta=
+   A_HOLE_RAD_0@A_RAD_0: pos=(-0.1725,-0.2525,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.00600,0.00600,0.00400 meta=thread=6-32,face=case,fan=0
+   A_HOLE_RAD_10@A_RAD_0: pos=(0.1725,-0.2525,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.00600,0.00600,0.00400 meta=thread=6-32,face=case,fan=2
+   A_HOLE_RAD_11@A_RAD_0: pos=(0.1725,-0.1475,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.00600,0.00600,0.00400 meta=thread=6-32,face=case,fan=2
+   A_HOLE_RAD_1@A_RAD_0: pos=(-0.1725,-0.1475,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.00600,0.00600,0.00400 meta=thread=6-32,face=case,fan=0
+   A_HOLE_RAD_2@A_RAD_0: pos=(-0.0675,-0.2525,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.00600,0.00600,0.00400 meta=thread=6-32,face=case,fan=0
+   A_HOLE_RAD_3@A_RAD_0: pos=(-0.0675,-0.1475,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.00600,0.00600,0.00400 meta=thread=6-32,face=case,fan=0
+   A_HOLE_RAD_4@A_RAD_0: pos=(-0.0525,-0.2525,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.00600,0.00600,0.00400 meta=thread=6-32,face=case,fan=1
+   A_HOLE_RAD_5@A_RAD_0: pos=(-0.0525,-0.1475,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.00600,0.00600,0.00400 meta=thread=6-32,face=case,fan=1
+   A_HOLE_RAD_6@A_RAD_0: pos=(0.0525,-0.2525,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.00600,0.00600,0.00400 meta=thread=6-32,face=case,fan=1
+   A_HOLE_RAD_7@A_RAD_0: pos=(0.0525,-0.1475,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.00600,0.00600,0.00400 meta=thread=6-32,face=case,fan=1
+   A_HOLE_RAD_8@A_RAD_0: pos=(0.0675,-0.2525,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.00600,0.00600,0.00400 meta=thread=6-32,face=case,fan=2
+   A_HOLE_RAD_9@A_RAD_0: pos=(0.0675,-0.1475,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.00600,0.00600,0.00400 meta=thread=6-32,face=case,fan=2
+   A_PLUG_ARGB_0: pos=(-0.0160,0.0940,0.0050) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.01200,0.00800,0.01600 meta=kind=argb3,frame=plug,target=ARGB
+   A_PLUG_FAN_0: pos=(-0.0340,0.0900,0.0060) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.01200,0.00800,0.01600 meta=kind=fan4,frame=plug,target=AIO_PUMP
+   A_PLUG_RADFAN_0@A_RAD_0: pos=(-0.2160,-0.2850,0.0040) fwd=(-1.00,-0.00,0.00) up=(-0.00,0.00,1.00) size=0.01200,0.00800,0.01600 meta=kind=fan4,frame=plug,target=CPU_OPT,chain=3
+   A_PORT_RAD_0@A_RAD_0: pos=(-0.2140,-0.1555,0.0135) fwd=(-1.00,-0.00,0.00) up=(-0.00,0.00,1.00) size=0.01400,0.01400,0.01200 meta=tube=A_TUBE_0
+   A_PORT_RAD_1@A_RAD_0: pos=(-0.2140,-0.1755,0.0135) fwd=(-1.00,-0.00,0.00) up=(-0.00,0.00,1.00) size=0.01400,0.01400,0.01200 meta=tube=A_TUBE_1
+   A_RAD_0: pos=(-0.0000,-0.2000,0.0135) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.40800,0.12100,0.02700 meta=fans=3,size=120,length=0.408,thickness=0.027,fan_side=+z,ports=-x
+   A_RAD_FAN_0@A_RAD_0: pos=(-0.1200,-0.2000,0.0395) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=2250,rgb=1
+   A_RAD_FAN_1@A_RAD_0: pos=(-0.0000,-0.2000,0.0395) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=2250,rgb=1
+   A_RAD_FAN_2@A_RAD_0: pos=(0.1200,-0.2000,0.0395) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=2250,rgb=1
+   A_SCREW_PH2_0: pos=(0.0330,0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_1: pos=(0.0330,-0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_2: pos=(-0.0330,0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_3: pos=(-0.0330,-0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_TUBE_0: pos=(-0.0450,0.0100,0.0260) fwd=(-1.00,-0.00,0.00) up=(-0.00,0.00,1.00) size=0.01400,0.01400,0.01400 meta=to=A_PORT_RAD_0@A_RAD_0,radius=0.0055,segments=8,min_bend=0.035,max_length=0.41,length=0.334
+   A_TUBE_1: pos=(-0.0450,-0.0100,0.0260) fwd=(-1.00,-0.00,0.00) up=(-0.00,0.00,1.00) size=0.01400,0.01400,0.01400 meta=to=A_PORT_RAD_1@A_RAD_0,radius=0.0055,segments=8,min_bend=0.035,max_length=0.41,length=0.334
+   BOUNDS x -0.2680..0.2040  y -0.2900..0.0940  z -0.0120..0.0537
+   TUBES A_TUBE_0 length 0.334 m, A_TUBE_1 length 0.334 m
+
+== cooler_srv_epoch_1u
+   mesh cooler_srv_epoch_1u_copper#copper: 2636 tris
+   mesh cooler_srv_epoch_1u_steel#steel: 5580 tris
+   mesh cooler_srv_epoch_1u_tex_cooler_srv_epoch_1u#tex_cooler_srv_epoch_1u: 2 tris
+   mesh film@A_FILM_0#tex_cooler_srv_epoch_1u: 12 tris
+   mesh screw@A_SCREW_T20_0#steel_dark: 176 tris
+   mesh screw@A_SCREW_T20_1#steel_dark: 176 tris
+   mesh screw@A_SCREW_T20_2#steel_dark: 176 tris
+   mesh screw@A_SCREW_T20_3#steel_dark: 176 tris
+   mesh screw@A_SCREW_T20_4#steel_dark: 176 tris
+   mesh screw@A_SCREW_T20_5#steel_dark: 176 tris
+   TOTAL 9286 tris in 10 meshes
+   A_AIRFLOW_0: pos=(-0.0000,0.0000,0.0135) fwd=(1.00,-0.00,0.00) up=(-0.00,0.00,1.00) size=0.09240,0.11800,0.02700 meta=passive=1,needs_cfm=12,height_class=1U
+   A_FILM_0: pos=(-0.0000,0.0000,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.06400,0.06400,0.00300 meta=peel_from=+x,text=REMOVE COVER,covers=preapplied_tim
+   A_HIT_0: pos=(-0.0000,0.0000,0.0138) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.09240,0.11800,0.02760 meta=
+   A_SCREW_T20_0: pos=(0.0385,0.0510,0.0129) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.01100,0.01100,0.01400 meta=spring=1,thread=M4,drive=T20,torque=1.2,order=1
+   A_SCREW_T20_1: pos=(0.0385,0.0000,0.0129) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.01100,0.01100,0.01400 meta=spring=1,thread=M4,drive=T20,torque=1.2,order=3
+   A_SCREW_T20_2: pos=(0.0385,-0.0510,0.0129) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.01100,0.01100,0.01400 meta=spring=1,thread=M4,drive=T20,torque=1.2,order=5
+   A_SCREW_T20_3: pos=(-0.0385,0.0510,0.0129) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.01100,0.01100,0.01400 meta=spring=1,thread=M4,drive=T20,torque=1.2,order=2
+   A_SCREW_T20_4: pos=(-0.0385,0.0000,0.0129) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.01100,0.01100,0.01400 meta=spring=1,thread=M4,drive=T20,torque=1.2,order=4
+   A_SCREW_T20_5: pos=(-0.0385,-0.0510,0.0129) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.01100,0.01100,0.01400 meta=spring=1,thread=M4,drive=T20,torque=1.2,order=6
+   BOUNDS x -0.0462..0.0462  y -0.0590..0.0590  z -0.0115..0.0277
+
+== cooler_srv_platinum_2u
+   mesh cooler_srv_platinum_2u_alu#alu: 8352 tris
+   mesh cooler_srv_platinum_2u_copper#copper: 1148 tris
+   mesh cooler_srv_platinum_2u_nickel#nickel: 9580 tris
+   mesh cooler_srv_platinum_2u_steel#steel: 6112 tris
+   mesh cooler_srv_platinum_2u_tex_cooler_srv_platinum_2u#tex_cooler_srv_platinum_2u: 2 tris
+   mesh film@A_FILM_0#tex_cooler_srv_platinum_2u: 12 tris
+   mesh screw@A_SCREW_T30_0#steel_dark: 176 tris
+   mesh screw@A_SCREW_T30_1#steel_dark: 176 tris
+   mesh screw@A_SCREW_T30_2#steel_dark: 176 tris
+   mesh screw@A_SCREW_T30_3#steel_dark: 176 tris
+   TOTAL 25910 tris in 10 meshes
+   A_AIRFLOW_0: pos=(-0.0000,0.0000,0.0419) fwd=(1.00,-0.00,0.00) up=(-0.00,0.00,1.00) size=0.07800,0.10800,0.04370 meta=passive=1,needs_cfm=20,height_class=2U
+   A_FILM_0: pos=(-0.0000,0.0000,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.06000,0.09800,0.00300 meta=peel_from=+x,text=REMOVE COVER,covers=preapplied_tim
+   A_HIT_0: pos=(-0.0000,0.0000,0.0318) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.07800,0.10800,0.06670 meta=
+   A_SCREW_T30_0: pos=(0.0345,0.0470,0.0129) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.01100,0.01100,0.01400 meta=spring=1,thread=M4,drive=T30,torque=1.1,order=1
+   A_SCREW_T30_1: pos=(0.0345,-0.0470,0.0129) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.01100,0.01100,0.01400 meta=spring=1,thread=M4,drive=T30,torque=1.1,order=3
+   A_SCREW_T30_2: pos=(-0.0345,0.0470,0.0129) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.01100,0.01100,0.01400 meta=spring=1,thread=M4,drive=T30,torque=1.1,order=4
+   A_SCREW_T30_3: pos=(-0.0345,-0.0470,0.0129) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.01100,0.01100,0.01400 meta=spring=1,thread=M4,drive=T30,torque=1.1,order=2
+   BOUNDS x -0.0430..0.0415  y -0.0542..0.0542  z -0.0115..0.0673
+
