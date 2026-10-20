@@ -1,0 +1,22 @@
+box_ssd_crux_p3plus_2tb: 3284 triangles, 9 meshes
+  mesh blister@A_INSERT_BLISTER_0#clear_plastic  tris=2136
+  mesh blister_lid@A_CLAMLID_0#clear_plastic  tris=892
+  mesh box_ssd_crux_p3plus_2tb_paper_white#paper_white  tris=60
+  mesh dust@A_FLAP_1#paper_white  tris=12
+  mesh dust@A_FLAP_2#paper_white  tris=12
+  mesh flap@A_FLAP_0#paper_white  tris=132
+  mesh flap_print@A_FLAP_0#tex_box_ssd_crux_p3plus_2tb  tris=2
+  mesh s_tex_box_ssd_crux_p3plus_2tb#tex_box_ssd_crux_p3plus_2tb  tris=10
+  mesh seallook@A_SEAL_0#seal_clear  tris=28
+  A_CLAMLID_0@A_INSERT_BLISTER_0 pos=(-0.0045, 0.00665, -0.0363) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.09800,0.00500,0.07260 meta=hinge=x,open=-170,label=blister lid,order=4,parent=A_INSERT_BLISTER_0,under=A_INSERT_BLISTER_0
+  A_FLAP_0 pos=(0.05465, 0.0007, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00070,0.02500,0.08000 meta=hinge=z,open=-92,tuck=1,label=end flap,order=1,under=A_SEAL_0
+  A_FLAP_1 pos=(0.05365, 0.0125, 0.0393) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00070,0.02360,0.01440 meta=hinge=y,open=-95,label=dust flap,order=2,under=A_FLAP_0
+  A_FLAP_2 pos=(0.05365, 0.0125, -0.0393) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00070,0.02360,0.01440 meta=hinge=y,open=95,label=dust flap,order=2,under=A_FLAP_0
+  A_HIT_0 pos=(-0.0, 0.0125, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.11000,0.02500,0.08000 meta=
+  A_INSERT_BLISTER_0 pos=(-0.0045, 0.0019, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.09800,0.01000,0.07260 meta=lift=+x,dist=0.12,label=blister tray,order=3,under=A_FLAP_0,A_FLAP_1,A_FLAP_2
+  A_ITEM_DOC_0 pos=(-0.003, 0.0014, -0.0) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.09000,0.06000,0.00040 meta=doc=guide,form=card,label=quick install guide,order=4,under=A_INSERT_BLISTER_0
+  A_ITEM_DOC_1 pos=(-0.001, 0.0008, -0.004) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.08800,0.05800,0.00040 meta=doc=warranty,form=card,label=warranty card,order=5,under=A_ITEM_DOC_0
+  A_ITEM_PART_0@A_INSERT_BLISTER_0 pos=(-0.0045, 0.00203, -0.0) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.08200,0.02400,0.00415 meta=bag=none,label=M.2 SSD,order=5,parent=A_INSERT_BLISTER_0,under=A_CLAMLID_0
+  A_SEAL_0 pos=(0.05512, 0.02, -0.0) fwd=(1.0, -0.0, 0.0) up=(0.0, 1.0, 0.0) size=0.01500,0.01000,0.00010 meta=shape=round,peel=+y,print=QUILL SEALED,wrap=0.005,label=seal sticker,order=0
+shot from: ssd_crux_p3plus_2tb
+SSD M.2: seal A_SEAL_0 over the end flap's top edge (0) -> end flap A_FLAP_0 (1) -> dust flaps (2) -> blister A_INSERT_BLISTER_0 slides out +x (3) -> blister lid A_CLAMLID_0 and the 2 cards under the blister (4) -> SSD (5).
