@@ -22,6 +22,12 @@ Read `docs/tasks/README.md` (setup, rules) and `docs/tasks/catalog/README.md` (b
 6. Hush Pure Base 500DX-style: black, with a front ARGB strip.
 7. "Brickhouse Beige 98": a retro beige throwback case with a fake 5.25" bay and a turbo button. Just for fun.
 
+## Retrofit: glass films on case_aero
+`case_aero` (built by `build_parts_d.py`) has glass on its front corner and its side, but no film anchors.
+- **Add the anchors:** `A_FILM_GLASS_<n>` on both sides of every glass pane, each in its panel's frame (`@A_PANEL_SIDE_0` for the side glass), per the catalogue README's unboxing rules.
+- **Add only anchors** through a small optional hook, then re-export. `extras_compare.py` must report **ONLY ADDED** against the committed FBX.
+- `build_parts_d.py` is task 03's script; touch only the case_aero part of it.
+
 ## Fans (7, new contract)
 A case fan model:
 - **Frame:** origin at the frame centre, +Z = airflow direction.
