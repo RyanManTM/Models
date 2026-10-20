@@ -61,3 +61,186 @@
    A_SCREW_PH2_3: pos=(-0.0330,-0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
    BOUNDS x -0.0505..0.0389  y -0.0630..0.0900  z -0.0120..0.1574
 
+== cooler_glacier_ak400_white
+   mesh cooler_glacier_ak400_white_alu#alu: 156 tris
+   mesh cooler_glacier_ak400_white_alu_dark#alu_dark: 60 tris
+   mesh cooler_glacier_ak400_white_black_plastic#black_plastic: 616 tris
+   mesh cooler_glacier_ak400_white_nickel#nickel: 9288 tris
+   mesh cooler_glacier_ak400_white_paint_white#paint_white: 15416 tris
+   mesh cooler_glacier_ak400_white_steel#steel: 6084 tris
+   mesh cooler_glacier_ak400_white_tex_cooler_glacier_ak400_white#tex_cooler_glacier_ak400_white: 2 tris
+   mesh cooler_glacier_ak400_white_white_plastic#white_plastic: 4632 tris
+   mesh fan0_rotor@A_FAN_0#white_plastic: 3076 tris
+   mesh fan0_sticker@A_FAN_0#tex_cooler_glacier_ak400_white: 144 tris
+   mesh film@A_FILM_0#tex_cooler_glacier_ak400_white: 30 tris
+   mesh plug@A_PLUG_FAN_0#connector_black: 252 tris
+   mesh screw@A_SCREW_PH2_0#steel: 584 tris
+   mesh screw@A_SCREW_PH2_1#steel: 584 tris
+   mesh screw@A_SCREW_PH2_2#steel: 584 tris
+   mesh screw@A_SCREW_PH2_3#steel: 584 tris
+   TOTAL 42092 tris in 16 meshes
+   A_FAN_0: pos=(-0.0370,0.0000,0.0952) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=1850
+   A_FILM_0: pos=(-0.0000,0.0000,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.04400,0.04400,0.00300 meta=peel_from=+x,text=REMOVE BEFORE USE
+   A_FILM_TOP_0: pos=(0.0005,0.0000,0.1553) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.03700,0.11500,0.00100 meta=film=clear,on=top_cover,peel_from=+x
+   A_HIT_0: pos=(-0.0000,0.0000,0.0976) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.04700,0.12500,0.11720 meta=
+   A_HIT_1: pos=(-0.0370,0.0000,0.0952) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.02500,0.12000,0.12000 meta=
+   A_HIT_2: pos=(-0.0000,0.0000,0.0120) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.07500,0.07500,0.02400 meta=
+   A_PLUG_FAN_0: pos=(-0.0340,0.0900,0.0060) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.01200,0.00800,0.01600 meta=kind=fan4,frame=plug,target=CPU_FAN
+   A_SCREW_PH2_0: pos=(0.0330,0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_1: pos=(0.0330,-0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_2: pos=(-0.0330,0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_3: pos=(-0.0330,-0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   BOUNDS x -0.0495..0.0389  y -0.0635..0.0900  z -0.0120..0.1556
+
+== cooler_glacier_ak620_black
+   mesh cooler_glacier_ak620_black_alu#alu: 92 tris
+   mesh cooler_glacier_ak620_black_alu_dark#alu_dark: 25148 tris
+   mesh cooler_glacier_ak620_black_black_plastic#black_plastic: 1232 tris
+   mesh cooler_glacier_ak620_black_fan_black#fan_black: 9024 tris
+   mesh cooler_glacier_ak620_black_nickel#nickel: 88 tris
+   mesh cooler_glacier_ak620_black_paint_black#paint_black: 1768 tris
+   mesh cooler_glacier_ak620_black_steel#steel: 7036 tris
+   mesh cooler_glacier_ak620_black_steel_dark#steel_dark: 13608 tris
+   mesh cooler_glacier_ak620_black_tex_cooler_glacier_ak620_black#tex_cooler_glacier_ak620_black: 2 tris
+   mesh cooler_glacier_ak620_black_white_plastic#white_plastic: 240 tris
+   mesh fan0_rotor@A_FAN_0#fan_black: 3076 tris
+   mesh fan0_sticker@A_FAN_0#tex_cooler_glacier_ak620_black: 144 tris
+   mesh fan1_rotor@A_FAN_1#fan_black: 3076 tris
+   mesh fan1_sticker@A_FAN_1#tex_cooler_glacier_ak620_black: 144 tris
+   mesh film@A_FILM_0#tex_cooler_glacier_ak620_black: 30 tris
+   mesh plug@A_PLUG_FAN_0#connector_black: 252 tris
+   mesh plug@A_PLUG_FAN_1#connector_black: 252 tris
+   mesh screw@A_SCREW_PH2_0#steel: 584 tris
+   mesh screw@A_SCREW_PH2_1#steel: 584 tris
+   mesh screw@A_SCREW_PH2_2#steel: 584 tris
+   mesh screw@A_SCREW_PH2_3#steel: 584 tris
+   TOTAL 67548 tris in 21 meshes
+   A_FAN_0: pos=(-0.0690,0.0000,0.0984) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=1850
+   A_FAN_1: pos=(-0.0000,0.0000,0.0984) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=1850
+   A_FILM_0: pos=(-0.0000,0.0000,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.04400,0.04400,0.00300 meta=peel_from=+x,text=REMOVE BEFORE USE
+   A_FILM_TOP_0: pos=(0.0350,0.0000,0.1597) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.03200,0.11900,0.00100 meta=film=clear,on=top_cover,peel_from=+x
+   A_HIT_0: pos=(-0.0345,0.0000,0.1008) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.04200,0.12900,0.11960 meta=
+   A_HIT_1: pos=(0.0345,0.0000,0.1008) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.04200,0.12900,0.11960 meta=
+   A_HIT_2: pos=(-0.0690,0.0000,0.0984) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.02500,0.12000,0.12000 meta=
+   A_HIT_3: pos=(-0.0000,0.0000,0.0984) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.02500,0.12000,0.12000 meta=
+   A_HIT_4: pos=(-0.0000,0.0000,0.0120) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.07500,0.07500,0.02400 meta=
+   A_PLUG_FAN_0: pos=(-0.0340,0.0900,0.0060) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.01200,0.00800,0.01600 meta=kind=fan4,frame=plug,target=CPU_FAN
+   A_PLUG_FAN_1: pos=(-0.0160,0.0940,0.0060) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.01200,0.00800,0.01600 meta=kind=fan4,frame=plug,target=SYS_FAN
+   A_SCREW_PH2_0: pos=(0.0330,0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_1: pos=(0.0330,-0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_2: pos=(-0.0330,0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_3: pos=(-0.0330,-0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   BOUNDS x -0.0815..0.0570  y -0.0655..0.0940  z -0.0120..0.1600
+
+== cooler_noctis_d15
+   mesh cooler_noctis_d15_alu#alu: 15068 tris
+   mesh cooler_noctis_d15_alu_dark#alu_dark: 60 tris
+   mesh cooler_noctis_d15_black_plastic#black_plastic: 1232 tris
+   mesh cooler_noctis_d15_nickel#nickel: 15464 tris
+   mesh cooler_noctis_d15_steel#steel: 7036 tris
+   mesh cooler_noctis_d15_tex_cooler_noctis_d15#tex_cooler_noctis_d15: 4 tris
+   mesh cooler_noctis_d15_tex_cooler_noctis_d15_col#tex_cooler_noctis_d15_col: 9024 tris
+   mesh cooler_noctis_d15_white_plastic#white_plastic: 240 tris
+   mesh fan0_rotor@A_FAN_0#tex_cooler_noctis_d15_col: 3076 tris
+   mesh fan0_sticker@A_FAN_0#tex_cooler_noctis_d15: 144 tris
+   mesh fan1_rotor@A_FAN_1#tex_cooler_noctis_d15_col: 3076 tris
+   mesh fan1_sticker@A_FAN_1#tex_cooler_noctis_d15: 144 tris
+   mesh film@A_FILM_0#tex_cooler_noctis_d15: 30 tris
+   mesh plug@A_PLUG_FAN_0#connector_black: 252 tris
+   mesh plug@A_PLUG_FAN_1#connector_black: 252 tris
+   mesh screw@A_SCREW_PH2_0#steel: 584 tris
+   mesh screw@A_SCREW_PH2_1#steel: 584 tris
+   mesh screw@A_SCREW_PH2_2#steel: 584 tris
+   mesh screw@A_SCREW_PH2_3#steel: 584 tris
+   TOTAL 57438 tris in 19 meshes
+   A_FAN_0: pos=(-0.0795,0.0000,0.0935) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.14000,0.14000,0.02500 meta=axis=z,spin=-1,rpm=1500
+   A_FAN_1: pos=(0.0005,0.0000,0.0935) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.14000,0.14000,0.02500 meta=axis=z,spin=-1,rpm=1500
+   A_FILM_0: pos=(-0.0000,0.0000,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.04400,0.04400,0.00300 meta=peel_from=+x,text=REMOVE BEFORE USE
+   A_FILM_TOP_0: pos=(0.0405,0.0000,0.1644) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.04000,0.14000,0.00100 meta=film=clear,on=top_cover,peel_from=+x
+   A_HIT_0: pos=(-0.0400,0.0000,0.1057) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.05200,0.15000,0.11930 meta=
+   A_HIT_1: pos=(0.0400,0.0000,0.1057) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.05200,0.15000,0.11930 meta=
+   A_HIT_2: pos=(-0.0795,0.0000,0.0935) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.02500,0.14000,0.14000 meta=
+   A_HIT_3: pos=(0.0005,0.0000,0.0935) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.02500,0.14000,0.14000 meta=
+   A_HIT_4: pos=(-0.0000,0.0000,0.0120) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.07500,0.07500,0.02400 meta=
+   A_PLUG_FAN_0: pos=(-0.0340,0.0900,0.0060) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.01200,0.00800,0.01600 meta=kind=fan4,frame=plug,target=CPU_FAN
+   A_PLUG_FAN_1: pos=(-0.0160,0.0940,0.0060) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.01200,0.00800,0.01600 meta=kind=fan4,frame=plug,target=SYS_FAN
+   A_SCREW_PH2_0: pos=(0.0330,0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_1: pos=(0.0330,-0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_2: pos=(-0.0330,0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_3: pos=(-0.0330,-0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   BOUNDS x -0.0920..0.0675  y -0.0760..0.0940  z -0.0120..0.1647
+
+== cooler_noctis_d15_black
+   mesh cooler_noctis_d15_black_alu_dark#alu_dark: 280 tris
+   mesh cooler_noctis_d15_black_black_plastic#black_plastic: 1232 tris
+   mesh cooler_noctis_d15_black_fan_black#fan_black: 9024 tris
+   mesh cooler_noctis_d15_black_nickel#nickel: 88 tris
+   mesh cooler_noctis_d15_black_paint_black#paint_black: 18520 tris
+   mesh cooler_noctis_d15_black_steel#steel: 5132 tris
+   mesh cooler_noctis_d15_black_steel_dark#steel_dark: 13608 tris
+   mesh cooler_noctis_d15_black_tex_cooler_noctis_d15_black#tex_cooler_noctis_d15_black: 4 tris
+   mesh cooler_noctis_d15_black_white_plastic#white_plastic: 240 tris
+   mesh fan0_rotor@A_FAN_0#fan_black: 3076 tris
+   mesh fan0_sticker@A_FAN_0#tex_cooler_noctis_d15_black: 144 tris
+   mesh fan1_rotor@A_FAN_1#fan_black: 3076 tris
+   mesh fan1_sticker@A_FAN_1#tex_cooler_noctis_d15_black: 144 tris
+   mesh film@A_FILM_0#tex_cooler_noctis_d15_black: 30 tris
+   mesh plug@A_PLUG_FAN_0#connector_black: 252 tris
+   mesh plug@A_PLUG_FAN_1#connector_black: 252 tris
+   mesh screw@A_SCREW_PH2_0#steel: 584 tris
+   mesh screw@A_SCREW_PH2_1#steel: 584 tris
+   mesh screw@A_SCREW_PH2_2#steel: 584 tris
+   mesh screw@A_SCREW_PH2_3#steel: 584 tris
+   TOTAL 57438 tris in 20 meshes
+   A_FAN_0: pos=(-0.0795,0.0000,0.0935) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.14000,0.14000,0.02500 meta=axis=z,spin=-1,rpm=1500
+   A_FAN_1: pos=(0.0005,0.0000,0.0935) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.14000,0.14000,0.02500 meta=axis=z,spin=-1,rpm=1500
+   A_FILM_0: pos=(-0.0000,0.0000,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.04400,0.04400,0.00300 meta=peel_from=+x,text=REMOVE BEFORE USE
+   A_FILM_TOP_0: pos=(0.0405,0.0000,0.1644) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.04000,0.14000,0.00100 meta=film=clear,on=top_cover,peel_from=+x
+   A_HIT_0: pos=(-0.0400,0.0000,0.1057) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.05200,0.15000,0.11930 meta=
+   A_HIT_1: pos=(0.0400,0.0000,0.1057) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.05200,0.15000,0.11930 meta=
+   A_HIT_2: pos=(-0.0795,0.0000,0.0935) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.02500,0.14000,0.14000 meta=
+   A_HIT_3: pos=(0.0005,0.0000,0.0935) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.02500,0.14000,0.14000 meta=
+   A_HIT_4: pos=(-0.0000,0.0000,0.0120) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.07500,0.07500,0.02400 meta=
+   A_PLUG_FAN_0: pos=(-0.0340,0.0900,0.0060) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.01200,0.00800,0.01600 meta=kind=fan4,frame=plug,target=CPU_FAN
+   A_PLUG_FAN_1: pos=(-0.0160,0.0940,0.0060) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.01200,0.00800,0.01600 meta=kind=fan4,frame=plug,target=SYS_FAN
+   A_SCREW_PH2_0: pos=(0.0330,0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_1: pos=(0.0330,-0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_2: pos=(-0.0330,0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_3: pos=(-0.0330,-0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   BOUNDS x -0.0920..0.0675  y -0.0760..0.0940  z -0.0120..0.1647
+
+== cooler_frostpeak_120_rgb
+   mesh cooler_frostpeak_120_rgb_alu#alu: 7724 tris
+   mesh cooler_frostpeak_120_rgb_alu_dark#alu_dark: 60 tris
+   mesh cooler_frostpeak_120_rgb_black_plastic#black_plastic: 1604 tris
+   mesh cooler_frostpeak_120_rgb_fan_black#fan_black: 4512 tris
+   mesh cooler_frostpeak_120_rgb_nickel#nickel: 9288 tris
+   mesh cooler_frostpeak_120_rgb_paint_black#paint_black: 1148 tris
+   mesh cooler_frostpeak_120_rgb_rgb#rgb: 1856 tris
+   mesh cooler_frostpeak_120_rgb_steel#steel: 6084 tris
+   mesh cooler_frostpeak_120_rgb_tex_cooler_frostpeak_120_rgb#tex_cooler_frostpeak_120_rgb: 2 tris
+   mesh cooler_frostpeak_120_rgb_white_plastic#white_plastic: 120 tris
+   mesh fan0_rotor@A_FAN_0#white_plastic: 3076 tris
+   mesh fan0_sticker@A_FAN_0#tex_cooler_frostpeak_120_rgb: 144 tris
+   mesh film@A_FILM_0#tex_cooler_frostpeak_120_rgb: 30 tris
+   mesh plug@A_PLUG_ARGB_0#connector_white: 160 tris
+   mesh plug@A_PLUG_FAN_0#connector_black: 252 tris
+   mesh screw@A_SCREW_PH2_0#steel: 584 tris
+   mesh screw@A_SCREW_PH2_1#steel: 584 tris
+   mesh screw@A_SCREW_PH2_2#steel: 584 tris
+   mesh screw@A_SCREW_PH2_3#steel: 584 tris
+   TOTAL 38396 tris in 19 meshes
+   A_FAN_0: pos=(-0.0385,0.0000,0.0962) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=1800,rgb=1
+   A_FILM_0: pos=(-0.0000,0.0000,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.04400,0.04400,0.00300 meta=peel_from=+x,text=REMOVE BEFORE USE
+   A_FILM_TOP_0: pos=(0.0005,0.0000,0.1574) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.04000,0.11500,0.00100 meta=film=clear,on=top_cover,peel_from=+x
+   A_HIT_0: pos=(-0.0000,0.0000,0.0987) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.05000,0.12500,0.11930 meta=
+   A_HIT_1: pos=(-0.0385,0.0000,0.0962) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.02500,0.12000,0.12000 meta=
+   A_HIT_2: pos=(-0.0000,0.0000,0.0120) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.07500,0.07500,0.02400 meta=
+   A_PLUG_ARGB_0: pos=(-0.0240,0.0920,0.0050) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.01200,0.00800,0.01600 meta=kind=argb3,frame=plug,target=ARGB
+   A_PLUG_FAN_0: pos=(-0.0340,0.0900,0.0060) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.01200,0.00800,0.01600 meta=kind=fan4,frame=plug,target=CPU_FAN
+   A_SCREW_PH2_0: pos=(0.0330,0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_1: pos=(0.0330,-0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_2: pos=(-0.0330,0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_3: pos=(-0.0330,-0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   BOUNDS x -0.0516..0.0389  y -0.0635..0.0920  z -0.0120..0.1578
+

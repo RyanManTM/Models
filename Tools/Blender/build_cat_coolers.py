@@ -458,6 +458,42 @@ TOWERS = {
         cover_tag="white_plastic", trim_tag="paint_white", top_bg="#ececea", top_fg="#1b1b1d", accent="#6d7178",
         hub_bg="#efefed", hub_fg="#1b1b1d", fan_scheme=("white_plastic", "white_plastic"), clip_tag="steel",
         film_col="#3d8ee6", rpm=2100),
+    # DeepCool AK400 WH-style: 155 mm, 4 pipes, jagged fins painted white, white top and fan
+    "cooler_glacier_ak400_white": tower_cfg(
+        brand="Glacier", model_line="AK400 WH", draw_top=glacier_top, draw_hub=glacier_hub,
+        fin_z0=0.0400, pitch=0.0024, fin_n=47, W=0.0625, D=0.0235, teeth=14, amp=0.0035, rear_teeth=14,
+        fin_tag="paint_white", cover_tag="paint_white", trim_tag="alu", top_bg="#f0f0ee", top_fg="#202024",
+        accent="#b9bcc2", hub_bg="#f2f2f0", hub_fg="#202024", fan_scheme=("white_plastic", "white_plastic"),
+        rpm=1850),
+    # DeepCool AK620-style: 160 mm, twin towers, 6 pipes, 2 x 120 mm, all black
+    "cooler_glacier_ak620_black": tower_cfg(
+        brand="Glacier", model_line="AK620", draw_top=glacier_top, draw_hub=glacier_hub,
+        towers=[-0.0345, 0.0345], D=0.021, W=0.0645, fin_z0=0.0420, pitch=0.0024, fin_n=48, pipes=6, teeth=12,
+        amp=0.003, rear_teeth=12, fans=[(0, 0.12, 0.025), (1, 0.12, 0.025)], fin_tag="alu_dark",
+        pipe_tag="steel_dark", base_tag="nickel", cover_tag="paint_black", trim_tag="alu_dark", top_bg="#121214",
+        accent="#3a3c42", hub_bg="#111113", rpm=1850, label2=False),
+    # Noctua NH-D15-style: 165 mm, twin towers, 6 pipes, 2 x 140 mm beige/brown fans, nickel top fins
+    "cooler_noctis_d15": tower_cfg(
+        brand="Noctis", model_line="NH-D15", draw_top=noctis_top, draw_top2=noctis_top2, draw_hub=noctis_hub,
+        towers=[-0.040, 0.040], D=0.026, W=0.075, fin_z0=0.0470, pitch=0.0025, fin_n=46, pipes=6, teeth=11,
+        amp=0.0035, fans=[(0, 0.14, 0.025), (1, 0.14, 0.025)], fan_z=0.0935, cover_tag="nickel", trim_tag="alu",
+        top_bg="#b8bbbf", top_fg="#3a2a22", accent="#6b3b2a", hub_bg="#6b3b2a", hub_fg="#e3d2b4",
+        col={"frame": "#d6c3a0", "blade": "#6e3a2b"}, fan_scheme=("col:frame", "col:blade"), rpm=1500,
+        film_col="#6e3a2b", film_stripe="#7b4636", clip_tag="steel"),
+    # chromax.black-style: the same cooler, black coated, black fans
+    "cooler_noctis_d15_black": tower_cfg(
+        brand="Noctis", model_line="NH-D15", draw_top=noctis_top, draw_top2=noctis_top2, draw_hub=noctis_hub,
+        towers=[-0.040, 0.040], D=0.026, W=0.075, fin_z0=0.0470, pitch=0.0025, fin_n=46, pipes=6, teeth=11,
+        amp=0.0035, fans=[(0, 0.14, 0.025), (1, 0.14, 0.025)], fan_z=0.0935, fin_tag="paint_black",
+        pipe_tag="steel_dark", base_tag="nickel", cap_tag="alu_dark", cover_tag="paint_black", trim_tag="alu_dark",
+        top_bg="#121214", top_fg="#d8d8da", accent="#5a5a60", hub_bg="#101012", hub_fg="#d8d8da",
+        fan_scheme=("fan_black", "fan_black"), rpm=1500, film_col="#2a2a2e", film_stripe="#34343a",
+        clip_tag="paint_black"),
+    # Frostpeak Tower 120 RGB: the house tower with an ARGB fan (clear blades) and an ARGB ring in the top cap
+    "cooler_frostpeak_120_rgb": tower_cfg(
+        brand="Frostpeak", model_line="TOWER 120 RGB", draw_top=frostpeak_top, draw_hub=frostpeak_hub,
+        fin_z0=0.0400, pitch=0.0025, fin_n=46, fan_scheme=("fan_black", "white_plastic"), rgb_fan=True,
+        rgb_top=True, cover_tag="paint_black", rpm=1800),
 }
 
 

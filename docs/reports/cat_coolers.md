@@ -10,12 +10,12 @@ Branch `claude/cat-coolers`. Script `Tools/Blender/build_cat_coolers.py` (new; i
 |---|---|---|---|
 | 1 | `cooler_arctiq_34_black` | cooler_tower | done |
 | 2 | `cooler_arctiq_34_white` | cooler_tower | done |
-| 3 | `cooler_glacier_ak400_white` | cooler_tower | not yet |
-| 4 | `cooler_glacier_ak620_black` | cooler_tower | not yet |
-| 5 | `cooler_noctis_d15` | cooler_tower | not yet |
-| 6 | `cooler_noctis_d15_black` | cooler_tower | not yet |
+| 3 | `cooler_glacier_ak400_white` | cooler_tower | done |
+| 4 | `cooler_glacier_ak620_black` | cooler_tower | done |
+| 5 | `cooler_noctis_d15` | cooler_tower | done |
+| 6 | `cooler_noctis_d15_black` | cooler_tower | done |
 | 7 | `cooler_noctis_l9` | cooler_tower | not yet |
-| 8 | `cooler_frostpeak_120_rgb` | cooler_tower | not yet |
+| 8 | `cooler_frostpeak_120_rgb` | cooler_tower | done |
 | 9 | `cooler_tiron_stock` | cooler_stock | not yet |
 | 10 | `cooler_arctiq_lc240` | AIO (new) | not yet |
 | 11 | `cooler_corvex_h150i_white` | AIO (new) | not yet |
@@ -29,6 +29,11 @@ Branch `claude/cat-coolers`. Script `Tools/Blender/build_cat_coolers.py` (new; i
 |---|---|---|---|---|
 | `cooler_arctiq_34_black` | 36 672 | 157 mm | cooler_tower | vs `cooler_tower`: SAME 7, DIFF 4 (fan, hitboxes, top film: the free axes) |
 | `cooler_arctiq_34_white` | 36 672 | 157 mm | cooler_tower | as the black one |
+| `cooler_glacier_ak400_white` | 42 092 | 155 mm | cooler_tower | SAME 7, DIFF 4 (fan, hitboxes, top film) |
+| `cooler_glacier_ak620_black` | 67 548 | 160 mm | cooler_tower | SAME 6, DIFF 5, ONLY_B 4 (A_FAN_1, A_PLUG_FAN_1, A_HIT_3..4) |
+| `cooler_noctis_d15` | 57 438 | 165 mm | cooler_tower | SAME 6, DIFF 5, ONLY_B 4 (as AK620) |
+| `cooler_noctis_d15_black` | 57 438 | 165 mm | cooler_tower | SAME 6, DIFF 5, ONLY_B 4 (as AK620) |
+| `cooler_frostpeak_120_rgb` | 38 396 | 158 mm | cooler_tower | SAME 7, DIFF 4, ONLY_B 1 (A_PLUG_ARGB_0) |
 
 ### Anchor comparison (anchor_compare.py, `cooler_tower` = A)
 
@@ -45,6 +50,10 @@ Branch `claude/cat-coolers`. Script `Tools/Blender/build_cat_coolers.py` (new; i
 | `A_PLUG_FAN_0` | SAME | (-0.0340, 0.0900, 0.0060) | (-0.0340, 0.0900, 0.0060) |
 | `A_SCREW_PH2_0..3` | SAME | (+-0.0330, +-0.0330, 0.0214) | (+-0.0330, +-0.0330, 0.0214) |
 
+On the dual towers the second stack shifts the hitbox numbering (`A_HIT_2` is the second stack, not the base), so
+`A_HIT_2` is a DIFF there and the base hitbox is the last `A_HIT_n`. In every comparison `A_SCREW_PH2_0..3` and
+`A_FILM_0` are SAME and `A_PLUG_FAN_0` is SAME.
+
 The installing anchors (the four spring screws and the base film) are SAME on every tower; only the free axes
 (height, fan position and speed, hitboxes, the top film) differ.
 
@@ -57,6 +66,8 @@ The installing anchors (the four spring screws and the base film) are SAME on ev
 - `A_FAN_n`: the fan rotors (meta `axis=z,spin=-1,rpm=..`, plus `rgb=1` on ARGB fans). Fan 0 is the front fan.
 - `A_PLUG_FAN_n`: each fan's loose 4-pin plug. Fan 0's meta says `target=CPU_FAN`; a second fan's says
   `target=SYS_FAN` (CPU_OPT on real boards; the game can also chain it with a splitter).
+- `A_PLUG_ARGB_n` (ARGB coolers): the 5 V 3-pin ARGB plug (meta `kind=argb3,target=ARGB`, the board's
+  `A_PORT_RGB_0`). The Frostpeak's top-cap ring is daisy-chained into the fan's lead, so it has one plug.
 - `A_FILM_TOP_0`: the clear film on the label cover (anchor only).
 - `A_HIT_n`: one per fin stack, one per fan, then the base.
 - Total height <= 165 mm (the specs give each one's height).

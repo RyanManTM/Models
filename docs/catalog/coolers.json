@@ -11,8 +11,18 @@
     "rgb": false,
     "analog": "Arctic Freezer 34 eSports, black (docs only, never shown in game)",
     "desc": "Single-tower 120 mm air cooler with four direct-touch heat pipes, all black.",
-    "specs": { "height_mm": 157, "fans": 1, "fan_mm": 120, "heat_pipes": 4, "towers": 1, "rpm_max": 2100 },
-    "game": { "cooler_max_w": 200, "perf": 0 },
+    "specs": {
+      "height_mm": 157,
+      "fans": 1,
+      "fan_mm": 120,
+      "heat_pipes": 4,
+      "towers": 1,
+      "rpm_max": 2100
+    },
+    "game": {
+      "cooler_max_w": 200,
+      "perf": 0
+    },
     "contract": "cooler_tower",
     "new_contract": false
   },
@@ -28,8 +38,154 @@
     "rgb": false,
     "analog": "Arctic Freezer 34 eSports, white (docs only, never shown in game)",
     "desc": "Single-tower 120 mm air cooler with four heat pipes, a white fan and a white top.",
-    "specs": { "height_mm": 157, "fans": 1, "fan_mm": 120, "heat_pipes": 4, "towers": 1, "rpm_max": 2100 },
-    "game": { "cooler_max_w": 200, "perf": 0 },
+    "specs": {
+      "height_mm": 157,
+      "fans": 1,
+      "fan_mm": 120,
+      "heat_pipes": 4,
+      "towers": 1,
+      "rpm_max": 2100
+    },
+    "game": {
+      "cooler_max_w": 200,
+      "perf": 0
+    },
+    "contract": "cooler_tower",
+    "new_contract": false
+  },
+  {
+    "id": "cooler_glacier_ak400_white",
+    "model": "cooler_glacier_ak400_white",
+    "brand": "Glacier",
+    "name": "Glacier AK400 WH",
+    "category": "Cooler",
+    "price": 40,
+    "power_w": 3,
+    "color": "#F0F0EE",
+    "rgb": false,
+    "analog": "DeepCool AK400 WH (docs only, never shown in game)",
+    "desc": "Single-tower 120 mm cooler with four heat pipes and white-painted jagged fins.",
+    "specs": {
+      "height_mm": 155,
+      "fans": 1,
+      "fan_mm": 120,
+      "heat_pipes": 4,
+      "towers": 1,
+      "rpm_max": 1850
+    },
+    "game": {
+      "cooler_max_w": 220,
+      "perf": 0
+    },
+    "contract": "cooler_tower",
+    "new_contract": false
+  },
+  {
+    "id": "cooler_glacier_ak620_black",
+    "model": "cooler_glacier_ak620_black",
+    "brand": "Glacier",
+    "name": "Glacier AK620",
+    "category": "Cooler",
+    "price": 65,
+    "power_w": 5,
+    "color": "#141416",
+    "rgb": false,
+    "analog": "DeepCool AK620 (black) (docs only, never shown in game)",
+    "desc": "Dual-tower cooler with six heat pipes and two 120 mm fans, black.",
+    "specs": {
+      "height_mm": 160,
+      "fans": 2,
+      "fan_mm": 120,
+      "heat_pipes": 6,
+      "towers": 2,
+      "rpm_max": 1850
+    },
+    "game": {
+      "cooler_max_w": 260,
+      "perf": 0
+    },
+    "contract": "cooler_tower",
+    "new_contract": false
+  },
+  {
+    "id": "cooler_noctis_d15",
+    "model": "cooler_noctis_d15",
+    "brand": "Noctis",
+    "name": "Noctis NH-D15",
+    "category": "Cooler",
+    "price": 110,
+    "power_w": 4,
+    "color": "#D6C3A0",
+    "rgb": false,
+    "analog": "Noctua NH-D15 (docs only, never shown in game)",
+    "desc": "The classic dual-tower: six heat pipes, two quiet 140 mm fans in beige and brown.",
+    "specs": {
+      "height_mm": 165,
+      "fans": 2,
+      "fan_mm": 140,
+      "heat_pipes": 6,
+      "towers": 2,
+      "rpm_max": 1500
+    },
+    "game": {
+      "cooler_max_w": 250,
+      "perf": 0
+    },
+    "contract": "cooler_tower",
+    "new_contract": false
+  },
+  {
+    "id": "cooler_noctis_d15_black",
+    "model": "cooler_noctis_d15_black",
+    "brand": "Noctis",
+    "name": "Noctis NH-D15 obsidian",
+    "category": "Cooler",
+    "price": 120,
+    "power_w": 4,
+    "color": "#121214",
+    "rgb": false,
+    "analog": "Noctua NH-D15 chromax.black (docs only, never shown in game)",
+    "desc": "NH-D15 in an all-black coating with black 140 mm fans.",
+    "specs": {
+      "height_mm": 165,
+      "fans": 2,
+      "fan_mm": 140,
+      "heat_pipes": 6,
+      "towers": 2,
+      "rpm_max": 1500
+    },
+    "game": {
+      "cooler_max_w": 250,
+      "perf": 0
+    },
+    "contract": "cooler_tower",
+    "new_contract": false
+  },
+  {
+    "id": "cooler_frostpeak_120_rgb",
+    "model": "cooler_frostpeak_120_rgb",
+    "brand": "Frostpeak",
+    "name": "Frostpeak Tower 120 RGB",
+    "category": "Cooler",
+    "price": 45,
+    "power_w": 5,
+    "color": "#121315",
+    "rgb": true,
+    "analog": "generic ARGB single tower (e.g. ID-Cooling SE-224-XTS ARGB) (docs only, never shown in game)",
+    "desc": "The house tower with an ARGB fan and a glowing ring in the top cap.",
+    "specs": {
+      "height_mm": 158,
+      "fans": 1,
+      "fan_mm": 120,
+      "heat_pipes": 4,
+      "towers": 1,
+      "rpm_max": 1800,
+      "argb": "5V 3-pin"
+    },
+    "game": {
+      "cooler_max_w": 180,
+      "perf": 0
+    },
     "contract": "cooler_tower",
     "new_contract": false
   }
