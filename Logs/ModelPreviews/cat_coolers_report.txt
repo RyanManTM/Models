@@ -1,0 +1,63 @@
+== cooler_arctiq_34_black
+   mesh cooler_arctiq_34_black_alu#alu: 8940 tris
+   mesh cooler_arctiq_34_black_alu_dark#alu_dark: 60 tris
+   mesh cooler_arctiq_34_black_black_plastic#black_plastic: 1764 tris
+   mesh cooler_arctiq_34_black_fan_black#fan_black: 4512 tris
+   mesh cooler_arctiq_34_black_nickel#nickel: 9288 tris
+   mesh cooler_arctiq_34_black_paint_black#paint_black: 64 tris
+   mesh cooler_arctiq_34_black_steel#steel: 6084 tris
+   mesh cooler_arctiq_34_black_tex_cooler_arctiq_34_black#tex_cooler_arctiq_34_black: 2 tris
+   mesh cooler_arctiq_34_black_white_plastic#white_plastic: 120 tris
+   mesh fan0_rotor@A_FAN_0#fan_black: 3076 tris
+   mesh fan0_sticker@A_FAN_0#tex_cooler_arctiq_34_black: 144 tris
+   mesh film@A_FILM_0#tex_cooler_arctiq_34_black: 30 tris
+   mesh plug@A_PLUG_FAN_0#connector_black: 252 tris
+   mesh screw@A_SCREW_PH2_0#steel: 584 tris
+   mesh screw@A_SCREW_PH2_1#steel: 584 tris
+   mesh screw@A_SCREW_PH2_2#steel: 584 tris
+   mesh screw@A_SCREW_PH2_3#steel: 584 tris
+   TOTAL 36672 tris in 17 meshes
+   A_FAN_0: pos=(-0.0380,0.0000,0.0958) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=2100
+   A_FILM_0: pos=(-0.0000,0.0000,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.04400,0.04400,0.00300 meta=peel_from=+x,text=REMOVE BEFORE USE
+   A_FILM_TOP_0: pos=(0.0005,0.0000,0.1571) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.03900,0.11400,0.00100 meta=film=clear,on=top_cover,peel_from=+x
+   A_HIT_0: pos=(-0.0000,0.0000,0.0983) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.04900,0.12400,0.11950 meta=
+   A_HIT_1: pos=(-0.0380,0.0000,0.0958) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.02500,0.12000,0.12000 meta=
+   A_HIT_2: pos=(-0.0000,0.0000,0.0120) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.07500,0.07500,0.02400 meta=
+   A_PLUG_FAN_0: pos=(-0.0340,0.0900,0.0060) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.01200,0.00800,0.01600 meta=kind=fan4,frame=plug,target=CPU_FAN
+   A_SCREW_PH2_0: pos=(0.0330,0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_1: pos=(0.0330,-0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_2: pos=(-0.0330,0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_3: pos=(-0.0330,-0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   BOUNDS x -0.0505..0.0389  y -0.0630..0.0900  z -0.0120..0.1574
+
+== cooler_arctiq_34_white
+   mesh cooler_arctiq_34_white_alu#alu: 8940 tris
+   mesh cooler_arctiq_34_white_alu_dark#alu_dark: 60 tris
+   mesh cooler_arctiq_34_white_black_plastic#black_plastic: 616 tris
+   mesh cooler_arctiq_34_white_nickel#nickel: 9288 tris
+   mesh cooler_arctiq_34_white_paint_white#paint_white: 64 tris
+   mesh cooler_arctiq_34_white_steel#steel: 6084 tris
+   mesh cooler_arctiq_34_white_tex_cooler_arctiq_34_white#tex_cooler_arctiq_34_white: 2 tris
+   mesh cooler_arctiq_34_white_white_plastic#white_plastic: 5780 tris
+   mesh fan0_rotor@A_FAN_0#white_plastic: 3076 tris
+   mesh fan0_sticker@A_FAN_0#tex_cooler_arctiq_34_white: 144 tris
+   mesh film@A_FILM_0#tex_cooler_arctiq_34_white: 30 tris
+   mesh plug@A_PLUG_FAN_0#connector_black: 252 tris
+   mesh screw@A_SCREW_PH2_0#steel: 584 tris
+   mesh screw@A_SCREW_PH2_1#steel: 584 tris
+   mesh screw@A_SCREW_PH2_2#steel: 584 tris
+   mesh screw@A_SCREW_PH2_3#steel: 584 tris
+   TOTAL 36672 tris in 16 meshes
+   A_FAN_0: pos=(-0.0380,0.0000,0.0958) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=2100
+   A_FILM_0: pos=(-0.0000,0.0000,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.04400,0.04400,0.00300 meta=peel_from=+x,text=REMOVE BEFORE USE
+   A_FILM_TOP_0: pos=(0.0005,0.0000,0.1571) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.03900,0.11400,0.00100 meta=film=clear,on=top_cover,peel_from=+x
+   A_HIT_0: pos=(-0.0000,0.0000,0.0983) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.04900,0.12400,0.11950 meta=
+   A_HIT_1: pos=(-0.0380,0.0000,0.0958) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.02500,0.12000,0.12000 meta=
+   A_HIT_2: pos=(-0.0000,0.0000,0.0120) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.07500,0.07500,0.02400 meta=
+   A_PLUG_FAN_0: pos=(-0.0340,0.0900,0.0060) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.01200,0.00800,0.01600 meta=kind=fan4,frame=plug,target=CPU_FAN
+   A_SCREW_PH2_0: pos=(0.0330,0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_1: pos=(0.0330,-0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_2: pos=(-0.0330,0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_3: pos=(-0.0330,-0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   BOUNDS x -0.0505..0.0389  y -0.0630..0.0900  z -0.0120..0.1574
+

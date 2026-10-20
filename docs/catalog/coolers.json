@@ -1,0 +1,36 @@
+[
+  {
+    "id": "cooler_arctiq_34_black",
+    "model": "cooler_arctiq_34_black",
+    "brand": "Arctiq",
+    "name": "Arctiq Chiller 34 eSport Black",
+    "category": "Cooler",
+    "price": 35,
+    "power_w": 3,
+    "color": "#16161A",
+    "rgb": false,
+    "analog": "Arctic Freezer 34 eSports, black (docs only, never shown in game)",
+    "desc": "Single-tower 120 mm air cooler with four direct-touch heat pipes, all black.",
+    "specs": { "height_mm": 157, "fans": 1, "fan_mm": 120, "heat_pipes": 4, "towers": 1, "rpm_max": 2100 },
+    "game": { "cooler_max_w": 200, "perf": 0 },
+    "contract": "cooler_tower",
+    "new_contract": false
+  },
+  {
+    "id": "cooler_arctiq_34_white",
+    "model": "cooler_arctiq_34_white",
+    "brand": "Arctiq",
+    "name": "Arctiq Chiller 34 eSport White",
+    "category": "Cooler",
+    "price": 37,
+    "power_w": 3,
+    "color": "#ECECEA",
+    "rgb": false,
+    "analog": "Arctic Freezer 34 eSports, white (docs only, never shown in game)",
+    "desc": "Single-tower 120 mm air cooler with four heat pipes, a white fan and a white top.",
+    "specs": { "height_mm": 157, "fans": 1, "fan_mm": 120, "heat_pipes": 4, "towers": 1, "rpm_max": 2100 },
+    "game": { "cooler_max_w": 200, "perf": 0 },
+    "contract": "cooler_tower",
+    "new_contract": false
+  }
+]
