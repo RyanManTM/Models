@@ -305,14 +305,14 @@ def face_beige(ns):
     # 5.25" bay: a CD-ROM face 146 x 41.5 mm, standing 1.2 mm proud
     yb = 0.386
     front_plate("cd_face", "connector_beige", ns, -0.073, 0.073, yb - 0.0205, yb + 0.0205, d=0.0012, out=0.0012, r=0.0008)
-    front_plate("cd_tray", PAL_TAG, ns, -0.064, 0.050, yb - 0.0035, yb + 0.0110, d=0.0006, out=0.0018, r=0.0006,
+    front_plate("cd_tray", PAL_TAG, ns, -0.064, 0.050, yb - 0.0035, yb + 0.0110, d=0.0006, out=0.0021, r=0.0006,
                 uv_solid=pal("beige_dark"))
     front_plate("cd_line", "black_plastic", ns, -0.064, 0.050, yb - 0.0040, yb - 0.0035, d=0.0002, out=0.0019, r=0.0001)
     P.cube("cd_eject", (xf - 0.0022, yb - 0.0115, -0.058), (0.0016, 0.0042, 0.012), "connector_beige", parent=root, bevel=0.0005)
     P.cylinder("cd_led", P.Frame((xf - 0.0012, yb - 0.0115, -0.040), NX, Y), 0.0011, 0.0010, "led_green", 12, root, z0=0)
     P.cylinder("cd_jack", P.Frame((xf - 0.0012, yb - 0.0115, 0.060), NX, Y), 0.0022, 0.0010, "black_plastic", 16, root, z0=0)
     P.cylinder("cd_volume", P.Frame((xf - 0.0012, yb - 0.0115, 0.047), NX, Y), 0.0030, 0.0018, "grey_plastic", 20, root, z0=0)
-    P.text3d("cd_print", "CD-ROM  52X", 0.0030, 0.00008, "dark_plastic", P.Frame((xf - 0.00245, yb + 0.0040, 0.012), NX, Y),
+    P.text3d("cd_print", "CD-ROM  52X", 0.0030, 0.00008, "dark_plastic", P.Frame((xf - 0.00272, yb + 0.0040, 0.012), NX, Y),
              "arialbd.ttf", parent=root, width=0.03)
     P.text3d("cd_print", "COMPACT DISC", 0.0020, 0.00008, "dark_plastic", P.Frame((xf - 0.0013, yb - 0.0120, 0.010), NX, Y),
              "arialbd.ttf", parent=root, width=0.022)
@@ -397,6 +397,39 @@ def extra_beige(ns):
            P.plane((0, 0, ns.ZS + 0.00045), X, Y), parent=ns.root)
 
 
+# ---- unboxing films (anchors only)
+
+def hub_film(fa, d, th=0.025, hub_ratio=0.172, n=0):
+    """A_FILM_HUB_<n>: the clear film disc on a fan's hub sticker, in the A_FAN_<n> frame (it spins with the rotor).
+    parts_fan puts the sticker at about +h - 1.4 mm on the anchor's +Z (intake) side, radius 0.82 x the hub."""
+    r = d * hub_ratio * 0.82
+    P.anchor(f"A_FILM_HUB_{n}", P.anchor_frame(fa).sub(0, 0, th / 2 - 0.0012), (2 * r, 2 * r, 0.0001), fa,
+             meta="peel=+x,tab=+x,shape=disc")
+
+
+def case_films(ns):
+    """The front panel film and the hub films of the pre-installed fans (the glass films come from build_case's
+    films=True)."""
+    st = ns.st
+    P.anchor("A_FILM_FRONT_0", P.Frame((ns.xface - 0.00005, (ns.by0 + ns.by1) / 2, 0.0), NX, Y),
+             (2 * ns.bz, ns.by1 - ns.by0, 0.0001), ns.root, meta="peel=-y,tab=+y+z,on=front_panel")
+    if st.get("badge_film"):
+        P.anchor("A_FILM_BADGE_0", P.Frame((ns.xface - 0.0016 - 0.00005, 0.0195, 0.0), NX, Y), (0.104, 0.018, 0.0001),
+                 ns.root, meta="peel=-z,tab=+z,on=badge")
+    anchors = {o.name.split("@")[0]: o for o in c.descendants(ns.root) if o.type == "EMPTY"}
+    for name, pos, fwd_, up_, d_ in ns.fans:
+        n = int(name.rsplit("_", 1)[1])
+        hub_film(anchors[name], d_, n=n)
+
+
+def with_films(extra):
+    def hook(ns):
+        if extra:
+            extra(ns)
+        case_films(ns)
+    return hook
+
+
 CASES = {
     "case_lumin_216": dict(
         brand="LUMIN", model="AIRWAVE 216", paint="paint_black", trim="black_plastic", bezel="black_plastic",
@@ -452,7 +485,7 @@ CASES = {
         shroud_logo_tag="dark_plastic", front="solid", fans_front=0, fan_tag="fan_black", fan_rgb=False, fan_pins=3,
         hub=("BRICKHOUSE", "#d8ccb0", "#2a2620", "#7a6a50"), thumb_tag="steel", led_power="led_green",
         label_bg=(0.96, 0.94, 0.88), code="BH-B98", sn="B98",
-        face=face_beige, feet=feet_square, extra=extra_beige),
+        face=face_beige, feet=feet_square, extra=extra_beige, badge_film=True),
 }
 
 CASE_NOTES = {
@@ -478,6 +511,7 @@ def own_geometry(fn):
 
 def build_case_id(cid):
     st = CASES[cid]
+    st = dict(st, films=True, extra=with_films(st.get("extra")))
     BC.STYLES[cid] = dict(st, **{k: own_geometry(st[k]) for k in ("face", "feet", "extra") if st.get(k)})
     CUR.clear()
     CUR["mesh"] = st.get("mesh")
@@ -635,6 +669,11 @@ def build_fan(fid):
         route = [ex, (ex[0], min(ex[1], -D / 2 + 0.004), ex[2] - 0.001 - dz), mid, end] if not link else [ex, mid, (ex[0] - 0.004, py, pz), end]
         P.tube("cable_" + kind, P.smooth_path(route, 6), 0.0013 if kind == "argb" else 0.0017,
                "white_plastic" if sp["frame_tag"] == "white_plastic" else "rubber", root, 8)
+    # ---- unboxing films: the hub sticker disc, and the glossy light ring on RGB frames
+    hub_film(fa, D, TH, sp.get("hub_ratio") or 0.172)
+    if rgb:
+        P.anchor("A_FILM_RING_0", P.Frame((0, 0, -h - 0.00005), NZ, Y), (D, D, 0.0001), root,
+                 meta=f"peel=+x,tab=+x+y,shape=ring,r_in={(D / 2 - D * 0.0105) * 0.92:.4f}")
     P.anchor("A_HIT_0", (0, 0, 0), (D, D, TH), root)
     fix_normals(root, {o.name for o in c.descendants(root)} - made)
     P.finalize(root, fid)

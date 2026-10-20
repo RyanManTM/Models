@@ -12,7 +12,8 @@ Optional hooks (build_cat_cases.py uses them; absent on brickhouse, breeze and a
 front intake fans' heights and sizes, instead of the three 120 mm fans at FRONT_FANS_Y), and callables that get a
 namespace of build()'s locals: front_wall(ns, holes) -> holes (the front wall's cut-outs), face(ns) (draws the front
 face's decoration instead of the mesh insert / inlay), feet(ns) (instead of the four feet), extra(ns) (more looks,
-called before the hitboxes).
+called before the hitboxes), films=True (the unboxing films: A_FILM_GLASS_<n> on both faces of every glass pane, in
+its panel's frame; anchors only, see glass_films()).
 
 Frame (as PartFactory.BuildCase): origin at the bottom centre, 0.42 (x) x 0.45 (y) x 0.21 (z); -x is the front,
 +x the rear, the window faces +z, the motherboard tray faces +z at z ~ -0.095, the PSU bay is bottom rear.
@@ -700,6 +701,8 @@ def build(cid):
 
     if st.get("extra"):
         st["extra"](types.SimpleNamespace(**locals()))
+    if st.get("films"):
+        glass_films(types.SimpleNamespace(**locals()))
 
     # ---------------- hitboxes (not the glass)
     hits = [((-0.2095, 0.225, 0.0), (0.019, 0.451, 0.211)), ((XR - 0.003, 0.225, 0.0), (0.008, 0.45, 0.21)),
@@ -718,6 +721,25 @@ def build(cid):
     P.beauty(root, cid, views=((-60, 10),), size=(1280, 960), samples=96, target=(XF - 0.01, 0.42, 0.0), dist=0.32, start_index=7)
     P.beauty(root, cid, views=((90, 8),), size=(1280, 960), samples=96, target=(XR, 0.25, 0.0), dist=0.75, start_index=8)
     return tris, meshes
+
+
+def glass_films(ns):
+    """The protective films on the glass (anchors only): A_FILM_GLASS_0 / _1 on the outer / inner face of the side
+    glass, in the A_PANEL_SIDE_0 frame (they ride with the panel); with a glass front, A_FILM_GLASS_2 / _3 on its outer /
+    inner face. Each film's XY plane is the glass face, +Z faces out of the glass, size = (w, h, thickness); the tab is
+    the rear top corner (side) or the top window-side corner (front)."""
+    ft = 0.0001
+    gxa = ns.gxs if ns.glass else ns.gx0
+    xc, yc, w, h = (gxa + ns.gx1) / 2, (ns.gy0 + ns.gy1) / 2, ns.gx1 - gxa, ns.gy1 - ns.gy0
+    for i, (z, fwd, side) in enumerate(((ns.gz + 0.002 + ft / 2, Z, "outer"), (ns.gz - 0.002 - ft / 2, NZ, "inner"))):
+        P.anchor(f"A_FILM_GLASS_{i}", P.Frame((xc, yc, z), fwd, Y), (w, h, ft), ns.a_side,
+                 meta=f"peel=-x,tab=+x+y,side={side},glass=A_PANEL_SIDE_0")
+    if ns.glass:
+        zc, yc, w, h = (ns.gzf - ns.bz) / 2, (ns.GY0 + ns.GY1) / 2, ns.gzf + ns.bz, ns.GY1 - ns.GY0
+        xg = ns.bx0 + 0.0020
+        for i, (x, fwd, side) in enumerate(((xg - 0.002 - ft / 2, NX, "outer"), (xg + 0.002 + ft / 2, X, "inner"))):
+            P.anchor(f"A_FILM_GLASS_{2 + i}", P.Frame((x, yc, zc), fwd, Y), (w, h, ft), ns.root,
+                     meta=f"peel=-y,tab=+y+z,side={side},glass=front")
 
 
 def c_add(p, d, s):

@@ -89,6 +89,12 @@ case_hush_500dx: 94844 triangles, 85 meshes
   A_FAN_0 pos=(0.1827, 0.355, 0.03) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=1200
   A_FAN_1 pos=(-0.1869, 0.3, -0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.14000,0.14000,0.02500 meta=axis=z,spin=-1,rpm=1200
   A_FAN_2 pos=(-0.1869, 0.155, -0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.14000,0.14000,0.02500 meta=axis=z,spin=-1,rpm=1200
+  A_FILM_FRONT_0 pos=(-0.21855, 0.225, -0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.21100,0.45100,0.00010 meta=peel=-y,tab=+y+z,on=front_panel
+  A_FILM_GLASS_0@A_PANEL_SIDE_0 pos=(-0.0021, 0.225, 0.10455) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.39640,0.44700,0.00010 meta=peel=-x,tab=+x+y,side=outer,glass=A_PANEL_SIDE_0
+  A_FILM_GLASS_1@A_PANEL_SIDE_0 pos=(-0.0021, 0.225, 0.10045) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.39640,0.44700,0.00010 meta=peel=-x,tab=+x+y,side=inner,glass=A_PANEL_SIDE_0
+  A_FILM_HUB_0@A_FAN_0 pos=(0.1714, 0.355, 0.03) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.03385,0.03385,0.00010 meta=peel=+x,tab=+x,shape=disc
+  A_FILM_HUB_1@A_FAN_1 pos=(-0.1982, 0.3, 0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.03949,0.03949,0.00010 meta=peel=+x,tab=+x,shape=disc
+  A_FILM_HUB_2@A_FAN_2 pos=(-0.1982, 0.155, 0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.03949,0.03949,0.00010 meta=peel=+x,tab=+x,shape=disc
   A_GROMMET_0 pos=(-0.077, 0.335, -0.09525) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02000,0.06000,0.00400 meta=on=tray
   A_GROMMET_1 pos=(-0.077, 0.25, -0.09525) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02000,0.06000,0.00400 meta=on=tray
   A_GROMMET_2 pos=(-0.077, 0.165, -0.09525) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02000,0.06000,0.00400 meta=on=tray

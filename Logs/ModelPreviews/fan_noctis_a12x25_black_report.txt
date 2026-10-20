@@ -7,6 +7,7 @@ fan_noctis_a12x25_black: 10552 triangles, 7 meshes
   mesh plug_fan_0@A_PLUG_FAN_0#tex_parts_c_palette  tris=176
   mesh s_tex_fan_noctis_a12x25_black_motor#tex_fan_noctis_a12x25_black_motor  tris=120
   A_FAN_0 pos=(-0.0, 0.0, -0.0) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=2000
+  A_FILM_HUB_0@A_FAN_0 pos=(0.0, 0.0, -0.0113) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.03739,0.03739,0.00010 meta=peel=+x,tab=+x,shape=disc
   A_HIT_0 pos=(-0.0, 0.0, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.12000,0.12000,0.02500 meta=
   A_HOLE_0 pos=(-0.0525, 0.0525, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1050,through=1,screw=fan
   A_HOLE_1 pos=(0.0525, 0.0525, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1050,through=1,screw=fan
