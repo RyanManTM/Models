@@ -4,7 +4,7 @@ Brief: `docs/tasks/catalog/19-boxes.md` ("server parts"). The coordinator folds 
 and writes `box` / `box_size` into the catalogue JSON (not done here).
 
 ## Status
-**12 of 24 boxes built.** Done: cpu_epoch_9124, cpu_epoch_9354, cpu_epoch_9654, cpu_tiron_plat_8480, ram_kingsland_rdimm5_32, ram_sorin_rdimm5_64, ram_crux_rdimm5_128, ram_kingsland_rdimm4_32, ssd_sorin_pm9a3_3840, ssd_sorin_pm9a3_7680, cooler_srv_epoch_1u, cooler_srv_platinum_2u. Not built yet: psu_strata_crps_800, psu_strata_crps_1600, nic_linkwave_350t2, nic_linkwave_710da2, nic_melnet_strand6_25g, nic_melnet_strand6_100g, hba_broadline_9500_16i, hba_broadline_9560_16i, gpu_verdia_t100, gpu_voltra_mi210, mb_strata_spv, mb_strata_l46.
+**14 of 24 boxes built.** Done: cpu_epoch_9124, cpu_epoch_9354, cpu_epoch_9654, cpu_tiron_plat_8480, ram_kingsland_rdimm5_32, ram_sorin_rdimm5_64, ram_crux_rdimm5_128, ram_kingsland_rdimm4_32, ssd_sorin_pm9a3_3840, ssd_sorin_pm9a3_7680, cooler_srv_epoch_1u, cooler_srv_platinum_2u, psu_strata_crps_800, psu_strata_crps_1600. Not built yet: nic_linkwave_350t2, nic_linkwave_710da2, nic_melnet_strand6_25g, nic_melnet_strand6_100g, hba_broadline_9500_16i, hba_broadline_9560_16i, gpu_verdia_t100, gpu_voltra_mi210, mb_strata_spv, mb_strata_l46.
 
 ## What was made
 - **`Tools/Blender/rig_oem.py`** (new rig module, listed in `build_boxes.RIG_MODULES`): the builders of the kinds
@@ -89,8 +89,8 @@ folded on the manual, and the warranty card.
 | `box_ssd_sorin_pm9a3_7680` | `oem_u2` | 0.14 × 0.055 × 0.11 | 572 | OEM foam carton (oem_u2): tape strip 0 A_TAPE_0..2 (0) -> long flaps A_FLAP_0/1 (1) -> short flaps A_FLAP_2/3 (2) -> 2 papers on the top foam, top first (3..4) -> top foam A_INSERT_FOAM_1 (5) -> U.2 SSD in its bag (bag=antistatic_silver) in their pockets (6) -> bottom foam A_INSERT_FOAM_0 (7). |
 | `box_cooler_srv_epoch_1u` | `oem_heatsink` | 0.13 × 0.075 × 0.155 | 572 | OEM foam carton (oem_heatsink): tape strip 0 A_TAPE_0..2 (0) -> long flaps A_FLAP_0/1 (1) -> short flaps A_FLAP_2/3 (2) -> 3 papers on the top foam, top first (3..5) -> top foam A_INSERT_FOAM_1 (6) -> heatsink in its bag (bag=none) in their pockets (7) -> bottom foam A_INSERT_FOAM_0 (8). |
 | `box_cooler_srv_platinum_2u` | `oem_heatsink` | 0.12 × 0.115 × 0.145 | 552 | OEM foam carton (oem_heatsink): tape strip 0 A_TAPE_0..2 (0) -> long flaps A_FLAP_0/1 (1) -> short flaps A_FLAP_2/3 (2) -> 3 papers on the top foam, top first (3..5) -> top foam A_INSERT_FOAM_1 (6) -> heatsink in its bag (bag=none) in their pockets (7) -> bottom foam A_INSERT_FOAM_0 (8). |
-| `box_psu_strata_crps_800` | `oem_psu` | not built | | |
-| `box_psu_strata_crps_1600` | `oem_psu` | not built | | |
+| `box_psu_strata_crps_800` | `oem_psu` | 0.265 × 0.065 × 0.11 | 868 | CRPS PSU: tape strip 0 A_TAPE_0..2 (0) -> long flaps (1) -> short flaps (2) -> 3 papers in a pile, top first (3..5) -> the module in its pink bag, lifted out WITH its two EPS end caps (6) -> caps A_INSERT_FOAM_0/1 pulled off along -x/+x (7). |
+| `box_psu_strata_crps_1600` | `oem_psu` | 0.265 × 0.065 × 0.11 | 868 | CRPS PSU: tape strip 0 A_TAPE_0..2 (0) -> long flaps (1) -> short flaps (2) -> 3 papers in a pile, top first (3..5) -> the module in its pink bag, lifted out WITH its two EPS end caps (6) -> caps A_INSERT_FOAM_0/1 pulled off along -x/+x (7). |
 | `box_nic_linkwave_350t2` | `oem_card` | not built | | |
 | `box_nic_linkwave_710da2` | `oem_card` | not built | | |
 | `box_nic_melnet_strand6_25g` | `oem_card` | not built | | |

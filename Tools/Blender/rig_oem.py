@@ -562,7 +562,7 @@ def build_psu(ctx):
     R.anchor("A_HIT_0", F((0, sy / 2, 0)), (sx, sy, sz))
     R.explode = {"A_ITEM_PART_0": (0, 0.12, 0), caps[0]: (-0.07, 0.12, 0), caps[1]: (0.07, 0.12, 0),
                  "A_TAPE_0": (-0.03, 0.02, 0), "A_TAPE_1": (0, 0.03, 0), "A_TAPE_2": (0.03, 0.02, 0)}
-    explode_docs(R, names, (0.0, 0.26, 0.08), (0.0, 0.02, 0.07))
+    explode_docs(R, names, (0.0, 0.20, sz + 0.06), (0.0, 0.02, 0.07))
     R.open_view = (24, 55)
     R.explode_fill = 0.78
     NOTES[pid] = (f"CRPS PSU: tape strip 0 A_TAPE_0..2 (0) -> long flaps (1) -> short flaps (2) -> {n} papers in a pile, top "
