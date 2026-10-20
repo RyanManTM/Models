@@ -1,0 +1,7 @@
+plug_mod_atx: 2176 triangles, 2 meshes
+  mesh plug_mod_atx_connector_black#connector_black  tris=1296
+  mesh plug_mod_atx_tex_parts_c_palette#tex_parts_c_palette  tris=880
+  A_CABLE_0 pos=(-0.0, -0.0, 0.0408) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02189,0.02189,0.01000 meta=r=0.0109,n=20
+  A_HIT_0 pos=(-0.0, 0.0, 0.0064) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.04520,0.01340,0.01280 meta=
+  A_LATCH_0 pos=(-0.0, 0.0068, 0.0103) fwd=(0.0, 1.0, -0.0) up=(-0.0, 0.0, 1.0) size=0.00400,0.00400,0.00300 meta=press=-y
+W=0.0432 H=0.0094 L=0.0128

@@ -1,0 +1,9 @@
+plug_sata_data: 548 triangles, 4 meshes
+  mesh plug_sata_data_connector_black#connector_black  tris=320
+  mesh plug_sata_data_gold#gold  tris=84
+  mesh plug_sata_data_rubber#rubber  tris=108
+  mesh plug_sata_data_steel#steel  tris=36
+  A_CABLE_0 pos=(-0.0, 0.0, 0.0425) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00800,0.00800,0.01000 meta=r=0.0040,n=7
+  A_HIT_0 pos=(-0.0, 0.0, 0.00725) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01280,0.00880,0.01450 meta=
+  A_LATCH_0 pos=(-0.0, 0.0039, 0.0122) fwd=(0.0, 1.0, -0.0) up=(-0.0, 0.0, 1.0) size=0.00400,0.00400,0.00300 meta=press=-y
+W=0.0108 H=0.0058 L=0.0145

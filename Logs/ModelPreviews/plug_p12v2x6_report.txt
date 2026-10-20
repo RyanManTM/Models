@@ -1,0 +1,7 @@
+plug_p12v2x6: 1784 triangles, 2 meshes
+  mesh plug_p12v2x6_connector_black#connector_black  tris=1128
+  mesh plug_p12v2x6_tex_parts_c_palette#tex_parts_c_palette  tris=656
+  A_CABLE_0 pos=(-0.0, -0.0015, 0.043) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01200,0.01200,0.01000 meta=r=0.0060,n=16
+  A_HIT_0 pos=(-0.0, 0.0, 0.0075) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02160,0.01420,0.01500 meta=
+  A_LATCH_0 pos=(-0.0, 0.0057, 0.0116) fwd=(0.0, 1.0, -0.0) up=(-0.0, 0.0, 1.0) size=0.00400,0.00400,0.00300 meta=press=-y
+W=0.0196 H=0.0102 L=0.0150

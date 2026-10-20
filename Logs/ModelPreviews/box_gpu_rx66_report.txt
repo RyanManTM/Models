@@ -1,0 +1,16 @@
+box_gpu_rx66: 2254 triangles, 5 meshes
+  mesh box_gpu_rx66_tex_box_gpu_rx66_in#tex_box_gpu_rx66_in  tris=64
+  mesh foam@A_INSERT_FOAM_0#pe_foam  tris=1948
+  mesh lid_end@A_LID_0#tex_box_gpu_rx66_in  tris=186
+  mesh sleeve_back@A_SLEEVE_0#paper_white  tris=48
+  mesh sleeve_back_print@A_SLEEVE_0#tex_box_gpu_rx66  tris=8
+  A_HIT_0 pos=(-0.0, 0.045, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.36000,0.09000,0.17000 meta=
+  A_INSERT_FOAM_0 pos=(-0.0, 0.0043, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.35240,0.05400,0.16120 meta=lift=+y,dist=0.09,label=foam cradle,order=3,under=A_ITEM_PART_0
+  A_ITEM_DOC_0 pos=(-0.075, 0.0022, -0.004) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.17000,0.11500,0.00160 meta=doc=guide,form=leaflet,label=quick install guide,order=4,under=A_INSERT_FOAM_0
+  A_ITEM_DOC_1 pos=(0.08, 0.0022, 0.01) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.12000,0.08000,0.00040 meta=doc=driver,form=card,label=driver note,order=4,under=A_INSERT_FOAM_0
+  A_ITEM_DOC_2 pos=(0.105, 0.0027, -0.035) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.07000,0.05000,0.00060 meta=doc=sticker,form=sheet,label=case badge sticker,order=4,under=A_INSERT_FOAM_0
+  A_ITEM_PART_0@A_INSERT_FOAM_0 pos=(-0.00075, 0.0207, 0.0484) fwd=(0.0, 0.0, -1.0) up=(0.0, -1.0, -0.0) size=0.21950,0.05960,0.13180 meta=bag=antistatic_silver,label=graphics card,order=2,parent=A_INSERT_FOAM_0,under=A_LID_0
+  A_LID_0 pos=(-0.0, 0.0554, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.36000,0.03400,0.16880 meta=lift=+y,dist=0.08,label=lid,order=1,under=A_SLEEVE_0
+  A_SLEEVE_0 pos=(-0.0, 0.0, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.36000,0.09000,0.17000 meta=slide=+x,dist=0.39,label=sleeve,order=0
+shot from: gpu_rx66
+GPU: sleeve A_SLEEVE_0 (0) -> lid A_LID_0 (1) -> card in its silver bag A_ITEM_PART_0 (2, rests in the foam) -> PE foam cradle A_INSERT_FOAM_0 (3) -> 3 papers under the foam (4).

@@ -1,0 +1,21 @@
+box_cooler_stock: 4978 triangles, 10 meshes
+  mesh box_cooler_stock_paper_white#paper_white  tris=104
+  mesh box_cooler_stock_tex_box_cooler_stock#tex_box_cooler_stock  tris=64
+  mesh clam_base@A_INSERT_CLAM_0#clear_plastic  tris=2924
+  mesh clam_lid@A_CLAMLID_0#clear_plastic  tris=1704
+  mesh dust@A_FLAP_1#paper_white  tris=12
+  mesh dust@A_FLAP_2#paper_white  tris=12
+  mesh dust_print@A_FLAP_1#tex_box_cooler_stock  tris=12
+  mesh dust_print@A_FLAP_2#tex_box_cooler_stock  tris=12
+  mesh lid@A_FLAP_0#paper_white  tris=132
+  mesh lid_print@A_FLAP_0#tex_box_cooler_stock  tris=2
+  A_CLAMLID_0@A_INSERT_CLAM_0 pos=(-0.0, 0.0358, -0.0734) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.11680,0.03680,0.14680 meta=hinge=x,open=-170,label=clamshell lid,order=4,parent=A_INSERT_CLAM_0,under=A_INSERT_CLAM_0
+  A_FLAP_0 pos=(-0.0, 0.0892, -0.0746) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.12000,0.00080,0.15000 meta=hinge=x,open=-115,tuck=1,label=tuck flap,order=1
+  A_FLAP_1 pos=(-0.0592, 0.0892, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02800,0.00080,0.14840 meta=hinge=z,open=95,label=dust flap,order=2,under=A_FLAP_0
+  A_FLAP_2 pos=(0.0592, 0.0892, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02800,0.00080,0.14840 meta=hinge=z,open=-95,label=dust flap,order=2,under=A_FLAP_0
+  A_HIT_0 pos=(-0.0, 0.045, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.12000,0.09000,0.15000 meta=
+  A_INSERT_CLAM_0 pos=(-0.0, 0.0031, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.11680,0.07180,0.14680 meta=lift=+y,dist=0.1,label=clamshell,order=3,under=A_FLAP_0,A_FLAP_1,A_FLAP_2
+  A_ITEM_DOC_0 pos=(0.004, 0.0009, 0.004) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.10000,0.07000,0.00150 meta=doc=guide,form=leaflet,label=quick install guide,order=4,under=A_INSERT_CLAM_0
+  A_ITEM_PART_0@A_INSERT_CLAM_0 pos=(-0.0, 0.0153, 0.0162) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.10520,0.13460,0.06980 meta=bag=none,label=CPU cooler,order=5,parent=A_INSERT_CLAM_0,under=A_CLAMLID_0
+shot from: cooler_stock
+Stock cooler: tuck lid A_FLAP_0 (1) -> dust flaps (2) -> clear clamshell A_INSERT_CLAM_0 lifted out (3) -> clamshell lid A_CLAMLID_0 and the leaflet under the clamshell (4) -> cooler (5). Box depth 0.15 (was 0.12): the model's fan plug sits 30 mm past the shroud, so the clamshell has a pocket for it behind the cooler.

@@ -1,0 +1,269 @@
+ship_carton_s: 336 triangles, 11 meshes
+  mesh flap@A_FLAP_0#cardboard  tris=2
+  mesh flap@A_FLAP_0#tex_ship_carton_s  tris=32
+  mesh flap@A_FLAP_1#cardboard  tris=2
+  mesh flap@A_FLAP_1#tex_ship_carton_s  tris=32
+  mesh flap@A_FLAP_2#cardboard  tris=2
+  mesh flap@A_FLAP_2#tex_ship_carton_s  tris=32
+  mesh flap@A_FLAP_3#cardboard  tris=2
+  mesh flap@A_FLAP_3#tex_ship_carton_s  tris=32
+  mesh ship_carton_s_cardboard#cardboard  tris=24
+  mesh ship_carton_s_tex_ship_carton_s#tex_ship_carton_s  tris=132
+  mesh tapelook#tape_brown  tris=44
+  A_FLAP_0 pos=(-0.0, 0.258, -0.108) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.35700,0.00400,0.11000 meta=hinge=x,open=-215,order=1,side=back,under=A_TAPE_1
+  A_FLAP_1 pos=(-0.0, 0.258, 0.108) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.35700,0.00400,0.11000 meta=hinge=x,open=215,order=1,side=front,under=A_TAPE_1
+  A_FLAP_2 pos=(-0.178, 0.254, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.11000,0.00400,0.20960 meta=hinge=z,open=200,order=2,side=left,under=A_FLAP_0,A_FLAP_1
+  A_FLAP_3 pos=(0.178, 0.254, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.11000,0.00400,0.20960 meta=hinge=z,open=-200,order=2,side=right,under=A_FLAP_0,A_FLAP_1
+  A_HIT_0 pos=(-0.0, 0.13, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.36000,0.26000,0.22000 meta=
+  A_LABEL_0@A_FLAP_1 pos=(0.036, 0.26, 0.067) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.14000,0.07200,0.00020 meta=print=shipping_label
+  A_SPACE_0 pos=(-0.0, 0.13, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.35200,0.24400,0.21200 meta=
+  A_TAPE_0 pos=(-0.18, 0.2275, -0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.04800,0.06500,0.00006 meta=strip=0,seg=0,peel=+y,order=0,face=top
+  A_TAPE_1 pos=(-0.0, 0.26, -0.0) fwd=(0.0, 1.0, 0.0) up=(1.0, -0.0, 0.0) size=0.04800,0.36000,0.00006 meta=strip=0,seg=1,peel=+y,order=0,face=top
+  A_TAPE_2 pos=(0.18, 0.2275, -0.0) fwd=(1.0, 0.0, -0.0) up=(0.0, -1.0, -0.0) size=0.04800,0.06500,0.00006 meta=strip=0,seg=2,peel=+y,order=0,face=top
+  A_TAPE_3 pos=(-0.18, 0.0325, -0.0) fwd=(-1.0, 0.0, -0.0) up=(-0.0, -1.0, -0.0) size=0.04800,0.06500,0.00006 meta=strip=1,seg=0,peel=+y,order=0,face=bottom
+  A_TAPE_4 pos=(-0.0, 0.0, -0.0) fwd=(-0.0, -1.0, 0.0) up=(1.0, -0.0, -0.0) size=0.04800,0.36000,0.00006 meta=strip=1,seg=1,peel=+y,order=0,face=bottom
+  A_TAPE_5 pos=(0.18, 0.0325, -0.0) fwd=(1.0, -0.0, 0.0) up=(0.0, 1.0, 0.0) size=0.04800,0.06500,0.00006 meta=strip=1,seg=2,peel=+y,order=0,face=bottom
+  note: outer 0.36 x 0.26 x 0.22 m (x, y, z), board 4 mm; origin bottom centre, front +z.
+  note: flap anchors sit on the crease axis; A_TAPE_* are segment centres on the cardboard, local +Y along the peel path (seg i -> i+1), local X = tape width; strip 0 = top (end tab, seam, end tab), strip 1 = bottom.
+  note: under= lists run to the end of the meta (comma separated anchor names).
+  note: tapelook#tape_brown is look-only (both strips); hide it when the code builds the peel strips.
+
+ship_carton_m: 336 triangles, 11 meshes
+  mesh flap@A_FLAP_0#cardboard  tris=2
+  mesh flap@A_FLAP_0#tex_ship_carton_m  tris=32
+  mesh flap@A_FLAP_1#cardboard  tris=2
+  mesh flap@A_FLAP_1#tex_ship_carton_m  tris=32
+  mesh flap@A_FLAP_2#cardboard  tris=2
+  mesh flap@A_FLAP_2#tex_ship_carton_m  tris=32
+  mesh flap@A_FLAP_3#cardboard  tris=2
+  mesh flap@A_FLAP_3#tex_ship_carton_m  tris=32
+  mesh ship_carton_m_cardboard#cardboard  tris=24
+  mesh ship_carton_m_tex_ship_carton_m#tex_ship_carton_m  tris=132
+  mesh tapelook#tape_brown  tris=44
+  A_FLAP_0 pos=(-0.0, 0.358, -0.158) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.45700,0.00400,0.16000 meta=hinge=x,open=-215,order=1,side=back,under=A_TAPE_1
+  A_FLAP_1 pos=(-0.0, 0.358, 0.158) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.45700,0.00400,0.16000 meta=hinge=x,open=215,order=1,side=front,under=A_TAPE_1
+  A_FLAP_2 pos=(-0.228, 0.354, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.16000,0.00400,0.30960 meta=hinge=z,open=200,order=2,side=left,under=A_FLAP_0,A_FLAP_1
+  A_FLAP_3 pos=(0.228, 0.354, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.16000,0.00400,0.30960 meta=hinge=z,open=-200,order=2,side=right,under=A_FLAP_0,A_FLAP_1
+  A_HIT_0 pos=(-0.0, 0.18, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.46000,0.36000,0.32000 meta=
+  A_LABEL_0@A_FLAP_1 pos=(0.046, 0.36, 0.092) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.15200,0.10200,0.00020 meta=print=shipping_label
+  A_SPACE_0 pos=(-0.0, 0.18, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.45200,0.34400,0.31200 meta=
+  A_TAPE_0 pos=(-0.23, 0.3275, -0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.04800,0.06500,0.00006 meta=strip=0,seg=0,peel=+y,order=0,face=top
+  A_TAPE_1 pos=(-0.0, 0.36, -0.0) fwd=(0.0, 1.0, 0.0) up=(1.0, -0.0, 0.0) size=0.04800,0.46000,0.00006 meta=strip=0,seg=1,peel=+y,order=0,face=top
+  A_TAPE_2 pos=(0.23, 0.3275, -0.0) fwd=(1.0, 0.0, -0.0) up=(0.0, -1.0, -0.0) size=0.04800,0.06500,0.00006 meta=strip=0,seg=2,peel=+y,order=0,face=top
+  A_TAPE_3 pos=(-0.23, 0.0325, -0.0) fwd=(-1.0, 0.0, -0.0) up=(-0.0, -1.0, -0.0) size=0.04800,0.06500,0.00006 meta=strip=1,seg=0,peel=+y,order=0,face=bottom
+  A_TAPE_4 pos=(-0.0, 0.0, -0.0) fwd=(-0.0, -1.0, 0.0) up=(1.0, -0.0, -0.0) size=0.04800,0.46000,0.00006 meta=strip=1,seg=1,peel=+y,order=0,face=bottom
+  A_TAPE_5 pos=(0.23, 0.0325, -0.0) fwd=(1.0, -0.0, 0.0) up=(0.0, 1.0, 0.0) size=0.04800,0.06500,0.00006 meta=strip=1,seg=2,peel=+y,order=0,face=bottom
+  note: outer 0.46 x 0.36 x 0.32 m (x, y, z), board 4 mm; origin bottom centre, front +z.
+  note: flap anchors sit on the crease axis; A_TAPE_* are segment centres on the cardboard, local +Y along the peel path (seg i -> i+1), local X = tape width; strip 0 = top (end tab, seam, end tab), strip 1 = bottom.
+  note: under= lists run to the end of the meta (comma separated anchor names).
+  note: tapelook#tape_brown is look-only (both strips); hide it when the code builds the peel strips.
+
+ship_carton_l: 336 triangles, 11 meshes
+  mesh flap@A_FLAP_0#cardboard  tris=2
+  mesh flap@A_FLAP_0#tex_ship_carton_l  tris=32
+  mesh flap@A_FLAP_1#cardboard  tris=2
+  mesh flap@A_FLAP_1#tex_ship_carton_l  tris=32
+  mesh flap@A_FLAP_2#cardboard  tris=2
+  mesh flap@A_FLAP_2#tex_ship_carton_l  tris=32
+  mesh flap@A_FLAP_3#cardboard  tris=2
+  mesh flap@A_FLAP_3#tex_ship_carton_l  tris=32
+  mesh ship_carton_l_cardboard#cardboard  tris=24
+  mesh ship_carton_l_tex_ship_carton_l#tex_ship_carton_l  tris=132
+  mesh tapelook#tape_brown  tris=44
+  A_FLAP_0 pos=(-0.0, 0.458, -0.198) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.59700,0.00400,0.20000 meta=hinge=x,open=-215,order=1,side=back,under=A_TAPE_1
+  A_FLAP_1 pos=(-0.0, 0.458, 0.198) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.59700,0.00400,0.20000 meta=hinge=x,open=215,order=1,side=front,under=A_TAPE_1
+  A_FLAP_2 pos=(-0.298, 0.454, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.20000,0.00400,0.38960 meta=hinge=z,open=200,order=2,side=left,under=A_FLAP_0,A_FLAP_1
+  A_FLAP_3 pos=(0.298, 0.454, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.20000,0.00400,0.38960 meta=hinge=z,open=-200,order=2,side=right,under=A_FLAP_0,A_FLAP_1
+  A_HIT_0 pos=(-0.0, 0.23, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.60000,0.46000,0.40000 meta=
+  A_LABEL_0@A_FLAP_1 pos=(0.06, 0.46, 0.112) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.17800,0.12700,0.00020 meta=print=shipping_label
+  A_SPACE_0 pos=(-0.0, 0.23, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.59200,0.44400,0.39200 meta=
+  A_TAPE_0 pos=(-0.3, 0.4275, -0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.04800,0.06500,0.00006 meta=strip=0,seg=0,peel=+y,order=0,face=top
+  A_TAPE_1 pos=(-0.0, 0.46, -0.0) fwd=(0.0, 1.0, 0.0) up=(1.0, -0.0, 0.0) size=0.04800,0.60000,0.00006 meta=strip=0,seg=1,peel=+y,order=0,face=top
+  A_TAPE_2 pos=(0.3, 0.4275, -0.0) fwd=(1.0, 0.0, -0.0) up=(0.0, -1.0, -0.0) size=0.04800,0.06500,0.00006 meta=strip=0,seg=2,peel=+y,order=0,face=top
+  A_TAPE_3 pos=(-0.3, 0.0325, -0.0) fwd=(-1.0, 0.0, -0.0) up=(-0.0, -1.0, -0.0) size=0.04800,0.06500,0.00006 meta=strip=1,seg=0,peel=+y,order=0,face=bottom
+  A_TAPE_4 pos=(-0.0, 0.0, -0.0) fwd=(-0.0, -1.0, 0.0) up=(1.0, -0.0, -0.0) size=0.04800,0.60000,0.00006 meta=strip=1,seg=1,peel=+y,order=0,face=bottom
+  A_TAPE_5 pos=(0.3, 0.0325, -0.0) fwd=(1.0, -0.0, 0.0) up=(0.0, 1.0, 0.0) size=0.04800,0.06500,0.00006 meta=strip=1,seg=2,peel=+y,order=0,face=bottom
+  note: outer 0.6 x 0.46 x 0.4 m (x, y, z), board 4 mm; origin bottom centre, front +z.
+  note: flap anchors sit on the crease axis; A_TAPE_* are segment centres on the cardboard, local +Y along the peel path (seg i -> i+1), local X = tape width; strip 0 = top (end tab, seam, end tab), strip 1 = bottom.
+  note: under= lists run to the end of the meta (comma separated anchor names).
+  note: tapelook#tape_brown is look-only (both strips); hide it when the code builds the peel strips.
+
+ship_carton_s_flat: 148 triangles, 2 meshes
+  mesh ship_carton_s_flat_cardboard#cardboard  tris=24
+  mesh ship_carton_s_flat_tex_ship_carton_s#tex_ship_carton_s  tris=124
+  A_HIT_0 pos=(-0.0, 0.006, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.58000,0.01200,0.48000 meta=
+  note: lies flat; origin at the bottom centre of the flat; 0.58 (x) x 0.008 (y) x 0.48 (z) m including the flaps; the original top edge is at -z; bottom layer = back + right panels (y 0..T), top layer = left + front panels (y T..2T).
+
+ship_carton_m_flat: 148 triangles, 2 meshes
+  mesh ship_carton_m_flat_cardboard#cardboard  tris=24
+  mesh ship_carton_m_flat_tex_ship_carton_m#tex_ship_carton_m  tris=124
+  A_HIT_0 pos=(-0.0, 0.006, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.78000,0.01200,0.68000 meta=
+  note: lies flat; origin at the bottom centre of the flat; 0.78 (x) x 0.008 (y) x 0.68 (z) m including the flaps; the original top edge is at -z; bottom layer = back + right panels (y 0..T), top layer = left + front panels (y T..2T).
+
+ship_carton_l_flat: 148 triangles, 2 meshes
+  mesh ship_carton_l_flat_cardboard#cardboard  tris=24
+  mesh ship_carton_l_flat_tex_ship_carton_l#tex_ship_carton_l  tris=124
+  A_HIT_0 pos=(-0.0, 0.006, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=1.00000,0.01200,0.86000 meta=
+  note: lies flat; origin at the bottom centre of the flat; 1.00 (x) x 0.008 (y) x 0.86 (z) m including the flaps; the original top edge is at -z; bottom layer = back + right panels (y 0..T), top layer = left + front panels (y T..2T).
+
+filler_paper_0: 2900 triangles, 1 meshes
+  mesh filler_paper_0_kraft_paper#kraft_paper  tris=2900
+  A_HIT_0 pos=(-0.00196, 0.05613, 0.00154) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.14941,0.11225,0.14448 meta=
+  note: size 0.149 x 0.112 x 0.144 m (x, y, z), origin bottom centre.
+
+filler_paper_1: 2900 triangles, 1 meshes
+  mesh filler_paper_1_kraft_paper#kraft_paper  tris=2900
+  A_HIT_0 pos=(-0.006, 0.03811, 0.00115) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.19084,0.07623,0.09275 meta=
+  note: size 0.191 x 0.076 x 0.093 m (x, y, z), origin bottom centre.
+
+filler_paper_2: 2900 triangles, 1 meshes
+  mesh filler_paper_2_kraft_paper#kraft_paper  tris=2900
+  A_HIT_0 pos=(-0.00284, 0.02458, -0.00602) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.19678,0.04916,0.14456 meta=
+  note: size 0.197 x 0.049 x 0.145 m (x, y, z), origin bottom centre.
+
+air_pillow_strip: 2880 triangles, 4 meshes
+  mesh pillow@A_PILLOW_0#bag_clear  tris=720
+  mesh pillow@A_PILLOW_1#bag_clear  tris=720
+  mesh pillow@A_PILLOW_2#bag_clear  tris=720
+  mesh pillow@A_PILLOW_3#bag_clear  tris=720
+  A_HIT_0 pos=(-0.0, 0.021, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.40000,0.04200,0.20000 meta=
+  A_PILLOW_0 pos=(-0.15, 0.021, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.10000,0.04200,0.20000 meta=index=0,pop=air_pillow_flat
+  A_PILLOW_1 pos=(-0.05, 0.021, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.10000,0.04200,0.20000 meta=index=1,pop=air_pillow_flat
+  A_PILLOW_2 pos=(0.05, 0.021, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.10000,0.04200,0.20000 meta=index=2,pop=air_pillow_flat
+  A_PILLOW_3 pos=(0.15, 0.021, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.10000,0.04200,0.20000 meta=index=3,pop=air_pillow_flat
+  note: each pillow is a piece on A_PILLOW_<n> (anchor = centre of its seal plane); swap in air_pillow_flat at the anchor's pose when popped.
+
+air_pillow_flat: 1056 triangles, 1 meshes
+  mesh air_pillow_flat_bag_clear#bag_clear  tris=1056
+  A_HIT_0 pos=(-0.0, 0.0, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.10000,0.00600,0.20000 meta=
+  note: origin = centre of the seal plane (the same frame as an A_PILLOW_<n> anchor), not the bottom.
+
+bubble_wrap_sheet: 4464 triangles, 1 meshes
+  mesh bubble_wrap_sheet_bubble_wrap#bubble_wrap  tris=4464
+  A_HIT_0 pos=(-0.0, 0.005, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.40000,0.01200,0.30000 meta=grid=14x12x0.0270,cols=14,rows=12,pitch=0.0270,row=0.02338,stagger=0.5,x0=-0.18225,z0=-0.12860,r=0.0105,h=0.0062,y=0.0003
+  note: bubble k = row * cols + col; centre x = x0 + col * pitch (+ pitch / 2 on odd rows), z = z0 + row * row, base at y ~ y; r = radius, h = dome height. Meta values are separate keys (grid=CxRxP repeats them).
+
+bubble_wrap_wrapped: 5086 triangles, 2 meshes
+  mesh bubble_wrap_wrapped_bubble_wrap#bubble_wrap  tris=5066
+  mesh bubble_wrap_wrapped_tape_clear#tape_clear  tris=20
+  A_HIT_0 pos=(-0.0, 0.04, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.29000,0.11000,0.17000 meta=nominal=0.220x0.080x0.140
+  note: wrapped round a nominal box 0.22 x 0.08 x 0.14 (x, y, z) standing on y = 0 at the origin; scale by (box size / nominal). The sleeve runs round the x axis, open at both x ends; overlap and tape on top.
+
+crumple_tape: 860 triangles, 1 meshes
+  mesh crumple_tape_tape_brown#tape_brown  tris=860
+  A_HIT_0 pos=(0.01118, 0.01626, 0.00132) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.06828,0.03253,0.04302 meta=
+  note: size 0.068 x 0.033 x 0.043 m (x, y, z), origin bottom centre.
+
+crumple_film: 1480 triangles, 1 meshes
+  mesh crumple_film_film_clear#film_clear  tris=1480
+  A_HIT_0 pos=(0.00213, 0.02807, -0.00174) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.09794,0.05613,0.07430 meta=
+  note: size 0.098 x 0.056 x 0.074 m (x, y, z), origin bottom centre.
+
+crumple_paper: 1300 triangles, 1 meshes
+  mesh crumple_paper_paper_white#paper_white  tris=1300
+  A_HIT_0 pos=(-0.00063, 0.02496, 0.00179) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.06411,0.04993,0.06128 meta=
+  note: size 0.064 x 0.050 x 0.061 m (x, y, z), origin bottom centre.
+
+crumple_bag: 1400 triangles, 1 meshes
+  mesh crumple_bag_bag_clear#bag_clear  tris=1400
+  A_HIT_0 pos=(0.00129, 0.01463, 0.00076) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.08447,0.04438,0.05642 meta=
+  note: size 0.084 x 0.044 x 0.056 m (x, y, z), origin bottom centre.
+
+twist_tie: 2252 triangles, 1 meshes
+  mesh twist_tie_white_plastic#white_plastic  tris=2252
+  A_HIT_0 pos=(-0.0, 0.004, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01200,0.04410,0.03760 meta=
+  A_TWIST_0 pos=(-0.0, 0.01685, -0.0) fwd=(0.0, 1.0, -0.0) up=(-0.0, 0.0, 1.0) size=0.00600,0.01850,0.00600 meta=turns=2
+  note: origin on the bundle axis; the loop wraps round the x axis (bundle ~30 mm wide in z, 18 mm in y); the twisted pigtail points +y; A_TWIST_0 = the twist.
+
+twist_tie_open: 1452 triangles, 1 meshes
+  mesh twist_tie_open_white_plastic#white_plastic  tris=1452
+  A_HIT_0 pos=(-0.0, 0.003, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.14000,0.00600,0.03000 meta=
+  note: lying flat, origin bottom centre.
+
+velcro_strap: 1400 triangles, 1 meshes
+  mesh velcro_strap_velcro_black#velcro_black  tris=1400
+  A_HIT_0 pos=(-0.0, 0.0, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01600,0.03100,0.03700 meta=
+  A_RIP_0 pos=(-0.0, -0.02222, 0.00289) fwd=(-0.0, -0.923, -0.384) up=(1.0, -0.0, -0.0) size=0.01600,0.00600,0.01200 meta=rip=1
+  note: origin on the bundle axis (x); wraps 1.4 turns round a ~24 x 18 mm bundle; A_RIP_0 = the free tab, fwd = the pull direction.
+
+hw_bag: 2474 triangles, 3 meshes
+  mesh hw_bag_bag_clear#bag_clear  tris=522
+  mesh hw_bag_paper_white#paper_white  tris=80
+  mesh hw_bag_steel#steel  tris=1872
+  A_HIT_0 pos=(-0.0, 0.004, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.06000,0.00900,0.08000 meta=
+  A_LABEL_0 pos=(-0.0, 0.0025, -0.0185) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.04600,0.01300,0.00020 meta=print=hw_label
+  note: lying flat, origin bottom centre, zip at -z; A_LABEL_0 = the white write-on strip (+Z out, +Y towards the zip) for the printed label text.
+
+cable_pouch: 2752 triangles, 4 meshes
+  mesh cable_pouch_black_plastic#black_plastic  tris=1128
+  mesh cable_pouch_fabric_black#fabric_black  tris=1360
+  mesh cable_pouch_steel_dark#steel_dark  tris=248
+  mesh cable_pouch_tex_ship_pouch_label#tex_ship_pouch_label  tris=16
+  A_HIT_0 pos=(-0.0, 0.0225, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.18000,0.04500,0.12000 meta=
+  A_ZIP_0 pos=(0.04059, 0.0225, 0.064) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01200,0.01200,0.01000 meta=zip=x
+  note: origin bottom centre; zip along the +z edge.
+
+box_cutter: 1940 triangles, 6 meshes
+  mesh box_cutter_alu#alu  tris=24
+  mesh box_cutter_black_plastic#black_plastic  tris=556
+  mesh box_cutter_rubber#rubber  tris=904
+  mesh box_cutter_steel#steel  tris=56
+  mesh box_cutter_steel_dark#steel_dark  tris=72
+  mesh box_cutter_tex_ship_cutter#tex_ship_cutter  tris=328
+  A_BLADE_0 pos=(-0.0115, 0.00775, 0.11) fwd=(0.0, -0.0, 1.0) up=(1.0, 0.0, 0.0) size=0.00200,0.01800,0.03000 meta=out=0.030
+  A_GRIP_0 pos=(-0.002, 0.00775, -0.035) fwd=(0.0, -0.0, 1.0) up=(1.0, 0.0, 0.0) size=0.02600,0.01550,0.09000 meta=hold=1
+  A_HIT_0 pos=(-0.0, 0.00775, 0.015) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.03400,0.01750,0.19000 meta=
+  note: lying on its side (origin bottom centre); length along z with the blade tip at +z, spine (slider) towards +x, cutting edge towards -x. A_GRIP_0: hold pose (fwd +z, up = spine). A_BLADE_0: the tip.
+
+unbox_table: 4064 triangles, 4 meshes
+  mesh unbox_table_black_plastic#black_plastic  tris=968
+  mesh unbox_table_steel#steel  tris=336
+  mesh unbox_table_steel_dark#steel_dark  tris=1400
+  mesh unbox_table_white_plastic#white_plastic  tris=1360
+  A_HIT_0 pos=(-0.0, 0.735, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=1.50000,0.05000,0.70000 meta=
+  A_HIT_1 pos=(0.615, 0.355, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.06000,0.71000,0.58000 meta=
+  A_HIT_2 pos=(-0.615, 0.355, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.06000,0.71000,0.58000 meta=
+  A_TOP_0 pos=(-0.0, 0.76, -0.0) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=1.50000,0.70000,0.00200 meta=surface=1
+  note: 1.5 x 0.7 m, top surface at y = 0.76; origin on the floor at the centre; fold-in-half (hinge across x = 0). A_TOP_0: local X = +x (1.5 m), local Y = -z (0.7 m), +Z = up out of the top.
+
+wheelie_bin: 5038 triangles, 9 meshes
+  mesh lid@A_LID_0#tex_ship_bin  tris=1150
+  mesh wheel@A_WHEEL_0#grey_plastic  tris=200
+  mesh wheel@A_WHEEL_0#rubber  tris=392
+  mesh wheel@A_WHEEL_0#steel  tris=144
+  mesh wheel@A_WHEEL_1#grey_plastic  tris=200
+  mesh wheel@A_WHEEL_1#rubber  tris=392
+  mesh wheel@A_WHEEL_1#steel  tris=144
+  mesh wheelie_bin_steel#steel  tris=48
+  mesh wheelie_bin_tex_ship_bin#tex_ship_bin  tris=2368
+  A_HANDLE_0 pos=(-0.0, 0.997, -0.412) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.44000,0.04000,0.04000 meta=grip=1
+  A_HIT_0 pos=(-0.0, 0.5025, -0.01) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.60000,1.00500,0.70000 meta=
+  A_HIT_1 pos=(-0.0, 0.1, -0.29) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.60000,0.20000,0.12000 meta=
+  A_LID_0 pos=(-0.0, 0.997, -0.412) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.60000,0.06000,0.72000 meta=hinge=x,open=-110,order=0
+  A_LINER_0 pos=(-0.0, 0.985, -0.01) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.55200,0.00400,0.64000 meta=fold=0.06
+  A_MOUTH_0 pos=(-0.0, 0.875, -0.01) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.50000,0.16000,0.58000 meta=volume=240
+  A_WHEEL_0 pos=(0.272, 0.1, -0.3) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.05000,0.20000,0.20000 meta=spin=x,r=0.100
+  A_WHEEL_1 pos=(-0.272, 0.1, -0.3) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.05000,0.20000,0.20000 meta=spin=x,r=0.100
+  note: 240 L, ~0.60 x 1.03 x 0.74 m with the handle; front +z, handle, hinge and wheels at -z. The lid opens by turning about A_LID_0's x axis (open=-110 lifts the front). Wheels spin about their anchor's local x.
+
+bin_bag_full: 4992 triangles, 1 meshes
+  mesh bin_bag_full_black_plastic#black_plastic  tris=4992
+  A_HIT_0 pos=(-0.0, 0.35, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.50000,0.70000,0.40000 meta=
+  A_KNOT_0 pos=(-0.0, 0.635, -0.0) fwd=(0.0, 1.0, -0.0) up=(-0.0, 0.0, 1.0) size=0.09000,0.09000,0.09000 meta=grab=1
+  note: origin bottom centre; A_KNOT_0 at the knot (+Z up) is the grab point.
+
+bin_bag_roll: 2488 triangles, 3 meshes
+  mesh bin_bag_roll_black_plastic#black_plastic  tris=2264
+  mesh bin_bag_roll_cardboard#cardboard  tris=160
+  mesh bin_bag_roll_tex_ship_binroll#tex_ship_binroll  tris=64
+  A_HIT_0 pos=(-0.0, 0.038, 0.005) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.26000,0.07600,0.09600 meta=
+  A_TEAR_0 pos=(0.1206, 0.07749, 0.02658) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.03000,0.02000,0.02000 meta=tear=1
+  note: lying along x, origin bottom centre; A_TEAR_0 = the lifted corner of the outer bag.
+
+paperwork_tray: 1312 triangles, 3 meshes
+  mesh paperwork_tray_paint_black#paint_black  tris=976
+  mesh paperwork_tray_rubber#rubber  tris=160
+  mesh paperwork_tray_tex_ship_tray_mesh#tex_ship_tray_mesh  tris=176
+  A_HIT_0 pos=(-0.0, 0.033, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.27600,0.07000,0.35100 meta=
+  A_STACK_0 pos=(-0.0, 0.0067, -0.0) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.21500,0.30000,0.05500 meta=paper=A4,portrait=1
+  note: A4 letter tray, origin bottom centre, front scoop at +z; tex_ship_tray_mesh is an alpha-cutout perforation (holes alpha 0); A_STACK_0 = the top of the floor where papers stack (local X = +x, local Y = -z (the page's top towards the back), +Z up).

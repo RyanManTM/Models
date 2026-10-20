@@ -1,0 +1,7 @@
+plug_fp_reset: 734 triangles, 3 meshes
+  mesh plug_fp_reset_connector_black#connector_black  tris=300
+  mesh plug_fp_reset_tex_parts_c_palette#tex_parts_c_palette  tris=432
+  mesh plug_fp_reset_tex_parts_c_plug_labels#tex_parts_c_plug_labels  tris=2
+  A_CABLE_0 pos=(-0.0, 0.0, 0.0404) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00260,0.00260,0.01000 meta=r=0.0013,n=2
+  A_HIT_0 pos=(-0.0, 0.0, 0.007) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00708,0.00454,0.01400 meta=
+W=0.0051 H=0.0025 L=0.0140

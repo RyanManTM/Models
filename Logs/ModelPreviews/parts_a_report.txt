@@ -1,0 +1,299 @@
+PARTS BATCH A - REPORT (motherboards, I/O shields, CPUs, RAM, SSDs)
+==============================================================================
+
+FILES (Tools/Blender/)
+  parts_pcb.py      helper module: batched mesh builder with UVs, flat 2D artwork renderer (PCB, labels,
+                    chip markings), skyline texture atlas, SMD/chip helpers, textured EEVEE preview, and
+                    validate() (names under 63 chars, '#<tag>' intact, one material, known tag)
+  build_board.py    mb_ridge_b5, mb_ridge_z4 + io_ridge_b5, io_ridge_z4 (one layout drives geometry and art)
+  build_cpu.py      cpu_arc5, cpu_arc7, cpu_tiron5
+  build_ram.py      ram_ddr5_16, ram_ddr4_8
+  build_ssd.py      ssd_1tb (M.2 2280), ssd_sata_500 (2.5 inch, 7 mm)
+  build_parts_a.py  runner: "D:\New folder\blender.exe" -b --factory-startup -P Tools/Blender/build_parts_a.py
+                    -- [--no-previews] [ids]   (all 11 models in about 50-100 s; exits 1 if an FBX is missing)
+
+OUTPUTS
+  Assets/Resources/Models/<id>.fbx for the 11 ids below; previews Logs/ModelPreviews/<id>_<n>.png
+  (boards _0.._9, shields _0.._1, other parts _0.._3).
+
+MODELS (triangles / mesh objects)
+  mb_ridge_b5     44,426 tris   39 meshes
+  mb_ridge_z4     44,126 tris   39 meshes
+  io_ridge_b5      1,244 tris    1 meshes
+  io_ridge_z4      1,420 tris    1 meshes
+  cpu_arc5        13,696 tris    5 meshes
+  cpu_arc7        13,696 tris    5 meshes
+  cpu_tiron5      14,410 tris    5 meshes
+  ram_ddr5_16      5,042 tris    8 meshes
+  ram_ddr4_8       5,202 tris    6 meshes
+  ssd_1tb          1,416 tris    6 meshes
+  ssd_sata_500     1,406 tris    6 meshes
+  Boards: 17 static meshes (joined by tag) + 22 moving pieces linked by name '@<anchor>':
+    lever@A_LEVER_CPU_0#steel (rod) + handle@A_LEVER_CPU_0, plate@A_PLATE_CPU_0, cap@A_COVER_CPU_0,
+    latch@A_LATCH_RAM_<i>_<j> x8, latch@A_LATCH_PCIE_0, heatsink/logo/pad@A_COVER_M2_0,
+    film@A_FILM_M2_0@A_COVER_M2_0 (that anchor's own name contains '@': split at the FIRST '@'),
+    led@A_LED_DEBUG_* x4. All are modelled in the closed/installed pose with the pivot at the anchor.
+
+TEXTURES (Assets/Resources/Models/Textures/)
+  mb_ridge_b5_pcb.png      2048x2560  PCB top artwork, 8.4 px/mm (u = 0.122 - x, v = y + 0.1525)
+  mb_ridge_b5_marks.png    2048x2048  atlas: chip markings, logo plates, socket pin field, PnP cap, coloured-plastic swatches
+  mb_ridge_z4_pcb.png      2048x2560  as above, red/black theme
+  mb_ridge_z4_marks.png    2048x2048  as above
+  io_ridge_b5.png          1024x2048  painted shield face with labels
+  io_ridge_z4.png          1024x2048  bare steel shield face with labels
+  cpu_v5_pcb.png           2048x1024  substrate top + land side (shared by cpu_arc5 and cpu_arc7)
+  cpu_l17_pcb.png          2048x1024  substrate top + land side
+  cpu_arc5_ihs.png         1024x1024  laser-etched nickel heat spreader
+  cpu_arc7_ihs.png         1024x1024  laser-etched nickel heat spreader
+  cpu_tiron5_ihs.png       1024x1024  laser-etched nickel heat spreader
+  ram_ddr5_16.png          2048x1024  spreader art, PCB side, product sticker
+  ram_ddr4_8.png           2048x1024  spreader art, PCB side, product sticker
+  ssd_1tb.png              2048x1024  PCB top/bottom, label, controller and PMIC markings
+  ssd_sata_500.png         2048x1024  top lid art + bottom sticker
+  Suggested URP settings for the tex_ tags (the previews use these): *_ihs metallic 0.85 smoothness 0.7;
+  ram_* metallic 0.6 smoothness 0.62 (brushed spreaders); io_ridge_z4 metallic 0.6; io_ridge_b5 0.2;
+  everything else non-metal, smoothness about 0.5.
+
+ANCHORS (Unity metres in the part's frame; size = hitbox in the anchor's own axes; default forward +z, up +y)
+  Conventions:
+   - A_SOCKET_* = the seated pose of the part's origin (CPU contact face, RAM bottom-edge centre, SSD PCB
+     bottom-face centre, GPU contact origin, cooler base = CPU IHS top).
+   - A_PORT_* = the mouth/opening plane, forward = the side the plug comes from; meta depth=<m> is how far the
+     plug face travels in when fully seated. Pin headers: anchor at the pin-tip plane; meta pin1=x,y and
+     colstep/rowstep give the pin grid in the anchor's local x/y (Intel numbering: odd pins on row 0).
+     Mini-Fit (24-pin, EPS): the up axis points at the latch catch (meta latch=+up).
+     Rear I/O ports: forward +x, up +z (board normal). Board SATA ports: forward -x, up +z.
+   - A_HOLE_n at the PCB bottom (z 0) facing -z (the standoff comes from below); A_SCREW_PH2_n at the PCB top.
+   - Hinges: meta hinge=<axis>,open=<deg> in the anchor's axes; a positive angle about +x turns +y toward +z.
+
+  [mb_ridge_b5]
+    A_BUTTON_FLASHBACK_0         pos=(0.1260,0.1450,0.0071)  size=(0.0084,0.0084,0.0050)  depth=0.0015,button=flashback,usb=A_PORT_USBA_0,press=-x
+    A_COVER_CPU_0                pos=(0.0300,0.0750,0.0082)  size=(0.0400,0.0400,0.0030)  pnp_cap=1,remove=+z
+    A_COVER_M2_0                 pos=(0.0290,-0.0150,0.0107)  size=(0.1060,0.0250,0.0050)  remove=+z,screws=2
+    A_FILM_M2_0@A_COVER_M2_0     pos=(0.0325,-0.0150,0.0062)  size=(0.0800,0.0230,0.0010)  peel=+x
+    A_HIT_0                      pos=(-0.0000,0.0000,0.0008)  size=(0.2440,0.3050,0.0016)  
+    A_HIT_1                      pos=(0.0450,0.0850,0.0080)  size=(0.1200,0.1400,0.0140)  
+    A_HIT_2                      pos=(0.1105,0.0750,0.0190)  size=(0.0330,0.1600,0.0380)  
+    A_HIT_3                      pos=(-0.0420,0.0673,0.0050)  size=(0.0300,0.1500,0.0090)  
+    A_HIT_4                      pos=(0.0100,-0.0850,0.0060)  size=(0.1800,0.1300,0.0100)  
+    A_HOLE_0                     pos=(0.1118,-0.1359,-0.0000)  size=(0.0080,0.0080,0.0030)  atx=A,d=0.00396
+    A_HOLE_1                     pos=(0.1118,-0.0114,-0.0000)  size=(0.0080,0.0080,0.0030)  atx=C,d=0.00396
+    A_HOLE_2                     pos=(0.0889,0.1461,-0.0000)  size=(0.0080,0.0080,0.0030)  atx=F,d=0.00396
+    A_HOLE_3                     pos=(-0.0432,-0.1359,-0.0000)  size=(0.0080,0.0080,0.0030)  atx=G,d=0.00396
+    A_HOLE_4                     pos=(-0.0432,-0.0114,-0.0000)  size=(0.0080,0.0080,0.0030)  atx=H,d=0.00396
+    A_HOLE_5                     pos=(-0.0432,0.1461,-0.0000)  size=(0.0080,0.0080,0.0030)  atx=J,d=0.00396
+    A_HOLE_6                     pos=(-0.1156,-0.1359,-0.0000)  size=(0.0080,0.0080,0.0030)  atx=K,d=0.00396
+    A_HOLE_7                     pos=(-0.1156,-0.0114,-0.0000)  size=(0.0080,0.0080,0.0030)  atx=L,d=0.00396
+    A_HOLE_8                     pos=(-0.1156,0.1461,-0.0000)  size=(0.0080,0.0080,0.0030)  atx=M,d=0.00396
+    A_LATCH_PCIE_0               pos=(-0.0195,-0.0450,0.0024)  size=(0.0060,0.0075,0.0120)  hinge=y,open=-25
+    A_LATCH_RAM_0_0              pos=(-0.0304,-0.0034,0.0028)  size=(0.0064,0.0060,0.0180)  hinge=x,open=35
+    A_LATCH_RAM_0_1              pos=(-0.0304,0.1380,0.0028)  size=(0.0064,0.0060,0.0180)  hinge=x,open=-35
+    A_LATCH_RAM_1_0              pos=(-0.0380,-0.0034,0.0028)  size=(0.0064,0.0060,0.0180)  hinge=x,open=35
+    A_LATCH_RAM_1_1              pos=(-0.0380,0.1380,0.0028)  size=(0.0064,0.0060,0.0180)  hinge=x,open=-35
+    A_LATCH_RAM_2_0              pos=(-0.0456,-0.0034,0.0028)  size=(0.0064,0.0060,0.0180)  hinge=x,open=35
+    A_LATCH_RAM_2_1              pos=(-0.0456,0.1380,0.0028)  size=(0.0064,0.0060,0.0180)  hinge=x,open=-35
+    A_LATCH_RAM_3_0              pos=(-0.0532,-0.0034,0.0028)  size=(0.0064,0.0060,0.0180)  hinge=x,open=35
+    A_LATCH_RAM_3_1              pos=(-0.0532,0.1380,0.0028)  size=(0.0064,0.0060,0.0180)  hinge=x,open=-35
+    A_LED_DEBUG_BOOT_0           pos=(-0.1040,0.1030,0.0024)  size=(0.0040,0.0030,0.0020)  colour=green
+    A_LED_DEBUG_CPU_0            pos=(-0.1040,0.1210,0.0024)  size=(0.0040,0.0030,0.0020)  colour=red
+    A_LED_DEBUG_DRAM_0           pos=(-0.1040,0.1150,0.0024)  size=(0.0040,0.0030,0.0020)  colour=yellow
+    A_LED_DEBUG_VGA_0            pos=(-0.1040,0.1090,0.0024)  size=(0.0040,0.0030,0.0020)  colour=white
+    A_LEVER_CPU_0                pos=(0.0586,0.1060,0.0030)  size=(0.0050,0.0600,0.0080)  hinge=x,open=-115,plate=A_PLATE_CPU_0
+    A_MARK_SOCKET_0              pos=(0.0520,0.0529,0.0056)  size=(0.0030,0.0030,0.0020)  pin1=+x-y
+    A_PLATE_CPU_0                pos=(0.0300,0.1060,0.0030)  size=(0.0452,0.0550,0.0040)  hinge=x,open=-125
+    A_PORT_ATX24_0               pos=(-0.1156,0.0620,0.0140)  size=(0.0120,0.0542,0.0080)  depth=0.0075,pins=24,latch=+up,atx=24
+    A_PORT_AUDIOHDR_0            pos=(0.1040,-0.1466,0.0101)  size=(0.0147,0.0071,0.0080)  depth=0.0060,pins=9;pin1=-0.00508,-0.00127;colstep=0.00254,0.00000;rowstep=0.00000,0.00254;hd_audio=1
+    A_PORT_AUDIOJACK_0           pos=(0.1260,0.0120,0.0185)  size=(0.0056,0.0056,0.0300)  depth=0.0140,jack=line_out,colour=green
+    A_PORT_DP_0                  pos=(0.1260,0.1110,0.0119)  size=(0.0180,0.0067,0.0180)  depth=0.0080,dp=1,latch=1
+    A_PORT_EPS8_0                pos=(0.0595,0.1455,0.0140)  size=(0.0206,0.0120,0.0080)  depth=0.0075,pins=8,latch=+up,split=4+4
+    A_PORT_ETH_0                 pos=(0.1260,0.0725,0.0244)  size=(0.0137,0.0105,0.0260)  depth=0.0120,rj45=1,latch=-z
+    A_PORT_FANCPU_0              pos=(-0.0260,0.1465,0.0101)  size=(0.0122,0.0065,0.0080)  depth=0.0060,pins=4;pin1=-0.00381,0.00000;colstep=0.00254,0.00000;rowstep=0.00000,0.00254;fan=cpu,pinout=GND|12V|SENSE|PWM
+    A_PORT_FANSYS_0              pos=(0.0080,-0.1466,0.0101)  size=(0.0122,0.0065,0.0080)  depth=0.0060,pins=4;pin1=0.00381,-0.00000;colstep=-0.00254,0.00000;rowstep=-0.00000,-0.00254;fan=sys1
+    A_PORT_FANSYS_1              pos=(-0.1170,-0.0300,0.0101)  size=(0.0065,0.0122,0.0080)  depth=0.0060,pins=4;pin1=0.00000,0.00381;colstep=-0.00000,-0.00254;rowstep=0.00254,-0.00000;fan=sys2
+    A_PORT_FANSYS_2              pos=(-0.0800,0.1465,0.0101)  size=(0.0122,0.0065,0.0080)  depth=0.0060,pins=4;pin1=-0.00381,0.00000;colstep=0.00254,0.00000;rowstep=0.00000,0.00254;fan=sys3
+    A_PORT_FPANEL_0              pos=(-0.1000,-0.1466,0.0101)  size=(0.0147,0.0071,0.0080)  depth=0.0060,pins=9;pin1=-0.00508,-0.00127;colstep=0.00254,0.00000;rowstep=0.00000,0.00254;pinout=1:HDD_LED+,2:PLED+,3:HDD_LED-,4:PLED-,5:RESET_GND,6:PWR_SW,7:RESET,8:PWR_GND,9:NC,10:KEY;pwr=6,8;reset=5,7;pled=2,4;hdd=1,3
+    A_PORT_HDMI_0                pos=(0.1260,0.1110,0.0052)  size=(0.0160,0.0065,0.0180)  depth=0.0080,hdmi=1
+    A_PORT_RGB_0                 pos=(0.0860,-0.1466,0.0101)  size=(0.0122,0.0045,0.0080)  depth=0.0060,pins=3;pin1=-0.00381,0.00000;colstep=0.00254,0.00000;rowstep=0.00000,0.00254;argb=5v,pinout=5V|D|KEY|GND
+    A_PORT_SATA_0                pos=(-0.1230,-0.0620,0.0051)  size=(0.0110,0.0060,0.0120)  depth=0.0050,sata=SATA6G_1
+    A_PORT_SATA_1                pos=(-0.1230,-0.0620,0.0115)  size=(0.0110,0.0060,0.0120)  depth=0.0050,sata=SATA6G_2
+    A_PORT_SATA_2                pos=(-0.1230,-0.0790,0.0051)  size=(0.0110,0.0060,0.0120)  depth=0.0050,sata=SATA6G_3
+    A_PORT_SATA_3                pos=(-0.1230,-0.0790,0.0115)  size=(0.0110,0.0060,0.0120)  depth=0.0050,sata=SATA6G_4
+    A_PORT_USB3HDR_0             pos=(0.0360,-0.1472,0.0105)  size=(0.0244,0.0086,0.0080)  depth=0.0060,pins=19;pin1=-0.00900,-0.00100;colstep=0.00200,0.00000;rowstep=0.00000,0.00200;usb3=19pin,key=+y
+    A_PORT_USBA_0                pos=(0.1260,0.1305,0.0055)  size=(0.0145,0.0072,0.0200)  depth=0.0090,usb=2.0
+    A_PORT_USBA_1                pos=(0.1260,0.1305,0.0133)  size=(0.0145,0.0072,0.0200)  depth=0.0090,usb=2.0
+    A_PORT_USBA_2                pos=(0.1260,0.0925,0.0055)  size=(0.0145,0.0072,0.0200)  depth=0.0090,usb=5g
+    A_PORT_USBA_3                pos=(0.1260,0.0925,0.0133)  size=(0.0145,0.0072,0.0200)  depth=0.0090,usb=5g
+    A_PORT_USBA_4                pos=(0.1260,0.0725,0.0055)  size=(0.0145,0.0072,0.0200)  depth=0.0090,usb=10g
+    A_PORT_USBA_5                pos=(0.1260,0.0725,0.0133)  size=(0.0145,0.0072,0.0200)  depth=0.0090,usb=10g
+    A_SCREW_PH0_0@A_COVER_M2_0   pos=(-0.0200,-0.0150,0.0098)  size=(0.0050,0.0050,0.0040)  
+    A_SCREW_PH0_1@A_COVER_M2_0   pos=(0.0780,-0.0150,0.0098)  size=(0.0050,0.0050,0.0040)  
+    A_SCREW_PH2_0                pos=(0.1118,-0.1359,0.0016)  size=(0.0070,0.0070,0.0060)  hole=A_HOLE_0,m3=1
+    A_SCREW_PH2_1                pos=(0.1118,-0.0114,0.0016)  size=(0.0070,0.0070,0.0060)  hole=A_HOLE_1,m3=1
+    A_SCREW_PH2_2                pos=(0.0889,0.1461,0.0016)  size=(0.0070,0.0070,0.0060)  hole=A_HOLE_2,m3=1
+    A_SCREW_PH2_3                pos=(-0.0432,-0.1359,0.0016)  size=(0.0070,0.0070,0.0060)  hole=A_HOLE_3,m3=1
+    A_SCREW_PH2_4                pos=(-0.0432,-0.0114,0.0016)  size=(0.0070,0.0070,0.0060)  hole=A_HOLE_4,m3=1
+    A_SCREW_PH2_5                pos=(-0.0432,0.1461,0.0016)  size=(0.0070,0.0070,0.0060)  hole=A_HOLE_5,m3=1
+    A_SCREW_PH2_6                pos=(-0.1156,-0.1359,0.0016)  size=(0.0070,0.0070,0.0060)  hole=A_HOLE_6,m3=1
+    A_SCREW_PH2_7                pos=(-0.1156,-0.0114,0.0016)  size=(0.0070,0.0070,0.0060)  hole=A_HOLE_7,m3=1
+    A_SCREW_PH2_8                pos=(-0.1156,0.1461,0.0016)  size=(0.0070,0.0070,0.0060)  hole=A_HOLE_8,m3=1
+    A_SOCKET_COOLER_0            pos=(0.0300,0.0750,0.0106)  size=(0.0950,0.1250,0.0400)  holes=0.054x0.090,brackets=1
+    A_SOCKET_CPU_0               pos=(0.0300,0.0750,0.0046)  size=(0.0400,0.0400,0.0060)  socket=V5,pin1=+x-y
+    A_SOCKET_M2_0                pos=(0.0300,-0.0150,0.0041)  size=(0.0800,0.0220,0.0040)  type=2280,key=M,keyy=0.0060,insert_angle=20
+    A_SOCKET_PCIE16_0            pos=(0.0300,-0.0427,0.0121)  size=(0.0890,0.0090,0.0140)  lanes=16,card_origin=1
+    A_SOCKET_PCIE1_0             pos=(0.0620,-0.0833,0.0121)  size=(0.0250,0.0090,0.0140)  lanes=1,looks_only=1
+    A_SOCKET_PCIE1_1             pos=(0.0620,-0.1240,0.0121)  size=(0.0250,0.0090,0.0140)  lanes=1,looks_only=1
+    A_SOCKET_RAM_0               pos=(-0.0304,0.0673,0.0030)  size=(0.0076,0.1396,0.0140)  notch=-0.0039,slot=A1,mem=DDR5,latch=both,pref=0
+    A_SOCKET_RAM_1               pos=(-0.0380,0.0673,0.0030)  size=(0.0076,0.1396,0.0140)  notch=-0.0039,slot=A2,mem=DDR5,latch=both,pref=1
+    A_SOCKET_RAM_2               pos=(-0.0456,0.0673,0.0030)  size=(0.0076,0.1396,0.0140)  notch=-0.0039,slot=B1,mem=DDR5,latch=both,pref=0
+    A_SOCKET_RAM_3               pos=(-0.0532,0.0673,0.0030)  size=(0.0076,0.1396,0.0140)  notch=-0.0039,slot=B2,mem=DDR5,latch=both,pref=1
+    A_STANDOFF_M2_0              pos=(0.0700,-0.0150,0.0041)  size=(0.0050,0.0050,0.0030)  screw=ph0
+
+  [io_ridge_b5]
+    A_HIT_0                      pos=(-0.0000,0.0000,-0.0000)  size=(0.0040,0.1588,0.0445)  board_pose=0.1279,0.07546,0.01999
+
+  [mb_ridge_z4]
+    A_BUTTON_FLASHBACK_0         pos=(0.1260,0.1450,0.0196)  size=(0.0084,0.0084,0.0050)  depth=0.0015,button=flashback,usb=A_PORT_USBA_0,press=-x
+    A_COVER_CPU_0                pos=(0.0300,0.0750,0.0082)  size=(0.0400,0.0400,0.0030)  pnp_cap=1,remove=+z
+    A_COVER_M2_0                 pos=(0.0290,-0.0150,0.0107)  size=(0.1060,0.0250,0.0050)  remove=+z,screws=2
+    A_FILM_M2_0@A_COVER_M2_0     pos=(0.0325,-0.0150,0.0062)  size=(0.0800,0.0230,0.0010)  peel=+x
+    A_HIT_0                      pos=(-0.0000,0.0000,0.0008)  size=(0.2440,0.3050,0.0016)  
+    A_HIT_1                      pos=(0.0450,0.0850,0.0080)  size=(0.1200,0.1400,0.0140)  
+    A_HIT_2                      pos=(0.1105,0.0750,0.0190)  size=(0.0330,0.1600,0.0380)  
+    A_HIT_3                      pos=(-0.0420,0.0673,0.0050)  size=(0.0300,0.1500,0.0090)  
+    A_HIT_4                      pos=(0.0100,-0.0850,0.0060)  size=(0.1800,0.1300,0.0100)  
+    A_HOLE_0                     pos=(0.1118,-0.1359,-0.0000)  size=(0.0080,0.0080,0.0030)  atx=A,d=0.00396
+    A_HOLE_1                     pos=(0.1118,-0.0114,-0.0000)  size=(0.0080,0.0080,0.0030)  atx=C,d=0.00396
+    A_HOLE_2                     pos=(0.0889,0.1461,-0.0000)  size=(0.0080,0.0080,0.0030)  atx=F,d=0.00396
+    A_HOLE_3                     pos=(-0.0432,-0.1359,-0.0000)  size=(0.0080,0.0080,0.0030)  atx=G,d=0.00396
+    A_HOLE_4                     pos=(-0.0432,-0.0114,-0.0000)  size=(0.0080,0.0080,0.0030)  atx=H,d=0.00396
+    A_HOLE_5                     pos=(-0.0432,0.1461,-0.0000)  size=(0.0080,0.0080,0.0030)  atx=J,d=0.00396
+    A_HOLE_6                     pos=(-0.1156,-0.1359,-0.0000)  size=(0.0080,0.0080,0.0030)  atx=K,d=0.00396
+    A_HOLE_7                     pos=(-0.1156,-0.0114,-0.0000)  size=(0.0080,0.0080,0.0030)  atx=L,d=0.00396
+    A_HOLE_8                     pos=(-0.1156,0.1461,-0.0000)  size=(0.0080,0.0080,0.0030)  atx=M,d=0.00396
+    A_LATCH_PCIE_0               pos=(-0.0195,-0.0450,0.0024)  size=(0.0060,0.0075,0.0120)  hinge=y,open=-25
+    A_LATCH_RAM_0_0              pos=(-0.0304,-0.0034,0.0028)  size=(0.0064,0.0060,0.0180)  hinge=x,open=35
+    A_LATCH_RAM_0_1              pos=(-0.0304,0.1380,0.0028)  size=(0.0064,0.0060,0.0180)  hinge=x,open=-35
+    A_LATCH_RAM_1_0              pos=(-0.0380,-0.0034,0.0028)  size=(0.0064,0.0060,0.0180)  hinge=x,open=35
+    A_LATCH_RAM_1_1              pos=(-0.0380,0.1380,0.0028)  size=(0.0064,0.0060,0.0180)  hinge=x,open=-35
+    A_LATCH_RAM_2_0              pos=(-0.0456,-0.0034,0.0028)  size=(0.0064,0.0060,0.0180)  hinge=x,open=35
+    A_LATCH_RAM_2_1              pos=(-0.0456,0.1380,0.0028)  size=(0.0064,0.0060,0.0180)  hinge=x,open=-35
+    A_LATCH_RAM_3_0              pos=(-0.0532,-0.0034,0.0028)  size=(0.0064,0.0060,0.0180)  hinge=x,open=35
+    A_LATCH_RAM_3_1              pos=(-0.0532,0.1380,0.0028)  size=(0.0064,0.0060,0.0180)  hinge=x,open=-35
+    A_LED_DEBUG_BOOT_0           pos=(-0.1040,0.1030,0.0024)  size=(0.0040,0.0030,0.0020)  colour=green
+    A_LED_DEBUG_CPU_0            pos=(-0.1040,0.1210,0.0024)  size=(0.0040,0.0030,0.0020)  colour=red
+    A_LED_DEBUG_DRAM_0           pos=(-0.1040,0.1150,0.0024)  size=(0.0040,0.0030,0.0020)  colour=yellow
+    A_LED_DEBUG_VGA_0            pos=(-0.1040,0.1090,0.0024)  size=(0.0040,0.0030,0.0020)  colour=white
+    A_LEVER_CPU_0                pos=(0.0568,0.1090,0.0030)  size=(0.0050,0.0600,0.0080)  hinge=x,open=-115,plate=A_PLATE_CPU_0
+    A_MARK_SOCKET_0              pos=(0.0509,0.0503,0.0056)  size=(0.0030,0.0030,0.0020)  pin1=+x-y
+    A_PLATE_CPU_0                pos=(0.0300,0.1090,0.0030)  size=(0.0424,0.0550,0.0040)  hinge=x,open=-125
+    A_PORT_ATX24_0               pos=(-0.1156,0.0620,0.0140)  size=(0.0120,0.0542,0.0080)  depth=0.0075,pins=24,latch=+up,atx=24
+    A_PORT_AUDIOHDR_0            pos=(0.1040,-0.1466,0.0101)  size=(0.0147,0.0071,0.0080)  depth=0.0060,pins=9;pin1=-0.00508,-0.00127;colstep=0.00254,0.00000;rowstep=0.00000,0.00254;hd_audio=1
+    A_PORT_AUDIOJACK_0           pos=(0.1260,0.0118,0.0185)  size=(0.0056,0.0056,0.0300)  depth=0.0140,jack=line_out,colour=green
+    A_PORT_DP_0                  pos=(0.1260,0.1095,0.0119)  size=(0.0180,0.0067,0.0180)  depth=0.0080,dp=1,latch=1
+    A_PORT_EPS8_0                pos=(0.0595,0.1455,0.0140)  size=(0.0206,0.0120,0.0080)  depth=0.0075,pins=8,latch=+up,split=4+4
+    A_PORT_ETH_0                 pos=(0.1260,0.0715,0.0244)  size=(0.0137,0.0105,0.0260)  depth=0.0120,rj45=1,latch=-z
+    A_PORT_FANCPU_0              pos=(-0.0260,0.1465,0.0101)  size=(0.0122,0.0065,0.0080)  depth=0.0060,pins=4;pin1=-0.00381,0.00000;colstep=0.00254,0.00000;rowstep=0.00000,0.00254;fan=cpu,pinout=GND|12V|SENSE|PWM
+    A_PORT_FANSYS_0              pos=(0.0080,-0.1466,0.0101)  size=(0.0122,0.0065,0.0080)  depth=0.0060,pins=4;pin1=0.00381,-0.00000;colstep=-0.00254,0.00000;rowstep=-0.00000,-0.00254;fan=sys1
+    A_PORT_FANSYS_1              pos=(-0.1170,-0.0300,0.0101)  size=(0.0065,0.0122,0.0080)  depth=0.0060,pins=4;pin1=0.00000,0.00381;colstep=-0.00000,-0.00254;rowstep=0.00254,-0.00000;fan=sys2
+    A_PORT_FANSYS_2              pos=(-0.0800,0.1465,0.0101)  size=(0.0122,0.0065,0.0080)  depth=0.0060,pins=4;pin1=-0.00381,0.00000;colstep=0.00254,0.00000;rowstep=0.00000,0.00254;fan=sys3
+    A_PORT_FPANEL_0              pos=(-0.1000,-0.1466,0.0101)  size=(0.0147,0.0071,0.0080)  depth=0.0060,pins=9;pin1=-0.00508,-0.00127;colstep=0.00254,0.00000;rowstep=0.00000,0.00254;pinout=1:HDD_LED+,2:PLED+,3:HDD_LED-,4:PLED-,5:RESET_GND,6:PWR_SW,7:RESET,8:PWR_GND,9:NC,10:KEY;pwr=6,8;reset=5,7;pled=2,4;hdd=1,3
+    A_PORT_HDMI_0                pos=(0.1260,0.1095,0.0052)  size=(0.0160,0.0065,0.0180)  depth=0.0080,hdmi=1
+    A_PORT_RGB_0                 pos=(0.0860,-0.1466,0.0101)  size=(0.0122,0.0045,0.0080)  depth=0.0060,pins=3;pin1=-0.00381,0.00000;colstep=0.00254,0.00000;rowstep=0.00000,0.00254;argb=5v,pinout=5V|D|KEY|GND
+    A_PORT_SATA_0                pos=(-0.1230,-0.0620,0.0051)  size=(0.0110,0.0060,0.0120)  depth=0.0050,sata=SATA6G_1
+    A_PORT_SATA_1                pos=(-0.1230,-0.0620,0.0115)  size=(0.0110,0.0060,0.0120)  depth=0.0050,sata=SATA6G_2
+    A_PORT_SATA_2                pos=(-0.1230,-0.0790,0.0051)  size=(0.0110,0.0060,0.0120)  depth=0.0050,sata=SATA6G_3
+    A_PORT_SATA_3                pos=(-0.1230,-0.0790,0.0115)  size=(0.0110,0.0060,0.0120)  depth=0.0050,sata=SATA6G_4
+    A_PORT_USB3HDR_0             pos=(0.0360,-0.1472,0.0105)  size=(0.0244,0.0086,0.0080)  depth=0.0060,pins=19;pin1=-0.00900,-0.00100;colstep=0.00200,0.00000;rowstep=0.00000,0.00200;usb3=19pin,key=+y
+    A_PORT_USBA_0                pos=(0.1260,0.1280,0.0055)  size=(0.0145,0.0072,0.0200)  depth=0.0090,usb=2.0
+    A_PORT_USBA_1                pos=(0.1260,0.1280,0.0133)  size=(0.0145,0.0072,0.0200)  depth=0.0090,usb=2.0
+    A_PORT_USBA_2                pos=(0.1260,0.0910,0.0055)  size=(0.0145,0.0072,0.0200)  depth=0.0090,usb=5g
+    A_PORT_USBA_3                pos=(0.1260,0.0910,0.0133)  size=(0.0145,0.0072,0.0200)  depth=0.0090,usb=5g
+    A_PORT_USBA_4                pos=(0.1260,0.0715,0.0055)  size=(0.0145,0.0072,0.0200)  depth=0.0090,usb=5g
+    A_PORT_USBA_5                pos=(0.1260,0.0715,0.0133)  size=(0.0145,0.0072,0.0200)  depth=0.0090,usb=5g
+    A_SCREW_PH0_0@A_COVER_M2_0   pos=(-0.0200,-0.0150,0.0098)  size=(0.0050,0.0050,0.0040)  
+    A_SCREW_PH0_1@A_COVER_M2_0   pos=(0.0780,-0.0150,0.0098)  size=(0.0050,0.0050,0.0040)  
+    A_SCREW_PH2_0                pos=(0.1118,-0.1359,0.0016)  size=(0.0070,0.0070,0.0060)  hole=A_HOLE_0,m3=1
+    A_SCREW_PH2_1                pos=(0.1118,-0.0114,0.0016)  size=(0.0070,0.0070,0.0060)  hole=A_HOLE_1,m3=1
+    A_SCREW_PH2_2                pos=(0.0889,0.1461,0.0016)  size=(0.0070,0.0070,0.0060)  hole=A_HOLE_2,m3=1
+    A_SCREW_PH2_3                pos=(-0.0432,-0.1359,0.0016)  size=(0.0070,0.0070,0.0060)  hole=A_HOLE_3,m3=1
+    A_SCREW_PH2_4                pos=(-0.0432,-0.0114,0.0016)  size=(0.0070,0.0070,0.0060)  hole=A_HOLE_4,m3=1
+    A_SCREW_PH2_5                pos=(-0.0432,0.1461,0.0016)  size=(0.0070,0.0070,0.0060)  hole=A_HOLE_5,m3=1
+    A_SCREW_PH2_6                pos=(-0.1156,-0.1359,0.0016)  size=(0.0070,0.0070,0.0060)  hole=A_HOLE_6,m3=1
+    A_SCREW_PH2_7                pos=(-0.1156,-0.0114,0.0016)  size=(0.0070,0.0070,0.0060)  hole=A_HOLE_7,m3=1
+    A_SCREW_PH2_8                pos=(-0.1156,0.1461,0.0016)  size=(0.0070,0.0070,0.0060)  hole=A_HOLE_8,m3=1
+    A_SOCKET_COOLER_0            pos=(0.0300,0.0750,0.0106)  size=(0.0950,0.0950,0.0400)  holes=0.078x0.078,backplate=1
+    A_SOCKET_CPU_0               pos=(0.0300,0.0750,0.0046)  size=(0.0375,0.0450,0.0060)  socket=L17,pin1=+x-y
+    A_SOCKET_M2_0                pos=(0.0300,-0.0150,0.0041)  size=(0.0800,0.0220,0.0040)  type=2280,key=M,keyy=0.0060,insert_angle=20
+    A_SOCKET_PCIE16_0            pos=(0.0300,-0.0427,0.0121)  size=(0.0890,0.0090,0.0140)  lanes=16,card_origin=1
+    A_SOCKET_PCIE1_0             pos=(0.0620,-0.0833,0.0121)  size=(0.0250,0.0090,0.0140)  lanes=1,looks_only=1
+    A_SOCKET_PCIE1_1             pos=(0.0620,-0.1240,0.0121)  size=(0.0250,0.0090,0.0140)  lanes=1,looks_only=1
+    A_SOCKET_RAM_0               pos=(-0.0304,0.0673,0.0030)  size=(0.0076,0.1396,0.0140)  notch=0.0043,slot=A1,mem=DDR4,latch=both,pref=0
+    A_SOCKET_RAM_1               pos=(-0.0380,0.0673,0.0030)  size=(0.0076,0.1396,0.0140)  notch=0.0043,slot=A2,mem=DDR4,latch=both,pref=1
+    A_SOCKET_RAM_2               pos=(-0.0456,0.0673,0.0030)  size=(0.0076,0.1396,0.0140)  notch=0.0043,slot=B1,mem=DDR4,latch=both,pref=0
+    A_SOCKET_RAM_3               pos=(-0.0532,0.0673,0.0030)  size=(0.0076,0.1396,0.0140)  notch=0.0043,slot=B2,mem=DDR4,latch=both,pref=1
+    A_STANDOFF_M2_0              pos=(0.0700,-0.0150,0.0041)  size=(0.0050,0.0050,0.0030)  screw=ph0
+
+  [io_ridge_z4]
+    A_HIT_0                      pos=(-0.0000,0.0000,-0.0000)  size=(0.0040,0.1588,0.0445)  board_pose=0.1279,0.07546,0.01999
+
+  [cpu_arc5]
+    A_HIT_0                      pos=(-0.0000,0.0000,0.0030)  size=(0.0400,0.0400,0.0064)  
+    A_MARK_PIN1_0                pos=(0.0193,-0.0193,0.0012)  size=(0.0060,0.0060,0.0020)  corner=+x-y
+    A_PASTE_0                    pos=(-0.0000,0.0000,0.0060)  size=(0.0300,0.0300,0.0020)  ihs=0.0350x0.0380
+
+  [cpu_arc7]
+    A_HIT_0                      pos=(-0.0000,0.0000,0.0030)  size=(0.0400,0.0400,0.0064)  
+    A_MARK_PIN1_0                pos=(0.0193,-0.0193,0.0012)  size=(0.0060,0.0060,0.0020)  corner=+x-y
+    A_PASTE_0                    pos=(-0.0000,0.0000,0.0060)  size=(0.0300,0.0300,0.0020)  ihs=0.0350x0.0380
+
+  [cpu_tiron5]
+    A_HIT_0                      pos=(-0.0000,0.0000,0.0030)  size=(0.0375,0.0450,0.0064)  
+    A_MARK_PIN1_0                pos=(0.0181,-0.0218,0.0011)  size=(0.0060,0.0060,0.0020)  corner=+x-y
+    A_PASTE_0                    pos=(-0.0000,0.0000,0.0060)  size=(0.0300,0.0300,0.0020)  ihs=0.0366x0.0292
+
+  [ram_ddr5_16]
+    A_HIT_0                      pos=(-0.0000,0.0000,0.0213)  size=(0.0077,0.1333,0.0426)  
+    A_NOTCH_0                    pos=(-0.0000,-0.0039,-0.0000)  size=(0.0040,0.0025,0.0040)  y=-0.0039,mem=DDR5
+
+  [ram_ddr4_8]
+    A_HIT_0                      pos=(-0.0000,0.0000,0.0168)  size=(0.0072,0.1333,0.0336)  
+    A_NOTCH_0                    pos=(-0.0000,0.0043,-0.0000)  size=(0.0040,0.0025,0.0040)  y=0.0043,mem=DDR4
+
+  [ssd_1tb]
+    A_HIT_0                      pos=(-0.0000,0.0000,0.0012)  size=(0.0800,0.0220,0.0026)  
+    A_KEY_M2_0                   pos=(-0.0400,0.0060,0.0004)  size=(0.0020,0.0015,0.0020)  key=M,y=0.0060
+    A_SCREW_PH0_0                pos=(0.0400,0.0000,0.0008)  size=(0.0060,0.0060,0.0040)  notch=+x
+
+  [ssd_sata_500]
+    A_HIT_0                      pos=(-0.0000,0.0000,-0.0000)  size=(0.1000,0.0070,0.0698)  
+    A_PORT_SATADATA_0            pos=(-0.0500,-0.0010,0.0200)  size=(0.0120,0.0060,0.0080)  depth=0.0045,pins=7
+    A_PORT_SATAPWR_0             pos=(-0.0500,-0.0010,-0.0034)  size=(0.0240,0.0060,0.0080)  depth=0.0045,pins=15
+    A_SCREW_PH2_0                pos=(-0.0360,-0.0005,-0.0349)  size=(0.0060,0.0060,0.0060)  m3,side
+    A_SCREW_PH2_1                pos=(-0.0360,-0.0005,0.0349)  size=(0.0060,0.0060,0.0060)  m3,side
+    A_SCREW_PH2_2                pos=(0.0406,-0.0005,-0.0349)  size=(0.0060,0.0060,0.0060)  m3,side
+    A_SCREW_PH2_3                pos=(0.0406,-0.0005,0.0349)  size=(0.0060,0.0060,0.0060)  m3,side
+
+DEVIATIONS / DECISIONS vs REALISM.md section 2
+   1. Rear I/O follows the case (coordinator fix): the I/O shield plate centre is at board (0.1279, 0.07546, 0.0200), i.e. the case's A_SOCKET_IOSHIELD_0 at case (0.1959, 0.34296, -0.06848) with the board at A_SOCKET_MOBO_0; the rear connector faces are at board x 0.126 (4 mm past the PCB edge) and the I/O shroud's rear edge at x 0.1243. The I/O window's y/z is the ATX aperture (6.25 x 1.75 in, 0.088 in below the PCB bottom).
+   2. I/O shield frame = board axes, origin at the plate centre, outer face toward +x (A_HIT_0 meta board_pose gives the pose). Place it with the same rotation as A_SOCKET_MOBO_0.
+   3. A_SOCKET_PCIE16_0 kept at (0.030, -0.0427, 0.0121): slot centre y -0.045 + 2.3 mm so the GPU's fingers (GPU y -0.0023) centre in the slot; slot top z 0.0121.
+   4. Mounting holes are the exact ATX 2.2 positions (holes A, C, F, G, H, J, K, L, M from the spec's Figure 3), not today's six holes.
+   5. CPU socket kept at (0.030, 0.075); CPU seat z 0.0046, cooler pose z 0.0106.
+   6. Extra anchors: A_PLATE_CPU_0 (load plate, same hinge line as the lever but opens -125 vs the lever's -115; lever meta plate=A_PLATE_CPU_0), A_KEY_M2_0 on ssd_1tb, A_HIT_0 on the shields and SSDs.
+   7. DIMM slots: real 7.6 mm pitch at x -0.0304 / -0.0380 / -0.0456 / -0.0532 (A1..B2 from the CPU), centred at y 0.0673 between ATX holes J and H; latches at both ends on both boards.
+   8. RAM key notch: DDR5 -0.0039, DDR4 +0.0043 from the stick centre (best estimate; DDR5 matches published measurements). A DDR5 stick turned 180 degrees has its notch 0.4 mm from the DDR4 key, so compare memory types as well, not only the notch with a loose tolerance.
+   9. M.2 screw notch at SSD x 0.040 (a real 2280 PCB is 80 mm long with the notch centred on its end edge), not 0.042; the board standoff at board x 0.070 matches it.
+  10. CPU lands stand 0.03 mm below z 0; cpu_tiron5's land-side capacitors hang 0.44 mm below z 0 (into the socket's central opening).
+  11. RAM heights: DDR5 RGB 0.0426 total (spreader 0.038 + diffuser), DDR4 0.0336; thickness 7.7 / 7.2 mm (fits the 7.6 mm pitch). DRAM packages sit under the spreaders on the +x side.
+  12. No new plain tags: the red DDR4 spreader is tex_ram_ddr4_8; coloured plastics (USB tongues, audio jack rings, PS/2) are swatches in tex_<board>_marks. The RJ45 link/activity LEDs use led_green / led_yellow (not anchored).
+  13. Board rear I/O: B5 = BIOS flashback + CLR_CMOS buttons, 2x USB2, DP over HDMI, 2x USB 5G, RJ45 over 2x USB 10G, 2x USB-C, Wi-Fi antennas, 3 jacks. Z4 = PS/2 + flashback, 2x USB2, DP/HDMI, 2x USB 5G, RJ45 over 2x USB 5G, USB-C + USB-A, 6 jacks + optical.
+  14. Each tex_ mesh has one UV layer 'UVMap'; the PCB bottom and edges map to flat swatches (plain mask, FR4 edge, plated hole walls).
+
+dct_common ISSUES (worked around in parts_pcb; dct_common not edited)
+  1. attach()/finish() do not guard Blender's 63-character object-name limit: a long '<name>@<anchor>#<tag>' is silently truncated and hashed by Blender 5, destroying the tag. parts_pcb.validate() now checks every model; keep base names short.
+  2. set_parent() (used by attach) reads child.matrix_world, which is stale when a caller only set obj.location before parenting; the piece then lands at the wrong place. dct_common's own primitives are fine (set_xform assigns matrix_world). parts_pcb.Geo.obj assigns matrix_world.
+  3. preview() renders Workbench MATERIAL colours, so tex_ materials show as flat grey; parts_pcb.preview() renders EEVEE with the textures bound after export (the FBX itself still carries no texture references).
+  4. tube() meshes carry a UV layer from the curve conversion (harmless).
+
+NOTE: the ATX 2.2 specification PDF (432 KB, xdevs.com) was downloaded to the session scratchpad to read the hole
+and I/O aperture dimensions. Unity was not run.

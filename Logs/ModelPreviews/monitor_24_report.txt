@@ -1,0 +1,21 @@
+monitor_24: 7120 triangles, 13 meshes
+  mesh button_power_0@A_BUTTON_POWER_0#black_plastic  tris=144
+  mesh button_power_0@A_BUTTON_POWER_0#grey_plastic  tris=132
+  mesh led_power_0@A_LED_POWER_0#led_white  tris=12
+  mesh monitor_24_alu_dark#alu_dark  tris=160
+  mesh monitor_24_black_plastic#black_plastic  tris=2092
+  mesh monitor_24_dark_plastic#dark_plastic  tris=1548
+  mesh monitor_24_grey_plastic#grey_plastic  tris=2144
+  mesh monitor_24_nickel#nickel  tris=244
+  mesh monitor_24_rubber#rubber  tris=256
+  mesh monitor_24_steel#steel  tris=224
+  mesh monitor_24_steel_dark#steel_dark  tris=160
+  mesh monitor_24_tex_monitor_24_label#tex_monitor_24_label  tris=2
+  mesh screen_0@A_SCREEN_0#black_plastic  tris=2
+  A_BUTTON_POWER_0 pos=(-0.253, 0.1045, 0.0224) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00800,0.00800,0.00600 meta=press=-z_local,travel=0.0008
+  A_HIT_0 pos=(-0.0, 0.2596, 0.002) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.54240,0.32320,0.04500 meta=
+  A_HIT_1 pos=(-0.0, 0.09, -0.04) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.24500,0.18000,0.19000 meta=
+  A_LED_POWER_0 pos=(-0.2455, 0.1045, 0.0222) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00300,0.00300,0.00300 meta=colour=white
+  A_PORT_C13_0 pos=(-0.085, 0.166, -0.0225) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.02800,0.02000,0.01200 meta=inlet=c14
+  A_PORT_DP_0 pos=(0.06, 0.166, -0.0225) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.02000,0.00800,0.01200 meta=dp=1.4
+  A_SCREEN_0 pos=(-0.0, 0.26575, 0.0219) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.53000,0.29850,0.00200 meta=px=1920x1080,ref=1024x576,diag=23.8

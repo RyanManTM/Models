@@ -1,0 +1,6 @@
+plug_fan3: 520 triangles, 2 meshes
+  mesh plug_fan3_connector_white#connector_white  tris=388
+  mesh plug_fan3_tex_parts_c_palette#tex_parts_c_palette  tris=132
+  A_CABLE_0 pos=(-0.0, -0.0002, 0.039) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00500,0.00500,0.01000 meta=r=0.0025,n=3
+  A_HIT_0 pos=(-0.0, 0.0, 0.0065) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01022,0.00760,0.01300 meta=
+W=0.0082 H=0.0046 L=0.0130

@@ -1,0 +1,7 @@
+plug_c13: 1376 triangles, 3 meshes
+  mesh plug_c13_black_plastic#black_plastic  tris=1276
+  mesh plug_c13_nickel#nickel  tris=36
+  mesh plug_c13_rubber#rubber  tris=64
+  A_CABLE_0 pos=(-0.0, 0.0, 0.072) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00720,0.00720,0.01000 meta=r=0.0036,n=1
+  A_HIT_0 pos=(-0.0, 0.0, 0.015) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02760,0.01900,0.03000 meta=
+W=0.0236 H=0.0150 L=0.0300

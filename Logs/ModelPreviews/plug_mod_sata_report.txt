@@ -1,0 +1,7 @@
+plug_mod_sata: 1000 triangles, 2 meshes
+  mesh plug_mod_sata_connector_black#connector_black  tris=736
+  mesh plug_mod_sata_tex_parts_c_palette#tex_parts_c_palette  tris=264
+  A_CABLE_0 pos=(-0.0, -0.0, 0.0408) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01380,0.01380,0.01000 meta=r=0.0069,n=6
+  A_HIT_0 pos=(-0.0, 0.0, 0.0064) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01580,0.01340,0.01280 meta=
+  A_LATCH_0 pos=(-0.0, 0.0068, 0.0103) fwd=(0.0, 1.0, -0.0) up=(-0.0, 0.0, 1.0) size=0.00400,0.00400,0.00300 meta=press=-y
+W=0.0138 H=0.0094 L=0.0128

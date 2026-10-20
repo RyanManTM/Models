@@ -1,0 +1,9 @@
+usb_stick: 662 triangles, 6 meshes
+  mesh usb_stick_black_plastic#black_plastic  tris=392
+  mesh usb_stick_gold#gold  tris=48
+  mesh usb_stick_led_blue#led_blue  tris=48
+  mesh usb_stick_nickel#nickel  tris=160
+  mesh usb_stick_tex_parts_c_palette#tex_parts_c_palette  tris=12
+  mesh usb_stick_tex_usb_stick_label#tex_usb_stick_label  tris=2
+  A_HIT_0 pos=(-0.0, 0.0, 0.0285) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02000,0.01000,0.05700 meta=
+  A_LED_ACT_0 pos=(0.0062, 0.0041, 0.0145) fwd=(0.0, 1.0, -0.0) up=(-0.0, 0.0, 1.0) size=0.00200,0.00200,0.00200 meta=

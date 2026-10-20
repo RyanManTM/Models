@@ -1,0 +1,97 @@
+EXTRAS - REPORT (agent C: papers, part caps, guards, stickers; Logs/UNBOXING.md 2.3 and 2.5)
+====================================================================================================
+Run: "D:\New folder\blender.exe" -b --factory-startup -P Tools/Blender/build_extras.py -- [--nopreview] [ids]
+Scripts: Tools/Blender/build_extras.py (runner, fit checks, report), extras_common.py, extras_docs.py,
+         extras_caps.py.  Textures: doc_badges.png (badge atlas), sticker_psu.png.
+
+CONVENTIONS
+  Papers: origin at the bottom centre, lying flat, front +Y, page top +Z, reading right +X. doc_cover = the
+  visible front face, UV 0..1 over it (u +X, v +Z); doc_back = the visible back face, UV 0..1 (u -X, v +Z:
+  the paper turned over about Z, like turning a page). Edges, folds, inner pages: paper_white.
+  To lay a paper into an A_ITEM_DOC_<n> anchor (paper in the anchor's XY plane, front = anchor +Z):
+  localRotation = Quaternion.Euler(-90, 180, 0) (paper +Y -> anchor +Z, paper +Z -> anchor +Y); the paper's
+  origin is its back face, so if the anchor is the paper's centre, add localPosition (0, 0, -t/2).
+  Caps / guards / sticker: local +Z = the direction it is pulled off; origin = its seat reference.
+  A_HIT_0 = the cap's bounds (meta remove=+z,travel=...,blocks=...), A_GRIP_0 = the pull tab (forward = pull).
+
+CAP PLACEMENT TABLE (Unity, in the parent's axes; rotation = Quaternion.LookRotation(fwd, up) =
+Quaternion.Euler(x, y, z) as given; remove = the pull direction in the PARENT's axes)
+  sticker_psu_voltage  psu_450       parent=A_SWITCH_PSU_0  pos=(0.0, 0.0, 0.0) fwd=(0, 0, 1) up=(0, 1, 0) euler=(0.0, 0.0, 0.0) remove=(0.0, 0.0, 1.0)
+  sticker_psu_voltage  psu_750       parent=A_SWITCH_PSU_0  pos=(0.0, 0.0, 0.0) fwd=(0, 0, 1) up=(0, 1, 0) euler=(0.0, 0.0, 0.0) remove=(0.0, 0.0, 1.0)
+  Notes: cap_dp / cap_hdmi: one cap per port anchor (3 DP + 1 HDMI per card). sticker_psu_voltage: parent it
+  to the A_SWITCH_PSU_0 transform itself, not to its Rocker group, so it does not tilt with the rocker; it is
+  draped over the rocker's shipped OFF pose (PsuSwitch offAngle +9 about y). Pullable: hold/drag along the
+  cap's local +Z (travel 1.5 mm, then it pops); the GPU and RAM caps block installing, the DP/HDMI caps block
+  plugging that port, cap_paste blocks installing the cooler.
+
+BADGE ATLAS (tex_doc_badges = Models/Textures/doc_badges.png, 1024 x 1024, 4 x 4 cells of 256 px, row 0 at the
+top). The badges' UVs map the default cell; to show another cell add a UV offset (_BaseMap_ST zw) of
+(dcol * 0.25, -drow * 0.25). Defaults: badge_0@A_STICKER_0 = cell 0, badge_1@A_STICKER_1 = cell 5.
+  cell 0: col 0 row 0  uv (0.000,0.750)..(0.250,1.000)  ARC 5 (cpu_arc5 main)
+  cell 1: col 1 row 0  uv (0.250,0.750)..(0.500,1.000)  ARC 7 (cpu_arc7 main)
+  cell 2: col 2 row 0  uv (0.500,0.750)..(0.750,1.000)  TIRON i5 (cpu_tiron5 main)
+  cell 3: col 3 row 0  uv (0.750,0.750)..(1.000,1.000)  RIDGE GAMING (boards main)
+  cell 4: col 0 row 1  uv (0.000,0.500)..(0.250,0.750)  VOLTRA RX (gpus main)
+  cell 5: col 1 row 1  uv (0.250,0.500)..(0.500,0.750)  ARC mark (small)
+  cell 6: col 2 row 1  uv (0.500,0.500)..(0.750,0.750)  TIRON mark (small)
+  cell 7: col 3 row 1  uv (0.750,0.500)..(1.000,0.750)  RIDGE mark (small)
+  cell 8: col 0 row 2  uv (0.000,0.250)..(0.250,0.500)  VOLTRA mark (small)
+  Per product: cpu_arc5 0+5, cpu_arc7 1+5, cpu_tiron5 2+6, mb_ridge_* 3+7, gpu_rx* 4+8 (main + small); the rims use the silver swatch at col 1 row 2.
+
+== sticker_psu_voltage
+   mesh sticker_psu_voltage_tex_sticker_psu#tex_sticker_psu: 2260 tris
+   TOTAL 2260 tris in 1 meshes
+   bounds lo=(-0.0150,-0.0090,-0.0004) hi=(0.0150,0.0100,0.0029) size=(0.0300,0.0190,0.0033)
+   A_GRIP_0: pos=(0.0130,-0.0070,-0.0000) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00400,0.00400,0.00100 meta=peel_from=+x-y
+   A_HIT_0: pos=(-0.0000,0.0005,0.0012) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.03000,0.01900,0.00329 meta=peel=film,label=check_voltage,w=0.030,h=0.019,pose=off
+   fit psu_450 @A_SWITCH_PSU_0: overlaps=none; smallest gap 0.02 mm to psu_450_paint_black#paint_black
+   fit psu_750 @A_SWITCH_PSU_0: overlaps=none; smallest gap 0.02 mm to psu_750_paint_black#paint_black
+   built in 6.9 s
+
+NEW ANCHORS ON PART MODELS (films, Logs/UNBOXING.md 1.4; the game builds the peel meshes on them)
+  Re-exported (build_parts_b.py; extras_compare.py proved every existing object unchanged, only these
+  anchors added; textures pixel-identical):
+  gpu_rx66      A_FILM_BACKPLATE_0: pos=(-0.00575,0.00285,0.05650) fwd=(0,1,0) up=(0,0,1) size=0.19150,0.10200,0.00100 meta=film=clear,peel_from=+x,chamfer=0.004@+x,screws=proud
+  gpu_rx66      A_FILM_SHROUD_0: pos=(0.00550,-0.03900,0.11040) fwd=(0,0,1) up=(0,1,0) size=0.07360,0.01060,0.00100 meta=film=clear,on=logo_plate,peel_from=-x
+  gpu_rx88      A_FILM_BACKPLATE_0: pos=(-0.05575,0.00285,0.06400) fwd=(0,1,0) up=(0,0,1) size=0.29150,0.11700,0.00100 meta=film=clear,peel_from=+x,chamfer=0.004@+x,screws=proud
+  gpu_rx88      A_FILM_SHROUD_0: pos=(-0.01000,-0.04700,0.12540) fwd=(0,0,1) up=(0,1,0) size=0.09760,0.01360,0.00100 meta=film=clear,on=logo_plate,peel_from=-x
+  cooler_tower  A_FILM_TOP_0: pos=(0.00050,0.00000,0.15490) fwd=(0,0,1) up=(0,1,0) size=0.04000,0.11500,0.00100 meta=film=clear,on=top_cover,peel_from=+x
+  NOT re-exported: mb_ridge_b5, mb_ridge_z4. build_board.py does not rebuild them identically (two clean
+  runs of the unchanged script differ from each other and from the committed FBX in the triangulation
+  of a few n-gons). The anchors are in build_board.py (Board.films) for the next rebuild; until then
+  hard-code them (board frame, metres; fwd = film normal, up; size = x, y, thickness in the anchor's axes):
+  mb_ridge_b5   A_FILM_IO_0: pos=(0.11265,0.09275,0.03712) fwd=(0,0,1) up=(0,1,0) size=0.01800,0.07700,0.00100 meta=film=clear,on=io_cover_logo,peel_from=-y
+  mb_ridge_b5   A_FILM_CHIPSET_0: pos=(-0.08000,-0.08800,0.01112) fwd=(0,0,1) up=(0,1,0) size=0.03100,0.02700,0.00100 meta=film=clear,on=chipset_logo,peel_from=+x
+  mb_ridge_z4   A_FILM_IO_0: pos=(0.11265,0.09675,0.03712) fwd=(0,0,1) up=(0,1,0) size=0.01800,0.07700,0.00100 meta=film=clear,on=io_cover_logo,peel_from=-y
+  mb_ridge_z4   A_FILM_CHIPSET_0: pos=(-0.08000,-0.08800,0.01112) fwd=(0,0,1) up=(0,1,0) size=0.03100,0.02700,0.00100 meta=film=clear,on=chipset_logo,peel_from=+x
+  Not needed (placed from what exists): A_EDGE_PCIE_0 (cap_pcie16 sits on the GPU frame origin; A_HIT_2
+  covers the fingers), A_EDGE_0 on the RAM (the guards sit on the RAM frame origin), A_STICKER_PSU_0 (the
+  sticker sits on A_SWITCH_PSU_0), A_FILM_HUB_<n> and A_FILM_GLASS_0/1 (derived from the sticker and glass
+  meshes below, as UNBOXING.md 2.4 describes).
+
+FILM DATA DERIVED FROM THE PART MESHES (no new anchors needed; hard-code if preferred)
+  hub film: a disc on the fan's sticker, in the A_FAN_<n> frame (local +z = the fan's front, where the
+  sticker faces): centre (x, y), radius, and z = the sticker surface (put the film 0.05 mm above it).
+  It belongs on the rotor: parent it to A_FAN_<n> so it spins with the hub.
+  gpu_rx66         A_FAN_0  centre=(-0.0000,-0.0000) r=0.0139 z=0.0063  (fan at (-0.0511, -0.0373, 0.056), fwd (0, -1, 0))
+  gpu_rx66         A_FAN_1  centre=(0.0000,-0.0000) r=0.0139 z=0.0063  (fan at (0.0406, -0.0373, 0.056), fwd (0, -1, 0))
+  gpu_rx88         A_FAN_0  centre=(0.0000,0.0000) r=0.0141 z=0.0063  (fan at (-0.1497, -0.0473, 0.0635), fwd (0, -1, 0))
+  gpu_rx88         A_FAN_1  centre=(0.0000,0.0000) r=0.0141 z=0.0063  (fan at (-0.0553, -0.0473, 0.0635), fwd (0, -1, 0))
+  gpu_rx88         A_FAN_2  centre=(0.0000,0.0000) r=0.0141 z=0.0063  (fan at (0.0393, -0.0473, 0.0635), fwd (0, -1, 0))
+  cooler_stock     A_FAN_0  centre=(0.0000,-0.0000) r=0.0128 z=0.0068  (fan at (0.0, 0.0, 0.0445), fwd (0, 0, 1))
+  cooler_tower     A_FAN_0  centre=(0.0000,0.0000) r=0.0169 z=0.0111  (fan at (-0.0385, 0.0, 0.095), fwd (-1, 0, 0))
+  case_breeze      A_FAN_0  centre=(0.0000,0.0000) r=0.0169 z=0.0111  (fan at (0.1827, 0.355, 0.03), fwd (-1, 0, 0))
+  case_breeze      A_FAN_1  centre=(0.0000,0.0000) r=0.0169 z=0.0111  (fan at (-0.1869, 0.352, 0.0), fwd (-1, 0, 0))
+  case_breeze      A_FAN_2  centre=(0.0000,0.0000) r=0.0169 z=0.0111  (fan at (-0.1869, 0.23, 0.0), fwd (-1, 0, 0))
+  case_breeze      A_FAN_3  centre=(0.0000,0.0000) r=0.0169 z=0.0111  (fan at (-0.1869, 0.108, 0.0), fwd (-1, 0, 0))
+  case_brickhouse  A_FAN_0  centre=(0.0000,0.0000) r=0.0169 z=0.0111  (fan at (0.1827, 0.355, 0.03), fwd (-1, 0, 0))
+  RAM spreader film: the +x face of the stick's A_HIT_0 (x = +size.x/2: 0.00385 DDR5, 0.00360 DDR4; it
+  clears the relief panel and the label), y +-0.0646, z 0.007 .. 0.038 (DDR5) / 0.0336 (DDR4), facing +x.
+  glass films: in the A_PANEL_SIDE_0 frame (pos (0, 0.225, 0.1), fwd +z, up +y, x = case +x),
+  from the glass mesh panel_side_0@A_PANEL_SIDE_0#glass:
+  case_breeze      glass x -0.2003..0.1961  y -0.2235..0.2235  z 0.0005..0.0045
+                   outer film: centre (-0.0021, 0.0000, 0.00455) facing +z, size 0.3964 x 0.4470
+                   inner film: centre (-0.0021, 0.0000, 0.00045) facing -z, size 0.3964 x 0.4470
+  case_brickhouse  glass x -0.2003..0.1961  y -0.2235..0.2235  z 0.0005..0.0045
+                   outer film: centre (-0.0021, 0.0000, 0.00455) facing +z, size 0.3964 x 0.4470
+                   inner film: centre (-0.0021, 0.0000, 0.00045) facing -z, size 0.3964 x 0.4470

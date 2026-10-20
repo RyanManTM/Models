@@ -1,0 +1,19 @@
+box_ssd_sata_500: 2868 triangles, 8 meshes
+  mesh box_ssd_sata_500_paper_white#paper_white  tris=60
+  mesh box_ssd_sata_500_tex_box_ssd_sata_500#tex_box_ssd_sata_500  tris=10
+  mesh dust@A_FLAP_1#paper_white  tris=12
+  mesh dust@A_FLAP_2#paper_white  tris=12
+  mesh flap@A_FLAP_0#paper_white  tris=132
+  mesh flap_print@A_FLAP_0#tex_box_ssd_sata_500  tris=2
+  mesh seallook@A_SEAL_0#seal_clear  tris=28
+  mesh tray@A_INSERT_BLISTER_0#black_plastic  tris=2612
+  A_FLAP_0 pos=(0.06965, 0.0007, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00070,0.03000,0.10000 meta=hinge=z,open=-92,tuck=1,label=end flap,order=1,under=A_SEAL_0
+  A_FLAP_1 pos=(0.06865, 0.015, 0.0493) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00070,0.02860,0.01600 meta=hinge=y,open=-95,label=dust flap,order=2,under=A_FLAP_0
+  A_FLAP_2 pos=(0.06865, 0.015, -0.0493) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00070,0.02860,0.01600 meta=hinge=y,open=95,label=dust flap,order=2,under=A_FLAP_0
+  A_HIT_0 pos=(-0.0, 0.015, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.14000,0.03000,0.10000 meta=
+  A_INSERT_BLISTER_0 pos=(-0.0045, 0.0009, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.12800,0.01250,0.09460 meta=lift=+x,dist=0.15,label=plastic tray,order=3,under=A_FLAP_0,A_FLAP_1,A_FLAP_2
+  A_ITEM_DOC_0@A_INSERT_BLISTER_0 pos=(-0.0045, 0.0116, -0.0) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.12000,0.08000,0.00040 meta=doc=guide,form=card,label=installation card,order=4,parent=A_INSERT_BLISTER_0,under=A_INSERT_BLISTER_0
+  A_ITEM_PART_0@A_INSERT_BLISTER_0 pos=(-0.0045, 0.0055, -0.0) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.10700,0.01410,0.07700 meta=bag=clear,label=2.5in SSD,order=5,parent=A_INSERT_BLISTER_0,under=A_ITEM_DOC_0
+  A_SEAL_0 pos=(0.07012, 0.0245, -0.0) fwd=(1.0, -0.0, 0.0) up=(0.0, 1.0, 0.0) size=0.01600,0.01100,0.00010 meta=shape=round,peel=+y,print=QUILL SEALED,wrap=0.005,label=seal sticker,order=0
+shot from: ssd_sata_500
+SSD SATA: seal (0) -> end flap (1) -> dust flaps (2) -> black tray A_INSERT_BLISTER_0 slides out +x (3) -> installation card lying on it (4) -> drive in its clear bag (5).

@@ -1,0 +1,3 @@
+screw_thumb: 948 triangles, 1 meshes
+  mesh screw_thumb_steel_dark#steel_dark  tris=948
+  A_HIT_0 pos=(-0.0, 0.0, 0.0034) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01300,0.01300,0.00880 meta=

@@ -1,0 +1,7 @@
+plug_atx24: 2512 triangles, 2 meshes
+  mesh plug_atx24_connector_black#connector_black  tris=1456
+  mesh plug_atx24_tex_parts_c_palette#tex_parts_c_palette  tris=1056
+  A_CABLE_0 pos=(-0.0, -0.0, 0.0408) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01700,0.01700,0.01000 meta=r=0.0085,n=24
+  A_HIT_0 pos=(-0.0, 0.0, 0.0064) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.05360,0.01340,0.01280 meta=
+  A_LATCH_0 pos=(-0.0, 0.0068, 0.0103) fwd=(0.0, 1.0, -0.0) up=(-0.0, 0.0, 1.0) size=0.00400,0.00400,0.00300 meta=press=-y
+W=0.0516 H=0.0094 L=0.0128

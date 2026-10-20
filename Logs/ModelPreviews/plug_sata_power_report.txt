@@ -1,0 +1,7 @@
+plug_sata_power: 552 triangles, 3 meshes
+  mesh plug_sata_power_connector_black#connector_black  tris=212
+  mesh plug_sata_power_gold#gold  tris=180
+  mesh plug_sata_power_tex_parts_c_palette#tex_parts_c_palette  tris=160
+  A_CABLE_0 pos=(-0.0, 0.0, 0.0385) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01200,0.01200,0.01000 meta=r=0.0060,n=5
+  A_HIT_0 pos=(-0.0, 0.0, 0.00625) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02480,0.00920,0.01250 meta=
+W=0.0228 H=0.0062 L=0.0125

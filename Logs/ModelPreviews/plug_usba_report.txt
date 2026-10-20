@@ -1,0 +1,9 @@
+plug_usba: 1160 triangles, 5 meshes
+  mesh plug_usba_black_plastic#black_plastic  tris=876
+  mesh plug_usba_gold#gold  tris=48
+  mesh plug_usba_nickel#nickel  tris=160
+  mesh plug_usba_rubber#rubber  tris=64
+  mesh plug_usba_tex_parts_c_palette#tex_parts_c_palette  tris=12
+  A_CABLE_0 pos=(-0.0, 0.0, 0.075) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00420,0.00420,0.01000 meta=r=0.0021,n=1
+  A_HIT_0 pos=(-0.0, 0.0, 0.016) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01800,0.01000,0.03200 meta=
+W=0.0120 H=0.0045 L=0.0320

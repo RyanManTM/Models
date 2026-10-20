@@ -1,0 +1,4 @@
+standoff_brass: 396 triangles, 1 meshes
+  mesh standoff_brass_gold#gold  tris=396
+  A_HIT_0 pos=(-0.0, 0.0, 0.003) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00700,0.00700,0.00700 meta=
+  A_SCREW_PH2_0 pos=(-0.0, 0.0, 0.00635) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00700,0.00700,0.00400 meta=thread=6-32

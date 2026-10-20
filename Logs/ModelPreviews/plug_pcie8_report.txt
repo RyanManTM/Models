@@ -1,0 +1,7 @@
+plug_pcie8: 1400 triangles, 2 meshes
+  mesh plug_pcie8_connector_black#connector_black  tris=1048
+  mesh plug_pcie8_tex_parts_c_palette#tex_parts_c_palette  tris=352
+  A_CABLE_0 pos=(-0.00038, -0.0, 0.0408) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00900,0.00900,0.01000 meta=r=0.0045,n=8
+  A_HIT_0 pos=(-0.0, 0.0, 0.0064) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02150,0.01340,0.01280 meta=
+  A_LATCH_0 pos=(-0.00285, 0.0068, 0.0103) fwd=(0.0, 1.0, -0.0) up=(-0.0, 0.0, 1.0) size=0.00400,0.00400,0.00300 meta=press=-y
+W=0.0195 H=0.0094 L=0.0128

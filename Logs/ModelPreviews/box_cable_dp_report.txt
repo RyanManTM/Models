@@ -1,0 +1,13 @@
+box_cable_dp: 1544 triangles, 7 meshes
+  mesh box_cable_dp_bag_clear#bag_clear  tris=796
+  mesh box_cable_dp_grey_plastic#grey_plastic  tris=216
+  mesh box_cable_dp_paper_white#paper_white  tris=132
+  mesh box_cable_dp_steel#steel  tris=24
+  mesh box_cable_dp_tex_box_cable_dp#tex_box_cable_dp  tris=256
+  mesh zip_lip@A_FLAP_0#bag_clear  tris=12
+  mesh zip_lip@A_FLAP_0#grey_plastic  tris=108
+  A_FLAP_0 pos=(-0.0, 0.013, -0.047) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.15000,0.00200,0.01600 meta=hinge=x,open=-55,label=zip,order=0
+  A_HIT_0 pos=(-0.0, 0.015, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.15000,0.03000,0.21000 meta=
+  A_ITEM_PART_0 pos=(-0.0, 0.0016, 0.025) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.11500,0.11500,0.02000 meta=tie=twist,bag=none,coil=dp,frame=flat,label=DisplayPort cable,order=1,under=A_FLAP_0
+shot from: stand-in
+Cable bag: zip A_FLAP_0 (0) -> the coiled item A_ITEM_PART_0 (1; frame=flat, coil=dp, tie=twist: the game spawns the coiled cable with its twist tie). The bag and its stapled header card are the rig body (trash once empty).

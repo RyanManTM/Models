@@ -1,0 +1,210 @@
+== gpu_rx66
+   mesh gpu_rx66_alu#alu: 1628 tris
+   mesh gpu_rx66_alu_dark#alu_dark: 1676 tris
+   mesh gpu_rx66_black_plastic#black_plastic: 4200 tris
+   mesh gpu_rx66_ceramic#ceramic: 72 tris
+   mesh gpu_rx66_connector_black#connector_black: 476 tris
+   mesh gpu_rx66_copper#copper: 9200 tris
+   mesh gpu_rx66_fan_black#fan_black: 2760 tris
+   mesh gpu_rx66_gold#gold: 2448 tris
+   mesh gpu_rx66_nickel#nickel: 300 tris
+   mesh gpu_rx66_paint_black#paint_black: 1132 tris
+   mesh gpu_rx66_paint_white#paint_white: 2524 tris
+   mesh gpu_rx66_pcb_black#pcb_black: 76 tris
+   mesh gpu_rx66_rgb#rgb: 12 tris
+   mesh gpu_rx66_solder#solder: 96 tris
+   mesh gpu_rx66_steel#steel: 2976 tris
+   mesh gpu_rx66_steel_dark#steel_dark: 2112 tris
+   mesh gpu_rx66_tex_gpu_rx66#tex_gpu_rx66: 4 tris
+   mesh gpu_rx66_white_plastic#white_plastic: 240 tris
+   mesh gpufan0_rotor@A_FAN_0#fan_black: 3708 tris
+   mesh gpufan0_sticker@A_FAN_0#tex_gpu_rx66: 144 tris
+   mesh gpufan1_rotor@A_FAN_1#fan_black: 3708 tris
+   mesh gpufan1_sticker@A_FAN_1#tex_gpu_rx66: 144 tris
+   TOTAL 39636 tris in 22 meshes
+   A_FAN_0: pos=(-0.0511,-0.0373,0.0560) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.08500,0.08500,0.01300 meta=axis=z,spin=-1,rpm=2200
+   A_FAN_1: pos=(0.0406,-0.0373,0.0560) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.08500,0.08500,0.01300 meta=axis=z,spin=-1,rpm=2200
+   A_FILM_BACKPLATE_0: pos=(-0.0058,0.0029,0.0565) fwd=(0.00,1.00,-0.00) up=(-0.00,0.00,1.00) size=0.19150,0.10200,0.00100 meta=film=clear,peel_from=+x,chamfer=0.004@+x,screws=proud
+   A_FILM_SHROUD_0: pos=(0.0055,-0.0390,0.1104) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.07360,0.01060,0.00100 meta=film=clear,on=logo_plate,peel_from=-x
+   A_HIT_0: pos=(-0.0050,-0.0212,0.0550) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.20000,0.04770,0.11000 meta=
+   A_HIT_1: pos=(0.1010,-0.0166,0.0465) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.01100,0.03920,0.12000 meta=
+   A_HIT_2: pos=(-0.0000,-0.0010,-0.0028) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.09000,0.00300,0.00600 meta=
+   A_PORT_DP_0: pos=(0.0965,-0.0046,0.0180) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.01900,0.00800,0.01200 meta=kind=displayport,chamfer=-y
+   A_PORT_DP_1: pos=(0.0965,-0.0046,0.0370) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.01900,0.00800,0.01200 meta=kind=displayport,chamfer=-y
+   A_PORT_DP_2: pos=(0.0965,-0.0046,0.0560) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.01900,0.00800,0.01200 meta=kind=displayport,chamfer=-y
+   A_PORT_HDMI_0: pos=(0.0965,-0.0046,0.0750) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.01700,0.00800,0.01200 meta=kind=hdmi,narrow=-y
+   A_PORT_PCIE8_0: pos=(-0.0580,-0.0066,0.1075) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.02260,0.01260,0.01200 meta=pins=8,latch=+y
+   A_SCREW_PH2_0: pos=(0.1015,-0.0069,0.1065) fwd=(0.00,-0.00,1.00) up=(1.00,0.00,-0.00) size=0.00800,0.00800,0.00800 meta=slot=0
+   A_SCREW_PH2_1: pos=(0.1015,-0.0272,0.1065) fwd=(0.00,-0.00,1.00) up=(1.00,0.00,-0.00) size=0.00800,0.00800,0.00800 meta=slot=1
+   built in 6.9 s
+
+== gpu_rx88
+   mesh gpu_rx88_alu#alu: 5264 tris
+   mesh gpu_rx88_alu_dark#alu_dark: 3408 tris
+   mesh gpu_rx88_black_plastic#black_plastic: 3676 tris
+   mesh gpu_rx88_ceramic#ceramic: 1080 tris
+   mesh gpu_rx88_connector_black#connector_black: 1034 tris
+   mesh gpu_rx88_fan_black#fan_black: 4140 tris
+   mesh gpu_rx88_gold#gold: 2448 tris
+   mesh gpu_rx88_nickel#nickel: 14624 tris
+   mesh gpu_rx88_paint_black#paint_black: 2352 tris
+   mesh gpu_rx88_pcb_black#pcb_black: 76 tris
+   mesh gpu_rx88_rgb#rgb: 12 tris
+   mesh gpu_rx88_solder#solder: 144 tris
+   mesh gpu_rx88_steel#steel: 4400 tris
+   mesh gpu_rx88_steel_dark#steel_dark: 2640 tris
+   mesh gpu_rx88_tex_gpu_rx88#tex_gpu_rx88: 104 tris
+   mesh gpu_rx88_white_plastic#white_plastic: 360 tris
+   mesh gpufan0_rotor@A_FAN_0#fan_black: 5108 tris
+   mesh gpufan0_sticker@A_FAN_0#tex_gpu_rx88: 144 tris
+   mesh gpufan1_rotor@A_FAN_1#fan_black: 5108 tris
+   mesh gpufan1_sticker@A_FAN_1#tex_gpu_rx88: 144 tris
+   mesh gpufan2_rotor@A_FAN_2#fan_black: 5108 tris
+   mesh gpufan2_sticker@A_FAN_2#tex_gpu_rx88: 144 tris
+   TOTAL 61518 tris in 22 meshes
+   A_FAN_0: pos=(-0.1497,-0.0473,0.0635) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.08600,0.08600,0.01300 meta=axis=z,spin=-1,rpm=1900
+   A_FAN_1: pos=(-0.0553,-0.0473,0.0635) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.08600,0.08600,0.01300 meta=axis=z,spin=-1,rpm=1900
+   A_FAN_2: pos=(0.0393,-0.0473,0.0635) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.08600,0.08600,0.01300 meta=axis=z,spin=-1,rpm=1900
+   A_FILM_BACKPLATE_0: pos=(-0.0558,0.0029,0.0640) fwd=(0.00,1.00,-0.00) up=(-0.00,0.00,1.00) size=0.29150,0.11700,0.00100 meta=film=clear,peel_from=+x,chamfer=0.004@+x,screws=proud
+   A_FILM_SHROUD_0: pos=(-0.0100,-0.0470,0.1254) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.09760,0.01360,0.00100 meta=film=clear,on=logo_plate,peel_from=-x
+   A_HIT_0: pos=(-0.0550,-0.0261,0.0625) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.30000,0.05770,0.12500 meta=
+   A_HIT_1: pos=(0.1010,-0.0166,0.0465) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.01100,0.03920,0.12000 meta=
+   A_HIT_2: pos=(-0.0000,-0.0010,-0.0028) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.09000,0.00300,0.00600 meta=
+   A_PORT_12V2X6_0: pos=(-0.0550,-0.0069,0.1220) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.02460,0.01320,0.01200 meta=pins=12+4,latch=+y,sense=+y
+   A_PORT_DP_0: pos=(0.0965,-0.0046,0.0180) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.01900,0.00800,0.01200 meta=kind=displayport,chamfer=-y
+   A_PORT_DP_1: pos=(0.0965,-0.0046,0.0370) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.01900,0.00800,0.01200 meta=kind=displayport,chamfer=-y
+   A_PORT_DP_2: pos=(0.0965,-0.0046,0.0560) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.01900,0.00800,0.01200 meta=kind=displayport,chamfer=-y
+   A_PORT_HDMI_0: pos=(0.0965,-0.0046,0.0750) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.01700,0.00800,0.01200 meta=kind=hdmi,narrow=-y
+   A_SCREW_PH2_0: pos=(0.1015,-0.0069,0.1065) fwd=(0.00,-0.00,1.00) up=(1.00,0.00,-0.00) size=0.00800,0.00800,0.00800 meta=slot=0
+   A_SCREW_PH2_1: pos=(0.1015,-0.0272,0.1065) fwd=(0.00,-0.00,1.00) up=(1.00,0.00,-0.00) size=0.00800,0.00800,0.00800 meta=slot=1
+   built in 2.3 s
+
+== psu_450
+   mesh mark@A_SWITCH_PSU_0#paint_white: 204 tris
+   mesh psu_450_alu#alu: 480 tris
+   mesh psu_450_black_plastic#black_plastic: 1236 tris
+   mesh psu_450_chip_black#chip_black: 12 tris
+   mesh psu_450_connector_beige#connector_beige: 24 tris
+   mesh psu_450_fan_black#fan_black: 4512 tris
+   mesh psu_450_grey_plastic#grey_plastic: 4628 tris
+   mesh psu_450_mesh_black#mesh_black: 1216 tris
+   mesh psu_450_nickel#nickel: 132 tris
+   mesh psu_450_paint_black#paint_black: 16388 tris
+   mesh psu_450_pcb_green#pcb_green: 12 tris
+   mesh psu_450_rubber#rubber: 480 tris
+   mesh psu_450_steel_dark#steel_dark: 2304 tris
+   mesh psu_450_tex_psu_450#tex_psu_450: 124 tris
+   mesh psu_450_white_plastic#white_plastic: 120 tris
+   mesh psufan_rotor@A_FAN_0#fan_black: 3076 tris
+   mesh psufan_sticker@A_FAN_0#tex_psu_450: 144 tris
+   mesh rocker@A_SWITCH_PSU_0#black_plastic: 52 tris
+   TOTAL 35144 tris in 18 meshes
+   A_CABLE_EXIT_0: pos=(-0.0710,0.0240,0.0300) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.03000,0.03000,0.02000 meta=bundle=atx24,eps8,pcie8,sata,sata,molex,stub=0.026
+   A_FAN_0: pos=(-0.0000,-0.0292,-0.0000) fwd=(-0.00,-1.00,0.00) up=(1.00,-0.00,-0.00) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=1500
+   A_HIT_0: pos=(-0.0000,0.0000,-0.0000) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.14000,0.08600,0.15000 meta=
+   A_PORT_C13_0: pos=(0.0714,0.0040,0.0470) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.03000,0.02300,0.02000 meta=kind=iec_c14_inlet,key=-y
+   A_SCREW_PH2_0: pos=(0.0700,0.0370,-0.0690) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.00800,0.00800,0.00800 meta=thread=6-32
+   A_SCREW_PH2_1: pos=(0.0700,0.0370,0.0690) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.00800,0.00800,0.00800 meta=thread=6-32
+   A_SCREW_PH2_2: pos=(0.0700,-0.0370,-0.0690) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.00800,0.00800,0.00800 meta=thread=6-32
+   A_SCREW_PH2_3: pos=(0.0700,-0.0270,0.0450) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.00800,0.00800,0.00800 meta=thread=6-32
+   A_SWITCH_PSU_0: pos=(0.0704,0.0260,0.0470) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.02400,0.01800,0.01000 meta=hinge=y,on=-9,off=9,on_side=+z,mark_on=I,mark_off=O
+   built in 2.2 s
+
+== psu_750
+   mesh mark@A_SWITCH_PSU_0#paint_white: 204 tris
+   mesh psu_750_alu#alu: 480 tris
+   mesh psu_750_black_plastic#black_plastic: 640 tris
+   mesh psu_750_chip_black#chip_black: 12 tris
+   mesh psu_750_connector_beige#connector_beige: 24 tris
+   mesh psu_750_connector_black#connector_black: 3822 tris
+   mesh psu_750_fan_black#fan_black: 4512 tris
+   mesh psu_750_grey_plastic#grey_plastic: 4440 tris
+   mesh psu_750_nickel#nickel: 132 tris
+   mesh psu_750_paint_black#paint_black: 14968 tris
+   mesh psu_750_pcb_green#pcb_green: 12 tris
+   mesh psu_750_solder#solder: 1056 tris
+   mesh psu_750_steel_dark#steel_dark: 2304 tris
+   mesh psu_750_tex_psu_750#tex_psu_750: 126 tris
+   mesh psu_750_white_plastic#white_plastic: 120 tris
+   mesh psufan_rotor@A_FAN_0#fan_black: 3708 tris
+   mesh psufan_sticker@A_FAN_0#tex_psu_750: 144 tris
+   mesh rocker@A_SWITCH_PSU_0#black_plastic: 52 tris
+   TOTAL 36756 tris in 18 meshes
+   A_FAN_0: pos=(-0.0000,-0.0292,-0.0000) fwd=(-0.00,-1.00,0.00) up=(1.00,-0.00,-0.00) size=0.13500,0.13500,0.02500 meta=axis=z,spin=-1,rpm=1500
+   A_HIT_0: pos=(-0.0000,0.0000,-0.0000) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.14000,0.08600,0.15000 meta=
+   A_PORT_C13_0: pos=(0.0714,0.0040,0.0470) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.03000,0.02300,0.02000 meta=kind=iec_c14_inlet,key=-y
+   A_PORT_MOD_12V2X6_0: pos=(-0.0704,0.0210,-0.0380) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.02420,0.01420,0.01200 meta=pins=12+4,sense=+y,latch=+y
+   A_PORT_MOD_ATX_0: pos=(-0.0704,0.0210,0.0310) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.05660,0.01360,0.01200 meta=pins=24,latch=+y
+   A_PORT_MOD_CPU_0: pos=(-0.0704,0.0020,0.0520) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.02300,0.01360,0.01200 meta=pins=8,key=cpu,latch=+y
+   A_PORT_MOD_CPU_1: pos=(-0.0704,0.0020,0.0300) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.02300,0.01360,0.01200 meta=pins=8,key=cpu,latch=+y
+   A_PORT_MOD_PCIE_0: pos=(-0.0704,0.0020,-0.0040) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.02300,0.01360,0.01200 meta=pins=8,key=pcie,latch=+y
+   A_PORT_MOD_PCIE_1: pos=(-0.0704,0.0020,-0.0260) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.02300,0.01360,0.01200 meta=pins=8,key=pcie,latch=+y
+   A_PORT_MOD_PCIE_2: pos=(-0.0704,0.0020,-0.0480) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.02300,0.01360,0.01200 meta=pins=8,key=pcie,latch=+y
+   A_PORT_MOD_SATA_0: pos=(-0.0704,-0.0190,0.0470) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.01880,0.01360,0.01200 meta=pins=6,key=sata,latch=+y
+   A_PORT_MOD_SATA_1: pos=(-0.0704,-0.0190,0.0270) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.01880,0.01360,0.01200 meta=pins=6,key=sata,latch=+y
+   A_SCREW_PH2_0: pos=(0.0700,0.0370,-0.0690) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.00800,0.00800,0.00800 meta=thread=6-32
+   A_SCREW_PH2_1: pos=(0.0700,0.0370,0.0690) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.00800,0.00800,0.00800 meta=thread=6-32
+   A_SCREW_PH2_2: pos=(0.0700,-0.0370,-0.0690) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.00800,0.00800,0.00800 meta=thread=6-32
+   A_SCREW_PH2_3: pos=(0.0700,-0.0270,0.0450) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.00800,0.00800,0.00800 meta=thread=6-32
+   A_SWITCH_PSU_0: pos=(0.0704,0.0260,0.0470) fwd=(1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.02400,0.01800,0.01000 meta=hinge=y,on=-9,off=9,on_side=+z,mark_on=I,mark_off=O
+   built in 3.1 s
+
+== cooler_stock
+   mesh cooler_stock_alu#alu: 1648 tris
+   mesh cooler_stock_black_plastic#black_plastic: 5632 tris
+   mesh cooler_stock_copper#copper: 512 tris
+   mesh cooler_stock_fan_black#fan_black: 1380 tris
+   mesh cooler_stock_grey_plastic#grey_plastic: 2004 tris
+   mesh cooler_stock_steel#steel: 5040 tris
+   mesh cooler_stock_white_plastic#white_plastic: 120 tris
+   mesh paste@A_PASTE_PRE_0#paste: 156 tris
+   mesh plug@A_PLUG_FAN_0#connector_black: 252 tris
+   mesh screw@A_SCREW_PH2_0#steel: 584 tris
+   mesh screw@A_SCREW_PH2_1#steel: 584 tris
+   mesh screw@A_SCREW_PH2_2#steel: 584 tris
+   mesh screw@A_SCREW_PH2_3#steel: 584 tris
+   mesh stockfan_rotor@A_FAN_0#fan_black: 3076 tris
+   mesh stockfan_sticker@A_FAN_0#tex_cooler_stock: 144 tris
+   TOTAL 22300 tris in 15 meshes
+   A_FAN_0: pos=(-0.0000,0.0000,0.0445) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.07800,0.07800,0.01400 meta=axis=z,spin=-1,rpm=2800
+   A_HIT_0: pos=(-0.0000,0.0000,0.0270) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.10000,0.10000,0.05400 meta=
+   A_HIT_1: pos=(-0.0000,0.0000,0.0030) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.03600,0.03600,0.00600 meta=
+   A_PASTE_PRE_0: pos=(-0.0000,0.0000,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.03000,0.03000,0.00400 meta=kind=preapplied,area=0.028x0.028
+   A_PLUG_FAN_0: pos=(0.0100,0.0800,0.0040) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.01200,0.00800,0.01600 meta=kind=fan4,frame=plug,target=CPU_FAN
+   A_SCREW_PH2_0: pos=(0.0330,0.0330,0.0280) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_1: pos=(0.0330,-0.0330,0.0280) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_2: pos=(-0.0330,0.0330,0.0280) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_3: pos=(-0.0330,-0.0330,0.0280) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   built in 2.7 s
+
+== cooler_tower
+   mesh cooler_tower_alu#alu: 7604 tris
+   mesh cooler_tower_alu_dark#alu_dark: 60 tris
+   mesh cooler_tower_black_plastic#black_plastic: 616 tris
+   mesh cooler_tower_fan_black#fan_black: 4512 tris
+   mesh cooler_tower_nickel#nickel: 6728 tris
+   mesh cooler_tower_paint_black#paint_black: 1148 tris
+   mesh cooler_tower_steel#steel: 6084 tris
+   mesh cooler_tower_tex_cooler_tower#tex_cooler_tower: 2 tris
+   mesh cooler_tower_white_plastic#white_plastic: 120 tris
+   mesh film@A_FILM_0#tex_cooler_tower: 30 tris
+   mesh plug@A_PLUG_FAN_0#connector_black: 252 tris
+   mesh screw@A_SCREW_PH2_0#steel: 584 tris
+   mesh screw@A_SCREW_PH2_1#steel: 584 tris
+   mesh screw@A_SCREW_PH2_2#steel: 584 tris
+   mesh screw@A_SCREW_PH2_3#steel: 584 tris
+   mesh towerfan_rotor@A_FAN_0#fan_black: 3076 tris
+   mesh towerfan_sticker@A_FAN_0#tex_cooler_tower: 144 tris
+   TOTAL 32712 tris in 17 meshes
+   A_FAN_0: pos=(-0.0385,0.0000,0.0950) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=1800
+   A_FILM_0: pos=(-0.0000,0.0000,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.04400,0.04400,0.00300 meta=peel_from=+x,text=REMOVE BEFORE USE
+   A_FILM_TOP_0: pos=(0.0005,0.0000,0.1549) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.04000,0.11500,0.00100 meta=film=clear,on=top_cover,peel_from=+x
+   A_HIT_0: pos=(-0.0000,0.0000,0.0974) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.05000,0.12500,0.11680 meta=
+   A_HIT_1: pos=(-0.0385,0.0000,0.0950) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.02500,0.12000,0.12000 meta=
+   A_HIT_2: pos=(-0.0000,0.0000,0.0120) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.07500,0.07500,0.02400 meta=
+   A_PLUG_FAN_0: pos=(-0.0340,0.0900,0.0060) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.01200,0.00800,0.01600 meta=kind=fan4,frame=plug,target=CPU_FAN
+   A_SCREW_PH2_0: pos=(0.0330,0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_1: pos=(0.0330,-0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_2: pos=(-0.0330,0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_3: pos=(-0.0330,-0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   built in 2.2 s

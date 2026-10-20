@@ -1,0 +1,8 @@
+plug_hdmi: 1180 triangles, 4 meshes
+  mesh plug_hdmi_black_plastic#black_plastic  tris=924
+  mesh plug_hdmi_gold#gold  tris=120
+  mesh plug_hdmi_nickel#nickel  tris=72
+  mesh plug_hdmi_rubber#rubber  tris=64
+  A_CABLE_0 pos=(-0.0, 0.0, 0.0725) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00620,0.00620,0.01000 meta=r=0.0031,n=1
+  A_HIT_0 pos=(-0.0, 0.0, 0.017) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02300,0.01300,0.03400 meta=
+W=0.0139 H=0.0045 L=0.0295

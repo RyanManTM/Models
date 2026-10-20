@@ -1,0 +1,12 @@
+box_usb_installer: 1406 triangles, 4 meshes
+  mesh blister@A_CLAMLID_0#clear_plastic  tris=1020
+  mesh box_usb_installer_paper_white#paper_white  tris=128
+  mesh box_usb_installer_tex_box_usb_installer#tex_box_usb_installer  tris=256
+  mesh seallook@A_SEAL_0#seal_clear  tris=2
+  A_CLAMLID_0 pos=(-0.0, 0.0007, -0.027) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.04400,0.01600,0.08800 meta=hinge=x,open=-150,label=blister,order=1,under=A_SEAL_0
+  A_HIT_0 pos=(-0.0, 0.012, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.09500,0.02400,0.15500 meta=
+  A_ITEM_DOC_0 pos=(-0.0, 0.0009, 0.016) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.03000,0.07000,0.00040 meta=doc=guide,form=card,label=quick start card,order=3,under=A_ITEM_PART_0
+  A_ITEM_PART_0 pos=(-0.0, 0.006, 0.042) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.02060,0.01060,0.05920 meta=bag=none,label=installer USB stick,order=2,under=A_CLAMLID_0
+  A_SEAL_0 pos=(-0.0, 0.0014, 0.061) fwd=(0.0, 1.0, -0.0) up=(-0.0, 0.0, 1.0) size=0.02000,0.01400,0.00010 meta=shape=rect,peel=+y,print=SEALED,label=seal sticker,order=0
+shot from: usb_stick
+USB installer: seal A_SEAL_0 across the blister's front flange (0) -> the blister A_CLAMLID_0 swings open on its back edge (1; no parent: the card is the rig body) -> stick (2) -> quick start card under it (3).

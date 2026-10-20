@@ -1,0 +1,19 @@
+box_ac_12k: 132 triangles, 11 meshes
+  mesh box_ac_12k_cardboard#cardboard  tris=60
+  mesh box_ac_12k_tex_box_ac_12k#tex_box_ac_12k  tris=10
+  mesh flap_0@A_FLAP_0#cardboard  tris=12
+  mesh flap_0@A_FLAP_0#tex_box_ac_12k  tris=2
+  mesh flap_1@A_FLAP_1#cardboard  tris=12
+  mesh flap_1@A_FLAP_1#tex_box_ac_12k  tris=2
+  mesh flap_2@A_FLAP_2#cardboard  tris=12
+  mesh flap_2@A_FLAP_2#tex_box_ac_12k  tris=2
+  mesh flap_3@A_FLAP_3#cardboard  tris=12
+  mesh flap_3@A_FLAP_3#tex_box_ac_12k  tris=2
+  mesh tape_0@A_TAPE_0#tex_box_tape  tris=6
+  A_FLAP_0 pos=(-0.0, 0.4755, -0.31) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.68000,0.00450,0.31000 meta=hinge=x,open=-215,order=1,side=back
+  A_FLAP_1 pos=(-0.0, 0.4755, 0.31) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.68000,0.00450,0.31000 meta=hinge=x,open=215,order=1,side=front
+  A_FLAP_2 pos=(-0.34, 0.471, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.20400,0.00450,0.62000 meta=hinge=z,open=200,order=2,side=left
+  A_FLAP_3 pos=(0.34, 0.471, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.20400,0.00450,0.62000 meta=hinge=z,open=-200,order=2,side=right
+  A_HIT_0 pos=(-0.0, 0.24, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.68000,0.48000,0.62000 meta=
+  A_TAPE_0 pos=(-0.0, 0.48, -0.0) fwd=(0.0, 1.0, -0.0) up=(-0.0, 0.0, 1.0) size=0.68400,0.00300,0.04800 meta=cut=x,seam=z0
+shot from: stand-in

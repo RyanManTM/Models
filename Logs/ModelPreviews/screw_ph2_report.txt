@@ -1,0 +1,3 @@
+screw_ph2: 944 triangles, 1 meshes
+  mesh screw_ph2_steel#steel  tris=944
+  A_HIT_0 pos=(-0.0, 0.0, 0.0012) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00792,0.00792,0.00440 meta=

@@ -1,0 +1,10 @@
+plug_eth: 1528 triangles, 5 meshes
+  mesh plug_eth_glass#glass  tris=240
+  mesh plug_eth_gold#gold  tris=96
+  mesh plug_eth_grey_plastic#grey_plastic  tris=936
+  mesh plug_eth_rubber#rubber  tris=64
+  mesh plug_eth_tex_parts_c_palette#tex_parts_c_palette  tris=192
+  A_CABLE_0 pos=(-0.0, 0.0, 0.0745) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00580,0.00580,0.01000 meta=r=0.0029,n=1
+  A_HIT_0 pos=(-0.0, 0.0, 0.016) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01500,0.01200,0.03200 meta=
+  A_LATCH_0 pos=(-0.0, 0.005, 0.014) fwd=(0.0, 1.0, -0.0) up=(-0.0, 0.0, 1.0) size=0.00400,0.00400,0.00300 meta=press=-y
+W=0.0117 H=0.0080 L=0.0215
