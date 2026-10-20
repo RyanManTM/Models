@@ -1,0 +1,16 @@
+box_gpu_verdia_5060_zenith: 2062 triangles, 5 meshes
+  mesh foam@A_INSERT_FOAM_0#pe_foam  tris=1756
+  mesh lid_end@A_LID_0#tex_box_gpu_verdia_5060_zenith_in  tris=186
+  mesh s_tex_box_gpu_verdia_5060_zenith_in#tex_box_gpu_verdia_5060_zenith_in  tris=64
+  mesh sleeve_back@A_SLEEVE_0#paper_white  tris=48
+  mesh sleeve_back_print@A_SLEEVE_0#tex_box_gpu_verdia_5060_zenith  tris=8
+  A_HIT_0 pos=(-0.0, 0.04, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.28500,0.08000,0.16500 meta=
+  A_INSERT_FOAM_0 pos=(-0.0, 0.0059, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.27740,0.05096,0.15620 meta=lift=+y,dist=0.09,label=foam cradle,order=3,under=A_ITEM_PART_0
+  A_ITEM_DOC_0 pos=(-0.0, 0.0036, -0.0) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.17000,0.11500,0.00160 meta=doc=guide,form=leaflet,label=quick install guide,order=4,under=A_INSERT_FOAM_0
+  A_ITEM_DOC_1 pos=(0.003, 0.003, -0.002) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.12000,0.08000,0.00040 meta=doc=driver,form=card,label=driver note,order=5,under=A_ITEM_DOC_0
+  A_ITEM_DOC_2 pos=(0.006, 0.0022, -0.004) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.07000,0.05000,0.00060 meta=doc=sticker,form=sheet,label=case badge sticker,order=6,under=A_ITEM_DOC_1
+  A_ITEM_PART_0@A_INSERT_FOAM_0 pos=(0.00925, 0.02226, 0.05142) fwd=(0.0, 0.0, -1.0) up=(0.0, -1.0, -0.0) size=0.23950,0.05656,0.13785 meta=bag=antistatic_silver,label=graphics card,order=2,parent=A_INSERT_FOAM_0,under=A_LID_0
+  A_LID_0 pos=(-0.0, 0.0454, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.28500,0.03400,0.16380 meta=lift=+y,dist=0.08,label=lid,order=1,under=A_SLEEVE_0
+  A_SLEEVE_0 pos=(-0.0, 0.0, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.28500,0.08000,0.16500 meta=slide=+x,dist=0.315,label=sleeve,order=0
+shot from: cached
+GPU: sleeve A_SLEEVE_0 (0) -> lid A_LID_0 (1) -> card in its silver bag A_ITEM_PART_0 (2, rests in the foam) -> PE foam cradle A_INSERT_FOAM_0 (3) -> 3 papers under the foam (4).
