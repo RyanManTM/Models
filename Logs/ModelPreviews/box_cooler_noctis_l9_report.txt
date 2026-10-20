@@ -1,0 +1,28 @@
+box_cooler_noctis_l9: 988 triangles, 13 meshes
+  mesh acc_floor@A_INSERT_ACCBOX_0#tex_box_cooler_noctis_l9_in  tris=60
+  mesh acc_lid@A_FLAP_3#tex_box_cooler_noctis_l9_in  tris=26
+  mesh box_cooler_noctis_l9_paper_white#paper_white  tris=104
+  mesh dust@A_FLAP_1#paper_white  tris=12
+  mesh dust@A_FLAP_2#paper_white  tris=12
+  mesh dust_print@A_FLAP_1#tex_box_cooler_noctis_l9  tris=12
+  mesh dust_print@A_FLAP_2#tex_box_cooler_noctis_l9  tris=12
+  mesh lid@A_FLAP_0#paper_white  tris=132
+  mesh lid_print@A_FLAP_0#tex_box_cooler_noctis_l9  tris=2
+  mesh s_tex_box_cooler_noctis_l9#tex_box_cooler_noctis_l9  tris=64
+  mesh syringe@A_ITEM_HW_1#grey_plastic  tris=208
+  mesh syringe@A_ITEM_HW_1#white_plastic  tris=80
+  mesh tray@A_INSERT_FOAM_0#eps_foam  tris=264
+  A_FLAP_0 pos=(-0.0, 0.0792, -0.0621) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.19500,0.00080,0.12500 meta=hinge=x,open=-115,tuck=1,label=tuck flap,order=1
+  A_FLAP_1 pos=(-0.0967, 0.0792, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.03000,0.00080,0.12340 meta=hinge=z,open=95,label=dust flap,order=2,under=A_FLAP_0
+  A_FLAP_2 pos=(0.0967, 0.0792, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.03000,0.00080,0.12340 meta=hinge=z,open=-95,label=dust flap,order=2,under=A_FLAP_0
+  A_FLAP_3@A_INSERT_ACCBOX_0 pos=(0.07715, 0.04332, -0.0586) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.03690,0.00060,0.11780 meta=hinge=x,open=-120,tuck=1,label=accessory box flap,order=6,parent=A_INSERT_ACCBOX_0,under=A_INSERT_ACCBOX_0
+  A_HIT_0 pos=(-0.0, 0.04, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.19500,0.08000,0.12500 meta=
+  A_INSERT_ACCBOX_0 pos=(0.07715, 0.0012, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.03690,0.04272,0.11780 meta=lift=+y,dist=0.14,label=accessory box,order=5,under=A_ITEM_DOC_1
+  A_INSERT_FOAM_0 pos=(-0.01895, 0.0008, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.15390,0.04472,0.12180 meta=lift=+y,dist=0.06,label=foam tray,order=6,under=A_ITEM_PART_0
+  A_ITEM_DOC_0 pos=(-0.0, 0.05882, -0.0) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.08800,0.05600,0.00040 meta=doc=warranty,form=card,label=warranty card,order=3,under=A_FLAP_0,A_FLAP_1,A_FLAP_2
+  A_ITEM_DOC_1 pos=(0.003, 0.05612, -0.002) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.10000,0.10000,0.00250 meta=doc=manual,form=booklet,label=user manual,order=4,under=A_ITEM_DOC_0
+  A_ITEM_HW_0@A_INSERT_ACCBOX_0 pos=(0.07695, 0.0024, -0.022) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.02990,0.06000,0.00800 meta=label=MOUNTING KIT,order=7,parent=A_INSERT_ACCBOX_0,under=A_FLAP_3
+  A_ITEM_HW_1@A_INSERT_ACCBOX_0 pos=(0.07695, 0.0024, 0.031) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.01300,0.04600,0.01300 meta=kind=syringe,label=THERMAL PASTE,order=7,parent=A_INSERT_ACCBOX_0,under=A_FLAP_3
+  A_ITEM_PART_0@A_INSERT_FOAM_0 pos=(-0.04, 0.0188, -0.0) fwd=(-0.0, 1.0, 0.0) up=(1.0, 0.0, -0.0) size=0.10040,0.14190,0.05272 meta=bag=none,label=CPU cooler,order=5,parent=A_INSERT_FOAM_0,under=A_ITEM_DOC_1
+shot from: cached
+Low-profile cooler: tuck lid A_FLAP_0 (1) -> dust flaps (2) -> 2 papers in a pile on top (3..4) -> cooler A_ITEM_PART_0 and the accessory box A_INSERT_ACCBOX_0 (5) -> EPS tray A_INSERT_FOAM_0 and the accessory box flap A_FLAP_3 (6) -> mounting kit A_ITEM_HW_0, paste A_ITEM_HW_1 (7).
