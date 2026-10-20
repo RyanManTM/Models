@@ -563,7 +563,96 @@ def build_low_profile():
     return m
 
 
+def tex_tiron_stock(pid):
+    at = pb.Atlas(1024, 512)
+    at.add("hub", 0, 0, 512, 512)
+    at.add("ring", 512, 0, 512, 128)
+    cv = pb.Canvas(1024, 512, bg="#0d0d0e")
+    cx, cy = 256, 256
+    cv.circle(cx, cy, 252, "#101114")
+    cv.ring(cx, cy, 214, 226, "#0a6fc2")
+    cv.text("TIRON", cx, cy - 18, 70, "#eef2f6", "arialb", "center", "center", spacing=1.15)
+    cv.text("STOCK COOLER", cx, cy + 62, 24, "#7fb3e0", "arialb", "center", "center", spacing=1.8)
+    cv.rect(512, 0, 512, 128, "#111214")
+    cv.text("TIRON  RM1", 768, 64, 54, "#cfd3d8", "arialb", "center", "center", spacing=1.4)
+    cv.render(pid)
+    return at
+
+
+def build_tiron_stock():
+    """Intel Laminar RM1-style stock cooler (socket L17) on the cooler_stock contract: a round radial aluminium
+    extrusion round a copper core, a black frameless fan in a round black shroud ring on four struts, a black
+    mounting ring with four arms to the spring screws, pre-applied paste. Every anchor is cooler_stock's pose."""
+    pid = "cooler_tiron_stock"
+    at = tex_tiron_stock(pid)
+    m = pb.Model(pid)
+    TEX = "tex_" + pid
+    # copper core and the aluminium hub
+    m.add("copper", pb.g_lathe([(0.0, 0.0), (0.0160, 0.0), (0.0160, 0.0055), (0.0140, 0.0065), (0.0140, 0.0340),
+                                (0.0, 0.0340)], 64))
+    m.add("alu", pb.g_lathe([(0.0160, 0.0004), (0.0185, 0.0004), (0.0185, 0.0350), (0.0140, 0.0350),
+                             (0.0140, 0.0065), (0.0160, 0.0055), (0.0160, 0.0004)], 64))
+    # 56 swept radial fins, cut back at the bottom outside the mounting ring
+    n = 56
+    prof = [(0.0180, 0.0012), (0.0300, 0.0012), (0.0330, 0.0060), (0.0405, 0.0075), (0.0405, 0.0350),
+            (0.0180, 0.0350)]
+    for k in range(n):
+        th0 = pb.TAU * k / n
+        verts, faces, uvs, fl = pb.g_slab(prof, [], 0.0007, -0.00035)
+        out = []
+        for p in verts:
+            rr, zz, w = p.x, p.y, p.z
+            th = th0 + 9.0 * (rr - 0.0180)
+            out.append(V((rr * math.cos(th) + w * math.sin(th), rr * math.sin(th) - w * math.cos(th), zz)))
+        m.add("alu", (out, faces, None, fl))
+    # the fan shroud: a round ring over the fins with four struts down to the mounting ring
+    sh = m.mb("black_plastic")
+    sh.add(pb.g_lathe([(0.0402, 0.0345), (0.0470, 0.0345), (0.0470, 0.0505), (0.0458, 0.0525), (0.0412, 0.0525),
+                       (0.0402, 0.0510), (0.0402, 0.0345)], 96))
+    sh.add(pb.g_lathe([(0.0402, 0.0355), (0.0418, 0.0355), (0.0418, 0.0365), (0.0402, 0.0365)], 96))
+    for k in range(4):
+        a = math.pi / 4 + k * math.pi / 2
+        d = V((math.cos(a), math.sin(a), 0))
+        sh.add(pb.xf(pb.g_box((0.0050, 0.0040, 0.0160)), pb.rot("z", a), d * 0.0445 + V((0, 0, 0.0270))))
+    # mounting ring with four arms ending in the screw wells
+    ring = pb.circle2(0, 0, 0.0450, 96)
+    sh.add(pb.g_slab(ring, [pb.circle2(0, 0, 0.0412, 96)], 0.0030, 0.0170, bevel=0.0004))
+    for (x, y) in HOLES:
+        sh.add(pb.g_ring(0.0042, 0.0058, 0.0090, 24), None, (x, y, 0.0200 - 0.0045))
+        sh.add(pb.g_ring(0.0017, 0.0058, 0.0012, 24), None, (x, y, 0.0200 - 0.0006))  # spring seat
+        d = V((x, y, 0)).normalized()
+        sh.add(pb.xf(pb.g_box((0.0060, 0.0070, 0.0030)), pb.rot("z", math.atan2(y, x)), d * 0.0420 + V((0, 0, 0.0185))))
+    # the brand band round the shroud (texture strip on the +x face)
+    m.add(TEX, pb.g_quad(0.030, 0.0075, at.uv("ring")), pb.label_frame((1, 0, 0), (0, 0, 1)), (0.04705, 0.0, 0.0428))
+    # fan: frameless, 9 blades, black
+    fz = 0.0445
+    fa = m.anchor("A_FAN_0", (0, 0, fz), (0.078, 0.078, 0.014), forward=(0, 0, 1), up=(0, 1, 0),
+                  meta=pf.fan_meta("ccw", 2800))
+    pf.make_fan(fa, diameter=0.078, thickness=0.014, blades=9, frame=False, sticker=pid, sticker_uv=at.uv("hub"),
+                struts=4, name="stockfan", cov=(0.78, 1.0), sweep=0.5)
+    for i, (x, y) in enumerate(HOLES):
+        bc.spring_screw(m, i, x, y, 0.0200, 0.0262)
+    pa = m.anchor("A_PASTE_PRE_0", (0, 0, 0), (0.030, 0.030, 0.004), forward=(0, 0, -1), up=(0, 1, 0),
+                  meta="kind=preapplied,area=0.028x0.028")
+    # Intel-style: three stripes of paste rather than a square
+    pp = m.piece(pa, "paste", "paste")
+    for k in (-1, 0, 1):
+        pp.add(pb.g_slab(pb.rrect2(0, k * 0.0095, 0.026, 0.0065, 0.002, 3), [], 0.00018, -0.00018, bevel=0.00006))
+    plug(m, 0, (0.010, 0.080, 0.004), (0, -1, 0), (0, 0, 1), (0.0, 0.006, fz - 0.0065),
+         [(0.0, 0.040, fz - 0.0065), (0.0, 0.046, fz - 0.008), (0.002, 0.050, 0.030), (0.006, 0.056, 0.016),
+          (0.008, 0.062, 0.006)])
+    m.anchor("A_HIT_0", (0, 0, 0.027), (0.100, 0.100, 0.054))
+    m.anchor("A_HIT_1", (0, 0, 0.003), (0.036, 0.036, 0.006))
+    finish(m, pid, [
+        dict(yaw=30, pitch=45), dict(yaw=200, pitch=20), dict(yaw=20, pitch=-60),
+        dict(yaw=0, pitch=88, dist=0.25), dict(yaw=60, pitch=25, target=(0.033, 0.033, 0.03), dist=0.09),
+        dict(yaw=160, pitch=-15, target=(0.0, 0.0, 0.01), dist=0.16),
+    ])
+    return m
+
+
 BUILDERS = {k: (lambda k=k: build_tower_model(k, TOWERS[k])) for k in TOWERS}
+BUILDERS["cooler_tiron_stock"] = build_tiron_stock
 BUILDERS["cooler_noctis_l9"] = build_low_profile
 
 

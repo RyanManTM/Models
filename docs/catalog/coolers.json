@@ -215,5 +215,33 @@
     },
     "contract": "cooler_tower",
     "new_contract": false
+  },
+  {
+    "id": "cooler_tiron_stock",
+    "model": "cooler_tiron_stock",
+    "brand": "Tiron",
+    "name": "Tiron RM1 stock cooler",
+    "category": "Cooler",
+    "price": 15,
+    "power_w": 2,
+    "color": "#111214",
+    "rgb": false,
+    "analog": "Intel Laminar RM1 (docs only, never shown in game)",
+    "desc": "The round boxed cooler from Tiron's L17 CPUs, paste already applied.",
+    "specs": {
+      "height_mm": 53,
+      "fans": 1,
+      "fan_mm": 78,
+      "heat_pipes": 0,
+      "towers": 0,
+      "rpm_max": 2800
+    },
+    "game": {
+      "cooler_max_w": 65,
+      "socket": "L17",
+      "perf": 0
+    },
+    "contract": "cooler_stock",
+    "new_contract": false
   }
 ]

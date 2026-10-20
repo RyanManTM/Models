@@ -244,6 +244,34 @@
    A_SCREW_PH2_3: pos=(-0.0330,-0.0330,0.0214) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
    BOUNDS x -0.0516..0.0389  y -0.0635..0.0920  z -0.0120..0.1578
 
+== cooler_tiron_stock
+   mesh cooler_tiron_stock_alu#alu: 1888 tris
+   mesh cooler_tiron_stock_black_plastic#black_plastic: 5752 tris
+   mesh cooler_tiron_stock_copper#copper: 512 tris
+   mesh cooler_tiron_stock_fan_black#fan_black: 1424 tris
+   mesh cooler_tiron_stock_steel#steel: 5040 tris
+   mesh cooler_tiron_stock_tex_cooler_tiron_stock#tex_cooler_tiron_stock: 2 tris
+   mesh cooler_tiron_stock_white_plastic#white_plastic: 120 tris
+   mesh paste@A_PASTE_PRE_0#paste: 372 tris
+   mesh plug@A_PLUG_FAN_0#connector_black: 252 tris
+   mesh screw@A_SCREW_PH2_0#steel: 584 tris
+   mesh screw@A_SCREW_PH2_1#steel: 584 tris
+   mesh screw@A_SCREW_PH2_2#steel: 584 tris
+   mesh screw@A_SCREW_PH2_3#steel: 584 tris
+   mesh stockfan_rotor@A_FAN_0#fan_black: 3708 tris
+   mesh stockfan_sticker@A_FAN_0#tex_cooler_tiron_stock: 144 tris
+   TOTAL 21550 tris in 15 meshes
+   A_FAN_0: pos=(-0.0000,0.0000,0.0445) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.07800,0.07800,0.01400 meta=axis=z,spin=-1,rpm=2800
+   A_HIT_0: pos=(-0.0000,0.0000,0.0270) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.10000,0.10000,0.05400 meta=
+   A_HIT_1: pos=(-0.0000,0.0000,0.0030) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.03600,0.03600,0.00600 meta=
+   A_PASTE_PRE_0: pos=(-0.0000,0.0000,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.03000,0.03000,0.00400 meta=kind=preapplied,area=0.028x0.028
+   A_PLUG_FAN_0: pos=(0.0100,0.0800,0.0040) fwd=(0.00,-1.00,0.00) up=(-0.00,0.00,1.00) size=0.01200,0.00800,0.01600 meta=kind=fan4,frame=plug,target=CPU_FAN
+   A_SCREW_PH2_0: pos=(0.0330,0.0330,0.0280) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_1: pos=(0.0330,-0.0330,0.0280) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_2: pos=(-0.0330,0.0330,0.0280) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   A_SCREW_PH2_3: pos=(-0.0330,-0.0330,0.0280) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.00900,0.00900,0.01200 meta=spring=1,thread=M3,turns=8
+   BOUNDS x -0.0470..0.0470  y -0.0470..0.0800  z -0.0120..0.0525
+
 == cooler_noctis_l9
    mesh cooler_noctis_l9_alu#alu: 3768 tris
    mesh cooler_noctis_l9_black_plastic#black_plastic: 596 tris

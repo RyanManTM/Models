@@ -16,7 +16,7 @@ Branch `claude/cat-coolers`. Script `Tools/Blender/build_cat_coolers.py` (new; i
 | 6 | `cooler_noctis_d15_black` | cooler_tower | done |
 | 7 | `cooler_noctis_l9` | cooler_tower | done |
 | 8 | `cooler_frostpeak_120_rgb` | cooler_tower | done |
-| 9 | `cooler_tiron_stock` | cooler_stock | not yet |
+| 9 | `cooler_tiron_stock` | cooler_stock | done |
 | 10 | `cooler_arctiq_lc240` | AIO (new) | not yet |
 | 11 | `cooler_corvex_h150i_white` | AIO (new) | not yet |
 | 12 | `cooler_glacier_ls720` | AIO (new) | not yet |
@@ -35,6 +35,7 @@ Branch `claude/cat-coolers`. Script `Tools/Blender/build_cat_coolers.py` (new; i
 | `cooler_noctis_d15_black` | 57 438 | 165 mm | cooler_tower | SAME 6, DIFF 5, ONLY_B 4 (as AK620) |
 | `cooler_noctis_l9` | 24 346 | 37 mm | cooler_tower (low profile) | SAME 6, DIFF 5 (fan faces +z on top; top film on the fan hub) |
 | `cooler_frostpeak_120_rgb` | 38 396 | 158 mm | cooler_tower | SAME 7, DIFF 4, ONLY_B 1 (A_PLUG_ARGB_0) |
+| `cooler_tiron_stock` | 21 550 | 53 mm | cooler_stock | vs `cooler_stock`: SAME 10 of 10 (every anchor) |
 
 ### Anchor comparison (anchor_compare.py, `cooler_tower` = A)
 
@@ -74,6 +75,10 @@ The installing anchors (the four spring screws and the base film) are SAME on ev
 - Total height <= 165 mm (the specs give each one's height).
 
 ## Deviations
+
+- `cooler_tiron_stock`: the real Laminar RM1 clips in with four push pins; here it keeps cooler_stock's four spring
+  screws (same poses and meta) so the game installs it like the Spinner. Its paste is three stripes inside the same
+  `A_PASTE_PRE_0` area. `game.socket` is L17 (it ships with the Tiron CPUs; the holes fit both boards).
 
 - `cooler_noctis_l9` is a low-profile cooler on the tower contract: the X bracket is a flat plate under the fin stack
   and the four spring screws keep their exact poses in wells cut through the fins (as on the real NH-L9). Its fan
