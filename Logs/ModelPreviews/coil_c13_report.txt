@@ -1,0 +1,11 @@
+coil_c13: 6532 triangles, 4 meshes
+  mesh coil_c13_black_plastic#black_plastic  tris=2272
+  mesh coil_c13_nickel#nickel  tris=308
+  mesh coil_c13_rubber#rubber  tris=3212
+  mesh tie_0@A_TIE_0#white_plastic  tris=740
+  A_HIT_0 pos=(-0.0, 0.00949, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.11004,0.01883,0.08780 meta=
+  A_TIE_0 pos=(-0.01489, 0.01111, -0.03361) fwd=(0.0, 1.0, -0.0) up=(0.979, -0.0, -0.204) size=0.02184,0.01620,0.01626 meta=tie=twist,colour=white
+  size: 0.1100 (x) x 0.0188 (y) x 0.0878 (z) m; bounds y 0.0001..0.0189
+  note: 1.5 m power cord (d 6.0 mm), 5 turns; C13 end and NEMA 5-15P wall plug inside the coil
+  space box_psu_750 A_ITEM_CORD_0 (w 0.12, h 0.09, t 0.016): margins w +0.0100, h +0.0022, t -0.0028
+  space box_psu_450 A_ITEM_CORD_0 (w 0.09, h 0.075, t 0.014): margins w -0.0200, h -0.0128, t -0.0048

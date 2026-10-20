@@ -97,6 +97,15 @@ def bezier(p0, t0, p1, t1, n=10, k0=None, k1=None):
     return out
 
 
+def lead(p0, t0, p1, t1, n=10, k0=None, k1=None, lift=0.0018):
+    """A cable lead between a plug and the coil: a cubic that arches up by 'lift' in the middle, so it crosses over
+    the neighbouring turns instead of through them."""
+    pts = bezier(p0, t0, p1, t1, n, k0, k1)
+    for i, p in enumerate(pts):
+        p.y += lift * math.sin(math.pi * i / n)
+    return pts
+
+
 def smoothstep(x):
     x = max(0.0, min(1.0, x))
     return x * x * (3 - 2 * x)
@@ -324,8 +333,8 @@ def build_coil_dp(root):
     eb = V(ib["end"]) - db * 0.03
     p_start, t_start = loops[0], coil.tangent(th0)
     p_end, t_end = loops[-1], coil.tangent(th_end)
-    lead_a = bezier(ea, da, p_start, t_start, 12, 0.03, 0.04)
-    lead_b = bezier(p_end, t_end, eb, -db, 12, 0.04, 0.03)
+    lead_a = lead(ea, da, p_start, t_start, 12, 0.03, 0.04)
+    lead_b = lead(p_end, t_end, eb, -db, 12, 0.04, 0.03)
     pts = lead_a[:-1] + loops + lead_b[1:]
     for p in pts:
         p.y = max(p.y, r)
@@ -340,10 +349,99 @@ def build_coil_dp(root):
     return dict(note="1.8 m DisplayPort cable (d 5.8 mm), 6 turns, both DP heads inside the coil")
 
 
+# ====================================================================== coil_c13
+
+def plug_nema515(fr, parent):
+    """A US NEMA 5-15P moulded wall plug (the PSU cord's wall end), slim straight style: two flat blades with their
+    holes, the round ground pin, a body that tapers into a ribbed strain relief. Frame like build_plugs: origin at
+    the face centre, +Z back along the cable, +Y the blade side (ground pin at -Y). Returns the relief end."""
+    W, H = 0.0174, 0.0215          # across the blades, blade-to-ground
+    tag = "black_plastic"
+    by, gy = 0.0056, 0.0056 - 0.0119
+    # body: a short lip at the face, then a taper into the relief
+    secs = [(P.rrect(W, H, 0.0032, 0, 0, 3), 0.0), (P.rrect(W + 0.0008, H + 0.0008, 0.0035, 0, 0, 3), 0.0012),
+            (P.rrect(W + 0.0008, H + 0.0008, 0.0035, 0, 0, 3), 0.0105),
+            (P.rrect(W - 0.0005, H - 0.0010, 0.0040, 0, 0, 3), 0.0200),
+            (P.rrect(0.0118, 0.0122, 0.0045, 0, -0.0004, 3), 0.0292)]
+    P.loft("nema_body", secs, tag, fr, parent, smooth=40)
+    # grip ribs on both broad sides (the faces at +-x), on the taper so they stay inside the lip's outline
+    for sx in (-1, 1):
+        for k in range(5):
+            z = 0.0118 + k * 0.0017
+            hw = (W + 0.0008) / 2 + ((W - 0.0005) / 2 - (W + 0.0008) / 2) * (z - 0.0105) / (0.0200 - 0.0105)
+            P.cube("nema_grip", (sx * (hw + 0.0001), 0, z), (0.0006, H * 0.6, 0.0007), tag, fr, parent)
+    # strain relief rings down to the cable
+    z = 0.0292
+    rr0 = 0.0058
+    n = 5
+    for k in range(n):
+        t = k / (n - 1)
+        rr = rr0 * (1 - t) + 0.0034 * t
+        P.cylinder("nema_relief", fr.sub(0, -0.0004, z + k * 0.0024), rr, 0.0019, tag, 14, parent, z0=0.0, smooth=70)
+        P.cylinder("nema_relief", fr.sub(0, -0.0004, z + k * 0.0024 + 0.0019), rr * 0.86, 0.0005, tag, 14, parent, z0=0.0)
+    end = fr.p(0, -0.0004, z + n * 0.0024)
+    # the two blades (1.5 mm brass, 6.35 mm wide, 15.9 mm out of the face) with their holes
+    L = 0.0159
+    for sx in (-1, 1):
+        bf = fr.sub(sx * 0.00635, by, -L / 2 + 0.0005, fwd=(1, 0, 0), up=(0, 1, 0))   # local x = plug -z
+        a0, a1, h = -L / 2 - 0.0005, L / 2, 0.0032
+        out = [(a0, -h), (a1 - 0.0008, -h), (a1, -h + 0.0008), (a1, h - 0.0008), (a1 - 0.0008, h), (a0, h)]
+        P.slab("nema_blade", out, 0.0015, "nickel", bf, holes=[P.circle(0.0015, a1 - 0.0045, 0, 12)], parent=parent)
+    # the round ground pin (a little longer than the blades)
+    gf = fr.sub(0, gy, 0.0, fwd=(0, 0, -1), up=(0, 1, 0))
+    Lg = 0.0187
+    P.lathe("nema_ground", [(0, -0.0005), (0.0024, -0.0005), (0.0024, Lg - 0.0016), (0.0019, Lg - 0.0004), (0.0011, Lg), (0, Lg)],
+            "nickel", gf, 16, parent, smooth=50)
+    # moulded marks on the face: a ring round the ground pin
+    P.slab("nema_face_ring", P.circle(0.0034, 0, gy, 20), 0.0003, tag, fr.sub(0, 0, -0.00015),
+           holes=[P.circle(0.0026, 0, gy, 20)], parent=parent)
+    return dict(end=end, W=W, H=H, L=z + n * 0.0024)
+
+
+def build_coil_c13(root):
+    """1.5 m PSU power cord (18/3 SVT, 6 mm) coiled in 5 turns with a white twist tie; the C13 end (plug_c13 look)
+    and the NEMA 5-15P wall plug lie inside the coil."""
+    d = 0.0060
+    r = d / 2
+    th0 = 168 * DEG
+    rows = [(3, 0.0), (2, 0.0)]
+    coil = Coil(d, 0.0478, 0.0350, rows, th0, tie_theta=250 * DEG, seed=9, shape=(0.02, 0.012))
+    turns = len(coil.lanes) - 0.5
+    th_end = th0 + TAU * turns
+    loops = coil.path(th0, th_end, 9 * DEG)
+    # the C13 end lying flat in the coil (its chamfered top up), face towards +x, cable leaving towards -x
+    fa = V((0.021, 0.0091, 0.0128))
+    da = V((-1, 0, -0.04)).normalized()
+    ia = drop_stub(PL.plug_c13, P.Frame(fa, da, (0, 1, 0)), root)
+    ea = V(ia["end"]) - da * 0.03
+    # the wall plug lying on its side (blades one above the other), prongs towards -x, cable leaving towards +x
+    fb = V((-0.0125, 0.0095, -0.0128))
+    db = V((1, 0, 0.03)).normalized()
+    ib = plug_nema515(P.Frame(fb, db, (0, 0, 1)), root)
+    eb = V(ib["end"])
+    p_start, t_start = loops[0], coil.tangent(th0)
+    p_end, t_end = loops[-1], coil.tangent(th_end)
+    lead_a = lead(ea, da, p_start, t_start, 10, 0.012, 0.015)
+    lead_b = lead(p_end, t_end, eb, -db, 10, 0.015, 0.012)
+    pts = lead_a[:-1] + loops + lead_b[1:]
+    for p in pts:
+        p.y = max(p.y, r)
+    sweep(root, pts, circle_profile(r, 8, math.pi / 8), "rubber", "c13_cord")
+    tth = coil.tie
+    cen, out, hw, hh = coil.bundle_section(tth)
+    tan = coil.tangent(tth)
+    tie_a = P.anchor("A_TIE_0", P.Frame(cen + V((0, hh, 0)), (0, 1, 0), tuple(tan)), (hw * 2 + 0.006, TIE_W + 0.012, hh * 2 + 0.006),
+                     root, meta="tie=twist,colour=white")
+    twist_tie(tie_a, cen, tan, (0, 1, 0), hw, hh, pig_dir=tan)
+    return dict(note="1.5 m power cord (d 6.0 mm), 5 turns; C13 end and NEMA 5-15P wall plug inside the coil")
+
+
 # ====================================================================== registry and driver
 
 MODELS = {
     "coil_dp": (build_coil_dp, dict(fit=("box_cable_dp A_ITEM_PART_0", (0.115, 0.115, 0.020)))),
+    "coil_c13": (build_coil_c13, dict(fit=("box_psu_750 A_ITEM_CORD_0", (0.120, 0.090, 0.016)),
+                                      fit2=("box_psu_450 A_ITEM_CORD_0", (0.090, 0.075, 0.014)))),
 }
 
 
@@ -362,14 +460,16 @@ def build(mid, prev):
     notes = [f"  size: {size.x:.4f} (x) x {size.y:.4f} (y) x {size.z:.4f} (z) m; bounds y {lo.y:.4f}..{hi.y:.4f}"]
     if info.get("note"):
         notes.append("  note: " + info["note"])
-    fit = cfg.get("fit")
-    if fit:
-        w, h, t = fit[1]
-        notes.append(f"  fits {fit[0]} (w {w}, h {h}, t {t}): margins w {w - size.x:+.4f}, h {h - size.z:+.4f}, t {t - size.y:+.4f}")
+    for key in ("fit", "fit2", "fit3"):
+        fit = cfg.get(key)
+        if fit:
+            w, h, t = fit[1]
+            notes.append(f"  space {fit[0]} (w {w}, h {h}, t {t}): margins w {w - size.x:+.4f}, h {h - size.z:+.4f}, "
+                         f"t {t - size.y:+.4f}")
     tris, meshes = P.write_report(root, mid, "\n".join(notes))
     print("\n".join(notes))
     if prev:
-        P.preview(root, mid, views=cfg.get("wb", ((30, 40), (-150, 30))), size=(900, 700))
+        P.preview(root, mid, views=cfg.get("wb", ((0, 78), (-150, 30))), size=(900, 700))
         S.render(root, mid, cfg.get("views", [(25, 45), (-120, 30)]), size=(1000, 760), samples=cfg.get("samples", 40), start=2)
     return tris, meshes, tuple(round(x, 4) for x in size)
 
