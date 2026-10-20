@@ -586,7 +586,7 @@ def band_face(F, it, shot):
     acc, txt = it["accent"], it["text"]
     h = F.h
     a.rect(F.x, F.y, F.w, h * 0.12, CAT[it["cat"]])
-    logo(F, it, F.x + h * 0.25, F.Y(0.56), h * 0.36, txt, maxw=F.w * 0.3, valign="CENTER")
+    logo(F, it, F.x + h * 0.25, F.Y(0.56), h * 0.36, txt, maxw=min(F.w * 0.3, F.w * 0.34 - h * 0.25), valign="CENTER")
     a.text(it["name"].upper(), F.X(0.36), F.Y(0.62), h * 0.24, txt, "arialbd.ttf", maxw=F.w * 0.38, valign="CENTER")
     a.text(it["line"], F.X(0.36), F.Y(0.33), h * 0.13, lighten(acc, 0.1), "arialbd.ttf", maxw=F.w * 0.38, valign="CENTER")
     if shot:
