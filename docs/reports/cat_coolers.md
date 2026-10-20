@@ -153,6 +153,41 @@ points relative to `A_SOCKET_COOLER_0`, with the package's long side (75 mm) alo
 ILM is about 69 mm wide); the long axis (y) follows the 61 x 105 mm package. **What the socket needs:** the L46
 socket's ILM carries four M4 studs at these points relative to `A_SOCKET_COOLER_0`.
 
+## Unboxing (films, caps, stickers)
+
+Added after the catalogue's unboxing rule (`docs/tasks/catalog/README.md`, "The unboxing on every part"). Only
+anchors were added. Each re-exported FBX was checked against its earlier export with `extras_compare.py`:
+
+| id | extras_compare | films | caps |
+|---|---|---|---|
+| `cooler_arctiq_34_black` / `_white` | ONLY ADDED `A_FILM_HUB_0@A_FAN_0` | `A_FILM_0`, `A_FILM_TOP_0`, `A_FILM_HUB_0` | - |
+| `cooler_glacier_ak400_white` | ONLY ADDED `A_FILM_HUB_0@A_FAN_0` | as above | - |
+| `cooler_frostpeak_120_rgb` | ONLY ADDED `A_FILM_HUB_0@A_FAN_0` | as above | - |
+| `cooler_noctis_l9` | ONLY ADDED `A_FILM_HUB_0@A_FAN_0` | as above (see the note below) | - |
+| `cooler_glacier_ak620_black`, `cooler_noctis_d15`, `cooler_noctis_d15_black` | ONLY ADDED `A_FILM_HUB_0@A_FAN_0`, `A_FILM_HUB_1@A_FAN_1` | `A_FILM_0`, `A_FILM_TOP_0`, `A_FILM_HUB_0..1` | - |
+| `cooler_tiron_stock` | ONLY ADDED `A_FILM_HUB_0@A_FAN_0` | `A_FILM_HUB_0` | `cap_paste` at `A_PASTE_PRE_0` (blocks install) |
+| `cooler_arctiq_lc240` | ONLY ADDED `A_FILM_PUMP_0`, `A_FILM_HUB_0..1@A_RAD_FAN_k@A_RAD_0` | `A_FILM_0`, `A_FILM_TOP_0`, `A_FILM_PUMP_0`, `A_FILM_HUB_0..1` | - |
+| `cooler_corvex_h150i_white`, `cooler_glacier_ls720` | ONLY ADDED `A_FILM_PUMP_0`, `A_FILM_HUB_0..2@A_RAD_FAN_k@A_RAD_0` | `A_FILM_0`, `A_FILM_TOP_0`, `A_FILM_PUMP_0`, `A_FILM_HUB_0..2` | - |
+| `cooler_srv_epoch_1u`, `cooler_srv_platinum_2u` | SAME (nothing to add; not re-committed) | `A_FILM_0` (the cover over the pre-applied TIM) | - |
+
+- `A_FILM_HUB_<n>` is a disc on the fan's hub sticker, parented to its fan anchor (`@A_FAN_n`, or
+  `@A_RAD_FAN_n@A_RAD_0` on a radiator) so it spins with the rotor. +Z is the fan's front. Its size is the disc
+  (2r, 2r, 0.1 mm); meta `film=clear,on=fan_hub,shape=disc,radius=<r>,peel=+x,tab=+x`. The radius and height come
+  from the sticker mesh.
+- `A_FILM_PUMP_0` sits on the pump cap, or on the LCD on the Corvex. Meta `peel=+x,tab=+x+y,same_as=A_FILM_TOP_0`:
+  it is the same film as the contract's `A_FILM_TOP_0`, so the game should build one peel mesh for the two.
+- On `cooler_noctis_l9` the existing `A_FILM_TOP_0` already sits on the fan hub (no top cover), so it and
+  `A_FILM_HUB_0` are the same film. Use `A_FILM_HUB_0` (it spins with the rotor).
+- The existing `A_FILM_0` / `A_FILM_TOP_0` keep their meta `peel_from=+x` (the tower contract's wording, which can't
+  change without changing the contract anchor). It means `peel=+x`.
+- No radiator has glossy end caps (matte plastic tanks), so there are no end-cap films. No stickers.
+
+The papers (`docs`, `doc_notes` in `docs/catalog/coolers.json`): the manual and warranty for every cooler (plus
+safety on the AIOs). The notes cover the L17 and V5 mounting steps, the pea-sized paste dot, the CPU_FAN header, a
+second fan on CPU_OPT/SYS_FAN, the ARGB 5 V warning, the height check, and for the AIOs the radiator orientation (the
+tank with the tubes lower than the radiator's top, never the pump above the radiator) and the tube bend radius.
+Server heatsinks: the socket, airflow direction, screw order and torque, and the passive-cooling warning.
+
 ## Deviations
 
 - Server heatsinks: the screw heads are a six-sided captive head with a recess ring (the shared helpers have no

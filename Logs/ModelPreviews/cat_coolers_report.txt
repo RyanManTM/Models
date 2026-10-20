@@ -19,6 +19,7 @@
    TOTAL 36672 tris in 17 meshes
    A_FAN_0: pos=(-0.0380,0.0000,0.0958) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=2100
    A_FILM_0: pos=(-0.0000,0.0000,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.04400,0.04400,0.00300 meta=peel_from=+x,text=REMOVE BEFORE USE
+   A_FILM_HUB_0@A_FAN_0: pos=(-0.0492,0.0000,0.0958) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.03385,0.03385,0.00010 meta=film=clear,on=fan_hub,shape=disc,radius=0.0169,peel=+x,tab=+x
    A_FILM_TOP_0: pos=(0.0005,0.0000,0.1571) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.03900,0.11400,0.00100 meta=film=clear,on=top_cover,peel_from=+x
    A_HIT_0: pos=(-0.0000,0.0000,0.0983) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.04900,0.12400,0.11950 meta=
    A_HIT_1: pos=(-0.0380,0.0000,0.0958) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.02500,0.12000,0.12000 meta=
@@ -50,6 +51,7 @@
    TOTAL 36672 tris in 16 meshes
    A_FAN_0: pos=(-0.0380,0.0000,0.0958) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=2100
    A_FILM_0: pos=(-0.0000,0.0000,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.04400,0.04400,0.00300 meta=peel_from=+x,text=REMOVE BEFORE USE
+   A_FILM_HUB_0@A_FAN_0: pos=(-0.0492,0.0000,0.0958) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.03385,0.03385,0.00010 meta=film=clear,on=fan_hub,shape=disc,radius=0.0169,peel=+x,tab=+x
    A_FILM_TOP_0: pos=(0.0005,0.0000,0.1571) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.03900,0.11400,0.00100 meta=film=clear,on=top_cover,peel_from=+x
    A_HIT_0: pos=(-0.0000,0.0000,0.0983) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.04900,0.12400,0.11950 meta=
    A_HIT_1: pos=(-0.0380,0.0000,0.0958) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.02500,0.12000,0.12000 meta=
@@ -81,6 +83,7 @@
    TOTAL 42092 tris in 16 meshes
    A_FAN_0: pos=(-0.0370,0.0000,0.0952) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=1850
    A_FILM_0: pos=(-0.0000,0.0000,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.04400,0.04400,0.00300 meta=peel_from=+x,text=REMOVE BEFORE USE
+   A_FILM_HUB_0@A_FAN_0: pos=(-0.0482,0.0000,0.0952) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.03385,0.03385,0.00010 meta=film=clear,on=fan_hub,shape=disc,radius=0.0169,peel=+x,tab=+x
    A_FILM_TOP_0: pos=(0.0005,0.0000,0.1553) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.03700,0.11500,0.00100 meta=film=clear,on=top_cover,peel_from=+x
    A_HIT_0: pos=(-0.0000,0.0000,0.0976) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.04700,0.12500,0.11720 meta=
    A_HIT_1: pos=(-0.0370,0.0000,0.0952) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.02500,0.12000,0.12000 meta=
@@ -118,6 +121,8 @@
    A_FAN_0: pos=(-0.0690,0.0000,0.0984) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=1850
    A_FAN_1: pos=(-0.0000,0.0000,0.0984) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=1850
    A_FILM_0: pos=(-0.0000,0.0000,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.04400,0.04400,0.00300 meta=peel_from=+x,text=REMOVE BEFORE USE
+   A_FILM_HUB_0@A_FAN_0: pos=(-0.0802,0.0000,0.0984) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.03385,0.03385,0.00010 meta=film=clear,on=fan_hub,shape=disc,radius=0.0169,peel=+x,tab=+x
+   A_FILM_HUB_1@A_FAN_1: pos=(-0.0112,0.0000,0.0984) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.03385,0.03385,0.00010 meta=film=clear,on=fan_hub,shape=disc,radius=0.0169,peel=+x,tab=+x
    A_FILM_TOP_0: pos=(0.0350,0.0000,0.1597) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.03200,0.11900,0.00100 meta=film=clear,on=top_cover,peel_from=+x
    A_HIT_0: pos=(-0.0345,0.0000,0.1008) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.04200,0.12900,0.11960 meta=
    A_HIT_1: pos=(0.0345,0.0000,0.1008) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.04200,0.12900,0.11960 meta=
@@ -156,6 +161,8 @@
    A_FAN_0: pos=(-0.0795,0.0000,0.0935) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.14000,0.14000,0.02500 meta=axis=z,spin=-1,rpm=1500
    A_FAN_1: pos=(0.0005,0.0000,0.0935) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.14000,0.14000,0.02500 meta=axis=z,spin=-1,rpm=1500
    A_FILM_0: pos=(-0.0000,0.0000,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.04400,0.04400,0.00300 meta=peel_from=+x,text=REMOVE BEFORE USE
+   A_FILM_HUB_0@A_FAN_0: pos=(-0.0907,0.0000,0.0935) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.03949,0.03949,0.00010 meta=film=clear,on=fan_hub,shape=disc,radius=0.0197,peel=+x,tab=+x
+   A_FILM_HUB_1@A_FAN_1: pos=(-0.0107,0.0000,0.0935) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.03949,0.03949,0.00010 meta=film=clear,on=fan_hub,shape=disc,radius=0.0197,peel=+x,tab=+x
    A_FILM_TOP_0: pos=(0.0405,0.0000,0.1644) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.04000,0.14000,0.00100 meta=film=clear,on=top_cover,peel_from=+x
    A_HIT_0: pos=(-0.0400,0.0000,0.1057) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.05200,0.15000,0.11930 meta=
    A_HIT_1: pos=(0.0400,0.0000,0.1057) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.05200,0.15000,0.11930 meta=
@@ -195,6 +202,8 @@
    A_FAN_0: pos=(-0.0795,0.0000,0.0935) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.14000,0.14000,0.02500 meta=axis=z,spin=-1,rpm=1500
    A_FAN_1: pos=(0.0005,0.0000,0.0935) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.14000,0.14000,0.02500 meta=axis=z,spin=-1,rpm=1500
    A_FILM_0: pos=(-0.0000,0.0000,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.04400,0.04400,0.00300 meta=peel_from=+x,text=REMOVE BEFORE USE
+   A_FILM_HUB_0@A_FAN_0: pos=(-0.0907,0.0000,0.0935) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.03949,0.03949,0.00010 meta=film=clear,on=fan_hub,shape=disc,radius=0.0197,peel=+x,tab=+x
+   A_FILM_HUB_1@A_FAN_1: pos=(-0.0107,0.0000,0.0935) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.03949,0.03949,0.00010 meta=film=clear,on=fan_hub,shape=disc,radius=0.0197,peel=+x,tab=+x
    A_FILM_TOP_0: pos=(0.0405,0.0000,0.1644) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.04000,0.14000,0.00100 meta=film=clear,on=top_cover,peel_from=+x
    A_HIT_0: pos=(-0.0400,0.0000,0.1057) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.05200,0.15000,0.11930 meta=
    A_HIT_1: pos=(0.0400,0.0000,0.1057) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.05200,0.15000,0.11930 meta=
@@ -232,6 +241,7 @@
    TOTAL 38396 tris in 19 meshes
    A_FAN_0: pos=(-0.0385,0.0000,0.0962) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=1800,rgb=1
    A_FILM_0: pos=(-0.0000,0.0000,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.04400,0.04400,0.00300 meta=peel_from=+x,text=REMOVE BEFORE USE
+   A_FILM_HUB_0@A_FAN_0: pos=(-0.0497,0.0000,0.0962) fwd=(-1.00,-0.00,0.00) up=(-0.00,1.00,-0.00) size=0.03385,0.03385,0.00010 meta=film=clear,on=fan_hub,shape=disc,radius=0.0169,peel=+x,tab=+x
    A_FILM_TOP_0: pos=(0.0005,0.0000,0.1574) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.04000,0.11500,0.00100 meta=film=clear,on=top_cover,peel_from=+x
    A_HIT_0: pos=(-0.0000,0.0000,0.0987) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.05000,0.12500,0.11930 meta=
    A_HIT_1: pos=(-0.0385,0.0000,0.0962) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.02500,0.12000,0.12000 meta=
@@ -263,6 +273,7 @@
    TOTAL 24346 tris in 15 meshes
    A_FAN_0: pos=(-0.0000,0.0000,0.0296) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.09200,0.09200,0.01400 meta=axis=z,spin=-1,rpm=2500
    A_FILM_0: pos=(-0.0000,0.0000,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.04400,0.04400,0.00300 meta=peel_from=+x,text=REMOVE BEFORE USE
+   A_FILM_HUB_0@A_FAN_0: pos=(-0.0000,0.0000,0.0353) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.02595,0.02595,0.00010 meta=film=clear,on=fan_hub,shape=disc,radius=0.0130,peel=+x,tab=+x
    A_FILM_TOP_0: pos=(-0.0000,0.0000,0.0371) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.03000,0.03000,0.00100 meta=film=clear,on=fan_hub,peel_from=+x
    A_HIT_0: pos=(-0.0000,0.0000,0.0150) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.09500,0.09500,0.01400 meta=
    A_HIT_1: pos=(-0.0000,0.0000,0.0296) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.09200,0.09200,0.01400 meta=
@@ -292,6 +303,7 @@
    mesh stockfan_sticker@A_FAN_0#tex_cooler_tiron_stock: 144 tris
    TOTAL 21550 tris in 15 meshes
    A_FAN_0: pos=(-0.0000,0.0000,0.0445) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.07800,0.07800,0.01400 meta=axis=z,spin=-1,rpm=2800
+   A_FILM_HUB_0@A_FAN_0: pos=(-0.0000,0.0000,0.0514) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.02558,0.02558,0.00010 meta=film=clear,on=fan_hub,shape=disc,radius=0.0128,peel=+x,tab=+x
    A_HIT_0: pos=(-0.0000,0.0000,0.0270) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.10000,0.10000,0.05400 meta=
    A_HIT_1: pos=(-0.0000,0.0000,0.0030) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.03600,0.03600,0.00600 meta=
    A_PASTE_PRE_0: pos=(-0.0000,0.0000,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.03000,0.03000,0.00400 meta=kind=preapplied,area=0.028x0.028
@@ -333,6 +345,9 @@
    mesh tube@A_TUBE_1#rubber: 2432 tris
    TOTAL 33570 tris in 28 meshes
    A_FILM_0: pos=(-0.0000,0.0000,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.04400,0.04400,0.00300 meta=peel_from=+x,text=REMOVE BEFORE USE
+   A_FILM_HUB_0@A_RAD_FAN_0@A_RAD_0: pos=(-0.0600,-0.2000,0.0617) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.03385,0.03385,0.00010 meta=film=clear,on=fan_hub,shape=disc,radius=0.0169,peel=+x,tab=+x
+   A_FILM_HUB_1@A_RAD_FAN_1@A_RAD_0: pos=(0.0600,-0.2000,0.0617) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.03385,0.03385,0.00010 meta=film=clear,on=fan_hub,shape=disc,radius=0.0169,peel=+x,tab=+x
+   A_FILM_PUMP_0: pos=(-0.0000,0.0000,0.0531) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.04000,0.04000,0.00010 meta=film=clear,on=pump_cap,peel=+x,tab=+x+y,same_as=A_FILM_TOP_0
    A_FILM_TOP_0: pos=(-0.0000,0.0000,0.0531) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.04000,0.04000,0.00100 meta=film=clear,on=pump_cap,peel_from=+x
    A_HIT_0: pos=(-0.0000,0.0000,0.0265) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.07000,0.07000,0.05300 meta=
    A_HIT_1@A_RAD_0: pos=(-0.0000,-0.2000,0.0315) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.28800,0.12100,0.06300 meta=
@@ -399,6 +414,10 @@
    mesh tube@A_TUBE_1#white_plastic: 2432 tris
    TOTAL 49678 tris in 36 meshes
    A_FILM_0: pos=(-0.0000,0.0000,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.04400,0.04400,0.00300 meta=peel_from=+x,text=REMOVE BEFORE USE
+   A_FILM_HUB_0@A_RAD_FAN_0@A_RAD_0: pos=(-0.1200,-0.2000,0.0507) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.03385,0.03385,0.00010 meta=film=clear,on=fan_hub,shape=disc,radius=0.0169,peel=+x,tab=+x
+   A_FILM_HUB_1@A_RAD_FAN_1@A_RAD_0: pos=(-0.0000,-0.2000,0.0507) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.03385,0.03385,0.00010 meta=film=clear,on=fan_hub,shape=disc,radius=0.0169,peel=+x,tab=+x
+   A_FILM_HUB_2@A_RAD_FAN_2@A_RAD_0: pos=(0.1200,-0.2000,0.0507) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.03385,0.03385,0.00010 meta=film=clear,on=fan_hub,shape=disc,radius=0.0169,peel=+x,tab=+x
+   A_FILM_PUMP_0: pos=(-0.0000,0.0000,0.0536) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.05000,0.05000,0.00010 meta=film=clear,on=lcd,peel=+x,tab=+x+y,same_as=A_FILM_TOP_0
    A_FILM_TOP_0: pos=(-0.0000,0.0000,0.0536) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.05000,0.05000,0.00100 meta=film=clear,on=pump_cap,peel_from=+x
    A_HIT_0: pos=(-0.0000,0.0000,0.0268) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.06400,0.06400,0.05350 meta=
    A_HIT_1@A_RAD_0: pos=(-0.0000,-0.2000,0.0260) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.40800,0.12100,0.05200 meta=
@@ -474,6 +493,10 @@
    mesh tube@A_TUBE_1#rubber: 2432 tris
    TOTAL 49014 tris in 38 meshes
    A_FILM_0: pos=(-0.0000,0.0000,-0.0000) fwd=(0.00,-0.00,-1.00) up=(-0.00,1.00,-0.00) size=0.04400,0.04400,0.00300 meta=peel_from=+x,text=REMOVE BEFORE USE
+   A_FILM_HUB_0@A_RAD_FAN_0@A_RAD_0: pos=(-0.1200,-0.2000,0.0507) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.03385,0.03385,0.00010 meta=film=clear,on=fan_hub,shape=disc,radius=0.0169,peel=+x,tab=+x
+   A_FILM_HUB_1@A_RAD_FAN_1@A_RAD_0: pos=(-0.0000,-0.2000,0.0507) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.03385,0.03385,0.00010 meta=film=clear,on=fan_hub,shape=disc,radius=0.0169,peel=+x,tab=+x
+   A_FILM_HUB_2@A_RAD_FAN_2@A_RAD_0: pos=(0.1200,-0.2000,0.0507) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.03385,0.03385,0.00010 meta=film=clear,on=fan_hub,shape=disc,radius=0.0169,peel=+x,tab=+x
+   A_FILM_PUMP_0: pos=(-0.0000,0.0000,0.0521) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.04000,0.04000,0.00010 meta=film=clear,on=pump_cap,peel=+x,tab=+x+y,same_as=A_FILM_TOP_0
    A_FILM_TOP_0: pos=(-0.0000,0.0000,0.0521) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.04000,0.04000,0.00100 meta=film=clear,on=pump_cap,peel_from=+x
    A_HIT_0: pos=(-0.0000,0.0000,0.0260) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.06800,0.06800,0.05200 meta=
    A_HIT_1@A_RAD_0: pos=(-0.0000,-0.2000,0.0260) fwd=(0.00,-0.00,1.00) up=(-0.00,1.00,-0.00) size=0.40800,0.12100,0.05200 meta=

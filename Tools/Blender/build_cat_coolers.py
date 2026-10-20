@@ -13,6 +13,7 @@ Coloured plastics that no plain tag covers (Noctis brown, beige) are swatches in
 """
 import math
 import os
+import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -54,7 +55,20 @@ def fan(m, anchor, size, thickness, scheme, sticker, sticker_uv, name, blades=7,
         tint([o for o in r["static"] if o.name.endswith("#" + tag(fr))], col[1].uv(fr[4:]))
     if bl.startswith("col:"):
         tint([r["rotor"]], col[1].uv(bl[4:]))
+    hub_film(m, anchor, r["sticker"])
     return r
+
+
+def hub_film(m, anchor, sticker):
+    """A_FILM_HUB_<n>: the clear film disc on a fan's hub sticker, an anchor in (and parented to) the fan's anchor
+    frame so it spins with the rotor; n is the fan's index. Centre, radius and height come from the sticker mesh."""
+    n = int(re.match(r"A_(?:RAD_)?FAN_(\d+)", anchor.name).group(1))
+    p0, fwd, up = pb.unity_pose(anchor)
+    pts = [pb.to_unity(sticker.matrix_world @ v.co) for v in sticker.data.vertices]
+    z = max((q - p0).dot(fwd) for q in pts)
+    r = max(((q - p0) - fwd * (q - p0).dot(fwd)).length for q in pts)
+    return m.anchor(f"A_FILM_HUB_{n}", tuple(p0 + fwd * (z + 0.00005)), (2 * r, 2 * r, 0.0001), forward=tuple(fwd),
+                    up=tuple(up), meta=f"film=clear,on=fan_hub,shape=disc,radius={r:.4f},peel=+x,tab=+x", parent=anchor)
 
 
 def plug(m, idx, face, back_dir, up, cable_from, cable_pts, kind="fan4", target="CPU_FAN", tag="connector_black",
@@ -628,8 +642,9 @@ def build_tiron_stock():
     fz = 0.0445
     fa = m.anchor("A_FAN_0", (0, 0, fz), (0.078, 0.078, 0.014), forward=(0, 0, 1), up=(0, 1, 0),
                   meta=pf.fan_meta("ccw", 2800))
-    pf.make_fan(fa, diameter=0.078, thickness=0.014, blades=9, frame=False, sticker=pid, sticker_uv=at.uv("hub"),
-                struts=4, name="stockfan", cov=(0.78, 1.0), sweep=0.5)
+    sf = pf.make_fan(fa, diameter=0.078, thickness=0.014, blades=9, frame=False, sticker=pid, sticker_uv=at.uv("hub"),
+                     struts=4, name="stockfan", cov=(0.78, 1.0), sweep=0.5, return_all=True)
+    hub_film(m, fa, sf["sticker"])
     for i, (x, y) in enumerate(HOLES):
         bc.spring_screw(m, i, x, y, 0.0200, 0.0262)
     pa = m.anchor("A_PASTE_PRE_0", (0, 0, 0), (0.030, 0.030, 0.004), forward=(0, 0, -1), up=(0, 1, 0),
@@ -808,6 +823,10 @@ def build_aio(pid, cfg):
         top = zt + 0.0050
     m.anchor("A_FILM_TOP_0", (0, 0, top + 0.0001), (film_size[0], film_size[1], 0.001), forward=(0, 0, 1),
              up=(0, 1, 0), meta="film=clear,on=pump_cap,peel_from=+x")
+    # the unboxing film on the pump cap / LCD (the catalogue's A_FILM_PUMP_0; the same film as A_FILM_TOP_0)
+    m.anchor("A_FILM_PUMP_0", (0, 0, top + 0.0001), (film_size[0], film_size[1], 0.0001), forward=(0, 0, 1),
+             up=(0, 1, 0), meta=f"film=clear,on={'lcd' if style == 'corvex' else 'pump_cap'},peel=+x,tab=+x+y,"
+             "same_as=A_FILM_TOP_0")
     # swivel fittings on the -x side
     fz = 0.020 + 0.006
     fittings = []
