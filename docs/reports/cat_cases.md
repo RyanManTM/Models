@@ -12,15 +12,15 @@ Catalogue data: `docs/catalog/cases.json` (14 entries). Anchor report: `Logs/Mod
 | case_nexa_h5 | yes | 93,334 | 83 | case (case_breeze) | 62 SAME, front fans differ |
 | case_facet_fjord | yes | 95,292 | 86 | case (case_breeze) | 62 SAME, front fans differ |
 | case_hush_500dx | yes | 94,844 | 85 | case (case_breeze) | 62 SAME, front fans differ |
-| case_facet_fizzair | not yet | | | case | |
-| case_brickhouse_beige98 | not yet | | | case | |
-| fan_arctiq_p12 | not yet | | | case_fan (new) | |
-| fan_noctis_a12x25 | not yet | | | case_fan (new) | |
-| fan_noctis_a12x25_black | not yet | | | case_fan (new) | |
-| fan_lumin_sl120_white | not yet | | | case_fan (new) | |
-| fan_corvex_af120_rgb | not yet | | | case_fan (new) | |
-| fan_arctiq_p14 | not yet | | | case_fan (new) | |
-| fan_hush_wing4_140 | not yet | | | case_fan (new) | |
+| case_facet_fizzair | yes | 102,728 | 88 | case (case_breeze) | 61 SAME, fan meta differs |
+| case_brickhouse_beige98 | yes | 103,588 | 82 | case (case_breeze; fans as case_brickhouse) | front fans absent, +2 fun anchors |
+| fan_arctiq_p12 | yes | 8,136 | 7 | case_fan (new) | – |
+| fan_noctis_a12x25 | yes | 10,552 | 8 | case_fan (new) | – |
+| fan_noctis_a12x25_black | yes | 10,552 | 7 | case_fan (new) | – |
+| fan_lumin_sl120_white | yes | 12,572 | 12 | case_fan (new) | – |
+| fan_corvex_af120_rgb | yes | 11,700 | 12 | case_fan (new) | – |
+| fan_arctiq_p14 | yes | 8,136 | 7 | case_fan (new) | – |
+| fan_hush_wing4_140 | yes | 9,376 | 8 | case_fan (new) | – |
 
 ## Cases (contract: case, as case_breeze)
 
@@ -37,6 +37,8 @@ standoff, panel, front I/O, front-panel plug and hitbox anchors are case_breeze'
 | case_nexa_h5 | 62 | A_FAN_1, A_FAN_2 (120 mm at y 0.300 / 0.170); A_FAN_0..2 meta without `rgb=1` (plain fans) | – | A_FAN_3, A_PLUG_FAN_3 |
 | case_facet_fjord | 62 | A_FAN_1, A_FAN_2 (140 mm at y 0.300 / 0.155); A_FAN_0..2 meta without `rgb=1` | – | A_FAN_3, A_PLUG_FAN_3 |
 | case_hush_500dx | 62 | A_FAN_1, A_FAN_2 (140 mm at y 0.300 / 0.155); A_FAN_0..2 meta without `rgb=1` | – | A_FAN_3, A_PLUG_FAN_3 |
+| case_facet_fizzair | 61 | A_FAN_0..3 meta without `rgb=1`; A_PLUG_FAN_0..3 meta `kind=fan3` (3-pin fans) | – | – |
+| case_brickhouse_beige98 | 59 | A_FAN_0 meta (no `rgb=1`), A_PLUG_FAN_0 `kind=fan3` | A_BUTTON_TURBO_0, A_LED_TURBO_0 | A_FAN_1..3, A_PLUG_FAN_1..3 |
 
 Fan differences (allowed: front, top and bottom only; the rear A_FAN_0 / A_PLUG_FAN_0 are always SAME):
 
@@ -45,6 +47,8 @@ Fan differences (allowed: front, top and bottom only; the rear A_FAN_0 / A_PLUG_
 - **case_nexa_h5**: two 120 mm front fans, A_FAN_1..2 at y 0.300 / 0.170; no RGB, so no `rgb=1` in the fan meta.
 - **case_facet_fjord**: two 140 mm front fans, A_FAN_1..2 (size 0.14) at y 0.300 / 0.155; no RGB.
 - **case_hush_500dx**: two 140 mm front fans, A_FAN_1..2 (size 0.14) at y 0.300 / 0.155; non-RGB fans (the ARGB is the front strip).
+- **case_facet_fizzair**: as case_breeze (three 120 mm front, one rear), but 3-pin non-RGB fans.
+- **case_brickhouse_beige98**: no front fans, the rear fan only (as case_brickhouse), 3-pin.
 
 ### Looks
 - **case_lumin_216** (Lumin Airwave 216 RGB): black, a fine black hex-mesh front with two thin side grooves and the
@@ -57,6 +61,24 @@ Fan differences (allowed: front, top and bottom only; the rear A_FAN_0 / A_PLUG_
   behind them, two cross battens, round turned feet, two black 140 mm fans, no RGB.
 - **case_hush_500dx** (Hush Calm Base 500DX): black, solid side covers leave a centre mesh band, an ARGB light strip
   runs down the left cover's inner edge (a dark diffuser on the right), two 140 mm black fans, the hush logo.
+- **case_facet_fizzair** (Facet Fizz Air): white, the white honeycomb mesh front (large hexes), teal accent bars down
+  both front edges, a teal FACET logo and a teal accent under the shroud logo, three white 120 mm fans.
+- **case_brickhouse_beige98** (Brickhouse Beige 98): beige plastic and steel (`connector_beige`), a fake 5.25" CD-ROM
+  face (tray, eject button, LED, volume knob, headphone jack), a 3.5" floppy bay, the turbo panel with a red
+  seven-segment "66" MHz display, the TURBO button (`A_BUTTON_TURBO_0`, a toggle) and its LED (`A_LED_TURBO_0`), a key
+  lock, 18 vent grooves, an aluminium BRICKHOUSE 98 badge, chunky square feet. Just for fun: the turbo button does
+  nothing in the game unless the game wants it to.
+
+### Fans
+- **fan_arctiq_p12 / p14**: black, five wide pressure blades, the ARCTIQ hub sticker. Packs: P12 `per_box` 5.
+- **fan_noctis_a12x25**: beige frame (`connector_beige`), nine brown blades (palette), brown anti-vibration pads on
+  both faces of every corner. **_black**: all black with black rubber pads.
+- **fan_lumin_sl120_white**: white, nine blades, ARGB rings and side light bars, the interlocking link connectors
+  (`A_PORT_LINK_0` socket on −x, `A_PLUG_LINK_0` tongue with gold pins on +x); the controller lead leaves the socket
+  housing. Pack of 3.
+- **fan_corvex_af120_rgb**: black frame, seven clear blades, an ARGB ring round the hub (spins with the rotor) and
+  the bore rings. Pack of 3.
+- **fan_hush_wing4_140**: black, seven blades, orange corner inserts on both faces (with the screw holes through).
 
 ### build_case.py hooks
 Optional style keys, absent on case_brickhouse, case_breeze and case_aero:
@@ -84,8 +106,7 @@ case_brickhouse, case_breeze and case_aero on Linux into scratch folders, and `e
 - `A_FAN_0` the rotor (moving piece `fan_rotor@A_FAN_0`, plus its hub sticker), at the origin, local +Z = the intake
   side (model −Z), exactly like a case's or cooler's `A_FAN_<n>`: to install the fan into a case slot, put the fan's
   `A_FAN_0` pose on the case's `A_FAN_<n>` pose. Meta `axis=z,spin=-1,rpm=<max>` and `rgb=1` on ARGB fans.
-- `A_HOLE_0..3` the four screw holes (frame corners: 0 top-left, 1 top-right, 2 bottom-left, 3 bottom-right, seen
-  from +Z), on the intake face, local +Z = the intake side, size covers the frame depth. Spacing 105 mm (120 mm fans)
+- `A_HOLE_0..3` the four screw holes (frame corners: 0 at (−x, +y), 1 (+x, +y), 2 (−x, −y), 3 (+x, −y)), on the intake face, local +Z = the intake side, size covers the frame depth. Spacing 105 mm (120 mm fans)
   and 124.5 mm (140 mm fans; the "125 mm" standard). Meta `d=0.0043,spacing=<m>,through=1,screw=fan`: the screw can
   come from either face.
 - `A_PLUG_FAN_0` the loose 4-pin PWM plug where it rests below the fan (plug contact face at the anchor, local +Z back

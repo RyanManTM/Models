@@ -833,3 +833,470 @@ ATX holes (case coords x, y on the tray at z=-0.09485; board frame bx, by):
 slot centres y: 0.25854, 0.23822, 0.21790, 0.19758, 0.17726, 0.15694, 0.13662
 slot screw x=0.19950 z=0.03010; bracket plate x=0.19400
 IO window z -0.09071..-0.04626  y 0.26359..0.42234
+
+case_facet_fizzair: 102728 triangles, 88 meshes
+  mesh button_power_0@A_BUTTON_POWER_0#black_plastic  tris=240
+  mesh button_power_0@A_BUTTON_POWER_0#grey_plastic  tris=272
+  mesh button_reset_0@A_BUTTON_RESET_0#black_plastic  tris=96
+  mesh case_facet_fizzair_black_plastic#black_plastic  tris=1388
+  mesh case_facet_fizzair_dark_plastic#dark_plastic  tris=144
+  mesh case_facet_fizzair_grey_plastic#grey_plastic  tris=1536
+  mesh case_facet_fizzair_mesh_black#mesh_black  tris=152
+  mesh case_facet_fizzair_nickel#nickel  tris=944
+  mesh case_facet_fizzair_paint_white#paint_white  tris=26876
+  mesh case_facet_fizzair_rubber#rubber  tris=5752
+  mesh case_facet_fizzair_steel#steel  tris=3992
+  mesh case_facet_fizzair_steel_dark#steel_dark  tris=192
+  mesh case_facet_fizzair_tex_cat_cases_palette#tex_cat_cases_palette  tris=596
+  mesh case_facet_fizzair_tex_parts_c_palette#tex_parts_c_palette  tris=24
+  mesh case_facet_fizzair_white_plastic#white_plastic  tris=18584
+  mesh fan_0@A_FAN_0#tex_case_facet_fizzair_fanhub  tris=144
+  mesh fan_0@A_FAN_0#white_plastic  tris=3076
+  mesh fan_1@A_FAN_1#tex_case_facet_fizzair_fanhub  tris=144
+  mesh fan_1@A_FAN_1#white_plastic  tris=3076
+  mesh fan_2@A_FAN_2#tex_case_facet_fizzair_fanhub  tris=144
+  mesh fan_2@A_FAN_2#white_plastic  tris=3076
+  mesh fan_3@A_FAN_3#tex_case_facet_fizzair_fanhub  tris=144
+  mesh fan_3@A_FAN_3#white_plastic  tris=3076
+  mesh led_hdd_0@A_LED_HDD_0#led_red  tris=64
+  mesh led_power_0@A_LED_POWER_0#led_white  tris=240
+  mesh panel_back_0@A_PANEL_BACK_0#paint_white  tris=264
+  mesh panel_side_0@A_PANEL_SIDE_0#black_plastic  tris=216
+  mesh panel_side_0@A_PANEL_SIDE_0#glass  tris=212
+  mesh panel_side_0@A_PANEL_SIDE_0#grey_plastic  tris=2028
+  mesh panel_side_0@A_PANEL_SIDE_0#paint_black  tris=296
+  mesh plug_audio_0@A_PLUG_AUDIO_0#connector_black  tris=772
+  mesh plug_audio_0@A_PLUG_AUDIO_0#rubber  tris=40
+  mesh plug_audio_0@A_PLUG_AUDIO_0#tex_parts_c_palette  tris=108
+  mesh plug_audio_0@A_PLUG_AUDIO_0#tex_parts_c_plug_labels  tris=2
+  mesh plug_fan_0@A_PLUG_FAN_0#connector_white  tris=388
+  mesh plug_fan_0@A_PLUG_FAN_0#tex_parts_c_palette  tris=132
+  mesh plug_fan_1@A_PLUG_FAN_1#connector_white  tris=388
+  mesh plug_fan_1@A_PLUG_FAN_1#tex_parts_c_palette  tris=132
+  mesh plug_fan_2@A_PLUG_FAN_2#connector_white  tris=388
+  mesh plug_fan_2@A_PLUG_FAN_2#tex_parts_c_palette  tris=132
+  mesh plug_fan_3@A_PLUG_FAN_3#connector_white  tris=388
+  mesh plug_fan_3@A_PLUG_FAN_3#tex_parts_c_palette  tris=132
+  mesh plug_hddled_0@A_PLUG_HDDLED_0#connector_black  tris=300
+  mesh plug_hddled_0@A_PLUG_HDDLED_0#connector_white  tris=36
+  mesh plug_hddled_0@A_PLUG_HDDLED_0#tex_parts_c_palette  tris=432
+  mesh plug_hddled_0@A_PLUG_HDDLED_0#tex_parts_c_plug_labels  tris=2
+  mesh plug_pled_0@A_PLUG_PLED_0#connector_black  tris=300
+  mesh plug_pled_0@A_PLUG_PLED_0#connector_white  tris=36
+  mesh plug_pled_0@A_PLUG_PLED_0#tex_parts_c_palette  tris=432
+  mesh plug_pled_0@A_PLUG_PLED_0#tex_parts_c_plug_labels  tris=2
+  mesh plug_pwrsw_0@A_PLUG_PWRSW_0#connector_black  tris=300
+  mesh plug_pwrsw_0@A_PLUG_PWRSW_0#tex_parts_c_palette  tris=432
+  mesh plug_pwrsw_0@A_PLUG_PWRSW_0#tex_parts_c_plug_labels  tris=2
+  mesh plug_reset_0@A_PLUG_RESET_0#connector_black  tris=300
+  mesh plug_reset_0@A_PLUG_RESET_0#tex_parts_c_palette  tris=432
+  mesh plug_reset_0@A_PLUG_RESET_0#tex_parts_c_plug_labels  tris=2
+  mesh plug_usb3_0@A_PLUG_USB3_0#connector_black  tris=12
+  mesh plug_usb3_0@A_PLUG_USB3_0#rubber  tris=48
+  mesh plug_usb3_0@A_PLUG_USB3_0#tex_parts_c_palette  tris=1520
+  mesh plug_usb3_0@A_PLUG_USB3_0#tex_parts_c_plug_labels  tris=2
+  mesh s_tex_case_facet_fizzair_fanmotor#tex_case_facet_fizzair_fanmotor  tris=480
+  mesh s_tex_case_facet_fizzair_mesh#tex_case_facet_fizzair_mesh  tris=4
+  mesh screw_ph2_0@A_SCREW_PH2_0#steel  tris=944
+  mesh screw_ph2_1@A_SCREW_PH2_1#steel  tris=944
+  mesh screw_ph2_2@A_SCREW_PH2_2#steel  tris=944
+  mesh screw_ph2_3@A_SCREW_PH2_3#steel  tris=944
+  mesh screw_ph2_4@A_SCREW_PH2_4#steel  tris=944
+  mesh screw_ph2_5@A_SCREW_PH2_5#steel  tris=944
+  mesh screw_ph2_6@A_SCREW_PH2_6#steel  tris=944
+  mesh screw_thumb_0@A_SCREW_THUMB_0@A_PANEL_SIDE_0#rubber  tris=144
+  mesh screw_thumb_0@A_SCREW_THUMB_0@A_PANEL_SIDE_0#steel  tris=948
+  mesh screw_thumb_1@A_SCREW_THUMB_1@A_PANEL_SIDE_0#rubber  tris=144
+  mesh screw_thumb_1@A_SCREW_THUMB_1@A_PANEL_SIDE_0#steel  tris=948
+  mesh screw_thumb_2@A_SCREW_THUMB_2@A_PANEL_BACK_0#steel  tris=948
+  mesh screw_thumb_3@A_SCREW_THUMB_3@A_PANEL_BACK_0#steel  tris=948
+  mesh slotcover_0@A_SLOTCOVER_0#paint_white  tris=568
+  mesh slotcover_1@A_SLOTCOVER_1#paint_white  tris=672
+  mesh slotcover_2@A_SLOTCOVER_2#paint_white  tris=672
+  mesh slotcover_3@A_SLOTCOVER_3#paint_white  tris=672
+  mesh slotcover_4@A_SLOTCOVER_4#paint_white  tris=672
+  mesh slotcover_5@A_SLOTCOVER_5#paint_white  tris=672
+  mesh slotcover_6@A_SLOTCOVER_6#paint_white  tris=672
+  mesh standoff_0@A_STANDOFF_0#gold  tris=396
+  mesh standoff_1@A_STANDOFF_1#gold  tris=396
+  mesh standoff_2@A_STANDOFF_2#gold  tris=396
+  mesh standoff_4@A_STANDOFF_4#gold  tris=396
+  mesh standoff_6@A_STANDOFF_6#gold  tris=396
+  mesh standoff_8@A_STANDOFF_8#gold  tris=396
+  A_BUTTON_POWER_0 pos=(-0.2185, 0.4268, -0.05) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.01600,0.01600,0.00800 meta=press=+z_local,travel=0.0015
+  A_BUTTON_RESET_0 pos=(-0.2185, 0.4268, -0.031) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.00600,0.00600,0.00600 meta=press=+z_local,travel=0.001
+  A_FAN_0 pos=(0.1827, 0.355, 0.03) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=1200
+  A_FAN_1 pos=(-0.1869, 0.352, -0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=1200
+  A_FAN_2 pos=(-0.1869, 0.23, -0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=1200
+  A_FAN_3 pos=(-0.1869, 0.108, -0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=1200
+  A_GROMMET_0 pos=(-0.077, 0.335, -0.09525) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02000,0.06000,0.00400 meta=on=tray
+  A_GROMMET_1 pos=(-0.077, 0.25, -0.09525) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02000,0.06000,0.00400 meta=on=tray
+  A_GROMMET_2 pos=(-0.077, 0.165, -0.09525) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02000,0.06000,0.00400 meta=on=tray
+  A_GROMMET_3 pos=(0.032, 0.4345, -0.09525) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.06400,0.01600,0.00400 meta=on=tray
+  A_GROMMET_4 pos=(-0.1, 0.1036, -0.0835) fwd=(0.0, 1.0, -0.0) up=(-0.0, 0.0, 1.0) size=0.05000,0.01600,0.00400 meta=on=shroud
+  A_GROMMET_5 pos=(0.065, 0.1036, -0.0835) fwd=(0.0, 1.0, -0.0) up=(-0.0, 0.0, 1.0) size=0.05000,0.01600,0.00400 meta=on=shroud
+  A_HIT_0 pos=(-0.2095, 0.225, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01900,0.45100,0.21100 meta=
+  A_HIT_1 pos=(0.1933, 0.225, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00800,0.45000,0.21000 meta=
+  A_HIT_2 pos=(-0.0021, 0.445, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.40000,0.01000,0.21000 meta=
+  A_HIT_3 pos=(-0.0021, -0.002, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.40000,0.01200,0.21000 meta=
+  A_HIT_4 pos=(0.014, 0.277, -0.09785) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.36400,0.34500,0.00600 meta=
+  A_HIT_5 pos=(0.012, 0.052, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.36800,0.10400,0.19400 meta=
+  A_LED_HDD_0 pos=(-0.2185, 0.4268, -0.022) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.00300,0.00300,0.00300 meta=colour=red
+  A_LED_POWER_0 pos=(-0.2181, 0.4268, -0.05) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.01600,0.01600,0.00400 meta=colour=white
+  A_PANEL_BACK_0 pos=(-0.0, 0.225, -0.105) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.39800,0.44800,0.00600 meta=remove=-z
+  A_PANEL_SIDE_0 pos=(-0.0, 0.225, 0.1) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.39800,0.44800,0.00600 meta=remove=+z,lift=0.01,glass=1
+  A_PLUG_AUDIO_0 pos=(-0.152, 0.262, -0.09201) fwd=(0.0, -1.0, 0.0) up=(-0.0, 0.0, 1.0) size=0.02500,0.01200,0.03000 meta=kind=audiohdr,from=A_GROMMET_2
+  A_PLUG_FAN_0 pos=(0.118, 0.4335, -0.09225) fwd=(1.0, 0.0, 0.0) up=(-0.0, -0.0, 1.0) size=0.02500,0.01200,0.03000 meta=kind=fan3,fan=0
+  A_PLUG_FAN_1 pos=(-0.128, 0.385, -0.09225) fwd=(-1.0, 0.0, 0.0) up=(0.0, -0.0, 1.0) size=0.02500,0.01200,0.03000 meta=kind=fan3,fan=1
+  A_PLUG_FAN_2 pos=(-0.128, 0.345, -0.09225) fwd=(-1.0, 0.0, 0.0) up=(0.0, -0.0, 1.0) size=0.02500,0.01200,0.03000 meta=kind=fan3,fan=2
+  A_PLUG_FAN_3 pos=(-0.128, 0.305, -0.09225) fwd=(-1.0, 0.0, 0.0) up=(0.0, -0.0, 1.0) size=0.02500,0.01200,0.03000 meta=kind=fan3,fan=3
+  A_PLUG_HDDLED_0 pos=(-0.1155, 0.221, -0.09328) fwd=(0.0, -1.0, 0.0) up=(-0.0, 0.0, 1.0) size=0.02500,0.01200,0.03000 meta=kind=fp_hddled,from=A_GROMMET_2
+  A_PLUG_PLED_0 pos=(-0.127, 0.219, -0.09328) fwd=(0.0, -1.0, 0.0) up=(-0.0, 0.0, 1.0) size=0.02500,0.01200,0.03000 meta=kind=fp_pled,from=A_GROMMET_2
+  A_PLUG_PWRSW_0 pos=(-0.15, 0.215, -0.09328) fwd=(0.0, -1.0, 0.0) up=(-0.0, 0.0, 1.0) size=0.02500,0.01200,0.03000 meta=kind=fp_pwrsw,from=A_GROMMET_2
+  A_PLUG_RESET_0 pos=(-0.1385, 0.217, -0.09328) fwd=(0.0, -1.0, 0.0) up=(-0.0, 0.0, 1.0) size=0.02500,0.01200,0.03000 meta=kind=fp_reset,from=A_GROMMET_2
+  A_PLUG_USB3_0 pos=(-0.104, 0.232, -0.09025) fwd=(0.0, -1.0, 0.0) up=(-0.0, 0.0, 1.0) size=0.02500,0.01200,0.03000 meta=kind=usb3hdr,from=A_GROMMET_2
+  A_PORT_USBA_FRONT_0 pos=(-0.2187, 0.4268, -0.004) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.01400,0.00700,0.01200 meta=usb=3.0
+  A_PORT_USBA_FRONT_1 pos=(-0.2187, 0.4268, 0.0165) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.01400,0.00700,0.01200 meta=usb=3.0
+  A_SCREW_PH2_0 pos=(0.1995, 0.25854, 0.0301) fwd=(0.0, -0.0, 1.0) up=(1.0, 0.0, 0.0) size=0.00800,0.00800,0.00800 meta=slot=0,thread=6-32,pre=1
+  A_SCREW_PH2_1 pos=(0.1995, 0.23822, 0.0301) fwd=(0.0, -0.0, 1.0) up=(1.0, 0.0, 0.0) size=0.00800,0.00800,0.00800 meta=slot=1,thread=6-32,pre=1
+  A_SCREW_PH2_2 pos=(0.1995, 0.2179, 0.0301) fwd=(0.0, -0.0, 1.0) up=(1.0, 0.0, 0.0) size=0.00800,0.00800,0.00800 meta=slot=2,thread=6-32,pre=1
+  A_SCREW_PH2_3 pos=(0.1995, 0.19758, 0.0301) fwd=(0.0, -0.0, 1.0) up=(1.0, 0.0, 0.0) size=0.00800,0.00800,0.00800 meta=slot=3,thread=6-32,pre=1
+  A_SCREW_PH2_4 pos=(0.1995, 0.17726, 0.0301) fwd=(0.0, -0.0, 1.0) up=(1.0, 0.0, 0.0) size=0.00800,0.00800,0.00800 meta=slot=4,thread=6-32,pre=1
+  A_SCREW_PH2_5 pos=(0.1995, 0.15694, 0.0301) fwd=(0.0, -0.0, 1.0) up=(1.0, 0.0, 0.0) size=0.00800,0.00800,0.00800 meta=slot=5,thread=6-32,pre=1
+  A_SCREW_PH2_6 pos=(0.1995, 0.13662, 0.0301) fwd=(0.0, -0.0, 1.0) up=(1.0, 0.0, 0.0) size=0.00800,0.00800,0.00800 meta=slot=6,thread=6-32,pre=1
+  A_SCREW_THUMB_0@A_PANEL_SIDE_0 pos=(0.1885, 0.42, 0.1053) fwd=(0.0, -0.0, 1.0) up=(1.0, 0.0, 0.0) size=0.01300,0.01300,0.01000 meta=thread=6-32,captive=1
+  A_SCREW_THUMB_1@A_PANEL_SIDE_0 pos=(0.1885, 0.03, 0.1053) fwd=(0.0, -0.0, 1.0) up=(1.0, 0.0, 0.0) size=0.01300,0.01300,0.01000 meta=thread=6-32,captive=1
+  A_SCREW_THUMB_2@A_PANEL_BACK_0 pos=(0.1974, 0.39, -0.1) fwd=(1.0, -0.0, 0.0) up=(0.0, 1.0, 0.0) size=0.01300,0.01300,0.01000 meta=thread=6-32
+  A_SCREW_THUMB_3@A_PANEL_BACK_0 pos=(0.1974, 0.06, -0.1) fwd=(1.0, -0.0, 0.0) up=(0.0, 1.0, 0.0) size=0.01300,0.01300,0.01000 meta=thread=6-32
+  A_SLOTCOVER_0 pos=(0.194, 0.25854, -0.03) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00400,0.01900,0.12500 meta=slot=0,remove=+z
+  A_SLOTCOVER_1 pos=(0.194, 0.23822, -0.03) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00400,0.01900,0.12500 meta=slot=1,remove=+z
+  A_SLOTCOVER_2 pos=(0.194, 0.2179, -0.03) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00400,0.01900,0.12500 meta=slot=2,remove=+z
+  A_SLOTCOVER_3 pos=(0.194, 0.19758, -0.03) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00400,0.01900,0.12500 meta=slot=3,remove=+z
+  A_SLOTCOVER_4 pos=(0.194, 0.17726, -0.03) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00400,0.01900,0.12500 meta=slot=4,remove=+z
+  A_SLOTCOVER_5 pos=(0.194, 0.15694, -0.03) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00400,0.01900,0.12500 meta=slot=5,remove=+z
+  A_SLOTCOVER_6 pos=(0.194, 0.13662, -0.03) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00400,0.01900,0.12500 meta=slot=6,remove=+z
+  A_SOCKET_IOSHIELD_0 pos=(0.1959, 0.34296, -0.06848) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00400,0.15875,0.04445 meta=frame=board,insert=+x,window=0.15875x0.04445
+  A_SOCKET_MOBO_0 pos=(0.068, 0.2675, -0.0885) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.24400,0.30500,0.01200 meta=formfactor=atx,standoff=0.00635
+  A_SOCKET_PSU_0 pos=(0.125, 0.053, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.14200,0.08800,0.15200 meta=insert=+x
+  A_SOCKET_SSD25_0 pos=(-0.13, 0.1085, -0.018) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.10000,0.00700,0.07000 meta=frame=ssd25,connector=-z
+  A_SOCKET_SSD25_1 pos=(-0.126, 0.3, -0.10035) fwd=(-1.0, -0.0, 0.0) up=(-0.0, -0.0, -1.0) size=0.10000,0.00700,0.07000 meta=frame=ssd25,connector=-y,behind_tray=1
+  A_STANDOFF_0 pos=(0.17976, 0.13161, -0.09485) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00800,0.00800,0.00800 meta=pre=1,hole=A,board=0.11176;-0.13589
+  A_STANDOFF_1 pos=(0.17976, 0.25607, -0.09485) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00800,0.00800,0.00800 meta=pre=1,hole=C,board=0.11176;-0.01143
+  A_STANDOFF_2 pos=(0.1569, 0.41355, -0.09485) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00800,0.00800,0.00800 meta=pre=1,hole=F,board=0.08890;0.14605
+  A_STANDOFF_3 pos=(0.02482, 0.13161, -0.09485) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00800,0.00800,0.00800 meta=pre=0,hole=G,board=-0.04318;-0.13589
+  A_STANDOFF_4 pos=(0.02482, 0.25607, -0.09485) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00800,0.00800,0.00800 meta=pre=1,hole=H,board=-0.04318;-0.01143
+  A_STANDOFF_5 pos=(0.02482, 0.41355, -0.09485) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00800,0.00800,0.00800 meta=pre=0,hole=J,board=-0.04318;0.14605
+  A_STANDOFF_6 pos=(-0.04757, 0.13161, -0.09485) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00800,0.00800,0.00800 meta=pre=1,hole=K,board=-0.11557;-0.13589
+  A_STANDOFF_7 pos=(-0.04757, 0.25607, -0.09485) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00800,0.00800,0.00800 meta=pre=0,hole=L,board=-0.11557;-0.01143
+  A_STANDOFF_8 pos=(-0.04757, 0.41355, -0.09485) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00800,0.00800,0.00800 meta=pre=1,hole=M,board=-0.11557;0.14605
+  A_STANDOFF_9 pos=(0.17976, 0.21035, -0.09485) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00800,0.00800,0.00800 meta=pre=0,hole=B,board=0.11176;-0.05715,atx=0
+ATX holes (case coords x, y on the tray at z=-0.09485; board frame bx, by):
+  A: case=(0.17976, 0.13161)  board=(0.11176, -0.13589)  pre=1
+  C: case=(0.17976, 0.25607)  board=(0.11176, -0.01143)  pre=1
+  F: case=(0.15690, 0.41355)  board=(0.08890, 0.14605)  pre=1
+  G: case=(0.02482, 0.13161)  board=(-0.04318, -0.13589)  pre=0
+  H: case=(0.02482, 0.25607)  board=(-0.04318, -0.01143)  pre=1
+  J: case=(0.02482, 0.41355)  board=(-0.04318, 0.14605)  pre=0
+  K: case=(-0.04757, 0.13161)  board=(-0.11557, -0.13589)  pre=1
+  L: case=(-0.04757, 0.25607)  board=(-0.11557, -0.01143)  pre=0
+  M: case=(-0.04757, 0.41355)  board=(-0.11557, 0.14605)  pre=1
+  B: case=(0.17976, 0.21035)  board=(0.11176, -0.05715)  pre=0
+slot centres y: 0.25854, 0.23822, 0.21790, 0.19758, 0.17726, 0.15694, 0.13662
+slot screw x=0.19950 z=0.03010; bracket plate x=0.19400
+IO window z -0.09071..-0.04626  y 0.26359..0.42234
+
+case_brickhouse_beige98: 103588 triangles, 82 meshes
+  mesh button_power_0@A_BUTTON_POWER_0#black_plastic  tris=240
+  mesh button_power_0@A_BUTTON_POWER_0#grey_plastic  tris=272
+  mesh button_reset_0@A_BUTTON_RESET_0#black_plastic  tris=96
+  mesh button_turbo_0@A_BUTTON_TURBO_0#connector_beige  tris=108
+  mesh button_turbo_0@A_BUTTON_TURBO_0#dark_plastic  tris=696
+  mesh case_brickhouse_beige98_alu#alu  tris=76
+  mesh case_brickhouse_beige98_black_plastic#black_plastic  tris=3376
+  mesh case_brickhouse_beige98_connector_beige#connector_beige  tris=43948
+  mesh case_brickhouse_beige98_dark_plastic#dark_plastic  tris=4392
+  mesh case_brickhouse_beige98_fan_black#fan_black  tris=4512
+  mesh case_brickhouse_beige98_grey_plastic#grey_plastic  tris=2136
+  mesh case_brickhouse_beige98_led_green#led_green  tris=96
+  mesh case_brickhouse_beige98_led_red#led_red  tris=144
+  mesh case_brickhouse_beige98_mesh_black#mesh_black  tris=176
+  mesh case_brickhouse_beige98_nickel#nickel  tris=1136
+  mesh case_brickhouse_beige98_rubber#rubber  tris=4980
+  mesh case_brickhouse_beige98_steel#steel  tris=216
+  mesh case_brickhouse_beige98_steel_dark#steel_dark  tris=3968
+  mesh case_brickhouse_beige98_tex_parts_c_palette#tex_parts_c_palette  tris=24
+  mesh case_brickhouse_beige98_white_plastic#white_plastic  tris=76
+  mesh fan_0@A_FAN_0#fan_black  tris=3076
+  mesh fan_0@A_FAN_0#tex_case_brickhouse_beige98_fanhub  tris=144
+  mesh led_hdd_0@A_LED_HDD_0#led_red  tris=64
+  mesh led_power_0@A_LED_POWER_0#led_green  tris=240
+  mesh led_turbo_0@A_LED_TURBO_0#led_yellow  tris=64
+  mesh panel_back_0@A_PANEL_BACK_0#connector_beige  tris=264
+  mesh panel_side_0@A_PANEL_SIDE_0#black_plastic  tris=216
+  mesh panel_side_0@A_PANEL_SIDE_0#glass  tris=212
+  mesh panel_side_0@A_PANEL_SIDE_0#grey_plastic  tris=3008
+  mesh panel_side_0@A_PANEL_SIDE_0#paint_black  tris=296
+  mesh plug_audio_0@A_PLUG_AUDIO_0#connector_black  tris=772
+  mesh plug_audio_0@A_PLUG_AUDIO_0#rubber  tris=40
+  mesh plug_audio_0@A_PLUG_AUDIO_0#tex_parts_c_palette  tris=108
+  mesh plug_audio_0@A_PLUG_AUDIO_0#tex_parts_c_plug_labels  tris=2
+  mesh plug_fan_0@A_PLUG_FAN_0#connector_white  tris=388
+  mesh plug_fan_0@A_PLUG_FAN_0#tex_parts_c_palette  tris=132
+  mesh plug_hddled_0@A_PLUG_HDDLED_0#connector_black  tris=300
+  mesh plug_hddled_0@A_PLUG_HDDLED_0#connector_white  tris=36
+  mesh plug_hddled_0@A_PLUG_HDDLED_0#tex_parts_c_palette  tris=432
+  mesh plug_hddled_0@A_PLUG_HDDLED_0#tex_parts_c_plug_labels  tris=2
+  mesh plug_pled_0@A_PLUG_PLED_0#connector_black  tris=300
+  mesh plug_pled_0@A_PLUG_PLED_0#connector_white  tris=36
+  mesh plug_pled_0@A_PLUG_PLED_0#tex_parts_c_palette  tris=432
+  mesh plug_pled_0@A_PLUG_PLED_0#tex_parts_c_plug_labels  tris=2
+  mesh plug_pwrsw_0@A_PLUG_PWRSW_0#connector_black  tris=300
+  mesh plug_pwrsw_0@A_PLUG_PWRSW_0#tex_parts_c_palette  tris=432
+  mesh plug_pwrsw_0@A_PLUG_PWRSW_0#tex_parts_c_plug_labels  tris=2
+  mesh plug_reset_0@A_PLUG_RESET_0#connector_black  tris=300
+  mesh plug_reset_0@A_PLUG_RESET_0#tex_parts_c_palette  tris=432
+  mesh plug_reset_0@A_PLUG_RESET_0#tex_parts_c_plug_labels  tris=2
+  mesh plug_usb3_0@A_PLUG_USB3_0#connector_black  tris=12
+  mesh plug_usb3_0@A_PLUG_USB3_0#rubber  tris=48
+  mesh plug_usb3_0@A_PLUG_USB3_0#tex_parts_c_palette  tris=1520
+  mesh plug_usb3_0@A_PLUG_USB3_0#tex_parts_c_plug_labels  tris=2
+  mesh s_tex_case_brickhouse_beige98_fanmotor#tex_case_brickhouse_beige98_fanmotor  tris=120
+  mesh s_tex_cat_cases_palette#tex_cat_cases_palette  tris=1520
+  mesh screw_ph2_0@A_SCREW_PH2_0#steel  tris=944
+  mesh screw_ph2_1@A_SCREW_PH2_1#steel  tris=944
+  mesh screw_ph2_2@A_SCREW_PH2_2#steel  tris=944
+  mesh screw_ph2_3@A_SCREW_PH2_3#steel  tris=944
+  mesh screw_ph2_4@A_SCREW_PH2_4#steel  tris=944
+  mesh screw_ph2_5@A_SCREW_PH2_5#steel  tris=944
+  mesh screw_ph2_6@A_SCREW_PH2_6#steel  tris=944
+  mesh screw_thumb_0@A_SCREW_THUMB_0@A_PANEL_SIDE_0#rubber  tris=144
+  mesh screw_thumb_0@A_SCREW_THUMB_0@A_PANEL_SIDE_0#steel  tris=948
+  mesh screw_thumb_1@A_SCREW_THUMB_1@A_PANEL_SIDE_0#rubber  tris=144
+  mesh screw_thumb_1@A_SCREW_THUMB_1@A_PANEL_SIDE_0#steel  tris=948
+  mesh screw_thumb_2@A_SCREW_THUMB_2@A_PANEL_BACK_0#steel  tris=948
+  mesh screw_thumb_3@A_SCREW_THUMB_3@A_PANEL_BACK_0#steel  tris=948
+  mesh slotcover_0@A_SLOTCOVER_0#connector_beige  tris=568
+  mesh slotcover_1@A_SLOTCOVER_1#connector_beige  tris=672
+  mesh slotcover_2@A_SLOTCOVER_2#connector_beige  tris=672
+  mesh slotcover_3@A_SLOTCOVER_3#connector_beige  tris=672
+  mesh slotcover_4@A_SLOTCOVER_4#connector_beige  tris=672
+  mesh slotcover_5@A_SLOTCOVER_5#connector_beige  tris=672
+  mesh slotcover_6@A_SLOTCOVER_6#connector_beige  tris=672
+  mesh standoff_0@A_STANDOFF_0#gold  tris=396
+  mesh standoff_1@A_STANDOFF_1#gold  tris=396
+  mesh standoff_2@A_STANDOFF_2#gold  tris=396
+  mesh standoff_4@A_STANDOFF_4#gold  tris=396
+  mesh standoff_6@A_STANDOFF_6#gold  tris=396
+  mesh standoff_8@A_STANDOFF_8#gold  tris=396
+  A_BUTTON_POWER_0 pos=(-0.2185, 0.4268, -0.05) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.01600,0.01600,0.00800 meta=press=+z_local,travel=0.0015
+  A_BUTTON_RESET_0 pos=(-0.2185, 0.4268, -0.031) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.00600,0.00600,0.00600 meta=press=+z_local,travel=0.001
+  A_BUTTON_TURBO_0 pos=(-0.2188, 0.287, 0.012) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.01600,0.01000,0.00800 meta=press=+z_local,travel=0.0015,toggle=1,fun=1
+  A_FAN_0 pos=(0.1827, 0.355, 0.03) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=1200
+  A_GROMMET_0 pos=(-0.077, 0.335, -0.09525) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02000,0.06000,0.00400 meta=on=tray
+  A_GROMMET_1 pos=(-0.077, 0.25, -0.09525) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02000,0.06000,0.00400 meta=on=tray
+  A_GROMMET_2 pos=(-0.077, 0.165, -0.09525) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02000,0.06000,0.00400 meta=on=tray
+  A_GROMMET_3 pos=(0.032, 0.4345, -0.09525) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.06400,0.01600,0.00400 meta=on=tray
+  A_GROMMET_4 pos=(-0.1, 0.1036, -0.0835) fwd=(0.0, 1.0, -0.0) up=(-0.0, 0.0, 1.0) size=0.05000,0.01600,0.00400 meta=on=shroud
+  A_GROMMET_5 pos=(0.065, 0.1036, -0.0835) fwd=(0.0, 1.0, -0.0) up=(-0.0, 0.0, 1.0) size=0.05000,0.01600,0.00400 meta=on=shroud
+  A_HIT_0 pos=(-0.2095, 0.225, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01900,0.45100,0.21100 meta=
+  A_HIT_1 pos=(0.1933, 0.225, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00800,0.45000,0.21000 meta=
+  A_HIT_2 pos=(-0.0021, 0.445, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.40000,0.01000,0.21000 meta=
+  A_HIT_3 pos=(-0.0021, -0.002, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.40000,0.01200,0.21000 meta=
+  A_HIT_4 pos=(0.014, 0.277, -0.09785) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.36400,0.34500,0.00600 meta=
+  A_HIT_5 pos=(0.012, 0.052, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.36800,0.10400,0.19400 meta=
+  A_LED_HDD_0 pos=(-0.2185, 0.4268, -0.022) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.00300,0.00300,0.00300 meta=colour=red
+  A_LED_POWER_0 pos=(-0.2181, 0.4268, -0.05) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.01600,0.01600,0.00400 meta=colour=green
+  A_LED_TURBO_0 pos=(-0.2188, 0.287, 0.03) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.00400,0.00400,0.00300 meta=colour=yellow,on_when=A_BUTTON_TURBO_0
+  A_PANEL_BACK_0 pos=(-0.0, 0.225, -0.105) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.39800,0.44800,0.00600 meta=remove=-z
+  A_PANEL_SIDE_0 pos=(-0.0, 0.225, 0.1) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.39800,0.44800,0.00600 meta=remove=+z,lift=0.01,glass=1
+  A_PLUG_AUDIO_0 pos=(-0.152, 0.262, -0.09201) fwd=(0.0, -1.0, 0.0) up=(-0.0, 0.0, 1.0) size=0.02500,0.01200,0.03000 meta=kind=audiohdr,from=A_GROMMET_2
+  A_PLUG_FAN_0 pos=(0.118, 0.4335, -0.09225) fwd=(1.0, 0.0, 0.0) up=(-0.0, -0.0, 1.0) size=0.02500,0.01200,0.03000 meta=kind=fan3,fan=0
+  A_PLUG_HDDLED_0 pos=(-0.1155, 0.221, -0.09328) fwd=(0.0, -1.0, 0.0) up=(-0.0, 0.0, 1.0) size=0.02500,0.01200,0.03000 meta=kind=fp_hddled,from=A_GROMMET_2
+  A_PLUG_PLED_0 pos=(-0.127, 0.219, -0.09328) fwd=(0.0, -1.0, 0.0) up=(-0.0, 0.0, 1.0) size=0.02500,0.01200,0.03000 meta=kind=fp_pled,from=A_GROMMET_2
+  A_PLUG_PWRSW_0 pos=(-0.15, 0.215, -0.09328) fwd=(0.0, -1.0, 0.0) up=(-0.0, 0.0, 1.0) size=0.02500,0.01200,0.03000 meta=kind=fp_pwrsw,from=A_GROMMET_2
+  A_PLUG_RESET_0 pos=(-0.1385, 0.217, -0.09328) fwd=(0.0, -1.0, 0.0) up=(-0.0, 0.0, 1.0) size=0.02500,0.01200,0.03000 meta=kind=fp_reset,from=A_GROMMET_2
+  A_PLUG_USB3_0 pos=(-0.104, 0.232, -0.09025) fwd=(0.0, -1.0, 0.0) up=(-0.0, 0.0, 1.0) size=0.02500,0.01200,0.03000 meta=kind=usb3hdr,from=A_GROMMET_2
+  A_PORT_USBA_FRONT_0 pos=(-0.2187, 0.4268, -0.004) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.01400,0.00700,0.01200 meta=usb=3.0
+  A_PORT_USBA_FRONT_1 pos=(-0.2187, 0.4268, 0.0165) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.01400,0.00700,0.01200 meta=usb=3.0
+  A_SCREW_PH2_0 pos=(0.1995, 0.25854, 0.0301) fwd=(0.0, -0.0, 1.0) up=(1.0, 0.0, 0.0) size=0.00800,0.00800,0.00800 meta=slot=0,thread=6-32,pre=1
+  A_SCREW_PH2_1 pos=(0.1995, 0.23822, 0.0301) fwd=(0.0, -0.0, 1.0) up=(1.0, 0.0, 0.0) size=0.00800,0.00800,0.00800 meta=slot=1,thread=6-32,pre=1
+  A_SCREW_PH2_2 pos=(0.1995, 0.2179, 0.0301) fwd=(0.0, -0.0, 1.0) up=(1.0, 0.0, 0.0) size=0.00800,0.00800,0.00800 meta=slot=2,thread=6-32,pre=1
+  A_SCREW_PH2_3 pos=(0.1995, 0.19758, 0.0301) fwd=(0.0, -0.0, 1.0) up=(1.0, 0.0, 0.0) size=0.00800,0.00800,0.00800 meta=slot=3,thread=6-32,pre=1
+  A_SCREW_PH2_4 pos=(0.1995, 0.17726, 0.0301) fwd=(0.0, -0.0, 1.0) up=(1.0, 0.0, 0.0) size=0.00800,0.00800,0.00800 meta=slot=4,thread=6-32,pre=1
+  A_SCREW_PH2_5 pos=(0.1995, 0.15694, 0.0301) fwd=(0.0, -0.0, 1.0) up=(1.0, 0.0, 0.0) size=0.00800,0.00800,0.00800 meta=slot=5,thread=6-32,pre=1
+  A_SCREW_PH2_6 pos=(0.1995, 0.13662, 0.0301) fwd=(0.0, -0.0, 1.0) up=(1.0, 0.0, 0.0) size=0.00800,0.00800,0.00800 meta=slot=6,thread=6-32,pre=1
+  A_SCREW_THUMB_0@A_PANEL_SIDE_0 pos=(0.1885, 0.42, 0.1053) fwd=(0.0, -0.0, 1.0) up=(1.0, 0.0, 0.0) size=0.01300,0.01300,0.01000 meta=thread=6-32,captive=1
+  A_SCREW_THUMB_1@A_PANEL_SIDE_0 pos=(0.1885, 0.03, 0.1053) fwd=(0.0, -0.0, 1.0) up=(1.0, 0.0, 0.0) size=0.01300,0.01300,0.01000 meta=thread=6-32,captive=1
+  A_SCREW_THUMB_2@A_PANEL_BACK_0 pos=(0.1974, 0.39, -0.1) fwd=(1.0, -0.0, 0.0) up=(0.0, 1.0, 0.0) size=0.01300,0.01300,0.01000 meta=thread=6-32
+  A_SCREW_THUMB_3@A_PANEL_BACK_0 pos=(0.1974, 0.06, -0.1) fwd=(1.0, -0.0, 0.0) up=(0.0, 1.0, 0.0) size=0.01300,0.01300,0.01000 meta=thread=6-32
+  A_SLOTCOVER_0 pos=(0.194, 0.25854, -0.03) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00400,0.01900,0.12500 meta=slot=0,remove=+z
+  A_SLOTCOVER_1 pos=(0.194, 0.23822, -0.03) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00400,0.01900,0.12500 meta=slot=1,remove=+z
+  A_SLOTCOVER_2 pos=(0.194, 0.2179, -0.03) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00400,0.01900,0.12500 meta=slot=2,remove=+z
+  A_SLOTCOVER_3 pos=(0.194, 0.19758, -0.03) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00400,0.01900,0.12500 meta=slot=3,remove=+z
+  A_SLOTCOVER_4 pos=(0.194, 0.17726, -0.03) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00400,0.01900,0.12500 meta=slot=4,remove=+z
+  A_SLOTCOVER_5 pos=(0.194, 0.15694, -0.03) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00400,0.01900,0.12500 meta=slot=5,remove=+z
+  A_SLOTCOVER_6 pos=(0.194, 0.13662, -0.03) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00400,0.01900,0.12500 meta=slot=6,remove=+z
+  A_SOCKET_IOSHIELD_0 pos=(0.1959, 0.34296, -0.06848) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00400,0.15875,0.04445 meta=frame=board,insert=+x,window=0.15875x0.04445
+  A_SOCKET_MOBO_0 pos=(0.068, 0.2675, -0.0885) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.24400,0.30500,0.01200 meta=formfactor=atx,standoff=0.00635
+  A_SOCKET_PSU_0 pos=(0.125, 0.053, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.14200,0.08800,0.15200 meta=insert=+x
+  A_SOCKET_SSD25_0 pos=(-0.13, 0.1085, -0.018) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.10000,0.00700,0.07000 meta=frame=ssd25,connector=-z
+  A_SOCKET_SSD25_1 pos=(-0.126, 0.3, -0.10035) fwd=(-1.0, -0.0, 0.0) up=(-0.0, -0.0, -1.0) size=0.10000,0.00700,0.07000 meta=frame=ssd25,connector=-y,behind_tray=1
+  A_STANDOFF_0 pos=(0.17976, 0.13161, -0.09485) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00800,0.00800,0.00800 meta=pre=1,hole=A,board=0.11176;-0.13589
+  A_STANDOFF_1 pos=(0.17976, 0.25607, -0.09485) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00800,0.00800,0.00800 meta=pre=1,hole=C,board=0.11176;-0.01143
+  A_STANDOFF_2 pos=(0.1569, 0.41355, -0.09485) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00800,0.00800,0.00800 meta=pre=1,hole=F,board=0.08890;0.14605
+  A_STANDOFF_3 pos=(0.02482, 0.13161, -0.09485) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00800,0.00800,0.00800 meta=pre=0,hole=G,board=-0.04318;-0.13589
+  A_STANDOFF_4 pos=(0.02482, 0.25607, -0.09485) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00800,0.00800,0.00800 meta=pre=1,hole=H,board=-0.04318;-0.01143
+  A_STANDOFF_5 pos=(0.02482, 0.41355, -0.09485) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00800,0.00800,0.00800 meta=pre=0,hole=J,board=-0.04318;0.14605
+  A_STANDOFF_6 pos=(-0.04757, 0.13161, -0.09485) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00800,0.00800,0.00800 meta=pre=1,hole=K,board=-0.11557;-0.13589
+  A_STANDOFF_7 pos=(-0.04757, 0.25607, -0.09485) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00800,0.00800,0.00800 meta=pre=0,hole=L,board=-0.11557;-0.01143
+  A_STANDOFF_8 pos=(-0.04757, 0.41355, -0.09485) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00800,0.00800,0.00800 meta=pre=1,hole=M,board=-0.11557;0.14605
+  A_STANDOFF_9 pos=(0.17976, 0.21035, -0.09485) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00800,0.00800,0.00800 meta=pre=0,hole=B,board=0.11176;-0.05715,atx=0
+ATX holes (case coords x, y on the tray at z=-0.09485; board frame bx, by):
+  A: case=(0.17976, 0.13161)  board=(0.11176, -0.13589)  pre=1
+  C: case=(0.17976, 0.25607)  board=(0.11176, -0.01143)  pre=1
+  F: case=(0.15690, 0.41355)  board=(0.08890, 0.14605)  pre=1
+  G: case=(0.02482, 0.13161)  board=(-0.04318, -0.13589)  pre=0
+  H: case=(0.02482, 0.25607)  board=(-0.04318, -0.01143)  pre=1
+  J: case=(0.02482, 0.41355)  board=(-0.04318, 0.14605)  pre=0
+  K: case=(-0.04757, 0.13161)  board=(-0.11557, -0.13589)  pre=1
+  L: case=(-0.04757, 0.25607)  board=(-0.11557, -0.01143)  pre=0
+  M: case=(-0.04757, 0.41355)  board=(-0.11557, 0.14605)  pre=1
+  B: case=(0.17976, 0.21035)  board=(0.11176, -0.05715)  pre=0
+slot centres y: 0.25854, 0.23822, 0.21790, 0.19758, 0.17726, 0.15694, 0.13662
+slot screw x=0.19950 z=0.03010; bracket plate x=0.19400
+IO window z -0.09071..-0.04626  y 0.26359..0.42234
+
+fan_arctiq_p12: 8136 triangles, 7 meshes
+  mesh fan_0@A_FAN_0#fan_black  tris=2444
+  mesh fan_0@A_FAN_0#tex_fan_arctiq_p12_hub  tris=144
+  mesh fan_arctiq_p12_fan_black#fan_black  tris=4512
+  mesh fan_arctiq_p12_rubber#rubber  tris=300
+  mesh plug_fan_0@A_PLUG_FAN_0#connector_black  tris=440
+  mesh plug_fan_0@A_PLUG_FAN_0#tex_parts_c_palette  tris=176
+  mesh s_tex_fan_arctiq_p12_motor#tex_fan_arctiq_p12_motor  tris=120
+  A_FAN_0 pos=(-0.0, 0.0, -0.0) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=1800
+  A_HIT_0 pos=(-0.0, 0.0, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.12000,0.12000,0.02500 meta=
+  A_HOLE_0 pos=(-0.0525, 0.0525, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1050,through=1,screw=fan
+  A_HOLE_1 pos=(0.0525, 0.0525, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1050,through=1,screw=fan
+  A_HOLE_2 pos=(-0.0525, -0.0525, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1050,through=1,screw=fan
+  A_HOLE_3 pos=(0.0525, -0.0525, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1050,through=1,screw=fan
+  A_PLUG_FAN_0 pos=(-0.02, -0.0655, 0.0085) fwd=(1.0, -0.0, 0.0) up=(0.0, 1.0, 0.0) size=0.02500,0.01200,0.03000 meta=kind=fan4,pinout=GND|12V|TACH|PWM,fan=0
+frame: case_fan contract - origin at the frame centre, +Z = airflow (the intake face at z=-0.0125), 120 mm frame, 25 mm deep, holes 105.0 mm apart
+
+fan_noctis_a12x25: 10552 triangles, 8 meshes
+  mesh fan_0@A_FAN_0#tex_cat_cases_palette  tris=3708
+  mesh fan_0@A_FAN_0#tex_fan_noctis_a12x25_hub  tris=144
+  mesh fan_noctis_a12x25_connector_beige#connector_beige  tris=4512
+  mesh fan_noctis_a12x25_rubber#rubber  tris=300
+  mesh fan_noctis_a12x25_tex_cat_cases_palette#tex_cat_cases_palette  tris=1152
+  mesh plug_fan_0@A_PLUG_FAN_0#connector_black  tris=440
+  mesh plug_fan_0@A_PLUG_FAN_0#tex_parts_c_palette  tris=176
+  mesh s_tex_fan_noctis_a12x25_motor#tex_fan_noctis_a12x25_motor  tris=120
+  A_FAN_0 pos=(-0.0, 0.0, -0.0) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=2000
+  A_HIT_0 pos=(-0.0, 0.0, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.12000,0.12000,0.02500 meta=
+  A_HOLE_0 pos=(-0.0525, 0.0525, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1050,through=1,screw=fan
+  A_HOLE_1 pos=(0.0525, 0.0525, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1050,through=1,screw=fan
+  A_HOLE_2 pos=(-0.0525, -0.0525, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1050,through=1,screw=fan
+  A_HOLE_3 pos=(0.0525, -0.0525, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1050,through=1,screw=fan
+  A_PLUG_FAN_0 pos=(-0.02, -0.0655, 0.0085) fwd=(1.0, -0.0, 0.0) up=(0.0, 1.0, 0.0) size=0.02500,0.01200,0.03000 meta=kind=fan4,pinout=GND|12V|TACH|PWM,fan=0
+frame: case_fan contract - origin at the frame centre, +Z = airflow (the intake face at z=-0.0125), 120 mm frame, 25 mm deep, holes 105.0 mm apart
+
+fan_noctis_a12x25_black: 10552 triangles, 7 meshes
+  mesh fan_0@A_FAN_0#fan_black  tris=3708
+  mesh fan_0@A_FAN_0#tex_fan_noctis_a12x25_black_hub  tris=144
+  mesh fan_noctis_a12x25_black_fan_black#fan_black  tris=4512
+  mesh fan_noctis_a12x25_black_rubber#rubber  tris=1452
+  mesh plug_fan_0@A_PLUG_FAN_0#connector_black  tris=440
+  mesh plug_fan_0@A_PLUG_FAN_0#tex_parts_c_palette  tris=176
+  mesh s_tex_fan_noctis_a12x25_black_motor#tex_fan_noctis_a12x25_black_motor  tris=120
+  A_FAN_0 pos=(-0.0, 0.0, -0.0) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=2000
+  A_HIT_0 pos=(-0.0, 0.0, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.12000,0.12000,0.02500 meta=
+  A_HOLE_0 pos=(-0.0525, 0.0525, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1050,through=1,screw=fan
+  A_HOLE_1 pos=(0.0525, 0.0525, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1050,through=1,screw=fan
+  A_HOLE_2 pos=(-0.0525, -0.0525, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1050,through=1,screw=fan
+  A_HOLE_3 pos=(0.0525, -0.0525, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1050,through=1,screw=fan
+  A_PLUG_FAN_0 pos=(-0.02, -0.0655, 0.0085) fwd=(1.0, -0.0, 0.0) up=(0.0, 1.0, 0.0) size=0.02500,0.01200,0.03000 meta=kind=fan4,pinout=GND|12V|TACH|PWM,fan=0
+frame: case_fan contract - origin at the frame centre, +Z = airflow (the intake face at z=-0.0125), 120 mm frame, 25 mm deep, holes 105.0 mm apart
+
+fan_lumin_sl120_white: 12572 triangles, 12 meshes
+  mesh fan_0@A_FAN_0#tex_fan_lumin_sl120_white_hub  tris=144
+  mesh fan_0@A_FAN_0#white_plastic  tris=3708
+  mesh fan_lumin_sl120_white_connector_black#connector_black  tris=120
+  mesh fan_lumin_sl120_white_gold#gold  tris=144
+  mesh fan_lumin_sl120_white_rgb#rgb  tris=1840
+  mesh fan_lumin_sl120_white_white_plastic#white_plastic  tris=5328
+  mesh plug_argb_0@A_PLUG_ARGB_0#connector_black  tris=448
+  mesh plug_argb_0@A_PLUG_ARGB_0#rubber  tris=64
+  mesh plug_argb_0@A_PLUG_ARGB_0#white_plastic  tris=40
+  mesh plug_fan_0@A_PLUG_FAN_0#connector_black  tris=440
+  mesh plug_fan_0@A_PLUG_FAN_0#tex_parts_c_palette  tris=176
+  mesh s_tex_fan_lumin_sl120_white_motor#tex_fan_lumin_sl120_white_motor  tris=120
+  A_FAN_0 pos=(-0.0, 0.0, -0.0) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=1900,rgb=1
+  A_HIT_0 pos=(-0.0, 0.0, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.12000,0.12000,0.02500 meta=
+  A_HOLE_0 pos=(-0.0525, 0.0525, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1050,through=1,screw=fan
+  A_HOLE_1 pos=(0.0525, 0.0525, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1050,through=1,screw=fan
+  A_HOLE_2 pos=(-0.0525, -0.0525, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1050,through=1,screw=fan
+  A_HOLE_3 pos=(0.0525, -0.0525, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1050,through=1,screw=fan
+  A_PLUG_ARGB_0 pos=(-0.038, -0.0655, -0.0015) fwd=(1.0, -0.0, 0.0) up=(0.0, 1.0, 0.0) size=0.02500,0.01200,0.03000 meta=kind=argb3,pinout=5V|D|KEY|GND,v=5,fan=0
+  A_PLUG_FAN_0 pos=(-0.02, -0.0655, 0.0085) fwd=(1.0, -0.0, 0.0) up=(0.0, 1.0, 0.0) size=0.02500,0.01200,0.03000 meta=kind=fan4,pinout=GND|12V|TACH|PWM,fan=0
+  A_PLUG_LINK_0 pos=(0.0637, -0.03, 0.0035) fwd=(1.0, -0.0, 0.0) up=(0.0, 1.0, 0.0) size=0.00400,0.02400,0.01100 meta=chain=link,mate=A_PORT_LINK_0,pitch=0.1205,carries=pwm+argb
+  A_PORT_LINK_0 pos=(-0.0624, -0.03, 0.0035) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.00400,0.02400,0.01100 meta=chain=link,mate=A_PLUG_LINK_0,pitch=0.1205,carries=pwm+argb
+frame: case_fan contract - origin at the frame centre, +Z = airflow (the intake face at z=-0.0125), 120 mm frame, 25 mm deep, holes 105.0 mm apart
+
+fan_corvex_af120_rgb: 11700 triangles, 12 meshes
+  mesh fan_0@A_FAN_0#clear_plastic  tris=3076
+  mesh fan_0@A_FAN_0#rgb  tris=288
+  mesh fan_0@A_FAN_0#tex_fan_corvex_af120_rgb_hub  tris=144
+  mesh fan_corvex_af120_rgb_fan_black#fan_black  tris=4512
+  mesh fan_corvex_af120_rgb_rgb#rgb  tris=1792
+  mesh fan_corvex_af120_rgb_rubber#rubber  tris=600
+  mesh plug_argb_0@A_PLUG_ARGB_0#connector_black  tris=448
+  mesh plug_argb_0@A_PLUG_ARGB_0#rubber  tris=64
+  mesh plug_argb_0@A_PLUG_ARGB_0#white_plastic  tris=40
+  mesh plug_fan_0@A_PLUG_FAN_0#connector_black  tris=440
+  mesh plug_fan_0@A_PLUG_FAN_0#tex_parts_c_palette  tris=176
+  mesh s_tex_fan_corvex_af120_rgb_motor#tex_fan_corvex_af120_rgb_motor  tris=120
+  A_FAN_0 pos=(-0.0, 0.0, -0.0) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.12000,0.12000,0.02500 meta=axis=z,spin=-1,rpm=1500,rgb=1
+  A_HIT_0 pos=(-0.0, 0.0, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.12000,0.12000,0.02500 meta=
+  A_HOLE_0 pos=(-0.0525, 0.0525, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1050,through=1,screw=fan
+  A_HOLE_1 pos=(0.0525, 0.0525, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1050,through=1,screw=fan
+  A_HOLE_2 pos=(-0.0525, -0.0525, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1050,through=1,screw=fan
+  A_HOLE_3 pos=(0.0525, -0.0525, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1050,through=1,screw=fan
+  A_PLUG_ARGB_0 pos=(-0.038, -0.0655, -0.0015) fwd=(1.0, -0.0, 0.0) up=(0.0, 1.0, 0.0) size=0.02500,0.01200,0.03000 meta=kind=argb3,pinout=5V|D|KEY|GND,v=5,fan=0
+  A_PLUG_FAN_0 pos=(-0.02, -0.0655, 0.0085) fwd=(1.0, -0.0, 0.0) up=(0.0, 1.0, 0.0) size=0.02500,0.01200,0.03000 meta=kind=fan4,pinout=GND|12V|TACH|PWM,fan=0
+frame: case_fan contract - origin at the frame centre, +Z = airflow (the intake face at z=-0.0125), 120 mm frame, 25 mm deep, holes 105.0 mm apart
+
+fan_arctiq_p14: 8136 triangles, 7 meshes
+  mesh fan_0@A_FAN_0#fan_black  tris=2444
+  mesh fan_0@A_FAN_0#tex_fan_arctiq_p14_hub  tris=144
+  mesh fan_arctiq_p14_fan_black#fan_black  tris=4512
+  mesh fan_arctiq_p14_rubber#rubber  tris=300
+  mesh plug_fan_0@A_PLUG_FAN_0#connector_black  tris=440
+  mesh plug_fan_0@A_PLUG_FAN_0#tex_parts_c_palette  tris=176
+  mesh s_tex_fan_arctiq_p14_motor#tex_fan_arctiq_p14_motor  tris=120
+  A_FAN_0 pos=(-0.0, 0.0, -0.0) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.14000,0.14000,0.02500 meta=axis=z,spin=-1,rpm=1700
+  A_HIT_0 pos=(-0.0, 0.0, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.14000,0.14000,0.02500 meta=
+  A_HOLE_0 pos=(-0.06225, 0.06225, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1245,through=1,screw=fan
+  A_HOLE_1 pos=(0.06225, 0.06225, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1245,through=1,screw=fan
+  A_HOLE_2 pos=(-0.06225, -0.06225, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1245,through=1,screw=fan
+  A_HOLE_3 pos=(0.06225, -0.06225, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1245,through=1,screw=fan
+  A_PLUG_FAN_0 pos=(-0.02, -0.0755, 0.0085) fwd=(1.0, -0.0, 0.0) up=(0.0, 1.0, 0.0) size=0.02500,0.01200,0.03000 meta=kind=fan4,pinout=GND|12V|TACH|PWM,fan=0
+frame: case_fan contract - origin at the frame centre, +Z = airflow (the intake face at z=-0.0125), 140 mm frame, 25 mm deep, holes 124.5 mm apart
+
+fan_hush_wing4_140: 9376 triangles, 8 meshes
+  mesh fan_0@A_FAN_0#fan_black  tris=3076
+  mesh fan_0@A_FAN_0#tex_fan_hush_wing4_140_hub  tris=144
+  mesh fan_hush_wing4_140_fan_black#fan_black  tris=4512
+  mesh fan_hush_wing4_140_rubber#rubber  tris=300
+  mesh fan_hush_wing4_140_tex_cat_cases_palette#tex_cat_cases_palette  tris=608
+  mesh plug_fan_0@A_PLUG_FAN_0#connector_black  tris=440
+  mesh plug_fan_0@A_PLUG_FAN_0#tex_parts_c_palette  tris=176
+  mesh s_tex_fan_hush_wing4_140_motor#tex_fan_hush_wing4_140_motor  tris=120
+  A_FAN_0 pos=(-0.0, 0.0, -0.0) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.14000,0.14000,0.02500 meta=axis=z,spin=-1,rpm=1100
+  A_HIT_0 pos=(-0.0, 0.0, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.14000,0.14000,0.02500 meta=
+  A_HOLE_0 pos=(-0.06225, 0.06225, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1245,through=1,screw=fan
+  A_HOLE_1 pos=(0.06225, 0.06225, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1245,through=1,screw=fan
+  A_HOLE_2 pos=(-0.06225, -0.06225, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1245,through=1,screw=fan
+  A_HOLE_3 pos=(0.06225, -0.06225, -0.0125) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.00800,0.00800,0.02500 meta=d=0.0043,spacing=0.1245,through=1,screw=fan
+  A_PLUG_FAN_0 pos=(-0.02, -0.0755, 0.0085) fwd=(1.0, -0.0, 0.0) up=(0.0, 1.0, 0.0) size=0.02500,0.01200,0.03000 meta=kind=fan4,pinout=GND|12V|TACH|PWM,fan=0
+frame: case_fan contract - origin at the frame centre, +Z = airflow (the intake face at z=-0.0125), 140 mm frame, 25 mm deep, holes 124.5 mm apart
