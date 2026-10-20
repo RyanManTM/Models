@@ -1,0 +1,1125 @@
+[
+  {
+    "id": "gpu_verdia_5060_zenith",
+    "model": "gpu_verdia_5060_zenith",
+    "brand": "Zenith",
+    "name": "Verdia VTX 5060 Duo 8 GB",
+    "category": "GPU",
+    "price": 299,
+    "power_w": 145,
+    "color": "#151517",
+    "rgb": false,
+    "analog": "Zotac RTX 5060 Twin Edge (docs only, never shown in game)",
+    "desc": "A compact dual-fan 1080p card that fits almost any case.",
+    "specs": {
+      "vram_gb": 8,
+      "length_mm": 220,
+      "slots": 2,
+      "fans": 2,
+      "boost_mhz": 2497
+    },
+    "game": {
+      "gpu_connector": "PCIe8x1",
+      "gpu_length": 0.22,
+      "perf": 0
+    },
+    "contract": "gpu",
+    "new_contract": false,
+    "unbox": {
+      "films": [
+        "A_FILM_BACKPLATE_0",
+        "A_FILM_HUB_0@A_FAN_0",
+        "A_FILM_HUB_1@A_FAN_1",
+        "A_FILM_SHROUD_0"
+      ],
+      "caps": [
+        {
+          "model": "cap_pcie16",
+          "at": "origin",
+          "blocks": "install"
+        },
+        {
+          "model": "cap_dp",
+          "at": "A_PORT_DP_0",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_dp",
+          "at": "A_PORT_DP_1",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_dp",
+          "at": "A_PORT_DP_2",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_hdmi",
+          "at": "A_PORT_HDMI_0",
+          "blocks": "plug"
+        }
+      ],
+      "stickers": []
+    },
+    "docs": [
+      "guide",
+      "driver",
+      "sticker"
+    ],
+    "doc_notes": [
+      "Install in the top PCIe x16 slot (the one nearest the CPU) until the slot latch clicks.",
+      "Remove the clear PCIe cap from the gold fingers before installing.",
+      "Remove the dust caps from the display ports before plugging in a cable.",
+      "Power: one PCIe 8-pin (6+2) cable. Do not use adapters or splitters.",
+      "Board power 145 W; a 550 W or larger power supply is recommended.",
+      "Plug the monitor into the graphics card, not into the motherboard's video outputs.",
+      "Needs 2 expansion slots and 220 mm of free length in the case.",
+      "Install the latest driver from the driver card after the first boot."
+    ]
+  },
+  {
+    "id": "gpu_verdia_5060ti_aegis_white",
+    "model": "gpu_verdia_5060ti_aegis_white",
+    "brand": "Aegis",
+    "name": "Verdia VTX 5060 Ti Halo White 16 GB",
+    "category": "GPU",
+    "price": 459,
+    "power_w": 180,
+    "color": "#E9EAE7",
+    "rgb": true,
+    "analog": "ASUS Dual RTX 5060 Ti 16GB White (docs only, never shown in game)",
+    "desc": "A clean white dual-fan card with 16 GB for high-texture 1440p.",
+    "specs": {
+      "vram_gb": 16,
+      "length_mm": 230,
+      "slots": 2.5,
+      "fans": 2,
+      "boost_mhz": 2572
+    },
+    "game": {
+      "gpu_connector": "PCIe8x1",
+      "gpu_length": 0.23,
+      "perf": 0
+    },
+    "contract": "gpu",
+    "new_contract": false,
+    "unbox": {
+      "films": [
+        "A_FILM_BACKPLATE_0",
+        "A_FILM_HUB_0@A_FAN_0",
+        "A_FILM_HUB_1@A_FAN_1",
+        "A_FILM_SHROUD_0"
+      ],
+      "caps": [
+        {
+          "model": "cap_pcie16",
+          "at": "origin",
+          "blocks": "install"
+        },
+        {
+          "model": "cap_dp",
+          "at": "A_PORT_DP_0",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_dp",
+          "at": "A_PORT_DP_1",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_dp",
+          "at": "A_PORT_DP_2",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_hdmi",
+          "at": "A_PORT_HDMI_0",
+          "blocks": "plug"
+        }
+      ],
+      "stickers": []
+    },
+    "docs": [
+      "guide",
+      "driver",
+      "sticker"
+    ],
+    "doc_notes": [
+      "Install in the top PCIe x16 slot (the one nearest the CPU) until the slot latch clicks.",
+      "Remove the clear PCIe cap from the gold fingers before installing.",
+      "Remove the dust caps from the display ports before plugging in a cable.",
+      "Power: one PCIe 8-pin (6+2) cable. Do not use adapters or splitters.",
+      "Board power 180 W; a 550 W or larger power supply is recommended.",
+      "Plug the monitor into the graphics card, not into the motherboard's video outputs.",
+      "Needs 2.5 expansion slots and 230 mm of free length in the case.",
+      "Install the latest driver from the driver card after the first boot."
+    ]
+  },
+  {
+    "id": "gpu_verdia_5070_mako",
+    "model": "gpu_verdia_5070_mako",
+    "brand": "Mako",
+    "name": "Verdia VTX 5070 Gale 3X 12 GB",
+    "category": "GPU",
+    "price": 569,
+    "power_w": 250,
+    "color": "#141416",
+    "rgb": false,
+    "analog": "MSI RTX 5070 Ventus 3X OC (docs only, never shown in game)",
+    "desc": "Triple-fan black and silver workhorse for 1440p gaming.",
+    "specs": {
+      "vram_gb": 12,
+      "length_mm": 288,
+      "slots": 2.5,
+      "fans": 3,
+      "boost_mhz": 2512
+    },
+    "game": {
+      "gpu_connector": "PCIe8x1",
+      "gpu_length": 0.288,
+      "perf": 0
+    },
+    "contract": "gpu",
+    "new_contract": false,
+    "unbox": {
+      "films": [
+        "A_FILM_BACKPLATE_0",
+        "A_FILM_HUB_0@A_FAN_0",
+        "A_FILM_HUB_1@A_FAN_1",
+        "A_FILM_HUB_2@A_FAN_2",
+        "A_FILM_SHROUD_0"
+      ],
+      "caps": [
+        {
+          "model": "cap_pcie16",
+          "at": "origin",
+          "blocks": "install"
+        },
+        {
+          "model": "cap_dp",
+          "at": "A_PORT_DP_0",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_dp",
+          "at": "A_PORT_DP_1",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_dp",
+          "at": "A_PORT_DP_2",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_hdmi",
+          "at": "A_PORT_HDMI_0",
+          "blocks": "plug"
+        }
+      ],
+      "stickers": []
+    },
+    "docs": [
+      "guide",
+      "driver",
+      "sticker"
+    ],
+    "doc_notes": [
+      "Install in the top PCIe x16 slot (the one nearest the CPU) until the slot latch clicks.",
+      "Remove the clear PCIe cap from the gold fingers before installing.",
+      "Remove the dust caps from the display ports before plugging in a cable.",
+      "Power: one PCIe 8-pin (6+2) cable. Do not use adapters or splitters.",
+      "Board power 250 W; a 650 W or larger power supply is recommended.",
+      "Plug the monitor into the graphics card, not into the motherboard's video outputs.",
+      "Needs 2.5 expansion slots and 288 mm of free length in the case.",
+      "Install the latest driver from the driver card after the first boot."
+    ]
+  },
+  {
+    "id": "gpu_verdia_5070ti_kestrel_white",
+    "model": "gpu_verdia_5070ti_kestrel_white",
+    "brand": "Kestrel",
+    "name": "Verdia VTX 5070 Ti Talon Ice 16 GB",
+    "category": "GPU",
+    "price": 799,
+    "power_w": 300,
+    "color": "#E8E8E6",
+    "rgb": true,
+    "analog": "Gigabyte RTX 5070 Ti Eagle OC Ice (docs only, never shown in game)",
+    "desc": "White triple-fan card with an RGB logo, built for a snow-white build.",
+    "specs": {
+      "vram_gb": 16,
+      "length_mm": 304,
+      "slots": 2.5,
+      "fans": 3,
+      "boost_mhz": 2588
+    },
+    "game": {
+      "gpu_connector": "Power16",
+      "gpu_length": 0.304,
+      "perf": 0
+    },
+    "contract": "gpu",
+    "new_contract": false,
+    "unbox": {
+      "films": [
+        "A_FILM_BACKPLATE_0",
+        "A_FILM_HUB_0@A_FAN_0",
+        "A_FILM_HUB_1@A_FAN_1",
+        "A_FILM_HUB_2@A_FAN_2",
+        "A_FILM_SHROUD_0"
+      ],
+      "caps": [
+        {
+          "model": "cap_pcie16",
+          "at": "origin",
+          "blocks": "install"
+        },
+        {
+          "model": "cap_dp",
+          "at": "A_PORT_DP_0",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_dp",
+          "at": "A_PORT_DP_1",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_dp",
+          "at": "A_PORT_DP_2",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_hdmi",
+          "at": "A_PORT_HDMI_0",
+          "blocks": "plug"
+        }
+      ],
+      "stickers": []
+    },
+    "docs": [
+      "guide",
+      "driver",
+      "sticker"
+    ],
+    "doc_notes": [
+      "Install in the top PCIe x16 slot (the one nearest the CPU) until the slot latch clicks.",
+      "Remove the clear PCIe cap from the gold fingers before installing.",
+      "Remove the dust caps from the display ports before plugging in a cable.",
+      "Power: one 12V-2x6 (16-pin) cable, pushed in until the latch clicks. Do not use adapters or splitters.",
+      "Board power 300 W; a 750 W or larger power supply is recommended.",
+      "Plug the monitor into the graphics card, not into the motherboard's video outputs.",
+      "Needs 2.5 expansion slots and 304 mm of free length in the case.",
+      "Install the latest driver from the driver card after the first boot."
+    ]
+  },
+  {
+    "id": "gpu_verdia_5080_aegis",
+    "model": "gpu_verdia_5080_aegis",
+    "brand": "Aegis",
+    "name": "Verdia VTX 5080 Paladin 16 GB",
+    "category": "GPU",
+    "price": 1499,
+    "power_w": 360,
+    "color": "#101012",
+    "rgb": true,
+    "analog": "ASUS ROG Astral RTX 5080 OC (docs only, never shown in game)",
+    "desc": "Flagship 3.5-slot cooler with a huge RGB light bar.",
+    "specs": {
+      "vram_gb": 16,
+      "length_mm": 348,
+      "slots": 3.5,
+      "fans": 3,
+      "boost_mhz": 2760
+    },
+    "game": {
+      "gpu_connector": "Power16",
+      "gpu_length": 0.348,
+      "perf": 0
+    },
+    "contract": "gpu",
+    "new_contract": false,
+    "unbox": {
+      "films": [
+        "A_FILM_BACKPLATE_0",
+        "A_FILM_HUB_0@A_FAN_0",
+        "A_FILM_HUB_1@A_FAN_1",
+        "A_FILM_HUB_2@A_FAN_2",
+        "A_FILM_RGB_0",
+        "A_FILM_RGB_1",
+        "A_FILM_SHROUD_0"
+      ],
+      "caps": [
+        {
+          "model": "cap_pcie16",
+          "at": "origin",
+          "blocks": "install"
+        },
+        {
+          "model": "cap_dp",
+          "at": "A_PORT_DP_0",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_dp",
+          "at": "A_PORT_DP_1",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_dp",
+          "at": "A_PORT_DP_2",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_hdmi",
+          "at": "A_PORT_HDMI_0",
+          "blocks": "plug"
+        }
+      ],
+      "stickers": []
+    },
+    "docs": [
+      "guide",
+      "driver",
+      "sticker"
+    ],
+    "doc_notes": [
+      "Install in the top PCIe x16 slot (the one nearest the CPU) until the slot latch clicks.",
+      "Remove the clear PCIe cap from the gold fingers before installing.",
+      "Remove the dust caps from the display ports before plugging in a cable.",
+      "Power: one 12V-2x6 (16-pin) cable, pushed in until the latch clicks. Do not use adapters or splitters.",
+      "Board power 360 W; a 850 W or larger power supply is recommended.",
+      "Plug the monitor into the graphics card, not into the motherboard's video outputs.",
+      "Needs 3.5 expansion slots and 348 mm of free length in the case.",
+      "Install the latest driver from the driver card after the first boot."
+    ]
+  },
+  {
+    "id": "gpu_verdia_5090_ref",
+    "model": "gpu_verdia_5090_ref",
+    "brand": "Verdia",
+    "name": "Verdia VTX 5090 Reference 32 GB",
+    "category": "GPU",
+    "price": 1999,
+    "power_w": 575,
+    "color": "#C9CBCF",
+    "rgb": false,
+    "analog": "NVIDIA GeForce RTX 5090 Founders Edition (docs only, never shown in game)",
+    "desc": "The maker's own slim 2-slot double flow-through flagship.",
+    "specs": {
+      "vram_gb": 32,
+      "length_mm": 304,
+      "slots": 2,
+      "fans": 2,
+      "boost_mhz": 2407
+    },
+    "game": {
+      "gpu_connector": "Power16",
+      "gpu_length": 0.304,
+      "perf": 0
+    },
+    "contract": "gpu",
+    "new_contract": false,
+    "unbox": {
+      "films": [
+        "A_FILM_BACKPLATE_0",
+        "A_FILM_HUB_0@A_FAN_0",
+        "A_FILM_HUB_1@A_FAN_1",
+        "A_FILM_SHROUD_0"
+      ],
+      "caps": [
+        {
+          "model": "cap_pcie16",
+          "at": "origin",
+          "blocks": "install"
+        },
+        {
+          "model": "cap_dp",
+          "at": "A_PORT_DP_0",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_dp",
+          "at": "A_PORT_DP_1",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_dp",
+          "at": "A_PORT_DP_2",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_hdmi",
+          "at": "A_PORT_HDMI_0",
+          "blocks": "plug"
+        }
+      ],
+      "stickers": []
+    },
+    "docs": [
+      "guide",
+      "driver",
+      "sticker"
+    ],
+    "doc_notes": [
+      "Install in the top PCIe x16 slot (the one nearest the CPU) until the slot latch clicks.",
+      "Remove the clear PCIe cap from the gold fingers before installing.",
+      "Remove the dust caps from the display ports before plugging in a cable.",
+      "Power: one 12V-2x6 (16-pin) cable, pushed in until the latch clicks. Do not use adapters or splitters.",
+      "Board power 575 W; a 1000 W or larger power supply is recommended.",
+      "Plug the monitor into the graphics card, not into the motherboard's video outputs.",
+      "Needs 2 expansion slots and 304 mm of free length in the case.",
+      "Install the latest driver from the driver card after the first boot."
+    ]
+  },
+  {
+    "id": "gpu_verdia_5090_mako",
+    "model": "gpu_verdia_5090_mako",
+    "brand": "Mako",
+    "name": "Verdia VTX 5090 Leviathan 32 GB",
+    "category": "GPU",
+    "price": 2999,
+    "power_w": 600,
+    "color": "#B9BCC2",
+    "rgb": true,
+    "analog": "MSI RTX 5090 Suprim Liquid/Air SOC (docs only, never shown in game)",
+    "desc": "A colossal 4-slot brushed-silver 5090 with RGB, the fastest card in the shop.",
+    "specs": {
+      "vram_gb": 32,
+      "length_mm": 359,
+      "slots": 4,
+      "fans": 3,
+      "boost_mhz": 2527
+    },
+    "game": {
+      "gpu_connector": "Power16",
+      "gpu_length": 0.359,
+      "perf": 0
+    },
+    "contract": "gpu",
+    "new_contract": false,
+    "unbox": {
+      "films": [
+        "A_FILM_BACKPLATE_0",
+        "A_FILM_HUB_0@A_FAN_0",
+        "A_FILM_HUB_1@A_FAN_1",
+        "A_FILM_HUB_2@A_FAN_2",
+        "A_FILM_SHROUD_0"
+      ],
+      "caps": [
+        {
+          "model": "cap_pcie16",
+          "at": "origin",
+          "blocks": "install"
+        },
+        {
+          "model": "cap_dp",
+          "at": "A_PORT_DP_0",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_dp",
+          "at": "A_PORT_DP_1",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_dp",
+          "at": "A_PORT_DP_2",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_hdmi",
+          "at": "A_PORT_HDMI_0",
+          "blocks": "plug"
+        }
+      ],
+      "stickers": []
+    },
+    "docs": [
+      "guide",
+      "driver",
+      "sticker"
+    ],
+    "doc_notes": [
+      "Install in the top PCIe x16 slot (the one nearest the CPU) until the slot latch clicks.",
+      "Remove the clear PCIe cap from the gold fingers before installing.",
+      "Remove the dust caps from the display ports before plugging in a cable.",
+      "Power: one 12V-2x6 (16-pin) cable, pushed in until the latch clicks. Do not use adapters or splitters.",
+      "Board power 600 W; a 1000 W or larger power supply is recommended.",
+      "Plug the monitor into the graphics card, not into the motherboard's video outputs.",
+      "Needs 4 expansion slots and 359 mm of free length in the case.",
+      "Install the latest driver from the driver card after the first boot."
+    ]
+  },
+  {
+    "id": "gpu_verdia_4060_kestrel_lp",
+    "model": "gpu_verdia_4060_kestrel_lp",
+    "brand": "Kestrel",
+    "name": "Verdia VTX 4060 Low Profile 8 GB",
+    "category": "GPU",
+    "price": 319,
+    "power_w": 115,
+    "color": "#151517",
+    "rgb": false,
+    "analog": "Gigabyte RTX 4060 OC Low Profile (docs only, never shown in game)",
+    "desc": "A half-height card for slim office cases; a low-profile bracket is in the box.",
+    "specs": {
+      "vram_gb": 8,
+      "length_mm": 182,
+      "slots": 2,
+      "fans": 2,
+      "boost_mhz": 2475
+    },
+    "game": {
+      "gpu_connector": "PCIe8x1",
+      "gpu_length": 0.182,
+      "perf": 0
+    },
+    "contract": "gpu",
+    "new_contract": false,
+    "unbox": {
+      "films": [
+        "A_FILM_BACKPLATE_0",
+        "A_FILM_HUB_0@A_FAN_0",
+        "A_FILM_HUB_1@A_FAN_1",
+        "A_FILM_SHROUD_0"
+      ],
+      "caps": [
+        {
+          "model": "cap_pcie16",
+          "at": "origin",
+          "blocks": "install"
+        },
+        {
+          "model": "cap_dp",
+          "at": "A_PORT_DP_0",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_dp",
+          "at": "A_PORT_DP_1",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_dp",
+          "at": "A_PORT_DP_2",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_hdmi",
+          "at": "A_PORT_HDMI_0",
+          "blocks": "plug"
+        }
+      ],
+      "stickers": []
+    },
+    "docs": [
+      "guide",
+      "driver",
+      "sticker"
+    ],
+    "doc_notes": [
+      "Install in the top PCIe x16 slot (the one nearest the CPU) until the slot latch clicks.",
+      "Remove the clear PCIe cap from the gold fingers before installing.",
+      "Remove the dust caps from the display ports before plugging in a cable.",
+      "Power: one PCIe 8-pin (6+2) cable. Do not use adapters or splitters.",
+      "Board power 115 W; a 550 W or larger power supply is recommended.",
+      "Plug the monitor into the graphics card, not into the motherboard's video outputs.",
+      "Needs 2 expansion slots and 182 mm of free length in the case.",
+      "Install the latest driver from the driver card after the first boot."
+    ]
+  },
+  {
+    "id": "gpu_voltra_7600_zenith",
+    "model": "gpu_voltra_7600_zenith",
+    "brand": "Zenith",
+    "name": "Voltra RX 7600 Core 8 GB",
+    "category": "GPU",
+    "price": 249,
+    "power_w": 165,
+    "color": "#141416",
+    "rgb": false,
+    "analog": "Sapphire Pulse RX 7600 (docs only, never shown in game)",
+    "desc": "Plain black, no-nonsense budget 1080p card.",
+    "specs": {
+      "vram_gb": 8,
+      "length_mm": 240,
+      "slots": 2,
+      "fans": 2,
+      "boost_mhz": 2655
+    },
+    "game": {
+      "gpu_connector": "PCIe8x1",
+      "gpu_length": 0.24,
+      "perf": 0
+    },
+    "contract": "gpu",
+    "new_contract": false,
+    "unbox": {
+      "films": [
+        "A_FILM_BACKPLATE_0",
+        "A_FILM_HUB_0@A_FAN_0",
+        "A_FILM_HUB_1@A_FAN_1",
+        "A_FILM_SHROUD_0"
+      ],
+      "caps": [
+        {
+          "model": "cap_pcie16",
+          "at": "origin",
+          "blocks": "install"
+        },
+        {
+          "model": "cap_dp",
+          "at": "A_PORT_DP_0",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_dp",
+          "at": "A_PORT_DP_1",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_dp",
+          "at": "A_PORT_DP_2",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_hdmi",
+          "at": "A_PORT_HDMI_0",
+          "blocks": "plug"
+        }
+      ],
+      "stickers": []
+    },
+    "docs": [
+      "guide",
+      "driver",
+      "sticker"
+    ],
+    "doc_notes": [
+      "Install in the top PCIe x16 slot (the one nearest the CPU) until the slot latch clicks.",
+      "Remove the clear PCIe cap from the gold fingers before installing.",
+      "Remove the dust caps from the display ports before plugging in a cable.",
+      "Power: one PCIe 8-pin (6+2) cable. Do not use adapters or splitters.",
+      "Board power 165 W; a 550 W or larger power supply is recommended.",
+      "Plug the monitor into the graphics card, not into the motherboard's video outputs.",
+      "Needs 2 expansion slots and 240 mm of free length in the case.",
+      "Install the latest driver from the driver card after the first boot."
+    ]
+  },
+  {
+    "id": "gpu_voltra_9060xt_zenith_white",
+    "model": "gpu_voltra_9060xt_zenith_white",
+    "brand": "Zenith",
+    "name": "Voltra RX 9060 XT Frost White 16 GB",
+    "category": "GPU",
+    "price": 379,
+    "power_w": 160,
+    "color": "#ECEDEA",
+    "rgb": false,
+    "analog": "Sapphire Pure RX 9060 XT 16GB (docs only, never shown in game)",
+    "desc": "A white dual-fan mid-range card with 16 GB.",
+    "specs": {
+      "vram_gb": 16,
+      "length_mm": 245,
+      "slots": 2,
+      "fans": 2,
+      "boost_mhz": 3130
+    },
+    "game": {
+      "gpu_connector": "PCIe8x1",
+      "gpu_length": 0.245,
+      "perf": 0
+    },
+    "contract": "gpu",
+    "new_contract": false,
+    "unbox": {
+      "films": [
+        "A_FILM_BACKPLATE_0",
+        "A_FILM_HUB_0@A_FAN_0",
+        "A_FILM_HUB_1@A_FAN_1",
+        "A_FILM_SHROUD_0"
+      ],
+      "caps": [
+        {
+          "model": "cap_pcie16",
+          "at": "origin",
+          "blocks": "install"
+        },
+        {
+          "model": "cap_dp",
+          "at": "A_PORT_DP_0",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_dp",
+          "at": "A_PORT_DP_1",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_dp",
+          "at": "A_PORT_DP_2",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_hdmi",
+          "at": "A_PORT_HDMI_0",
+          "blocks": "plug"
+        }
+      ],
+      "stickers": []
+    },
+    "docs": [
+      "guide",
+      "driver",
+      "sticker"
+    ],
+    "doc_notes": [
+      "Install in the top PCIe x16 slot (the one nearest the CPU) until the slot latch clicks.",
+      "Remove the clear PCIe cap from the gold fingers before installing.",
+      "Remove the dust caps from the display ports before plugging in a cable.",
+      "Power: one PCIe 8-pin (6+2) cable. Do not use adapters or splitters.",
+      "Board power 160 W; a 550 W or larger power supply is recommended.",
+      "Plug the monitor into the graphics card, not into the motherboard's video outputs.",
+      "Needs 2 expansion slots and 245 mm of free length in the case.",
+      "Install the latest driver from the driver card after the first boot."
+    ]
+  },
+  {
+    "id": "gpu_voltra_9070xt_zenith",
+    "model": "gpu_voltra_9070xt_zenith",
+    "brand": "Zenith",
+    "name": "Voltra RX 9070 XT Flare+ 16 GB",
+    "category": "GPU",
+    "price": 729,
+    "power_w": 304,
+    "color": "#2A2C30",
+    "rgb": true,
+    "analog": "Sapphire Nitro+ RX 9070 XT (docs only, never shown in game)",
+    "desc": "Top-line triple-fan card with a gunmetal shroud and ARGB light bars.",
+    "specs": {
+      "vram_gb": 16,
+      "length_mm": 320,
+      "slots": 3,
+      "fans": 3,
+      "boost_mhz": 3060
+    },
+    "game": {
+      "gpu_connector": "Power16",
+      "gpu_length": 0.32,
+      "perf": 0
+    },
+    "contract": "gpu",
+    "new_contract": false,
+    "unbox": {
+      "films": [
+        "A_FILM_BACKPLATE_0",
+        "A_FILM_HUB_0@A_FAN_0",
+        "A_FILM_HUB_1@A_FAN_1",
+        "A_FILM_HUB_2@A_FAN_2",
+        "A_FILM_RGB_0",
+        "A_FILM_SHROUD_0"
+      ],
+      "caps": [
+        {
+          "model": "cap_pcie16",
+          "at": "origin",
+          "blocks": "install"
+        },
+        {
+          "model": "cap_dp",
+          "at": "A_PORT_DP_0",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_dp",
+          "at": "A_PORT_DP_1",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_dp",
+          "at": "A_PORT_DP_2",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_hdmi",
+          "at": "A_PORT_HDMI_0",
+          "blocks": "plug"
+        }
+      ],
+      "stickers": []
+    },
+    "docs": [
+      "guide",
+      "driver",
+      "sticker"
+    ],
+    "doc_notes": [
+      "Install in the top PCIe x16 slot (the one nearest the CPU) until the slot latch clicks.",
+      "Remove the clear PCIe cap from the gold fingers before installing.",
+      "Remove the dust caps from the display ports before plugging in a cable.",
+      "Power: one 12V-2x6 (16-pin) cable, pushed in until the latch clicks. Do not use adapters or splitters.",
+      "Board power 304 W; a 750 W or larger power supply is recommended.",
+      "Plug the monitor into the graphics card, not into the motherboard's video outputs.",
+      "Needs 3 expansion slots and 320 mm of free length in the case.",
+      "Install the latest driver from the driver card after the first boot."
+    ]
+  },
+  {
+    "id": "gpu_voltra_7900xtx_ref",
+    "model": "gpu_voltra_7900xtx_ref",
+    "brand": "Voltra",
+    "name": "Voltra RX 7900 XTX Reference 24 GB",
+    "category": "GPU",
+    "price": 899,
+    "power_w": 355,
+    "color": "#2A2C30",
+    "rgb": true,
+    "analog": "AMD Radeon RX 7900 XTX (reference) (docs only, never shown in game)",
+    "desc": "The maker's own 24 GB flagship with the three red stripes.",
+    "specs": {
+      "vram_gb": 24,
+      "length_mm": 287,
+      "slots": 2.5,
+      "fans": 3,
+      "boost_mhz": 2500
+    },
+    "game": {
+      "gpu_connector": "PCIe8x2",
+      "gpu_length": 0.287,
+      "perf": 0
+    },
+    "contract": "gpu",
+    "new_contract": false,
+    "unbox": {
+      "films": [
+        "A_FILM_BACKPLATE_0",
+        "A_FILM_HUB_0@A_FAN_0",
+        "A_FILM_HUB_1@A_FAN_1",
+        "A_FILM_HUB_2@A_FAN_2",
+        "A_FILM_SHROUD_0"
+      ],
+      "caps": [
+        {
+          "model": "cap_pcie16",
+          "at": "origin",
+          "blocks": "install"
+        },
+        {
+          "model": "cap_dp",
+          "at": "A_PORT_DP_0",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_dp",
+          "at": "A_PORT_DP_1",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_dp",
+          "at": "A_PORT_DP_2",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_hdmi",
+          "at": "A_PORT_HDMI_0",
+          "blocks": "plug"
+        }
+      ],
+      "stickers": []
+    },
+    "docs": [
+      "guide",
+      "driver",
+      "sticker"
+    ],
+    "doc_notes": [
+      "Install in the top PCIe x16 slot (the one nearest the CPU) until the slot latch clicks.",
+      "Remove the clear PCIe cap from the gold fingers before installing.",
+      "Remove the dust caps from the display ports before plugging in a cable.",
+      "Power: two separate PCIe 8-pin (6+2) cables, not one daisy-chained cable. Do not use adapters or splitters.",
+      "Board power 355 W; a 850 W or larger power supply is recommended.",
+      "Plug the monitor into the graphics card, not into the motherboard's video outputs.",
+      "Needs 2.5 expansion slots and 287 mm of free length in the case.",
+      "Install the latest driver from the driver card after the first boot."
+    ]
+  },
+  {
+    "id": "gpu_tiron_b580_ref",
+    "model": "gpu_tiron_b580_ref",
+    "brand": "Tiron",
+    "name": "Tiron Lumen B580 Reference 12 GB",
+    "category": "GPU",
+    "price": 249,
+    "power_w": 190,
+    "color": "#141416",
+    "rgb": false,
+    "analog": "Intel Arc B580 Limited Edition (docs only, never shown in game)",
+    "desc": "Matte black and silver budget card with 12 GB.",
+    "specs": {
+      "vram_gb": 12,
+      "length_mm": 272,
+      "slots": 2,
+      "fans": 2,
+      "boost_mhz": 2670
+    },
+    "game": {
+      "gpu_connector": "PCIe8x1",
+      "gpu_length": 0.272,
+      "perf": 0
+    },
+    "contract": "gpu",
+    "new_contract": false,
+    "unbox": {
+      "films": [
+        "A_FILM_BACKPLATE_0",
+        "A_FILM_HUB_0@A_FAN_0",
+        "A_FILM_HUB_1@A_FAN_1",
+        "A_FILM_SHROUD_0"
+      ],
+      "caps": [
+        {
+          "model": "cap_pcie16",
+          "at": "origin",
+          "blocks": "install"
+        },
+        {
+          "model": "cap_dp",
+          "at": "A_PORT_DP_0",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_dp",
+          "at": "A_PORT_DP_1",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_dp",
+          "at": "A_PORT_DP_2",
+          "blocks": "plug"
+        },
+        {
+          "model": "cap_hdmi",
+          "at": "A_PORT_HDMI_0",
+          "blocks": "plug"
+        }
+      ],
+      "stickers": []
+    },
+    "docs": [
+      "guide",
+      "driver",
+      "sticker"
+    ],
+    "doc_notes": [
+      "Install in the top PCIe x16 slot (the one nearest the CPU) until the slot latch clicks.",
+      "Remove the clear PCIe cap from the gold fingers before installing.",
+      "Remove the dust caps from the display ports before plugging in a cable.",
+      "Power: one PCIe 8-pin (6+2) cable. Do not use adapters or splitters.",
+      "Board power 190 W; a 550 W or larger power supply is recommended.",
+      "Plug the monitor into the graphics card, not into the motherboard's video outputs.",
+      "Needs 2 expansion slots and 272 mm of free length in the case.",
+      "Install the latest driver from the driver card after the first boot."
+    ]
+  },
+  {
+    "id": "gpu_verdia_t100",
+    "model": "gpu_verdia_t100",
+    "brand": "Verdia",
+    "name": "Verdia T100 80 GB PCIe",
+    "category": "GPU",
+    "price": 25000,
+    "power_w": 350,
+    "color": "#C7A75D",
+    "rgb": false,
+    "analog": "NVIDIA H100 PCIe 80GB (docs only, never shown in game)",
+    "desc": "Passive data-centre AI accelerator. Needs server airflow; no display outputs.",
+    "specs": {
+      "vram_gb": 80,
+      "length_mm": 268,
+      "slots": 2,
+      "fans": 0,
+      "boost_mhz": 1755
+    },
+    "game": {
+      "gpu_connector": "Power16",
+      "gpu_length": 0.268,
+      "perf": 0
+    },
+    "contract": "gpu_dc",
+    "new_contract": true,
+    "unbox": {
+      "films": [
+        "A_FILM_BACKPLATE_0",
+        "A_FILM_FACE_0",
+        "A_FILM_SHROUD_0"
+      ],
+      "caps": [],
+      "stickers": []
+    },
+    "docs": [
+      "guide",
+      "driver",
+      "safety"
+    ],
+    "doc_notes": [
+      "Passive card: install only in a server chassis with front-to-back airflow; it has no fans of its own.",
+      "Install in a PCIe x16 slot (PCIe Gen4/Gen5 x16 electrical) and secure the bracket with two screws.",
+      "Power: one 12V-2x6 (16-pin) cable, pushed in until the latch clicks; typical board power 350 W.",
+      "This accelerator has no display outputs. Connect your monitor to the server's own graphics or a separate display card.",
+      "Peel the protective film off the shroud panel before installation.",
+      "Card length 268 mm, dual slot, full height.",
+      "Install the data-centre driver and compute toolkit from the driver card."
+    ]
+  },
+  {
+    "id": "gpu_voltra_mi210",
+    "model": "gpu_voltra_mi210",
+    "brand": "Voltra",
+    "name": "Voltra Vector MI210 64 GB",
+    "category": "GPU",
+    "price": 8999,
+    "power_w": 300,
+    "color": "#B9BCC2",
+    "rgb": false,
+    "analog": "AMD Instinct MI210 (docs only, never shown in game)",
+    "desc": "Passive data-centre compute accelerator. Needs server airflow; no display outputs.",
+    "specs": {
+      "vram_gb": 64,
+      "length_mm": 267,
+      "slots": 2,
+      "fans": 0,
+      "boost_mhz": 1700
+    },
+    "game": {
+      "gpu_connector": "PCIe8x1",
+      "gpu_length": 0.267,
+      "perf": 0
+    },
+    "contract": "gpu_dc",
+    "new_contract": true,
+    "unbox": {
+      "films": [
+        "A_FILM_BACKPLATE_0",
+        "A_FILM_FACE_0",
+        "A_FILM_SHROUD_0"
+      ],
+      "caps": [],
+      "stickers": []
+    },
+    "docs": [
+      "guide",
+      "driver",
+      "safety"
+    ],
+    "doc_notes": [
+      "Passive card: install only in a server chassis with front-to-back airflow; it has no fans of its own.",
+      "Install in a PCIe x16 slot (PCIe Gen4/Gen5 x16 electrical) and secure the bracket with two screws.",
+      "Power: one PCIe 8-pin (6+2) cable; typical board power 300 W.",
+      "This accelerator has no display outputs. Connect your monitor to the server's own graphics or a separate display card.",
+      "Peel the protective film off the shroud panel before installation.",
+      "Card length 267 mm, dual slot, full height.",
+      "Install the data-centre driver and compute toolkit from the driver card."
+    ]
+  }
+]

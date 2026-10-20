@@ -11,6 +11,11 @@ on rx66/rx88: "px" may be a list (one power port per entry, A_PORT_PCIE8_0..n); 
 for the artwork; and style hooks called with (m, ns), where ns holds build()'s local variables at that point:
 "backplate" returns the backplate holes (with "core": "screws" | "window"), "overlay" draws the shroud overlay,
 "skirts" returns (top, bottom, end_h), "logo" returns (lw, lh, lx, ly, rgb_x, rgb_y), "trim" adds extra pieces.
+More optional keys (build_cat_gpus.py): "texture" (called with (pid, s), returns the Atlas instead of make_texture's
+art, same cell names), "brand" (the backplate print, default VOLTRA), "outputs": False (no display ports: a passive
+data-centre card), "fans": 0 (passive: a closed shroud, the fins reach the face plate), "fan_kw" (extra make_fan
+arguments, e.g. blade_tag), "fan_rpm", "vent": "full" (the whole bracket hex-vented); a "logo" hook may return
+rgb_x None for a card without the RGB strip on the top edge.
 """
 import math
 import os
@@ -203,7 +208,7 @@ def fin_wave(x, amp, period=0.026, phase=0.0):
 
 def build(pid):
     s = SPECS[pid]
-    at = make_texture(pid, s)
+    at = s["texture"](pid, s) if "texture" in s else make_texture(pid, s)
     TEX = "tex_" + pid
     m = pb.Model(pid)
     L, H, T, Hp = s["L"], s["H"], s["T"], s["Hp"]
@@ -212,6 +217,9 @@ def build(pid):
     fp = 0.0025
     fan_thk = 0.013
     fin_y0, fin_y1 = yF + fp + fan_thk + 0.0012, -0.0062
+    if not s["fans"]:
+        fin_y0 = yF + fp + 0.0010
+    outs = s.get("outputs", True)
     xd, zd = s["xd"], s["zd"]
     pcb_end = s["pcb_end"]
     pxs = s["px"] if isinstance(s["px"], (list, tuple)) else [s["px"]]
@@ -271,7 +279,7 @@ def build(pid):
     # brand print / inlay
     lf = pb.label_frame((0, 1, 0), (0, 0, -1))  # reads from the window side (text top towards the board)
     bx = s.get("bp_logo_x", -0.029 if pid == "gpu_rx66" else -0.059)
-    m.add(s["logo_tag"], pb.g_text("VOLTRA", "agency", 0.0105, 0.075, 0.00012, spacing=1.3), lf,
+    m.add(s["logo_tag"], pb.g_text(s.get("brand", "VOLTRA"), "agency", 0.0105, 0.075, 0.00012, spacing=1.3), lf,
           (bx - 0.006, BP_Y1, H * 0.60))
     m.add(s["logo_tag"], pb.g_text(s["model"], "eras_md", 0.0045, 0.05, 0.00012), lf, (bx - 0.006, BP_Y1, H * 0.60 - 0.012))
     m.add(s["logo_tag"], pb.g_box((0.055, 0.00012, 0.0006)), None, (bx - 0.006, BP_Y1 + 0.00006, H * 0.60 - 0.0215))
@@ -323,7 +331,7 @@ def build(pid):
               (-0.0050, -0.0135), (-0.0040, -0.0035), (BR_YT, -0.0035), (BR_YT, Z_TAB - 0.0006),
               (BR_YB, Z_TAB - 0.0006)]
     br_holes = []
-    for i, z in enumerate(PORT_Z):
+    for i, z in enumerate(PORT_Z if outs else ()):
         br_holes.append(hdmi_shape(PORT_Y, z, 0.0006) if i == 3 else dp_shape(PORT_Y, z, 0.0006))
     if s["vent"] == "slots":
         z = 0.0075
@@ -332,6 +340,8 @@ def build(pid):
             z += 0.0047
         for z in (0.0885, 0.0935, 0.0985):
             br_holes.append(pb.rrect2(-0.0068, z, 0.0105, 0.0024, 0.0012, 3))
+    elif s["vent"] == "full":
+        br_holes += hex_grid(-0.0345, 0.004, -0.0010, 0.101, 0.0024, 0.0011)
     else:
         br_holes += hex_grid(-0.0345, 0.004, -0.0170, 0.101, 0.0024, 0.0011)
         br_holes += hex_grid(-0.0125, 0.0855, -0.0010, 0.101, 0.0024, 0.0011)
@@ -349,7 +359,7 @@ def build(pid):
     m.add(s["bracket_tag"], pb.g_cyl(0.0008, BR_YT - BR_YB, 8), pb.frame((0, 1, 0), (1, 0, 0)),
           (BR_X0 + 0.0002, (BR_YT + BR_YB) / 2, Z_TAB - 0.0008))
     # ports: shells with tongues and contacts
-    for i, z in enumerate(PORT_Z):
+    for i, z in enumerate(PORT_Z if outs else ()):
         hdmi = i == 3
         outer = hdmi_shape(PORT_Y, z, 0.0) if hdmi else dp_shape(PORT_Y, z, 0.0)
         inner = hdmi_shape(PORT_Y, z, -0.0003) if hdmi else dp_shape(PORT_Y, z, -0.0003)
@@ -413,7 +423,7 @@ def build(pid):
                        (0.003, 0.002, 0.002, 0.003))
     nf = s["fans"]
     avail = L - 0.0165
-    fpitch = avail / nf
+    fpitch = avail / nf if nf else avail
     fxs = [xa + 0.008 + fpitch * (i + 0.5) for i in range(nf)]
     fz = H / 2 + 0.001
     r_hole = s["fan_d"] / 2 + 0.0018
@@ -508,7 +518,8 @@ def build(pid):
     box(m, "black_plastic", (lx - lw / 2 - 0.0008, ly - lh / 2 - 0.0008, H - 0.0004),
         (lx + lw / 2 + 0.0008, ly + lh / 2 + 0.0008, H + 0.0003), bevel=0.0002)
     m.add(TEX, pb.g_quad(lw, lh, at.uv("logo")), lf_top, (lx, ly, H + 0.00035))
-    box(m, "rgb", (rgb_x[0], rgb_y - 0.0009, H - 0.0003), (rgb_x[1], rgb_y + 0.0009, H + 0.0003))
+    if rgb_x:
+        box(m, "rgb", (rgb_x[0], rgb_y - 0.0009, H - 0.0003), (rgb_x[1], rgb_y + 0.0009, H + 0.0003))
     if "trim" in s:
         s["trim"](m, types.SimpleNamespace(**locals()))
     if pid == "gpu_rx88":
@@ -521,9 +532,10 @@ def build(pid):
     # ------------------------------------------------------------------ fans
     for i, x in enumerate(fxs):
         a = m.anchor(f"A_FAN_{i}", (x, yF + 0.0012 + fan_thk / 2, fz), (s["fan_d"], s["fan_d"], fan_thk),
-                     forward=(0, -1, 0), up=(0, 0, 1), meta=pf.fan_meta("ccw", 2200 if nf == 2 else 1900))
+                     forward=(0, -1, 0), up=(0, 0, 1), meta=pf.fan_meta("ccw", s.get("fan_rpm", 2200 if nf == 2 else 1900)))
         pf.make_fan(a, diameter=s["fan_d"], thickness=fan_thk, blades=s["blades"], frame=False,
-                    tip_ring=s["tip_ring"], sticker=pid, sticker_uv=at.uv("hub"), struts=3, name=f"gpufan{i}")
+                    tip_ring=s["tip_ring"], sticker=pid, sticker_uv=at.uv("hub"), struts=3, name=f"gpufan{i}",
+                    **s.get("fan_kw", {}))
     # ------------------------------------------------------------------ power connector on the top edge
     for pi, pxc in enumerate(pxs):
         if s["power"] == "pcie8":
@@ -565,11 +577,12 @@ def build(pid):
         box(m, "connector_black", (pxc - 0.0022, PCB_Y0, z_face - 0.0034), (pxc + 0.0022, PCB_Y0 + 0.0011, z_face - 0.0006))
         m.anchor(name, (pxc, yc, z_face), (hw + 0.004, hd + 0.003, 0.012), forward=(0, 0, 1), up=(0, 1, 0), meta=meta)
     # ------------------------------------------------------------------ other anchors
-    for i, z in enumerate(PORT_Z[:3]):
+    for i, z in enumerate(PORT_Z[:3] if outs else ()):
         m.anchor(f"A_PORT_DP_{i}", (BR_X1, PORT_Y, z), (0.019, 0.008, 0.012), forward=(1, 0, 0), up=(0, 1, 0),
                  meta="kind=displayport,chamfer=-y")
-    m.anchor("A_PORT_HDMI_0", (BR_X1, PORT_Y, PORT_Z[3]), (0.017, 0.008, 0.012), forward=(1, 0, 0), up=(0, 1, 0),
-             meta="kind=hdmi,narrow=-y")
+    if outs:
+        m.anchor("A_PORT_HDMI_0", (BR_X1, PORT_Y, PORT_Z[3]), (0.017, 0.008, 0.012), forward=(1, 0, 0), up=(0, 1, 0),
+                 meta="kind=hdmi,narrow=-y")
     for i, ys in enumerate(SLOT_Y):
         m.anchor(f"A_SCREW_PH2_{i}", (X_SCREW, ys, Z_TAB), (0.008, 0.008, 0.008), forward=(0, 0, 1), up=(1, 0, 0),
                  meta=f"slot={i}")
@@ -595,7 +608,7 @@ def build(pid):
         dict(yaw=-40, pitch=55, target=tgt),  # backplate side
         dict(yaw=20, pitch=10, target=(0.0, -T / 2, H), dist=0.32),  # top edge (window view)
         dict(yaw=90, pitch=15, target=(X0, -0.017, 0.055), dist=0.19),  # bracket
-        dict(yaw=-15, pitch=-20, target=(fxs[-1], yF, fz), dist=0.16),  # a fan close up
+        dict(yaw=-15, pitch=-20, target=(fxs[-1] if fxs else (xa + xb) / 2, yF, fz), dist=0.16),  # a fan close up
         dict(yaw=-120, pitch=20, target=(xa, -T / 2, H / 2), dist=0.22),  # far end
         dict(yaw=10, pitch=20, target=(sum(pxs) / len(pxs), -0.006, Hp), dist=0.09 + 0.5 * (max(pxs) - min(pxs))),  # power
     ])
