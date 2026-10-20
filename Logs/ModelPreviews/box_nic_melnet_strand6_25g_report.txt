@@ -1,0 +1,33 @@
+box_nic_melnet_strand6_25g: 788 triangles, 15 meshes
+  mesh box_nic_melnet_strand6_25g_cardboard#cardboard  tris=60
+  mesh flap@A_FLAP_0#cardboard  tris=12
+  mesh flap@A_FLAP_1#cardboard  tris=12
+  mesh flap@A_FLAP_2#cardboard  tris=12
+  mesh flap@A_FLAP_3#cardboard  tris=12
+  mesh flap_print@A_FLAP_0#tex_box_nic_melnet_strand6_25g  tris=2
+  mesh flap_print@A_FLAP_1#tex_box_nic_melnet_strand6_25g  tris=2
+  mesh flap_print@A_FLAP_2#tex_box_nic_melnet_strand6_25g  tris=2
+  mesh flap_print@A_FLAP_3#tex_box_nic_melnet_strand6_25g  tris=2
+  mesh foam_bottom@A_INSERT_FOAM_0#pe_foam  tris=428
+  mesh foam_top@A_INSERT_FOAM_1#pe_foam  tris=228
+  mesh s_tex_box_nic_melnet_strand6_25g#tex_box_nic_melnet_strand6_25g  tris=10
+  mesh tapelook@A_TAPE_0#tape_clear  tris=2
+  mesh tapelook@A_TAPE_1#tape_clear  tris=2
+  mesh tapelook@A_TAPE_2#tape_clear  tris=2
+  A_FLAP_0 pos=(-0.0, 0.058, -0.095) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.22000,0.00200,0.09500 meta=hinge=x,open=-215,label=top flap,order=1,under=A_TAPE_0,A_TAPE_1,A_TAPE_2
+  A_FLAP_1 pos=(-0.0, 0.058, 0.095) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.22000,0.00200,0.09500 meta=hinge=x,open=215,label=top flap,order=1,under=A_TAPE_0,A_TAPE_1,A_TAPE_2
+  A_FLAP_2 pos=(-0.11, 0.056, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.06600,0.00200,0.19000 meta=hinge=z,open=200,label=top flap,order=2,under=A_FLAP_0,A_FLAP_1
+  A_FLAP_3 pos=(0.11, 0.056, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.06600,0.00200,0.19000 meta=hinge=z,open=-200,label=top flap,order=2,under=A_FLAP_0,A_FLAP_1
+  A_HIT_0 pos=(-0.0, 0.03, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.22000,0.06000,0.19000 meta=
+  A_INSERT_FOAM_0 pos=(-0.0, 0.0024, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.21400,0.02252,0.18400 meta=lift=+y,dist=0.08,label=bottom foam,order=8,under=A_ITEM_PART_0,A_ITEM_ACC_0
+  A_INSERT_FOAM_1 pos=(-0.0, 0.02492, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.21400,0.02188,0.18400 meta=lift=+y,dist=0.08,label=top foam,order=6,under=A_ITEM_DOC_2
+  A_ITEM_ACC_0@A_INSERT_FOAM_0 pos=(0.0204, 0.01342, 0.066) fwd=(1.0, 0.0, 0.0) up=(-0.0, -0.0, 1.0) size=0.01460,0.02140,0.08220 meta=id=nic_melnet_strand6_25g_lpbracket,bag=clear,frame=model,label=low-profile bracket,order=7,parent=A_INSERT_FOAM_0,under=A_INSERT_FOAM_1
+  A_ITEM_DOC_0 pos=(-0.0, 0.0482, -0.0) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.14000,0.10000,0.00120 meta=doc=quick-start,form=leaflet,label=quick start guide,order=3,under=A_FLAP_2,A_FLAP_3
+  A_ITEM_DOC_1 pos=(0.004, 0.0476, -0.004) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.08800,0.05600,0.00040 meta=doc=warranty,form=card,label=warranty card,order=4,under=A_ITEM_DOC_0
+  A_ITEM_DOC_2 pos=(0.008, 0.047, -0.008) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.12000,0.08000,0.00040 meta=doc=driver,form=card,label=driver note,order=5,under=A_ITEM_DOC_1
+  A_ITEM_PART_0@A_INSERT_FOAM_0 pos=(-0.01695, 0.0174, 0.03) fwd=(0.0, 0.0, -1.0) up=(0.0, -1.0, -0.0) size=0.18510,0.02440,0.12600 meta=bag=antistatic_silver,label=network card,order=7,parent=A_INSERT_FOAM_0,under=A_INSERT_FOAM_1
+  A_TAPE_0 pos=(-0.1102, 0.0435, -0.0) fwd=(-1.0, -0.0, 0.0) up=(-0.0, 1.0, 0.0) size=0.04800,0.03300,0.00010 meta=strip=0,seg=0,peel=+y,label=tape,order=0
+  A_TAPE_1 pos=(-0.0, 0.0602, -0.0) fwd=(-0.0, 1.0, 0.0) up=(1.0, 0.0, -0.0) size=0.04800,0.22000,0.00010 meta=strip=0,seg=1,peel=+y,label=tape,order=0
+  A_TAPE_2 pos=(0.1102, 0.0435, -0.0) fwd=(1.0, 0.0, -0.0) up=(0.0, -1.0, -0.0) size=0.04800,0.03300,0.00010 meta=strip=0,seg=2,peel=+y,label=tape,order=0
+shot from: nic_melnet_strand6_25g
+OEM foam carton (oem_card): tape strip 0 A_TAPE_0..2 (0) -> long flaps A_FLAP_0/1 (1) -> short flaps A_FLAP_2/3 (2) -> 3 papers on the top foam, top first (3..5) -> top foam A_INSERT_FOAM_1 (6) -> network card in its bag (bag=antistatic_silver) and A_ITEM_ACC_0 (bracket) in their pockets (7) -> bottom foam A_INSERT_FOAM_0 (8).

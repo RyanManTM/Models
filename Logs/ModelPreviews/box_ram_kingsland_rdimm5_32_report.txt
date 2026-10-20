@@ -1,0 +1,25 @@
+box_ram_kingsland_rdimm5_32: 2810 triangles, 10 meshes
+  mesh box_ram_kingsland_rdimm5_32_paper_white#paper_white  tris=60
+  mesh clam@A_INSERT_BLISTER_0#clear_plastic  tris=1660
+  mesh clam_lid@A_CLAMLID_0#clear_plastic  tris=892
+  mesh dust@A_FLAP_1#paper_white  tris=12
+  mesh dust@A_FLAP_2#paper_white  tris=12
+  mesh flap@A_FLAP_0#paper_white  tris=132
+  mesh flap_print@A_FLAP_0#tex_box_ram_kingsland_rdimm5_32  tris=2
+  mesh s_tex_box_ram_kingsland_rdimm5_32#tex_box_ram_kingsland_rdimm5_32  tris=10
+  mesh seallook@A_SEAL_0#seal_clear  tris=28
+  mesh seallook@A_SEAL_1#seal_clear  tris=2
+  A_CLAMLID_0@A_INSERT_BLISTER_0 pos=(-0.00233, 0.00979, -0.02162) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.15234,0.00400,0.04725 meta=hinge=x,open=-165,label=clamshell lid,order=7,parent=A_INSERT_BLISTER_0,under=A_SEAL_1,A_ITEM_DOC_2
+  A_FLAP_0 pos=(0.07965, 0.0007, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00070,0.02500,0.06000 meta=hinge=z,open=-92,tuck=1,label=end flap,order=1,under=A_SEAL_0
+  A_FLAP_1 pos=(0.07865, 0.0125, 0.0293) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00070,0.02360,0.01080 meta=hinge=y,open=-95,label=dust flap,order=2,under=A_FLAP_0
+  A_FLAP_2 pos=(0.07865, 0.0125, -0.0293) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00070,0.02360,0.01080 meta=hinge=y,open=95,label=dust flap,order=2,under=A_FLAP_0
+  A_HIT_0 pos=(-0.0, 0.0125, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.16000,0.02500,0.06000 meta=
+  A_INSERT_BLISTER_0 pos=(-0.00233, 0.0007, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.15234,0.01219,0.05125 meta=lift=+x,dist=0.16,label=clamshell,order=3,under=A_FLAP_0,A_FLAP_1,A_FLAP_2
+  A_ITEM_DOC_0@A_INSERT_BLISTER_0 pos=(0.00067, 0.01429, -0.0) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.12000,0.04500,0.00040 meta=doc=guide,form=card,label=quick install guide,order=4,parent=A_INSERT_BLISTER_0,under=A_INSERT_BLISTER_0
+  A_ITEM_DOC_1@A_INSERT_BLISTER_0 pos=(0.00367, 0.01369, -0.002) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.10000,0.04500,0.00040 meta=doc=warranty,form=card,label=warranty card,order=5,parent=A_INSERT_BLISTER_0,under=A_ITEM_DOC_0
+  A_ITEM_DOC_2@A_INSERT_BLISTER_0 pos=(0.00667, 0.01309, -0.004) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.12000,0.04500,0.00040 meta=doc=safety,form=card,label=safety sheet,order=6,parent=A_INSERT_BLISTER_0,under=A_ITEM_DOC_1
+  A_ITEM_PART_0@A_INSERT_BLISTER_0 pos=(-0.00233, 0.00436, 0.01562) fwd=(0.0, -0.0, -1.0) up=(1.0, -0.0, 0.0) size=0.00769,0.13734,0.03525 meta=bag=antistatic_pink,guard=1,label=server memory module,order=8,parent=A_INSERT_BLISTER_0,under=A_CLAMLID_0
+  A_SEAL_0 pos=(0.08012, 0.02, -0.0) fwd=(1.0, -0.0, 0.0) up=(0.0, 1.0, 0.0) size=0.01500,0.01000,0.00010 meta=shape=round,peel=+y,print=SEALED,wrap=0.005,label=seal sticker,order=0
+  A_SEAL_1@A_INSERT_BLISTER_0 pos=(-0.00233, 0.01039, 0.01963) fwd=(0.0, 1.0, -0.0) up=(-0.0, 0.0, 1.0) size=0.01400,0.01200,0.00010 meta=shape=rect,peel=+y,print=SEALED,label=seal sticker,order=4,parent=A_INSERT_BLISTER_0,under=A_INSERT_BLISTER_0
+shot from: ram_kingsland_rdimm5_32
+RDIMM: seal A_SEAL_0 over the end flap (0) -> end flap A_FLAP_0 (1) -> dust flaps A_FLAP_1/2 (2) -> clamshell A_INSERT_BLISTER_0 slides out +x (3) -> on it: the clamshell seal A_SEAL_1 and the 3 papers, top first (4..6) -> clamshell lid A_CLAMLID_0 (7) -> module in its pink bag, guard=1 (8).

@@ -1,0 +1,28 @@
+box_cpu_epoch_9354: 3562 triangles, 13 meshes
+  mesh box_cpu_epoch_9354_paper_white#paper_white  tris=104
+  mesh clam_base@A_INSERT_CLAM_0#black_plastic  tris=1660
+  mesh clam_lid@A_CLAMLID_0#clear_plastic  tris=1336
+  mesh dust@A_FLAP_1#paper_white  tris=12
+  mesh dust@A_FLAP_2#paper_white  tris=12
+  mesh dust_print@A_FLAP_1#tex_box_cpu_epoch_9354  tris=12
+  mesh dust_print@A_FLAP_2#tex_box_cpu_epoch_9354  tris=12
+  mesh foam@A_INSERT_FOAM_0#pe_foam  tris=160
+  mesh lid@A_FLAP_0#paper_white  tris=132
+  mesh lid_print@A_FLAP_0#tex_box_cpu_epoch_9354  tris=2
+  mesh s_tex_box_cpu_epoch_9354#tex_box_cpu_epoch_9354  tris=64
+  mesh seallook@A_SEAL_0#seal_clear  tris=28
+  mesh seallook@A_SEAL_1#seal_clear  tris=28
+  A_CLAMLID_0@A_INSERT_CLAM_0 pos=(-0.0, 0.0105, -0.0583) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.10760,0.00750,0.11660 meta=hinge=x,open=-170,label=clamshell tray lid,order=6,parent=A_INSERT_CLAM_0,under=A_INSERT_FOAM_0
+  A_FLAP_0 pos=(-0.0, 0.0292, -0.0646) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.12000,0.00080,0.13000 meta=hinge=x,open=-115,tuck=1,label=tuck flap,order=1,under=A_SEAL_0,A_SEAL_1
+  A_FLAP_1 pos=(-0.0592, 0.0292, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02400,0.00080,0.12840 meta=hinge=z,open=95,label=dust flap,order=2,under=A_FLAP_0
+  A_FLAP_2 pos=(0.0592, 0.0292, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.02400,0.00080,0.12840 meta=hinge=z,open=-95,label=dust flap,order=2,under=A_FLAP_0
+  A_HIT_0 pos=(-0.0, 0.015, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.12000,0.03000,0.13000 meta=
+  A_INSERT_CLAM_0@A_INSERT_FOAM_0 pos=(-0.0, 0.0088, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.10760,0.01520,0.11660 meta=lift=+y,dist=0.05,label=clamshell tray,order=8,parent=A_INSERT_FOAM_0,under=A_ITEM_PART_0
+  A_INSERT_FOAM_0 pos=(-0.0, 0.001, -0.0) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.11640,0.00900,0.12640 meta=lift=+y,dist=0.06,label=foam pad,order=5,under=A_ITEM_DOC_1
+  A_ITEM_DOC_0 pos=(-0.0, 0.0176, -0.0) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.10000,0.07000,0.00120 meta=doc=guide,form=leaflet,label=quick install guide,order=3,under=A_FLAP_0,A_FLAP_1,A_FLAP_2
+  A_ITEM_DOC_1 pos=(0.003, 0.017, -0.003) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.08800,0.05600,0.00040 meta=doc=warranty,form=card,label=warranty card,order=4,under=A_ITEM_DOC_0
+  A_ITEM_PART_0@A_INSERT_CLAM_0 pos=(-0.0, 0.0079, -0.003) fwd=(0.0, 1.0, 0.0) up=(-0.0, 0.0, -1.0) size=0.08260,0.09160,0.00743 meta=bag=none,label=CPU in its carrier,order=7,parent=A_INSERT_CLAM_0,under=A_CLAMLID_0
+  A_SEAL_0 pos=(-0.03, 0.0245, 0.06512) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01600,0.01100,0.00010 meta=shape=round,peel=+y,print=SEALED,wrap=0.005,label=seal sticker,order=0
+  A_SEAL_1 pos=(0.03, 0.0245, 0.06512) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01600,0.01100,0.00010 meta=shape=round,peel=+y,print=SEALED,wrap=0.005,label=seal sticker,order=0
+shot from: cpu_epoch_9354
+Server CPU: 2 seals A_SEAL_0/1 (0) -> tuck lid A_FLAP_0 (1) -> dust flaps A_FLAP_1/2 (2) -> 2 papers on the clamshell, top first (3..4) -> PE foam pad A_INSERT_FOAM_0 lifted out with the clamshell (5) -> clear clamshell lid A_CLAMLID_0 (6) -> CPU in its carrier, bag=none (7) -> clamshell base A_INSERT_CLAM_0 (8).
