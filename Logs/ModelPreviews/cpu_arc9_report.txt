@@ -1,0 +1,10 @@
+cpu_arc9: 13696 triangles, 5 meshes
+  mesh cpu_arc9_ceramic#ceramic  tris=720
+  mesh cpu_arc9_gold#gold  tris=10652
+  mesh cpu_arc9_solder#solder  tris=1440
+  mesh cpu_arc9_tex_cpu_arc9_ihs#tex_cpu_arc9_ihs  tris=752
+  mesh cpu_arc9_tex_cpu_v5_pcb#tex_cpu_v5_pcb  tris=132
+  A_HIT_0 pos=(-0.0, 0.0, 0.003) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.04000,0.04000,0.00640 meta=
+  A_MARK_PIN1_0 pos=(0.0193, -0.0193, 0.0012) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00600,0.00600,0.00200 meta=corner=+x-y
+  A_PASTE_0 pos=(-0.0, 0.0, 0.006) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.03000,0.03000,0.00200 meta=ihs=0.0350x0.0380
+frame: as cpu_arc5/arc7 (V5 40 x 40 mm package, origin at the contact face centre, +z up)
