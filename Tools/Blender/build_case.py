@@ -8,6 +8,12 @@ Other scripts add cases by putting a style into STYLES (build_parts_d.py adds ca
 on brickhouse and breeze: front="glass" (a panoramic glass front that meets the side glass without a corner pillar,
 black top and base strips), fans_bottom / bottom_fan_d / BOTTOM_FANS (intake fans lying on the PSU shroud, numbered
 after the rear fan, their plugs resting where the front fans' plugs rest), code / sn (the rear label).
+Optional hooks (build_cat_cases.py uses them; absent on brickhouse, breeze and aero): front_fans = [(y, d), ...] (the
+front intake fans' heights and sizes, instead of the three 120 mm fans at FRONT_FANS_Y), and callables that get a
+namespace of build()'s locals: front_wall(ns, holes) -> holes (the front wall's cut-outs), face(ns) (draws the front
+face's decoration instead of the mesh insert / inlay), feet(ns) (instead of the four feet), extra(ns) (more looks,
+called before the hitboxes), films=True (the unboxing films: A_FILM_GLASS_<n> on both faces of every glass pane, in
+its panel's frame; anchors only, see glass_films()).
 
 Frame (as PartFactory.BuildCase): origin at the bottom centre, 0.42 (x) x 0.45 (y) x 0.21 (z); -x is the front,
 +x the rear, the window faces +z, the motherboard tray faces +z at z ~ -0.095, the PSU bay is bottom rear.
@@ -23,6 +29,7 @@ Real ATX geometry (ATX 2.2 figure 3, board frame = origin at the PCB centre, +x 
 import math
 import os
 import sys
+import types
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import dct_common as c  # noqa: E402
@@ -239,6 +246,7 @@ def build(cid):
     bfd = st.get("bottom_fan_d", 0.092)
     xm = (XF + XR) / 2
     Lx = XR - XF
+    ffans = st.get("front_fans")     # [(y, d)] custom front fans (hook), else the 120 mm FRONT_FANS_Y
 
     # ---------------- bottom panel: PSU intake slots, flanges up both sides
     holes = [P.stadium(0.112, 0.0055, 0.126, -0.052 + 0.013 * k) for k in range(9)]
@@ -276,6 +284,8 @@ def build(cid):
             fh += [P.circle(0.0022, sz * 0.0525, yf + sy * 0.0525, 12) for sz in (-1, 1) for sy in (-1, 1)]
     fh += [rr(-0.030, 0.030, 0.416, 0.441, 0.004)]  # front I/O cables
     fh += [rr(z - 0.004, z + 0.004, y - 0.0025, y + 0.0025, 0.001) for z in (-0.092, 0.088) for y in (0.06, 0.225, 0.39)]  # bezel clips
+    if st.get("front_wall"):
+        fh = st["front_wall"](types.SimpleNamespace(**locals()), fh)
     sheet("front", paint, (XF + T / 2, 0, 0), Z, Y, rect(ZBK + R + T, ZG - R - T, T, YT - T), fh)
     for zedge, sgn in ((ZG, 1), (ZBK, -1)):
         zc = zedge - sgn * T / 2
@@ -377,10 +387,12 @@ def build(cid):
         P.cube("psu_pad", (0.125, PSU[1] - 0.043 - 0.0005, z), (0.12, 0.001, 0.011), "rubber", parent=root)
 
     # ---------------- feet and the PSU dust filter
-    for x in (-0.175, 0.16):
+    for x in ((-0.175, 0.16) if not st.get("feet") else ()):
         for z in (-0.08, 0.08):
             P.slab("foot", P.rrect(0.046, 0.022, 0.006), 0.0055, "black_plastic", P.plane((x, -0.00275, z), X, Z), parent=root)
             P.slab("foot_pad", P.rrect(0.040, 0.017, 0.005), 0.0025, "rubber", P.plane((x, -0.00675, z), X, Z), parent=root)
+    if st.get("feet"):
+        st["feet"](types.SimpleNamespace(**locals()))
     fx0 = -0.179 if n_bottom else 0.040   # the filter reaches under the bottom fans' intake
     ff = rr(fx0, 0.202, -0.068, 0.068, 0.004)
     sheet("filter_frame", "black_plastic", (0, -0.0019, 0), X, Z, ff, [rr(fx0 + 0.006, 0.196, -0.062, 0.062, 0.002)], t=0.0026)
@@ -435,7 +447,9 @@ def build(cid):
         sheet("bezel_face_edge", bez, (bx0 + 0.0002, 0, 0), Z, Y, P.rrect(2 * bz - 0.0016, by1 - by0 - 0.0016, 0.0052, 0, (by0 + by1) / 2),
               ([rr(-0.0885 - 0.0008, 0.0885 + 0.0008, 0.028 - 0.0008, 0.401 + 0.0008, 0.0068)] if breeze else []) +
               [P.rrect(0.137, 0.017, 0.004, 0, io_y)], t=0.0004)
-    if glass:
+    if st.get("face"):
+        st["face"](types.SimpleNamespace(**locals()))
+    elif glass:
         pass
     elif breeze:
         # the mesh insert (texture with real-scale perforation) just behind the face opening
@@ -607,7 +621,10 @@ def build(cid):
 
     # ---------------- fans
     fans = [("A_FAN_0", REAR_FAN, NX, Y, 0.12)]
-    if st["fans_front"]:
+    if ffans:
+        for i, (y, d_) in enumerate(ffans):
+            fans.append((f"A_FAN_{i + 1}", (XF + T + 0.0128, y, 0.0), NX, Y, d_))
+    elif st["fans_front"]:
         for i, y in enumerate(FRONT_FANS_Y):
             fans.append((f"A_FAN_{i + 1}", (XF + T + 0.0128, y, 0.0), NX, Y, 0.12))
     yb = YS + T / 2 + 0.0128        # bottom fans: lying on the shroud, air coming up from below (forward -y)
@@ -629,11 +646,12 @@ def build(cid):
     # rear fan: the plug lies on the tray strip above the board, the cable runs from the frame's corner
     plug_rest.append(("A_PLUG_FAN_0", fan_kind, (0.118, 0.4335, Z_TRAY + 0.0026), (1, 0, 0),
                       [(REAR_FAN[0] - 0.006, REAR_FAN[1] + 0.058, REAR_FAN[2] - 0.058), (0.17, 0.43, -0.03), (0.150, 0.4345, Z_TRAY + 0.004)]))
-    for i, y in enumerate(FRONT_FANS_Y[:st["fans_front"]]):
+    for i, (y, d_) in enumerate(ffans or [(y_, 0.12) for y_ in FRONT_FANS_Y[:st["fans_front"]]]):
         zp = Z_TRAY + 0.0026
         yp = 0.385 - 0.04 * i
+        q = 0.058 if d_ == 0.12 else d_ / 2 - 0.002     # the frame corner the cable leaves from
         plug_rest.append((f"A_PLUG_FAN_{i + 1}", fan_kind, (-0.128, yp, zp), (-1, 0, 0),
-                          [(XF + 0.026, y - 0.058, -0.058), (-0.176, y - 0.045, -0.085), (-0.176, yp, Z_TRAY + 0.006),
+                          [(XF + 0.026, y - q, -q), (-0.176, y - 0.045, -0.085), (-0.176, yp, Z_TRAY + 0.006),
                            (-0.170, yp, Z_TRAY + 0.003)]))
     for i, (fx, fz_) in enumerate(BOTTOM_FANS[:n_bottom]):
         zp = Z_TRAY + 0.0026
@@ -681,6 +699,11 @@ def build(cid):
         P.tube("fp_wire", P.smooth_path([(-0.10, 0.126, Z_TRAY + 0.0025), ((tx - 0.10) / 2, (ty + 0.126) / 2 - 0.006, Z_TRAY + 0.0018),
                                          (tx, ty, Z_TRAY + 0.0014)], 5), 0.0012, "rubber", root, 8)
 
+    if st.get("extra"):
+        st["extra"](types.SimpleNamespace(**locals()))
+    if st.get("films"):
+        glass_films(types.SimpleNamespace(**locals()))
+
     # ---------------- hitboxes (not the glass)
     hits = [((-0.2095, 0.225, 0.0), (0.019, 0.451, 0.211)), ((XR - 0.003, 0.225, 0.0), (0.008, 0.45, 0.21)),
             ((xm, YT - 0.005, 0.0), (0.4, 0.01, 0.21)), ((xm, -0.002, 0.0), (0.4, 0.012, 0.21)),
@@ -698,6 +721,25 @@ def build(cid):
     P.beauty(root, cid, views=((-60, 10),), size=(1280, 960), samples=96, target=(XF - 0.01, 0.42, 0.0), dist=0.32, start_index=7)
     P.beauty(root, cid, views=((90, 8),), size=(1280, 960), samples=96, target=(XR, 0.25, 0.0), dist=0.75, start_index=8)
     return tris, meshes
+
+
+def glass_films(ns):
+    """The protective films on the glass (anchors only): A_FILM_GLASS_0 / _1 on the outer / inner face of the side
+    glass, in the A_PANEL_SIDE_0 frame (they ride with the panel); with a glass front, A_FILM_GLASS_2 / _3 on its outer /
+    inner face. Each film's XY plane is the glass face, +Z faces out of the glass, size = (w, h, thickness); the tab is
+    the rear top corner (side) or the top window-side corner (front)."""
+    ft = 0.0001
+    gxa = ns.gxs if ns.glass else ns.gx0
+    xc, yc, w, h = (gxa + ns.gx1) / 2, (ns.gy0 + ns.gy1) / 2, ns.gx1 - gxa, ns.gy1 - ns.gy0
+    for i, (z, fwd, side) in enumerate(((ns.gz + 0.002 + ft / 2, Z, "outer"), (ns.gz - 0.002 - ft / 2, NZ, "inner"))):
+        P.anchor(f"A_FILM_GLASS_{i}", P.Frame((xc, yc, z), fwd, Y), (w, h, ft), ns.a_side,
+                 meta=f"peel=-x,tab=+x+y,side={side},glass=A_PANEL_SIDE_0")
+    if ns.glass:
+        zc, yc, w, h = (ns.gzf - ns.bz) / 2, (ns.GY0 + ns.GY1) / 2, ns.gzf + ns.bz, ns.GY1 - ns.GY0
+        xg = ns.bx0 + 0.0020
+        for i, (x, fwd, side) in enumerate(((xg - 0.002 - ft / 2, NX, "outer"), (xg + 0.002 + ft / 2, X, "inner"))):
+            P.anchor(f"A_FILM_GLASS_{2 + i}", P.Frame((x, yc, zc), fwd, Y), (w, h, ft), ns.root,
+                     meta=f"peel=-y,tab=+y+z,side={side},glass=front")
 
 
 def c_add(p, d, s):

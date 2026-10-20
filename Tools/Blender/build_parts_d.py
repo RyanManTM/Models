@@ -147,7 +147,7 @@ build_case.STYLES["case_aero"] = dict(
     cover_tag="paint_black", screw_tag="steel_dark", logo_tag="alu", logo_font="seguisb.ttf", shroud_logo_tag="alu",
     front="glass", fans_front=0, fans_bottom=3, bottom_fan_d=0.092, fan_tag="fan_black", fan_rgb=True, fan_pins=4,
     hub=("AERO", "#121315", "#e8eaee", "#7cc8ff"), thumb_tag="steel_dark", led_power="led_white",
-    label_bg=(0.93, 0.93, 0.9), code="AR-V360", sn="AR3")
+    label_bg=(0.93, 0.93, 0.9), code="AR-V360", sn="AR3", films=True)   # films: the glass film anchors (unboxing)
 
 
 def build_case_aero():
