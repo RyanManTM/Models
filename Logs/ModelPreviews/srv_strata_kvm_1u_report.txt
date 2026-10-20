@@ -23,6 +23,7 @@ srv_strata_kvm_1u: 6662 triangles, 22 meshes
   mesh srv_strata_kvm_1u_white_plastic#white_plastic  tris=12
   A_BUTTON_LCD_0@A_DRAWER_0 pos=(0.09, 0.03042, 0.0202) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00900,0.00900,0.00600 meta=press=-z_local,travel=0.0010,fn=lcd_power
   A_DRAWER_0 pos=(-0.0, 0.02242, 0.02) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.43600,0.04360,0.52000 meta=pull=+z,dist=0.450,latch=front_tabs,stop=1
+  A_FILM_SCREEN_0@A_LID_0@A_DRAWER_0 pos=(-0.0, 0.02327, -0.112) fwd=(0.0, -1.0, 0.0) up=(-0.0, 0.0, 1.0) size=0.41400,0.23500,0.00010 meta=film=clear,peel=-x,tab=+x+y,on=lcd
   A_HIT_0 pos=(-0.0, 0.02222, -0.29) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.43600,0.04360,0.62000 meta=
   A_HIT_1 pos=(-0.0, 0.02222, 0.001) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.04360,0.00400 meta=
   A_LED_POWER_0@A_DRAWER_0 pos=(0.082, 0.03042, 0.0202) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00220,0.00220,0.00300 meta=colour=green,fn=power

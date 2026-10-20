@@ -38,8 +38,25 @@ BUILDERS = {
 ALL = list(BUILDERS)
 
 
+def unbox_hook():
+    """Optional hook (catalogue 18 retrofit): the protective-film anchors of cat_server_unbox.add_films go into a
+    model just before datacenter_common.finish exports it. Anchors only; models without films are untouched."""
+    import datacenter_common as D
+    import cat_server_unbox as UB
+    if getattr(D.finish, "unbox_hook", False):
+        return
+    finish = D.finish
+
+    def hooked(root, mid, *a, **kw):
+        UB.add_films(root, mid)
+        return finish(root, mid, *a, **kw)
+    hooked.unbox_hook = True
+    D.finish = hooked
+
+
 def main(argv):
     t0 = time.time()
+    unbox_hook()
     if "--nopreview" in argv:
         P.PREVIEW[0] = False
     ids = [a for a in argv if not a.startswith("--")] or ALL

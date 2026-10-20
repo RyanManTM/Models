@@ -17,6 +17,8 @@ Rack gear (cat_server_rack.py), in the rack device frame of datacenter_common.py
   srv_strata_blank_1u, srv_strata_blank_2u   blanking panels
   srv_strata_cma            cable management arm for the servers' slide rails
   srv_strata_kvm_1u         1U KVM console drawer (LCD and keyboard)
+Unboxing caps (cat_server_unbox.py): cap_sfp, cap_qsfp (cage dust plugs), cap_pcie4, cap_pcie8 (clear edge caps); the
+film anchors of this family and of the task-01 gear (via build_datacenter.py's hook) are listed there too.
 
 Run:  blender -b --factory-startup -P Tools/Blender/build_cat_server.py -- [ids...] [--nopreview]
 With no ids it builds all of them. Then the fit check: Tools/Blender/cat_server_fit.py.
@@ -48,6 +50,9 @@ RACK = {
 }
 for _rid, _fn in RACK.items():
     BUILDERS[_rid] = ("cat_server_rack", _fn, ())
+for _cap, _fn in (("cap_sfp", "build_port_plug"), ("cap_qsfp", "build_port_plug"), ("cap_pcie4", "build_edge_cap"),
+                  ("cap_pcie8", "build_edge_cap")):
+    BUILDERS[_cap] = ("cat_server_unbox", _fn, (_cap,))
 ALL = list(BUILDERS)
 
 

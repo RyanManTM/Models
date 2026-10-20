@@ -37,6 +37,8 @@ ups_2u: 8596 triangles, 30 meshes
   A_BUTTON_POWER_0 pos=(0.19956, 0.02126, 0.0321) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01260,0.01260,0.00600 meta=press=-z_local,travel=0.0012,fn=power,hold=2
   A_BUTTON_UP_0 pos=(0.1746, 0.02126, 0.0321) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.01300,0.01000,0.00600 meta=press=-z_local,travel=0.0010,fn=up
   A_FAN_0 pos=(-0.1, 0.0458, -0.462) fwd=(0.0, -0.0, -1.0) up=(0.0, 1.0, -0.0) size=0.06000,0.06000,0.02500 meta=axis=z,spin=1,rpm=3200
+  A_FILM_BEZEL_0@A_BEZEL_0 pos=(-0.052, 0.04445, 0.03205) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.32000,0.08130,0.00010 meta=film=clear,peel=-x,tab=+x+y,on=bezel
+  A_FILM_SCREEN_0 pos=(0.15732, 0.05682, 0.03195) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.06200,0.03000,0.00010 meta=film=clear,peel=-x,tab=+x+y
   A_HIT_0 pos=(-0.0, 0.04445, -0.222) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.43200,0.08730,0.50800 meta=
   A_HIT_1 pos=(-0.0, 0.04445, 0.001) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.48260,0.08730,0.00400 meta=
   A_LED_BATTERY_0 pos=(0.19632, 0.05632, 0.0317) fwd=(0.0, -0.0, 1.0) up=(-0.0, 1.0, 0.0) size=0.00300,0.00300,0.00300 meta=colour=yellow,fn=battery

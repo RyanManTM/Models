@@ -25,6 +25,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import dct_common as c  # noqa: E402
 import parts_c as P  # noqa: E402
 import datacenter_common as D  # noqa: E402
+import cat_server_unbox as UB  # noqa: E402
 
 X, Y, Z = P.X, P.Y, P.Z
 NX, NY, NZ = P.NX, P.NY, P.NZ
@@ -623,6 +624,8 @@ def build_kvm():
     sc = P.anchor("A_SCREEN_0", P.Frame((0.0, ly0 - 0.0001, (zh + ZD - 0.006) / 2 + 0.004), NY, Z), (0.410, 0.231, 0.003), lid,
                   meta="kind=lcd,ref=1366x768,diag=18.5,colour=rgb")
     P.quad("screen", P.Frame((0.0, ly0 - 0.0001, (zh + ZD - 0.006) / 2 + 0.004), NY, Z), 0.410, 0.231, ATLAS.tag, sc, uv=ATLAS.uv("screen"))
+    UB.film("A_FILM_SCREEN_0", P.Frame((0.0, ly0 - 0.0001, (zh + ZD - 0.006) / 2 + 0.004), NY, Z), 0.414, 0.235, lid, peel="-x", tab="+x+y",
+            extra="on=lcd")
     P.anchor("A_HIT_0", (0, (yb + yt) / 2, (ZD + ZE) / 2), (BW, yt - yb, ZD - ZE), root)
     P.anchor("A_HIT_1", (0, (yb + yt) / 2, 0.001), (D.EAR_W, yt - yb, 0.004), root)
     res = D.finish(root, mid, preview_views=((25, 20), (155, 25)), beauty_views=((22, 16), (160, 22)), size=(1100, 650), samples=36,
@@ -822,6 +825,7 @@ def build_storage_server():
     D.decal("badge", ATLAS, "sr224", P.Frame((0.150, (ty1 + yt) / 2, ZF - 0.00045), Z, Y), 0.028, 0.007, root)
     D.decal("badge2", ATLAS, "strata", P.Frame((-0.150, (ty1 + yt) / 2, ZF - 0.00045), Z, Y), 0.024, 0.006, root)
     server_ears(st, root, D.HOLES_IN_U[2])
+    UB.ear_films(root, yb, yt)
     DS.interior(st, root)
     DS.lid(st, root)
     for k in range(2):
@@ -979,6 +983,7 @@ def build_gpu_server():
     P.anchor("A_PORT_USBA_FRONT_0", ufr, (0.0145, 0.0072, 0.02), root, meta="depth=0.009,usb=3.0")
     D.decal("badge", ATLAS, "sg840", P.Frame((0.170, yb + 0.0175, ZF - 0.00045), Z, Y), 0.034, 0.0085, root)
     server_ears(st, root, 2 * U + D.HOLES_IN_U[1])
+    UB.ear_films(root, yb, yt)
     # --- inside: the midplane, the fan wall, the board with two CPUs, DIMMs and PCIe switches, risers to the rear slots
     zm = ZF - 0.318
     D.box("midplane", (-XB + 0.004, yb + T, zm - 0.0016), (XB - 0.004, yt - 0.004, zm), "pcb_green", root)
