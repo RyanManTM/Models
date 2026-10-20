@@ -12,6 +12,7 @@ Desktop (build_cpu.py with new specs: the sibling's package, frame and anchors; 
 Server (cat_cpus_server.py, new contracts):
   Socket SP-V (72 x 75.4 mm, orange carrier)   cpu_epoch_9124, cpu_epoch_9354, cpu_epoch_9654
   Socket L46 (61 x 105 mm, black carrier clip) cpu_tiron_plat_8480
+  Their clear contact covers (unboxing caps on A_CAP_PADS_0): cap_cpu_spv, cap_cpu_l46
 
 With no ids it builds all of them. Each model writes Assets/Resources/Models/<id>.fbx, its textures, previews
 Logs/ModelPreviews/<id>_<n>.png and Logs/ModelPreviews/<id>_report.txt; every run also writes the anchor report
@@ -101,6 +102,8 @@ def build_desktop(cid):
 JOBS = {cid: (lambda cid=cid: build_desktop(cid)) for cid in DESKTOP}
 for _cid in srv.SPECS:
     JOBS[_cid] = (lambda cid=_cid: srv.build_and_preview(cid, PREVIEW[0]))
+for _cid in srv.CAPS.values():
+    JOBS[_cid] = (lambda cid=_cid: srv.build_cap_and_preview(cid, PREVIEW[0]))
 
 
 def anchor_report():

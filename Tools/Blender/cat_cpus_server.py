@@ -383,11 +383,79 @@ def build(cid):
     c.anchor("A_PASTE_0", (0, 0, top), (pw * MM * 0.8, ph * MM * 0.8, 0.002), root,
              meta=f"ihs={pw * MM:.4f}x{ph * MM:.4f}")
     c.anchor("A_HIT_0", (0, 0, top * 0.5), (sx, sy, top + 0.0004), root)
+    cap_anchor(root, sock)
     carrier(root, sock, P_, T)
 
     c.join_by_tag(root, cid)
     c.export(root, cid)
     pp.report(root)
+    return root
+
+
+# ------------------------------------------------------------------ the contact cover (unboxing)
+# A clear plastic cover over the land side, a separate cap model (cap_cpu_spv / cap_cpu_l46) that sits on the
+# package's A_CAP_PADS_0. The anchor is on the contact face (just below the 0.03 mm proud lands) facing -z, so the
+# cap's local +Z is the pull-off direction; the anchor's local +x is the package's -x (a 180 degree turn about y).
+
+CAPS = {"SP-V": "cap_cpu_spv", "L46": "cap_cpu_l46"}
+CAP_Z = -0.00004   # the cover's contact face in the package frame
+CAP_GROW = 1.0     # mm the cover plate overhangs the substrate on each side (below the carrier wall)
+CAP_TAB = 6.0      # mm the pull tab sticks out at the -y end
+
+
+def cap_size(sock):
+    P_ = PKG[sock]
+    return (P_["sx"] + 2 * CAP_GROW) * MM, (P_["sy"] + 2 * CAP_GROW) * MM, 0.0016
+
+
+def cap_anchor(root, sock):
+    """A_CAP_PADS_0 on the package (also used by cat_cpus_unbox.py to retrofit the committed FBXs)."""
+    w, h, t = cap_size(sock)
+    return c.anchor("A_CAP_PADS_0", (0, 0, CAP_Z), (w, h, t), root, forward=(0, 0, -1), up=(0, 1, 0),
+                    meta=f"model={CAPS[sock]},remove=-z,blocks=install")
+
+
+def build_cap(cap_id):
+    """The cover in its own frame: origin at the contact face centre, +z = pull-off (away from the lands)."""
+    sock = [k for k, v in CAPS.items() if v == cap_id][0]
+    c.reset()
+    root = c.root(cap_id)
+    k = pp.Kit(cap_id)
+    g = k["glass"]
+    w, h, t = cap_size(sock)
+    wm, hm = w / MM, h / MM
+    m = lambda pts: [(x * MM, y * MM) for x, y in pts]  # noqa: E731
+    # the plate (0.7 mm) with a 1.2 mm rim standing 0.9 mm further out, and two stiffening ribs along y
+    pp.prism_bevel(g, m(pp.rounded_rect(0, 0, wm, hm, 1.6, 4)), 0.0, 0.0007, 0.0002, seg=1)
+    outer = pp.rounded_rect(0, 0, wm, hm, 1.6, 4)
+    inner = pp.rounded_rect(0, 0, wm - 2.4, hm - 2.4, 0.9, 4)
+    pp.prism(g, [m(outer), m(list(reversed(inner)))], 0.0007, t)
+    for xr in (-wm / 6, wm / 6):
+        pp.box(g, (xr * MM, 0, 0.00105), (0.0012, (hm - 3.0) * MM, 0.0007), bevel=0.0002)
+    # the pull tab at -y, with a grip ridge
+    ty0, ty1 = -hm / 2 - CAP_TAB, -hm / 2 + 1.0
+    pp.prism_bevel(g, m(pp.rounded_rect(0, (ty0 + ty1) / 2, 16.0, ty1 - ty0, 2.0, 4)), 0.0, 0.0007, 0.0002, seg=1)
+    pp.box(g, (0, (ty0 + 1.6) * MM, 0.001), (0.012, 0.0008, 0.0006), bevel=0.0002)
+    # a moulded pin-1 triangle on the rim at the package's (+x, -y) corner = this frame's (-x, -y)
+    cx, cy = -wm / 2 + 0.6, -hm / 2 + 0.6
+    tri = [(cx, cy), (cx + 4.0, cy), (cx, cy + 4.0)]
+    pp.prism(g, [m(tri)], t, t + 0.0003)
+    k.finish(root)
+    c.anchor("A_HIT_0", (0, 0, t / 2), (w, h, t), root,
+             meta="remove=+z,travel=0.030,blocks=install")
+    c.join_by_tag(root, cap_id)
+    c.export(root, cap_id)
+    pp.report(root)
+    return root
+
+
+def build_cap_and_preview(cap_id, preview=True):
+    root = build_cap(cap_id)
+    sock = [k for k, v in CAPS.items() if v == cap_id][0]
+    P.write_report(root, cap_id, f"frame: origin at the contact face centre (on the {sock} package's A_CAP_PADS_0), "
+                                 "+z = pull-off direction; local +x = the package's -x")
+    if preview:
+        pp.preview(root, cap_id, views=((25, 40), (200, -45)), size=(960, 720), dist=0.22, zup=True)
     return root
 
 
