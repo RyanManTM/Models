@@ -9,7 +9,7 @@ Branch `claude/cat-12-motherboards`. Script `Tools/Blender/build_cat_boards.py` 
 |---|---|---|---|---|
 | 1 | `mb_aegis_b650_bulwark` | `io_aegis_b650_bulwark` | mb_ridge_b5 (V5, DDR5) | done |
 | 2 | `mb_aegis_x870e_vanguard` | `io_aegis_x870e_vanguard` | mb_ridge_b5 (V5, DDR5) | not yet |
-| 3 | `mb_mako_b650_harpoon` | `io_mako_b650_harpoon` | mb_ridge_b5 (V5, DDR5) | not yet |
+| 3 | `mb_mako_b650_harpoon` | `io_mako_b650_harpoon` | mb_ridge_b5 (V5, DDR5) | done |
 | 4 | `mb_kestrel_b650_glide` | `io_kestrel_b650_glide` | mb_ridge_b5 (V5, DDR5) | not yet |
 | 5 | `mb_aegis_z790_keystone` | `io_aegis_z790_keystone` | mb_ridge_z4 + DDR5 notch (L17, DDR5) | not yet |
 | 6 | `mb_mako_z790_riptide` | `io_mako_z790_riptide` | mb_ridge_z4 + DDR5 notch (L17, DDR5) | not yet |
@@ -86,6 +86,18 @@ SAME and the two film anchors are ONLY_B.
   tan corner slash. No RGB. Shield: painted black.
 - **Anchors:** vs `mb_ridge_x5`: 82 SAME, 0 DIFF. vs `mb_ridge_b5`: 80 SAME, ONLY_B `A_FILM_CHIPSET_0`, `A_FILM_IO_0`.
 - **I/O shield:** not pre-attached on the analog.
+
+## 3. `mb_mako_b650_harpoon` + `io_mako_b650_harpoon`: Mako Harpoon B650 WiFi
+
+- **Analog:** MSI MAG B650 TOMAHAWK WIFI. Socket V5, DDR5, ATX; `mb_ridge_b5` layout.
+- **Size:** ATX 0.244 × 0.305, PCB z 0..0.0016; tallest part the I/O cover (z 0.0371).
+- **Triangles:** 44,886 in 38 meshes. Shield: 1,244 in 1.
+- **Look:** black PCB with grey line graphics; layered `slab` VRM heatsinks in mid grey with a dark band, groove
+  lines and a brushed inlay; a `slab` I/O cover with a band and grooves; a gunmetal chipset heatsink with diagonal
+  grooves; steel-armoured x16 slot; two dark M.2 heatsinks (the second over M2_2 is fixed, looks only); black DIMM
+  slots. No RGB. Shield: painted black.
+- **Anchors:** vs `mb_ridge_x5`: 82 SAME, 0 DIFF. vs `mb_ridge_b5`: 80 SAME, ONLY_B `A_FILM_CHIPSET_0`, `A_FILM_IO_0`.
+- **I/O shield:** pre-attached on the analog (shipped here as the separate `io_mako_b650_harpoon` all the same).
 
 ## Deviations
 

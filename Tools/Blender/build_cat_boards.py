@@ -181,6 +181,15 @@ class CatBoard(BB.Board):
         g, uv = self.paint(col)
         pp.prism_bevel(g, [(x * MM, y * MM) for x, y in pts], z0 * MM, z1 * MM, bevel * MM, seg=1, uv=uv)
 
+    def yz_shape(self, col, pts, x0, x1, hole=None):
+        """A (y, z) outline (board mm) extruded along x from x0 to x1, optionally with a hole."""
+        g, uv = self.paint(col)
+        M = pp.frame(x=(0, 1, 0), y=(0, 0, 1), z=(1, 0, 0))
+        loops = [[(a * MM, b * MM) for a, b in pts]]
+        if hole:
+            loops.append([(a * MM, b * MM) for a, b in reversed(hole)])
+        pp.prism(g, loops, x0 * MM, x1 * MM, M=M, uv=uv)
+
     def pslope(self, col, p0, p1, width, thick, along):
         """A strip from p0 to p1 (board mm, both on the same a = const line); width along `along` ('x' or 'y')."""
         g, uv = self.paint(col)
@@ -364,7 +373,7 @@ class CatBoard(BB.Board):
         """An exposed fin stack under a cover with a chamfered lip (AORUS / AERO style)."""
         st = self.st
         A0, A1, base, D, along = z
-        heat, trim, dark = st["heat"], st["trim"], st["dark"]
+        heat, trim = st["heat"], st["trim"]
         fin = "alu" if trim == "alu" else heat
         self.lbox(heat, z, A0, A1, 0.0, D, PT + 1.0, PT + 6.0, 0.5)
         n = int((A1 - A0 - 2) / 2.4)
@@ -569,18 +578,22 @@ class CatBoard(BB.Board):
                     self.pbox(dark, 95.45, yy, 17.0, 0.12, 1.0, 7.0)
                 self.pbox(st["trim"], 95.6, ym, 6.0, 0.5, y1 - y0 - 30.0, 1.2)
             elif kind == "rgb":
-                # a lit emblem panel on the slanted wall: an RGB plate behind a dark grille with the brand's
-                # shield emblem cut out, framed in the trim colour
-                ey0, ey1 = y0 + 28.0, y0 + 84.0
-                self.pslope("rgb", (99.0, (ey0 + ey1) / 2, 28.0 + 0.5), (101.3, (ey0 + ey1) / 2, 33.8 + 0.5), ey1 - ey0, 0.25, "y")
-                for i in range(9):
-                    yy = ey0 + 3.0 + i * (ey1 - ey0 - 6.0) / 8
-                    if abs(yy - (ey0 + ey1) / 2) < 10.0:
+                # a lit emblem panel on the socket-side face: an RGB plate behind a dark grille, the brand's shield
+                # emblem in the middle, framed in the trim colour
+                ey0, ey1, ez0, ez1 = y0 + 24.0, y0 + 92.0, 7.0, 25.0
+                pp.box(self.k["rgb"], (95.55 * MM, (ey0 + ey1) / 2 * MM, (ez0 + ez1) / 2 * MM), (0.5 * MM, (ey1 - ey0) * MM, (ez1 - ez0) * MM))
+                em = (ey0 + ey1) / 2
+                for k_ in range(14):
+                    yy = ey0 + 2.0 + k_ * (ey1 - ey0 - 4.0) / 13
+                    if abs(yy - em) < 9.0:
                         continue
-                    self.pslope(dark, (99.0, yy, 28.0 + 0.85), (101.3, yy, 33.8 + 0.85), 2.4, 0.3, "y")
-                for yy in (ey0 - 1.0, ey1 + 1.0):
-                    self.pslope(trim, (98.9, yy, 27.6 + 0.6), (101.4, yy, 34.0 + 0.6), 1.2, 0.5, "y")
-                self.pbox(trim, 95.6, ym, 6.0, 0.5, y1 - y0 - 30.0, 1.2)
+                    self.pbox(dark, 95.05, yy, ez0, 0.6, 2.2, ez1 - ez0)
+                sh = [(em - 7.0, ez1 - 2.0), (em + 7.0, ez1 - 2.0), (em + 7.0, ez0 + 8.0), (em, ez0 + 2.0), (em - 7.0, ez0 + 8.0)]
+                self.yz_shape(dark, [(em - 9.0, ez1), (em + 9.0, ez1), (em + 9.0, ez0), (em - 9.0, ez0)], 94.8, 95.3, hole=sh)
+                self.yz_shape(trim, [(em - 4.6, ez1 - 4.4), (em + 4.6, ez1 - 4.4), (em + 4.6, ez0 + 8.6), (em, ez0 + 4.6), (em - 4.6, ez0 + 8.6)], 94.9, 95.25)
+                for zz in (ez0 - 1.0, ez1 + 1.0):
+                    self.pbox(trim, 95.0, (ey0 + ey1) / 2, zz - 0.5, 0.6, ey1 - ey0 + 2.0, 1.0)
+                self.pbox(trim, 95.6, ym, 3.0, 0.5, y1 - y0 - 30.0, 1.2)
         if st["io_rgb"]:
             pp.box(self.k["rgb"], (100.4 * MM, (ym + 2) * MM, 36.9 * MM), (1.4 * MM, (y1 - y0 - 10) * MM, 0.7 * MM), bevel=0.0002)
         # logo plate on the top, reading along +y (as build_board's, under A_FILM_IO_0)
