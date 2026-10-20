@@ -155,6 +155,27 @@ def rr(w, h, r, cx=0.0, cy=0.0, n=48):
     return resample(P.rrect(w, h, r, cx, cy, 6), n)
 
 
+def canonical(bm):
+    """The same mesh rebuilt with its vertices sorted by position and its faces sorted (each starting at its lowest
+    vertex, winding kept). bmesh's solidify orders the faces differently from run to run; this makes every export
+    of a shell the same, so extras_compare.py can prove a re-export unchanged."""
+    verts = sorted(bm.verts, key=lambda v: (round(v.co.x, 7), round(v.co.y, 7), round(v.co.z, 7)))
+    idx = {v: i for i, v in enumerate(verts)}
+    faces = []
+    for f in bm.faces:
+        ids = [idx[v] for v in f.verts]
+        k = ids.index(min(ids))
+        faces.append(tuple(ids[k:] + ids[:k]))
+    faces.sort()
+    out = bmesh.new()
+    nv = [out.verts.new(v.co) for v in verts]
+    for f in faces:
+        out.faces.new([nv[i] for i in f])
+    out.normal_update()
+    bm.free()
+    return out
+
+
 def unity_to_blender_matrix():
     return Matrix(((-1, 0, 0), (0, 0, -1), (0, 1, 0)))
 
@@ -308,7 +329,7 @@ class Rig:
             bm.normal_update()
         bmesh.ops.solidify(bm, geom=list(bm.faces), thickness=t)
         bmesh.ops.remove_doubles(bm, verts=bm.verts, dist=1e-7)
-        return self.emit(name, bm, frame, tag, anc, smooth=smooth)
+        return self.emit(name, canonical(bm), frame, tag, anc, smooth=smooth)
 
     def cut(self, obj, cutters, solver="EXACT"):
         """Boolean difference of cutter objects (created with tmp_*), then removes the cutters."""

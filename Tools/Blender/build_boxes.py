@@ -3,8 +3,11 @@ Retail packaging rigs: box_<partid> for every catalog item (PartDef.cs) except t
 Owner: Blender agent B. Contract: Logs/UNBOXING.md 2.2 (rig anchors) and 3 (what is in each box).
 
 Run:  "D:\\New folder\\blender.exe" -b --factory-startup -P Tools/Blender/build_boxes.py -- [ids...] [--noshots] [--nopreview]
-      ids are part ids (cpu_arc5) or box ids (box_cpu_arc5); none = all. --noshots reuses the cached product shots
-      (Logs/ModelPreviews/boxshots), --nopreview skips the preview renders.
+      ids are part ids (cpu_arc5) or box ids (box_cpu_arc5); none = all the hand-written items below. --noshots reuses
+      the cached product shots (Logs/ModelPreviews/boxshots), --nopreview skips the preview renders.
+      Catalogue parts (docs/catalog/*.json, read by box_catalog.py): their ids, a family name (cpus, gpus, boards, ram,
+      storage, psus, coolers, cases, server), kind:<kind> (kind:gpu) or --catalog for every one of them.
+      Their rigs come from rig_products.py and the other rig modules (RIG_MODULES below).
 
 Every box is a RIG (rig_common.Rig, built in rig_products.py): origin at the bottom centre, the front at +z, the
 closed pose, A_HIT_0 = the outer size (PartFactory.BoxSize reads it). The removable pieces are anchors with meta
@@ -55,6 +58,8 @@ P.save_png = _retrying(P.save_png, "PNG")
 CAT = {"Case": (0.3, 0.3, 0.35), "Motherboard": (0.2, 0.6, 0.3), "CPU": (0.9, 0.4, 0.1), "Cooler": (0.2, 0.6, 0.95),
        "RAM": (0.8, 0.2, 0.6), "GPU": (0.85, 0.15, 0.15), "PSU": (0.95, 0.8, 0.2), "Storage": (0.3, 0.3, 0.9),
        "Other": (0.2, 0.8, 0.85)}
+# the catalogue's new categories (docs/tasks/catalog/README.md)
+CAT.update({"Server": (0.25, 0.45, 0.55), "Network": (0.15, 0.55, 0.45), "Accessory": (0.2, 0.8, 0.85)})
 
 
 def box_size(pid, cat):
@@ -221,6 +226,10 @@ POSE = {
 }
 POSE_ID = {"ssd_sata_500": ((0, 1, 0), (0, 0, 1), (16, 26)), "usb_installer": ((0, 1, 0), (0, 0, -1), (24, 12)),
            "cable_dp": ((0, 0, 1), (0, 1, 0), (12, 58)), "fan_splitter": ((0, 0, 1), (0, 1, 0), (12, 58))}
+POSE.update({"Server": ((0, 0, 1), (0, 1, 0), (24, 22)), "Network": ((0, 0, 1), (0, 1, 0), (24, 22)),
+             "Accessory": ((0, 0, 1), (0, 1, 0), (20, 14))})
+# catalogue kinds whose part lies differently from its category's pose
+POSE_KIND = {"ssd_sata": ((0, 1, 0), (0, 0, 1), (16, 26)), "cooler_low": ((0, 1, 0), (0, 0, 1), (28, 28))}
 
 
 # ---------------------------------------------------------------- product shots
@@ -295,7 +304,7 @@ def render_shot(pid, item, path, size=1024, yaw_off=0.0, pitch_off=0.0):
         o.data.materials.clear()
         o.data.materials.append(P.pbr_material(tag, lit_leds=True))
     # pose: a pivot holding every top-level imported object
-    fwd, up, (yaw, pitch) = POSE_ID.get(pid, POSE[item["cat"]])
+    fwd, up, (yaw, pitch) = item.get("pose") or POSE_KIND.get(item.get("kind")) or POSE_ID.get(pid, POSE[item["cat"]])
     pivot = bpy.data.objects.new("shot_pivot", None)
     sc.collection.objects.link(pivot)
     for o in objs:
@@ -817,6 +826,93 @@ def compose(pid, it, s, fw, shot, ink_shot, kraft):
     return reg, W, H
 
 
+# ---------------------------------------------------------------- OEM boxes: plain board with a printed label
+
+def part_number(it):
+    """A stable part number for an OEM label (the item's pn= if it has one)."""
+    if it.get("pn"):
+        return it["pn"]
+    h = P.shash(it["name"])
+    return f"{it['brand'][:3].upper()}-{h % 900 + 100}-{(h >> 10) % 9000 + 1000}-{'ABCDEFGH'[(h >> 3) % 8]}"
+
+
+def oem_bg(F, it, kraft):
+    if it.get("oem_base", "white") == "kraft":
+        kraft_bg(F, kraft)
+    else:
+        F.a.rect(F.x, F.y, F.w, F.h, it.get("board", (0.93, 0.93, 0.91)))
+
+
+def esd_mark(a, x, y, s, col):
+    """The ESD-sensitive device mark: a hand crossed by a bar in a triangle."""
+    a.poly([(x, y), (x + s, y), (x + s / 2, y + s * 0.87)], col)
+    a.poly([(x + s * 0.12, y + s * 0.07), (x + s * 0.88, y + s * 0.07), (x + s / 2, y + s * 0.76)], (1, 1, 1))
+    a.poly([(x + s * 0.38, y + s * 0.14), (x + s * 0.58, y + s * 0.14), (x + s * 0.56, y + s * 0.52), (x + s * 0.40, y + s * 0.52)], col)
+    a.poly([(x + s * 0.22, y + s * 0.22), (x + s * 0.80, y + s * 0.50), (x + s * 0.77, y + s * 0.56), (x + s * 0.19, y + s * 0.28)], col)
+
+
+def oem_label(F, it, x, y, w, h, seed):
+    """A white product label: the brand sticker, the name, P/N, a bar code, S/N and QTY."""
+    a = F.a
+    ink = (0.06, 0.06, 0.07)
+    a.rect(x, y, w, h, (0.98, 0.98, 0.97))
+    a.rect(x, y + h - h * 0.24, w, h * 0.24, it["accent"])
+    a.text(it["brand"], x + h * 0.06, y + h - h * 0.12, h * 0.15, (1, 1, 1), it.get("font", "arialbd.ttf"), valign="CENTER",
+           maxw=w * 0.5)
+    a.text(it.get("label_line", it["line"]), x + w - h * 0.06, y + h - h * 0.12, h * 0.07, (1, 1, 1), "arialbd.ttf",
+           align="RIGHT", valign="CENTER", maxw=w * 0.45)
+    fs = h * 0.075
+    a.text(it["name"], x + h * 0.06, y + h * 0.64, fs * 1.15, ink, "arialbd.ttf", maxw=w * 0.9)
+    a.text("P/N " + part_number(it), x + h * 0.06, y + h * 0.53, fs, ink, "consola.ttf", maxw=w * 0.6)
+    a.text("QTY 1", x + w - h * 0.06, y + h * 0.53, fs, ink, "consola.ttf", align="RIGHT")
+    a.code128ish(seed, x + h * 0.06, y + h * 0.26, w * 0.62, h * 0.22, ink)
+    a.text("S/N " + str(P.shash(it["name"] + "sn") % 10 ** 12).zfill(12), x + h * 0.06, y + h * 0.10, fs * 0.9, ink,
+           "consola.ttf", maxw=w * 0.6)
+    esd_mark(a, x + w - h * 0.32, y + h * 0.10, h * 0.24, ink)
+    a.text("♻", x + w - h * 0.45, y + h * 0.10, h * 0.13, ink, "seguisym.ttf", align="RIGHT")
+
+
+def oem_face(F, it, kraft, seed, label=True, big=False):
+    """One face of an OEM box: the brand in one ink at the top left, handling marks, an optional label."""
+    a = F.a
+    oem_bg(F, it, kraft)
+    ink = it.get("ink", (0.10, 0.10, 0.11))
+    m = F.m
+    pad = m * 0.06
+    logo(F, it, F.x + pad, F.y + F.h - pad - m * 0.10, m * 0.10, it["accent"] if it.get("oem_base", "white") == "white" else ink,
+         maxw=F.w * 0.45)
+    a.text(it.get("label_line", it["line"]), F.x + pad, F.y + F.h - pad - m * 0.16, m * 0.04, ink, "arialbd.ttf", maxw=F.w * 0.6)
+    if big:
+        hs = m * 0.11
+        arrows(a, F.x + F.w - pad - hs, F.y + F.h - pad - hs, hs, ink)
+        glass(a, F.x + F.w - pad - hs * 2.4, F.y + F.h - pad - hs, hs, ink)
+        umbrella(a, F.x + F.w - pad - hs * 3.8, F.y + F.h - pad - hs, hs, ink)
+    if label:
+        lw = min(F.w * 0.7, m * 1.5)
+        lh = min(F.h * 0.55, lw * 0.5)
+        oem_label(F, it, F.x + F.w - lw - pad, F.y + pad, lw, lh, seed)
+
+
+def compose_oem(pid, it, s, fw, shot, kraft):
+    """The atlas of a plain OEM box (white or kraft board): labels on the front and one end, the brand on every side."""
+    reg, W, H = layout(s, fw)
+    art = P.Art(W, H, bg=(0.5, 0.5, 0.5), name="box_" + pid)
+    seed = P.shash(pid) & 0xffff
+    big = max(s) > 0.4
+    oem_face(Face(art, reg["front"]), it, kraft, seed, label=True, big=big)
+    oem_face(Face(art, reg["back"]), it, kraft, seed, label=False, big=big)
+    oem_face(Face(art, reg["left"]), it, kraft, seed, label=False)
+    oem_face(Face(art, reg["right"]), it, kraft, seed, label=True)
+    for n in ("top", "bottom", "flapL", "flapR"):
+        F_ = Face(art, reg[n])
+        oem_bg(F_, it, kraft)
+    T = Face(art, reg["top"])
+    logo(T, it, T.X(0.5), T.Y(0.5), T.m * 0.14, it.get("ink", (0.1, 0.1, 0.11)), align="CENTER", valign="CENTER", maxw=T.w * 0.6)
+    art.render("box_" + pid)
+    art.dispose()
+    return reg, W, H
+
+
 # ---------------------------------------------------------------- blister card and bag header art
 
 BLISTER_UV = {"front": (8 / 1024, 8 / 1024, 508 / 1024, 1016 / 1024), "back": (516 / 1024, 8 / 1024, 1016 / 1024, 1016 / 1024)}
@@ -1025,7 +1121,8 @@ def shot_paths(pid):
 
 
 class Ctx:
-    """Everything a rig builder needs: the item, its size, the art atlas and the inner print."""
+    """Everything a rig builder needs: the item, its size, the art atlas and the inner print. Catalogue items add
+    docs (the papers, in the part's "docs" order), bounds (the part's measured bounds) and kind."""
 
     def __init__(self, pid, it, s, reg=None, W=None, H=None, fw=None, inner=None, hero=None):
         self.pid, self.it, self.s = pid, it, s
@@ -1038,11 +1135,115 @@ class Ctx:
         self.sw = self.inner.get("sw", {})
         self.hero = hero
         self.cat = it["cat"]
+        self.docs = it.get("docs")            # None for the hand-written items: their rigs keep their own papers
+        self.bounds = it.get("bounds")
+        self.kind = it.get("kind")
+
+
+# ---------------------------------------------------------------- the rig modules and the catalogue
+
+# Rig modules: each may define BUILDERS {kind: fn(ctx) -> Rig}, NOTES {pid: text}, and optionally ITEMS {pid: item}
+# (hand-written items), item(pid, it) (adjusts the catalogue items of its kinds in place: style, words, pose),
+# ART {kind: fn(pid, it, s, hero, kraft) -> (reg, W, H, fw) or None} (its own printed art; the default is the
+# retail/carton atlas, style "oem" the plain OEM board with labels), SIZE {kind: fn(pid, it) -> (x, y, z)} (box size
+# from it["bounds"]) and previews(rig, ctx). A missing module is skipped, so each can be developed on its own.
+RIG_MODULES = ("rig_products", "rig_oem", "rig_rack", "rig_new")
+_mods = None
+_catalog_loaded = [False]
+
+
+def rig_modules():
+    global _mods
+    if _mods is None:
+        import importlib
+        _mods = []
+        for name in RIG_MODULES:
+            try:
+                _mods.append(importlib.import_module(name))
+            except ModuleNotFoundError as ex:
+                if ex.name != name:
+                    raise
+    return _mods
+
+
+def module_for(kind):
+    for m in rig_modules():
+        if kind in getattr(m, "BUILDERS", {}):
+            return m
+    raise KeyError(f"no rig module builds kind {kind!r}")
+
+
+def load_catalog():
+    """Adds the catalogue's items (box_catalog) and the rig modules' own items to ITEMS (once)."""
+    if _catalog_loaded[0]:
+        return
+    import box_catalog as BC
+    for pid, it in BC.items().items():
+        if pid in ITEMS:
+            continue
+        for m in rig_modules():
+            if it["kind"] in getattr(m, "BUILDERS", {}):
+                if hasattr(m, "item"):
+                    m.item(pid, it)
+                break
+        ITEMS[pid] = it
+    for m in rig_modules():
+        for pid, it in getattr(m, "ITEMS", {}).items():
+            ITEMS[pid] = it
+    _catalog_loaded[0] = True
+
+
+def item_kind(pid, it):
+    import rig_products as RP
+    return it.get("kind") or RP.kind_of(pid, it)
+
+
+def ensure_bounds(pid, it):
+    """Measures a catalogue part's bounds from its FBX (once) and registers them for the rig builders."""
+    import rig_products as RP
+    if "kind" not in it:
+        return
+    if it.get("bounds") is None:
+        import box_catalog as BC
+        it["bounds"] = BC.measure(it.get("model_id", pid))
+    if it["bounds"] is not None:
+        RP.PART_BOUNDS.setdefault(pid, it["bounds"])
+        RP.PART_BOUNDS.setdefault(it.get("model_id", pid), it["bounds"])
+    for mid in it.get("acc_models", []):
+        if mid not in RP.PART_BOUNDS:
+            import box_catalog as BC
+            b = BC.measure(mid)
+            if b is not None:
+                RP.PART_BOUNDS[mid] = b
+
+
+def resolve_size(pid, it):
+    """The box size (A_HIT_0): a hand-written item's PartFactory.BoxSize, a catalogue item's size from its bounds."""
+    if it.get("box_size"):
+        return tuple(it["box_size"])
+    if "kind" not in it:
+        return box_size(pid, it["cat"])
+    ensure_bounds(pid, it)
+    kind = it["kind"]
+    import box_catalog as BC
+    s = None
+    for m in rig_modules():
+        fn = getattr(m, "SIZE", {}).get(kind)
+        if fn:
+            s = fn(pid, it)
+            break
+    if s is None:
+        s = BC.size(kind, it)
+    it["box_size"] = tuple(s)
+    return it["box_size"]
 
 
 def build(pid, do_shots=True, do_preview=True):
     import rig_products as RP
     it = ITEMS[pid]
+    kind = item_kind(pid, it)
+    mod = module_for(kind)
+    s = resolve_size(pid, it)
     os.makedirs(SHOTS, exist_ok=True)
     hero, ink_name = shot_paths(pid)
     used = "cached"
@@ -1053,22 +1254,29 @@ def build(pid, do_shots=True, do_preview=True):
     ink_shot = None
     if it["style"] == "carton":
         ink_shot = line_art(hero, ink_name, it["ink"])
-    s = box_size(pid, it["cat"])
     P.reset()
     kraft_texture()
     inner = inner_art(pid, it)
-    if it["style"] == "blister":
+    art = getattr(mod, "ART", {}).get(kind)
+    if art is not None:
+        out = art(pid, it, s, hero, kraft)
+        ctx = Ctx(pid, it, s, *out, inner=inner, hero=hero) if out else Ctx(pid, it, s, inner=inner, hero=hero)
+    elif it["style"] == "blister":
         compose_blister(pid, it)
         ctx = Ctx(pid, it, s, inner=inner, hero=hero)
     elif it["style"] == "bag":
         compose_header(pid, it, hero)
         ctx = Ctx(pid, it, s, inner=inner, hero=hero)
+    elif it["style"] == "oem":
+        fw = min(s[0] * 0.3, s[2] * 0.45)
+        reg, W, H = compose_oem(pid, it, s, fw, hero, kraft)
+        ctx = Ctx(pid, it, s, reg, W, H, fw, inner, hero)
     else:
         fw = min(s[0] * 0.3, s[2] * 0.45)
         reg, W, H = compose(pid, it, s, fw, hero, ink_shot, kraft)
         ctx = Ctx(pid, it, s, reg, W, H, fw, inner, hero)
     P.reset()
-    rig = RP.BUILDERS[RP.kind_of(pid, it)](ctx)
+    rig = mod.BUILDERS[kind](ctx)
     bid = "box_" + pid
     rig.finalize()
     bad = rig.check()
@@ -1080,24 +1288,43 @@ def build(pid, do_shots=True, do_preview=True):
         except (RuntimeError, OSError) as ex:
             print("EXPORT RETRY", bid, ex)
             time.sleep(3.0)
-    notes = RP.NOTES.get(pid, "")
+    notes = getattr(mod, "NOTES", {}).get(pid, "")
     tris, meshes = P.write_report(rig.root, bid, f"shot from: {used}\n{notes}" + ("\nCHECK: " + "; ".join(bad) if bad else ""))
     if do_preview:
-        RP.previews(rig, ctx)
+        getattr(mod, "previews", RP.previews)(rig, ctx)
     return tris, meshes, used
+
+
+def select(args):
+    """Part ids from the command line: part ids, box ids, catalogue family names (cpus, gpus, ...), kind:<kind>,
+    or --catalog (every catalogue part). None = the hand-written items."""
+    import box_catalog as BC
+    out = []
+    for a in args:
+        if a == "--catalog":
+            out += [pid for pid, it in ITEMS.items() if "kind" in it]
+        elif a in BC.FAMILIES:
+            out += [pid for pid, it in ITEMS.items() if it.get("family") == a]
+        elif a.startswith("kind:"):
+            out += [pid for pid, it in ITEMS.items() if it.get("kind") == a[5:]]
+        elif not a.startswith("--"):
+            out.append(a[4:] if a.startswith("box_") else a)
+    return out
 
 
 def main(argv=None):
     argv = list(argv or [])
     do_shots = "--noshots" not in argv
     do_prev = "--nopreview" not in argv
-    ids = [a[4:] if a.startswith("box_") else a for a in argv if not a.startswith("--")]
-    ids = [i for i in ids if i not in KEEP]
+    hand = [k for k in ITEMS]
+    load_catalog()
+    ids = select(argv)
+    ids = [i for i in ids if i not in KEEP or "kind" in ITEMS.get(i, {})]
     P.reset()
     P.write_palette()
     tape_textures()
     out = {}
-    for pid in (ids or list(ITEMS)):
+    for pid in (ids or hand):
         if pid not in ITEMS:
             print("UNKNOWN id", pid)
             continue

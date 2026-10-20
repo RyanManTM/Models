@@ -202,6 +202,95 @@ def flat_frame(o, normal=(0, 1, 0), top=(0, 0, -1)):
     return F(o, normal, top)
 
 
+# ---------------------------------------------------------------- catalogue papers: one A_ITEM_DOC per "docs" entry
+
+# doc kind (the catalogue's names): (form, nominal (w, h, t), label); each rig scales them to its box
+PAPERS = {
+    "guide": ("leaflet", (0.120, 0.085, 0.0012), "quick install guide"),
+    "quick-start": ("leaflet", (0.140, 0.100, 0.0012), "quick start guide"),
+    "manual": ("booklet", (0.105, 0.148, 0.003), "user manual"),
+    "warranty": ("card", (0.088, 0.056, 0.0004), "warranty card"),
+    "sticker": ("sheet", (0.064, 0.044, 0.0006), "case badge sticker"),
+    "driver": ("card", (0.120, 0.080, 0.0004), "driver note"),
+    "safety": ("sheet", (0.105, 0.148, 0.0006), "safety sheet"),
+    "slip": ("slip", (0.105, 0.099, 0.0009), "packing slip"),
+}
+
+
+def is_catalog(ctx):
+    """True for a catalogue item (its papers come from its "docs" list); the hand-written items keep their rigs."""
+    return getattr(ctx, "docs", None) is not None
+
+
+def paper_list(ctx, sizes=None, fit=None, booklets_last=False, forms=None):
+    """The papers of a catalogue box in its part's docs order: [(kind, form, (w, h, t), label)]. sizes: per-kind
+    (or per-form) size overrides; forms: per-kind form overrides (a small box's guide is a card); fit=(w, h): a paper
+    bigger than that is scaled down to fit."""
+    out = []
+    for k in ctx.docs:
+        form, size, label = PAPERS.get(k, ("sheet", (0.105, 0.148, 0.0006), k))
+        if forms and k in forms:
+            form = forms[k]
+        if sizes:
+            size = sizes.get(k, sizes.get(form, size))
+        if fit:
+            sc = min(1.0, fit[0] / size[0], fit[1] / size[1])
+            size = (round(size[0] * sc, 4), round(size[1] * sc, 4), size[2])
+        out.append((k, form, size, label))
+    if booklets_last:
+        out.sort(key=lambda p: p[1] == "booklet")
+    return out
+
+
+def pile(R, plist, x, y, z, order, under, parent=None, first=0, step=(0.003, -0.002), frame_fn=None):
+    """Papers lying in one pile on a support at height y, the first of plist on top. The top paper gets order/under,
+    each one below is under the one above it (order + 1, ...). Returns (anchor names top first, the pile's height)."""
+    frame_fn = frame_fn or flat_frame
+    n = len(plist)
+    names = [f"A_ITEM_DOC_{first + i}" for i in range(n)]
+    ys = [0.0] * n
+    yy = y
+    for i in reversed(range(n)):
+        ys[i] = yy
+        yy += plist[i][2][2] + 0.0002
+    for i, (k, form, size, lab) in enumerate(plist):
+        doc(R, first + i, frame_fn((x + step[0] * i, ys[i], z + step[1] * i)), size, k, form, order + i,
+            under=(under if i == 0 else [names[i - 1]]), parent=parent, label=lab)
+    return names, yy - y
+
+
+def floor_papers(R, plist, cx, y, cz, W, D, order, under, parent=None, first=0, gap=0.006):
+    """Lays papers flat on a W x D floor centred at (cx, cz), height y: side by side along x when they fit, else the
+    largest on the left and the rest in a pile on the right, else all in one pile. Returns (names in plist order,
+    the next free order, the layer's height)."""
+    ws = [p[2][0] for p in plist]
+    n = len(plist)
+    if n == 0:
+        return [], order, 0.0
+    if sum(ws) + gap * (n - 1) <= W:
+        x = cx - (sum(ws) + gap * (n - 1)) / 2
+        names = []
+        for i, (k, form, size, lab) in enumerate(plist):
+            doc(R, first + i, flat_frame((x + size[0] / 2, y, cz + (D - size[1]) / 2 * (0.3 if i % 2 else -0.3))), size, k,
+                form, order, under=under, parent=parent, label=lab)
+            names.append(f"A_ITEM_DOC_{first + i}")
+            x += size[0] + gap
+        return names, order + 1, max(p[2][2] for p in plist)
+    if n > 1 and ws[0] + max(ws[1:]) + gap <= W:
+        k, form, size, lab = plist[0]
+        doc(R, first, flat_frame((cx - W / 2 + size[0] / 2, y, cz)), size, k, form, order, under=under, parent=parent, label=lab)
+        rest, h = pile(R, plist[1:], cx + W / 2 - max(ws[1:]) / 2, y, cz, order, under, parent=parent, first=first + 1)
+        return [f"A_ITEM_DOC_{first}"] + rest, order + len(rest), max(h, size[2])
+    names, h = pile(R, plist, cx, y, cz, order, under, parent=parent, first=first)
+    return names, order + n, h
+
+
+def explode_docs(R, names, base, step):
+    """Exploded-view offsets for a list of paper anchors (base + i * step)."""
+    for i, n in enumerate(names):
+        R.explode[n] = tuple(base[k] + step[k] * i for k in range(3))
+
+
 def lean_stack(items, y_floor, z_wall, deg, gap=0.0004, dx=0.0):
     """Frames for papers standing on the floor, leaning back against a wall at z_wall (covers facing +z), each in
     front of the previous one. items = [(w, h, t), ...]."""
@@ -362,6 +451,9 @@ def build_cpu(ctx):
     docs = [("guide", "leaflet", (0.096, 0.062, 0.0012), "quick install guide"),
             ("warranty", "card", (0.088, 0.056, 0.0004), "warranty card"),
             ("sticker", "sheet", (0.064, 0.044, 0.0006), "case badge sticker")]
+    if is_catalog(ctx):
+        docs = paper_list(ctx, sizes={"leaflet": (0.096, 0.062, 0.0012), "card": (0.088, 0.056, 0.0004),
+                                      "sheet": (0.064, 0.044, 0.0006), "booklet": (0.090, 0.062, 0.0025)})
     frs = lean_stack([d[2] for d in docs], t + 0.0003, zwall + 0.0003, 5.0, dx=0.004)
     for i, (k, form, size, lab) in enumerate(docs):
         doc(R, i, frs[i], size, k, form, 3, under=opened, label=lab)
@@ -369,6 +461,8 @@ def build_cpu(ctx):
     R.explode = {"A_INSERT_CARD_0": (0, 0.11, 0.0), "A_INSERT_CLAM_0": (0, 0.03, 0.0), "A_ITEM_PART_0": (0, 0.03, 0.0),
                  "A_ITEM_DOC_0": (0.13, 0.02, 0.04), "A_ITEM_DOC_1": (0.12, 0.0, 0.07), "A_ITEM_DOC_2": (0.11, -0.02, 0.10),
                  "A_SEAL_0": (0, 0.02, 0.03), "A_SEAL_1": (0, 0.02, 0.03)}
+    if len(docs) > 3:
+        explode_docs(R, [f"A_ITEM_DOC_{i}" for i in range(3, len(docs))], (0.10, -0.04, 0.13), (-0.01, -0.02, 0.03))
     NOTES[pid] = ("CPU: seals (0) -> tuck lid A_FLAP_0 (1) -> dust flaps A_FLAP_1/2 (2) -> tray A_INSERT_CARD_0 and the 3 papers "
                   "behind it (3) -> clamshell lid A_CLAMLID_0 (4, on the tray once it is out) -> CPU (5) -> clamshell base (6).")
     return R
@@ -462,12 +556,20 @@ def build_gpu(ctx):
     # --- the card's pose: fans up, bracket at +x, top edge to the back, centred, on the foam floor
     lo, hi = PART_BOUNDS[pid]
     yf = y0 + tb + 0.0022 + 0.012            # top of the foam's floor layer (papers under the foam)
+    plist = []
+    if is_catalog(ctx):                       # the papers first: a pile lifts the foam
+        bx_, bz_ = sx - 2 * tl - 0.0006 - 2 * tb, Lz - 2 * tl - 0.0006 - 2 * tb
+        plist = paper_list(ctx, sizes={"leaflet": (0.170, 0.115, 0.0016), "card": (0.120, 0.080, 0.0004),
+                                       "sheet": (0.070, 0.050, 0.0006), "booklet": (0.148, 0.105, 0.0030)},
+                           fit=(bx_ * 0.62, bz_ - 0.012))
+        ph = sum(p_[2][2] + 0.0002 for p_ in plist)
+        yf = y0 + tb + max(0.0022, ph + 0.0006) + 0.012
     ax = -(lo[0] + hi[0]) / 2
     az = (lo[2] + hi[2]) / 2
     ay = yf + hi[1] + 0.0004
     # --- the black PE foam cradle: laminated die-cut layers, a pocket of the card's outline, finger notches
     fx, fz = bx - 2 * tb - 0.001, bz - 2 * tb - 0.001
-    fy0 = y0 + tb + 0.0022
+    fy0 = y0 + tb + 0.0022 if not plist else yf - 0.012
     fy1 = min(ay - lo[1] - 0.010, y1 - tl - 0.012)
     foam = R.anchor("A_INSERT_FOAM_0", F((0, fy0, 0)), (fx, fy1 - fy0, fz), lift="+y", dist=0.09, label="foam cradle",
                     order=3, under=["A_ITEM_PART_0"])
@@ -498,12 +600,20 @@ def build_gpu(ctx):
     papers = [("guide", "leaflet", (0.170, 0.115, 0.0016), (-0.075, -0.004), "quick install guide"),
               ("driver", "card", (0.120, 0.080, 0.0004), (0.080, 0.010), "driver note"),
               ("sticker", "sheet", (0.070, 0.050, 0.0006), (0.105, -0.035), "case badge sticker")]
-    for i, (k, form, size, (px, pz), lab) in enumerate(papers):
-        doc(R, i, flat_frame((px, yd + (0.0005 if i == 2 else 0.0), pz)), size, k, form, 4, under=[foam], label=lab)
+    if not is_catalog(ctx):
+        for i, (k, form, size, (px, pz), lab) in enumerate(papers):
+            doc(R, i, flat_frame((px, yd + (0.0005 if i == 2 else 0.0), pz)), size, k, form, 4, under=[foam], label=lab)
+        names = []
+    else:
+        names, _, _ = floor_papers(R, plist, 0.0, yd, 0.0, bx_ - 0.01, bz_ - 0.01, 4, [foam])
     R.anchor("A_HIT_0", F((0, sy / 2, 0)), (sx, sy, sz))
     R.explode = {"A_SLEEVE_0": (sx + 0.06, 0, 0), "A_LID_0": (0, 0.20, -0.20), "A_INSERT_FOAM_0": (0, 0.10, 0),
                  "A_ITEM_PART_0": (0, 0.09, 0), "A_ITEM_DOC_0": (0, 0.0, 0.20), "A_ITEM_DOC_1": (0.02, 0.0, 0.21),
                  "A_ITEM_DOC_2": (0.0, 0.0, 0.24)}
+    if names:
+        for n in ("A_ITEM_DOC_0", "A_ITEM_DOC_1", "A_ITEM_DOC_2"):
+            R.explode.pop(n, None)
+        explode_docs(R, names, (-0.06, 0.0, sz + 0.04), (0.06, 0.004, 0.02))
     R.open_view = (24, 50)
     NOTES[pid] = ("GPU: sleeve A_SLEEVE_0 (0) -> lid A_LID_0 (1) -> card in its silver bag A_ITEM_PART_0 (2, rests in the foam) "
                   "-> PE foam cradle A_INSERT_FOAM_0 (3) -> 3 papers under the foam (4).")
@@ -584,19 +694,48 @@ def build_mb(ctx):
     yc = y_floor + 0.0001
     under_t = [tray]
     io = "io_" + pid[3:]
-    R.anchor("A_ITEM_ACC_0", F((0.060, yc + 0.0068 + 0.0006, 0.075), NZ, X), bsize(io, 0.004), id=io, bag="clear",
-             frame="model", label="I/O shield", order=5, under=under_t)
+    has_io = True
+    if is_catalog(ctx):              # the catalogue names the board's I/O shield; a pre-attached one is on the board
+        spec = ctx.it["part"]["specs"]
+        io = spec.get("io_shield")
+        has_io = bool(io) and not spec.get("io_preattached") and io in PART_BOUNDS
+    if has_io:
+        R.anchor("A_ITEM_ACC_0", F((0.060, yc + 0.0068 + 0.0006, 0.075), NZ, X), bsize(io, 0.004), id=io, bag="clear",
+                 frame="model", label="I/O shield", order=5, under=under_t)
     R.anchor("A_ITEM_CORD_0", flat_frame((0.085, yc, -0.040)), (0.120, 0.075, 0.012), kind="sata", tie="twist",
              label="SATA cables", order=5, under=under_t)
     R.anchor("A_ITEM_HW_0", flat_frame((-0.005, yc, -0.075)), (0.050, 0.070, 0.004), label="M.2 SCREW", order=5,
              under=under_t)
-    doc(R, 0, flat_frame((-0.075, yc, 0.020)), (0.148, 0.210, 0.0035), "manual", "booklet", 6, under=["A_ITEM_DOC_1"],
-        label="user manual")
-    doc(R, 1, flat_frame((-0.072, yc + 0.0036, 0.016)), (0.140, 0.200, 0.0016), "guide", "leaflet", 5, under=under_t,
-        label="quick install poster")
-    doc(R, 2, flat_frame((0.010, yc, 0.060)), (0.090, 0.060, 0.0004), "warranty", "card", 5, under=under_t, label="warranty card")
-    doc(R, 3, flat_frame((0.010, yc, -0.005)), (0.070, 0.050, 0.0006), "sticker", "sheet", 5, under=under_t,
-        label="case badge sticker")
+    if not is_catalog(ctx):
+        doc(R, 0, flat_frame((-0.075, yc, 0.020)), (0.148, 0.210, 0.0035), "manual", "booklet", 6, under=["A_ITEM_DOC_1"],
+            label="user manual")
+        doc(R, 1, flat_frame((-0.072, yc + 0.0036, 0.016)), (0.140, 0.200, 0.0016), "guide", "leaflet", 5, under=under_t,
+            label="quick install poster")
+        doc(R, 2, flat_frame((0.010, yc, 0.060)), (0.090, 0.060, 0.0004), "warranty", "card", 5, under=under_t, label="warranty card")
+        doc(R, 3, flat_frame((0.010, yc, -0.005)), (0.070, 0.050, 0.0006), "sticker", "sheet", 5, under=under_t,
+            label="case badge sticker")
+    else:
+        # the same slots, by kind: the manual on the floor with the poster folded on it, the small papers beside them
+        plist = paper_list(ctx)
+        slots = [((0.010, 0.060), (0.090, 0.060)), ((0.010, -0.005), (0.070, 0.050)), ((0.010, 0.020), (0.070, 0.050))]
+        if not has_io:
+            slots.insert(0, ((0.065, 0.072), (0.090, 0.060)))
+        big = {"manual": None, "quick-start": None, "guide": None}
+        for i, (k, form, size, lab) in enumerate(plist):
+            if k in big and big[k] is None and form in ("booklet", "leaflet"):
+                big[k] = i
+        poster = big["quick-start"] if big["quick-start"] is not None else big["guide"]
+        for i, (k, form, size, lab) in enumerate(plist):
+            if i == big["manual"]:
+                doc(R, i, flat_frame((-0.075, yc, 0.020)), (0.148, 0.210, 0.0035), k, "booklet",
+                    6 if poster is not None else 5, under=[f"A_ITEM_DOC_{poster}"] if poster is not None else under_t,
+                    label=lab)
+            elif i == poster:
+                doc(R, i, flat_frame((-0.072, yc + (0.0036 if big["manual"] is not None else 0.0), 0.016)),
+                    (0.140, 0.200, 0.0016), k, "leaflet", 5, under=under_t, label="quick install poster")
+            else:
+                (px, pz), (w, h) = slots.pop(0)
+                doc(R, i, flat_frame((px, yc, pz)), (w, h, size[2]), k, form, 5, under=under_t, label=lab)
     R.anchor("A_HIT_0", F((0, sy / 2, 0)), (sx, sy, sz))
     R.explode = {"A_ITEM_PART_0": (0, 0.11, 0), "A_INSERT_FOAM_0": (0, 0.05, 0), "A_INSERT_CARD_0": (0, 0.10, 0),
                  "A_SEAL_0": (-0.03, 0, 0), "A_SEAL_1": (0.03, 0, 0),
@@ -675,8 +814,14 @@ def build_ram(ctx):
     fr = F((bxc, yfl, 0), Y, NZ)              # local x = box x, local y = -box z, local z up
     blister(R, "blister", fr, (flw, fld), [(cav_w, cav_d, 0.003, 0, -z_) for z_ in zc], depth, 0.0005, "clear_plastic",
             bl, lip=0.0010)
+    plist = []
+    lid_order, lid_under = 5, ["A_SEAL_0", "A_ITEM_DOC_0"]
+    if is_catalog(ctx):              # the papers lie in a pile on the blister lid: the lid opens after the last one
+        plist = paper_list(ctx, sizes={"guide": (0.120, 0.085, 0.0004), "warranty": (0.100, 0.065, 0.0004)},
+                           forms={"guide": "card"})
+        lid_order, lid_under = 4 + max(1, len(plist)), ["A_SEAL_0"] + ([f"A_ITEM_DOC_{len(plist) - 1}"] if plist else [])
     lidn = R.anchor("A_CLAMLID_0", F((bxc, yfl + 0.0005, -fld / 2 + 0.006)), (flw, 0.008, fld - 0.006), parent=bl,
-                    hinge="x", open=-165, label="blister lid", order=5, under=["A_SEAL_0", "A_ITEM_DOC_0"])
+                    hinge="x", open=-165, label="blister lid", order=lid_order, under=lid_under)
     frl = F((bxc, yfl + 0.0005, 0.003), Y, NZ)
     blister(R, "blister_lid", frl, (flw, fld - 0.006), [(cav_w + 0.001, cav_d + 0.001, 0.003, 0, -(z_ - 0.003)) for z_ in zc],
             0.0050, 0.0005, "clear_plastic", lidn, lip=0.0, dome=True)
@@ -687,10 +832,13 @@ def build_ram(ctx):
     for i, z_ in enumerate(zc):
         zf = z_ + sh / 2
         R.anchor(f"A_ITEM_PART_{i}", F((bxc, yfl - depth + 0.0005 + sth / 2 + 0.0004, zf), NZ, X), bsize(pid, 0.0012),
-                 parent=bl, bag="none", guard=1, label="memory stick", order=6, under=[lidn])
+                 parent=bl, bag="none", guard=1, label="memory stick", order=lid_order + 1, under=[lidn])
     # the installation card lying on the blister lid
-    doc(R, 0, flat_frame((bxc + 0.004, yfl + 0.0056, 0.0), Y, NZ), (0.120, 0.085, 0.0004), "guide", "card", 4, under=[bl],
-        parent=bl, label="installation card")
+    if not is_catalog(ctx):
+        doc(R, 0, flat_frame((bxc + 0.004, yfl + 0.0056, 0.0), Y, NZ), (0.120, 0.085, 0.0004), "guide", "card", 4, under=[bl],
+            parent=bl, label="installation card")
+    else:
+        pile(R, plist, bxc + 0.004, yfl + 0.0056, 0.0, 4, [bl], parent=bl, frame_fn=lambda o: flat_frame(o, Y, NZ))
     R.anchor("A_HIT_0", F((0, sy / 2, 0)), (sx, sy, sz))
     R.explode = {"A_INSERT_BLISTER_0": (0.22, 0.03, 0), "A_ITEM_DOC_0": (0, 0.05, 0), "A_SEAL_0": (0, 0.02, 0.02),
                  "A_ITEM_PART_0": (0, 0.03, 0.02), "A_ITEM_PART_1": (0, 0.03, -0.02)}
@@ -716,13 +864,20 @@ def build_ssd_m2(ctx):
     lo, hi = PART_BOUNDS[pid]
     # papers on the floor, under the blister
     yc = t + 0.0001
-    doc(R, 0, flat_frame((-0.004, yc, 0.002)), (0.090, 0.060, 0.0004), "guide", "card", 4, under=["A_INSERT_BLISTER_0"],
-        label="installation card")
-    doc(R, 1, flat_frame((-0.002, yc + 0.0005, -0.002)), (0.088, 0.058, 0.0004), "warranty", "card", 4,
-        under=["A_INSERT_BLISTER_0"], label="warranty card")
+    depth = 0.0042
+    if not is_catalog(ctx):
+        doc(R, 0, flat_frame((-0.004, yc, 0.002)), (0.090, 0.060, 0.0004), "guide", "card", 4, under=["A_INSERT_BLISTER_0"],
+            label="installation card")
+        doc(R, 1, flat_frame((-0.002, yc + 0.0005, -0.002)), (0.088, 0.058, 0.0004), "warranty", "card", 4,
+            under=["A_INSERT_BLISTER_0"], label="warranty card")
+    else:
+        plist = paper_list(ctx, sizes={"guide": (0.090, 0.060, 0.0004), "warranty": (0.088, 0.058, 0.0004)},
+                           forms={"guide": "card"}, fit=(0.096, 0.066))
+        names, ph = pile(R, plist, -0.003, yc, 0.0, 4, ["A_INSERT_BLISTER_0"], step=(0.002, -0.004))
+        yc += max(0.0, ph - 0.0012)                      # a pile of more than two cards lifts the blister
+        depth = max(0.0042, (hi[2] - lo[2]) + 0.0021)    # heatsink drives sit in a deeper cavity
     flw, fld = 0.098, sz - 2 * t - 0.006
     bxc = -sx / 2 + t + 0.0008 + flw / 2
-    depth = 0.0042
     yb0 = yc + 0.0011
     yfl = yb0 + depth
     bl = R.anchor("A_INSERT_BLISTER_0", F((bxc, yb0, 0)), (flw, 0.010, fld), lift="+x", dist=0.12, label="blister tray",
@@ -739,7 +894,7 @@ def build_ssd_m2(ctx):
                    label="blister lid", order=4, under=[bl])
     blister(R, "blister_lid", F((bxc, yfl + 0.0005, 0), Y, NZ), (flw, fld), [(cw + 0.001, cd + 0.001, 0.002, 0, 0)], 0.0028,
             0.0005, "clear_plastic", lid, lip=0.0, dome=True)
-    R.anchor("A_ITEM_PART_0", F((bxc, yfl - depth + 0.0001, 0), Y, NZ), bsize(pid, 0.001), parent=bl, bag="none",
+    R.anchor("A_ITEM_PART_0", F((bxc, yfl - depth + 0.0001 - lo[2], 0), Y, NZ), bsize(pid, 0.001), parent=bl, bag="none",
              label="M.2 SSD", order=5, under=[lid])
     R.anchor("A_HIT_0", F((0, sy / 2, 0)), (sx, sy, sz))
     R.explode = {"A_INSERT_BLISTER_0": (0.15, 0.02, 0), "A_ITEM_PART_0": (0, 0.02, 0), "A_SEAL_0": (0.03, 0.01, 0),
@@ -778,10 +933,17 @@ def build_ssd_sata(ctx):
                                (rr(0.020, 0.010, 0.0048, 0, sg * (cd / 2 + 0.003), 40), -depth + 0.003),
                                (rr(0.017, 0.007, 0.0034, 0, sg * (cd / 2 + 0.003), 40), -depth + 0.0018)], 0.0007,
                 "black_plastic", fr, anc=tray, ref=1, up=1)
-    R.anchor("A_ITEM_PART_0", F((bxc, yfl - depth + 0.0006 - lo[1] + 0.0004, 0), NZ, Y), bsize(pid, 0.0035), parent=tray, bag="clear",
-             label="2.5in SSD", order=5, under=["A_ITEM_DOC_0"])
-    doc(R, 0, flat_frame((bxc, yfl + 0.0002, 0.0)), (0.120, 0.080, 0.0004), "guide", "card", 4, under=[tray], parent=tray,
-        label="installation card")
+    if not is_catalog(ctx):
+        R.anchor("A_ITEM_PART_0", F((bxc, yfl - depth + 0.0006 - lo[1] + 0.0004, 0), NZ, Y), bsize(pid, 0.0035), parent=tray,
+                 bag="clear", label="2.5in SSD", order=5, under=["A_ITEM_DOC_0"])
+        doc(R, 0, flat_frame((bxc, yfl + 0.0002, 0.0)), (0.120, 0.080, 0.0004), "guide", "card", 4, under=[tray], parent=tray,
+            label="installation card")
+    else:                            # the papers in a pile on the tray, over the drive
+        plist = paper_list(ctx, sizes={"guide": (0.120, 0.080, 0.0004), "warranty": (0.100, 0.065, 0.0004)},
+                           forms={"guide": "card"}, fit=(0.124, 0.085))
+        names, _ = pile(R, plist, bxc, yfl + 0.0002, 0.0, 4, [tray], parent=tray)
+        R.anchor("A_ITEM_PART_0", F((bxc, yfl - depth + 0.0006 - lo[1] + 0.0004, 0), NZ, Y), bsize(pid, 0.0035), parent=tray,
+                 bag="clear", label="2.5in SSD", order=4 + len(plist), under=[names[-1]] if names else [tray])
     R.anchor("A_HIT_0", F((0, sy / 2, 0)), (sx, sy, sz))
     R.explode = {"A_INSERT_BLISTER_0": (0.19, 0.02, 0), "A_ITEM_PART_0": (0, 0.03, 0), "A_ITEM_DOC_0": (0, 0.07, 0),
                  "A_SEAL_0": (0.03, 0.01, 0)}
@@ -895,6 +1057,17 @@ def eps_cap(R, name, anc, x_wall, inward, y0, y1, zw, pocket, pocket_c, Lc, Dp, 
     return ob
 
 
+def psu_stub(pid, x0):
+    """A fixed-cable PSU's cable bundle stub past its back face (x < x0): its (local y, local z) centre and radius,
+    from the measured model; None when the model has none."""
+    import box_catalog as BC
+    b = BC.slab(pid, 0, -1.0, x0 - 0.002)
+    if b is None:
+        return None
+    (lx, ly, lz), (hx, hy, hz) = b
+    return (ly + hy) / 2, (lz + hz) / 2, max(hy - ly, hz - lz) / 2 + 0.004
+
+
 def build_psu(ctx):
     pid = ctx.pid
     sx, sy, sz = ctx.s
@@ -904,22 +1077,43 @@ def build_psu(ctx):
     rsc_box(R, ctx, t, inner, tape_tag="tape_clear")
     short = ["A_FLAP_2", "A_FLAP_3"]
     lo, hi = PART_BOUNDS[pid]
+    cat = is_catalog(ctx)
     gold = pid == "psu_750"
+    semi = False
+    x0, x1 = -0.0704, 0.073                    # the body's back and front faces (local x), past them the cable stub
+    width = 0.1521
+    if cat:                                    # fully modular: EPS caps, fabric bag, cable pouch; else pulp and a clear bag
+        spec = ctx.it["part"]["specs"]
+        gold = spec.get("modular") == "full"
+        semi = spec.get("modular") == "semi"
+        x1 = hi[0]
+        x0 = hi[0] - spec["depth_mm"] / 1000.0
+        width = hi[2] - lo[2]
     xi = sx / 2 - t - 0.0005                  # inner wall faces at +-xi
     zi = sz / 2 - t - 0.0005
-    ybot = t + (0.003 if pid == "psu_750" else 0.008)   # the PSU's lowest face; the pulp caps need a thicker floor
+    ybot = t + (0.003 if gold else 0.008)      # the PSU's lowest face; the pulp caps need a thicker floor
     ay = ybot + hi[1]                          # fan up: local -y points up, so the bottom is local +y
     if gold:
-        ax = -0.016 - (-0.0704 + 0.073) / 2    # pushed to -x: an accessory compartment at the +x end
+        ax = -0.016 - (x0 + x1) / 2            # pushed to -x: an accessory compartment at the +x end
     else:
-        ax = 0.010 - (-0.0704 + 0.073) / 2     # body a bit to +x: the cable stub reaches into the -x cap
-    body_x0, body_x1 = ax - 0.0704, ax + 0.073
+        ax = 0.010 - (x0 + x1) / 2             # body a bit to +x: the cable stub reaches into the -x cap
+    body_x0, body_x1 = ax + x0, ax + x1
     ytop = ay - lo[1]                          # top of the PSU (the fan grille)
-    pocket = (0.1521 + 0.004, (hi[1] - lo[1]) + 0.004)
+    pocket = (width + 0.004, (hi[1] - lo[1]) + 0.004)
     pc = (0.0, (ybot + ytop) / 2)
     capk = "FOAM" if gold else "PULP"
     caps = []
     Dp = 0.022
+    # catalogue papers: one pile, the booklet at the bottom; the layers under it follow in order
+    plist = paper_list(ctx, booklets_last=True, fit=(0.105, 0.148)) if cat else []
+    npap = len(plist) if cat else 2
+    o_pouch = 3 + npap                         # the pouch (fully and semi-modular) right under the papers
+    o_cord = 3 + npap + (1 if semi else 0)     # fixed and semi-modular: the cord and the screws on the PSU
+    o_part = (o_pouch + 1) if gold else (o_cord + 1)
+    o_caps = o_part + 1
+    if not cat:
+        o_cord, o_pouch, o_part, o_caps = 5, 5, 6, 7
+    stub = psu_stub(ctx.it.get("model_id", pid), x0) if cat and not gold else None
     for i, (x_wall, inward, xend) in enumerate(((-xi, 1, body_x0), (xi, -1, body_x1))):
         nm = f"A_INSERT_{capk}_{i}"
         if gold and i == 1:
@@ -927,20 +1121,22 @@ def build_psu(ctx):
         Lc = abs(xend - x_wall) + Dp
         y1 = ytop + 0.0005 if gold else 2 * pc[1] - (t + 0.0002)   # EPS: saddle caps flush with the top; pulp: cups
         R.anchor(nm, F((x_wall, t, 0)), (Lc, y1 - t, 2 * zi), lift=("-x" if inward > 0 else "+x"), dist=0.06,
-                 with_="A_ITEM_PART_0", label=("EPS end cap" if gold else "pulp end cap"), order=7, under=["A_ITEM_PART_0"])
+                 with_="A_ITEM_PART_0", label=("EPS end cap" if gold else "pulp end cap"), order=o_caps, under=["A_ITEM_PART_0"])
         if gold:
             eps_cap(R, "cap", nm, x_wall, inward, t + 0.0002, y1, 2 * zi - 0.001, pocket, pc, Lc, Dp, recess=(i == 0))
         else:
             holes = [(0.030, (ay - 0.024) - (t + 0.0002 + y1) / 2, 0.018)] if i == 0 else []
+            if cat:
+                holes = [(stub[1], (ay - stub[0]) - (t + 0.0002 + y1) / 2, stub[2])] if (i == 0 and stub) else []
             pulp_cap(R, "cap", nm, x_wall, inward, t + 0.0002, y1, 2 * zi - 0.001, pocket, pc, Lc, Dp, holes=holes)
         caps.append(nm)
     if gold:
         # the cable pouch on the PSU and the caps, the papers on the pouch; cord and screws in the +x compartment
-        R.anchor("A_ITEM_PART_0", F((ax, ay, 0.0), NZ, NY), bsize(pid, 0.003), bag="fabric", label="power supply", order=6,
+        R.anchor("A_ITEM_PART_0", F((ax, ay, 0.0), NZ, NY), bsize(pid, 0.003), bag="fabric", label="power supply", order=o_part,
                  under=["A_ITEM_POUCH_0"])
         yp = ytop + 0.0008
         R.anchor("A_ITEM_POUCH_0", flat_frame((ax, yp, 0.0)), (0.150, 0.130, 0.017), label="modular cable pouch",
-                 order=5, under=["A_ITEM_DOC_0"])
+                 order=o_pouch, under=["A_ITEM_DOC_0" if not cat else f"A_ITEM_DOC_{npap - 1}"])
         yd = yp + 0.0172
         xc = (body_x1 + 0.012 + xi) / 2
         R.anchor("A_ITEM_CORD_0", F((xc - 0.008, t + 0.0005 + 0.045, 0.022), X, Y), (0.120, 0.090, 0.016), kind="c13",
@@ -949,24 +1145,37 @@ def build_psu(ctx):
                  label="4 x 6-32 SCREWS", order=3, under=short)
     else:
         # the power cord and the screw bag on the PSU between the caps, the papers across the caps
-        R.anchor("A_ITEM_PART_0", F((ax, ay, 0.0), NZ, NY), bsize(pid, 0.003), bag="clear", label="power supply", order=6,
-                 under=["A_ITEM_CORD_0", "A_ITEM_HW_0"])
         yp = ytop + 0.0003
         xm = (body_x0 + body_x1) / 2 + 0.004
+        top = "A_ITEM_DOC_0" if not cat else f"A_ITEM_DOC_{npap - 1}"
+        over = ["A_ITEM_POUCH_0"] if semi else [top]
+        R.anchor("A_ITEM_PART_0", F((ax, ay, 0.0), NZ, NY), bsize(pid, 0.003), bag="clear", label="power supply", order=o_part,
+                 under=["A_ITEM_CORD_0", "A_ITEM_HW_0"])
         R.anchor("A_ITEM_CORD_0", flat_frame((xm, yp, -0.030)), (0.090, 0.075, 0.014), kind="c13", tie="twist",
-                 label="power cord", order=5, under=["A_ITEM_DOC_0"])
-        R.anchor("A_ITEM_HW_0", flat_frame((xm, yp, 0.050)), (0.050, 0.045, 0.004), label="4 x 6-32 SCREWS", order=5,
-                 under=["A_ITEM_DOC_0"])
+                 label="power cord", order=o_cord, under=over)
+        R.anchor("A_ITEM_HW_0", flat_frame((xm, yp, 0.050)), (0.050, 0.045, 0.004), label="4 x 6-32 SCREWS", order=o_cord,
+                 under=over)
         yd = max(yp + 0.0143, 2 * pc[1] - (t + 0.0002) + 0.0003)
-    doc(R, 0, flat_frame((ax - 0.010, yd, 0.004)), (0.105, 0.148, 0.003), "manual", "booklet", 4, under=["A_ITEM_DOC_1"],
-        label="user manual")
-    doc(R, 1, flat_frame((ax - 0.006, yd + 0.0031, -0.002)), (0.105, 0.148, 0.0006), "safety", "sheet", 3, under=short,
-        label="safety sheet")
+        if semi:                               # the modular cables in their pouch, over the cord and the screws
+            R.anchor("A_ITEM_POUCH_0", flat_frame((xm, yp + 0.0145, 0.0)), (0.140, 0.120, 0.014), label="modular cable pouch",
+                     order=o_pouch, under=[top])
+            yd = max(yp + 0.0145 + 0.0142, yd)
+    if not cat:
+        doc(R, 0, flat_frame((ax - 0.010, yd, 0.004)), (0.105, 0.148, 0.003), "manual", "booklet", 4, under=["A_ITEM_DOC_1"],
+            label="user manual")
+        doc(R, 1, flat_frame((ax - 0.006, yd + 0.0031, -0.002)), (0.105, 0.148, 0.0006), "safety", "sheet", 3, under=short,
+            label="safety sheet")
+    else:
+        names, _ = pile(R, plist, ax - 0.008, yd, 0.0, 3, short, step=(0.003, -0.003))
     R.anchor("A_HIT_0", F((0, sy / 2, 0)), (sx, sy, sz))
     R.explode = {"A_ITEM_PART_0": (0, 0.16, 0), "A_ITEM_DOC_0": (0, 0.36, 0.12), "A_ITEM_DOC_1": (0, 0.38, 0.22),
                  "A_ITEM_CORD_0": (0.0, 0.30, -0.16), "A_ITEM_HW_0": (0.12, 0.30, -0.10), "A_ITEM_POUCH_0": (0, 0.30, 0),
                  caps[0]: (-0.07, 0.16, 0), caps[1]: (0.07, 0.16, 0),
                  "A_TAPE_0": (-0.03, 0.02, 0), "A_TAPE_1": (0, 0.03, 0), "A_TAPE_2": (0.03, 0.02, 0)}
+    if cat:
+        explode_docs(R, names, (0.0, 0.40, 0.12), (0.0, 0.02, 0.10))
+        if semi:
+            R.explode["A_ITEM_POUCH_0"] = (-0.14, 0.30, -0.02)
     R.open_view = (22, 55)
     R.explode_fill = 0.75
     if gold:
@@ -978,6 +1187,15 @@ def build_psu(ctx):
         NOTES[pid] = ("PSU 450: tape strip 0 (0) -> long flaps (1) -> short flaps (2) -> safety sheet (3) -> manual (4) -> power cord "
                       "and screw bag on the PSU (5) -> PSU in its clear bag, lifted out WITH its pulp caps (6) -> caps "
                       "A_INSERT_PULP_0/1 pulled off along -x/+x (7). Cap 0 has a hole for the cable bundle stub.")
+    if cat:
+        NOTES[pid] = (f"PSU ({'fully modular' if gold else 'semi-modular' if semi else 'fixed cables'}): tape strip 0 (0) -> "
+                      f"long flaps (1) -> short flaps (2) -> {npap} papers in a pile, booklet at the bottom (3..{2 + npap})"
+                      + (" with the power cord + screw bag standing in the +x compartment (3)" if gold else "")
+                      + (f" -> cable pouch ({o_pouch})" if gold else "")
+                      + ("" if gold else f"{' -> cable pouch (' + str(o_pouch) + ')' if semi else ''} -> power cord and screw "
+                         f"bag on the PSU ({o_cord})")
+                      + f" -> PSU in its {'fabric' if gold else 'clear'} bag, lifted out WITH its "
+                      f"{'EPS' if gold else 'pulp'} caps ({o_part}) -> caps pulled off along -x/+x ({o_caps}).")
     return R
 
 
@@ -1024,10 +1242,17 @@ def build_cooler_stock(ctx):
     lo, hi = PART_BOUNDS[pid]
     # the leaflet on the floor, under the clamshell
     yc = t + 0.0001
-    doc(R, 0, flat_frame((0.004, yc, 0.004)), (0.100, 0.070, 0.0015), "guide", "leaflet", 4, under=["A_INSERT_CLAM_0"],
-        label="quick install guide")
+    lift = 0.0
+    if not is_catalog(ctx):
+        doc(R, 0, flat_frame((0.004, yc, 0.004)), (0.100, 0.070, 0.0015), "guide", "leaflet", 4, under=["A_INSERT_CLAM_0"],
+            label="quick install guide")
+    else:
+        plist = paper_list(ctx, sizes={"leaflet": (0.100, 0.070, 0.0015), "booklet": (0.100, 0.070, 0.0025)},
+                           forms={"manual": "leaflet"}, fit=(0.104, 0.074))
+        names, ph = pile(R, plist, 0.004, yc, 0.004, 4, ["A_INSERT_CLAM_0"])
+        lift = max(0.0, ph - 0.0017)
     # the cooler: fan up, its fan cable and plug toward the back (they stick out 30 mm past the shroud)
-    yb = yc + 0.0016 + 0.0006                    # clamshell floor
+    yb = yc + 0.0016 + 0.0006 + lift             # clamshell floor
     ay = yb - lo[2] + 0.0002
     flz = 0.020                                  # the clamshell's parting line, in cooler z
     yfl = ay + flz
@@ -1107,6 +1332,7 @@ def build_cooler_tower(ctx):
     rsc_box(R, ctx, t, inner, tape_tag="tape_clear")
     short = ["A_FLAP_2", "A_FLAP_3"]
     lo, hi = PART_BOUNDS[pid]
+    cat = is_catalog(ctx)
     xi, zi = sx / 2 - t - 0.0005, sz / 2 - t - 0.0005
     y_in = sy - 2 * t
     # the cooler stands upright: local z up, local y toward +x (fan plug side), local x toward the front
@@ -1115,6 +1341,13 @@ def build_cooler_tower(ctx):
     ay = t + 0.008 - lo[2]
     bf_top = ay + 0.016                           # bottom foam's top face
     tf_bot = ay + 0.142                           # top foam's underside
+    if cat:                                       # against the back wall, the top foam grips the top 25 mm
+        import box_catalog as BC
+        mid = ctx.it.get("model_id", pid)
+        az = -zi + 0.004 - lo[0]
+        tf_bot = ay + hi[2] - 0.025
+        top_b = BC.slab(mid, 2, hi[2] - 0.027, 1.0)
+        plug_b = BC.region(mid, (-1.0, 0.0425, -1.0), (1.0, 1.0, 0.0175))
     fw_ = 2 * xi - 0.001
     fd_ = 2 * zi - 0.001
     # bottom EPS: pocket for the base and the screws, a channel for the fan plug
@@ -1123,6 +1356,12 @@ def build_cooler_tower(ctx):
     ob = R.cube("foam_bottom", (0, (t + bf_top) / 2 + 0.0001, 0), (fw_, bf_top - t - 0.0002, fd_), "eps_foam", anc=fb, bevel=0.002)
     cuts = [RC.tmp_cube((ax, (bf_top + ay - 0.0125) / 2 + 0.002, az), (0.085, bf_top - (ay - 0.0125) + 0.004, 0.085), bevel=0.002),
             RC.tmp_cube((ax + 0.062, bf_top - 0.006, az - 0.034), (0.060, 0.016, 0.018), bevel=0.002)]
+    if cat and plug_b:                            # a channel where the measured fan plug and cable hang low
+        (pl, ph_) = plug_b
+        cuts[1] = RC.tmp_cube((ax + (pl[1] + ph_[1]) / 2, bf_top - 0.006, az + (pl[0] + ph_[0]) / 2),
+                              ((ph_[1] - pl[1]) + 0.008, 0.016, (ph_[0] - pl[0]) + 0.008), bevel=0.002)
+    elif cat:
+        cuts = cuts[:1]
     R.cut(ob, cuts)
     # top EPS: a pocket for the fin stack and fan tops, finger notches at both ends
     ft = R.anchor("A_INSERT_FOAM_0", F((0, tf_bot, 0)), (fw_, y_in - tf_bot, fd_), lift="+y", dist=0.07, label="top foam",
@@ -1131,6 +1370,10 @@ def build_cooler_tower(ctx):
     pk_h = (ay + hi[2]) - tf_bot + 0.002
     cuts = [RC.tmp_cube((ax, tf_bot + pk_h / 2 - 0.001, az + (lo[0] + hi[0]) / 2), (0.131, pk_h + 0.002, (hi[0] - lo[0]) + 0.004),
                         bevel=0.0015)]
+    if cat and top_b:                             # the pocket of the measured fin stack and fan tops
+        (tl_, th_) = top_b
+        cuts = [RC.tmp_cube((ax + (tl_[1] + th_[1]) / 2, tf_bot + pk_h / 2 - 0.001, az + (tl_[0] + th_[0]) / 2),
+                            ((th_[1] - tl_[1]) + 0.004, pk_h + 0.002, (th_[0] - tl_[0]) + 0.004), bevel=0.0015)]
     for sg in (-1, 1):
         cuts.append(RC.tmp_cyl(F((sg * xi, (tf_bot + y_in) / 2, 0.0), Y, Z), 0.016, y_in - tf_bot + 0.01, 24))
     R.cut(ob, cuts)
@@ -1140,7 +1383,7 @@ def build_cooler_tower(ctx):
     zb0 = az + hi[0] + 0.004
     d_acc = zi - zb0 - 0.0015
     acc, accflap = accessory_box(R, ctx, "A_INSERT_ACCBOX_0", F(((0.0, bf_top + 0.0005, zb0 + d_acc / 2))),
-                                 (0.140, tf_bot - bf_top - 0.003, d_acc), None, 4, 4, [ft])
+                                 (0.140 if not cat else min(0.14, 2 * xi - 0.012), tf_bot - bf_top - 0.003, d_acc), None, 4, 4, [ft])
     ya = bf_top + 0.0005 + 0.0007
     za = zb0 + 0.0008
     R.anchor("A_ITEM_HW_0", F((-0.030, ya + 0.050, za + 0.0003), Z, Y), (0.070, 0.100, 0.012), parent=acc,
@@ -1153,8 +1396,16 @@ def build_cooler_tower(ctx):
     R.cylinder("syringe", sf.sub(0, 0, 0.020), 0.0015, 0.010, "grey_plastic", 16, anc="A_ITEM_HW_1", z0=0.0, r2=0.0009)
     R.cylinder("syringe", sf.sub(0, 0, -0.037), 0.0030, 0.008, "grey_plastic", 16, anc="A_ITEM_HW_1", z0=0.0)
     R.cylinder("syringe", sf.sub(0, 0, -0.039), 0.0065, 0.0015, "grey_plastic", 20, anc="A_ITEM_HW_1", z0=0.0)
-    doc(R, 0, F((0.0, ya + 0.062, za + 0.013), Z, Y),
-        (0.120, 0.120, 0.0025), "manual", "booklet", 6, under=[accflap], parent=acc, label="manual")
+    if not cat:
+        doc(R, 0, F((0.0, ya + 0.062, za + 0.013), Z, Y),
+            (0.120, 0.120, 0.0025), "manual", "booklet", 6, under=[accflap], parent=acc, label="manual")
+    else:                                         # the papers stand in the accessory box, the booklet at the back
+        ah = tf_bot - bf_top - 0.003
+        plist = paper_list(ctx, sizes={"booklet": (0.120, 0.120, 0.0025)}, fit=(0.124, ah - 0.012), booklets_last=True)
+        zz = za + 0.013
+        for i, (k, form, size, lab) in reversed(list(enumerate(plist))):
+            doc(R, i, F((0.0, ya + size[1] / 2 + 0.002, zz), Z, Y), size, k, form, 6, under=[accflap], parent=acc, label=lab)
+            zz += size[2] + 0.0004
     R.anchor("A_HIT_0", F((0, sy / 2, 0)), (sx, sy, sz))
     R.explode = {"A_INSERT_FOAM_0": (0, 0.20, 0), "A_ITEM_PART_0": (0, 0.06, -0.20), "A_INSERT_ACCBOX_0": (0.0, 0.08, 0.20),
                  "A_ITEM_HW_0": (-0.04, 0.12, 0.05), "A_ITEM_HW_1": (0.06, 0.12, 0.05), "A_ITEM_DOC_0": (0.0, 0.18, 0.08),
@@ -1166,6 +1417,71 @@ def build_cooler_tower(ctx):
                   "and the accessory box A_INSERT_ACCBOX_0 standing in front of it (4) -> bottom EPS A_INSERT_FOAM_1 and the "
                   "accessory box's tuck flap A_FLAP_4 (5) -> mounting kit A_ITEM_HW_0, paste syringe A_ITEM_HW_1 (kind=syringe, "
                   "a look mesh on its anchor), manual A_ITEM_DOC_0 (6).")
+    return R
+
+
+def build_cooler_low(ctx):
+    """A low-profile cooler (catalogue kind cooler_low): a printed tuck-top box, the cooler upright in a die-cut EPS
+    tray, the accessory box standing beside it at +x, the papers lying on top."""
+    pid = ctx.pid
+    sx, sy, sz = ctx.s
+    R = Rig("box_" + pid)
+    t = 0.0008
+    inner = "paper_white"
+    H = tuck_walls(R, ctx, t, inner, notch_r=0.010)
+    tuck_lid_top(R, ctx, t, inner, open_deg=-115, order=1)
+    flaps = dust_flaps(R, ctx, t, inner, H, min(0.03, sx * 0.16))
+    opened = ["A_FLAP_0"] + flaps
+    lo, hi = PART_BOUNDS[pid]
+    xi, zi = sx / 2 - t - 0.0008, sz / 2 - t - 0.0008
+    acc_w = 2 * xi - (hi[1] - lo[1]) - 0.016          # the accessory box takes the width the cooler leaves
+    xs = xi - acc_w                                    # the foam tray from -xi to xs, the accessory box from xs to xi
+    # the cooler upright (local z up, local y toward +x, local x toward the front), its base 6 mm above the floor
+    ay = t + 0.006 - lo[2]
+    ax = (-xi + xs) / 2 - (lo[1] + hi[1]) / 2
+    az = -(lo[0] + hi[0]) / 2
+    ftop = ay + hi[2] - 0.010
+    plist = paper_list(ctx, sizes={"booklet": (0.100, 0.100, 0.0025), "card": (0.088, 0.056, 0.0004)},
+                       fit=(2 * xi - 0.01, 2 * zi - 0.01), booklets_last=True)
+    n = len(plist)
+    ytop = max(ftop, ay + hi[2]) + 0.0006
+    names, _ = pile(R, plist, 0.0, ytop, 0.0, 3, opened)
+    below = [names[-1]] if names else opened
+    foam = R.anchor("A_INSERT_FOAM_0", F((( -xi + xs) / 2, t, 0)), (xs + xi, ftop - t, 2 * zi), lift="+y", dist=0.06,
+                    label="foam tray", order=4 + n, under=["A_ITEM_PART_0"])
+    ob = R.cube("tray", ((-xi + xs) / 2, (t + ftop) / 2, 0), (xs + xi - 0.0006, ftop - t - 0.0002, 2 * zi - 0.0006), "eps_foam",
+                anc=foam, bevel=0.002)
+    pw, pd = (hi[1] - lo[1]) + 0.004, (hi[0] - lo[0]) + 0.004
+    pcx, pcz = ax + (lo[1] + hi[1]) / 2, az + (lo[0] + hi[0]) / 2
+    yb = ay + lo[2] - 0.0005
+    cuts = [RC.tmp_cube((pcx, (yb + ftop) / 2 + 0.002, pcz), (pw, ftop - yb + 0.004, pd), bevel=0.0015)]
+    for sg in (-1, 1):                                 # finger notches front and back
+        cuts.append(RC.tmp_cyl(F((pcx, ftop, pcz + sg * pd / 2), Y, Z), 0.014, 0.05, 24))
+    R.cut(ob, cuts)
+    R.anchor("A_ITEM_PART_0", F((ax, ay, az), Y, X), bsize(pid, 0.002), parent=foam, bag="none", label="CPU cooler",
+             order=3 + n, under=below)
+    acc, accflap = accessory_box(R, ctx, "A_INSERT_ACCBOX_0", F(((xs + xi) / 2 + 0.0002, t + 0.0004, 0.0)),
+                                 (acc_w - 0.001, ftop - t - 0.002, 2 * zi - 0.004), None, 3, 3 + n, below)
+    ya = t + 0.0004 + 0.0007
+    xa = (xs + xi) / 2
+    R.anchor("A_ITEM_HW_0", F((xa, ya + 0.0005, -0.022), Y, NZ), (min(0.05, acc_w - 0.008), 0.06, 0.008), parent=acc,
+             label="MOUNTING KIT", order=5 + n, under=[accflap])
+    R.anchor("A_ITEM_HW_1", F((xa, ya + 0.0005, 0.031), Y, NZ), (0.013, 0.046, 0.013), parent=acc, kind="syringe",
+             label="THERMAL PASTE", order=5 + n, under=[accflap])
+    # the paste syringe lying in the box (a look: the game's paste is a bench tool)
+    sf = F((xa, ya + 0.0068, 0.031), Z, Y)
+    R.cylinder("syringe", sf.sub(0, 0, -0.020), 0.0042, 0.034, "white_plastic", 20, anc="A_ITEM_HW_1", z0=0.0)
+    R.cylinder("syringe", sf.sub(0, 0, 0.014), 0.0015, 0.008, "grey_plastic", 16, anc="A_ITEM_HW_1", z0=0.0, r2=0.0009)
+    R.cylinder("syringe", sf.sub(0, 0, -0.026), 0.0030, 0.006, "grey_plastic", 16, anc="A_ITEM_HW_1", z0=0.0)
+    R.cylinder("syringe", sf.sub(0, 0, -0.0275), 0.0065, 0.0015, "grey_plastic", 20, anc="A_ITEM_HW_1", z0=0.0)
+    R.anchor("A_HIT_0", F((0, sy / 2, 0)), (sx, sy, sz))
+    R.explode = {"A_ITEM_PART_0": (0, 0.10, 0), "A_INSERT_FOAM_0": (-0.04, 0.03, 0), "A_INSERT_ACCBOX_0": (0.12, 0.05, 0.06),
+                 "A_ITEM_HW_0": (0.14, 0.10, 0.03), "A_ITEM_HW_1": (0.16, 0.10, 0.08)}
+    explode_docs(R, names, (0.0, 0.18, 0.14), (0.03, 0.02, 0.06))
+    R.open_view = (22, 58)
+    NOTES[pid] = (f"Low-profile cooler: tuck lid A_FLAP_0 (1) -> dust flaps (2) -> {n} papers in a pile on top (3..{2 + n}) -> "
+                  f"cooler A_ITEM_PART_0 and the accessory box A_INSERT_ACCBOX_0 ({3 + n}) -> EPS tray A_INSERT_FOAM_0 and the "
+                  f"accessory box flap A_FLAP_3 ({4 + n}) -> mounting kit A_ITEM_HW_0, paste A_ITEM_HW_1 ({5 + n}).")
     return R
 
 
@@ -1211,19 +1527,35 @@ def build_case(ctx):
     acc, accflap = accessory_box(R, ctx, "A_INSERT_ACCBOX_0", ab, (0.160, 0.034, 0.110), "A_ITEM_PART_0", 4, 5,
                                  ["A_ITEM_PART_0"], lift="+z", dist=0.18, inside="A_PANEL_SIDE_0")
     ya = ay + shroud + 0.0007
-    R.anchor("A_ITEM_DOC_0", flat_frame((ax + 0.020, ya, az + 0.015)), (0.148, 0.105, 0.003), parent=acc, doc="manual",
-             form="booklet", label="manual", order=8, under=["A_ITEM_ACC_0", "A_ITEM_HW_0", "A_ITEM_HW_1"])
+    o_bag, top = 7, [accflap]
+    if not is_catalog(ctx):
+        R.anchor("A_ITEM_DOC_0", flat_frame((ax + 0.020, ya, az + 0.015)), (0.148, 0.105, 0.003), parent=acc, doc="manual",
+                 form="booklet", label="manual", order=8, under=["A_ITEM_ACC_0", "A_ITEM_HW_0", "A_ITEM_HW_1"])
+    else:
+        # the booklets at the bottom of the accessory box, the bags on them, the cards and stickers on top of the bags
+        plist = paper_list(ctx, sizes={"booklet": (0.148, 0.105, 0.003)}, fit=(0.150, 0.100))
+        books = [p_ for p_ in plist if p_[1] == "booklet"]
+        loose = [p_ for p_ in plist if p_[1] != "booklet"]
+        names, _ = pile(R, loose, ax + 0.025, ya + 0.0031 + 0.0105, az + 0.018, 7, [accflap], parent=acc)
+        if names:
+            o_bag, top = 7 + len(names), [names[-1]]
+        bnames, _ = pile(R, books, ax + 0.020, ya, az + 0.015, o_bag + 1, ["A_ITEM_ACC_0", "A_ITEM_HW_0", "A_ITEM_HW_1"],
+                         parent=acc, first=len(names))
+        doc_names = names + bnames
     R.anchor("A_ITEM_ACC_0", flat_frame((ax - 0.030, ya + 0.0031, az + 0.012)), (0.050, 0.070, 0.010), parent=acc, id="standoff_bag",
-             bag="clear", frame="flat", label="standoffs", order=7, under=[accflap])
+             bag="clear", frame="flat", label="standoffs", order=o_bag, under=top)
     R.anchor("A_ITEM_HW_0", flat_frame((ax + 0.030, ya + 0.0031, az + 0.030)), (0.050, 0.070, 0.008), parent=acc,
-             label="SCREWS 6-32 / M3", order=7, under=[accflap])
+             label="SCREWS 6-32 / M3", order=o_bag, under=top)
     R.anchor("A_ITEM_HW_1", flat_frame((ax + 0.070, ya + 0.0031, az - 0.005)), (0.040, 0.090, 0.006), parent=acc,
-             label="CABLE TIES", order=7, under=[accflap])
+             label="CABLE TIES", order=o_bag, under=top)
     R.anchor("A_HIT_0", F((0, sy / 2, 0)), (sx, sy, sz))
     R.explode = {"A_ITEM_PART_0": (0, 0.62, 0), "A_INSERT_FOAM_0": (-0.12, 0.0, 0), "A_INSERT_FOAM_1": (0.12, 0.0, 0),
                  "A_INSERT_ACCBOX_0": (0.0, 0.0, 0.32), "A_ITEM_DOC_0": (0, 0.0, 0.12), "A_ITEM_ACC_0": (0, 0.06, 0.12),
                  "A_ITEM_HW_0": (0.0, 0.06, 0.14), "A_ITEM_HW_1": (0, 0.06, 0.16),
                  "A_TAPE_0": (-0.05, 0.03, 0), "A_TAPE_1": (0, 0.05, 0), "A_TAPE_2": (0.05, 0.03, 0)}
+    if is_catalog(ctx):
+        R.explode.pop("A_ITEM_DOC_0", None)
+        explode_docs(R, doc_names, (0.0, 0.10, 0.16), (0.03, 0.02, 0.03))
     R.views = ((28, 22), (-150, 24))
     R.open_view = (22, 50)
     R.explode_fill = 0.75
@@ -1343,6 +1675,8 @@ def _item_model(rig, anc, ctx):
     m = rig.meta.get(anc, {})
     if anc.startswith("A_ITEM_PART_"):
         mid = {"usb_installer": "usb_stick"}.get(ctx.pid, ctx.pid)
+        if getattr(ctx, "kind", None):
+            mid = ctx.it.get("model_id", ctx.pid)
         return mid if mid in PART_BOUNDS else None
     if anc.startswith("A_ITEM_ACC_") and m.get("frame") == "model":
         return m.get("id")
@@ -1439,4 +1773,5 @@ def previews(rig, ctx):
 
 BUILDERS = {"cpu": build_cpu, "gpu": build_gpu, "mb": build_mb, "ram": build_ram, "ssd_m2": build_ssd_m2,
             "ssd_sata": build_ssd_sata, "psu": build_psu, "cooler_stock": build_cooler_stock,
-            "cooler_tower": build_cooler_tower, "case": build_case, "usb": build_usb, "bag": build_bag}
+            "cooler_tower": build_cooler_tower, "case": build_case, "usb": build_usb, "bag": build_bag,
+            "cooler_low": build_cooler_low}
